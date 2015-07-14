@@ -41,6 +41,13 @@ public class SkillBuild {
         example.add(new SkillBuild("Dodge", "car", 1));
         example.add(new SkillBuild("TechForcer", "ak", 120));
         example.add(new SkillBuild("LOLWAT", "shotgun", 50));
+        example.add(new SkillBuild("LOLWAT", "shotgun", 50));
+        example.add(new SkillBuild("LOLWAT", "shotgun", 50));
+        example.add(new SkillBuild("LOLWAT", "shotgun", 50));
+        example.add(new SkillBuild("LOLWAT", "shotgun", 50));
+        example.add(new SkillBuild("LOLWAT", "shotgun", 50));
+        example.add(new SkillBuild("LOLWAT", "shotgun", 50));
+
 
         return example;
     }

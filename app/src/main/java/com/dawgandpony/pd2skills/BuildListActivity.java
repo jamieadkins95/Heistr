@@ -1,5 +1,8 @@
 package com.dawgandpony.pd2skills;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -13,7 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.utils.RVAdapter;
 import com.dawgandpony.pd2skills.utils.RecyclerViewEmptySupport;
@@ -49,11 +54,9 @@ public class BuildListActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_settings){
+            Toast.makeText(this, "LOL, no settings!", Toast.LENGTH_SHORT).show();
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -64,6 +67,8 @@ public class BuildListActivity extends ActionBarActivity {
 
         RecyclerViewEmptySupport rvBuilds;
         CardView cv;
+        ArrayList<SkillBuild> builds;
+        FloatingActionButton FAB;
 
         public BuildListFragment() {
         }
@@ -72,14 +77,34 @@ public class BuildListActivity extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_build_list, container, false);
+            builds = new ArrayList<SkillBuild>();
 
-            RVAdapter mAdapter = new RVAdapter(SkillBuild.exampleData());
+            RVAdapter mAdapter = new RVAdapter(builds);
+            //RVAdapter mAdapter = new RVAdapter(SkillBuild.exampleData());
 
 
             this.rvBuilds = (RecyclerViewEmptySupport) rootView.findViewById(R.id.rvBuilds);
             this.rvBuilds.setLayoutManager(new LinearLayoutManager(this.getActivity()));
             this.rvBuilds.setEmptyView(rootView.findViewById(R.id.emptyElement));
             this.rvBuilds.setAdapter(mAdapter);
+
+            FAB = (FloatingActionButton) rootView.findViewById(R.id.fabNewBuild);
+            ColorStateList csl = new ColorStateList(
+                    new int[][] {{android.R.attr.state_pressed},{}},
+                    new int[] {Color.rgb(187,222,251), Color.rgb(33,150,243)});
+            FAB.setBackgroundTintList(csl);
+            FAB.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+
+                    Toast.makeText(getActivity(), "Hello World", Toast.LENGTH_SHORT).show();
+
+
+                }
+            });
+
+
             return rootView;
         }
     }

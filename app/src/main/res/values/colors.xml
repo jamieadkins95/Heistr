@@ -2,7 +2,8 @@
 <resources>
 
     <item name="primary" type="color">#2196F3</item>
-
+    <item name="primaryDark" type="color">#1976D2</item>
+    <item name="primaryPressed" type="color">#BBDEFB</item>
 
 
 
