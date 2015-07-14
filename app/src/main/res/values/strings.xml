@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">PD2 Skills</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Payday 2 Builds</string>
     <string name="action_settings">Settings</string>
+    <string name="empty_build_list1">:(</string>
+    <string name="empty_build_list2">No builds yet.</string>
 
 </resources>

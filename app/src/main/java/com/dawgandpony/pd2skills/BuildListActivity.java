@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.ListView;
 
 
 public class BuildListActivity extends ActionBarActivity {
@@ -20,7 +21,7 @@ public class BuildListActivity extends ActionBarActivity {
         setContentView(R.layout.activity_build_list);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, new BuildListFragment())
                     .commit();
         }
     }
@@ -49,17 +50,21 @@ public class BuildListActivity extends ActionBarActivity {
     }
 
     /**
-     * A placeholder fragment containing a simple view.
+     * A fragment containing the list of skill builds
      */
-    public static class PlaceholderFragment extends Fragment {
+    public static class BuildListFragment extends Fragment {
 
-        public PlaceholderFragment() {
+        ListView buildListView;
+
+        public BuildListFragment() {
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_build_list, container, false);
+            this.buildListView = (ListView) rootView.findViewById(R.id.buildListView);
+            this.buildListView.setEmptyView(rootView.findViewById(R.id.emptyElement));
             return rootView;
         }
     }
