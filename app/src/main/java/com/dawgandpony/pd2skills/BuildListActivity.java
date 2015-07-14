@@ -4,6 +4,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,6 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 import android.widget.ListView;
+
+import com.dawgandpony.pd2skills.utils.RVAdapter;
+import com.dawgandpony.pd2skills.utils.RecyclerViewEmptySupport;
+
+import java.util.ArrayList;
 
 
 public class BuildListActivity extends ActionBarActivity {
@@ -54,7 +62,8 @@ public class BuildListActivity extends ActionBarActivity {
      */
     public static class BuildListFragment extends Fragment {
 
-        ListView buildListView;
+        RecyclerViewEmptySupport rvBuilds;
+        CardView cv;
 
         public BuildListFragment() {
         }
@@ -63,8 +72,14 @@ public class BuildListActivity extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_build_list, container, false);
-            this.buildListView = (ListView) rootView.findViewById(R.id.buildListView);
-            this.buildListView.setEmptyView(rootView.findViewById(R.id.emptyElement));
+
+            RVAdapter mAdapter = new RVAdapter(SkillBuild.exampleData());
+
+
+            this.rvBuilds = (RecyclerViewEmptySupport) rootView.findViewById(R.id.rvBuilds);
+            this.rvBuilds.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+            this.rvBuilds.setEmptyView(rootView.findViewById(R.id.emptyElement));
+            this.rvBuilds.setAdapter(mAdapter);
             return rootView;
         }
     }
