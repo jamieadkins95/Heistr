@@ -37,26 +37,36 @@
             android:id="@+id/emptyTxt1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sad_face"
+            android:text="@string/empty_build_list"
             android:textColor="#9E9E9E"
-            android:textSize="50sp"
-            android:layout_centerInParent="true"
-            android:paddingBottom="30dp"
+            android:textSize="19sp"
+            android:layout_below="@+id/emptyTxt2"
 
             />
 
         <TextView
-
+            android:id="@+id/emptyTxt2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/empty_build_list"
+            android:text="@string/sad_face"
             android:textColor="#9E9E9E"
-            android:textSize="19sp"
-            android:layout_below="@+id/emptyTxt1"
-            
+            android:textSize="50sp"
+            android:paddingBottom="30dp"
+            android:layout_centerInParent="true"
+
 
 
             />
+
+        <!--<ImageView
+            android:id="@+id/emptyImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/emptyTxt1"
+            android:src="@drawable/ic_dallas"
+            android:paddingBottom="30dp"/>-->
+
+
 
     </RelativeLayout>
 

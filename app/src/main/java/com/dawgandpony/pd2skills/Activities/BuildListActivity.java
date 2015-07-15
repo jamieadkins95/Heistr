@@ -1,5 +1,6 @@
-package com.dawgandpony.pd2skills;
+package com.dawgandpony.pd2skills.Activities;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
@@ -20,6 +21,9 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.dawgandpony.pd2skills.EditBuildActivity;
+import com.dawgandpony.pd2skills.R;
+import com.dawgandpony.pd2skills.SkillBuild;
 import com.dawgandpony.pd2skills.utils.RVAdapter;
 import com.dawgandpony.pd2skills.utils.RecyclerViewEmptySupport;
 
@@ -47,6 +51,9 @@ public class BuildListActivity extends ActionBarActivity {
         return true;
     }
 
+
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -68,7 +75,7 @@ public class BuildListActivity extends ActionBarActivity {
         RecyclerViewEmptySupport rvBuilds;
         CardView cv;
         ArrayList<SkillBuild> builds;
-        FloatingActionButton FAB;
+        FloatingActionButton fab;
 
         public BuildListFragment() {
         }
@@ -88,17 +95,20 @@ public class BuildListActivity extends ActionBarActivity {
             this.rvBuilds.setEmptyView(rootView.findViewById(R.id.emptyElement));
             this.rvBuilds.setAdapter(mAdapter);
 
-            FAB = (FloatingActionButton) rootView.findViewById(R.id.fabNewBuild);
+            fab = (FloatingActionButton) rootView.findViewById(R.id.fabNewBuild);
+
+            //Weird workaround to get the colour of the FAB correct
             ColorStateList csl = new ColorStateList(
                     new int[][] {{android.R.attr.state_pressed},{}},
                     new int[] {Color.rgb(187,222,251), Color.rgb(33,150,243)});
-            FAB.setBackgroundTintList(csl);
-            FAB.setOnClickListener(new View.OnClickListener() {
+            fab.setBackgroundTintList(csl);
+            fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-
-                    Toast.makeText(getActivity(), "Hello World", Toast.LENGTH_SHORT).show();
+                    //Go to the build edit activity with a new build
+                    Intent intent = new Intent(getActivity(), EditBuildActivity.class);
+                    startActivity(intent);
 
 
                 }
