@@ -8,6 +8,8 @@ import java.util.List;
  */
 public class SkillBuild {
     ArrayList<SkillTree> skillTrees;
+    int pointsUsed;
+    int pointsAvailable;
 
     @Override
     public String toString() {
