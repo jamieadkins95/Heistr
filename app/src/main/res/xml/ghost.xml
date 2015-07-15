@@ -5,8 +5,8 @@
         <tierNumber>0</tierNumber>
         <point_requirement>0</point_requirement>
         <skill>
-            <name>Unlocking the Mastermind</name>
-            <normal>Unlocks the ability to place a doctors bag.</normal>
+            <name>Unlocking the Ghost</name>
+            <normal>Unlocks the ability to place an ecm.</normal>
             <ace></ace>
         </skill>
     </tier>
@@ -14,19 +14,19 @@
         <tierNumber>1</tierNumber>
         <point_requirement>1</point_requirement>
         <skill>
-            <name>Cable Guy</name>
-            <normal>Cable tie civs 75% faster.</normal>
-            <ace>Increase your cable tie supply by 4.</ace>
+            <name>Dead Presidents</name>
+            <normal>Adds 10% more value to loose items that you pick up.</normal>
+            <ace>Adds an additional 20% more value to loose items that you pick up.</ace>
         </skill>
         <skill>
-            <name>Combat Medic</name>
-            <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
-            <ace>Reviving a crew member gives them 30% more health.</ace>
+            <name>Sprinter</name>
+            <normal>The time before stamina regeneration starts is reduced by 25% and the regeneration of stamina is increased by 25%.</normal>
+            <ace>Your sprint speed is increased by 25% and you have a 25% better chance dodging enemy fire while sprinting.</ace>
         </skill>
         <skill>
-            <name>Endurance</name>
-            <normal>Increases your stamina by 100%.</normal>
-            <ace>Increases stamina for you and your crew by 50%.</ace>
+            <name>Cat Burglar</name>
+            <normal>You take 75% less damage from falling from non-fatal heights.</normal>
+            <ace>Your fall damage is reduced so that you only take armor damage from falling from non-fatal heights. Your custody time is reduced by 50%.</ace>
         </skill>
     </tier>
 </skill_tree>

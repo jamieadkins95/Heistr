@@ -5,8 +5,8 @@
         <tierNumber>0</tierNumber>
         <point_requirement>0</point_requirement>
         <skill>
-            <name>Unlocking the Mastermind</name>
-            <normal>Unlocks the ability to place a doctors bag.</normal>
+            <name>Unlocking the Enforcer</name>
+            <normal>Unlocks the ability to place an ammo bag.</normal>
             <ace></ace>
         </skill>
     </tier>
@@ -14,19 +14,19 @@
         <tierNumber>1</tierNumber>
         <point_requirement>1</point_requirement>
         <skill>
-            <name>Cable Guy</name>
-            <normal>Cable tie civs 75% faster.</normal>
-            <ace>Increase your cable tie supply by 4.</ace>
+            <name>Oppressor</name>
+            <normal>Your weapons are 25% more effective at threatening enemies.</normal>
+            <ace>Your weapons are 50% more effective at threatening enemies.</ace>
         </skill>
         <skill>
-            <name>Combat Medic</name>
-            <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
-            <ace>Reviving a crew member gives them 30% more health.</ace>
+            <name>Bullet Storm</name>
+            <normal>ADirectly after you deploy an ammo bag, you can fire your weapon for 5 seconds without depleting your ammunition.</normal>
+            <ace>You can fire 10 seconds longer without depleting your ammunition.</ace>
         </skill>
         <skill>
-            <name>Endurance</name>
-            <normal>Increases your stamina by 100%.</normal>
-            <ace>Increases stamina for you and your crew by 50%.</ace>
+            <name>Transporter</name>
+            <normal>You move 50% faster when carrying bags</normal>
+            <ace>You can throw bags 50% further.</ace>
         </skill>
     </tier>
 </skill_tree>
