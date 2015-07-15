@@ -13,6 +13,11 @@ public class Skill {
     private int acePoints;
     private int taken = Taken.NO;
 
+    @Override
+    public String toString() {
+        return "Name: " + name +"\nNormal: " + normalDescription + "\nAce: " + aceDescription;
+    }
+
     public int getNormalPoints() {
         return normalPoints;
     }

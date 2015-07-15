@@ -8,18 +8,13 @@ import java.util.List;
  */
 public class Build {
 
-    public String getName() {
-        return name;
-    }
-
-
-
-
     String name;
 
 
 
-    public Build(String n, String pw) {
+    SkillBuild skillBuild;
+
+    public Build(String n) {
 
         name= n;
 
@@ -27,6 +22,15 @@ public class Build {
     }
 
 
+    public String getName() {
+        return name;
+    }
 
+    public SkillBuild getSkillBuild() {
+        return skillBuild;
+    }
 
+    public void setSkillBuild(SkillBuild skillBuild) {
+        this.skillBuild = skillBuild;
+    }
 }
