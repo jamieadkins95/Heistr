@@ -4,7 +4,26 @@
         <point_requirement>0</point_requirement>
         <skill>
             <name>Unlocking the Mastermind</name>
-            <description>Unlocks the ability to place a doctors bag.</description>
+            <normal>Unlocks the ability to place a doctors bag.</normal>
+            <ace></ace>
         </skill>
     </tier0>
+    <tier1>
+        <point_requirement>1</point_requirement>
+        <skill>
+            <name>Cable Guy</name>
+            <normal>Cable tie civs 75% faster.</normal>
+            <ace>Increase your cable tie supply by 4.</ace>
+        </skill>
+        <skill>
+            <name>Combat Medic</name>
+            <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
+            <ace>Reviving a crew member gives them 30% more health.</ace>
+        </skill>
+        <skill>
+            <name>Endurance</name>
+            <normal>Increases your stamina by 100%.</normal>
+            <ace>Increases stamina for you and your crew by 50%.</ace>
+        </skill>
+    </tier1>
 </mastermind>

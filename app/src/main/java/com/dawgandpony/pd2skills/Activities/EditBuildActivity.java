@@ -1,11 +1,13 @@
-package com.dawgandpony.pd2skills;
+package com.dawgandpony.pd2skills.Activities;
 
 import android.os.Bundle;
 
+import com.dawgandpony.pd2skills.Fragments.BlankFragment;
 import com.dawgandpony.pd2skills.Consts.Trees;
+import com.dawgandpony.pd2skills.R;
+import com.dawgandpony.pd2skills.Fragments.SkillTreeFragment;
 
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
-import it.neokree.materialnavigationdrawer.elements.MaterialAccount;
 import it.neokree.materialnavigationdrawer.elements.MaterialSection;
 
 /**
