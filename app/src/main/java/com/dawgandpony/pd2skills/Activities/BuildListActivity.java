@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.R;
-import com.dawgandpony.pd2skills.SkillBuild;
+import com.dawgandpony.pd2skills.Build;
 import com.dawgandpony.pd2skills.utils.RVAdapter;
 import com.dawgandpony.pd2skills.utils.RecyclerViewEmptySupport;
 
@@ -68,7 +68,7 @@ public class BuildListActivity extends ActionBarActivity {
 
         RecyclerViewEmptySupport rvBuilds;
         CardView cv;
-        ArrayList<SkillBuild> builds;
+        ArrayList<Build> builds;
         FloatingActionButton fab;
 
         public BuildListFragment() {
@@ -78,7 +78,7 @@ public class BuildListActivity extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_build_list, container, false);
-            builds = new ArrayList<SkillBuild>();
+            builds = new ArrayList<Build>();
 
             RVAdapter mAdapter = new RVAdapter(builds);
             //RVAdapter mAdapter = new RVAdapter(SkillBuild.exampleData());

@@ -9,7 +9,27 @@ public class Skill {
     private String name;
     private String normalDescription;
     private String aceDescription;
+    private int normalPoints;
+    private int acePoints;
     private int taken = Taken.NO;
+
+    public int getNormalPoints() {
+        return normalPoints;
+    }
+
+    public void setNormalPoints(int normalPoints) {
+        this.normalPoints = normalPoints;
+    }
+
+    public int getAcePoints() {
+        return acePoints;
+    }
+
+    public void setAcePoints(int acePoints) {
+        this.acePoints = acePoints;
+    }
+
+
 
     public String getName() {
         return name;

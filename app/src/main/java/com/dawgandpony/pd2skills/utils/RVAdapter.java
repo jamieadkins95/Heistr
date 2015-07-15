@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dawgandpony.pd2skills.R;
-import com.dawgandpony.pd2skills.SkillBuild;
+import com.dawgandpony.pd2skills.Build;
 
 import java.util.List;
 
@@ -18,9 +18,9 @@ import java.util.List;
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.BuildViewHolder>{
 
 
-    List<SkillBuild> builds;
+    List<Build> builds;
 
-    public RVAdapter(List<SkillBuild> b){
+    public RVAdapter(List<Build> b){
         this.builds = b;
     }
 
@@ -61,8 +61,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.BuildViewHolder>{
     @Override
     public void onBindViewHolder(BuildViewHolder holder, int position) {
         holder.buildName.setText(builds.get(position).getName());
-        holder.pointsUsed.setText(builds.get(position).getPointsUsed() + "");
-        holder.primaryWeapon.setText(builds.get(position).getPrimaryWeapon());
+        //holder.pointsUsed.setText(builds.get(position).getPointsUsed() + "");
+        //holder.primaryWeapon.setText(builds.get(position).getPrimaryWeapon());
     }
 
     @Override
