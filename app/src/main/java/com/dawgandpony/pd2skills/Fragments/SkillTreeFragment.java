@@ -21,19 +21,19 @@ public class SkillTreeFragment extends Fragment {
 
     // the fragment initialization parameters
     private static final String ARG_TREE = "Tree";
+    private static final String ARG_ID = "ID";
 
 
     // Variables for passing parameters to fragment
     private int mTree;
-
+    private long mID;
 
 
     /**
      * Use this  method to create a new instance of
-     * this fragment using the provided parameters.
+     * this fragment. If you don't supply an ID it will make a new tree.
      *
      * @param tree Which skill tree we are dealing with.
-
      * @return A new instance of fragment SkillTreeFragment.
      */
     // TODO: Rename and change types and number of parameters
@@ -41,6 +41,24 @@ public class SkillTreeFragment extends Fragment {
         SkillTreeFragment fragment = new SkillTreeFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_TREE, tree);
+        args.putLong(ARG_ID, -1); // TODO: Generate a new tree, store it in the DB and then pass the id from it to here.
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    /**
+     * Use this  method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param tree Which skill tree we are dealing with.
+     * @param id ID of skill tree in DB, use -1 for a new tree.
+     * @return A new instance of fragment SkillTreeFragment.
+     */
+    public static SkillTreeFragment newInstance(int tree, long id) {
+        SkillTreeFragment fragment = new SkillTreeFragment();
+        Bundle args = new Bundle();
+        args.putInt(ARG_TREE, tree);
+        args.putLong(ARG_ID, id);
         fragment.setArguments(args);
         return fragment;
     }
@@ -54,6 +72,7 @@ public class SkillTreeFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mTree = getArguments().getInt(ARG_TREE);
+            mID = getArguments().getLong(ARG_ID);
 
         }
     }
