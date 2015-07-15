@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mastermind>
+    <tier0>
+        <point_requirement>0</point_requirement>
+        <skill>
+            <name>Unlocking the Mastermind</name>
+            <description>Unlocks the ability to place a doctors bag.</description>
+        </skill>
+    </tier0>
+</mastermind>

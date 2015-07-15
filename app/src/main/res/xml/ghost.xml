@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ghost>
+    <skill>
+        <name>Unlocking the Ghost</name>
+        <description>Unlocks the ability to place an ecm.</description>
+    </skill>
+</ghost>

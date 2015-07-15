@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<enforcer>
+    <skill>
+        <name>Unlocking the Enforcer</name>
+        <description>Unlocks the ability to place an ammo bag.</description>
+    </skill>
+</enforcer>
