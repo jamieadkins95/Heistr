@@ -7,6 +7,10 @@ import java.util.List;
  * Created by Jamie on 15/07/2015.
  */
 public class SkillBuild {
+    long id;
+
+
+
     ArrayList<SkillTree> skillTrees;
     int pointsUsed;
     int pointsAvailable;
@@ -26,5 +30,13 @@ public class SkillBuild {
 
     public SkillBuild(){
         skillTrees = new ArrayList<SkillTree>();
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

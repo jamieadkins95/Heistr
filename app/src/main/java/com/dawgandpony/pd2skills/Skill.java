@@ -1,6 +1,6 @@
 package com.dawgandpony.pd2skills;
 
-import com.dawgandpony.pd2skills.Consts.Taken;
+import com.dawgandpony.pd2skills.Consts.SkillTaken;
 
 /**
  * Created by Jamie on 15/07/2015.
@@ -11,7 +11,7 @@ public class Skill {
     private String aceDescription;
     private int normalPoints;
     private int acePoints;
-    private int taken = Taken.NO;
+    private int taken = SkillTaken.NO;
 
     @Override
     public String toString() {

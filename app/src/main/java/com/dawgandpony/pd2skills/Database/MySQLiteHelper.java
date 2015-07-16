@@ -13,14 +13,16 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "pd2skills.db";
     private static final int DATABASE_VERSION = 1;
 
-    private static final String TABLE_SKILL_BUILDS = "tbSkillBuilds";
+
+    //region Skills
+    public static final String TABLE_SKILL_BUILDS = "tbSkillBuilds";
     public static final String COLUMN_ID = "_id";
 
     private static final String CREATE_SKILL_BUILD_TABLE = "create table if not exists "
             + TABLE_SKILL_BUILDS + "(" + COLUMN_ID
             + " integer primary key autoincrement);";
 
-    private static final String TABLE_SKILL_TREES = "tbSkillTrees";
+    public static final String TABLE_SKILL_TREES = "tbSkillTrees";
     public static final String COLUMN_SKILL_BUILD_ID = "skillBuildID";
     public static final String COLUMN_TREE = "tree";
     public static final String COLUMN_TIER = "tier";
@@ -38,6 +40,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + " integer," + COLUMNS_SKILLS[1]
             + " integer," + COLUMNS_SKILLS[2]
             + " integer);";
+    //endregion
 
 
     @Override
