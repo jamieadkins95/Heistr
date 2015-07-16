@@ -29,4 +29,99 @@
             <ace>Increases the armor of all ballistic vests by 20.</ace>
         </skill>
     </tier>
+    <tier>
+        <tierNumber>2</tierNumber>
+        <point_requirement>1</point_requirement>
+        <skill>
+            <name>Daredevil</name>
+            <normal>Increase your climbing speed by 20%.</normal>
+            <ace>You gain a 15% dodge chance while zip-lining.</ace>
+        </skill>
+        <skill>
+            <name>Hidden Blade</name>
+            <normal>Increases your melee weapon concealment by 2.</normal>
+            <ace>Enemies make 95% less noise when shot or meleed to death.</ace>
+        </skill>
+        <skill>
+            <name>Thick Skin</name>
+            <normal>Your steadiness is increased by 10.</normal>
+            <ace>Increases the armor of all ballistic vests by 20.</ace>
+        </skill>
+    </tier>
+    <tier>
+        <tierNumber>3</tierNumber>
+        <point_requirement>1</point_requirement>
+        <skill>
+            <name>Daredevil</name>
+            <normal>Increase your climbing speed by 20%.</normal>
+            <ace>You gain a 15% dodge chance while zip-lining.</ace>
+        </skill>
+        <skill>
+            <name>Hidden Blade</name>
+            <normal>Increases your melee weapon concealment by 2.</normal>
+            <ace>Enemies make 95% less noise when shot or meleed to death.</ace>
+        </skill>
+        <skill>
+            <name>Thick Skin</name>
+            <normal>Your steadiness is increased by 10.</normal>
+            <ace>Increases the armor of all ballistic vests by 20.</ace>
+        </skill>
+    </tier>
+    <tier>
+        <tierNumber>4</tierNumber>
+        <point_requirement>1</point_requirement>
+        <skill>
+            <name>Daredevil</name>
+            <normal>Increase your climbing speed by 20%.</normal>
+            <ace>You gain a 15% dodge chance while zip-lining.</ace>
+        </skill>
+        <skill>
+            <name>Hidden Blade</name>
+            <normal>Increases your melee weapon concealment by 2.</normal>
+            <ace>Enemies make 95% less noise when shot or meleed to death.</ace>
+        </skill>
+        <skill>
+            <name>Thick Skin</name>
+            <normal>Your steadiness is increased by 10.</normal>
+            <ace>Increases the armor of all ballistic vests by 20.</ace>
+        </skill>
+    </tier>
+    <tier>
+        <tierNumber>5</tierNumber>
+        <point_requirement>1</point_requirement>
+        <skill>
+            <name>Daredevil</name>
+            <normal>Increase your climbing speed by 20%.</normal>
+            <ace>You gain a 15% dodge chance while zip-lining.</ace>
+        </skill>
+        <skill>
+            <name>Hidden Blade</name>
+            <normal>Increases your melee weapon concealment by 2.</normal>
+            <ace>Enemies make 95% less noise when shot or meleed to death.</ace>
+        </skill>
+        <skill>
+            <name>Thick Skin</name>
+            <normal>Your steadiness is increased by 10.</normal>
+            <ace>Increases the armor of all ballistic vests by 20.</ace>
+        </skill>
+    </tier>
+    <tier>
+        <tierNumber>6</tierNumber>
+        <point_requirement>1</point_requirement>
+        <skill>
+            <name>Daredevil</name>
+            <normal>Increase your climbing speed by 20%.</normal>
+            <ace>You gain a 15% dodge chance while zip-lining.</ace>
+        </skill>
+        <skill>
+            <name>Hidden Blade</name>
+            <normal>Increases your melee weapon concealment by 2.</normal>
+            <ace>Enemies make 95% less noise when shot or meleed to death.</ace>
+        </skill>
+        <skill>
+            <name>Thick Skin</name>
+            <normal>Your steadiness is increased by 10.</normal>
+            <ace>Increases the armor of all ballistic vests by 20.</ace>
+        </skill>
+    </tier>
 </skill_tree>
