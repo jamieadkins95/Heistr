@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dawgandpony.pd2skills.R;
-import com.dawgandpony.pd2skills.Build;
+import com.dawgandpony.pd2skills.BuildObjects.Build;
 
 import java.util.List;
 

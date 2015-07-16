@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.R;
-import com.dawgandpony.pd2skills.Build;
+import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.utils.RVAdapter;
 import com.dawgandpony.pd2skills.utils.RecyclerViewEmptySupport;
 

@@ -8,9 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.dawgandpony.pd2skills.Consts.SkillTaken;
 import com.dawgandpony.pd2skills.Consts.Trees;
-import com.dawgandpony.pd2skills.SkillBuild;
-
-import java.util.ArrayList;
+import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
 
 /**
  * Created by Jamie on 16/07/2015.

@@ -1,25 +1,22 @@
 package com.dawgandpony.pd2skills.Activities;
 
-import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.dawgandpony.pd2skills.Build;
+import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.Fragments.BlankFragment;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.Fragments.SkillTreeFragment;
-import com.dawgandpony.pd2skills.Skill;
-import com.dawgandpony.pd2skills.SkillBuild;
-import com.dawgandpony.pd2skills.SkillTree;
-import com.dawgandpony.pd2skills.Tier;
+import com.dawgandpony.pd2skills.BuildObjects.Skill;
+import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
+import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
+import com.dawgandpony.pd2skills.BuildObjects.Tier;
 
 import org.xmlpull.v1.XmlPullParser;
-
-import java.util.ArrayList;
 
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.neokree.materialnavigationdrawer.elements.MaterialSection;

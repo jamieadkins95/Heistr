@@ -1,4 +1,6 @@
-package com.dawgandpony.pd2skills;
+package com.dawgandpony.pd2skills.BuildObjects;
+
+import com.dawgandpony.pd2skills.BuildObjects.Skill;
 
 import java.util.ArrayList;
 
