@@ -9,7 +9,7 @@ import android.util.Log;
 
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
-import com.dawgandpony.pd2skills.BuildObjects.Tier;
+import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
 import com.dawgandpony.pd2skills.Consts.SkillTaken;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
@@ -70,7 +70,7 @@ public class DataSourceSkills {
                 values.put(MySQLiteHelper.COLUMNS_SKILLS[2], SkillTaken.NO);
 
                 long id = database.insert(MySQLiteHelper.TABLE_SKILL_TREES, null, values);
-                Log.d("DB creation", "Tier ID = " + id + " - Added tier " + tier + " to tree " + tree);
+                //Log.d("DB creation", "Tier ID = " + id + " - Added tier " + tier + " to tree " + tree);
             }
         }
 
@@ -84,7 +84,7 @@ public class DataSourceSkills {
         cursorBuild.close();
         cursorSkillTreeTiers.close();
 
-        Log.d("SkillBuild inserted DB", newSkillBuild.toString());
+        //Log.d("SkillBuild inserted DB", newSkillBuild.toString());
         return newSkillBuild;
 
 
@@ -131,7 +131,7 @@ public class DataSourceSkills {
             int skill2Taken = cursorSkillTreeTiers.getInt(5);
             int skill3Taken = cursorSkillTreeTiers.getInt(6);
 
-            Log.d("DB Retrieval", "Skill Build ID: " + skillBuildID + " Skill Tier ID: " + skillTierID);
+            //Log.d("DB Retrieval", "Skill Build ID: " + skillBuildID + " Skill Tier ID: " + skillTierID);
 
             //Add a new tree if we are at a new one
             if (treeNumber > (skillBuild.getSkillTrees().size() - 1)){
@@ -140,7 +140,7 @@ public class DataSourceSkills {
             }
             //Add a new tier if we are at a new one
             if (tierNumber > (skillBuild.getSkillTrees().get(treeNumber).getTierList().size() - 1)){
-                skillBuild.getSkillTrees().get(treeNumber).getTierList().add(new Tier());
+                skillBuild.getSkillTrees().get(treeNumber).getTierList().add(new SkillTier());
                 skillBuild.getSkillTrees().get(treeNumber).getTierList().get(tierNumber).setSkillBuildID(skillBuildID);
                 skillBuild.getSkillTrees().get(treeNumber).getTierList().get(tierNumber).setId(skillTierID);
             }
@@ -160,7 +160,7 @@ public class DataSourceSkills {
         }
 
 
-        Log.d("SkillBuild retireved DB", skillBuild.toString());
+        //Log.d("SkillBuild retireved DB", skillBuild.toString());
         return skillBuild;
     }
 

@@ -10,7 +10,7 @@ public class SkillTree {
 
 
 
-    ArrayList<Tier> tiers;
+    ArrayList<SkillTier> skillTiers;
     String name;
 
     public String getName() {
@@ -22,20 +22,20 @@ public class SkillTree {
     }
 
     public SkillTree(){
-        tiers = new ArrayList<Tier>();
+        skillTiers = new ArrayList<SkillTier>();
     }
 
     @Override
     public String toString() {
         String text = name + " tree:";
-        for (Tier t : tiers){
+        for (SkillTier t : skillTiers){
             text += "\n" + t.toString();
         }
         return text;
     }
 
-    public ArrayList<Tier> getTierList() {
-        return tiers;
+    public ArrayList<SkillTier> getTierList() {
+        return skillTiers;
     }
 
     public long getSkillBuildID() {

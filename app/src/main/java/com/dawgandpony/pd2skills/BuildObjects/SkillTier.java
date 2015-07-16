@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * Created by Jamie on 15/07/2015.
  */
-public class Tier {
+public class SkillTier {
     long id = -1;
     long skillBuildID = -1;
     ArrayList<Skill> skillsInTier;
@@ -31,7 +31,7 @@ public class Tier {
         return text;
     }
 
-    public Tier() {
+    public SkillTier() {
         skillsInTier = new ArrayList<Skill>();
     }
 

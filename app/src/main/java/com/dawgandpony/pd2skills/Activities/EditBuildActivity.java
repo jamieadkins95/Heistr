@@ -16,7 +16,7 @@ import com.dawgandpony.pd2skills.Fragments.SkillTreeFragment;
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
-import com.dawgandpony.pd2skills.BuildObjects.Tier;
+import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
 
 import org.xmlpull.v1.XmlPullParser;
 
@@ -97,7 +97,51 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
         private SkillBuild mergeBuilds(SkillBuild skillBuildFromXML, SkillBuild skillBuildFromDB) {
 
-            return skillBuildFromXML;
+            SkillBuild mergedSkillBuild = new SkillBuild();
+
+            for (int tree = Trees.MASTERMIND; tree <= Trees.FUGITIVE; tree++){
+                SkillTree newTree = new SkillTree();
+                SkillTree treeFromXML = skillBuildFromXML.getSkillTrees().get(tree);
+                SkillTree treeFromDB = skillBuildFromDB.getSkillTrees().get(tree);
+
+                newTree.setSkillBuildID(treeFromDB.getSkillBuildID());
+                newTree.setName(treeFromXML.getName());
+
+                for (int tier = Trees.TIER0; tier <= Trees.TIER6; tier++){
+                    SkillTier newSkillTier = new SkillTier();
+                    SkillTier tierFromXML = treeFromXML.getTierList().get(tier);
+                    SkillTier tierFromDB = treeFromDB.getTierList().get(tier);
+
+                    newSkillTier.setId(tierFromDB.getId());
+                    newSkillTier.setSkillBuildID(tierFromDB.getSkillBuildID());
+                    newSkillTier.setPointRequirement(tierFromXML.getPointRequirement());
+                    newSkillTier.setNumber(tierFromXML.getNumber());
+
+
+                    for (int skill = 0; skill <= 3; skill++){
+                        Skill newSkill = new Skill();
+                        Skill skillFromXML = tierFromXML.getSkillsInTier().get(skill);
+                        Skill skillFromDB = tierFromDB.getSkillsInTier().get(skill);
+
+                        newSkill.setName(skillFromXML.getName());
+
+                        newSkill.setNormalDescription(skillFromXML.getNormalDescription());
+                        newSkill.setAceDescription(skillFromXML.getAceDescription());
+                        newSkill.setNormalPoints(skillFromXML.getNormalPoints());
+                        newSkill.setAcePoints(skillFromXML.getAcePoints());
+
+                        newSkill.setTaken(skillFromDB.getTaken());
+
+                        newSkillTier.getSkillsInTier().add(newSkill);
+                    }
+
+                    newTree.getTierList().add(newSkillTier);
+                }
+
+                mergedSkillBuild.getSkillTrees().add(newTree);
+            }
+            Log.d("SkillTree Merge", "Successful merge! " + mergedSkillBuild.toString());
+            return mergedSkillBuild;
         }
 
         private SkillBuild getSkillBuildFromDB(long id) {
@@ -159,7 +203,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
                 try {
                     int eventType = xmlParser.getEventType();
 
-                    Tier currentTier = null;
+                    SkillTier currentSkillTier = null;
                     Skill currentSkill = null;
                     String currentTag = "";
 
@@ -177,7 +221,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
                                     currentSkillTree = new SkillTree();
                                     break;
                                 case "tier":
-                                    currentTier = new Tier();
+                                    currentSkillTier = new SkillTier();
                                     break;
                                 case "skill":
                                     currentSkill = new Skill();
@@ -192,10 +236,10 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
                                     skillBuildFromXML.getSkillTrees().add(currentSkillTree);
                                     break;
                                 case "tier":
-                                    currentSkillTree.getTierList().add(currentTier);
+                                    currentSkillTree.getTierList().add(currentSkillTier);
                                     break;
                                 case "skill":
-                                    currentTier.getSkillsInTier().add(currentSkill);
+                                    currentSkillTier.getSkillsInTier().add(currentSkill);
                                     break;
                             }
 
@@ -209,10 +253,10 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
                                     currentSkillTree.setName(text);
                                     break;
                                 case "tierNumber":
-                                    currentTier.setNumber(Integer.parseInt(text));
+                                    currentSkillTier.setNumber(Integer.parseInt(text));
                                     break;
                                 case "point_requirement":
-                                    currentTier.setPointRequirement(Integer.parseInt(text));
+                                    currentSkillTier.setPointRequirement(Integer.parseInt(text));
                                     break;
                                 case "name":
                                     currentSkill.setName(text);

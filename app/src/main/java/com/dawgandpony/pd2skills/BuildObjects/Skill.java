@@ -24,7 +24,23 @@ public class Skill {
 
     @Override
     public String toString() {
-        return "Name: " + name +"\nNormal: " + normalDescription + "\nAce: " + aceDescription;
+        String text = "Name: " + name +"\nNormal: " + normalDescription + "\nAce: " + aceDescription + "\nTaken: ";
+
+
+        switch(taken){
+            case SkillTaken.NO:
+                text += "no";
+                break;
+            case SkillTaken.NORMAL:
+                text += "normal";
+                break;
+            case SkillTaken.ACE:
+                text += "ace";
+                break;
+
+        }
+
+        return text;
     }
 
     public int getNormalPoints() {
