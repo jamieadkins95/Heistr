@@ -11,16 +11,18 @@ import android.util.Log;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pd2skills.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 3;
 
 
     //region Skills
     public static final String TABLE_SKILL_BUILDS = "tbSkillBuilds";
     public static final String COLUMN_ID = "_id";
+    public static final String COLUMN_NAME = "name";
 
     private static final String CREATE_SKILL_BUILD_TABLE = "create table if not exists "
             + TABLE_SKILL_BUILDS + "(" + COLUMN_ID
-            + " integer primary key autoincrement);";
+            + " integer primary key autoincrement, " + COLUMN_NAME
+            + " text);";
 
     public static final String TABLE_SKILL_TREES = "tbSkillTrees";
     public static final String COLUMN_SKILL_BUILD_ID = "skillBuildID";
@@ -56,6 +58,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                         + newVersion + ", which will destroy some old data");
 
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_BUILDS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_TREES);
         onCreate(db);
     }
 

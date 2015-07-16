@@ -8,6 +8,8 @@ import java.util.ArrayList;
  * Created by Jamie on 15/07/2015.
  */
 public class Tier {
+    long id = -1;
+    long skillBuildID = -1;
     ArrayList<Skill> skillsInTier;
     int pointRequirement;
     int number;
@@ -44,5 +46,21 @@ public class Tier {
 
     public int getPointRequirement() {
         return pointRequirement;
+    }
+
+    public long getSkillBuildID() {
+        return skillBuildID;
+    }
+
+    public void setSkillBuildID(long skillBuildID) {
+        this.skillBuildID = skillBuildID;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

@@ -3,10 +3,12 @@ package com.dawgandpony.pd2skills.Activities;
 import android.content.res.XmlResourceParser;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
+import com.dawgandpony.pd2skills.Database.DataSourceSkills;
 import com.dawgandpony.pd2skills.Fragments.BlankFragment;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.R;
@@ -27,6 +29,8 @@ import it.neokree.materialnavigationdrawer.elements.MaterialSection;
 public class EditBuildActivity extends MaterialNavigationDrawer {
 
     private Build currentBuild;
+    public final static long NEW_SKILL_BUILD = -1;
+
 
     @Override
     public void init(Bundle savedInstanceState) {
@@ -58,17 +62,16 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
 
 
-        this.addSubheader("Infamy & Perk Deck");
+        this.addSubheader("Infamy");
         addSection(secInfamy);
-        addSection(secPD);
         this.addSubheader("Skills");
         addSection(secMas);
         addSection(secEnf);
         addSection(secTech);
         addSection(secGhost);
         addSection(secFugi);
-        //this.addSubheader("Perk Deck");
-        //addSection(secPD);
+        this.addSubheader("Perk Deck");
+        addSection(secPD);
         this.addSubheader("Weapons");
         addSection(secPrimary);
         addSection(secSecondaty);
@@ -78,7 +81,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
         addBottomSection(secAbout);
         addBottomSection(secSettings);
 
-        new GetSkillsFromXMLandDBTask().execute((long) 0);
+        new GetSkillsFromXMLandDBTask().execute(NEW_SKILL_BUILD);
     }
 
     private class GetSkillsFromXMLandDBTask extends AsyncTask<Long, Integer, SkillBuild> {
@@ -86,7 +89,44 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
         @Override
         protected SkillBuild doInBackground(Long... ids) {
 
-            SkillBuild skillBuild = new SkillBuild();
+            SkillBuild skillBuildFromXML = getSkillBuildFromXML();
+            SkillBuild skillBuildFromDB = getSkillBuildFromDB(ids[0]);
+            SkillBuild mergedSkillBuild = mergeBuilds(skillBuildFromXML, skillBuildFromDB);
+            return mergedSkillBuild;
+        }
+
+        private SkillBuild mergeBuilds(SkillBuild skillBuildFromXML, SkillBuild skillBuildFromDB) {
+
+            return skillBuildFromXML;
+        }
+
+        private SkillBuild getSkillBuildFromDB(long id) {
+
+            SkillBuild skillBuildFromDB = null;
+            DataSourceSkills dataSourceSkills = new DataSourceSkills(getApplicationContext());
+            dataSourceSkills.open();
+
+            try {
+
+                if (id == NEW_SKILL_BUILD) {
+                    skillBuildFromDB = dataSourceSkills.createAndInsertSkillBuild();
+                }
+                else{
+                    skillBuildFromDB = dataSourceSkills.getSkillBuild(id);
+                }
+            }
+            catch(Exception e){
+                Log.e("Error", e.toString());
+            }
+            finally {
+                dataSourceSkills.close();
+                return skillBuildFromDB;
+            }
+        }
+
+        @NonNull
+        private SkillBuild getSkillBuildFromXML() {
+            SkillBuild skillBuildFromXML = new SkillBuild();
             XmlResourceParser xmlParser = null;
 
             //Go get the xml for all the trees
@@ -126,10 +166,10 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
                     while (eventType != XmlPullParser.END_DOCUMENT) {
 
                         if (eventType == XmlPullParser.START_DOCUMENT) {
-                            Log.d("XML", "Start Document");
+                            //Log.d("XML", "Start Document");
                         } else if (eventType == XmlPullParser.START_TAG) {
 
-                            Log.d("XML", "Start tag " + xmlParser.getName());
+                            //Log.d("XML", "Start tag " + xmlParser.getName());
                             currentTag = xmlParser.getName();
 
                             switch (xmlParser.getName()){
@@ -145,11 +185,11 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
                             }
 
                         } else if (eventType == XmlPullParser.END_TAG) {
-                            Log.d("XML", "End tag " + xmlParser.getName());
+                            //Log.d("XML", "End tag " + xmlParser.getName());
                             currentTag = xmlParser.getName();
                             switch (xmlParser.getName()){
                                 case "skill_tree":
-                                    skillBuild.getSkillTrees().add(currentSkillTree);
+                                    skillBuildFromXML.getSkillTrees().add(currentSkillTree);
                                     break;
                                 case "tier":
                                     currentSkillTree.getTierList().add(currentTier);
@@ -162,8 +202,8 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
                         } else if (eventType == XmlPullParser.TEXT) {
                             String text = xmlParser.getText();
-                            Log.d("XML", "Text " + text);
-                            Log.d("Current Tag", currentTag + "");
+                            //Log.d("XML", "Text " + text);
+                            //Log.d("Current Tag", currentTag + "");
                             switch (currentTag.toString()){
                                 case "tree_name":
                                     currentSkillTree.setName(text);
@@ -202,8 +242,8 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
             }
             xmlParser.close();
-            Log.d("Result from XML", skillBuild.toString());
-            return skillBuild;
+            //Log.d("Result from XML", skillBuildFromXML.toString());
+            return skillBuildFromXML;
         }
     }
 

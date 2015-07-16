@@ -6,6 +6,10 @@ import java.util.ArrayList;
  * Created by Jamie on 15/07/2015.
  */
 public class SkillTree {
+    long skillBuildID = -1;
+
+
+
     ArrayList<Tier> tiers;
     String name;
 
@@ -32,5 +36,13 @@ public class SkillTree {
 
     public ArrayList<Tier> getTierList() {
         return tiers;
+    }
+
+    public long getSkillBuildID() {
+        return skillBuildID;
+    }
+
+    public void setSkillBuildID(long skillBuildID) {
+        this.skillBuildID = skillBuildID;
     }
 }

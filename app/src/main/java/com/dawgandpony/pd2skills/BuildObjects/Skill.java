@@ -11,7 +11,16 @@ public class Skill {
     private String aceDescription;
     private int normalPoints;
     private int acePoints;
-    private int taken = SkillTaken.NO;
+    private int taken;
+
+    public Skill() {
+        name = "";
+        normalDescription = "";
+        aceDescription = "";
+        normalPoints = 0;
+        acePoints = 0;
+        taken = SkillTaken.NO;
+    }
 
     @Override
     public String toString() {

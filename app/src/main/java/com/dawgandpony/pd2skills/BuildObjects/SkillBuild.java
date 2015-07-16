@@ -6,9 +6,7 @@ import java.util.ArrayList;
  * Created by Jamie on 15/07/2015.
  */
 public class SkillBuild {
-    long id;
-
-
+    long id = -1;
 
     ArrayList<SkillTree> skillTrees;
     int pointsUsed;
