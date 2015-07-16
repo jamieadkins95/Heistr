@@ -86,6 +86,8 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
     private class GetSkillsFromXMLandDBTask extends AsyncTask<Long, Integer, SkillBuild> {
 
+
+
         @Override
         protected SkillBuild doInBackground(Long... ids) {
 
@@ -96,8 +98,18 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
         }
 
 
+        @Override
+        protected void onPostExecute(SkillBuild skillBuild) {
+            super.onPostExecute(skillBuild);
+
+            setCurrentSkillBuild(skillBuild);
+        }
 
 
+    }
+
+    private void setCurrentSkillBuild(SkillBuild build){
+        currentBuild.setSkillBuild(build);
     }
 
 }
