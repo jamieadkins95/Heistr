@@ -34,6 +34,9 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
     @Override
     public void init(Bundle savedInstanceState) {
+
+        InitBuild();
+
         setDrawerHeaderImage(R.drawable.payday_2_logo);
 
         MaterialSection secInfamy = newSection("Infamy", new BlankFragment());
@@ -62,14 +65,15 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
 
 
-        this.addSubheader("Infamy");
-        addSection(secInfamy);
+
         this.addSubheader("Skills");
         addSection(secMas);
         addSection(secEnf);
         addSection(secTech);
         addSection(secGhost);
         addSection(secFugi);
+        this.addSubheader("Infamy");
+        addSection(secInfamy);
         this.addSubheader("Perk Deck");
         addSection(secPD);
         this.addSubheader("Weapons");
@@ -80,6 +84,12 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
         addBottomSection(secAbout);
         addBottomSection(secSettings);
+
+
+    }
+
+    private void InitBuild(){
+        currentBuild = new Build();
 
         new GetSkillsFromXMLandDBTask().execute(SkillBuild.NEW_SKILL_BUILD);
     }

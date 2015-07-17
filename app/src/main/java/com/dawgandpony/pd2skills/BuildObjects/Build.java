@@ -5,18 +5,16 @@ package com.dawgandpony.pd2skills.BuildObjects;
  */
 public class Build {
 
-    String name;
+    String name = "";
 
 
 
     SkillBuild skillBuild;
 
-    public Build(String n) {
-
-        name= n;
-
+    public Build() {
 
     }
+
 
 
     public String getName() {
