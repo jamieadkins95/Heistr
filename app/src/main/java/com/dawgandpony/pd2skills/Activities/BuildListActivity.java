@@ -3,6 +3,7 @@ package com.dawgandpony.pd2skills.Activities;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
@@ -16,6 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
+import com.dawgandpony.pd2skills.Database.DataSourceSkills;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.utils.RVAdapter;
@@ -110,6 +113,38 @@ public class BuildListActivity extends ActionBarActivity {
 
 
             return rootView;
+        }
+
+        private class GetBuildsFromDBTask extends AsyncTask<Void, Integer, ArrayList<SkillBuild>>{
+
+            DataSourceSkills dataSourceSkills;
+            RecyclerViewEmptySupport recyclerViewvBuilds;
+
+            public GetBuildsFromDBTask(RecyclerViewEmptySupport rv) {
+                super();
+                recyclerViewvBuilds = rv;
+
+            }
+
+            @Override
+            protected ArrayList<SkillBuild> doInBackground(Void... params) {
+
+                ArrayList<SkillBuild> skillBuilds;
+
+                //Get list of skill builds from database.
+                dataSourceSkills = new DataSourceSkills(getActivity());
+                dataSourceSkills.open();
+                skillBuilds = dataSourceSkills.getAllSkillBuilds();
+                dataSourceSkills.close();
+
+
+                return skillBuilds;
+            }
+
+            @Override
+            protected void onPostExecute(ArrayList<SkillBuild> skillBuilds) {
+                super.onPostExecute(skillBuilds);
+            }
         }
     }
 }
