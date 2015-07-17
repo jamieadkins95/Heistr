@@ -14,6 +14,8 @@ import com.dawgandpony.pd2skills.Consts.SkillTaken;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
 
+import java.util.ArrayList;
+
 /**
  * Created by Jamie on 16/07/2015.
  */
@@ -74,15 +76,10 @@ public class DataSourceSkills {
             }
         }
 
-        Cursor cursorSkillTreeTiers = database.query(MySQLiteHelper.TABLE_SKILL_TREES,
-                skillTreeColumns, MySQLiteHelper.COLUMN_SKILL_BUILD_ID + " = " + skillBuildID, null,
-                null, null, null);
-        cursorSkillTreeTiers.moveToFirst();
 
 
-        SkillBuild newSkillBuild = cursorToSkillBuild(cursorBuild, cursorSkillTreeTiers);
+        SkillBuild newSkillBuild = cursorToSkillBuild(cursorBuild);
         cursorBuild.close();
-        cursorSkillTreeTiers.close();
 
         //Log.d("SkillBuild inserted DB", newSkillBuild.toString());
         return newSkillBuild;
@@ -95,32 +92,61 @@ public class DataSourceSkills {
         Cursor cursorSkillBuild = database.query(MySQLiteHelper.TABLE_SKILL_BUILDS,
                 skillBuildColumns, MySQLiteHelper.COLUMN_ID + " = " + id, null,
                 null, null, null);
-        Cursor cursorSkillTiers = database.query(MySQLiteHelper.TABLE_SKILL_TREES,
-                skillTreeColumns, MySQLiteHelper.COLUMN_SKILL_BUILD_ID + " = " + id, null,
-                null, null, null);
+
         if (cursorSkillBuild.moveToFirst()){
 
-            SkillBuild skillBuild = cursorToSkillBuild(cursorSkillBuild, cursorSkillTiers);
+            SkillBuild skillBuild = cursorToSkillBuild(cursorSkillBuild);
             cursorSkillBuild.close();
-            cursorSkillTiers.close();
+
             return skillBuild;
         }
         else{
             cursorSkillBuild.close();
-            cursorSkillTiers.close();
             return null;
         }
 
 
+
     }
 
-    private SkillBuild cursorToSkillBuild(Cursor cursorSkillBuild, Cursor cursorSkillTreeTiers){
+    public ArrayList<SkillBuild> getAllSkillBuilds(){
+        ArrayList<SkillBuild> skillBuilds = new ArrayList<>();
+
+        Cursor cursorSkillBuild = database.query(MySQLiteHelper.TABLE_SKILL_BUILDS,
+                skillBuildColumns, null, null,
+                null, null, null);
+
+
+
+        if (cursorSkillBuild.moveToFirst()){
+
+            while (!cursorSkillBuild.isAfterLast()){
+                SkillBuild skillBuild = cursorToSkillBuild(cursorSkillBuild);
+                skillBuilds.add(skillBuild);
+                cursorSkillBuild.moveToNext();
+            }
+
+
+
+        }
+
+        cursorSkillBuild.close();
+        return skillBuilds;
+
+
+    }
+
+    private SkillBuild cursorToSkillBuild(Cursor cursorSkillBuild){
 
         SkillBuild skillBuild =  new SkillBuild();
-
         long skillBuildID = cursorSkillBuild.getLong(0);
-
         skillBuild.setId(skillBuildID);
+
+        Cursor cursorSkillTreeTiers = database.query(MySQLiteHelper.TABLE_SKILL_TREES,
+                skillTreeColumns, MySQLiteHelper.COLUMN_SKILL_BUILD_ID + " = " + skillBuildID, null,
+                null, null, null);
+
+        cursorSkillTreeTiers.moveToFirst();
 
         while (!cursorSkillTreeTiers.isAfterLast()){
 
@@ -159,6 +185,7 @@ public class DataSourceSkills {
 
         }
 
+        cursorSkillTreeTiers.close();
 
         //Log.d("SkillBuild retireved DB", skillBuild.toString());
         return skillBuild;
