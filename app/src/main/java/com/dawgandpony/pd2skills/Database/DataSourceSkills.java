@@ -71,7 +71,7 @@ public class DataSourceSkills {
                 values.put(MySQLiteHelper.COLUMNS_SKILLS[1], SkillTaken.NO);
                 values.put(MySQLiteHelper.COLUMNS_SKILLS[2], SkillTaken.NO);
 
-                long id = database.insert(MySQLiteHelper.TABLE_SKILL_TREES, null, values);
+                long id = database.insert(MySQLiteHelper.TABLE_SKILL_TIERS, null, values);
                 //Log.d("DB creation", "Tier ID = " + id + " - Added tier " + tier + " to tree " + tree);
             }
         }
@@ -142,7 +142,7 @@ public class DataSourceSkills {
         long skillBuildID = cursorSkillBuild.getLong(0);
         skillBuild.setId(skillBuildID);
 
-        Cursor cursorSkillTreeTiers = database.query(MySQLiteHelper.TABLE_SKILL_TREES,
+        Cursor cursorSkillTreeTiers = database.query(MySQLiteHelper.TABLE_SKILL_TIERS,
                 skillTreeColumns, MySQLiteHelper.COLUMN_SKILL_BUILD_ID + " = " + skillBuildID, null,
                 null, null, null);
 

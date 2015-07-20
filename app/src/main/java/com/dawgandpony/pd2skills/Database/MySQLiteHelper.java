@@ -11,7 +11,7 @@ import android.util.Log;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pd2skills.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 7;
 
 
     //region Skills
@@ -24,7 +24,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + " integer primary key autoincrement, " + COLUMN_NAME
             + " text);";
 
-    public static final String TABLE_SKILL_TREES = "tbSkillTrees";
+    public static final String TABLE_SKILL_TIERS = "tbSkillTrees";
     public static final String COLUMN_SKILL_BUILD_ID = "skillBuildID";
     public static final String COLUMN_TREE = "tree";
     public static final String COLUMN_TIER = "tier";
@@ -33,8 +33,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             "skill2",
             "skill3"};
 
-    private static final String CREATE_SKILL_TREE_TABLE = "create table if not exists "
-            + TABLE_SKILL_TREES + "(" + COLUMN_ID
+    private static final String CREATE_SKILL_TIER_TABLE = "create table if not exists "
+            + TABLE_SKILL_TIERS + "(" + COLUMN_ID
             + " integer primary key autoincrement, " + COLUMN_SKILL_BUILD_ID
             + " integer," + COLUMN_TREE
             + " integer," + COLUMN_TIER
@@ -44,11 +44,30 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + " integer);";
     //endregion
 
+    //region Builds
+    public static final String TABLE_BUILDS = "tbBuilds";
+    public static final String COLUMN_WEAPON_BUILD_ID = "weaponBuildID";
+    public static final String COLUMN_INFAMY_ID = "infamy";
+    public static final String COLUMN_PERK_DECK = "perkdeck";
+    public static final String COLUMN_ARMOUR = "armour";
+
+    private static final String CREATE_BUILD_TABLE = "create table if not exists "
+            + TABLE_BUILDS + "(" + COLUMN_ID
+            + " integer primary key autoincrement, " + COLUMN_NAME
+            + " text, "  + COLUMN_SKILL_BUILD_ID
+            + " integer," + COLUMN_WEAPON_BUILD_ID
+            + " integer," + COLUMN_INFAMY_ID
+            + " integer," + COLUMN_PERK_DECK
+            + " integer," + COLUMN_ARMOUR
+            + " integer);";
+    //endregion
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_SKILL_BUILD_TABLE);
-        db.execSQL(CREATE_SKILL_TREE_TABLE);
+        db.execSQL(CREATE_SKILL_TIER_TABLE);
+        db.execSQL(CREATE_BUILD_TABLE);
     }
 
     @Override
@@ -58,7 +77,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                         + newVersion + ", which will destroy some old data");
 
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_BUILDS);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_TREES);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_TIERS);
         onCreate(db);
     }
 

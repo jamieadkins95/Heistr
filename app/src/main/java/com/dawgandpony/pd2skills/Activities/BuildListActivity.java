@@ -5,9 +5,9 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
@@ -18,16 +18,20 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
-import com.dawgandpony.pd2skills.Database.DataSourceSkills;
+import com.dawgandpony.pd2skills.Consts.Trees;
+import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
-import com.dawgandpony.pd2skills.utils.RVAdapter;
+import com.dawgandpony.pd2skills.utils.RVBuildListAdapter;
 import com.dawgandpony.pd2skills.utils.RecyclerViewEmptySupport;
 
 import java.util.ArrayList;
 
 
-public class BuildListActivity extends ActionBarActivity {
+public class BuildListActivity extends AppCompatActivity {
+
+
+    public final static String EXTRA_BUILD_ID = "com.dawgandpony.pd2skills.BUILDID";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +75,6 @@ public class BuildListActivity extends ActionBarActivity {
 
         RecyclerViewEmptySupport rvBuilds;
         CardView cv;
-        ArrayList<Build> builds;
         FloatingActionButton fab;
 
         public BuildListFragment() {
@@ -80,17 +83,14 @@ public class BuildListActivity extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+
             View rootView = inflater.inflate(R.layout.fragment_build_list, container, false);
-            builds = new ArrayList<Build>();
-
-            RVAdapter mAdapter = new RVAdapter(builds);
-            //RVAdapter mAdapter = new RVAdapter(SkillBuild.exampleData());
-
-
             this.rvBuilds = (RecyclerViewEmptySupport) rootView.findViewById(R.id.rvBuilds);
             this.rvBuilds.setLayoutManager(new LinearLayoutManager(this.getActivity()));
             this.rvBuilds.setEmptyView(rootView.findViewById(R.id.emptyElement));
-            this.rvBuilds.setAdapter(mAdapter);
+
+
+            new GetBuildsFromDBTask(rvBuilds).execute();
 
             fab = (FloatingActionButton) rootView.findViewById(R.id.fabNewBuild);
 
@@ -105,6 +105,7 @@ public class BuildListActivity extends ActionBarActivity {
 
                     //Go to the build edit activity with a new build
                     Intent intent = new Intent(getActivity(), EditBuildActivity.class);
+                    intent.putExtra(EXTRA_BUILD_ID, Long.toString(SkillBuild.NEW_SKILL_BUILD));
                     startActivity(intent);
 
 
@@ -115,35 +116,44 @@ public class BuildListActivity extends ActionBarActivity {
             return rootView;
         }
 
-        private class GetBuildsFromDBTask extends AsyncTask<Void, Integer, ArrayList<SkillBuild>>{
+        @Override
+        public void onResume() {
+            super.onResume();
+            new GetBuildsFromDBTask(rvBuilds).execute();
+        }
 
-            DataSourceSkills dataSourceSkills;
-            RecyclerViewEmptySupport recyclerViewvBuilds;
+        private class GetBuildsFromDBTask extends AsyncTask<Void, Integer, ArrayList<Build>>{
+
+            DataSourceBuilds dataSourceBuilds;
+            RecyclerViewEmptySupport recyclerViewBuilds;
 
             public GetBuildsFromDBTask(RecyclerViewEmptySupport rv) {
                 super();
-                recyclerViewvBuilds = rv;
+                recyclerViewBuilds = rv;
 
             }
 
             @Override
-            protected ArrayList<SkillBuild> doInBackground(Void... params) {
+            protected ArrayList<Build> doInBackground(Void... params) {
 
-                ArrayList<SkillBuild> skillBuilds;
+                ArrayList<Build> builds;
 
                 //Get list of skill builds from database.
-                dataSourceSkills = new DataSourceSkills(getActivity());
-                dataSourceSkills.open();
-                skillBuilds = dataSourceSkills.getAllSkillBuilds();
-                dataSourceSkills.close();
+                dataSourceBuilds = new DataSourceBuilds(getActivity());
+                dataSourceBuilds.open();
+                builds = dataSourceBuilds.getAllBuilds();
+                dataSourceBuilds.close();
 
 
-                return skillBuilds;
+                return builds;
             }
 
             @Override
-            protected void onPostExecute(ArrayList<SkillBuild> skillBuilds) {
-                super.onPostExecute(skillBuilds);
+            protected void onPostExecute(ArrayList<Build> builds) {
+                super.onPostExecute(builds);
+
+                RVBuildListAdapter mAdapter = new RVBuildListAdapter(builds);
+                recyclerViewBuilds.setAdapter(mAdapter);
             }
         }
     }

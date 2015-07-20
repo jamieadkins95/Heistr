@@ -1,24 +1,16 @@
 package com.dawgandpony.pd2skills.Activities;
 
-import android.content.res.XmlResourceParser;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
-import com.dawgandpony.pd2skills.Database.DataSourceSkills;
+import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Fragments.BlankFragment;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.Fragments.SkillTreeFragment;
-import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
-import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
-import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
-
-import org.xmlpull.v1.XmlPullParser;
 
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.neokree.materialnavigationdrawer.elements.MaterialSection;
@@ -29,13 +21,16 @@ import it.neokree.materialnavigationdrawer.elements.MaterialSection;
 public class EditBuildActivity extends MaterialNavigationDrawer {
 
     private Build currentBuild;
-
+    private Intent intentFromPreviousActivity;
+    DataSourceBuilds dataSourceBuilds;
 
 
     @Override
     public void init(Bundle savedInstanceState) {
 
-        InitBuild();
+
+        InitBuild(GetBuildIdFromIntent());
+
 
         setDrawerHeaderImage(R.drawable.payday_2_logo);
 
@@ -88,10 +83,19 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
     }
 
-    private void InitBuild(){
-        currentBuild = new Build();
+    private long GetBuildIdFromIntent() {
+        intentFromPreviousActivity = getIntent();
+        String buildIDString = intentFromPreviousActivity.getStringExtra(BuildListActivity.EXTRA_BUILD_ID);
+        return Long.valueOf(buildIDString).longValue();
+    }
 
-        new GetSkillsFromXMLandDBTask().execute(SkillBuild.NEW_SKILL_BUILD);
+    private void InitBuild(long buildID){
+        dataSourceBuilds = new DataSourceBuilds(this);
+        dataSourceBuilds.open();
+        currentBuild = dataSourceBuilds.getBuild(buildID);
+        dataSourceBuilds.close();
+
+        new GetSkillsFromXMLandDBTask().execute(currentBuild.getSkillBuildID());
     }
 
     private class GetSkillsFromXMLandDBTask extends AsyncTask<Long, Integer, SkillBuild> {

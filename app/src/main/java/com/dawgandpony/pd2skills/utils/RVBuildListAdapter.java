@@ -15,12 +15,12 @@ import java.util.List;
 /**
  * Created by Jamie on 14/07/2015.
  */
-public class RVAdapter extends RecyclerView.Adapter<RVAdapter.BuildViewHolder>{
+public class RVBuildListAdapter extends RecyclerView.Adapter<RVBuildListAdapter.BuildViewHolder>{
 
 
     List<Build> builds;
 
-    public RVAdapter(List<Build> b){
+    public RVBuildListAdapter(List<Build> b){
         this.builds = b;
     }
 
