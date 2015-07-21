@@ -98,10 +98,8 @@ public class SkillBuild {
 
             mergedSkillBuild.getSkillTrees().add(newTree);
         }
-        for (SkillTree tree : mergedSkillBuild.getSkillTrees()){
-            Log.d("SkillTree Merge", "Successful merge! " + tree.toString());
-        }
 
+        Log.d("SkillTree Merge", "Successful merge!");
         return mergedSkillBuild;
 
     }

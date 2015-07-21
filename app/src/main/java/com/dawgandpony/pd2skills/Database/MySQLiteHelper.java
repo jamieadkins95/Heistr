@@ -11,7 +11,7 @@ import android.util.Log;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pd2skills.db";
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 8;
 
 
     //region Skills
@@ -76,6 +76,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "Upgrading database from version " + oldVersion + " to "
                         + newVersion + ", which will destroy some old data");
 
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_BUILDS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_BUILDS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_TIERS);
         onCreate(db);

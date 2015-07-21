@@ -8,6 +8,7 @@ import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Fragments.BlankFragment;
 import com.dawgandpony.pd2skills.Consts.Trees;
+import com.dawgandpony.pd2skills.Fragments.BuildListFragment;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.Fragments.SkillTreeFragment;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
@@ -85,7 +86,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
     private long GetBuildIdFromIntent() {
         intentFromPreviousActivity = getIntent();
-        String buildIDString = intentFromPreviousActivity.getStringExtra(BuildListActivity.EXTRA_BUILD_ID);
+        String buildIDString = intentFromPreviousActivity.getStringExtra(BuildListFragment.EXTRA_BUILD_ID);
         return Long.valueOf(buildIDString).longValue();
     }
 

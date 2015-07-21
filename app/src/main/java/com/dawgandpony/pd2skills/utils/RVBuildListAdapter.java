@@ -25,20 +25,32 @@ public class RVBuildListAdapter extends RecyclerView.Adapter<RVBuildListAdapter.
     }
 
 
-    public static class BuildViewHolder extends RecyclerView.ViewHolder {
+
+    public static class BuildViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         CardView cv;
         TextView buildName;
         TextView primaryWeapon;
         TextView pointsUsed;
+        View mView;
 
 
 
         BuildViewHolder(View itemView) {
             super(itemView);
+            mView = itemView;
             cv = (CardView)itemView.findViewById(R.id.cvBuilds);
             buildName = (TextView)itemView.findViewById(R.id.tvName);
             primaryWeapon = (TextView)itemView.findViewById(R.id.tvPrimaryWeapon);
             pointsUsed = (TextView)itemView.findViewById(R.id.tvPointsUsed);
+        }
+
+        private void onLongClick() {
+            mView.showContextMenu();
+        }
+
+        @Override
+        public void onClick(View v) {
+
         }
     }
 
@@ -69,5 +81,8 @@ public class RVBuildListAdapter extends RecyclerView.Adapter<RVBuildListAdapter.
     public int getItemCount() {
         return builds.size();
     }
+
+
+
 
 }

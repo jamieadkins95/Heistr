@@ -16,6 +16,8 @@
 
     <string name="hello_blank_fragment">Coming Soon!</string>
     <string name="default_string">Loading..</string>
+    <string name="menu_build_list_title">Build Selected</string>
+    <string name="action_delete">Delete</string>
 
 
     <string-array name="skill_trees">
