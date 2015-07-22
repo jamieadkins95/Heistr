@@ -26,6 +26,7 @@ import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.R;
+import com.dawgandpony.pd2skills.utils.ArrayAdapterBuildList;
 import com.dawgandpony.pd2skills.utils.RVBuildListAdapter;
 import com.dawgandpony.pd2skills.utils.RecyclerViewBuildList;
 
@@ -143,15 +144,16 @@ public class BuildListFragment extends Fragment {
         @Override
         protected void onPostExecute(ArrayList<Build> builds) {
             super.onPostExecute(builds);
+
             ArrayList<String> testStrings = new ArrayList<>();
             for (Build b : builds){
                 testStrings.add(b.getSkillBuild() + "");
             }
 
-            RVBuildListAdapter mAdapter = new RVBuildListAdapter(builds);
 
-            ArrayAdapter<String> itemsAdapter =
-                    new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, testStrings);
+
+            ArrayAdapterBuildList itemsAdapter =
+                    new ArrayAdapterBuildList(getActivity(), builds);
 
             listViewBuilds.setAdapter(itemsAdapter);
             registerForContextMenu(listViewBuilds);
