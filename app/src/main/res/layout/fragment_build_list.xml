@@ -10,7 +10,8 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lvBuilds"/>
+        android:id="@+id/lvBuilds"
+        android:divider="@null"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabNewBuild"
