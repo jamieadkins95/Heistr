@@ -10,12 +10,17 @@ import android.support.v4.app.Fragment;
 import android.support.v7.internal.widget.AdapterViewCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
+import android.util.SparseBooleanArray;
+import android.view.ActionMode;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -55,6 +60,56 @@ public class BuildListFragment extends Fragment {
 
         this.lvBuilds = (ListView) rootView.findViewById(R.id.lvBuilds);
         this.lvBuilds.setEmptyView(rootView.findViewById(R.id.emptyElement));
+        this.lvBuilds.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
+
+        this.lvBuilds.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
+            @Override
+            public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
+                mode.setTitle(lvBuilds.getCheckedItemCount() + " selected builds");
+            }
+
+            @Override
+            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                MenuInflater menuInflater = mode.getMenuInflater();
+                menuInflater.inflate(R.menu.menu_build_list_context, menu);
+                return true;
+            }
+
+            @Override
+            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                return false;
+            }
+
+            @Override
+            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.action_delete:
+                        DeleteBuilds();
+                        mode.finish();
+                        return true;
+                    default:
+                        mode.finish();
+                        return false;
+                }
+
+            }
+
+            private void DeleteBuilds() {
+                SparseBooleanArray checked = lvBuilds.getCheckedItemPositions();
+
+                for (int i = 0; i < checked.size();i++){
+                    if (checked.valueAt(i)){
+                        Build selectedBuild = (Build) lvBuilds.getItemAtPosition(checked.keyAt(i));
+                        Log.d("Context Action", "Delete build " + selectedBuild.getSkillBuildID());
+                    }
+                }
+            }
+
+            @Override
+            public void onDestroyActionMode(ActionMode mode) {
+
+            }
+        });
 
 
         new GetBuildsFromDBTask(lvBuilds).execute();
@@ -156,7 +211,7 @@ public class BuildListFragment extends Fragment {
                     new ArrayAdapterBuildList(getActivity(), builds);
 
             listViewBuilds.setAdapter(itemsAdapter);
-            registerForContextMenu(listViewBuilds);
+            //registerForContextMenu(listViewBuilds);
         }
     }
 }
