@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.internal.widget.AdapterViewCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.ContextMenu;
@@ -29,6 +30,7 @@ import com.dawgandpony.pd2skills.utils.RVBuildListAdapter;
 import com.dawgandpony.pd2skills.utils.RecyclerViewBuildList;
 
 import java.util.ArrayList;
+import java.util.concurrent.LinkedTransferQueue;
 
 /**
  * A fragment containing the list of skill builds
@@ -37,7 +39,6 @@ public class BuildListFragment extends Fragment {
 
     public final static String EXTRA_BUILD_ID = "com.dawgandpony.pd2skills.BUILDID";
 
-    RecyclerViewBuildList rvBuilds;
     ListView lvBuilds;
     CardView cv;
     FloatingActionButton fab;
@@ -50,14 +51,12 @@ public class BuildListFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_build_list, container, false);
-        this.rvBuilds = (RecyclerViewBuildList) rootView.findViewById(R.id.rvBuilds);
+
         this.lvBuilds = (ListView) rootView.findViewById(R.id.lvBuilds);
-
-        this.rvBuilds.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        this.rvBuilds.setEmptyView(rootView.findViewById(R.id.emptyElement));
+        this.lvBuilds.setEmptyView(rootView.findViewById(R.id.emptyElement));
 
 
-        new GetBuildsFromDBTask(rvBuilds, lvBuilds).execute();
+        new GetBuildsFromDBTask(lvBuilds).execute();
 
         fab = (FloatingActionButton) rootView.findViewById(R.id.fabNewBuild);
 
@@ -86,7 +85,7 @@ public class BuildListFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        new GetBuildsFromDBTask(rvBuilds, lvBuilds).execute();
+        new GetBuildsFromDBTask(lvBuilds).execute();
     }
 
     @Override
@@ -99,7 +98,8 @@ public class BuildListFragment extends Fragment {
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        RecyclerViewBuildList info = (RecyclerViewBuildList) item.getMenuInfo();
+        AdapterViewCompat.AdapterContextMenuInfo info = (AdapterViewCompat.AdapterContextMenuInfo) item.getMenuInfo();
+
 
         switch (item.getItemId()) {
             case R.id.action_delete:
@@ -115,12 +115,12 @@ public class BuildListFragment extends Fragment {
     private class GetBuildsFromDBTask extends AsyncTask<Void, Integer, ArrayList<Build>> {
 
         DataSourceBuilds dataSourceBuilds;
-        RecyclerViewBuildList recyclerViewBuilds;
+
         ListView listViewBuilds;
 
-        public GetBuildsFromDBTask(RecyclerViewBuildList rv, ListView lv) {
+        public GetBuildsFromDBTask(ListView lv) {
             super();
-            recyclerViewBuilds = rv;
+
             listViewBuilds = lv;
 
         }
@@ -149,9 +149,6 @@ public class BuildListFragment extends Fragment {
             }
 
             RVBuildListAdapter mAdapter = new RVBuildListAdapter(builds);
-
-            recyclerViewBuilds.setAdapter(mAdapter);
-            registerForContextMenu(recyclerViewBuilds);
 
             ArrayAdapter<String> itemsAdapter =
                     new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, testStrings);
