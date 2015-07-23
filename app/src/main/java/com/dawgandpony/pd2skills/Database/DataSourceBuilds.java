@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
@@ -50,7 +51,7 @@ public class DataSourceBuilds {
 
     }
 
-    public Build createAndInsertBuild(){
+    public Build createAndInsertBuild(String name){
 
         dataSourceSkills = new DataSourceSkills(context);
         dataSourceSkills.open();
@@ -58,7 +59,7 @@ public class DataSourceBuilds {
         dataSourceSkills.close();
 
         ContentValues buildValues = new ContentValues();
-        buildValues.put(MySQLiteHelper.COLUMN_NAME, "Untitled Build - " + skillBuildID);
+        buildValues.put(MySQLiteHelper.COLUMN_NAME, name);
         buildValues.put(MySQLiteHelper.COLUMN_SKILL_BUILD_ID, skillBuildID);
         buildValues.put(MySQLiteHelper.COLUMN_WEAPON_BUILD_ID, -1);
         buildValues.put(MySQLiteHelper.COLUMN_INFAMY_ID, -1);
@@ -87,10 +88,10 @@ public class DataSourceBuilds {
 
     }
 
-    public Build getBuild(long id){
+    public Build getBuild(long id, String nameForNewBuild){
         Build build;
         if (id == SkillBuild.NEW_SKILL_BUILD){
-            build = createAndInsertBuild();
+            build = createAndInsertBuild(nameForNewBuild);
         }
         else {
             Cursor cursorBuild = database.query(MySQLiteHelper.TABLE_BUILDS,
@@ -145,6 +146,7 @@ public class DataSourceBuilds {
     public void DeleteBuild(long id){
 
         database.delete(MySQLiteHelper.TABLE_BUILDS, MySQLiteHelper.COLUMN_ID + " = " + id, null);
+        Toast.makeText(context, "Build deleted", Toast.LENGTH_SHORT).show();
 
     }
 

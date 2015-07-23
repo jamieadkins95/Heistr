@@ -42,6 +42,8 @@
     <string name="weapon_attribute_concealment_shorthand">Con:</string>
 
 
+    <string name="message_new_build">Enter a name for this new build.</string>
+
 
     <string-array name="skill_trees">
         <item>Mastermind</item>

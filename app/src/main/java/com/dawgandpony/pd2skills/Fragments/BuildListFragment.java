@@ -1,5 +1,7 @@
 package com.dawgandpony.pd2skills.Fragments;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -14,14 +16,18 @@ import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.ActionMode;
 import android.view.ContextMenu;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -43,6 +49,7 @@ import java.util.concurrent.LinkedTransferQueue;
 public class BuildListFragment extends Fragment {
 
     public final static String EXTRA_BUILD_ID = "com.dawgandpony.pd2skills.BUILDID";
+    public final static String EXTRA_BUILD_NAME = "com.dawgandpony.pd2skills.BUILDNAME";
 
     ListView lvBuilds;
     CardView cv;
@@ -104,6 +111,8 @@ public class BuildListFragment extends Fragment {
                         dataSourceBuilds.DeleteBuild(selectedBuild.getId());
                         dataSourceBuilds.close();
 
+                        new GetBuildsFromDBTask(lvBuilds).execute();
+
                         Log.d("Context Action", "Delete build " + selectedBuild.getSkillBuildID());
                     }
                 }
@@ -128,11 +137,55 @@ public class BuildListFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final EditText txtBuildName = new EditText(getActivity());
 
-                //Go to the build edit activity with a new build
-                Intent intent = new Intent(getActivity(), EditBuildActivity.class);
-                intent.putExtra(EXTRA_BUILD_ID, Long.toString(SkillBuild.NEW_SKILL_BUILD));
-                startActivity(intent);
+                txtBuildName.setHeight(100);
+                txtBuildName.setWidth(340);
+                txtBuildName.setGravity(Gravity.LEFT);
+                txtBuildName.setTextColor(Color.BLACK);
+
+
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT);
+                lp.setMargins(4,16,4,16);
+
+                txtBuildName.setLayoutParams(lp);
+
+
+                txtBuildName.setImeOptions(EditorInfo.IME_ACTION_DONE);
+
+                //txtBuildName.setTextAppearance(getActivity(), R.color.abc_search_url_text_normal);
+                new AlertDialog.Builder(getActivity())
+                        .setTitle("New Build")
+                        .setMessage(R.string.message_new_build)
+                        .setView(txtBuildName)
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                try {
+                                    //Go to the build edit activity with a new build
+                                    Intent intent = new Intent(getActivity(), EditBuildActivity.class);
+                                    intent.putExtra(EXTRA_BUILD_ID, Long.toString(SkillBuild.NEW_SKILL_BUILD));
+                                    intent.putExtra(EXTRA_BUILD_NAME, txtBuildName.getText().toString());
+                                    startActivity(intent);
+
+                                } catch (Exception e) {
+                                    Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
+                                }
+
+
+                            }
+                        })
+                        .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // do nothing
+                            }
+                        })
+
+                        .show();
+
+
 
 
             }
@@ -148,29 +201,6 @@ public class BuildListFragment extends Fragment {
         new GetBuildsFromDBTask(lvBuilds).execute();
     }
 
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-
-        menu.setHeaderTitle(getString(R.string.menu_build_list_title));
-        MenuInflater inflater = getActivity().getMenuInflater();
-        inflater.inflate(R.menu.menu_build_list_context, menu);
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        AdapterViewCompat.AdapterContextMenuInfo info = (AdapterViewCompat.AdapterContextMenuInfo) item.getMenuInfo();
-
-
-        switch (item.getItemId()) {
-            case R.id.action_delete:
-
-                Toast.makeText(getActivity(), "Coming Soon!", Toast.LENGTH_SHORT).show();
-
-                return true;
-            default:
-                return super.onContextItemSelected(item);
-        }
-    }
 
     private class GetBuildsFromDBTask extends AsyncTask<Void, Integer, ArrayList<Build>> {
 
@@ -215,7 +245,7 @@ public class BuildListFragment extends Fragment {
                     new ArrayAdapterBuildList(getActivity(), builds);
 
             listViewBuilds.setAdapter(itemsAdapter);
-            //registerForContextMenu(listViewBuilds);
+
         }
     }
 }
