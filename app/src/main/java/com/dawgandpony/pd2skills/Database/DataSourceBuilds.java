@@ -142,6 +142,12 @@ public class DataSourceBuilds {
 
     }
 
+    public void DeleteBuild(long id){
+
+        database.delete(MySQLiteHelper.TABLE_BUILDS, MySQLiteHelper.COLUMN_ID + " = " + id, null);
+
+    }
+
     private Build cursorToBuild(Cursor cursorBuild){
 
         Build build = new Build();

@@ -99,6 +99,11 @@ public class BuildListFragment extends Fragment {
                 for (int i = 0; i < checked.size();i++){
                     if (checked.valueAt(i)){
                         Build selectedBuild = (Build) lvBuilds.getItemAtPosition(checked.keyAt(i));
+                        DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(getActivity());
+                        dataSourceBuilds.open();
+                        dataSourceBuilds.DeleteBuild(selectedBuild.getId());
+                        dataSourceBuilds.close();
+
                         Log.d("Context Action", "Delete build " + selectedBuild.getSkillBuildID());
                     }
                 }

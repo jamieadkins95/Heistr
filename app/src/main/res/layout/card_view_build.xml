@@ -36,10 +36,202 @@
                 />
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/llWeapons"
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_below="@+id/tvName"
+                >
+
+                <!--android:showDividers="middle"
+                android:dividerPadding="2.5dp"
+                android:divider="?android:listDivider"-->
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+
+                        android:text="Car-4"
+                        android:textColor="@color/greyText"
+                        android:textSize="20sp"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:text="@string/weapon_attribute_damage_shorthand"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:text="@string/weapon_attribute_accuracy_shorthand"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:text="@string/weapon_attribute_stability_shorthand"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:text="@string/weapon_attribute_concealment_shorthand"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:layout_gravity="center"
+                            android:id="@+id/tvDamageValuePrimary"
+                            android:text="0"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:text="0"
+                            android:id="@+id/tvAccuracyValuePrimary"
+                            android:layout_gravity="center"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:id="@+id/tvStabiltyValuePrimary"
+                            android:layout_gravity="center"
+                            android:text="0"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:layout_gravity="center"
+                            android:id="@+id/tvConcealmentValuePrimary"
+                            android:text="0"/>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+
+                        android:text="Loco"
+                        android:textColor="@color/greyText"
+                        android:textSize="20sp"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:text="@string/weapon_attribute_damage_shorthand"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:text="@string/weapon_attribute_accuracy_shorthand"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:text="@string/weapon_attribute_stability_shorthand"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:text="@string/weapon_attribute_concealment_shorthand"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:layout_gravity="center"
+                            android:id="@+id/tvDamageValueSecondary"
+                            android:text="0"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:text="0"
+                            android:id="@+id/tvAccuracyValueSecondary"
+                            android:layout_gravity="center"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:id="@+id/tvStabiltyValueSecondary"
+                            android:layout_gravity="center"
+                            android:text="0"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="#BDBDBD"
+                            android:layout_gravity="center"
+                            android:id="@+id/tvConcealmentValueSecondary"
+                            android:text="0"/>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/llTreeNames"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvName"
+                android:baselineAligned="true"
+                android:layout_below="@+id/llWeapons"
                 android:showDividers="middle"
                 android:dividerPadding="2.5dp"
                 android:divider="?android:listDivider"
@@ -57,9 +249,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/tvArmour"
-                        android:textColor="#BDBDBD"
+                        android:textColor="@color/greyText"
+                        android:textSize="15dp"
                         android:gravity="center"
-                        android:text="Suit"/>
+                        android:text="@string/armour_suit"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -71,13 +264,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textColor="#BDBDBD"
+                        android:textColor="@color/greyTextLight"
                         android:text="@string/mastermind_shorthand"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/masSkillCount"
-                        android:textColor="#BDBDBD"
+                        android:textColor="@color/greyTextLight"
                         android:text="0"/>
                 </LinearLayout>
                 <LinearLayout
@@ -89,13 +282,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textColor="#BDBDBD"
+                        android:textColor="@color/greyTextLight"
                         android:text="@string/enforcer_shorthand"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/enfSkillCount"
-                        android:textColor="#BDBDBD"
+                        android:textColor="@color/greyTextLight"
                         android:text="0"/>
                 </LinearLayout>
                 <LinearLayout
@@ -107,13 +300,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textColor="#BDBDBD"
+                        android:textColor="@color/greyTextLight"
                         android:text="@string/technician_shorthand"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/techSkillCount"
-                        android:textColor="#BDBDBD"
+                        android:textColor="@color/greyTextLight"
                         android:text="0"/>
                 </LinearLayout>
                 <LinearLayout
@@ -125,13 +318,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textColor="#BDBDBD"
+                        android:textColor="@color/greyTextLight"
                         android:text="@string/ghost_shorthand"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/ghoSkillCount"
-                        android:textColor="#BDBDBD"
+                        android:textColor="@color/greyTextLight"
                         android:text="0"/>
                 </LinearLayout>
                 <LinearLayout
@@ -143,13 +336,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textColor="#BDBDBD"
+                        android:textColor="@color/greyTextLight"
                         android:text="@string/fugitive_shorthand"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/fugSkillCount"
-                        android:textColor="#BDBDBD"
+                        android:textColor="@color/greyTextLight"
                         android:text="0"/>
                 </LinearLayout>
 

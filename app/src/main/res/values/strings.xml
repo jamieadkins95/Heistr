@@ -25,6 +25,23 @@
     <string name="ghost_shorthand">Gho</string>
     <string name="fugitive_shorthand">Fug</string>
 
+    <string name="armour_suit">Suit</string>
+    <string name="armour_lbv">LBV</string>
+    <string name="armour_bv">BV</string>
+    <string name="armour_hbv">HBV</string>
+    <string name="armour_fj">FJ</string>
+    <string name="armour_ctv">CTV</string>
+    <string name="armour_ictv">ICTV</string>
+
+    <string name="weapon_attribute_magazine_shorthand">Mag:</string>
+    <string name="weapon_attribute_ammo_shorthand">Amm:</string>
+    <string name="weapon_attribute_rof_shorthand">RoF:</string>
+    <string name="weapon_attribute_damage_shorthand">Dam:</string>
+    <string name="weapon_attribute_accuracy_shorthand">Acc:</string>
+    <string name="weapon_attribute_stability_shorthand">Stab:</string>
+    <string name="weapon_attribute_concealment_shorthand">Con:</string>
+
+
 
     <string-array name="skill_trees">
         <item>Mastermind</item>
