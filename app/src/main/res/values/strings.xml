@@ -18,6 +18,12 @@
     <string name="default_string">Loading..</string>
     <string name="menu_build_list_title">Build Selected</string>
     <string name="action_delete">Delete</string>
+    <string name="untitled_build">Untitled Build</string>
+    <string name="mastermind_shorthand">Mas</string>
+    <string name="enforcer_shorthand">Enf</string>
+    <string name="technician_shorthand">Tech</string>
+    <string name="ghost_shorthand">Gho</string>
+    <string name="fugitive_shorthand">Fug</string>
 
 
     <string-array name="skill_trees">

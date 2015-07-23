@@ -32,8 +32,7 @@ import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterBuildList;
-import com.dawgandpony.pd2skills.utils.RVBuildListAdapter;
-import com.dawgandpony.pd2skills.utils.RecyclerViewBuildList;
+
 
 import java.util.ArrayList;
 import java.util.concurrent.LinkedTransferQueue;

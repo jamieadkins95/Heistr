@@ -24,8 +24,7 @@ import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Fragments.BuildListFragment;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
-import com.dawgandpony.pd2skills.utils.RVBuildListAdapter;
-import com.dawgandpony.pd2skills.utils.RecyclerViewBuildList;
+
 
 import java.util.ArrayList;
 

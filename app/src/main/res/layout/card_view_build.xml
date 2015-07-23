@@ -20,38 +20,148 @@
             android:id="@+id/rlBuilds"
             >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvPointsUsed"
-                android:textSize="50sp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="16dp"
-                android:text="0"
-                />
+
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvName"
-                android:layout_toRightOf="@+id/tvPointsUsed"
-                android:layout_toEndOf="@+id/tvPointsUsed"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+
                 android:layout_alignParentTop="true"
                 android:textSize="30sp"
-                android:text="Untitled Build"
+                android:text="@string/untitled_build"
                 />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/llTreeNames"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvPrimaryWeapon"
-                android:layout_toRightOf="@+id/tvPointsUsed"
-                android:layout_toEndOf="@+id/tvPointsUsed"
                 android:layout_below="@+id/tvName"
-                android:text="Car-4"
-                />
+                android:showDividers="middle"
+                android:dividerPadding="2.5dp"
+                android:divider="?android:listDivider"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.2"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvArmour"
+                        android:textColor="#BDBDBD"
+                        android:gravity="center"
+                        android:text="Suit"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="#BDBDBD"
+                        android:text="@string/mastermind_shorthand"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/masSkillCount"
+                        android:textColor="#BDBDBD"
+                        android:text="0"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="#BDBDBD"
+                        android:text="@string/enforcer_shorthand"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/enfSkillCount"
+                        android:textColor="#BDBDBD"
+                        android:text="0"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="#BDBDBD"
+                        android:text="@string/technician_shorthand"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/techSkillCount"
+                        android:textColor="#BDBDBD"
+                        android:text="0"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="#BDBDBD"
+                        android:text="@string/ghost_shorthand"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ghoSkillCount"
+                        android:textColor="#BDBDBD"
+                        android:text="0"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="#BDBDBD"
+                        android:text="@string/fugitive_shorthand"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fugSkillCount"
+                        android:textColor="#BDBDBD"
+                        android:text="0"/>
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
 
         </RelativeLayout>
 
