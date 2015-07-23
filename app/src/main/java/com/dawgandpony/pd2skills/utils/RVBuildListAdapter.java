@@ -60,7 +60,7 @@ public class RVBuildListAdapter extends RecyclerView.Adapter<RVBuildListAdapter.
 
     @Override
     public BuildViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.build_card_view, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_build, parent, false);
         BuildViewHolder buildViewHoldervh = new BuildViewHolder(v);
         return buildViewHoldervh;
     }

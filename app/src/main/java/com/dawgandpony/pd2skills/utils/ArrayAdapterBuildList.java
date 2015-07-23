@@ -1,8 +1,6 @@
 package com.dawgandpony.pd2skills.utils;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +25,7 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.build_card_view, parent, false);
+        View rowView = inflater.inflate(R.layout.card_view_build_2, parent, false);
         TextView textView = (TextView) rowView.findViewById(R.id.tvName);
         TextView primaryWeapon = (TextView)rowView.findViewById(R.id.tvPrimaryWeapon);
         TextView pointsUsed = (TextView)rowView.findViewById(R.id.tvPointsUsed);
