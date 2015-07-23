@@ -25,7 +25,7 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.card_view_build_2, parent, false);
+        View rowView = inflater.inflate(R.layout.card_view_build, parent, false);
         TextView textView = (TextView) rowView.findViewById(R.id.tvName);
         TextView primaryWeapon = (TextView)rowView.findViewById(R.id.tvPrimaryWeapon);
         TextView pointsUsed = (TextView)rowView.findViewById(R.id.tvPointsUsed);
