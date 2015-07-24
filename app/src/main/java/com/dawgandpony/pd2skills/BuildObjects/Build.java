@@ -5,6 +5,8 @@ package com.dawgandpony.pd2skills.BuildObjects;
  */
 public class Build {
 
+    public final static long NEW_BUILD = -1;
+
     long id;
     String name = "";
     long skillBuildID;

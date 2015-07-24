@@ -86,16 +86,28 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
     private long GetBuildIdFromIntent() {
         intentFromPreviousActivity = getIntent();
-        String buildIDString = intentFromPreviousActivity.getStringExtra(BuildListFragment.EXTRA_BUILD_ID);
-        return Long.valueOf(buildIDString).longValue();
+        Long buildID;
+        buildID = intentFromPreviousActivity.getLongExtra(BuildListFragment.EXTRA_BUILD_ID, Build.NEW_BUILD);
+        return buildID.longValue();
     }
 
     private void InitBuild(long buildID){
         String newBuildName = getIntent().getStringExtra(BuildListFragment.EXTRA_BUILD_NAME);
+
         dataSourceBuilds = new DataSourceBuilds(this);
-        dataSourceBuilds.open();
-        currentBuild = dataSourceBuilds.getBuild(buildID, newBuildName);
-        dataSourceBuilds.close();
+        if (buildID == Build.NEW_BUILD){
+            dataSourceBuilds.open();
+            currentBuild = dataSourceBuilds.createAndInsertBuild(newBuildName);
+            dataSourceBuilds.close();
+        }
+        else {
+            dataSourceBuilds.open();
+            currentBuild = dataSourceBuilds.getBuild(buildID);
+            dataSourceBuilds.close();
+        }
+
+
+
 
         new GetSkillsFromXMLandDBTask().execute(currentBuild.getSkillBuildID());
     }

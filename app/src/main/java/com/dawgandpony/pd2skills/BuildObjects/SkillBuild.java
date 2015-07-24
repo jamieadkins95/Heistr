@@ -25,7 +25,7 @@ public class SkillBuild {
     int pointsUsed;
     int pointsAvailable;
 
-    public final static long NEW_SKILL_BUILD = -1;
+
 
     @Override
     public String toString() {
@@ -112,12 +112,8 @@ public class SkillBuild {
 
         try {
 
-            if (id == NEW_SKILL_BUILD) {
-                skillBuildFromDB = dataSourceSkills.createAndInsertSkillBuild();
-            }
-            else{
-                skillBuildFromDB = dataSourceSkills.getSkillBuild(id);
-            }
+            skillBuildFromDB = dataSourceSkills.getSkillBuild(id);
+
         }
         catch(Exception e){
             Log.e("Error", e.toString());

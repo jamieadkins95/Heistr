@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -124,6 +125,14 @@ public class BuildListFragment extends Fragment {
             }
         });
 
+        this.lvBuilds.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Build selectedBuild = (Build) lvBuilds.getItemAtPosition(position);
+                MoveToEditBuildActivity(selectedBuild.getId());
+            }
+        });
+
 
         new GetBuildsFromDBTask(lvBuilds).execute();
 
@@ -134,6 +143,7 @@ public class BuildListFragment extends Fragment {
                 new int[][] {{android.R.attr.state_pressed},{}},
                 new int[] {Color.rgb(187, 222, 251), Color.rgb(33,150,243)});
         fab.setBackgroundTintList(csl);
+        //region FAB onClick
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -165,10 +175,7 @@ public class BuildListFragment extends Fragment {
                             public void onClick(DialogInterface dialog, int which) {
                                 try {
                                     //Go to the build edit activity with a new build
-                                    Intent intent = new Intent(getActivity(), EditBuildActivity.class);
-                                    intent.putExtra(EXTRA_BUILD_ID, Long.toString(SkillBuild.NEW_SKILL_BUILD));
-                                    intent.putExtra(EXTRA_BUILD_NAME, txtBuildName.getText().toString());
-                                    startActivity(intent);
+                                    MoveToEditBuildActivity(txtBuildName.getText().toString());
 
                                 } catch (Exception e) {
                                     Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
@@ -190,9 +197,22 @@ public class BuildListFragment extends Fragment {
 
             }
         });
-
+        //endregion
 
         return rootView;
+    }
+
+    private void MoveToEditBuildActivity(String name){
+        Intent intent = new Intent(getActivity(), EditBuildActivity.class);
+        intent.putExtra(EXTRA_BUILD_ID, Build.NEW_BUILD);
+        intent.putExtra(EXTRA_BUILD_NAME, name);
+        startActivity(intent);
+    }
+
+    private void MoveToEditBuildActivity(long id){
+        Intent intent = new Intent(getActivity(), EditBuildActivity.class);
+        intent.putExtra(EXTRA_BUILD_ID, id);
+        startActivity(intent);
     }
 
     @Override

@@ -88,27 +88,24 @@ public class DataSourceBuilds {
 
     }
 
-    public Build getBuild(long id, String nameForNewBuild){
+    public Build getBuild(long id){
         Build build;
-        if (id == SkillBuild.NEW_SKILL_BUILD){
-            build = createAndInsertBuild(nameForNewBuild);
+
+        Cursor cursorBuild = database.query(MySQLiteHelper.TABLE_BUILDS,
+                buildColumns, MySQLiteHelper.COLUMN_ID + " = " + id, null,
+                null, null, null);
+
+        if (cursorBuild.moveToFirst()) {
+
+            build = cursorToBuild(cursorBuild);
+            cursorBuild.close();
+
+
+        } else {
+            cursorBuild.close();
+            build =  null;
         }
-        else {
-            Cursor cursorBuild = database.query(MySQLiteHelper.TABLE_BUILDS,
-                    buildColumns, MySQLiteHelper.COLUMN_ID + " = " + id, null,
-                    null, null, null);
 
-            if (cursorBuild.moveToFirst()) {
-
-                build = cursorToBuild(cursorBuild);
-                cursorBuild.close();
-
-
-            } else {
-                cursorBuild.close();
-                build =  null;
-            }
-        }
 
 
         return build;
