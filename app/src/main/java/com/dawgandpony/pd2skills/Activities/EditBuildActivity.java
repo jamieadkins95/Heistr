@@ -137,6 +137,11 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
     }
 
+    public void updateInfamy(int infamy, boolean infamyEnabled){
+        currentBuild.updateInfamy(this, infamy, infamyEnabled);
+
+    }
+
     private void setCurrentSkillBuild(SkillBuild build){
         currentBuild.setSkillBuild(build);
     }

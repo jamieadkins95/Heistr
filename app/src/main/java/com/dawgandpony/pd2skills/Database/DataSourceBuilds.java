@@ -147,6 +147,21 @@ public class DataSourceBuilds {
 
     }
 
+    public void updateInfamy(int infamy, boolean enabled){
+        switch(infamy){
+            case Trees.MASTERMIND:
+
+                break;
+            case Trees.ENFORCER:
+                break;
+            case Trees.TECHNICIAN:
+                break;
+            case Trees.GHOST:
+                break;
+
+        }
+    }
+
     private Build cursorToBuild(Cursor cursorBuild){
 
         Build build = new Build();

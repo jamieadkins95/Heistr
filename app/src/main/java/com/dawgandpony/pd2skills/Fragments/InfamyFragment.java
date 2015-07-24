@@ -47,7 +47,7 @@ public class InfamyFragment extends Fragment {
         lvInfamies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                
+
                 CheckBox checkBox = (CheckBox) view.findViewById(R.id.cbInfamy);
                 if (checkBox.isChecked()) {
                     checkBox.setChecked(false);
@@ -59,6 +59,8 @@ public class InfamyFragment extends Fragment {
         });
 
         lvInfamies.setAdapter(mAdapter);
+
+
 
         return  rootView;
     }
