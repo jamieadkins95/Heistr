@@ -27,14 +27,11 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.card_view_build, parent, false);
         TextView textView = (TextView) rowView.findViewById(R.id.tvName);
-        //TextView primaryWeapon = (TextView)rowView.findViewById(R.id.tvPrimaryWeapon);
-        //TextView pointsUsed = (TextView)rowView.findViewById(R.id.tvPointsUsed);
+
 
         textView.setText(builds.get(position).getName());
-        //pointsUsed.setText(builds.get(position).getPointsUsed() + "");
-        //primaryWeapon.setText(builds.get(position).getPrimaryWeapon());
 
-        // change the icon for Windows and iPhone
+
 
 
         return rowView;

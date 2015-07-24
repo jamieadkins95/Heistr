@@ -9,6 +9,7 @@ import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Fragments.BlankFragment;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Fragments.BuildListFragment;
+import com.dawgandpony.pd2skills.Fragments.InfamyFragment;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.Fragments.SkillTreeFragment;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
@@ -35,7 +36,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
         setDrawerHeaderImage(R.drawable.payday_2_logo);
 
-        MaterialSection secInfamy = newSection("Infamy", new BlankFragment());
+        MaterialSection secInfamy = newSection("Infamy", new InfamyFragment());
 
         MaterialSection secMas = newSection("Mastermind", SkillTreeFragment.newInstance(Trees.MASTERMIND));
         MaterialSection secEnf = newSection("Enforcer", SkillTreeFragment.newInstance(Trees.ENFORCER));

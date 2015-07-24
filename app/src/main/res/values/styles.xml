@@ -3,15 +3,20 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/primary</item>
+        <item name="colorAccent">@color/primaryAccent</item>
+        <item name="android:textColorSecondary">@color/primary</item>
 
     </style>
 
     <style name="MyNavigationDrawerTheme" parent="MaterialNavigationDrawerTheme.Light.DarkActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primaryDark</item>
-        <item name="colorAccent">@color/primaryAccent</item>
+        <item name="colorAccent">@color/primary</item>
         <item name="drawerType">@integer/DRAWERTYPE_IMAGE</item>
+
     </style>
+
+
 
 
 </resources>
