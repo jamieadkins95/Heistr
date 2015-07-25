@@ -36,7 +36,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
         setDrawerHeaderImage(R.drawable.payday_2_logo);
 
-        MaterialSection secInfamy = newSection("Infamy", new InfamyFragment());
+        MaterialSection secInfamy = newSection("Infamy", InfamyFragment.newInstance(currentBuild.getInfamies()));
 
         MaterialSection secMas = newSection("Mastermind", SkillTreeFragment.newInstance(Trees.MASTERMIND));
         MaterialSection secEnf = newSection("Enforcer", SkillTreeFragment.newInstance(Trees.ENFORCER));
@@ -146,4 +146,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
         currentBuild.setSkillBuild(build);
     }
 
+    public Build getCurrentBuild() {
+        return currentBuild;
+    }
 }

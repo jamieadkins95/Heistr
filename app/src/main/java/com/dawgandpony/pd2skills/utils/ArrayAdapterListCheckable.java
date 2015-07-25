@@ -22,6 +22,7 @@ public class ArrayAdapterListCheckable extends ArrayAdapter<String>{
 
 
     List<String> infamies;
+    List<Boolean> infamyBools;
     Context context;
 
     @Override
@@ -36,18 +37,18 @@ public class ArrayAdapterListCheckable extends ArrayAdapter<String>{
 
 
         textView.setText(infamies.get(position));
-        //pointsUsed.setText(builds.get(position).getPointsUsed() + "");
-        //primaryWeapon.setText(builds.get(position).getPrimaryWeapon());
-
-        // change the icon for Windows and iPhone
+        if (infamyBools.get(position)){
+            cbInfamy.setChecked(true);
+        }
 
 
         return rowView;
     }
 
-    public ArrayAdapterListCheckable(Context context, List<String> i){
-        super(context, -1, i);
-        this.infamies = i;
+    public ArrayAdapterListCheckable(Context context, List<String> infamyStrings, List<Boolean> infamyBools){
+        super(context, -1, infamyStrings);
+        this.infamies = infamyStrings;
+        this.infamyBools = infamyBools;
         this.context = context;
     }
 

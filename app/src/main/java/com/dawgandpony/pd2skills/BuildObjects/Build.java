@@ -2,6 +2,7 @@ package com.dawgandpony.pd2skills.BuildObjects;
 
 import android.content.Context;
 
+import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class Build {
     long skillBuildID;
     SkillBuild skillBuild;
     ArrayList<Boolean> infamies;
+    
     int perkDeck;
     int armour;
 
@@ -83,6 +85,7 @@ public class Build {
         getInfamies().set(infamy, enabled);
         DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(context);
         dataSourceBuilds.open();
+        dataSourceBuilds.updateInfamy(id, getInfamyID(), infamy, enabled);
         dataSourceBuilds.close();
 
     }
@@ -93,5 +96,22 @@ public class Build {
 
     public void setInfamies(ArrayList<Boolean> infamies) {
         this.infamies = infamies;
+    }
+
+    public long getInfamyID() {
+        int id = 1;
+        if (getInfamies().get(Trees.MASTERMIND)){
+            id += 8;
+        }
+        if (getInfamies().get(Trees.ENFORCER)){
+            id += 4;
+        }
+        if (getInfamies().get(Trees.TECHNICIAN)){
+            id += 2;
+        }
+        if (getInfamies().get(Trees.GHOST)){
+            id += 1;
+        }
+        return id;
     }
 }

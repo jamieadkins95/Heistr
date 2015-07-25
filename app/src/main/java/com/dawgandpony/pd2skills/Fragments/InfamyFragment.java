@@ -12,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Switch;
 
+import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterListCheckable;
 
@@ -26,22 +27,37 @@ public class InfamyFragment extends Fragment {
 
     ListView lvInfamies;
 
+    ArrayList<Boolean> infamies;
+    EditBuildActivity activity;
+
 
     public InfamyFragment() {
         // Required empty public constructor
+    }
+
+    public static InfamyFragment newInstance(ArrayList<Boolean> infamies) {
+
+        Bundle args = new Bundle();
+
+        InfamyFragment fragment = new InfamyFragment();
+        fragment.infamies = infamies;
+        fragment.setArguments(args);
+        return fragment;
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        activity = (EditBuildActivity) getActivity();
+
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_infamy, container, false);
         lvInfamies = (ListView) rootView.findViewById(R.id.lvInfamy);
 
         ArrayList<String> infamies = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.infamies)));
 
-        ArrayAdapterListCheckable mAdapter = new ArrayAdapterListCheckable(getActivity(), infamies);
+        ArrayAdapterListCheckable mAdapter = new ArrayAdapterListCheckable(activity, infamies, activity.getCurrentBuild().getInfamies());
 
 
         lvInfamies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -51,9 +67,11 @@ public class InfamyFragment extends Fragment {
                 CheckBox checkBox = (CheckBox) view.findViewById(R.id.cbInfamy);
                 if (checkBox.isChecked()) {
                     checkBox.setChecked(false);
+                    activity.updateInfamy(position, false);
                 }
                 else{
                     checkBox.setChecked(true);
+                    activity.updateInfamy(position, true);
                 }
             }
         });

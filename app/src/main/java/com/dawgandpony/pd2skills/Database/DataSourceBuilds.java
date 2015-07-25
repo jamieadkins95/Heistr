@@ -62,7 +62,7 @@ public class DataSourceBuilds {
         buildValues.put(MySQLiteHelper.COLUMN_NAME, name);
         buildValues.put(MySQLiteHelper.COLUMN_SKILL_BUILD_ID, skillBuildID);
         buildValues.put(MySQLiteHelper.COLUMN_WEAPON_BUILD_ID, -1);
-        buildValues.put(MySQLiteHelper.COLUMN_INFAMY_ID, -1);
+        buildValues.put(MySQLiteHelper.COLUMN_INFAMY_ID, 1);
         buildValues.put(MySQLiteHelper.COLUMN_PERK_DECK, -1);
         buildValues.put(MySQLiteHelper.COLUMN_ARMOUR, -1);
 
@@ -147,19 +147,13 @@ public class DataSourceBuilds {
 
     }
 
-    public void updateInfamy(int infamy, boolean enabled){
-        switch(infamy){
-            case Trees.MASTERMIND:
+    public void updateInfamy(long buildID, long infamyID, int infamy, boolean enabled){
 
-                break;
-            case Trees.ENFORCER:
-                break;
-            case Trees.TECHNICIAN:
-                break;
-            case Trees.GHOST:
-                break;
+        ContentValues values = new ContentValues();
+        values.put(MySQLiteHelper.COLUMN_INFAMY_ID, infamyID);
 
-        }
+        database.update(MySQLiteHelper.TABLE_BUILDS, values, MySQLiteHelper.COLUMN_ID + " = " + buildID, null);
+        Log.d("DB", "Infamy updated for build " + buildID + " updated to " + infamyID);
     }
 
     private Build cursorToBuild(Cursor cursorBuild){
@@ -179,7 +173,8 @@ public class DataSourceBuilds {
         build.setId(buildID);
         build.setName(name);
         build.setSkillBuildID(skillBuildID);
-        // TODO: Weapon builds and infamy
+        build.setInfamies(DataSourceInfamies.idToInfamy(infamyID));
+        // TODO: Weapon builds
         build.setPerkDeck(perkDeck);
         build.setArmour(armour);
 

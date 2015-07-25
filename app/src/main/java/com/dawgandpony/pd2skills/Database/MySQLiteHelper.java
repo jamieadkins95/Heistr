@@ -1,5 +1,6 @@
 package com.dawgandpony.pd2skills.Database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -11,7 +12,7 @@ import android.util.Log;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pd2skills.db";
-    private static final int DATABASE_VERSION = 9;
+    private static final int DATABASE_VERSION = 10;
 
 
     //region Skills
@@ -62,13 +63,33 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + " integer);";
     //endregion
 
+    //region Infamies
+    public static final String TABLE_INFAMY = "tbBuilds";
+    public static final String COLUMN_INFAMY_MASTERMIND = "mastermind";
+    public static final String COLUMN_INFAMY_ENFORCER = "enforcer";
+    public static final String COLUMN_INFAMY_TECHNICIAN = "technician";
+    public static final String COLUMN_INFAMY_GHOST = "ghost";
+
+    private static final String CREATE_INFAMY_TABLE = "create table if not exists "
+            + TABLE_INFAMY + "(" + COLUMN_ID
+            + " integer primary key autoincrement, " + COLUMN_INFAMY_MASTERMIND
+            + " integer, "  + COLUMN_INFAMY_ENFORCER
+            + " integer," + COLUMN_INFAMY_TECHNICIAN
+            + " integer," + COLUMN_INFAMY_GHOST
+            + " integer);";
+    //endregion
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_SKILL_BUILD_TABLE);
         db.execSQL(CREATE_SKILL_TIER_TABLE);
         db.execSQL(CREATE_BUILD_TABLE);
+        db.execSQL(CREATE_INFAMY_TABLE);
+        InitInfamies(db);
     }
+
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -79,10 +100,29 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_BUILDS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_BUILDS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_TIERS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_INFAMY);
         onCreate(db);
     }
 
     public MySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    private void InitInfamies(SQLiteDatabase db) {
+        ContentValues values = new ContentValues();
+
+        for (int i = 0; i < 2; i++){
+            for (int j = 0; j < 2; j++){
+                for (int k = 0; k < 2; k++){
+                    for (int l = 0; l < 2; l++){
+                        values.put(COLUMN_INFAMY_MASTERMIND, i);
+                        values.put(COLUMN_INFAMY_ENFORCER, j);
+                        values.put(COLUMN_INFAMY_TECHNICIAN, k);
+                        values.put(COLUMN_INFAMY_GHOST, l);
+                        db.insert(TABLE_INFAMY, null, values);
+                    }
+                }
+            }
+        }
     }
 }
