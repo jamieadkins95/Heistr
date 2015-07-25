@@ -3,10 +3,12 @@ package com.dawgandpony.pd2skills.Fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.RadioButton;
@@ -57,7 +59,7 @@ public class PerkDeckFragment extends Fragment {
 
         ArrayList<String> perkDecks = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.perkDecks)));
 
-
+        ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_single_choice, perkDecks);
         final ArrayAdapterListRadio mAdapter = new ArrayAdapterListRadio(activity, perkDecks, 0);
 
 
@@ -65,29 +67,12 @@ public class PerkDeckFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                RadioButton radioButton = (RadioButton) view.findViewById(R.id.radioListItem);
-                if (!radioButton.isChecked()) {
-                    for (int i = 0; i < lvPerkDecks.getCount(); i++){
-                        if (i != position){
-                            View v = lvPerkDecks.getChildAt(i);
-                            if (v != null){
-                                RadioButton radioButtonToUncheck = (RadioButton)v.findViewById(R.id.radioListItem);
-                                radioButtonToUncheck.setEnabled(false);
-                                radioButtonToUncheck.setChecked(false);
-                            }
-
-                        }
-
-                    }
-                    radioButton.setChecked(true);
-                    radioButton.setEnabled(true);
-                    mAdapter.updateSelectedPerkDeck(position);
-                }
+                Log.d("LV", position + " was clicked");
 
             }
         });
 
-        lvPerkDecks.setAdapter(mAdapter);
+        lvPerkDecks.setAdapter(mAdapter2);
 
 
 
