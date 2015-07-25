@@ -147,13 +147,13 @@ public class DataSourceBuilds {
 
     }
 
-    public void updateInfamy(long buildID, long infamyID, int infamy, boolean enabled){
+    public void updateInfamy(long buildID, long infamyID){
 
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMN_INFAMY_ID, infamyID);
 
         database.update(MySQLiteHelper.TABLE_BUILDS, values, MySQLiteHelper.COLUMN_ID + " = " + buildID, null);
-        Log.d("DB", "Infamy updated for build " + buildID + " updated to " + infamyID);
+        Log.d("DB", "Infamy updated for build " + buildID + " to " + infamyID);
     }
 
     private Build cursorToBuild(Cursor cursorBuild){

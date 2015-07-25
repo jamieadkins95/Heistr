@@ -10,6 +10,7 @@ import com.dawgandpony.pd2skills.Fragments.BlankFragment;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Fragments.BuildListFragment;
 import com.dawgandpony.pd2skills.Fragments.InfamyFragment;
+import com.dawgandpony.pd2skills.Fragments.PerkDeckFragment;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.Fragments.SkillTreeFragment;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
@@ -44,7 +45,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
         MaterialSection secGhost = newSection("Ghost", SkillTreeFragment.newInstance(Trees.GHOST));
         MaterialSection secFugi = newSection("Fugitive", SkillTreeFragment.newInstance(Trees.FUGITIVE));
 
-        MaterialSection secPD = newSection("Perk Deck", new BlankFragment());
+        MaterialSection secPD = newSection("Perk Deck", PerkDeckFragment.newInstance(currentBuild.getPerkDeck()));
 
         MaterialSection secPrimary = newSection("Primary Weapon", new BlankFragment());
         MaterialSection secSecondaty = newSection("Secondary Weapon", new BlankFragment());

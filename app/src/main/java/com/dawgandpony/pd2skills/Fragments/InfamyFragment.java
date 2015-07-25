@@ -56,8 +56,9 @@ public class InfamyFragment extends Fragment {
         lvInfamies = (ListView) rootView.findViewById(R.id.lvInfamy);
 
         ArrayList<String> infamies = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.infamies)));
+        ArrayList<String> infamySubStrings = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.infamyDesc)));
 
-        ArrayAdapterListCheckable mAdapter = new ArrayAdapterListCheckable(activity, infamies, activity.getCurrentBuild().getInfamies());
+        ArrayAdapterListCheckable mAdapter = new ArrayAdapterListCheckable(activity, infamies, infamySubStrings, activity.getCurrentBuild().getInfamies());
 
 
         lvInfamies.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -10,28 +10,20 @@
 
         android:layout_centerVertical="true"
         android:layout_height="wrap_content"
-        android:text="Infamy"
-        android:id="@+id/tvInfamyName"
+        android:text="Iteam"
+        android:id="@+id/tvName"
         android:textColor="#000000"
         />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_below="@+id/tvInfamyName"
-        android:paddingTop="10dp"
-        android:layout_height="wrap_content"
-        android:text="Set of the infamy"
-        android:id="@+id/tvInfamyDesc"
-        android:textColor="@color/greyText"
-        />
 
-    <CheckBox
+    <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:id="@+id/cbInfamy"
+        android:id="@+id/radioListItem"
         android:layout_centerVertical="true"
+        android:enabled="false"
 
         />
 

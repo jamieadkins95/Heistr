@@ -60,4 +60,25 @@
         <item>Ghost</item>
     </string-array>
 
+    <string-array name="infamyDesc">
+        <item>Set of the Corrupted</item>
+        <item>The Slaughterhouse Set</item>
+        <item>Set of the Ingenius</item>
+        <item>The Assassin Set</item>
+    </string-array>
+
+    <string-array name="perkDecks">
+        <item>Crew Chief</item>
+        <item>Muscle</item>
+        <item>Armourer</item>
+        <item>Rogue</item>
+        <item>Hitman</item>
+        <item>Crook</item>
+        <item>Burgler</item>
+        <item>Infiltrator</item>
+        <item>Sociopath</item>
+        <item>Gambler</item>
+        <item>Grinder</item>
+    </string-array>
+
 </resources>

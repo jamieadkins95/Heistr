@@ -21,7 +21,8 @@ import java.util.List;
 public class ArrayAdapterListCheckable extends ArrayAdapter<String>{
 
 
-    List<String> infamies;
+    List<String> infamyStrings;
+    List<String> infamySubStrings;
     List<Boolean> infamyBools;
     Context context;
 
@@ -31,12 +32,14 @@ public class ArrayAdapterListCheckable extends ArrayAdapter<String>{
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.list_item_checkable, parent, false);
         TextView textView = (TextView) rowView.findViewById(R.id.tvInfamyName);
+        TextView textView1 = (TextView) rowView.findViewById(R.id.tvInfamyDesc);
         CheckBox cbInfamy = (CheckBox) rowView.findViewById(R.id.cbInfamy);
 
 
 
 
-        textView.setText(infamies.get(position));
+        textView.setText(infamyStrings.get(position));
+        textView1.setText(infamySubStrings.get(position));
         if (infamyBools.get(position)){
             cbInfamy.setChecked(true);
         }
@@ -45,9 +48,11 @@ public class ArrayAdapterListCheckable extends ArrayAdapter<String>{
         return rowView;
     }
 
-    public ArrayAdapterListCheckable(Context context, List<String> infamyStrings, List<Boolean> infamyBools){
+    public ArrayAdapterListCheckable(Context context, List<String> infamyStrings, List<String> infamySubStrings, List<Boolean> infamyBools){
         super(context, -1, infamyStrings);
-        this.infamies = infamyStrings;
+        this.infamyStrings = infamyStrings;
+        this.infamySubStrings = infamySubStrings;
+
         this.infamyBools = infamyBools;
         this.context = context;
     }

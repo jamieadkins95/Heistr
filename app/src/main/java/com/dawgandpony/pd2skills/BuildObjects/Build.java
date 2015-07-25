@@ -20,7 +20,7 @@ public class Build {
     SkillBuild skillBuild;
     ArrayList<Boolean> infamies;
     
-    int perkDeck;
+    int perkDeck = 0;
     int armour;
 
 
@@ -85,7 +85,7 @@ public class Build {
         getInfamies().set(infamy, enabled);
         DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(context);
         dataSourceBuilds.open();
-        dataSourceBuilds.updateInfamy(id, getInfamyID(), infamy, enabled);
+        dataSourceBuilds.updateInfamy(id, getInfamyID());
         dataSourceBuilds.close();
 
     }
@@ -98,6 +98,9 @@ public class Build {
         this.infamies = infamies;
     }
 
+    /*
+    Works out the infamy id from the 4 infamy booleans. Essentially binary encoding.
+     */
     public long getInfamyID() {
         int id = 1;
         if (getInfamies().get(Trees.MASTERMIND)){
