@@ -4,6 +4,7 @@ package com.dawgandpony.pd2skills.Fragments;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,23 +64,27 @@ public class InfamyFragment extends Fragment {
         ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_multiple_choice, infamies);
 
 
-        /*lvInfamies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        lvInfamies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                CheckBox checkBox = (CheckBox) view.findViewById(R.id.cbInfamy);
-                if (checkBox.isChecked()) {
-                    checkBox.setChecked(false);
-                    activity.updateInfamy(position, false);
+                //Update the DB whenever the infamies change
+                SparseBooleanArray checked = lvInfamies.getCheckedItemPositions();
+                for (int i = 0; i < checked.size(); i++){
+                    activity.updateInfamy(checked.keyAt(i), checked.valueAt(i));
+
                 }
-                else{
-                    checkBox.setChecked(true);
-                    activity.updateInfamy(position, true);
-                }
+
             }
-        });*/
+        });
 
         lvInfamies.setAdapter(mAdapter2);
+
+        //Get infamies from the currentBuild and check the respective check box.
+        for (int i = 0; i < activity.getCurrentBuild().getInfamies().size();i++ ){
+            lvInfamies.setItemChecked(i, activity.getCurrentBuild().getInfamies().get(i));
+        }
 
 
 
