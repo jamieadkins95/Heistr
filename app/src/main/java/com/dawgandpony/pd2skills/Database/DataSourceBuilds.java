@@ -63,8 +63,8 @@ public class DataSourceBuilds {
         buildValues.put(MySQLiteHelper.COLUMN_SKILL_BUILD_ID, skillBuildID);
         buildValues.put(MySQLiteHelper.COLUMN_WEAPON_BUILD_ID, -1);
         buildValues.put(MySQLiteHelper.COLUMN_INFAMY_ID, 1);
-        buildValues.put(MySQLiteHelper.COLUMN_PERK_DECK, -1);
-        buildValues.put(MySQLiteHelper.COLUMN_ARMOUR, -1);
+        buildValues.put(MySQLiteHelper.COLUMN_PERK_DECK, 0);
+        buildValues.put(MySQLiteHelper.COLUMN_ARMOUR, 0);
 
 
         long buildID = database.insert(MySQLiteHelper.TABLE_BUILDS, null, buildValues);
@@ -163,6 +163,15 @@ public class DataSourceBuilds {
 
         database.update(MySQLiteHelper.TABLE_BUILDS, values, MySQLiteHelper.COLUMN_ID + " = " + buildID, null);
         Log.d("DB", "Perk Deck updated for build " + buildID + " to " + selected);
+    }
+
+    public void updateArmour(long buildID, long selected){
+
+        ContentValues values = new ContentValues();
+        values.put(MySQLiteHelper.COLUMN_ARMOUR, selected);
+
+        database.update(MySQLiteHelper.TABLE_BUILDS, values, MySQLiteHelper.COLUMN_ID + " = " + buildID, null);
+        Log.d("DB", "Armour updated for build " + buildID + " to " + selected);
     }
 
     private Build cursorToBuild(Cursor cursorBuild){

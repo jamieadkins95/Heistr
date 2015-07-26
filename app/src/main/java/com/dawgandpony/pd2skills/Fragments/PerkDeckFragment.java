@@ -37,7 +37,7 @@ public class PerkDeckFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static PerkDeckFragment newInstance(int selectedPerkDeck) {
+    public static PerkDeckFragment newInstance() {
 
         Bundle args = new Bundle();
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
+import com.dawgandpony.pd2skills.Fragments.ArmourFragment;
 import com.dawgandpony.pd2skills.Fragments.BlankFragment;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Fragments.BuildListFragment;
@@ -45,12 +46,12 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
         MaterialSection secGhost = newSection("Ghost", SkillTreeFragment.newInstance(Trees.GHOST));
         MaterialSection secFugi = newSection("Fugitive", SkillTreeFragment.newInstance(Trees.FUGITIVE));
 
-        MaterialSection secPD = newSection("Perk Deck", PerkDeckFragment.newInstance(currentBuild.getPerkDeck()));
+        MaterialSection secPD = newSection("Perk Deck", PerkDeckFragment.newInstance());
 
         MaterialSection secPrimary = newSection("Primary Weapon", new BlankFragment());
         MaterialSection secSecondaty = newSection("Secondary Weapon", new BlankFragment());
 
-        MaterialSection secArmour = newSection("Armour", new BlankFragment());
+        MaterialSection secArmour = newSection("Armour", ArmourFragment.newInstance());
 
         MaterialSection secAbout = newSection("About", R.drawable.ic_info_black_24dp, new BlankFragment());
         MaterialSection secSettings = newSection("Settings", R.drawable.ic_settings_black_24dp, new BlankFragment());
@@ -91,7 +92,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
         intentFromPreviousActivity = getIntent();
         Long buildID;
         buildID = intentFromPreviousActivity.getLongExtra(BuildListFragment.EXTRA_BUILD_ID, Build.NEW_BUILD);
-        return buildID.longValue();
+        return buildID;
     }
 
     private void InitBuild(long buildID){
@@ -146,6 +147,11 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
     public void updatePerkDeck(int selected){
         currentBuild.updatePerkDeck(this, selected);
+
+    }
+
+    public void updateArmour(int selected){
+        currentBuild.updateArmour(this, selected);
 
     }
 

@@ -25,13 +25,7 @@
     <string name="ghost_shorthand">Gho</string>
     <string name="fugitive_shorthand">Fug</string>
 
-    <string name="armour_suit">Suit</string>
-    <string name="armour_lbv">LBV</string>
-    <string name="armour_bv">BV</string>
-    <string name="armour_hbv">HBV</string>
-    <string name="armour_fj">FJ</string>
-    <string name="armour_ctv">CTV</string>
-    <string name="armour_ictv">ICTV</string>
+
 
     <string name="weapon_attribute_magazine_shorthand">Mag:</string>
     <string name="weapon_attribute_ammo_shorthand">Amm:</string>
@@ -43,6 +37,8 @@
 
 
     <string name="message_new_build">Enter a name for this new build.</string>
+    <string name="armour_default">Suit</string>
+    <string name="perk_deck_default">Crew Chief</string>
 
 
     <string-array name="skill_trees">
@@ -80,5 +76,26 @@
         <item>Gambler</item>
         <item>Grinder</item>
     </string-array>
+
+    <string-array name="armour">
+        <item>Suit</item>
+        <item>Light Weight Ballistic Vest</item>
+        <item>Ballistic Vest</item>
+        <item>Heavy Ballistic Vest</item>
+        <item>Flak Jacket</item>
+        <item>Combined Tactical Vest</item>
+        <item>Improved Combined Tactical Vest</item>
+    </string-array>
+    <string-array name="armourShortened">
+        <item>Suit</item>
+        <item>LBV</item>
+        <item>BV</item>
+        <item>HBV</item>
+        <item>FJ</item>
+        <item>CTV</item>
+        <item>ICTV</item>
+    </string-array>
+
+
 
 </resources>
