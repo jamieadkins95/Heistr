@@ -4,6 +4,7 @@
     <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/CardViewStyle"
         android:id="@+id/cvBuilds"
         android:elevation="2dp"
         android:background="@drawable/shadow"
@@ -33,6 +34,7 @@
                 android:layout_alignParentTop="true"
                 android:textSize="30sp"
                 android:text="@string/untitled_build"
+                android:textColor="@color/textPrimary"
                 />
 
             <LinearLayout
@@ -61,7 +63,7 @@
                         android:layout_weight="2"
 
                         android:text="Car-4"
-                        android:textColor="@color/greyText"
+                        android:textColor="@color/textSecondary"
                         android:textSize="20sp"
                         android:layout_gravity="center"
                         android:gravity="center"/>
@@ -76,22 +78,22 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:text="@string/weapon_attribute_damage_shorthand"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:text="@string/weapon_attribute_accuracy_shorthand"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:text="@string/weapon_attribute_stability_shorthand"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:text="@string/weapon_attribute_concealment_shorthand"/>
 
                     </LinearLayout>
@@ -104,28 +106,28 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:layout_gravity="center"
                             android:id="@+id/tvDamageValuePrimary"
                             android:text="0"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:text="0"
                             android:id="@+id/tvAccuracyValuePrimary"
                             android:layout_gravity="center"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:id="@+id/tvStabiltyValuePrimary"
                             android:layout_gravity="center"
                             android:text="0"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:layout_gravity="center"
                             android:id="@+id/tvConcealmentValuePrimary"
                             android:text="0"/>
@@ -149,7 +151,7 @@
                         android:layout_weight="2"
 
                         android:text="Loco"
-                        android:textColor="@color/greyText"
+                        android:textColor="@color/textSecondary"
                         android:textSize="20sp"
                         android:layout_gravity="center"
                         android:gravity="center"/>
@@ -164,22 +166,22 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:text="@string/weapon_attribute_damage_shorthand"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:text="@string/weapon_attribute_accuracy_shorthand"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:text="@string/weapon_attribute_stability_shorthand"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:text="@string/weapon_attribute_concealment_shorthand"/>
 
                     </LinearLayout>
@@ -192,28 +194,28 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:layout_gravity="center"
                             android:id="@+id/tvDamageValueSecondary"
                             android:text="0"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:text="0"
                             android:id="@+id/tvAccuracyValueSecondary"
                             android:layout_gravity="center"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:id="@+id/tvStabiltyValueSecondary"
                             android:layout_gravity="center"
                             android:text="0"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:textColor="#BDBDBD"
+                            android:textColor="@color/textHint"
                             android:layout_gravity="center"
                             android:id="@+id/tvConcealmentValueSecondary"
                             android:text="0"/>
@@ -249,7 +251,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/tvArmour"
-                        android:textColor="@color/greyText"
+                        android:textColor="@color/textSecondary"
                         android:textSize="20dp"
                         android:gravity="center"
                         android:text="@string/armour_suit"/>
@@ -264,13 +266,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textColor="@color/greyTextLight"
+                        android:textColor="@color/textHint"
                         android:text="@string/mastermind_shorthand"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/masSkillCount"
-                        android:textColor="@color/greyTextLight"
+                        android:textColor="@color/textHint"
                         android:text="0"/>
                 </LinearLayout>
                 <LinearLayout
@@ -282,13 +284,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textColor="@color/greyTextLight"
+                        android:textColor="@color/textHint"
                         android:text="@string/enforcer_shorthand"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/enfSkillCount"
-                        android:textColor="@color/greyTextLight"
+                        android:textColor="@color/textHint"
                         android:text="0"/>
                 </LinearLayout>
                 <LinearLayout
@@ -300,13 +302,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textColor="@color/greyTextLight"
+                        android:textColor="@color/textHint"
                         android:text="@string/technician_shorthand"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/techSkillCount"
-                        android:textColor="@color/greyTextLight"
+                        android:textColor="@color/textHint"
                         android:text="0"/>
                 </LinearLayout>
                 <LinearLayout
@@ -318,13 +320,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textColor="@color/greyTextLight"
+                        android:textColor="@color/textHint"
                         android:text="@string/ghost_shorthand"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/ghoSkillCount"
-                        android:textColor="@color/greyTextLight"
+                        android:textColor="@color/textHint"
                         android:text="0"/>
                 </LinearLayout>
                 <LinearLayout
@@ -336,13 +338,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textColor="@color/greyTextLight"
+                        android:textColor="@color/textHint"
                         android:text="@string/fugitive_shorthand"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/fugSkillCount"
-                        android:textColor="@color/greyTextLight"
+                        android:textColor="@color/textHint"
                         android:text="0"/>
                 </LinearLayout>
 

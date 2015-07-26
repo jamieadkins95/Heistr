@@ -5,8 +5,9 @@
     <item name="primaryDark" type="color">#1976D2</item>
     <item name="primaryPressed" type="color">#BBDEFB</item>
     <item name="primaryAccent" type="color">#BBDEFB</item>
-    <item name="greyText" type="color">#9e9e9e</item>
-    <item name="greyTextLight" type="color">#bdbdbd</item>
+    <item name="textPrimary" type="color">#FFFFFF</item>
+    <item name="textSecondary" type="color">#B3FFFFFF</item>
+    <item name="textHint" type="color">#4DFFFFFF</item>
 
 
 

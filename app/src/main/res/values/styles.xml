@@ -1,7 +1,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorAccent">@color/primaryAccent</item>
         <item name="android:textColorSecondary">@color/primary</item>
@@ -11,11 +11,19 @@
     <style name="MyNavigationDrawerTheme" parent="MaterialNavigationDrawerTheme">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primaryDark</item>
-        <item name="colorAccent">@color/primary</item>
+        <item name="colorAccent">@color/primaryAccent</item>
         <item name="drawerType">@integer/DRAWERTYPE_IMAGE</item>
+        <item name="subheaderStyle">@style/MySubheaderTheme</item>
 
     </style>
 
+    <style name="MySubheaderTheme">
+        <item name="subheaderTitleColor">@color/primaryAccent</item>
+    </style>
+
+    <style name="CardViewStyle" parent="CardView.Dark">
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
 
 
 
