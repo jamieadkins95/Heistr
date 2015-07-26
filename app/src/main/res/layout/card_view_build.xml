@@ -240,7 +240,7 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="1.2"
+                android:layout_weight="1.4"
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
@@ -251,15 +251,24 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/tvArmour"
                     android:textColor="@color/textSecondary"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:gravity="center"
-                    android:text="@string/armour_suit"/>
+                    android:text="@string/armour_default"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvPerkDeck"
+                    android:textColor="@color/textHint"
+
+                    android:gravity="center"
+                    android:text="@string/perk_deck_default"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
@@ -278,6 +287,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
@@ -296,6 +306,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
@@ -314,6 +325,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
@@ -332,6 +344,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView

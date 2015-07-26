@@ -21,7 +21,7 @@ public class Build {
     ArrayList<Boolean> infamies;
     
     int perkDeck = 0;
-    int armour;
+    int armour = 0;
 
 
 
@@ -95,6 +95,15 @@ public class Build {
         DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(context);
         dataSourceBuilds.open();
         dataSourceBuilds.updatePerkDeck(id, selected);
+        dataSourceBuilds.close();
+
+    }
+
+    public void updateArmour(Context context, int selected){
+        armour = selected;
+        DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(context);
+        dataSourceBuilds.open();
+        dataSourceBuilds.updateArmour(id, selected);
         dataSourceBuilds.close();
 
     }
