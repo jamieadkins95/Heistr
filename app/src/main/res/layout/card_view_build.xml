@@ -9,10 +9,7 @@
     android:elevation="2dp"
     android:background="@drawable/shadow"
     android:foreground="@drawable/selector_build_list"
-    android:layout_margin="5dp"
-
-
-    >
+    android:layout_margin="5dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -37,6 +34,7 @@
             android:textColor="@color/textPrimary"
             />
 
+        <!--Weapons-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,10 +45,9 @@
             android:layout_below="@+id/tvName"
             >
 
-            <!--android:showDividers="middle"
-            android:dividerPadding="2.5dp"
-            android:divider="?android:listDivider"-->
 
+
+            <!--Primary Weapon-->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -138,7 +135,7 @@
             </LinearLayout>
 
 
-
+            <!--Secondary Weapon-->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -228,6 +225,7 @@
 
         </LinearLayout>
 
+        <!--Skill Tree Values-->
         <LinearLayout
             android:id="@+id/llTreeNames"
             android:layout_width="match_parent"
