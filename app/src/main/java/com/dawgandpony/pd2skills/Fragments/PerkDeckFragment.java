@@ -15,8 +15,8 @@ import android.widget.RadioButton;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.R;
-import com.dawgandpony.pd2skills.utils.ArrayAdapterListCheckable;
-import com.dawgandpony.pd2skills.utils.ArrayAdapterListRadio;
+
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -60,7 +60,7 @@ public class PerkDeckFragment extends Fragment {
         ArrayList<String> perkDecks = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.perkDecks)));
 
         ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_single_choice, perkDecks);
-        final ArrayAdapterListRadio mAdapter = new ArrayAdapterListRadio(activity, perkDecks, 0);
+
 
 
         lvPerkDecks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
