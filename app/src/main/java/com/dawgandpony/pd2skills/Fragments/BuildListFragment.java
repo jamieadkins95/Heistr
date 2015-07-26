@@ -114,6 +114,7 @@ public class BuildListFragment extends Fragment {
 
                         new GetBuildsFromDBTask(lvBuilds).execute();
 
+                        Toast.makeText(getActivity(), "Build(s) deleted", Toast.LENGTH_SHORT).show();
                         Log.d("Context Action", "Delete build " + selectedBuild.getSkillBuildID());
                     }
                 }

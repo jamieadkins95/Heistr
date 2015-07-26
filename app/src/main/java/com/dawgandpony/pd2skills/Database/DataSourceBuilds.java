@@ -143,7 +143,7 @@ public class DataSourceBuilds {
     public void DeleteBuild(long id){
 
         database.delete(MySQLiteHelper.TABLE_BUILDS, MySQLiteHelper.COLUMN_ID + " = " + id, null);
-        Toast.makeText(context, "Build deleted", Toast.LENGTH_SHORT).show();
+
 
     }
 
