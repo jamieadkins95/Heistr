@@ -16,7 +16,6 @@ import android.widget.Switch;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.R;
-import com.dawgandpony.pd2skills.utils.ArrayAdapterListCheckable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -60,7 +59,7 @@ public class InfamyFragment extends Fragment {
         ArrayList<String> infamies = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.infamies)));
         ArrayList<String> infamySubStrings = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.infamyDesc)));
 
-        ArrayAdapterListCheckable mAdapter = new ArrayAdapterListCheckable(activity, infamies, infamySubStrings, activity.getCurrentBuild().getInfamies());
+
         ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_multiple_choice, infamies);
 
 
