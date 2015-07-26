@@ -144,6 +144,11 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
     }
 
+    public void updatePerkDeck(int selected){
+        currentBuild.updatePerkDeck(this, selected);
+
+    }
+
     private void setCurrentSkillBuild(SkillBuild build){
         currentBuild.setSkillBuild(build);
     }

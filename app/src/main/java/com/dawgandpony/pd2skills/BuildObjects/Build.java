@@ -90,6 +90,15 @@ public class Build {
 
     }
 
+    public void updatePerkDeck(Context context, int selected){
+        perkDeck = selected;
+        DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(context);
+        dataSourceBuilds.open();
+        dataSourceBuilds.updatePerkDeck(id, selected);
+        dataSourceBuilds.close();
+
+    }
+
     public ArrayList<Boolean> getInfamies() {
         return infamies;
     }

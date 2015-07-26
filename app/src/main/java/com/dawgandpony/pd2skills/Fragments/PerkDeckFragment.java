@@ -60,20 +60,16 @@ public class PerkDeckFragment extends Fragment {
         ArrayList<String> perkDecks = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.perkDecks)));
 
         ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_single_choice, perkDecks);
-
-
-
+        lvPerkDecks.setAdapter(mAdapter2);
+        lvPerkDecks.setItemChecked(activity.getCurrentBuild().getPerkDeck(), true);
         lvPerkDecks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Log.d("LV", position + " was clicked");
+                int selected = lvPerkDecks.getCheckedItemPosition();
+                activity.updatePerkDeck(selected);
 
             }
         });
-
-        lvPerkDecks.setAdapter(mAdapter2);
-
 
 
         return  rootView;
