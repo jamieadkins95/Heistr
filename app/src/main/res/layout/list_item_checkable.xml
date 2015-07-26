@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:text="Set of the infamy"
         android:id="@+id/tvInfamyDesc"
-        android:textColor="@color/greyText"
+        android:textColor="@color/textSecondary"
         />
 
     <CheckBox
