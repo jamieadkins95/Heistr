@@ -156,6 +156,15 @@ public class DataSourceBuilds {
         Log.d("DB", "Infamy updated for build " + buildID + " to " + infamyID);
     }
 
+    public void updatePerkDeck(long buildID, long selected){
+
+        ContentValues values = new ContentValues();
+        values.put(MySQLiteHelper.COLUMN_PERK_DECK, selected);
+
+        database.update(MySQLiteHelper.TABLE_BUILDS, values, MySQLiteHelper.COLUMN_ID + " = " + buildID, null);
+        Log.d("DB", "Perk Deck updated for build " + buildID + " to " + selected);
+    }
+
     private Build cursorToBuild(Cursor cursorBuild){
 
         Build build = new Build();

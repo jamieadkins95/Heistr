@@ -57,12 +57,16 @@ public class InfamyFragment extends Fragment {
         lvInfamies = (ListView) rootView.findViewById(R.id.lvInfamy);
 
         ArrayList<String> infamies = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.infamies)));
-        ArrayList<String> infamySubStrings = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.infamyDesc)));
+
 
 
         ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_multiple_choice, infamies);
+        lvInfamies.setAdapter(mAdapter2);
 
-
+        //Get infamies from the currentBuild and check the respective check box.
+        for (int i = 0; i < activity.getCurrentBuild().getInfamies().size();i++ ){
+            lvInfamies.setItemChecked(i, activity.getCurrentBuild().getInfamies().get(i));
+        }
 
         lvInfamies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -77,15 +81,6 @@ public class InfamyFragment extends Fragment {
 
             }
         });
-
-        lvInfamies.setAdapter(mAdapter2);
-
-        //Get infamies from the currentBuild and check the respective check box.
-        for (int i = 0; i < activity.getCurrentBuild().getInfamies().size();i++ ){
-            lvInfamies.setItemChecked(i, activity.getCurrentBuild().getInfamies().get(i));
-        }
-
-
 
         return  rootView;
     }
