@@ -1,5 +1,5 @@
 # PD2Skills
-This is the source code for an Android app that lets you create skill and wepaon builds for Payday 2.
+This is the source code for an Android app that lets you create skill and weapon builds for Payday 2.
 It is currently WiP and is not yet published on the play store.
 
 # Thanks to
