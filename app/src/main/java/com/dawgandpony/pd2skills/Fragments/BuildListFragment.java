@@ -152,7 +152,7 @@ public class BuildListFragment extends Fragment {
                 txtBuildName.setHeight(100);
                 txtBuildName.setWidth(340);
                 txtBuildName.setGravity(Gravity.LEFT);
-                txtBuildName.setTextColor(Color.BLACK);
+
 
 
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
