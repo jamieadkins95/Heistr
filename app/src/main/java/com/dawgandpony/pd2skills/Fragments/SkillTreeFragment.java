@@ -6,10 +6,16 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.TextView;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
+import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.R;
+import com.dawgandpony.pd2skills.utils.ArrayAdapterBuildList;
+import com.dawgandpony.pd2skills.utils.SkillAdapter;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,6 +68,13 @@ public class SkillTreeFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_skill_tree, container, false);
+
+        GridView gridView = (GridView) rootView.findViewById(R.id.gvSkills);
+
+
+
+        gridView.setAdapter(new SkillAdapter(activity));
+
 
         return rootView;
     }
