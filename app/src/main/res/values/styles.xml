@@ -17,6 +17,7 @@
 
     </style>
 
+    <!--This doesn't seem to work atm. Issue witht the library so not much i can do about it. Removed sub headers for now.-->
     <style name="MySubheaderTheme">
         <item name="subheaderTitleColor">@color/primaryAccent</item>
     </style>

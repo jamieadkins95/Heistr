@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorAccent">@color/primaryAccent</item>
+        <item name="android:colorPrimaryDark">@color/primaryDark</item>
+        <item name="android:textColorSecondary">@color/primary</item>
+
+    </style>
+
 
     <style name="CardViewStyle" parent="CardView.Dark">
         <item name="android:foreground">?android:attr/selectableItemBackground</item>

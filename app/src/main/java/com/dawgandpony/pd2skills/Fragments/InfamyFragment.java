@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Switch;
@@ -59,9 +60,10 @@ public class InfamyFragment extends Fragment {
         ArrayList<String> infamySubStrings = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.infamyDesc)));
 
         ArrayAdapterListCheckable mAdapter = new ArrayAdapterListCheckable(activity, infamies, infamySubStrings, activity.getCurrentBuild().getInfamies());
+        ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_multiple_choice, infamies);
 
 
-        lvInfamies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*lvInfamies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -75,9 +77,9 @@ public class InfamyFragment extends Fragment {
                     activity.updateInfamy(position, true);
                 }
             }
-        });
+        });*/
 
-        lvInfamies.setAdapter(mAdapter);
+        lvInfamies.setAdapter(mAdapter2);
 
 
 
