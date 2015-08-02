@@ -24,7 +24,14 @@ public class SkillAdapter extends BaseAdapter {
             R.drawable.cable_guy, R.drawable.cable_guy,
             R.drawable.cable_guy, R.drawable.cable_guy,
             R.drawable.cable_guy, R.drawable.cable_guy,
-            R.drawable.cable_guy
+            R.drawable.cable_guy, R.drawable.cable_guy,
+            R.drawable.cable_guy, R.drawable.cable_guy,
+            R.drawable.cable_guy, R.drawable.cable_guy,
+            R.drawable.cable_guy, R.drawable.cable_guy,
+            R.drawable.cable_guy, R.drawable.cable_guy,
+            R.drawable.cable_guy, R.drawable.cable_guy,
+            R.drawable.cable_guy, R.drawable.cable_guy,
+            R.drawable.cable_guy, R.drawable.cable_guy
     };
 
     // Constructor

@@ -8,6 +8,7 @@
     <item name="textPrimary" type="color">#FFFFFF</item>
     <item name="textSecondary" type="color">#B3FFFFFF</item>
     <item name="textHint" type="color">#4DFFFFFF</item>
+    <item name="grey" type="color">#9e9e9e</item>
 
 
 
