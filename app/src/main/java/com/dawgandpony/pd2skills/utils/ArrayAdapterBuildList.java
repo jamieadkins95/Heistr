@@ -57,6 +57,7 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
 
         int highlightedColour = context.getResources().getColor(R.color.textSecondary);
         //Set colours if skills are above 15.
+        /*
         if (builds.get(position).getSkillBuild().getSkillTrees().get(Trees.MASTERMIND).getSkillCount() >= 15){
             mastermind.setTextColor(highlightedColour);
             mastermindSkillCount.setTextColor(highlightedColour);
@@ -76,8 +77,8 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         if (builds.get(position).getSkillBuild().getSkillTrees().get(Trees.FUGITIVE).getSkillCount() >= 15){
             fugitive.setTextColor(highlightedColour);
             fugitiveSkillCount.setTextColor(highlightedColour);
-        }
-
+        }*/
+        
 
 
         return rowView;
