@@ -275,6 +275,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="@color/textHint"
+                    android:id="@+id/masSkillName"
                     android:text="@string/mastermind_shorthand"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -294,6 +295,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="@color/textHint"
+                    android:id="@+id/enfSkillName"
                     android:text="@string/enforcer_shorthand"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -313,6 +315,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="@color/textHint"
+                    android:id="@+id/techSkillName"
                     android:text="@string/technician_shorthand"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -332,6 +335,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="@color/textHint"
+                    android:id="@+id/ghoSkillName"
                     android:text="@string/ghost_shorthand"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -351,6 +355,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="@color/textHint"
+                    android:id="@+id/fugSkillName"
                     android:text="@string/fugitive_shorthand"/>
                 <TextView
                     android:layout_width="wrap_content"

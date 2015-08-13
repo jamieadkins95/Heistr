@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
+import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
+import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.R;
 
 import java.util.List;
@@ -30,6 +32,17 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         TextView textViewArmour = (TextView) rowView.findViewById(R.id.tvArmour);
         TextView textViewPerkDeck = (TextView) rowView.findViewById(R.id.tvPerkDeck);
 
+        TextView mastermind = (TextView) rowView.findViewById(R.id.masSkillName);
+        TextView mastermindSkillCount = (TextView) rowView.findViewById(R.id.masSkillCount);
+        TextView enforcer = (TextView) rowView.findViewById(R.id.enfSkillName);
+        TextView enforcerSkillCount = (TextView) rowView.findViewById(R.id.enfSkillCount);
+        TextView technician = (TextView) rowView.findViewById(R.id.techSkillName);
+        TextView technicianSkillCount = (TextView) rowView.findViewById(R.id.techSkillCount);
+        TextView ghost = (TextView) rowView.findViewById(R.id.ghoSkillName);
+        TextView ghostSkillCount = (TextView) rowView.findViewById(R.id.ghoSkillCount);
+        TextView fugitive = (TextView) rowView.findViewById(R.id.fugSkillName);
+        TextView fugitiveSkillCount = (TextView) rowView.findViewById(R.id.fugSkillCount);
+
         //Set build name
         textView.setText(builds.get(position).getName());
 
@@ -42,6 +55,28 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         textViewPerkDeck.setText(perkDeck);
 
 
+        int highlightedColour = context.getResources().getColor(R.color.textSecondary);
+        //Set colours if skills are above 15.
+        if (builds.get(position).getSkillBuild().getSkillTrees().get(Trees.MASTERMIND).getSkillCount() >= 15){
+            mastermind.setTextColor(highlightedColour);
+            mastermindSkillCount.setTextColor(highlightedColour);
+        }
+        if (builds.get(position).getSkillBuild().getSkillTrees().get(Trees.ENFORCER).getSkillCount() >= 15){
+            enforcer.setTextColor(highlightedColour);
+            enforcerSkillCount.setTextColor(highlightedColour);
+        }
+        if (builds.get(position).getSkillBuild().getSkillTrees().get(Trees.TECHNICIAN).getSkillCount() >= 15){
+            technician.setTextColor(highlightedColour);
+            technicianSkillCount.setTextColor(highlightedColour);
+        }
+        if (builds.get(position).getSkillBuild().getSkillTrees().get(Trees.GHOST).getSkillCount() >= 15){
+            ghost.setTextColor(highlightedColour);
+            ghostSkillCount.setTextColor(highlightedColour);
+        }
+        if (builds.get(position).getSkillBuild().getSkillTrees().get(Trees.FUGITIVE).getSkillCount() >= 15){
+            fugitive.setTextColor(highlightedColour);
+            fugitiveSkillCount.setTextColor(highlightedColour);
+        }
 
 
 
