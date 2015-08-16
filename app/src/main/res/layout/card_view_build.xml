@@ -223,6 +223,41 @@
 
             </LinearLayout>
 
+            <!--Detection-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.4"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:text="@string/detectionShort"
+                    android:textColor="@color/textHint"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:id="@+id/tvDetection"
+                    android:text="75"
+                    android:textColor="@color/textSecondary"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
 

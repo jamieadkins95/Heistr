@@ -6,6 +6,7 @@ import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Jamie on 14/07/2015.
@@ -134,5 +135,10 @@ public class Build {
             id += 1;
         }
         return id;
+    }
+
+    public int getDetection(){
+        Random r = new Random();
+        return r.nextInt(75);
     }
 }

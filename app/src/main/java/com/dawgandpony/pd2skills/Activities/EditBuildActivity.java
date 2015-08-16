@@ -50,6 +50,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
         MaterialSection secPrimary = newSection("Primary Weapon", new BlankFragment());
         MaterialSection secSecondaty = newSection("Secondary Weapon", new BlankFragment());
+        MaterialSection secMelee = newSection("Melee Weapon", new BlankFragment());
 
         MaterialSection secArmour = newSection("Armour", ArmourFragment.newInstance());
 
@@ -64,7 +65,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
 
 
-        
+
         addSection(secMas);
         addSection(secEnf);
         addSection(secTech);
@@ -77,6 +78,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
         this.addDivisor();
         addSection(secPrimary);
         addSection(secSecondaty);
+        addSection(secMelee);
         this.addDivisor();
 
         addSection(secArmour);

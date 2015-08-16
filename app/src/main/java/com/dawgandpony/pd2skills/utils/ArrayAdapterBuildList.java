@@ -32,6 +32,7 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         TextView textView = (TextView) rowView.findViewById(R.id.tvName);
         TextView textViewArmour = (TextView) rowView.findViewById(R.id.tvArmour);
         TextView textViewPerkDeck = (TextView) rowView.findViewById(R.id.tvPerkDeck);
+        TextView textViewDetection = (TextView) rowView.findViewById(R.id.tvDetection);
 
         TextView mastermind = (TextView) rowView.findViewById(R.id.masSkillName);
         TextView mastermindSkillCount = (TextView) rowView.findViewById(R.id.masSkillCount);
@@ -54,6 +55,9 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         //Set Perk Deck
         String perkDeck = context.getResources().getTextArray(R.array.perkDecks)[builds.get(position).getPerkDeck()].toString();
         textViewPerkDeck.setText(perkDeck);
+
+        //Set Detection
+        textViewDetection.setText(builds.get(position).getDetection() + "");
 
 
         int highlightedColour = context.getResources().getColor(R.color.textSecondary);

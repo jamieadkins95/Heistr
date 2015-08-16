@@ -39,6 +39,7 @@
     <string name="message_new_build">Enter a name for this new build.</string>
     <string name="armour_default">Suit</string>
     <string name="perk_deck_default">Crew Chief</string>
+    <string name="detectionShort">Det</string>
 
 
     <string-array name="skill_trees">
