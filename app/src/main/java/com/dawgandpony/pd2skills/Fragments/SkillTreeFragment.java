@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
+import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterBuildList;
 import com.dawgandpony.pd2skills.utils.SkillAdapter;
@@ -28,6 +29,7 @@ public class SkillTreeFragment extends Fragment {
 
     EditBuildActivity activity;
     private int skillTree;
+    SkillTree currentSkillTree;
 
 
 
@@ -50,6 +52,7 @@ public class SkillTreeFragment extends Fragment {
 
     public SkillTreeFragment() {
         // Required empty public constructor
+
     }
 
     @Override
@@ -59,12 +62,14 @@ public class SkillTreeFragment extends Fragment {
 
             skillTree = getArguments().getInt(ARG_TREE);
         }
+        activity = (EditBuildActivity) getActivity();
+        currentSkillTree = activity.getCurrentBuild().getSkillBuild().getSkillTrees().get(skillTree);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        activity = (EditBuildActivity) getActivity();
+
 
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_skill_tree, container, false);

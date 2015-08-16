@@ -80,7 +80,7 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
             fugitiveSkillCount.setTextColor(highlightedColour);
         }
 
-        
+
         return rowView;
     }
 

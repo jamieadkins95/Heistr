@@ -64,21 +64,20 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
 
 
-
-        //this.addSubheader("");
+        
         addSection(secMas);
         addSection(secEnf);
         addSection(secTech);
         addSection(secGhost);
         addSection(secFugi);
-        //this.addSubheader("");
+        this.addDivisor();
         addSection(secInfamy);
-        //this.addSubheader("");
+        this.addDivisor();
         addSection(secPD);
-        //this.addSubheader("");
+        this.addDivisor();
         addSection(secPrimary);
         addSection(secSecondaty);
-        //this.addSubheader("");
+        this.addDivisor();
 
         addSection(secArmour);
 
