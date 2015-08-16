@@ -196,6 +196,14 @@ public class DataSourceBuilds {
         build.setPerkDeck(perkDeck);
         build.setArmour(armour);
 
+        DataSourceSkills dataSourceSkills = new DataSourceSkills(context);
+        dataSourceSkills.open();
+        SkillBuild skillBuild = dataSourceSkills.getSkillBuild(skillBuildID);
+        dataSourceSkills.close();
+
+        build.setSkillBuild(skillBuild);
+
+
         return build;
     }
 
