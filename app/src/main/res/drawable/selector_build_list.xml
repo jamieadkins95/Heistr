@@ -10,5 +10,7 @@
         android:state_pressed="true"
         android:drawable="@drawable/shadow_selected"/>
 
+    <!--<item android:color="@color/primary"/>-->
+
 </selector>
 
