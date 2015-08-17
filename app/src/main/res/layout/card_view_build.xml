@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     style="@style/CardViewStyle"
     android:id="@+id/cvBuilds"
-    android:elevation="2dp"
+    cardview:cardElevation="4dp"
     cardview:cardBackgroundColor="@color/backgroundCard"
     android:foreground="@drawable/selector_build_list"
     android:layout_margin="5dp">
