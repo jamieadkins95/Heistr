@@ -1,7 +1,6 @@
 package com.dawgandpony.pd2skills.utils;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
-import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.R;
 

@@ -7,15 +7,12 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
+
 import android.support.v4.app.Fragment;
-import android.support.v7.internal.widget.AdapterViewCompat;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.ActionMode;
-import android.view.ContextMenu;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -26,23 +23,19 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.dawgandpony.pd2skills.Activities.BuildListActivity;
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
-import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterBuildList;
-
+import com.melnykov.fab.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.concurrent.LinkedTransferQueue;
 
 /**
  * A fragment containing the list of skill builds
@@ -54,7 +47,7 @@ public class BuildListFragment extends Fragment {
 
     ListView lvBuilds;
     CardView cv;
-    FloatingActionButton fab;
+
 
     public BuildListFragment() {
     }
@@ -68,6 +61,10 @@ public class BuildListFragment extends Fragment {
         this.lvBuilds = (ListView) rootView.findViewById(R.id.lvBuilds);
         this.lvBuilds.setEmptyView(rootView.findViewById(R.id.emptyElement));
         this.lvBuilds.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
+
+        FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fabNewBuild);
+        fab.attachToListView(lvBuilds);
+
 
         this.lvBuilds.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
             @Override
@@ -143,7 +140,7 @@ public class BuildListFragment extends Fragment {
         ColorStateList csl = new ColorStateList(
                 new int[][] {{android.R.attr.state_pressed},{}},
                 new int[] {Color.rgb(187, 222, 251), Color.rgb(33,150,243)});
-        fab.setBackgroundTintList(csl);
+        //fab.setBackgroundTintList(csl);
         //region FAB onClick
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
