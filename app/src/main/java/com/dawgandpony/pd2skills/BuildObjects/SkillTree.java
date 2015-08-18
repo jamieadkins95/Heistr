@@ -56,4 +56,16 @@ public class SkillTree {
         }
         return count;
     }
+
+    public ArrayList<Skill> getSkillsInListForm(){
+        ArrayList<Skill> skillList = new ArrayList<>();
+        for (SkillTier tier : skillTiers){
+            for (int i = 0; i < tier.getSkillsInTier().size(); i++){
+                skillList.add(tier.getSkillsInTier().get(i));
+            }
+
+        }
+
+        return skillList;
+    }
 }
