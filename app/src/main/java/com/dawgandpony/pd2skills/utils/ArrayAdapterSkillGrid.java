@@ -1,6 +1,7 @@
 package com.dawgandpony.pd2skills.utils;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +35,8 @@ public class ArrayAdapterSkillGrid extends ArrayAdapter<Skill>{
         View rowView = inflater.inflate(R.layout.grid_item_skill, parent, false);
         Button skillName = (Button) rowView.findViewById(R.id.btnSkillName);
 
-        //skillName.setText(skills.get(position).getName().charAt(0));
+        skillName.setText(skills.get(position).getName().substring(0,3));
+        //Log.d("DB", "Want skill build from DB");
 
         return rowView;
     }

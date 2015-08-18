@@ -233,7 +233,7 @@ public class SkillBuild {
                     eventType = xmlParser.next();
                 }
 
-                Log.d("XML", "End Document");
+               //Log.d("XML", "End Document");
             } catch (Exception e) {
                 Log.e("Error", e.toString());
                 xmlParser.close();

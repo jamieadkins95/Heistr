@@ -196,12 +196,13 @@ public class DataSourceBuilds {
         build.setPerkDeck(perkDeck);
         build.setArmour(armour);
 
-        DataSourceSkills dataSourceSkills = new DataSourceSkills(context);
-        dataSourceSkills.open();
-        SkillBuild skillBuild = dataSourceSkills.getSkillBuild(skillBuildID);
-        dataSourceSkills.close();
 
-        build.setSkillBuild(skillBuild);
+        SkillBuild skillBuildFromXML = SkillBuild.getSkillBuildFromXML(context.getResources());
+        SkillBuild skillBuildFromDB = SkillBuild.getSkillBuildFromDB(skillBuildID, context);
+        SkillBuild mergedSkillBuild = SkillBuild.mergeBuilds(skillBuildFromXML, skillBuildFromDB);
+
+
+        build.setSkillBuild(mergedSkillBuild);
 
 
         return build;

@@ -59,9 +59,9 @@ public class SkillTree {
 
     public ArrayList<Skill> getSkillsInListForm(){
         ArrayList<Skill> skillList = new ArrayList<>();
-        for (SkillTier tier : skillTiers){
-            for (int i = 0; i < tier.getSkillsInTier().size(); i++){
-                skillList.add(tier.getSkillsInTier().get(i));
+        for (int tier = skillTiers.size() - 1; tier > 1; tier--){
+            for (int skill = 0; skill < skillTiers.get(tier).getSkillsInTier().size(); skill++){
+                skillList.add(skillTiers.get(tier).getSkillsInTier().get(skill));
             }
 
         }
