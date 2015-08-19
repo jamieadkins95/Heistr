@@ -62,6 +62,8 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
         MaterialSection secAbout = newSection("About", R.drawable.ic_info_black_24dp, new BlankFragment());
         MaterialSection secSettings = newSection("Settings", R.drawable.ic_settings_black_24dp, new BlankFragment());
+        Intent intent = new Intent(this, BuildListActivity.class);
+        MaterialSection secHome = newSection("Home", R.drawable.ic_home_white_24dp, intent);
 
 
 
@@ -89,8 +91,10 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
         addSection(secArmour);
 
+        addBottomSection(secHome);
         addBottomSection(secAbout);
         addBottomSection(secSettings);
+
 
 
     }
