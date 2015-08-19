@@ -62,7 +62,7 @@ public class BuildListFragment extends Fragment {
         this.lvBuilds.setEmptyView(rootView.findViewById(R.id.emptyElement));
         this.lvBuilds.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
 
-        FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fabNewBuild);
+        final FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fabNewBuild);
         fab.attachToListView(lvBuilds);
 
 
@@ -113,6 +113,9 @@ public class BuildListFragment extends Fragment {
 
                         Toast.makeText(getActivity(), "Build(s) deleted", Toast.LENGTH_SHORT).show();
                         Log.d("Context Action", "Delete build " + selectedBuild.getSkillBuildID());
+                        if (!fab.isShown()){
+                            fab.show();
+                        }
                     }
                 }
             }
@@ -134,7 +137,7 @@ public class BuildListFragment extends Fragment {
 
         new GetBuildsFromDBTask(lvBuilds).execute();
 
-        fab = (FloatingActionButton) rootView.findViewById(R.id.fabNewBuild);
+        //fab = (FloatingActionButton) rootView.findViewById(R.id.fabNewBuild);
 
         //Weird workaround to get the colour of the FAB correct
         ColorStateList csl = new ColorStateList(
