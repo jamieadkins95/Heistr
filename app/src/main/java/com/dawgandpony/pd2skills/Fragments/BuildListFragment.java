@@ -113,9 +113,9 @@ public class BuildListFragment extends Fragment {
 
                         Toast.makeText(getActivity(), "Build(s) deleted", Toast.LENGTH_SHORT).show();
                         Log.d("Context Action", "Delete build " + selectedBuild.getSkillBuildID());
-                        if (!fab.isShown()){
-                            fab.show();
-                        }
+
+                        fab.show();
+
                     }
                 }
             }
