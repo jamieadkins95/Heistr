@@ -11,4 +11,5 @@ It is currently WiP and is not yet published on the play store.
  - Compatability with PD2Skills.com (Encoding and decoding)
 
 # Thanks to
-Fabio Biola for his MaterialNavigationDrawer library (Apache 2.0).
+Fabio Biola - [MaterialNavigationDrawer library](https://github.com/neokree/MaterialNavigationDrawer) (Apache 2.0)
+Melnykov Oleksandr - [FloatingActionButton library](https://github.com/makovkastar/FloatingActionButton) (Apache 2.0)
