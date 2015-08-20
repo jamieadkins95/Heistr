@@ -30,7 +30,6 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
     private Intent intentFromPreviousActivity;
     DataSourceBuilds dataSourceBuilds;
 
-
     @Override
     public void init(Bundle savedInstanceState) {
 
