@@ -57,15 +57,13 @@ public class SkillTree {
         return count;
     }
 
-    public ArrayList<Skill> getSkillsInListForm(){
-        ArrayList<Skill> skillList = new ArrayList<>();
+    public ArrayList<SkillTier> getTierListInDescendingOrder(){
+        ArrayList<SkillTier> descending = new ArrayList<>();
         for (int tier = skillTiers.size() - 1; tier > 1; tier--){
-            for (int skill = 0; skill < skillTiers.get(tier).getSkillsInTier().size(); skill++){
-                skillList.add(skillTiers.get(tier).getSkillsInTier().get(skill));
-            }
+            descending.add(skillTiers.get(tier));
 
         }
 
-        return skillList;
+        return descending;
     }
 }
