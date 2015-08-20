@@ -32,6 +32,11 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
 
     @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
     public void init(Bundle savedInstanceState) {
 
 
