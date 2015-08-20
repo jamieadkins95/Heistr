@@ -3,6 +3,7 @@ package com.dawgandpony.pd2skills.Activities;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
@@ -24,6 +25,7 @@ import it.neokree.materialnavigationdrawer.elements.MaterialSection;
  */
 public class EditBuildActivity extends MaterialNavigationDrawer {
 
+    private static final String TAG = EditBuildActivity.class.getSimpleName();
     private Build currentBuild;
     private Intent intentFromPreviousActivity;
     DataSourceBuilds dataSourceBuilds;
