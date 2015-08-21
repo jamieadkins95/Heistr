@@ -12,6 +12,9 @@
     <item name="grey" type="color">#9e9e9e</item>
     <item name="backgroundDark" type="color">#303030</item>
     <item name="backgroundCard" type="color">#424242</item>
+    <item name="black" type="color">#000000</item>
+    <item name="defaultButton" type="color">#66999999</item>
+    BCBCBC
 
 
 

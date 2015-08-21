@@ -3,25 +3,29 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
+    <com.dawgandpony.pd2skills.utils.SkillButton
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/btnSkill1"
         android:layout_weight="1"
         android:text="Skill"/>
 
-    <Button
+    <com.dawgandpony.pd2skills.utils.SkillButton
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/btnSkill2"
         android:layout_weight="1"
         android:text="Skill"/>
 
-    <Button
+    <com.dawgandpony.pd2skills.utils.SkillButton
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/btnSkill3"
         android:layout_weight="1"
         android:text="Skill"/>
+
+
+
+
 
 </LinearLayout>

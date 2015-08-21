@@ -1,6 +1,6 @@
 package com.dawgandpony.pd2skills.BuildObjects;
 
-import com.dawgandpony.pd2skills.Consts.SkillTaken;
+
 
 /**
  * Created by Jamie on 15/07/2015.
@@ -13,13 +13,17 @@ public class Skill {
     private int acePoints;
     private int taken;
 
+    public final static int NO = 0;
+    public final static int NORMAL = 1;
+    public final static int ACE = 2;
+
     public Skill() {
         name = "";
         normalDescription = "";
         aceDescription = "";
         normalPoints = 0;
         acePoints = 0;
-        taken = SkillTaken.NO;
+        taken = NO;
     }
 
     @Override
@@ -28,13 +32,13 @@ public class Skill {
 
 
         switch(taken){
-            case SkillTaken.NO:
+            case NO:
                 text += "no";
                 break;
-            case SkillTaken.NORMAL:
+            case NORMAL:
                 text += "normal";
                 break;
-            case SkillTaken.ACE:
+            case ACE:
                 text += "ace";
                 break;
 

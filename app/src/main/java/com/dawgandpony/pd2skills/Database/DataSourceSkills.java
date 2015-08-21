@@ -5,14 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
-import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
-import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
-import com.dawgandpony.pd2skills.Consts.SkillTaken;
-import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
+import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
+import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
+import com.dawgandpony.pd2skills.Consts.Trees;
 
 import java.util.ArrayList;
 
@@ -67,9 +65,9 @@ public class DataSourceSkills {
                 values.put(MySQLiteHelper.COLUMN_SKILL_BUILD_ID, skillBuildID);
                 values.put(MySQLiteHelper.COLUMN_TREE, tree);
                 values.put(MySQLiteHelper.COLUMN_TIER, tier);
-                values.put(MySQLiteHelper.COLUMNS_SKILLS[0], SkillTaken.NO);
-                values.put(MySQLiteHelper.COLUMNS_SKILLS[1], SkillTaken.NO);
-                values.put(MySQLiteHelper.COLUMNS_SKILLS[2], SkillTaken.NO);
+                values.put(MySQLiteHelper.COLUMNS_SKILLS[0], Skill.NO);
+                values.put(MySQLiteHelper.COLUMNS_SKILLS[1], Skill.NO);
+                values.put(MySQLiteHelper.COLUMNS_SKILLS[2], Skill.NO);
 
                 long id = database.insert(MySQLiteHelper.TABLE_SKILL_TIERS, null, values);
                 //Log.d("DB creation", "Tier ID = " + id + " - Added tier " + tier + " to tree " + tree);
