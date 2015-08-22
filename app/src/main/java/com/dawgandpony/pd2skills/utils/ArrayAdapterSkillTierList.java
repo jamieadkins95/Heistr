@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.GridView;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
@@ -31,26 +34,24 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
 
         final int tier = position;
 
-        SkillButton[] btns =  new SkillButton[3];
-        btns[0] = (SkillButton) rowView.findViewById(R.id.btnSkill1);
-        btns[1] = (SkillButton) rowView.findViewById(R.id.btnSkill2);
-        btns[2] = (SkillButton) rowView.findViewById(R.id.btnSkill3);
+
+
+        ImageButton[] btns =  new ImageButton[3];
+        btns[0] = (ImageButton) rowView.findViewById(R.id.btnSkill1);
+        btns[1] = (ImageButton) rowView.findViewById(R.id.btnSkill2);
+        btns[2] = (ImageButton) rowView.findViewById(R.id.btnSkill3);
 
         for (int i =0; i < skillTiers.get(tier).getSkillsInTier().size(); i++){
-            btns[i].setText(skillTiers.get(tier).getSkillsInTier().get(i).getName().substring(0, 3));
+
             switch (skillTiers.get(tier).getSkillsInTier().get(i).getTaken()){
                 case Skill.NO:
-                    btns[i].setNormal(false);
-                    btns[i].setNormal(false);
-
+                    btns[i].setBackgroundColor(context.getResources().getColor(R.color.black));
                     break;
                 case Skill.NORMAL:
-                    btns[i].setNormal(true);
-                    btns[i].setNormal(false);
+                    btns[i].setBackgroundColor(context.getResources().getColor(R.color.primaryAccent));
                     break;
                 case Skill.ACE:
-                    btns[i].setNormal(false);
-                    btns[i].setNormal(true);
+                    btns[i].setBackgroundColor(context.getResources().getColor(R.color.primary));
                     break;
             }
 
@@ -58,18 +59,18 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
             btns[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    SkillButton b = (SkillButton) v;
-                    if (!b.isNormal() && !b.isAced()){
-                        b.setNormal(true);
-                    }
-                    else if (b.isNormal() && !b.isAced()){
-                        b.setNormal(false);
-                        b.setAced(true);
-                    }
-                    else if (!b.isNormal() && b.isAced()){
-                        b.setNormal(false);
-                        b.setAced(false);
-                    }
+                    ImageButton imageButton = (ImageButton) v;
+                    imageButton.setBackgroundColor(context.getResources().getColor(R.color.primary));
+                    Toast.makeText(context, skill + "", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            btns[i].setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    ImageButton imageButton = (ImageButton) v;
+                    imageButton.setBackgroundColor(context.getResources().getColor(R.color.primaryAccent));
+                    return true;
                 }
             });
         }

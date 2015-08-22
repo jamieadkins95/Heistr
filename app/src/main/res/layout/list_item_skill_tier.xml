@@ -1,28 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="8dp">
 
-    <com.dawgandpony.pd2skills.utils.SkillButton
-        android:layout_width="0dp"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnSkill1"
         android:layout_weight="1"
-        android:text="Skill"/>
+        android:orientation="horizontal">
 
-    <com.dawgandpony.pd2skills.utils.SkillButton
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnSkill2"
-        android:layout_weight="1"
-        android:text="Skill"/>
+        <ImageButton
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSkill1"
+            android:src="@drawable/cable_guy"
+            />
+    </RelativeLayout>
 
-    <com.dawgandpony.pd2skills.utils.SkillButton
-        android:layout_width="0dp"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnSkill3"
         android:layout_weight="1"
-        android:text="Skill"/>
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSkill2"
+            android:src="@drawable/cable_guy"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        >
+
+        <ImageButton
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSkill3"
+            android:src="@drawable/cable_guy"
+            />
+    </RelativeLayout>
+
+
+
+
+
+
 
 
 
