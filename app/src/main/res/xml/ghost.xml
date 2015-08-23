@@ -4,124 +4,177 @@
     <tier>
         <tierNumber>0</tierNumber>
         <point_requirement>0</point_requirement>
+        <normal_cost>1</normal_cost>
+        <ace_cost>-1</ace_cost>
         <skill>
             <name>Unlocking the Ghost</name>
+            <abbreviation>Unlock</abbreviation>
             <normal>Unlocks the ability to place an ecm.</normal>
             <ace></ace>
+            <pd2skills>a</pd2skills>
         </skill>
     </tier>
     <tier>
         <tierNumber>1</tierNumber>
         <point_requirement>1</point_requirement>
+        <normal_cost>1</normal_cost>
+        <ace_cost>3</ace_cost>
         <skill>
             <name>Dead Presidents</name>
+            <abbreviation>Pres</abbreviation>
             <normal>Adds 10% more value to loose items that you pick up.</normal>
             <ace>Adds an additional 20% more value to loose items that you pick up.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Sprinter</name>
+            <abbreviation>Sprint</abbreviation>
             <normal>The time before stamina regeneration starts is reduced by 25% and the regeneration of stamina is increased by 25%.</normal>
             <ace>Your sprint speed is increased by 25% and you have a 25% better chance dodging enemy fire while sprinting.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Cat Burglar</name>
+            <abbreviation>Cat Bur</abbreviation>
             <normal>You take 75% less damage from falling from non-fatal heights.</normal>
             <ace>Your fall damage is reduced so that you only take armor damage from falling from non-fatal heights. Your custody time is reduced by 50%.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
     </tier>
     <tier>
         <tierNumber>2</tierNumber>
         <point_requirement>1</point_requirement>
+        <normal_cost>1</normal_cost>
+        <ace_cost>3</ace_cost>
         <skill>
             <name>Dead Presidents</name>
+            <abbreviation>Pres</abbreviation>
             <normal>Adds 10% more value to loose items that you pick up.</normal>
             <ace>Adds an additional 20% more value to loose items that you pick up.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Sprinter</name>
+            <abbreviation>Sprint</abbreviation>
             <normal>The time before stamina regeneration starts is reduced by 25% and the regeneration of stamina is increased by 25%.</normal>
             <ace>Your sprint speed is increased by 25% and you have a 25% better chance dodging enemy fire while sprinting.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Cat Burglar</name>
+            <abbreviation>Cat Bur</abbreviation>
             <normal>You take 75% less damage from falling from non-fatal heights.</normal>
             <ace>Your fall damage is reduced so that you only take armor damage from falling from non-fatal heights. Your custody time is reduced by 50%.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
     </tier>
     <tier>
         <tierNumber>3</tierNumber>
         <point_requirement>1</point_requirement>
+        <normal_cost>1</normal_cost>
+        <ace_cost>3</ace_cost>
         <skill>
             <name>Dead Presidents</name>
+            <abbreviation>Pres</abbreviation>
             <normal>Adds 10% more value to loose items that you pick up.</normal>
             <ace>Adds an additional 20% more value to loose items that you pick up.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Sprinter</name>
+            <abbreviation>Sprint</abbreviation>
             <normal>The time before stamina regeneration starts is reduced by 25% and the regeneration of stamina is increased by 25%.</normal>
             <ace>Your sprint speed is increased by 25% and you have a 25% better chance dodging enemy fire while sprinting.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Cat Burglar</name>
+            <abbreviation>Cat Bur</abbreviation>
             <normal>You take 75% less damage from falling from non-fatal heights.</normal>
             <ace>Your fall damage is reduced so that you only take armor damage from falling from non-fatal heights. Your custody time is reduced by 50%.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
     </tier>
     <tier>
         <tierNumber>4</tierNumber>
         <point_requirement>1</point_requirement>
+        <normal_cost>1</normal_cost>
+        <ace_cost>3</ace_cost>
         <skill>
             <name>Dead Presidents</name>
+            <abbreviation>Pres</abbreviation>
             <normal>Adds 10% more value to loose items that you pick up.</normal>
             <ace>Adds an additional 20% more value to loose items that you pick up.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Sprinter</name>
+            <abbreviation>Sprint</abbreviation>
             <normal>The time before stamina regeneration starts is reduced by 25% and the regeneration of stamina is increased by 25%.</normal>
             <ace>Your sprint speed is increased by 25% and you have a 25% better chance dodging enemy fire while sprinting.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Cat Burglar</name>
+            <abbreviation>Cat Bur</abbreviation>
             <normal>You take 75% less damage from falling from non-fatal heights.</normal>
             <ace>Your fall damage is reduced so that you only take armor damage from falling from non-fatal heights. Your custody time is reduced by 50%.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
     </tier>
     <tier>
         <tierNumber>5</tierNumber>
         <point_requirement>1</point_requirement>
+        <normal_cost>1</normal_cost>
+        <ace_cost>3</ace_cost>
         <skill>
             <name>Dead Presidents</name>
+            <abbreviation>Pres</abbreviation>
             <normal>Adds 10% more value to loose items that you pick up.</normal>
             <ace>Adds an additional 20% more value to loose items that you pick up.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Sprinter</name>
+            <abbreviation>Sprint</abbreviation>
             <normal>The time before stamina regeneration starts is reduced by 25% and the regeneration of stamina is increased by 25%.</normal>
             <ace>Your sprint speed is increased by 25% and you have a 25% better chance dodging enemy fire while sprinting.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Cat Burglar</name>
+            <abbreviation>Cat Bur</abbreviation>
             <normal>You take 75% less damage from falling from non-fatal heights.</normal>
             <ace>Your fall damage is reduced so that you only take armor damage from falling from non-fatal heights. Your custody time is reduced by 50%.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
     </tier>
     <tier>
         <tierNumber>6</tierNumber>
         <point_requirement>1</point_requirement>
+        <normal_cost>1</normal_cost>
+        <ace_cost>3</ace_cost>
         <skill>
             <name>Dead Presidents</name>
+            <abbreviation>Pres</abbreviation>
             <normal>Adds 10% more value to loose items that you pick up.</normal>
             <ace>Adds an additional 20% more value to loose items that you pick up.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Sprinter</name>
+            <abbreviation>Sprint</abbreviation>
             <normal>The time before stamina regeneration starts is reduced by 25% and the regeneration of stamina is increased by 25%.</normal>
             <ace>Your sprint speed is increased by 25% and you have a 25% better chance dodging enemy fire while sprinting.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Cat Burglar</name>
+            <abbreviation>Cat Bur</abbreviation>
             <normal>You take 75% less damage from falling from non-fatal heights.</normal>
             <ace>Your fall damage is reduced so that you only take armor damage from falling from non-fatal heights. Your custody time is reduced by 50%.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
     </tier>
+
 </skill_tree>

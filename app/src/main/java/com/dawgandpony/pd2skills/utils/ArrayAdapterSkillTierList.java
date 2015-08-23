@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
 import com.dawgandpony.pd2skills.R;
@@ -25,7 +26,7 @@ import java.util.List;
  */
 public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
 
-
+    Build currentBuild;
     List<SkillTier> skillTiers;
     Context context;
 
@@ -62,13 +63,16 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
 
             switch (skillTiers.get(pos).getSkillsInTier().get(i).getTaken()){
                 case Skill.NO:
-                    //btns2[i].setBackgroundColor(context.getResources().getColor(R.color.black));
+                    tvs[i].setTextColor(context.getResources().getColor(R.color.textPrimary));
+                    cvs[i].setCardBackgroundColor(context.getResources().getColor(R.color.backgroundCard));
                     break;
                 case Skill.NORMAL:
-                    tvs[i].setBackgroundColor(context.getResources().getColor(R.color.primaryAccent));
+                    tvs[i].setTextColor(context.getResources().getColor(R.color.primary));
+                    cvs[i].setCardBackgroundColor(context.getResources().getColor(R.color.textPrimary));
                     break;
                 case Skill.ACE:
-                    tvs[i].setBackgroundColor(context.getResources().getColor(R.color.primary));
+                    tvs[i].setTextColor(context.getResources().getColor(R.color.textPrimary));
+                    cvs[i].setCardBackgroundColor(context.getResources().getColor(R.color.primary));
                     break;
             }
 
@@ -76,25 +80,35 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
             cvs[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    /*ImageButton imageButton = (ImageButton) v;
-                    imageButton.setBackgroundColor(context.getResources().getColor(R.color.primary));*/
                     CardView cv = (CardView) v;
-                    tvs[skill].setTextColor(context.getResources().getColor(R.color.primary));
-                    cv.setCardBackgroundColor(context.getResources().getColor(R.color.textPrimary));
+                    switch (skillTiers.get(pos).getSkillsInTier().get(skill).getTaken()){
+                        case Skill.NO:
+                            tvs[skill].setTextColor(context.getResources().getColor(R.color.primary));
+                            cv.setCardBackgroundColor(context.getResources().getColor(R.color.textPrimary));
+                            skillTiers.get(pos).getSkillsInTier().get(skill).setTaken(Skill.NORMAL);
+                            break;
+                        case Skill.NORMAL:
+                            tvs[skill].setTextColor(context.getResources().getColor(R.color.textPrimary));
+                            cv.setCardBackgroundColor(context.getResources().getColor(R.color.primary));
+                            skillTiers.get(pos).getSkillsInTier().get(skill).setTaken(Skill.ACE);
+                            break;
+                        case Skill.ACE:
+                            tvs[skill].setTextColor(context.getResources().getColor(R.color.textPrimary));
+                            cv.setCardBackgroundColor(context.getResources().getColor(R.color.backgroundCard));
+                            skillTiers.get(pos).getSkillsInTier().get(skill).setTaken(Skill.NO);
+                            break;
+                    }
 
-                    Toast.makeText(context, skillTiers.get(pos).getSkillsInTier().get(skill).getName(), Toast.LENGTH_SHORT).show();
+                    currentBuild.updateSkillTier(context, skillTiers.get(pos).getSkillTree(), skillTiers.get(pos));
+
                 }
             });
 
             cvs[i].setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    /*ImageButton imageButton = (ImageButton) v;
-                    imageButton.setBackgroundColor(context.getResources().getColor(R.color.primaryAccent));*/
 
-                    CardView cv = (CardView) v;
-                    tvs[skill].setTextColor(context.getResources().getColor(R.color.textPrimary));
-                    cv.setCardBackgroundColor(context.getResources().getColor(R.color.primary));
+
                     return true;
                 }
             });
@@ -104,8 +118,9 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         return rowView;
     }
 
-    public ArrayAdapterSkillTierList(Context context, ArrayList<SkillTier> skills){
+    public ArrayAdapterSkillTierList(Context context, Build currentBuild, ArrayList<SkillTier> skills){
         super(context, -1, skills);
+        this.currentBuild = currentBuild;
         this.skillTiers = skills;
         this.context = context;
     }

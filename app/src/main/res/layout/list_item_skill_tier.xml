@@ -44,8 +44,8 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="8.5dp"
                     android:paddingBottom="8.5dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     android:textColor="@color/textPrimary"
                     android:text="Skill" />
                     <!--android:fontFamily="sans-serif-medium"-->
@@ -78,8 +78,8 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="8.5dp"
                     android:paddingBottom="8.5dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     android:textColor="@color/textPrimary"
                     android:text="Skill" />
                 <!--android:fontFamily="sans-serif-medium"-->
@@ -112,8 +112,8 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="8.5dp"
                     android:paddingBottom="8.5dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     android:textColor="@color/textPrimary"
                     android:text="Skill" />
                 <!--android:fontFamily="sans-serif-medium"-->

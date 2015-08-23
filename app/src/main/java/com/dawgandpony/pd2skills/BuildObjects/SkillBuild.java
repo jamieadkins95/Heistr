@@ -74,6 +74,7 @@ public class SkillBuild {
                 newSkillTier.setSkillBuildID(tierFromDB.getSkillBuildID());
                 newSkillTier.setPointRequirement(tierFromXML.getPointRequirement());
                 newSkillTier.setNumber(tierFromXML.getNumber());
+                newSkillTier.setSkillTree(tierFromDB.getSkillTree());
 
                 newSkillTier.setNormalCost(tierFromXML.getNormalCost());
                 newSkillTier.setAceCost(tierFromXML.getAceCost());

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
@@ -134,6 +135,20 @@ public class DataSourceSkills {
 
     }
 
+    public void updateSkillTier(long buildID, int tree, SkillTier tier){
+
+        ContentValues values = new ContentValues();
+        for (int skill = 0; skill < tier.getSkillsInTier().size(); skill++){
+            values.put(MySQLiteHelper.COLUMNS_SKILLS[skill], tier.getSkillsInTier().get(skill).getTaken());
+        }
+
+
+        database.update(MySQLiteHelper.TABLE_SKILL_TIERS, values, MySQLiteHelper.COLUMN_SKILL_BUILD_ID + " = " + buildID +
+                " AND " + MySQLiteHelper.COLUMN_TREE + " = " + tree +
+                " AND " + MySQLiteHelper.COLUMN_TIER + " = " + tier.getNumber(), null);
+        Log.d("DB", "Tier updated for build " + buildID + ", tree " + tree + ", tier " + tier.getNumber());
+    }
+
     private SkillBuild cursorToSkillBuild(Cursor cursorSkillBuild){
 
         SkillBuild skillBuild =  new SkillBuild();
@@ -167,6 +182,7 @@ public class DataSourceSkills {
                 skillBuild.getSkillTrees().get(treeNumber).getTierList().add(new SkillTier());
                 skillBuild.getSkillTrees().get(treeNumber).getTierList().get(tierNumber).setSkillBuildID(skillBuildID);
                 skillBuild.getSkillTrees().get(treeNumber).getTierList().get(tierNumber).setId(skillTierID);
+                skillBuild.getSkillTrees().get(treeNumber).getTierList().get(tierNumber).setSkillTree(treeNumber);
             }
 
             //Add the correct amount of skills to the tier

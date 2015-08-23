@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
+import com.dawgandpony.pd2skills.Database.DataSourceSkills;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -97,6 +98,17 @@ public class Build {
         dataSourceBuilds.open();
         dataSourceBuilds.updatePerkDeck(id, selected);
         dataSourceBuilds.close();
+
+    }
+
+    public void updateSkillTier(Context context, int skillTree, SkillTier updatedTier){
+        int tierNumber = updatedTier.getNumber();
+        skillBuild.getSkillTrees().get(skillTree).getTierList().set(tierNumber, updatedTier);
+
+        DataSourceSkills dataSourceSkills = new DataSourceSkills(context);
+        dataSourceSkills.open();
+        dataSourceSkills.updateSkillTier(id, skillTree, updatedTier);
+        dataSourceSkills.close();
 
     }
 

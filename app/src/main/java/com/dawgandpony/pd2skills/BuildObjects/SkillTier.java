@@ -14,6 +14,7 @@ public class SkillTier {
     int pointRequirement;
     int normalCost;
     int aceCost;
+    int skillTree;
     int number;
 
     public int getNumber() {
@@ -80,5 +81,13 @@ public class SkillTier {
 
     public void setAceCost(int aceCost) {
         this.aceCost = aceCost;
+    }
+
+    public int getSkillTree() {
+        return skillTree;
+    }
+
+    public void setSkillTree(int skillTree) {
+        this.skillTree = skillTree;
     }
 }
