@@ -75,6 +75,9 @@ public class SkillBuild {
                 newSkillTier.setPointRequirement(tierFromXML.getPointRequirement());
                 newSkillTier.setNumber(tierFromXML.getNumber());
 
+                newSkillTier.setNormalCost(tierFromXML.getNormalCost());
+                newSkillTier.setAceCost(tierFromXML.getAceCost());
+
 
                 for (int skill = 0; skill < tierFromXML.getSkillsInTier().size(); skill++){
                     Skill newSkill = new Skill();
@@ -82,6 +85,7 @@ public class SkillBuild {
                     Skill skillFromDB = tierFromDB.getSkillsInTier().get(skill);
 
                     newSkill.setName(skillFromXML.getName());
+                    newSkill.setAbbreviation(skillFromXML.getAbbreviation());
 
                     newSkill.setNormalDescription(skillFromXML.getNormalDescription());
                     newSkill.setAceDescription(skillFromXML.getAceDescription());
@@ -214,8 +218,17 @@ public class SkillBuild {
                             case "point_requirement":
                                 currentSkillTier.setPointRequirement(Integer.parseInt(text));
                                 break;
+                            case "normal_cost":
+                                currentSkillTier.setNormalCost(Integer.parseInt(text));
+                                break;
+                            case "ace_cost":
+                                currentSkillTier.setAceCost(Integer.parseInt(text));
+                                break;
                             case "name":
                                 currentSkill.setName(text);
+                                break;
+                            case "abbreviation":
+                                currentSkill.setAbbreviation(text);
                                 break;
                             case "normal":
                                 currentSkill.setNormalDescription(text);

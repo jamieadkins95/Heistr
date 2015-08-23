@@ -8,6 +8,7 @@
         <ace_cost>-1</ace_cost>
         <skill>
             <name>Unlocking the Mastermind</name>
+            <abbreviation>Unlock</abbreviation>
             <normal>Unlocks the ability to place a doctors bag.</normal>
             <ace></ace>
             <pd2skills>a</pd2skills>
@@ -20,18 +21,21 @@
         <ace_cost>3</ace_cost>
         <skill>
             <name>Cable Guy</name>
+            <abbreviation>CG</abbreviation>
             <normal>Cable tie civs 75% faster.</normal>
             <ace>Increase your cable tie supply by 4.</ace>
             <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Combat Medic</name>
+            <abbreviation>CM</abbreviation>
             <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
             <ace>Reviving a crew member gives them 30% more health.</ace>
             <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Endurance</name>
+            <abbreviation>End</abbreviation>
             <normal>Increases your stamina by 100%.</normal>
             <ace>Increases stamina for you and your crew by 50%.</ace>
             <pd2skills>d</pd2skills>
@@ -44,21 +48,24 @@
         <ace_cost>3</ace_cost>
         <skill>
             <name>Cable Guy</name>
+            <abbreviation>CG</abbreviation>
             <normal>Cable tie civs 75% faster.</normal>
             <ace>Increase your cable tie supply by 4.</ace>
-            <pd2skills>e</pd2skills>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Combat Medic</name>
+            <abbreviation>CM</abbreviation>
             <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
             <ace>Reviving a crew member gives them 30% more health.</ace>
-            <pd2skills>f</pd2skills>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Endurance</name>
+            <abbreviation>End</abbreviation>
             <normal>Increases your stamina by 100%.</normal>
             <ace>Increases stamina for you and your crew by 50%.</ace>
-            <pd2skills>g</pd2skills>
+            <pd2skills>d</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -68,81 +75,106 @@
         <ace_cost>3</ace_cost>
         <skill>
             <name>Cable Guy</name>
+            <abbreviation>CG</abbreviation>
             <normal>Cable tie civs 75% faster.</normal>
             <ace>Increase your cable tie supply by 4.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Combat Medic</name>
+            <abbreviation>CM</abbreviation>
             <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
             <ace>Reviving a crew member gives them 30% more health.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Endurance</name>
+            <abbreviation>End</abbreviation>
             <normal>Increases your stamina by 100%.</normal>
             <ace>Increases stamina for you and your crew by 50%.</ace>
+            <pd2skills>d</pd2skills>
         </skill>
     </tier>
     <tier>
         <tierNumber>4</tierNumber>
         <point_requirement>1</point_requirement>
-        <normal_cost>4</normal_cost>
-        <ace_cost>8</ace_cost>
+        <normal_cost>1</normal_cost>
+        <ace_cost>3</ace_cost>
         <skill>
             <name>Cable Guy</name>
+            <abbreviation>CG</abbreviation>
             <normal>Cable tie civs 75% faster.</normal>
             <ace>Increase your cable tie supply by 4.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Combat Medic</name>
+            <abbreviation>CM</abbreviation>
             <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
             <ace>Reviving a crew member gives them 30% more health.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Endurance</name>
+            <abbreviation>End</abbreviation>
             <normal>Increases your stamina by 100%.</normal>
             <ace>Increases stamina for you and your crew by 50%.</ace>
+            <pd2skills>d</pd2skills>
         </skill>
     </tier>
     <tier>
         <tierNumber>5</tierNumber>
         <point_requirement>1</point_requirement>
-        <normal_cost>4</normal_cost>
-        <ace_cost>8</ace_cost>
+        <normal_cost>1</normal_cost>
+        <ace_cost>3</ace_cost>
         <skill>
             <name>Cable Guy</name>
+            <abbreviation>CG</abbreviation>
             <normal>Cable tie civs 75% faster.</normal>
             <ace>Increase your cable tie supply by 4.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Combat Medic</name>
+            <abbreviation>CM</abbreviation>
             <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
             <ace>Reviving a crew member gives them 30% more health.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Endurance</name>
+            <abbreviation>End</abbreviation>
             <normal>Increases your stamina by 100%.</normal>
             <ace>Increases stamina for you and your crew by 50%.</ace>
+            <pd2skills>d</pd2skills>
         </skill>
     </tier>
     <tier>
         <tierNumber>6</tierNumber>
         <point_requirement>1</point_requirement>
-        <normal_cost>4</normal_cost>
-        <ace_cost>8</ace_cost>
+        <normal_cost>1</normal_cost>
+        <ace_cost>3</ace_cost>
         <skill>
             <name>Cable Guy</name>
+            <abbreviation>CG</abbreviation>
             <normal>Cable tie civs 75% faster.</normal>
             <ace>Increase your cable tie supply by 4.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Combat Medic</name>
+            <abbreviation>CM</abbreviation>
             <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
             <ace>Reviving a crew member gives them 30% more health.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Endurance</name>
+            <abbreviation>End</abbreviation>
             <normal>Increases your stamina by 100%.</normal>
             <ace>Increases stamina for you and your crew by 50%.</ace>
+            <pd2skills>d</pd2skills>
         </skill>
     </tier>
+
 </skill_tree>

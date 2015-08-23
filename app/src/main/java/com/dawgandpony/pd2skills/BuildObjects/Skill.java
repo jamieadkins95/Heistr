@@ -9,6 +9,7 @@ public class Skill {
     private String name;
     private String normalDescription;
     private String aceDescription;
+    private String abbreviation;
     private int normalPoints;
     private int acePoints;
     private int taken;
@@ -96,6 +97,14 @@ public class Skill {
     public void setName(String name) {
 
         this.name = name;
+    }
+
+    public String getAbbreviation() {
+        return abbreviation;
+    }
+
+    public void setAbbreviation(String abbreviation) {
+        this.abbreviation = abbreviation;
     }
 }
 

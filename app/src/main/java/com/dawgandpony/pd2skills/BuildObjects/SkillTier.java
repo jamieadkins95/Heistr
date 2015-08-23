@@ -12,6 +12,8 @@ public class SkillTier {
     long skillBuildID = -1;
     ArrayList<Skill> skillsInTier;
     int pointRequirement;
+    int normalCost;
+    int aceCost;
     int number;
 
     public int getNumber() {
@@ -62,5 +64,21 @@ public class SkillTier {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public int getNormalCost() {
+        return normalCost;
+    }
+
+    public void setNormalCost(int normalCost) {
+        this.normalCost = normalCost;
+    }
+
+    public int getAceCost() {
+        return aceCost;
+    }
+
+    public void setAceCost(int aceCost) {
+        this.aceCost = aceCost;
     }
 }

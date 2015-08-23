@@ -1,6 +1,7 @@
 package com.dawgandpony.pd2skills.utils;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,7 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.card_view_build, parent, false);
+        //CardView cardView = (CardView) rowView.findViewById(R.id.cvBuilds);
         TextView textView = (TextView) rowView.findViewById(R.id.tvName);
         TextView textViewArmour = (TextView) rowView.findViewById(R.id.tvArmour);
         TextView textViewPerkDeck = (TextView) rowView.findViewById(R.id.tvPerkDeck);
