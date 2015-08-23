@@ -59,10 +59,15 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         //Set Detection
         textViewDetection.setText(builds.get(position).getDetection() + "");
 
+        mastermindSkillCount.setText(builds.get(position).getSkillBuild().getSkillTrees().get(Trees.MASTERMIND).getSkillCount() + "");
+        enforcerSkillCount.setText(builds.get(position).getSkillBuild().getSkillTrees().get(Trees.ENFORCER).getSkillCount() + "");
+        technicianSkillCount.setText(builds.get(position).getSkillBuild().getSkillTrees().get(Trees.TECHNICIAN).getSkillCount() + "");
+        ghostSkillCount.setText(builds.get(position).getSkillBuild().getSkillTrees().get(Trees.GHOST).getSkillCount() + "");
+        fugitiveSkillCount.setText(builds.get(position).getSkillBuild().getSkillTrees().get(Trees.FUGITIVE).getSkillCount() + "");
 
         int highlightedColour = context.getResources().getColor(R.color.textSecondary);
-        //Set colours if skills are above 15.
 
+        //Set colours if skills are above 15.
         if (builds.get(position).getSkillBuild().getSkillTrees().get(Trees.MASTERMIND).getSkillCount() >= 15){
             mastermind.setTextColor(highlightedColour);
             mastermindSkillCount.setTextColor(highlightedColour);

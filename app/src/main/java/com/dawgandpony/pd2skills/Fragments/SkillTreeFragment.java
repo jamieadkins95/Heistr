@@ -71,7 +71,7 @@ public class SkillTreeFragment extends Fragment {
 
         ListView listView = (ListView) rootView.findViewById(R.id.lvSkillTiers);
 
-        ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, activity.getCurrentBuild(), currentSkillTree.getTierListInDescendingOrder());
+        ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, activity.getCurrentBuild(), currentSkillTree);
 
 
         listView.setAdapter(arrayAdapterSkillTiers);

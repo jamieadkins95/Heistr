@@ -90,4 +90,10 @@ public class SkillTier {
     public void setSkillTree(int skillTree) {
         this.skillTree = skillTree;
     }
+
+    public void ResetSkills() {
+        for (Skill skill : skillsInTier){
+            skill.setTaken(Skill.NO);
+        }
+    }
 }

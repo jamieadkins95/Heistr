@@ -40,6 +40,7 @@
     <string name="armour_default">Suit</string>
     <string name="perk_deck_default">Crew Chief</string>
     <string name="detectionShort">Det</string>
+    <string name="got_it">Got it!</string>
 
 
     <string-array name="skill_trees">

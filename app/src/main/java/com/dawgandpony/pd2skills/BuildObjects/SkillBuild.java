@@ -22,8 +22,7 @@ public class SkillBuild {
     long id = -1;
 
     ArrayList<SkillTree> skillTrees;
-    int pointsUsed;
-    int pointsAvailable;
+    int pointsAvailable = 120;
 
 
 
@@ -52,6 +51,17 @@ public class SkillBuild {
         this.id = id;
     }
 
+    public int getPointsUsed() {
+        int total = 0;
+        for (SkillTree tree : skillTrees){
+            total += tree.getPointsSpentInThisTree();
+        }
+        return total;
+    }
+
+    public int getPointsAvailable() {
+        return pointsAvailable;
+    }
 
     public static SkillBuild mergeBuilds(SkillBuild skillBuildFromXML, SkillBuild skillBuildFromDB) {
 

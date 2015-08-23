@@ -43,7 +43,7 @@
     </tier>
     <tier>
         <tierNumber>2</tierNumber>
-        <point_requirement>1</point_requirement>
+        <point_requirement>5</point_requirement>
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
@@ -70,7 +70,7 @@
     </tier>
     <tier>
         <tierNumber>3</tierNumber>
-        <point_requirement>1</point_requirement>
+        <point_requirement>10</point_requirement>
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
@@ -97,7 +97,7 @@
     </tier>
     <tier>
         <tierNumber>4</tierNumber>
-        <point_requirement>1</point_requirement>
+        <point_requirement>20</point_requirement>
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
@@ -124,7 +124,7 @@
     </tier>
     <tier>
         <tierNumber>5</tierNumber>
-        <point_requirement>1</point_requirement>
+        <point_requirement>30</point_requirement>
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
@@ -151,7 +151,7 @@
     </tier>
     <tier>
         <tierNumber>6</tierNumber>
-        <point_requirement>1</point_requirement>
+        <point_requirement>40</point_requirement>
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
