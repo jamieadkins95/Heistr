@@ -1,54 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:showDividers="none"
     android:padding="8dp">
 
-    <RelativeLayout
+    <TextView
+        android:id="@+id/tvSkillTierNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:text="Tier 0"
+        android:textSize="14sp"
+        android:textColor="@color/textSecondary"/>
 
-        <ImageButton
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnSkill1"
-            android:src="@drawable/cable_guy"
-            />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnSkill2"
-            android:src="@drawable/cable_guy"
-            />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="horizontal"
+    <LinearLayout
+        android:layout_below="@+id/tvSkillTierNo"
+        android:paddingTop="5dp"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:showDividers="none"
         >
 
-        <ImageButton
-            android:layout_centerInParent="true"
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnSkill3"
-            android:src="@drawable/cable_guy"
-            />
-    </RelativeLayout>
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Skill"
+                android:id="@+id/btnSkill1"
+                android:src="@drawable/cable_guy"
+
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnSkill2"
+                android:src="@drawable/cable_guy"
+                android:text="Skill"
+
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnSkill3"
+                android:src="@drawable/cable_guy"
+                android:text="Skill"
+
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
 
 
 
@@ -57,7 +83,4 @@
 
 
 
-
-
-
-</LinearLayout>
+</RelativeLayout>

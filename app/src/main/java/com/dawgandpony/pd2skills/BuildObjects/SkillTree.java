@@ -59,7 +59,7 @@ public class SkillTree {
 
     public ArrayList<SkillTier> getTierListInDescendingOrder(){
         ArrayList<SkillTier> descending = new ArrayList<>();
-        for (int tier = skillTiers.size() - 1; tier > 1; tier--){
+        for (int tier = skillTiers.size() - 1; tier > 0; tier--){
             descending.add(skillTiers.get(tier));
 
         }
