@@ -46,10 +46,10 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         TextView tvTierNumber = (TextView) rowView.findViewById(R.id.tvSkillTierNo);
         tvTierNumber.setText("Tier " + skillTiers.get(pos).getNumber() + ":");
 
-        /*ImageButton[] btns =  new ImageButton[3];
-        btns[0] = (ImageButton) rowView.findViewById(R.id.btnSkill1);
-        btns[1] = (ImageButton) rowView.findViewById(R.id.btnSkill2);
-        btns[2] = (ImageButton) rowView.findViewById(R.id.btnSkill3);*/
+        TextView tvPointsRequired = (TextView) rowView.findViewById(R.id.tvPointsRequired);
+        int pointReq =  skillTiers.get(pos).getPointRequirement() - skillTree.getPointsSpentInThisTree(skillTiers.get(pos).getNumber());
+        tvPointsRequired.setText(pointReq + " more to unlock");
+
 
         CardView[] cvs = new CardView[3];
 
@@ -118,6 +118,8 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                                 break;
                         }
 
+
+
                         //Update currentBuild (updates DB)
                         currentBuild.updateSkillTier(context, skillTiers.get(pos).getSkillTree(), skillTiers.get(pos));
 
@@ -127,7 +129,8 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                     }
 
 
-                    for (int i = 0; i < parent.getChildCount(); i++){
+                    update(parent);
+                    /*for (int i = 0; i < parent.getChildCount(); i++){
                         View tierView = parent.getChildAt(i);
                         SkillTier otherTier = skillTiers.get(i);
 
@@ -161,7 +164,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                             otherTier.ResetSkills();
                             currentBuild.updateSkillTier(context, skillTiers.get(pos).getSkillTree(), otherTier);
                         }
-                    }
+                    }*/
 
 
                 }
@@ -195,6 +198,50 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         this.skillTiers = skillTree.getTierListInDescendingOrder();
         this.skillTree = skillTree;
         this.context = context;
+    }
+
+    public void update(ViewGroup parent){
+
+        for (int i = 0; i < parent.getChildCount(); i++){
+            View tierView = parent.getChildAt(i);
+            SkillTier tier = skillTiers.get(i);
+
+            //Get card views from other views
+            CardView[] cvsOther = new CardView[3];
+            cvsOther[0] = (CardView) tierView.findViewById(R.id.cvSkill1);
+            cvsOther[1] = (CardView) tierView.findViewById(R.id.cvSkill2);
+            cvsOther[2] = (CardView) tierView.findViewById(R.id.cvSkill3);
+
+            //Get text views from other views
+            final TextView[] tvsOther =  new TextView[3];
+            tvsOther[0] = (TextView) tierView.findViewById(R.id.tvSkill1);
+            tvsOther[1] = (TextView) tierView.findViewById(R.id.tvSkill2);
+            tvsOther[2] = (TextView) tierView.findViewById(R.id.tvSkill3);
+
+            TextView tvPointsRequired = (TextView) tierView.findViewById(R.id.tvPointsRequired);
+            final int pointReq =  skillTiers.get(i).getPointRequirement() - skillTree.getPointsSpentInThisTree(skillTiers.get(i).getNumber());
+            tvPointsRequired.setText(pointReq + " more to unlock");
+
+            if (skillTree.getPointsSpentInThisTree(tier.getNumber()) >= tier.getPointRequirement()) {
+                tierView.setBackgroundColor(context.getResources().getColor(R.color.backgroundDark));
+                cvsOther[0].setEnabled(true);
+                cvsOther[1].setEnabled(true);
+                cvsOther[2].setEnabled(true);
+            }
+            else{
+                tierView.setBackgroundColor(context.getResources().getColor(R.color.backgroundVeryDark));
+
+                for (int k =0; k < cvsOther.length; k++){
+                    cvsOther[k].setEnabled(false);
+                    tvsOther[k].setTextColor(context.getResources().getColor(R.color.textPrimary));
+                    cvsOther[k].setCardBackgroundColor(context.getResources().getColor(R.color.backgroundCard));
+                }
+
+                tier.ResetSkills();
+                currentBuild.updateSkillTier(context, skillTiers.get(i).getSkillTree(), tier);
+            }
+        }
+
     }
 
 

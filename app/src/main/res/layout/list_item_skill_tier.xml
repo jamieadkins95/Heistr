@@ -13,6 +13,16 @@
         android:textSize="14sp"
         android:textColor="@color/textSecondary"/>
 
+    <TextView
+        android:id="@+id/tvPointsRequired"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 more to unlock"
+        android:textSize="14sp"
+        android:textColor="@color/textSecondary"/>
+
     <LinearLayout
         android:layout_below="@+id/tvSkillTierNo"
         android:paddingTop="5dp"
