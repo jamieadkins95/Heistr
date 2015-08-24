@@ -21,14 +21,14 @@
         <ace_cost>3</ace_cost>
         <skill>
             <name>Oppressor</name>
-            <abbreviation>Opp</abbreviation>
+            <abbreviation>Oppres</abbreviation>
             <normal>Your weapons are 25% more effective at threatening enemies.</normal>
             <ace>Your weapons are 50% more effective at threatening enemies.</ace>
             <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Bullet Storm</name>
-            <abbreviation>BS</abbreviation>
+            <abbreviation>BStorm</abbreviation>
             <normal>ADirectly after you deploy an ammo bag, you can fire your weapon for 5 seconds without depleting your ammunition.</normal>
             <ace>You can fire 10 seconds longer without depleting your ammunition.</ace>
             <pd2skills>c</pd2skills>
@@ -43,7 +43,7 @@
     </tier>
     <tier>
         <tierNumber>2</tierNumber>
-        <point_requirement>1</point_requirement>
+        <point_requirement>5</point_requirement>
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
@@ -70,7 +70,7 @@
     </tier>
     <tier>
         <tierNumber>3</tierNumber>
-        <point_requirement>1</point_requirement>
+        <point_requirement>10</point_requirement>
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
@@ -97,9 +97,9 @@
     </tier>
     <tier>
         <tierNumber>4</tierNumber>
-        <point_requirement>1</point_requirement>
-        <normal_cost>1</normal_cost>
-        <ace_cost>3</ace_cost>
+        <point_requirement>20</point_requirement>
+        <normal_cost>4</normal_cost>
+        <ace_cost>8</ace_cost>
         <skill>
             <name>Oppressor</name>
             <abbreviation>Opp</abbreviation>
@@ -124,9 +124,9 @@
     </tier>
     <tier>
         <tierNumber>5</tierNumber>
-        <point_requirement>1</point_requirement>
-        <normal_cost>1</normal_cost>
-        <ace_cost>3</ace_cost>
+        <point_requirement>30</point_requirement>
+        <normal_cost>4</normal_cost>
+        <ace_cost>8</ace_cost>
         <skill>
             <name>Oppressor</name>
             <abbreviation>Opp</abbreviation>
@@ -151,9 +151,9 @@
     </tier>
     <tier>
         <tierNumber>6</tierNumber>
-        <point_requirement>1</point_requirement>
-        <normal_cost>1</normal_cost>
-        <ace_cost>3</ace_cost>
+        <point_requirement>40</point_requirement>
+        <normal_cost>4</normal_cost>
+        <ace_cost>8</ace_cost>
         <skill>
             <name>Oppressor</name>
             <abbreviation>Opp</abbreviation>

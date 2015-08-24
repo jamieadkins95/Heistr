@@ -21,21 +21,21 @@
         <ace_cost>3</ace_cost>
         <skill>
             <name>Cable Guy</name>
-            <abbreviation>CG</abbreviation>
+            <abbreviation>Cable</abbreviation>
             <normal>Cable tie civs 75% faster.</normal>
             <ace>Increase your cable tie supply by 4.</ace>
             <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Combat Medic</name>
-            <abbreviation>CM</abbreviation>
+            <abbreviation>Medic</abbreviation>
             <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
             <ace>Reviving a crew member gives them 30% more health.</ace>
             <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Endurance</name>
-            <abbreviation>End</abbreviation>
+            <abbreviation>Endur</abbreviation>
             <normal>Increases your stamina by 100%.</normal>
             <ace>Increases stamina for you and your crew by 50%.</ace>
             <pd2skills>d</pd2skills>
@@ -98,8 +98,8 @@
     <tier>
         <tierNumber>4</tierNumber>
         <point_requirement>20</point_requirement>
-        <normal_cost>1</normal_cost>
-        <ace_cost>3</ace_cost>
+        <normal_cost>4</normal_cost>
+        <ace_cost>8</ace_cost>
         <skill>
             <name>Cable Guy</name>
             <abbreviation>CG</abbreviation>
@@ -125,8 +125,8 @@
     <tier>
         <tierNumber>5</tierNumber>
         <point_requirement>30</point_requirement>
-        <normal_cost>1</normal_cost>
-        <ace_cost>3</ace_cost>
+        <normal_cost>4</normal_cost>
+        <ace_cost>8</ace_cost>
         <skill>
             <name>Cable Guy</name>
             <abbreviation>CG</abbreviation>
@@ -152,8 +152,8 @@
     <tier>
         <tierNumber>6</tierNumber>
         <point_requirement>40</point_requirement>
-        <normal_cost>1</normal_cost>
-        <ace_cost>3</ace_cost>
+        <normal_cost>4</normal_cost>
+        <ace_cost>8</ace_cost>
         <skill>
             <name>Cable Guy</name>
             <abbreviation>CG</abbreviation>

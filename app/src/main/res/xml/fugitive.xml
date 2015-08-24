@@ -21,21 +21,21 @@
         <ace_cost>3</ace_cost>
         <skill>
             <name>Daredevil</name>
-            <abbreviation>Dare</abbreviation>
+            <abbreviation>Daredv</abbreviation>
             <normal>Increase your climbing speed by 20%.</normal>
             <ace>You gain a 15% dodge chance while zip-lining.</ace>
             <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Hidden Blade</name>
-            <abbreviation>Blade</abbreviation>
+            <abbreviation>HBlade</abbreviation>
             <normal>Increases your melee weapon concealment by 2.</normal>
             <ace>Enemies make 95% less noise when shot or meleed to death.</ace>
             <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Thick Skin</name>
-            <abbreviation>Th Skin</abbreviation>
+            <abbreviation>ThSkin</abbreviation>
             <normal>Your steadiness is increased by 10.</normal>
             <ace>Increases the armor of all ballistic vests by 20.</ace>
             <pd2skills>d</pd2skills>
@@ -43,7 +43,7 @@
     </tier>
     <tier>
         <tierNumber>2</tierNumber>
-        <point_requirement>1</point_requirement>
+        <point_requirement>5</point_requirement>
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
@@ -70,7 +70,7 @@
     </tier>
     <tier>
         <tierNumber>3</tierNumber>
-        <point_requirement>1</point_requirement>
+        <point_requirement>10</point_requirement>
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
@@ -97,9 +97,9 @@
     </tier>
     <tier>
         <tierNumber>4</tierNumber>
-        <point_requirement>1</point_requirement>
-        <normal_cost>1</normal_cost>
-        <ace_cost>3</ace_cost>
+        <point_requirement>20</point_requirement>
+        <normal_cost>4</normal_cost>
+        <ace_cost>8</ace_cost>
         <skill>
             <name>Daredevil</name>
             <abbreviation>Dare</abbreviation>
@@ -124,9 +124,9 @@
     </tier>
     <tier>
         <tierNumber>5</tierNumber>
-        <point_requirement>1</point_requirement>
-        <normal_cost>1</normal_cost>
-        <ace_cost>3</ace_cost>
+        <point_requirement>30</point_requirement>
+        <normal_cost>4</normal_cost>
+        <ace_cost>8</ace_cost>
         <skill>
             <name>Daredevil</name>
             <abbreviation>Dare</abbreviation>
@@ -151,9 +151,9 @@
     </tier>
     <tier>
         <tierNumber>6</tierNumber>
-        <point_requirement>1</point_requirement>
-        <normal_cost>1</normal_cost>
-        <ace_cost>3</ace_cost>
+        <point_requirement>40</point_requirement>
+        <normal_cost>4</normal_cost>
+        <ace_cost>8</ace_cost>
         <skill>
             <name>Daredevil</name>
             <abbreviation>Dare</abbreviation>
