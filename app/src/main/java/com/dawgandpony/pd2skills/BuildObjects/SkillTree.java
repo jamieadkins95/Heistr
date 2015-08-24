@@ -84,4 +84,22 @@ public class SkillTree {
 
         return total;
     }
+    public int getPointsSpentInThisTree(int upToTier){
+        int total = 1;
+        for (int i = 0; i < upToTier; i++){
+            SkillTier tier =skillTiers.get(i);
+            for (Skill skill : tier.getSkillsInTier()){
+                switch (skill.getTaken()){
+                    case Skill.NORMAL:
+                        total += tier.getNormalCost();
+                        break;
+                    case Skill.ACE:
+                        total += tier.getAceCost();
+                        break;
+                }
+            }
+        }
+
+        return total;
+    }
 }

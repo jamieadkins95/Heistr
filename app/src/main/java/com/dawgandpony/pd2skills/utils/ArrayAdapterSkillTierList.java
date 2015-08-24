@@ -62,7 +62,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         tvs[1] = (TextView) rowView.findViewById(R.id.tvSkill2);
         tvs[2] = (TextView) rowView.findViewById(R.id.tvSkill3);
 
-        if (skillTree.getPointsSpentInThisTree() < skillTiers.get(pos).getPointRequirement()){
+        if (skillTree.getPointsSpentInThisTree(pos) < skillTiers.get(pos).getPointRequirement()){
             rowView.setBackgroundColor(context.getResources().getColor(R.color.backgroundVeryDark));
             cvs[0].setEnabled(false);
             cvs[1].setEnabled(false);
@@ -92,7 +92,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
             cvs[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int previousPointsUsed = skillTree.getPointsSpentInThisTree();
+                    int previousPointsUsed = skillTree.getPointsSpentInThisTree(pos);
 
                     if (currentBuild.getSkillBuild().getPointsUsed() < currentBuild.getSkillBuild().getPointsAvailable()){
                         CardView cv = (CardView) v;
@@ -126,22 +126,6 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                         Toast.makeText(context, "All skill points used", Toast.LENGTH_SHORT).show();
                     }
 
-                    /*if (pos - 1 > 0) {
-                        View viewTierAbove = parent.getChildAt(pos - 1);
-                        SkillTier tierAbove = skillTiers.get(pos - 1);
-                        if (previousPointsUsed < tierAbove.getPointRequirement() && skillTree.getPointsSpentInThisTree() >= tierAbove.getPointRequirement()) {
-                            CardView[] cvsAbove = new CardView[3];
-
-                            cvsAbove[0] = (CardView) viewTierAbove.findViewById(R.id.cvSkill1);
-                            cvsAbove[1] = (CardView) viewTierAbove.findViewById(R.id.cvSkill2);
-                            cvsAbove[2] = (CardView) viewTierAbove.findViewById(R.id.cvSkill3);
-
-                            viewTierAbove.setBackgroundColor(context.getResources().getColor(R.color.backgroundDark));
-                            cvsAbove[0].setEnabled(true);
-                            cvsAbove[1].setEnabled(true);
-                            cvsAbove[2].setEnabled(true);
-                        }
-                    }*/
 
                     for (int i = 0; i < parent.getChildCount(); i++){
                         View tierView = parent.getChildAt(i);
@@ -159,7 +143,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                         tvsOther[1] = (TextView) tierView.findViewById(R.id.tvSkill2);
                         tvsOther[2] = (TextView) tierView.findViewById(R.id.tvSkill3);
 
-                        if (skillTree.getPointsSpentInThisTree() >= otherTier.getPointRequirement()) {
+                        if (skillTree.getPointsSpentInThisTree(otherTier.getNumber()) >= otherTier.getPointRequirement()) {
                             tierView.setBackgroundColor(context.getResources().getColor(R.color.backgroundDark));
                             cvsOther[0].setEnabled(true);
                             cvsOther[1].setEnabled(true);
