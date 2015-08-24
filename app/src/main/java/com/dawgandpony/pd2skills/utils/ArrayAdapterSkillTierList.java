@@ -34,12 +34,15 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
     List<SkillTier> skillTiers;
     SkillTree skillTree;
     Context context;
+    ViewGroup parentView;
 
     @Override
     public View getView(int position, View convertView, final ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.list_item_skill_tier, parent, false);
+
+        parentView = parent;
 
         final int pos = position;
 
@@ -92,7 +95,6 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
             cvs[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int previousPointsUsed = skillTree.getPointsSpentInThisTree(pos);
 
                     if (currentBuild.getSkillBuild().getPointsUsed() < currentBuild.getSkillBuild().getPointsAvailable()){
                         CardView cv = (CardView) v;
@@ -129,42 +131,8 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                     }
 
 
-                    update(parent);
-                    /*for (int i = 0; i < parent.getChildCount(); i++){
-                        View tierView = parent.getChildAt(i);
-                        SkillTier otherTier = skillTiers.get(i);
+                    updateTiers();
 
-                        //Get card views from other views
-                        CardView[] cvsOther = new CardView[3];
-                        cvsOther[0] = (CardView) tierView.findViewById(R.id.cvSkill1);
-                        cvsOther[1] = (CardView) tierView.findViewById(R.id.cvSkill2);
-                        cvsOther[2] = (CardView) tierView.findViewById(R.id.cvSkill3);
-
-                        //Get text views from other views
-                        final TextView[] tvsOther =  new TextView[3];
-                        tvsOther[0] = (TextView) tierView.findViewById(R.id.tvSkill1);
-                        tvsOther[1] = (TextView) tierView.findViewById(R.id.tvSkill2);
-                        tvsOther[2] = (TextView) tierView.findViewById(R.id.tvSkill3);
-
-                        if (skillTree.getPointsSpentInThisTree(otherTier.getNumber()) >= otherTier.getPointRequirement()) {
-                            tierView.setBackgroundColor(context.getResources().getColor(R.color.backgroundDark));
-                            cvsOther[0].setEnabled(true);
-                            cvsOther[1].setEnabled(true);
-                            cvsOther[2].setEnabled(true);
-                        }
-                        else{
-                            tierView.setBackgroundColor(context.getResources().getColor(R.color.backgroundVeryDark));
-
-                            for (int k =0; k < cvsOther.length; k++){
-                                cvsOther[k].setEnabled(false);
-                                tvsOther[k].setTextColor(context.getResources().getColor(R.color.textPrimary));
-                                cvsOther[k].setCardBackgroundColor(context.getResources().getColor(R.color.backgroundCard));
-                            }
-
-                            otherTier.ResetSkills();
-                            currentBuild.updateSkillTier(context, skillTiers.get(pos).getSkillTree(), otherTier);
-                        }
-                    }*/
 
 
                 }
@@ -200,7 +168,11 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         this.context = context;
     }
 
-    public void update(ViewGroup parent){
+    public void updateTiers(){
+        ViewGroup parent = null;
+        if (parentView != null){
+            parent = parentView;
+        }
 
         for (int i = 0; i < parent.getChildCount(); i++){
             View tierView = parent.getChildAt(i);
