@@ -3,8 +3,13 @@ package com.dawgandpony.pd2skills.Activities;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+
 import android.os.PersistableBundle;
 import android.support.v4.app.FragmentTransaction;
+
+import android.util.Log;
+import android.widget.Toast;
+
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
@@ -40,6 +45,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
         super.onResume();
     }
 
+
     @Override
     public void init(Bundle savedInstanceState) {
 
@@ -51,17 +57,17 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
         MaterialSection secInfamy = newSection("Infamy", InfamyFragment.newInstance(currentBuild.getInfamies()));
 
-        MaterialSection secMas = newSection("Mastermind", new BlankFragment());
+        /*MaterialSection secMas = newSection("Mastermind", new BlankFragment());
         MaterialSection secEnf = newSection("Enforcer", new BlankFragment());
         MaterialSection secTech = newSection("Technician", new BlankFragment());
         MaterialSection secGhost = newSection("Ghost", new BlankFragment());
-        MaterialSection secFugi = newSection("Fugitive", new BlankFragment());
+        MaterialSection secFugi = newSection("Fugitive", new BlankFragment());*/
 
-        /*MaterialSection secMas = newSection("Mastermind", SkillTreeFragment.newInstance(Trees.MASTERMIND));
+        MaterialSection secMas = newSection("Mastermind", SkillTreeFragment.newInstance(Trees.MASTERMIND));
         MaterialSection secEnf = newSection("Enforcer", SkillTreeFragment.newInstance(Trees.ENFORCER));
         MaterialSection secTech = newSection("Technician", SkillTreeFragment.newInstance(Trees.TECHNICIAN));
         MaterialSection secGhost = newSection("Ghost", SkillTreeFragment.newInstance(Trees.GHOST));
-        MaterialSection secFugi = newSection("Fugitive", SkillTreeFragment.newInstance(Trees.FUGITIVE));*/
+        MaterialSection secFugi = newSection("Fugitive", SkillTreeFragment.newInstance(Trees.FUGITIVE));
 
         MaterialSection secPD = newSection("Perk Deck", PerkDeckFragment.newInstance());
 
@@ -149,8 +155,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
 
 
-
-        new GetSkillsFromXMLandDBTask().execute(currentBuild.getSkillBuildID());
+        //new GetSkillsFromXMLandDBTask().execute(currentBuild.getSkillBuildID());
     }
 
     private class GetSkillsFromXMLandDBTask extends AsyncTask<Long, Integer, SkillBuild> {
@@ -170,7 +175,8 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
         @Override
         protected void onPostExecute(SkillBuild skillBuild) {
             super.onPostExecute(skillBuild);
-
+            //Toast.makeText(getApplicationContext(), "Retrieved skill build from DB", Toast.LENGTH_SHORT).show();
+            Log.d("DB", "Retrieved skill build from DB");
             setCurrentSkillBuild(skillBuild);
         }
 

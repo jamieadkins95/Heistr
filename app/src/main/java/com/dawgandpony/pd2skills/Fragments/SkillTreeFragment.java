@@ -6,17 +6,12 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
-import android.widget.TextView;
+import android.widget.ListView;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
-import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
 import com.dawgandpony.pd2skills.R;
-import com.dawgandpony.pd2skills.utils.ArrayAdapterBuildList;
-import com.dawgandpony.pd2skills.utils.SkillAdapter;
-
-import java.util.ArrayList;
+import com.dawgandpony.pd2skills.utils.ArrayAdapterSkillTierList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,7 +23,7 @@ public class SkillTreeFragment extends Fragment {
     private static final String ARG_TREE = "tree";
 
     EditBuildActivity activity;
-    private int skillTree;
+    private int skillTreeNum;
     SkillTree currentSkillTree;
 
 
@@ -60,10 +55,10 @@ public class SkillTreeFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
 
-            skillTree = getArguments().getInt(ARG_TREE);
+            skillTreeNum = getArguments().getInt(ARG_TREE);
         }
         activity = (EditBuildActivity) getActivity();
-        currentSkillTree = activity.getCurrentBuild().getSkillBuild().getSkillTrees().get(skillTree);
+        currentSkillTree = activity.getCurrentBuild().getSkillBuild().getSkillTrees().get(skillTreeNum);
     }
 
     @Override
@@ -74,11 +69,12 @@ public class SkillTreeFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_skill_tree, container, false);
 
-        GridView gridView = (GridView) rootView.findViewById(R.id.gvSkills);
+        ListView listView = (ListView) rootView.findViewById(R.id.lvSkillTiers);
+
+        ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, activity.getCurrentBuild(), currentSkillTree);
 
 
-
-        gridView.setAdapter(new SkillAdapter(activity));
+        listView.setAdapter(arrayAdapterSkillTiers);
 
 
         return rootView;

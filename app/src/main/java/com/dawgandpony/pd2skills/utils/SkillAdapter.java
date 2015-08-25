@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.R;
 
@@ -18,20 +19,7 @@ public class SkillAdapter extends BaseAdapter {
     // Keep all Images in array
     public Integer[] mThumbIds = {
             R.drawable.cable_guy, R.drawable.cable_guy,
-            R.drawable.cable_guy, R.drawable.cable_guy,
-            R.drawable.cable_guy, R.drawable.cable_guy,
-            R.drawable.cable_guy, R.drawable.cable_guy,
-            R.drawable.cable_guy, R.drawable.cable_guy,
-            R.drawable.cable_guy, R.drawable.cable_guy,
-            R.drawable.cable_guy, R.drawable.cable_guy,
-            R.drawable.cable_guy, R.drawable.cable_guy,
-            R.drawable.cable_guy, R.drawable.cable_guy,
-            R.drawable.cable_guy, R.drawable.cable_guy,
-            R.drawable.cable_guy, R.drawable.cable_guy,
-            R.drawable.cable_guy, R.drawable.cable_guy,
-            R.drawable.cable_guy, R.drawable.cable_guy,
-            R.drawable.cable_guy, R.drawable.cable_guy,
-            R.drawable.cable_guy, R.drawable.cable_guy
+            R.drawable.cable_guy,
     };
 
     // Constructor
@@ -55,9 +43,16 @@ public class SkillAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         ImageButton imageView = new ImageButton(mContext);
         imageView.setImageResource(mThumbIds[position]);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext, position + "", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
 
         return imageView;

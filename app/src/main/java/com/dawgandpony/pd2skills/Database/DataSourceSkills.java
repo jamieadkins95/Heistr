@@ -8,11 +8,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
-import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
-import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
-import com.dawgandpony.pd2skills.Consts.SkillTaken;
-import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
+import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
+import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
+import com.dawgandpony.pd2skills.Consts.Trees;
 
 import java.util.ArrayList;
 
@@ -67,9 +66,9 @@ public class DataSourceSkills {
                 values.put(MySQLiteHelper.COLUMN_SKILL_BUILD_ID, skillBuildID);
                 values.put(MySQLiteHelper.COLUMN_TREE, tree);
                 values.put(MySQLiteHelper.COLUMN_TIER, tier);
-                values.put(MySQLiteHelper.COLUMNS_SKILLS[0], SkillTaken.NO);
-                values.put(MySQLiteHelper.COLUMNS_SKILLS[1], SkillTaken.NO);
-                values.put(MySQLiteHelper.COLUMNS_SKILLS[2], SkillTaken.NO);
+                values.put(MySQLiteHelper.COLUMNS_SKILLS[0], Skill.NO);
+                values.put(MySQLiteHelper.COLUMNS_SKILLS[1], Skill.NO);
+                values.put(MySQLiteHelper.COLUMNS_SKILLS[2], Skill.NO);
 
                 long id = database.insert(MySQLiteHelper.TABLE_SKILL_TIERS, null, values);
                 //Log.d("DB creation", "Tier ID = " + id + " - Added tier " + tier + " to tree " + tree);
@@ -136,6 +135,20 @@ public class DataSourceSkills {
 
     }
 
+    public void updateSkillTier(long buildID, int tree, SkillTier tier){
+
+        ContentValues values = new ContentValues();
+        for (int skill = 0; skill < tier.getSkillsInTier().size(); skill++){
+            values.put(MySQLiteHelper.COLUMNS_SKILLS[skill], tier.getSkillsInTier().get(skill).getTaken());
+        }
+
+
+        database.update(MySQLiteHelper.TABLE_SKILL_TIERS, values, MySQLiteHelper.COLUMN_SKILL_BUILD_ID + " = " + buildID +
+                " AND " + MySQLiteHelper.COLUMN_TREE + " = " + tree +
+                " AND " + MySQLiteHelper.COLUMN_TIER + " = " + tier.getNumber(), null);
+        Log.d("DB", "Tier updated for build " + buildID + ", tree " + tree + ", tier " + tier.getNumber());
+    }
+
     private SkillBuild cursorToSkillBuild(Cursor cursorSkillBuild){
 
         SkillBuild skillBuild =  new SkillBuild();
@@ -169,6 +182,7 @@ public class DataSourceSkills {
                 skillBuild.getSkillTrees().get(treeNumber).getTierList().add(new SkillTier());
                 skillBuild.getSkillTrees().get(treeNumber).getTierList().get(tierNumber).setSkillBuildID(skillBuildID);
                 skillBuild.getSkillTrees().get(treeNumber).getTierList().get(tierNumber).setId(skillTierID);
+                skillBuild.getSkillTrees().get(treeNumber).getTierList().get(tierNumber).setSkillTree(treeNumber);
             }
 
             //Add the correct amount of skills to the tier

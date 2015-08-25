@@ -6,15 +6,9 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
-import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
-import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
-import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
-import com.dawgandpony.pd2skills.Consts.SkillTaken;
-import com.dawgandpony.pd2skills.Consts.Trees;
 
 import java.util.ArrayList;
 
@@ -196,12 +190,13 @@ public class DataSourceBuilds {
         build.setPerkDeck(perkDeck);
         build.setArmour(armour);
 
-        DataSourceSkills dataSourceSkills = new DataSourceSkills(context);
-        dataSourceSkills.open();
-        SkillBuild skillBuild = dataSourceSkills.getSkillBuild(skillBuildID);
-        dataSourceSkills.close();
 
-        build.setSkillBuild(skillBuild);
+        SkillBuild skillBuildFromXML = SkillBuild.getSkillBuildFromXML(context.getResources());
+        SkillBuild skillBuildFromDB = SkillBuild.getSkillBuildFromDB(skillBuildID, context);
+        SkillBuild mergedSkillBuild = SkillBuild.mergeBuilds(skillBuildFromXML, skillBuildFromDB);
+
+
+        build.setSkillBuild(mergedSkillBuild);
 
 
         return build;

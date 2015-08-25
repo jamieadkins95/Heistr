@@ -1,6 +1,6 @@
 package com.dawgandpony.pd2skills.Fragments;
 
-import android.app.AlertDialog;
+import android.support.v7.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;

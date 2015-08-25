@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:showDividers="none"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/tvSkillTierNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tier 0"
+        android:textSize="14sp"
+        android:textColor="@color/textSecondary"/>
+
+    <TextView
+        android:id="@+id/tvPointsRequired"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 more to unlock"
+        android:textSize="14sp"
+        android:textColor="@color/textSecondary"/>
+
+    <LinearLayout
+        android:layout_below="@+id/tvSkillTierNo"
+        android:paddingTop="5dp"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:showDividers="none"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:cardview="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CardViewStyle"
+                android:id="@+id/cvSkill1"
+                cardview:cardElevation="4dp"
+                android:layout_centerInParent="true"
+                cardview:cardBackgroundColor="@color/backgroundCard"
+                android:foreground="@drawable/selector_build_list"
+                android:layout_margin="5dp">
+
+                <TextView android:id="@+id/tvSkill1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8.5dp"
+                    android:paddingBottom="8.5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/textPrimary"
+                    android:text="Skill" />
+                    <!--android:fontFamily="sans-serif-medium"-->
+
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:cardview="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CardViewStyle"
+                android:id="@+id/cvSkill2"
+                cardview:cardElevation="4dp"
+                android:layout_centerInParent="true"
+                cardview:cardBackgroundColor="@color/backgroundCard"
+                android:foreground="@drawable/selector_build_list"
+                android:layout_margin="5dp">
+
+                <TextView android:id="@+id/tvSkill2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8.5dp"
+                    android:paddingBottom="8.5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/textPrimary"
+                    android:text="Skill" />
+                <!--android:fontFamily="sans-serif-medium"-->
+
+
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            >
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:cardview="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CardViewStyle"
+                android:id="@+id/cvSkill3"
+                cardview:cardElevation="4dp"
+                android:layout_centerInParent="true"
+                cardview:cardBackgroundColor="@color/backgroundCard"
+                android:foreground="@drawable/selector_build_list"
+                android:layout_margin="5dp">
+
+                <TextView android:id="@+id/tvSkill3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8.5dp"
+                    android:paddingBottom="8.5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/textPrimary"
+                    android:text="Skill" />
+                <!--android:fontFamily="sans-serif-medium"-->
+
+
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>

@@ -4,130 +4,177 @@
     <tier>
         <tierNumber>0</tierNumber>
         <point_requirement>0</point_requirement>
+        <normal_cost>1</normal_cost>
+        <ace_cost>-1</ace_cost>
         <skill>
             <name>Unlocking the Technician</name>
+            <abbreviation>Unlock</abbreviation>
             <normal>Unlocks the ability to place a trip mine.</normal>
             <ace></ace>
+            <pd2skills>a</pd2skills>
         </skill>
     </tier>
     <tier>
         <tierNumber>1</tierNumber>
         <point_requirement>1</point_requirement>
+        <normal_cost>1</normal_cost>
+        <ace_cost>3</ace_cost>
         <skill>
             <name>Rifleman</name>
+            <abbreviation>Riflem</abbreviation>
             <normal>Your snap to zoom is 100% faster with assault rifles and sniper rifles.</normal>
-            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.
-                .</ace>
+            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Demolition Man</name>
+            <abbreviation>Demoman</abbreviation>
             <normal>Adds 1 more trip mine to your inventory.</normal>
             <ace>ecreases your trip mine deploy time by 20%.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Nerves of Steel</name>
+            <abbreviation>N of S</abbreviation>
             <normal>You take 50% less damage while interacting with things.</normal>
             <ace>You can now use steel sight while in bleedout.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
     </tier>
     <tier>
         <tierNumber>2</tierNumber>
-        <point_requirement>1</point_requirement>
+        <point_requirement>5</point_requirement>
+        <normal_cost>1</normal_cost>
+        <ace_cost>3</ace_cost>
         <skill>
             <name>Rifleman</name>
+            <abbreviation>Rifle</abbreviation>
             <normal>Your snap to zoom is 100% faster with assault rifles and sniper rifles.</normal>
-            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.
-                .</ace>
+            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Demolition Man</name>
+            <abbreviation>Demo</abbreviation>
             <normal>Adds 1 more trip mine to your inventory.</normal>
             <ace>ecreases your trip mine deploy time by 20%.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Nerves of Steel</name>
+            <abbreviation>NoS</abbreviation>
             <normal>You take 50% less damage while interacting with things.</normal>
             <ace>You can now use steel sight while in bleedout.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
     </tier>
     <tier>
         <tierNumber>3</tierNumber>
-        <point_requirement>1</point_requirement>
+        <point_requirement>10</point_requirement>
+        <normal_cost>1</normal_cost>
+        <ace_cost>3</ace_cost>
         <skill>
             <name>Rifleman</name>
+            <abbreviation>Rifle</abbreviation>
             <normal>Your snap to zoom is 100% faster with assault rifles and sniper rifles.</normal>
-            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.
-                .</ace>
+            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Demolition Man</name>
+            <abbreviation>Demo</abbreviation>
             <normal>Adds 1 more trip mine to your inventory.</normal>
             <ace>ecreases your trip mine deploy time by 20%.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Nerves of Steel</name>
+            <abbreviation>NoS</abbreviation>
             <normal>You take 50% less damage while interacting with things.</normal>
             <ace>You can now use steel sight while in bleedout.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
     </tier>
     <tier>
         <tierNumber>4</tierNumber>
-        <point_requirement>1</point_requirement>
+        <point_requirement>20</point_requirement>
+        <normal_cost>4</normal_cost>
+        <ace_cost>8</ace_cost>
         <skill>
             <name>Rifleman</name>
+            <abbreviation>Rifle</abbreviation>
             <normal>Your snap to zoom is 100% faster with assault rifles and sniper rifles.</normal>
-            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.
-                .</ace>
+            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Demolition Man</name>
+            <abbreviation>Demo</abbreviation>
             <normal>Adds 1 more trip mine to your inventory.</normal>
             <ace>ecreases your trip mine deploy time by 20%.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Nerves of Steel</name>
+            <abbreviation>NoS</abbreviation>
             <normal>You take 50% less damage while interacting with things.</normal>
             <ace>You can now use steel sight while in bleedout.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
     </tier>
     <tier>
         <tierNumber>5</tierNumber>
-        <point_requirement>1</point_requirement>
+        <point_requirement>30</point_requirement>
+        <normal_cost>4</normal_cost>
+        <ace_cost>8</ace_cost>
         <skill>
             <name>Rifleman</name>
+            <abbreviation>Rifle</abbreviation>
             <normal>Your snap to zoom is 100% faster with assault rifles and sniper rifles.</normal>
-            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.
-                .</ace>
+            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Demolition Man</name>
+            <abbreviation>Demo</abbreviation>
             <normal>Adds 1 more trip mine to your inventory.</normal>
             <ace>ecreases your trip mine deploy time by 20%.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Nerves of Steel</name>
+            <abbreviation>NoS</abbreviation>
             <normal>You take 50% less damage while interacting with things.</normal>
             <ace>You can now use steel sight while in bleedout.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
     </tier>
     <tier>
         <tierNumber>6</tierNumber>
-        <point_requirement>1</point_requirement>
+        <point_requirement>40</point_requirement>
+        <normal_cost>4</normal_cost>
+        <ace_cost>8</ace_cost>
         <skill>
             <name>Rifleman</name>
+            <abbreviation>Rifle</abbreviation>
             <normal>Your snap to zoom is 100% faster with assault rifles and sniper rifles.</normal>
-            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.
-                .</ace>
+            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.</ace>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <name>Demolition Man</name>
+            <abbreviation>Demo</abbreviation>
             <normal>Adds 1 more trip mine to your inventory.</normal>
             <ace>ecreases your trip mine deploy time by 20%.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <name>Nerves of Steel</name>
+            <abbreviation>NoS</abbreviation>
             <normal>You take 50% less damage while interacting with things.</normal>
             <ace>You can now use steel sight while in bleedout.</ace>
+            <pd2skills>c</pd2skills>
         </skill>
     </tier>
+
 </skill_tree>

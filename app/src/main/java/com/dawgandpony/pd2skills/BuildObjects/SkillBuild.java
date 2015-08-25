@@ -22,8 +22,7 @@ public class SkillBuild {
     long id = -1;
 
     ArrayList<SkillTree> skillTrees;
-    int pointsUsed;
-    int pointsAvailable;
+    int pointsAvailable = 120;
 
 
 
@@ -52,6 +51,17 @@ public class SkillBuild {
         this.id = id;
     }
 
+    public int getPointsUsed() {
+        int total = 0;
+        for (SkillTree tree : skillTrees){
+            total += tree.getPointsSpentInThisTree();
+        }
+        return total;
+    }
+
+    public int getPointsAvailable() {
+        return pointsAvailable;
+    }
 
     public static SkillBuild mergeBuilds(SkillBuild skillBuildFromXML, SkillBuild skillBuildFromDB) {
 
@@ -74,6 +84,10 @@ public class SkillBuild {
                 newSkillTier.setSkillBuildID(tierFromDB.getSkillBuildID());
                 newSkillTier.setPointRequirement(tierFromXML.getPointRequirement());
                 newSkillTier.setNumber(tierFromXML.getNumber());
+                newSkillTier.setSkillTree(tierFromDB.getSkillTree());
+
+                newSkillTier.setNormalCost(tierFromXML.getNormalCost());
+                newSkillTier.setAceCost(tierFromXML.getAceCost());
 
 
                 for (int skill = 0; skill < tierFromXML.getSkillsInTier().size(); skill++){
@@ -82,6 +96,7 @@ public class SkillBuild {
                     Skill skillFromDB = tierFromDB.getSkillsInTier().get(skill);
 
                     newSkill.setName(skillFromXML.getName());
+                    newSkill.setAbbreviation(skillFromXML.getAbbreviation());
 
                     newSkill.setNormalDescription(skillFromXML.getNormalDescription());
                     newSkill.setAceDescription(skillFromXML.getAceDescription());
@@ -214,8 +229,17 @@ public class SkillBuild {
                             case "point_requirement":
                                 currentSkillTier.setPointRequirement(Integer.parseInt(text));
                                 break;
+                            case "normal_cost":
+                                currentSkillTier.setNormalCost(Integer.parseInt(text));
+                                break;
+                            case "ace_cost":
+                                currentSkillTier.setAceCost(Integer.parseInt(text));
+                                break;
                             case "name":
                                 currentSkill.setName(text);
+                                break;
+                            case "abbreviation":
+                                currentSkill.setAbbreviation(text);
                                 break;
                             case "normal":
                                 currentSkill.setNormalDescription(text);
@@ -233,7 +257,7 @@ public class SkillBuild {
                     eventType = xmlParser.next();
                 }
 
-                Log.d("XML", "End Document");
+               //Log.d("XML", "End Document");
             } catch (Exception e) {
                 Log.e("Error", e.toString());
                 xmlParser.close();
