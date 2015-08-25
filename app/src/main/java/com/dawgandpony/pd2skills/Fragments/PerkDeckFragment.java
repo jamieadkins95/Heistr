@@ -14,8 +14,9 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
+import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.R;
-
+import com.dawgandpony.pd2skills.utils.ArrayAdapterSkillTierList;
 
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ import java.util.Arrays;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PerkDeckFragment extends Fragment {
+public class PerkDeckFragment extends EditBuildFragment {
 
     ListView lvPerkDecks;
 
@@ -57,22 +58,29 @@ public class PerkDeckFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_perk_deck, container, false);
         lvPerkDecks = (ListView) rootView.findViewById(R.id.lvPerkDeck);
 
+
+
+        return  rootView;
+    }
+
+    @Override
+    public void onPostExecute(Build build) {
+        super.onPostExecute(build);
+
         ArrayList<String> perkDecks = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.perkDecks)));
 
         ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_single_choice, perkDecks);
         lvPerkDecks.setAdapter(mAdapter2);
-        lvPerkDecks.setItemChecked(activity.getCurrentBuild().getPerkDeck(), true);
+        lvPerkDecks.setItemChecked(getCurrentBuild().getPerkDeck(), true);
         lvPerkDecks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int selected = lvPerkDecks.getCheckedItemPosition();
-                activity.updatePerkDeck(selected);
+                updatePerkDeck(selected);
 
             }
         });
 
-
-        return  rootView;
     }
 
 

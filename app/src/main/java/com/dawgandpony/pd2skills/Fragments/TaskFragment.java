@@ -8,6 +8,10 @@ import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 
+import com.dawgandpony.pd2skills.BuildObjects.Build;
+import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
+import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
+
 /**
  * TaskFragment manages a single background task and retains itself across
  * configuration changes.
@@ -22,14 +26,16 @@ public class TaskFragment extends Fragment {
      */
     static interface TaskCallbacks {
         void onPreExecute();
-        void onProgressUpdate(int percent);
         void onCancelled();
-        void onPostExecute();
+        void onPostExecute(Build build);
     }
 
     private TaskCallbacks mCallbacks;
-    private DummyTask mTask;
+    private GetBuildFromDBTask mTask;
     private boolean mRunning;
+    private DataSourceBuilds dataSourceBuilds;
+
+    private Build currentBuild;
 
 
 
@@ -83,12 +89,20 @@ public class TaskFragment extends Fragment {
     /**
      * Start the background task.
      */
-    public void start() {
-        if (!mRunning) {
-            mTask = new DummyTask();
-            mTask.execute();
-            mRunning = true;
+    public void start(long buildID, String newBuildName) {
+        mCallbacks = (TaskCallbacks) getTargetFragment();
+
+        if (currentBuild == null){
+            if (!mRunning) {
+                mTask = new GetBuildFromDBTask(newBuildName);
+                mTask.execute(buildID);
+                mRunning = true;
+            }
         }
+        else if (currentBuild.getId() == buildID){
+            mCallbacks.onPostExecute(currentBuild);
+        }
+
     }
 
     /**
@@ -113,11 +127,15 @@ public class TaskFragment extends Fragment {
     /***** BACKGROUND TASK *****/
     /***************************/
 
-    /**
-     * A dummy task that performs some (dumb) background work and proxies progress
-     * updates and results back to the Activity.
-     */
-    private class DummyTask extends AsyncTask<Void, Integer, Void> {
+
+    private class GetBuildFromDBTask extends AsyncTask<Long, Integer, Build> {
+
+        String name;
+
+        public GetBuildFromDBTask(String name) {
+            super();
+            this.name = name;
+        }
 
         @Override
         protected void onPreExecute() {
@@ -127,19 +145,23 @@ public class TaskFragment extends Fragment {
         }
 
         @Override
-        protected Void doInBackground(Void... ignore) {
-            for (int i = 0; !isCancelled() && i < 100; i++) {
-                if (DEBUG) Log.i(TAG, "publishProgress(" + i + "%)");
-                SystemClock.sleep(100);
-                publishProgress(i);
-            }
-            return null;
-        }
+        protected Build doInBackground(Long... ids) {
 
-        @Override
-        protected void onProgressUpdate(Integer... percent) {
-            // Proxy the call to the Activity.
-            mCallbacks.onProgressUpdate(percent[0]);
+            Build currentBuild;
+
+            long buildID = ids[0];
+
+            dataSourceBuilds = new DataSourceBuilds(getActivity());
+            dataSourceBuilds.open();
+            if (buildID == Build.NEW_BUILD){
+                currentBuild = dataSourceBuilds.createAndInsertBuild(name);
+            }
+            else {
+                currentBuild = dataSourceBuilds.getBuild(buildID);
+            }
+            dataSourceBuilds.close();
+
+            return currentBuild;
         }
 
         @Override
@@ -149,12 +171,18 @@ public class TaskFragment extends Fragment {
             mRunning = false;
         }
 
+
         @Override
-        protected void onPostExecute(Void ignore) {
-            // Proxy the call to the Activity.
-            mCallbacks.onPostExecute();
+        protected void onPostExecute(Build build) {
+            super.onPostExecute(build);
+            //Toast.makeText(getApplicationContext(), "Retrieved skill build from DB", Toast.LENGTH_SHORT).show();
+            Log.d("DB", "Retrieved skill build from DB");
+            currentBuild = build;
+            mCallbacks.onPostExecute(build);
             mRunning = false;
         }
+
+
     }
 
     /************************/

@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.Switch;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
+import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.R;
 
 import java.util.ArrayList;
@@ -24,11 +25,11 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class InfamyFragment extends Fragment {
+public class InfamyFragment extends EditBuildFragment {
 
     ListView lvInfamies;
 
-    ArrayList<Boolean> infamies;
+
     EditBuildActivity activity;
 
 
@@ -36,13 +37,8 @@ public class InfamyFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static InfamyFragment newInstance(ArrayList<Boolean> infamies) {
-
-        Bundle args = new Bundle();
-
+    public static InfamyFragment newInstance() {
         InfamyFragment fragment = new InfamyFragment();
-        fragment.infamies = infamies;
-        fragment.setArguments(args);
         return fragment;
     }
 
@@ -56,16 +52,22 @@ public class InfamyFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_infamy, container, false);
         lvInfamies = (ListView) rootView.findViewById(R.id.lvInfamy);
 
+
+
+        return  rootView;
+    }
+
+    @Override
+    public void onPostExecute(Build build) {
+        super.onPostExecute(build);
+
         ArrayList<String> infamies = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.infamies)));
-
-
-
         ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_multiple_choice, infamies);
         lvInfamies.setAdapter(mAdapter2);
 
         //Get infamies from the currentBuild and check the respective check box.
-        for (int i = 0; i < activity.getCurrentBuild().getInfamies().size();i++ ){
-            lvInfamies.setItemChecked(i, activity.getCurrentBuild().getInfamies().get(i));
+        for (int i = 0; i < getCurrentBuild().getInfamies().size();i++ ){
+            lvInfamies.setItemChecked(i, getCurrentBuild().getInfamies().get(i));
         }
 
         lvInfamies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -74,16 +76,12 @@ public class InfamyFragment extends Fragment {
 
                 //Update the DB whenever the infamies change
                 SparseBooleanArray checked = lvInfamies.getCheckedItemPositions();
-                for (int i = 0; i < checked.size(); i++){
-                    activity.updateInfamy(checked.keyAt(i), checked.valueAt(i));
+                for (int i = 0; i < checked.size(); i++) {
+                    updateInfamy(checked.keyAt(i), checked.valueAt(i));
 
                 }
 
             }
         });
-
-        return  rootView;
     }
-
-
 }

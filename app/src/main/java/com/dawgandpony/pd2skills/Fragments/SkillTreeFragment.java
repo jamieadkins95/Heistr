@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
+import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterSkillTierList;
@@ -18,13 +19,15 @@ import com.dawgandpony.pd2skills.utils.ArrayAdapterSkillTierList;
  * Use the {@link SkillTreeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SkillTreeFragment extends Fragment {
+public class SkillTreeFragment extends EditBuildFragment {
     // the fragment initialization parameters
     private static final String ARG_TREE = "tree";
 
     EditBuildActivity activity;
     private int skillTreeNum;
     SkillTree currentSkillTree;
+
+    ListView listView;
 
 
 
@@ -58,7 +61,7 @@ public class SkillTreeFragment extends Fragment {
             skillTreeNum = getArguments().getInt(ARG_TREE);
         }
         activity = (EditBuildActivity) getActivity();
-        currentSkillTree = activity.getCurrentBuild().getSkillBuild().getSkillTrees().get(skillTreeNum);
+
     }
 
     @Override
@@ -69,16 +72,23 @@ public class SkillTreeFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_skill_tree, container, false);
 
-        ListView listView = (ListView) rootView.findViewById(R.id.lvSkillTiers);
-
-        ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, activity.getCurrentBuild(), currentSkillTree);
-
-
-        listView.setAdapter(arrayAdapterSkillTiers);
-
+        listView = (ListView) rootView.findViewById(R.id.lvSkillTiers);
 
         return rootView;
     }
 
 
+    @Override
+    public void onPreExecute() {
+        super.onPreExecute();
+    }
+
+    @Override
+    public void onPostExecute(Build build) {
+        super.onPostExecute(build);
+        currentSkillTree = getCurrentBuild().getSkillBuild().getSkillTrees().get(skillTreeNum);
+        ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, getCurrentBuild(), currentSkillTree);
+
+        listView.setAdapter(arrayAdapterSkillTiers);
+    }
 }

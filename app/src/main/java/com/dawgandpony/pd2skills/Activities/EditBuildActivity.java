@@ -3,25 +3,19 @@ package com.dawgandpony.pd2skills.Activities;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
-import android.os.PersistableBundle;
-import android.support.v4.app.FragmentTransaction;
-
 import android.util.Log;
-import android.widget.Toast;
-
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
+import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
+import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Fragments.ArmourFragment;
 import com.dawgandpony.pd2skills.Fragments.BlankFragment;
-import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Fragments.BuildListFragment;
 import com.dawgandpony.pd2skills.Fragments.InfamyFragment;
 import com.dawgandpony.pd2skills.Fragments.PerkDeckFragment;
-import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.Fragments.SkillTreeFragment;
-import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
+import com.dawgandpony.pd2skills.R;
 
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.neokree.materialnavigationdrawer.elements.MaterialSection;
@@ -32,36 +26,33 @@ import it.neokree.materialnavigationdrawer.elements.MaterialSection;
 public class EditBuildActivity extends MaterialNavigationDrawer {
 
     private final static String BUILD_ID = "BuildID";
-
     private static final String TAG = EditBuildActivity.class.getSimpleName();
-    private Build currentBuild;
+
     private Intent intentFromPreviousActivity;
-    DataSourceBuilds dataSourceBuilds;
+
+
+    private long currentBuildID;
+    private String newBuildName;
 
 
 
     @Override
     protected void onResume() {
         super.onResume();
+
     }
 
 
     @Override
     public void init(Bundle savedInstanceState) {
 
-
-        InitBuild(GetBuildIdFromIntent(savedInstanceState));
+        InitBuildId(savedInstanceState);
 
 
         setDrawerHeaderImage(R.drawable.payday_2_logo);
 
-        MaterialSection secInfamy = newSection("Infamy", InfamyFragment.newInstance(currentBuild.getInfamies()));
+        MaterialSection secInfamy = newSection("Infamy", InfamyFragment.newInstance());
 
-        /*MaterialSection secMas = newSection("Mastermind", new BlankFragment());
-        MaterialSection secEnf = newSection("Enforcer", new BlankFragment());
-        MaterialSection secTech = newSection("Technician", new BlankFragment());
-        MaterialSection secGhost = newSection("Ghost", new BlankFragment());
-        MaterialSection secFugi = newSection("Fugitive", new BlankFragment());*/
 
         MaterialSection secMas = newSection("Mastermind", SkillTreeFragment.newInstance(Trees.MASTERMIND));
         MaterialSection secEnf = newSection("Enforcer", SkillTreeFragment.newInstance(Trees.ENFORCER));
@@ -116,93 +107,36 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
     }
 
-    private long GetBuildIdFromIntent(Bundle savedInstanceState) {
-        Long buildID;
-        // Check whether we're recreating a previously destroyed instance
+    private void InitBuildId(Bundle savedInstanceState) {
+
         if (savedInstanceState != null) {
             // Restore value of members from saved state
-            buildID = savedInstanceState.getLong(BUILD_ID);
+            currentBuildID = savedInstanceState.getLong(BUILD_ID);
 
-        } else {
+        }
+        else{
             intentFromPreviousActivity = getIntent();
-            buildID = intentFromPreviousActivity.getLongExtra(BuildListFragment.EXTRA_BUILD_ID, Build.NEW_BUILD);
+            currentBuildID = intentFromPreviousActivity.getLongExtra(BuildListFragment.EXTRA_BUILD_ID, Build.NEW_BUILD);
+            newBuildName =  getIntent().getStringExtra(BuildListFragment.EXTRA_BUILD_NAME);
         }
 
-        return buildID;
+
+
     }
+
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putLong(BUILD_ID, currentBuild.getId());
+        savedInstanceState.putLong(BUILD_ID, currentBuildID);
 
         super.onSaveInstanceState(savedInstanceState);
     }
 
-    private void InitBuild(long buildID){
-        String newBuildName = getIntent().getStringExtra(BuildListFragment.EXTRA_BUILD_NAME);
-
-        dataSourceBuilds = new DataSourceBuilds(this);
-        if (buildID == Build.NEW_BUILD){
-            dataSourceBuilds.open();
-            currentBuild = dataSourceBuilds.createAndInsertBuild(newBuildName);
-            dataSourceBuilds.close();
-        }
-        else {
-            dataSourceBuilds.open();
-            currentBuild = dataSourceBuilds.getBuild(buildID);
-            dataSourceBuilds.close();
-        }
-
-
-
-        //new GetSkillsFromXMLandDBTask().execute(currentBuild.getSkillBuildID());
+    public long getCurrentBuildID() {
+        return currentBuildID;
     }
 
-    private class GetSkillsFromXMLandDBTask extends AsyncTask<Long, Integer, SkillBuild> {
-
-
-
-        @Override
-        protected SkillBuild doInBackground(Long... ids) {
-
-            SkillBuild skillBuildFromXML = SkillBuild.getSkillBuildFromXML(getResources());
-            SkillBuild skillBuildFromDB = SkillBuild.getSkillBuildFromDB(ids[0], getApplication());
-            SkillBuild mergedSkillBuild = SkillBuild.mergeBuilds(skillBuildFromXML, skillBuildFromDB);
-            return mergedSkillBuild;
-        }
-
-
-        @Override
-        protected void onPostExecute(SkillBuild skillBuild) {
-            super.onPostExecute(skillBuild);
-            //Toast.makeText(getApplicationContext(), "Retrieved skill build from DB", Toast.LENGTH_SHORT).show();
-            Log.d("DB", "Retrieved skill build from DB");
-            setCurrentSkillBuild(skillBuild);
-        }
-
-
-    }
-
-    public void updateInfamy(int infamy, boolean infamyEnabled){
-        currentBuild.updateInfamy(this, infamy, infamyEnabled);
-
-    }
-
-    public void updatePerkDeck(int selected){
-        currentBuild.updatePerkDeck(this, selected);
-
-    }
-
-    public void updateArmour(int selected){
-        currentBuild.updateArmour(this, selected);
-
-    }
-
-    private void setCurrentSkillBuild(SkillBuild build){
-        currentBuild.setSkillBuild(build);
-    }
-
-    public Build getCurrentBuild() {
-        return currentBuild;
+    public String getNewBuildName() {
+        return newBuildName;
     }
 }
