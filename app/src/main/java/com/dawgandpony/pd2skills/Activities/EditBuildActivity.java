@@ -1,8 +1,10 @@
 package com.dawgandpony.pd2skills.Activities;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
@@ -15,7 +17,10 @@ import com.dawgandpony.pd2skills.Fragments.BuildListFragment;
 import com.dawgandpony.pd2skills.Fragments.InfamyFragment;
 import com.dawgandpony.pd2skills.Fragments.PerkDeckFragment;
 import com.dawgandpony.pd2skills.Fragments.SkillTreeFragment;
+import com.dawgandpony.pd2skills.Fragments.TaskFragment;
 import com.dawgandpony.pd2skills.R;
+
+import java.util.ArrayList;
 
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.neokree.materialnavigationdrawer.elements.MaterialSection;
@@ -23,30 +28,42 @@ import it.neokree.materialnavigationdrawer.elements.MaterialSection;
 /**
  * Created by Jamie on 15/07/2015.
  */
-public class EditBuildActivity extends MaterialNavigationDrawer {
+public class EditBuildActivity extends MaterialNavigationDrawer implements TaskFragment.TaskCallbacks{
 
+    private static final String TAG_TASK_FRAGMENT = "task_fragment";
     private final static String BUILD_ID = "BuildID";
     private static final String TAG = EditBuildActivity.class.getSimpleName();
 
     private Intent intentFromPreviousActivity;
 
+    private Build currentBuild;
 
     private long currentBuildID;
     private String newBuildName;
 
-
+    private TaskFragment mTaskFragment;
+    private ArrayList<BuildReadyCallbacks> mListCallbacks;
 
     @Override
     protected void onResume() {
         super.onResume();
-
+        mListCallbacks = new ArrayList<>();
+        InitRetainedFragment();
+        //InitBuildRetrieval();
     }
 
 
     @Override
     public void init(Bundle savedInstanceState) {
 
+        mListCallbacks = new ArrayList<>();
+
+
+
+
         InitBuildId(savedInstanceState);
+
+
 
 
         setDrawerHeaderImage(R.drawable.payday_2_logo);
@@ -107,6 +124,28 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
     }
 
+    public void InitBuildRetrieval() {
+        if (mTaskFragment.isRunning()) {
+            mTaskFragment.cancel();
+        } else {
+            mTaskFragment.start(currentBuildID, newBuildName);
+        }
+    }
+
+    private void InitRetainedFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        mTaskFragment = (TaskFragment) fm.findFragmentByTag(TAG_TASK_FRAGMENT);
+
+        // If we haven't retained the worker fragment, then create it
+        // and set this UIFragment as the TaskFragment's target fragment.
+        if (mTaskFragment == null) {
+            mTaskFragment = new TaskFragment();
+            mTaskFragment.setCurrentBuildID(currentBuildID);
+            mTaskFragment.setNewBuildName(newBuildName);
+            fm.beginTransaction().add(mTaskFragment, TAG_TASK_FRAGMENT).commit();
+        }
+    }
+
     private void InitBuildId(Bundle savedInstanceState) {
 
         if (savedInstanceState != null) {
@@ -138,5 +177,53 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
     public String getNewBuildName() {
         return newBuildName;
+    }
+
+    @Override
+    public void onPreExecute() {
+
+    }
+
+    @Override
+    public void onCancelled() {
+
+    }
+
+    @Override
+    public void onPostExecute(Build build) {
+        currentBuild = build;
+        if (mListCallbacks == null){
+            mListCallbacks = new ArrayList<>();
+        }else{
+            for (BuildReadyCallbacks b : mListCallbacks){
+                b.onBuildReady();
+            }
+        }
+
+    }
+
+    public static interface BuildReadyCallbacks{
+        void onBuildReady();
+    }
+
+
+
+    public void updatePerkDeck(int selected){
+        currentBuild.updatePerkDeck(this, selected);
+
+    }
+
+    public void listenIn(Fragment f){
+        mListCallbacks.add((BuildReadyCallbacks) f);
+    }
+
+    public void stopListening(Fragment f){
+        mListCallbacks.remove(f);
+    }
+
+
+
+    public Build getCurrentBuild() {
+        return currentBuild;
     }
 }

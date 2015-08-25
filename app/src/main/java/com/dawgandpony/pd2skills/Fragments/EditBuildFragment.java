@@ -13,25 +13,19 @@ import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
 /**
  * Created by Jamie on 25/08/2015.
  */
-public abstract class EditBuildFragment extends Fragment implements TaskFragment.TaskCallbacks {
+public abstract class EditBuildFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks {
 
 
 
-
-    private Build currentBuild;
     EditBuildActivity activity;
     private static final String TAG_TASK_FRAGMENT = "task_fragment";
     private TaskFragment mTaskFragment;
 
-    private long buildID = -1;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
-
 
     }
 
@@ -59,44 +53,4 @@ public abstract class EditBuildFragment extends Fragment implements TaskFragment
     }
 
 
-    @Override
-    public void onPreExecute() {
-
-    }
-
-    @Override
-    public void onCancelled() {
-
-    }
-
-    @Override
-    public void onPostExecute(Build build) {
-        setCurrentBuild(build);
-    }
-
-
-
-    public Build getCurrentBuild() {
-        return currentBuild;
-    }
-
-    public void setCurrentBuild(Build currentBuild) {
-        this.currentBuild = currentBuild;
-        this.buildID = currentBuild.getId();
-    }
-
-    public void updateInfamy(int infamy, boolean infamyEnabled){
-        currentBuild.updateInfamy(getActivity(), infamy, infamyEnabled);
-
-    }
-
-    public void updatePerkDeck(int selected){
-        currentBuild.updatePerkDeck(getActivity(), selected);
-
-    }
-
-    public void updateArmour(int selected){
-        currentBuild.updateArmour(getActivity(), selected);
-
-    }
 }

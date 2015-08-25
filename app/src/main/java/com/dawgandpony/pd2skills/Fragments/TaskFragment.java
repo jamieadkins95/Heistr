@@ -1,12 +1,14 @@
 package com.dawgandpony.pd2skills.Fragments;
 
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
@@ -24,7 +26,7 @@ public class TaskFragment extends Fragment {
      * Callback interface through which the fragment can report the task's
      * progress and results back to the Activity.
      */
-    static interface TaskCallbacks {
+    public static interface TaskCallbacks {
         void onPreExecute();
         void onCancelled();
         void onPostExecute(Build build);
@@ -34,6 +36,9 @@ public class TaskFragment extends Fragment {
     private GetBuildFromDBTask mTask;
     private boolean mRunning;
     private DataSourceBuilds dataSourceBuilds;
+
+    private long currentBuildID = -1;
+    private String newBuildName = "Hello World?";
 
     private Build currentBuild;
 
@@ -50,13 +55,10 @@ public class TaskFragment extends Fragment {
     public void onAttach(Context context) {
         if (DEBUG) Log.i(TAG, "onAttach(Activity)");
         super.onAttach(context);
-        if (!(getTargetFragment() instanceof TaskCallbacks)) {
-            throw new IllegalStateException("Target fragment must implement the TaskCallbacks interface.");
-        }
 
-        // Hold a reference to the target fragment so we can report back the task's
-        // current progress and results.
-        mCallbacks = (TaskCallbacks) getTargetFragment();
+        mCallbacks = (TaskCallbacks) context;
+        //Toast.makeText(context, "Attached!", Toast.LENGTH_SHORT).show();
+        start(currentBuildID, newBuildName);
     }
 
     /**
@@ -82,6 +84,9 @@ public class TaskFragment extends Fragment {
         cancel();
     }
 
+
+
+
     /*****************************/
     /***** TASK FRAGMENT API *****/
     /*****************************/
@@ -90,9 +95,9 @@ public class TaskFragment extends Fragment {
      * Start the background task.
      */
     public void start(long buildID, String newBuildName) {
-        mCallbacks = (TaskCallbacks) getTargetFragment();
-
         if (currentBuild == null){
+            Log.d(TAG, "No build, going to retrieve from DB in background.");
+            //Toast.makeText(getActivity(), "No current build!", Toast.LENGTH_SHORT).show();
             if (!mRunning) {
                 mTask = new GetBuildFromDBTask(newBuildName);
                 mTask.execute(buildID);
@@ -100,7 +105,12 @@ public class TaskFragment extends Fragment {
             }
         }
         else if (currentBuild.getId() == buildID){
+            //Toast.makeText(getActivity(), "Already got the current build!", Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "Already have the current build!. no need to retrieve from DB");
             mCallbacks.onPostExecute(currentBuild);
+        }
+        else {
+            //Toast.makeText(getActivity(), "Already got a different build!", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -223,6 +233,14 @@ public class TaskFragment extends Fragment {
     public void onDetach() {
         if (DEBUG) Log.i(TAG, "onDetach()");
         super.onDetach();
+        mCallbacks = null;
     }
 
+    public void setNewBuildName(String newBuildName) {
+        this.newBuildName = newBuildName;
+    }
+
+    public void setCurrentBuildID(long currentBuildID) {
+        this.currentBuildID = currentBuildID;
+    }
 }

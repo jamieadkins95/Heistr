@@ -25,7 +25,7 @@ import java.util.Arrays;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PerkDeckFragment extends EditBuildFragment {
+public class PerkDeckFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks{
 
     ListView lvPerkDecks;
 
@@ -59,24 +59,29 @@ public class PerkDeckFragment extends EditBuildFragment {
         lvPerkDecks = (ListView) rootView.findViewById(R.id.lvPerkDeck);
 
 
+        if (activity.getCurrentBuild() == null){
+            activity.listenIn(this);
+        }
+        else {
+            onBuildReady();
+        }
 
         return  rootView;
     }
 
     @Override
-    public void onPostExecute(Build build) {
-        super.onPostExecute(build);
+    public void onBuildReady() {
 
         ArrayList<String> perkDecks = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.perkDecks)));
 
         ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_single_choice, perkDecks);
         lvPerkDecks.setAdapter(mAdapter2);
-        lvPerkDecks.setItemChecked(getCurrentBuild().getPerkDeck(), true);
+        lvPerkDecks.setItemChecked(activity.getCurrentBuild().getPerkDeck(), true);
         lvPerkDecks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int selected = lvPerkDecks.getCheckedItemPosition();
-                updatePerkDeck(selected);
+                activity.getCurrentBuild().updatePerkDeck(activity, selected);
 
             }
         });

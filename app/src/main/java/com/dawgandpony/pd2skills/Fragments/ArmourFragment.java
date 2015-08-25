@@ -22,7 +22,7 @@ import java.util.Arrays;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ArmourFragment extends EditBuildFragment {
+public class ArmourFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks{
 
     ListView lvArmour;
 
@@ -55,26 +55,29 @@ public class ArmourFragment extends EditBuildFragment {
         View rootView = inflater.inflate(R.layout.fragment_armour, container, false);
         lvArmour = (ListView) rootView.findViewById(R.id.lvArmour);
 
-
-
+        if (activity.getCurrentBuild() == null){
+            activity.listenIn(this);
+        }
+        else {
+            onBuildReady();
+        }
 
         return  rootView;
     }
 
     @Override
-    public void onPostExecute(Build build) {
-        super.onPostExecute(build);
+    public void onBuildReady() {
 
         ArrayList<String> armours = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.armour)));
 
         ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_single_choice, armours);
         lvArmour.setAdapter(mAdapter2);
-        lvArmour.setItemChecked(getCurrentBuild().getArmour(), true);
+        lvArmour.setItemChecked(activity.getCurrentBuild().getArmour(), true);
         lvArmour.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int selected = lvArmour.getCheckedItemPosition();
-                updateArmour(selected);
+                activity.getCurrentBuild().updateArmour(activity, selected);
 
             }
         });
