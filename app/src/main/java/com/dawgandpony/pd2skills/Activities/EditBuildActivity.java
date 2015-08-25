@@ -3,6 +3,7 @@ package com.dawgandpony.pd2skills.Activities;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v4.app.FragmentTransaction;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
@@ -25,10 +26,13 @@ import it.neokree.materialnavigationdrawer.elements.MaterialSection;
  */
 public class EditBuildActivity extends MaterialNavigationDrawer {
 
+    private final static String BUILD_ID = "BuildID";
+
     private static final String TAG = EditBuildActivity.class.getSimpleName();
     private Build currentBuild;
     private Intent intentFromPreviousActivity;
     DataSourceBuilds dataSourceBuilds;
+
 
 
     @Override
@@ -40,7 +44,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
     public void init(Bundle savedInstanceState) {
 
 
-        InitBuild(GetBuildIdFromIntent());
+        InitBuild(GetBuildIdFromIntent(savedInstanceState));
 
 
         setDrawerHeaderImage(R.drawable.payday_2_logo);
@@ -106,11 +110,26 @@ public class EditBuildActivity extends MaterialNavigationDrawer {
 
     }
 
-    private long GetBuildIdFromIntent() {
-        intentFromPreviousActivity = getIntent();
+    private long GetBuildIdFromIntent(Bundle savedInstanceState) {
         Long buildID;
-        buildID = intentFromPreviousActivity.getLongExtra(BuildListFragment.EXTRA_BUILD_ID, Build.NEW_BUILD);
+        // Check whether we're recreating a previously destroyed instance
+        if (savedInstanceState != null) {
+            // Restore value of members from saved state
+            buildID = savedInstanceState.getLong(BUILD_ID);
+
+        } else {
+            intentFromPreviousActivity = getIntent();
+            buildID = intentFromPreviousActivity.getLongExtra(BuildListFragment.EXTRA_BUILD_ID, Build.NEW_BUILD);
+        }
+
         return buildID;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putLong(BUILD_ID, currentBuild.getId());
+
+        super.onSaveInstanceState(savedInstanceState);
     }
 
     private void InitBuild(long buildID){
