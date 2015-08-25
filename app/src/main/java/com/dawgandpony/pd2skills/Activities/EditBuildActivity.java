@@ -50,8 +50,19 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
         mListCallbacks = new ArrayList<>();
         InitRetainedFragment();
         //InitBuildRetrieval();
+
+
     }
 
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        InitBuildId(savedInstanceState);
+
+        if (isDrawerOpen()){
+            closeDrawer();
+        }
+    }
 
     @Override
     public void init(Bundle savedInstanceState) {
