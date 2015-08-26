@@ -47,9 +47,10 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
     @Override
     protected void onResume() {
         super.onResume();
-        mListCallbacks = new ArrayList<>();
+        if (mListCallbacks == null){
+            mListCallbacks = new ArrayList<>();
+        }
         InitRetainedFragment();
-        //InitBuildRetrieval();
 
 
     }
@@ -62,14 +63,12 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
         if (isDrawerOpen()){
             closeDrawer();
         }
+
+
     }
 
     @Override
     public void init(Bundle savedInstanceState) {
-
-        mListCallbacks = new ArrayList<>();
-
-
 
 
         InitBuildId(savedInstanceState);
@@ -203,6 +202,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
     @Override
     public void onPostExecute(Build build) {
         currentBuild = build;
+        currentBuildID = build.getId();
         if (mListCallbacks == null){
             mListCallbacks = new ArrayList<>();
         }else{
