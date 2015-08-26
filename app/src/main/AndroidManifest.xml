@@ -16,7 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.EditBuildActivity" android:theme="@style/MyNavigationDrawerTheme" />
+        <activity
+            android:name=".Activities.EditBuildActivity"
+            android:theme="@style/MyNavigationDrawerTheme" />
+        <activity
+            android:name=".Activities.EditBuildActivity2"
+            android:label="@string/title_activity_edit_build2"
+            android:theme="@style/nLiveoDrawer">
+        </activity>
     </application>
 
 </manifest>

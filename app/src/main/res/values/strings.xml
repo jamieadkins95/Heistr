@@ -97,6 +97,9 @@
         <item>CTV</item>
         <item>ICTV</item>
     </string-array>
+    <string name="title_activity_edit_build2">EditBuildActivity2</string>
+
+    <string name="hello_world">Hello world!</string>
 
 
 

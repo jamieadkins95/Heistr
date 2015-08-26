@@ -29,6 +29,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
+import com.dawgandpony.pd2skills.Activities.EditBuildActivity2;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.R;
@@ -204,14 +205,14 @@ public class BuildListFragment extends Fragment {
     }
 
     private void MoveToEditBuildActivity(String name){
-        Intent intent = new Intent(getActivity(), EditBuildActivity.class);
+        Intent intent = new Intent(getActivity(), EditBuildActivity2.class);
         intent.putExtra(EXTRA_BUILD_ID, Build.NEW_BUILD);
         intent.putExtra(EXTRA_BUILD_NAME, name);
         startActivity(intent);
     }
 
     private void MoveToEditBuildActivity(long id){
-        Intent intent = new Intent(getActivity(), EditBuildActivity.class);
+        Intent intent = new Intent(getActivity(), EditBuildActivity2.class);
         intent.putExtra(EXTRA_BUILD_ID, id);
         startActivity(intent);
     }
