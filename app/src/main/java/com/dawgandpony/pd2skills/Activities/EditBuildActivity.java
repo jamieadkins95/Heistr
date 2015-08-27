@@ -154,6 +154,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
             mTaskFragment.setNewBuildName(newBuildName);
             fm.beginTransaction().add(mTaskFragment, TAG_TASK_FRAGMENT).commit();
         }
+        //mTaskFragment.start(currentBuildID, newBuildName);
     }
 
     private void InitBuildId(Bundle savedInstanceState) {
@@ -176,7 +177,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putLong(BUILD_ID, currentBuildID);
+        savedInstanceState.putLong(BUILD_ID, currentBuild.getId());
 
         super.onSaveInstanceState(savedInstanceState);
     }
