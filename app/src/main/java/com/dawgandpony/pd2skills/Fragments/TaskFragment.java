@@ -57,6 +57,7 @@ public class TaskFragment extends Fragment {
         super.onAttach(context);
 
         mCallbacks = (TaskCallbacks) context;
+        Log.d(TAG, "Attached!");
         //Toast.makeText(context, "Attached!", Toast.LENGTH_SHORT).show();
         start(currentBuildID, newBuildName);
     }
@@ -97,6 +98,7 @@ public class TaskFragment extends Fragment {
     public void start(long buildID, String newBuildName) {
         if (currentBuild == null){
             Log.d(TAG, "No build, going to retrieve from DB in background.");
+
             //Toast.makeText(getActivity(), "No current build!", Toast.LENGTH_SHORT).show();
             if (!mRunning) {
                 mTask = new GetBuildFromDBTask(newBuildName);
@@ -104,14 +106,15 @@ public class TaskFragment extends Fragment {
                 mRunning = true;
             }
         }
-        else if (currentBuild.getId() == buildID){
+        else /*if (currentBuild.getId() == buildID)*/{
             //Toast.makeText(getActivity(), "Already got the current build!", Toast.LENGTH_SHORT).show();
             Log.d(TAG, "Already have the current build!. no need to retrieve from DB");
             mCallbacks.onPostExecute(currentBuild);
         }
-        else {
-            //Toast.makeText(getActivity(), "Already got a different build!", Toast.LENGTH_SHORT).show();
-        }
+        /*else {
+            Log.d(TAG, "Already have the current build!. no need to retrieve from DB");
+            Toast.makeText(getActivity(), "Already got a different build!", Toast.LENGTH_SHORT).show();
+        }*/
 
     }
 
