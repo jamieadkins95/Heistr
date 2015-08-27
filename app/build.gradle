@@ -27,5 +27,8 @@ dependencies {
     compile 'com.android.support:design:23.0.0'
     compile 'it.neokree:MaterialNavigationDrawer:1.3.3'
     compile 'br.com.liveo:navigationdrawer-material:2.3.4'
+    compile('com.mikepenz:materialdrawer:4.0.3@aar') {
+        transitive = true
+    }
     compile 'com.melnykov:floatingactionbutton:1.3.0'
 }

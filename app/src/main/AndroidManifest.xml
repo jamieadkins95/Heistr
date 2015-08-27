@@ -22,7 +22,15 @@
         <activity
             android:name=".Activities.EditBuildActivity2"
             android:label="@string/title_activity_edit_build2"
-            android:theme="@style/nLiveoDrawer">
+            android:theme="@style/nLiveoDrawer" >
+        </activity>
+        <activity
+            android:name=".Activities.EditBuildActivity3"
+            android:label="@string/title_activity_edit_build3" >
+        </activity>
+        <activity
+            android:name=".Activities.EditBuildActivity4"
+            android:label="@string/title_activity_edit_build4" >
         </activity>
     </application>
 
