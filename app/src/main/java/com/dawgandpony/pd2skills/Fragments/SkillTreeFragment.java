@@ -34,6 +34,7 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
     ListView listView;
     CardView cvUnlockTree;
     TextView tvUnlockTree;
+    TextView tvPointsRemaining;
 
 
     /**
@@ -94,6 +95,7 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
         listView = (ListView) rootView.findViewById(R.id.lvSkillTiers);
         cvUnlockTree = (CardView) rootView.findViewById(R.id.cvUnlockSkillTree);
         tvUnlockTree = (TextView) rootView.findViewById(R.id.tvUnlockSkillTree);
+        tvPointsRemaining = (TextView) rootView.findViewById(R.id.tvPointsRemaining);
 
         cvUnlockTree.setEnabled(false);
 
@@ -110,6 +112,9 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
     @Override
     public void onBuildReady() {
         currentSkillTree = activity.getCurrentBuild().getSkillBuild().getSkillTrees().get(skillTreeNum);
+
+        tvPointsRemaining.setText(activity.getCurrentBuild().getSkillBuild().getPointsAvailable() + "/120");
+
         final ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, activity.getCurrentBuild(), currentSkillTree);
 
         listView.setAdapter(arrayAdapterSkillTiers);

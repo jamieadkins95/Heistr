@@ -10,13 +10,23 @@
     android:paddingBottom="@dimen/activity_vertical_margin"-->
 
 
+    <TextView android:id="@+id/tvPointsRemaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:layout_alignParentRight="true"
+        android:textSize="15sp"
+        android:textColor="@color/textPrimary"
+        android:text="120/120" />
 
 
     <ListView
         android:id="@+id/lvSkillTiers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:layout_below="@+id/tvPointsRemaining"
         android:gravity="center"
         />
 

@@ -60,7 +60,7 @@ public class SkillBuild {
     }
 
     public int getPointsAvailable() {
-        return pointsAvailable;
+        return pointsAvailable - getPointsUsed();
     }
 
     public static SkillBuild mergeBuilds(SkillBuild skillBuildFromXML, SkillBuild skillBuildFromDB) {
