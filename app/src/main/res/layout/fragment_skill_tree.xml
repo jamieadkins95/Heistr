@@ -28,14 +28,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvPointsRemaining"
         android:gravity="center"
+        android:paddingBottom="50dp"
         />
 
     <RelativeLayout
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="horizontal"
-        android:layout_below="@+id/lvSkillTiers"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
         >
 
         <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
