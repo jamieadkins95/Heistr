@@ -75,6 +75,9 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
             cvs[1].setEnabled(false);
             cvs[2].setEnabled(false);
 
+            skillTiers.get(pos).ResetSkills();
+            currentBuild.updateSkillTier(context, skillTiers.get(pos).getSkillTree(), skillTiers.get(pos));
+
         }
         for (int i =0; i < skillTiers.get(pos).getSkillsInTier().size(); i++){
 
@@ -106,20 +109,20 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                         switch (skillTiers.get(pos).getSkillsInTier().get(skill).getTaken()){
                             case Skill.NO:
                                 //Set to normal
-                                tvs[skill].setTextColor(context.getResources().getColor(R.color.primary));
-                                cv.setCardBackgroundColor(context.getResources().getColor(R.color.textPrimary));
+                                //tvs[skill].setTextColor(context.getResources().getColor(R.color.primary));
+                                //cv.setCardBackgroundColor(context.getResources().getColor(R.color.textPrimary));
                                 skillTiers.get(pos).getSkillsInTier().get(skill).setTaken(Skill.NORMAL);
                                 break;
                             case Skill.NORMAL:
                                 //Set to Ace
-                                tvs[skill].setTextColor(context.getResources().getColor(R.color.textPrimary));
-                                cv.setCardBackgroundColor(context.getResources().getColor(R.color.primary));
+                                //tvs[skill].setTextColor(context.getResources().getColor(R.color.textPrimary));
+                                //cv.setCardBackgroundColor(context.getResources().getColor(R.color.primary));
                                 skillTiers.get(pos).getSkillsInTier().get(skill).setTaken(Skill.ACE);
                                 break;
                             case Skill.ACE:
                                 //Set to none
-                                tvs[skill].setTextColor(context.getResources().getColor(R.color.textPrimary));
-                                cv.setCardBackgroundColor(context.getResources().getColor(R.color.backgroundCard));
+                                //tvs[skill].setTextColor(context.getResources().getColor(R.color.textPrimary));
+                                //cv.setCardBackgroundColor(context.getResources().getColor(R.color.backgroundCard));
                                 skillTiers.get(pos).getSkillsInTier().get(skill).setTaken(Skill.NO);
                                 break;
                         }
@@ -134,8 +137,8 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                         Toast.makeText(context, "All skill points used", Toast.LENGTH_SHORT).show();
                     }
 
-
-                    updateTiers();
+                    notifyDataSetChanged();
+                    //updateTiers();
 
 
 
@@ -185,6 +188,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
             Log.e("SkillTierAdapter", "parentview is null!");
         }
 
+
     }
 
     private void updateTier(int i, ViewGroup parent){
@@ -215,8 +219,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                 cvsOther[0].setEnabled(true);
                 cvsOther[1].setEnabled(true);
                 cvsOther[2].setEnabled(true);
-            }
-            else{
+            } else{
                 tierView.setBackgroundColor(context.getResources().getColor(R.color.backgroundVeryDark));
 
                 for (int k =0; k < cvsOther.length; k++){
@@ -225,8 +228,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                     cvsOther[k].setCardBackgroundColor(context.getResources().getColor(R.color.backgroundCard));
                 }
 
-                tier.ResetSkills();
-                currentBuild.updateSkillTier(context, skillTiers.get(i).getSkillTree(), tier);
+
             }
 
     }
