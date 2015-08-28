@@ -220,11 +220,6 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
 
 
 
-    public void updatePerkDeck(int selected){
-        currentBuild.updatePerkDeck(this, selected);
-
-    }
-
     public void listenIn(Fragment f){
         mListCallbacks.add((BuildReadyCallbacks) f);
     }

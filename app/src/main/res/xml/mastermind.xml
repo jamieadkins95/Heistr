@@ -47,25 +47,26 @@
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
-            <name>Cable Guy</name>
-            <abbreviation>CG</abbreviation>
-            <normal>Cable tie civs 75% faster.</normal>
-            <ace>Increase your cable tie supply by 4.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Control Freak</name>
+            <abbreviation>Freak</abbreviation>
+            <normal>Civilians remain intimidated 50% longer.
+Noise created by you intimidates civilians. </normal>
+            <ace>Unlocks special Inside Man assets in the Job Overview menu.</ace>
+            <pd2skills>e</pd2skills>
         </skill>
         <skill>
-            <name>Combat Medic</name>
-            <abbreviation>CM</abbreviation>
-            <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
-            <ace>Reviving a crew member gives them 30% more health.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Painkillers</name>
+            <abbreviation>PnKlr</abbreviation>
+            <normal>Crew members you revive take 10% less damage for 5 seconds. </normal>
+            <ace>The damage reduction is increased by an additional 20%. </ace>
+            <pd2skills>f</pd2skills>
         </skill>
         <skill>
-            <name>Endurance</name>
-            <abbreviation>End</abbreviation>
-            <normal>Increases your stamina by 100%.</normal>
-            <ace>Increases stamina for you and your crew by 50%.</ace>
-            <pd2skills>d</pd2skills>
+            <name>Leadership</name>
+            <abbreviation>Leader</abbreviation>
+            <normal>You and your crew's weapon stability with pistols is increased by 25%. </normal>
+            <ace>You and your crew's weapon stability with all weapons is increased by 50%. </ace>
+            <pd2skills>g</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -74,25 +75,27 @@
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
-            <name>Cable Guy</name>
-            <abbreviation>CG</abbreviation>
-            <normal>Cable tie civs 75% faster.</normal>
-            <ace>Increase your cable tie supply by 4.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Spotter</name>
+            <abbreviation>Spotter</abbreviation>
+            <normal> 	Special enemies marked by you take 15% additional damage. Range can be increased with Dominator Aced. </normal>
+            <ace>Unlocks the Spotter asset in the Job Overview menu.
+During stealth, the Spotter will highlight guards for you and your crew.
+If stealth is not an option, the Spotter will highlight special enemies for you and your crew. </ace>
+            <pd2skills>h</pd2skills>
         </skill>
         <skill>
-            <name>Combat Medic</name>
-            <abbreviation>CM</abbreviation>
-            <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
-            <ace>Reviving a crew member gives them 30% more health.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Equilibrium</name>
+            <abbreviation>Equil</abbreviation>
+            <normal>Increases accuracy with pistols and akimbo weapons by 10% and decreases the time it takes to pull and put them away by 50%. </normal>
+            <ace>Increases your rate of fire with pistols and akimbo weapons by 100%. </ace>
+            <pd2skills>i</pd2skills>
         </skill>
         <skill>
-            <name>Endurance</name>
-            <abbreviation>End</abbreviation>
-            <normal>Increases your stamina by 100%.</normal>
-            <ace>Increases stamina for you and your crew by 50%.</ace>
-            <pd2skills>d</pd2skills>
+            <name>Dominator</name>
+            <abbreviation>Dominator</abbreviation>
+            <normal>You and your crew can now intimidate 1 additional non-special enemy into a hostage. Less well trained enemies are easier to intimidate. </normal>
+            <ace>The power and range of your intimidation is increased by 50%. </ace>
+            <pd2skills>j</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -101,25 +104,27 @@
         <normal_cost>4</normal_cost>
         <ace_cost>8</ace_cost>
         <skill>
-            <name>Cable Guy</name>
-            <abbreviation>CG</abbreviation>
-            <normal>Cable tie civs 75% faster.</normal>
-            <ace>Increase your cable tie supply by 4.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Stockholm Syndrome</name>
+            <abbreviation>Stockholm</abbreviation>
+            <normal>Nearby civilians have a chance of reviving you if you interact with them.</normal>
+            <ace>Civilians reviving you have a chance of giving you ammunition. </ace>
+            <pd2skills>k</pd2skills>
         </skill>
         <skill>
-            <name>Combat Medic</name>
-            <abbreviation>CM</abbreviation>
-            <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
-            <ace>Reviving a crew member gives them 30% more health.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Combat Doctor</name>
+            <abbreviation>Doctor</abbreviation>
+            <normal>You can now place 2 doctor bags instead of just one. </normal>
+            <ace>Your doctor bags have 2 more charges. </ace>
+            <pd2skills>l</pd2skills>
         </skill>
         <skill>
-            <name>Endurance</name>
-            <abbreviation>End</abbreviation>
-            <normal>Increases your stamina by 100%.</normal>
-            <ace>Increases stamina for you and your crew by 50%.</ace>
-            <pd2skills>d</pd2skills>
+            <name>Joker</name>
+            <abbreviation>Joker</abbreviation>
+            <normal>You can convert a non-special enemy to fight on your side. This cannot be done during stealth and the enemy must have surrendered in order for you to convert it.
+You can only convert one non-special enemy at a time. </normal>
+            <ace>The converted enemy gains 55% more health and deals 45% more damage.
+The time to convert an enemy is reduced by 65%.</ace>
+            <pd2skills>m</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -128,25 +133,30 @@
         <normal_cost>4</normal_cost>
         <ace_cost>8</ace_cost>
         <skill>
-            <name>Cable Guy</name>
-            <abbreviation>CG</abbreviation>
-            <normal>Cable tie civs 75% faster.</normal>
-            <ace>Increase your cable tie supply by 4.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Kilmer</name>
+            <abbreviation>Kilmer</abbreviation>
+            <normal>Increases your reload speed with assault rifles and sniper rifles by 25%. </normal>
+            <ace>Your weapon accuracy while moving with assault rifles and sniper rifles is increased by 50%.
+Run and reload - you can now reload your weapons while sprinting.</ace>
+            <pd2skills>n</pd2skills>
         </skill>
         <skill>
-            <name>Combat Medic</name>
-            <abbreviation>CM</abbreviation>
-            <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
-            <ace>Reviving a crew member gives them 30% more health.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Gunslinger</name>
+            <abbreviation>Gunslinger</abbreviation>
+            <normal>You reload pistols and akimbo weapons 50% faster. </normal>
+            <ace>You deal +15 additional damage with pistols and +7.5 additional damage with akimbo weapons. </ace>
+            <pd2skills>o</pd2skills>
         </skill>
         <skill>
-            <name>Endurance</name>
-            <abbreviation>End</abbreviation>
-            <normal>Increases your stamina by 100%.</normal>
-            <ace>Increases stamina for you and your crew by 50%.</ace>
-            <pd2skills>d</pd2skills>
+            <name>Partner in Crime</name>
+            <abbreviation>Ptnr in Cr</abbreviation>
+            <normal>Having a converted enemy increases your movement speed by 10%.
+
+Your converted enemy takes 40% less damage. </normal>
+            <ace>Having a converted enemy increases your health by 20%.
+
+Your converted enemy takes 40% less damage. </ace>
+            <pd2skills>p</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -155,25 +165,26 @@
         <normal_cost>4</normal_cost>
         <ace_cost>8</ace_cost>
         <skill>
-            <name>Cable Guy</name>
-            <abbreviation>CG</abbreviation>
-            <normal>Cable tie civs 75% faster.</normal>
-            <ace>Increase your cable tie supply by 4.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Hostage Taker</name>
+            <abbreviation>Hostage</abbreviation>
+            <normal>Having at least one hostage makes you regenerate 1.5% health every 5 seconds.</normal>
+            <ace>Having at least one hostage makes you regenerate 4.5% health every 5 seconds. </ace>
+            <pd2skills>q</pd2skills>
         </skill>
         <skill>
-            <name>Combat Medic</name>
-            <abbreviation>CM</abbreviation>
-            <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
-            <ace>Reviving a crew member gives them 30% more health.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Pistol Messiah</name>
+            <abbreviation>Messiah</abbreviation>
+            <normal>When in bleedout, you are instantly revived if you kill an enemy with a pistol. You only have 1 charge. You will replenish your charge when you get out of custody.</normal>
+            <ace>You gain an additional 2 charges. You will replenish your charges when you get out of custody.
+(Stacks with basic skill for 3 total charges). </ace>
+            <pd2skills>r</pd2skills>
         </skill>
         <skill>
-            <name>Endurance</name>
-            <abbreviation>End</abbreviation>
-            <normal>Increases your stamina by 100%.</normal>
-            <ace>Increases stamina for you and your crew by 50%.</ace>
-            <pd2skills>d</pd2skills>
+            <name>Inspire</name>
+            <abbreviation>Inspire</abbreviation>
+            <normal>You revive crew members 50% faster. Shouting at your teammates within 7 meters will increase their movement and reload speed by 20% for 10 seconds. </normal>
+            <ace>here is a 75% chance that you can revive crew members at a distance of 7 meters by shouting at them. Range is not affected by Dominator Aced. </ace>
+            <pd2skills>s</pd2skills>
         </skill>
     </tier>
 

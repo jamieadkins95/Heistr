@@ -4,13 +4,16 @@ package com.dawgandpony.pd2skills.Fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
+import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterSkillTierList;
@@ -29,7 +32,8 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
     SkillTree currentSkillTree;
 
     ListView listView;
-
+    CardView cvUnlockTree;
+    TextView tvUnlockTree;
 
 
     /**
@@ -88,6 +92,12 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
         View rootView = inflater.inflate(R.layout.fragment_skill_tree, container, false);
 
         listView = (ListView) rootView.findViewById(R.id.lvSkillTiers);
+        cvUnlockTree = (CardView) rootView.findViewById(R.id.cvUnlockSkillTree);
+        tvUnlockTree = (TextView) rootView.findViewById(R.id.tvUnlockSkillTree);
+
+        cvUnlockTree.setEnabled(false);
+
+
 
 
 
@@ -100,8 +110,43 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
     @Override
     public void onBuildReady() {
         currentSkillTree = activity.getCurrentBuild().getSkillBuild().getSkillTrees().get(skillTreeNum);
-        ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, activity.getCurrentBuild(), currentSkillTree);
+        final ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, activity.getCurrentBuild(), currentSkillTree);
 
         listView.setAdapter(arrayAdapterSkillTiers);
+        cvUnlockTree.setEnabled(true);
+
+        if (currentSkillTree.getTierList().get(0).getSkillsInTier().get(0).getTaken() > Skill.NO){
+            tvUnlockTree.setTextColor(activity.getResources().getColor(R.color.textPrimary));
+            cvUnlockTree.setCardBackgroundColor(activity.getResources().getColor(R.color.primary));
+
+        }
+        else {
+            tvUnlockTree.setTextColor(activity.getResources().getColor(R.color.textPrimary));
+            cvUnlockTree.setCardBackgroundColor(activity.getResources().getColor(R.color.backgroundCard));
+        }
+
+        cvUnlockTree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (currentSkillTree.getTierList().get(0).getSkillsInTier().get(0).getTaken()) {
+                    case Skill.NO:
+                        //Set to normal
+                        tvUnlockTree.setTextColor(activity.getResources().getColor(R.color.textPrimary));
+                        cvUnlockTree.setCardBackgroundColor(activity.getResources().getColor(R.color.primary));
+                        currentSkillTree.getTierList().get(0).getSkillsInTier().get(0).setTaken(Skill.NORMAL);
+                        break;
+                    case Skill.NORMAL:
+                        //Set to none
+                        tvUnlockTree.setTextColor(activity.getResources().getColor(R.color.textPrimary));
+                        cvUnlockTree.setCardBackgroundColor(activity.getResources().getColor(R.color.backgroundCard));
+                        currentSkillTree.getTierList().get(0).getSkillsInTier().get(0).setTaken(Skill.NO);
+                        break;
+                }
+
+                //Update currentBuild (updates DB)
+                activity.getCurrentBuild().updateSkillTier(activity, skillTreeNum, currentSkillTree.getTierList().get(0));
+                arrayAdapterSkillTiers.updateTiers();
+            }
+        });
     }
 }

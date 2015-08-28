@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +52,9 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
 
         TextView tvPointsRequired = (TextView) rowView.findViewById(R.id.tvPointsRequired);
         int pointReq =  skillTiers.get(pos).getPointRequirement() - skillTree.getPointsSpentInThisTree(skillTiers.get(pos).getNumber());
+        if (pointReq < 0 ){
+            pointReq = 0;
+        }
         tvPointsRequired.setText(pointReq + " more to unlock");
 
 
@@ -74,7 +78,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         }
         for (int i =0; i < skillTiers.get(pos).getSkillsInTier().size(); i++){
 
-            tvs[i].setText(skillTiers.get(pos).getSkillsInTier().get(i).getAbbreviation());
+            tvs[i].setText(skillTiers.get(pos).getSkillsInTier().get(i).getName());
 
             switch (skillTiers.get(pos).getSkillsInTier().get(i).getTaken()){
                 case Skill.NO:
@@ -169,12 +173,21 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
     }
 
     public void updateTiers(){
-        ViewGroup parent = null;
-        if (parentView != null){
+        ViewGroup parent;
+        if (parentView != null) {
             parent = parentView;
+
+            for (int i = 0; i < parent.getChildCount(); i++) {
+                updateTier(i, parent);
+            }
+        }
+        else{
+            Log.e("SkillTierAdapter", "parentview is null!");
         }
 
-        for (int i = 0; i < parent.getChildCount(); i++){
+    }
+
+    private void updateTier(int i, ViewGroup parent){
             View tierView = parent.getChildAt(i);
             SkillTier tier = skillTiers.get(i);
 
@@ -191,7 +204,10 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
             tvsOther[2] = (TextView) tierView.findViewById(R.id.tvSkill3);
 
             TextView tvPointsRequired = (TextView) tierView.findViewById(R.id.tvPointsRequired);
-            final int pointReq =  skillTiers.get(i).getPointRequirement() - skillTree.getPointsSpentInThisTree(skillTiers.get(i).getNumber());
+            int pointReq =  skillTiers.get(i).getPointRequirement() - skillTree.getPointsSpentInThisTree(skillTiers.get(i).getNumber());
+            if (pointReq < 0 ){
+                pointReq = 0;
+            }
             tvPointsRequired.setText(pointReq + " more to unlock");
 
             if (skillTree.getPointsSpentInThisTree(tier.getNumber()) >= tier.getPointRequirement()) {
@@ -212,7 +228,6 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                 tier.ResetSkills();
                 currentBuild.updateSkillTier(context, skillTiers.get(i).getSkillTree(), tier);
             }
-        }
 
     }
 
