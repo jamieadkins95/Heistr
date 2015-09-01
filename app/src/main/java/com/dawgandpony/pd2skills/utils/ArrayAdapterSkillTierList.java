@@ -45,7 +45,12 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
 
         parentView = parent;
 
-        final int pos = position;
+        SkillTier wrongTier = getItem(position);
+        Log.d("getView", "getItem(i) tier number = " + wrongTier.getNumber() + "");
+        Log.d("getView", "index of that tier = " + skillTiers.indexOf(getItem(position)) + "");
+        Log.d("getView", "index of correct tier = " + skillTiers.get(skillTiers.indexOf(getItem(position))).getNumber() + "");
+
+        final int pos = skillTiers.indexOf(getItem(position));
 
         TextView tvTierNumber = (TextView) rowView.findViewById(R.id.tvSkillTierNo);
         tvTierNumber.setText("Tier " + skillTiers.get(pos).getNumber() + ":");
@@ -189,7 +194,11 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
 
     private void updateTier(int i, ViewGroup parent){
             View tierView = parent.getChildAt(i);
-            SkillTier tier = skillTiers.get(i);
+            SkillTier wrongTier = getItem(i);
+            Log.d("Adapter", "getItem(i) tier number = " + wrongTier.getNumber() + "");
+            Log.d("Adapter", "index of that tier = " + skillTiers.indexOf(getItem(i)) + "");
+            SkillTier tier = skillTiers.get(skillTiers.indexOf(getItem(i)));
+            Log.d("Adapter", "index of correct tier = " + skillTiers.get(skillTiers.indexOf(getItem(i))).getNumber() + "");
 
             //Get card views from other views
             CardView[] cvsOther = new CardView[3];
