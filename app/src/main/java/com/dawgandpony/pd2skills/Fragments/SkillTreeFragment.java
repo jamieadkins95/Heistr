@@ -150,7 +150,7 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
 
                 //Update currentBuild (updates DB)
                 activity.getCurrentBuild().updateSkillTier(activity, skillTreeNum, currentSkillTree.getTierList().get(0));
-                arrayAdapterSkillTiers.notifyDataSetChanged();
+                arrayAdapterSkillTiers.updateTiers();
             }
         });
     }
