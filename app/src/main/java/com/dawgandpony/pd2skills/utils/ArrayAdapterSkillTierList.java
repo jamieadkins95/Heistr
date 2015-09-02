@@ -46,6 +46,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         parentView = parent;
 
         SkillTier wrongTier = getItem(position);
+        Log.d("getView", "Adapter position " + position + "");
         Log.d("getView", "getItem(i) tier number = " + wrongTier.getNumber() + "");
         Log.d("getView", "index of that tier = " + skillTiers.indexOf(getItem(position)) + "");
         Log.d("getView", "index of correct tier = " + skillTiers.get(skillTiers.indexOf(getItem(position))).getNumber() + "");
