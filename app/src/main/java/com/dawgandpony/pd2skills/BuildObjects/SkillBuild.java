@@ -60,6 +60,10 @@ public class SkillBuild {
     }
 
     public int getPointsAvailable() {
+        return pointsAvailable;
+    }
+
+    public int getPointsRemaining() {
         return pointsAvailable - getPointsUsed();
     }
 

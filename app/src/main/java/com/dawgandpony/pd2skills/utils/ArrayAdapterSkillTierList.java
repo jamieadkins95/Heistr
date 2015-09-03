@@ -106,11 +106,25 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
             cvs[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    CardView cv = (CardView) v;
 
-                    if (currentBuild.getSkillBuild().getPointsUsed() < currentBuild.getSkillBuild().getPointsAvailable()){
-                        CardView cv = (CardView) v;
+                    int taken = tier.getSkillsInTier().get(skill).getTaken();
+                    int skillCost = 0;
 
-                        switch (tier.getSkillsInTier().get(skill).getTaken()){
+                    switch (taken){
+                        case Skill.NO:
+                            skillCost = tier.getNormalCost();
+                            break;
+                        case Skill.NORMAL:
+                            skillCost = tier.getAceCost();
+                            break;
+                    }
+                    final int pointsUsed = currentBuild.getSkillBuild().getPointsUsed();
+
+                    if (pointsUsed + skillCost <= currentBuild.getSkillBuild().getPointsAvailable()){
+
+
+                        switch (taken){
                             case Skill.NO:
                                 //Set to normal
                                 tvs[skill].setTextColor(context.getResources().getColor(R.color.primary));
@@ -133,15 +147,20 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
 
 
 
-                        //Update currentBuild (updates DB)
-                        currentBuild.updateSkillTier(context, tier.getSkillTree(), tier);
+
 
                     }
                     else{
-                        Toast.makeText(context, "All skill points used", Toast.LENGTH_SHORT).show();
+                        //Set to none
+                        tvs[skill].setTextColor(context.getResources().getColor(R.color.textPrimary));
+                        cv.setCardBackgroundColor(context.getResources().getColor(R.color.backgroundCard));
+                        tier.getSkillsInTier().get(skill).setTaken(Skill.NO);
+                        //Toast.makeText(context, "Not enough skill points remaining!", Toast.LENGTH_SHORT).show();
                     }
 
 
+                    //Update currentBuild (updates DB)
+                    currentBuild.updateSkillTier(context, tier.getSkillTree(), tier);
                     updateTiers();
 
 
