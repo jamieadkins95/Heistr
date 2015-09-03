@@ -80,6 +80,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
             cvs[0].setEnabled(false);
             cvs[1].setEnabled(false);
             cvs[2].setEnabled(false);
+            tier.ResetSkills();
 
         }
         for (int i =0; i < tier.getSkillsInTier().size(); i++){
@@ -179,7 +180,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
     }
 
     public void updateTiers(){
-        ViewGroup parent;
+        /*ViewGroup parent;
         if (parentView != null) {
             parent = parentView;
 
@@ -189,8 +190,20 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         }
         else{
             Log.e("SkillTierAdapter", "parentview is null!");
+        }*/
+
+
+
+
+        for (int i = 0; i < skillTree.getTierList().size(); i++){
+            if (skillTree.getPointsSpentInThisTree(skillTree.getTierList().get(i).getNumber()) < skillTree.getTierList().get(i).getPointRequirement()){
+                skillTree.getTierList().get(i).ResetSkills();
+                currentBuild.updateSkillTier(context, skillTree.getTierList().get(i).getSkillTree(), skillTree.getTierList().get(i));
+            }
+
         }
 
+        notifyDataSetChanged();
     }
 
     private void updateTier(int i, ViewGroup parent){
