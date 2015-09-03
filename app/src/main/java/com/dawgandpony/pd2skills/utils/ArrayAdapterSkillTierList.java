@@ -45,9 +45,9 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
 
         parentView = parent;
 
-        SkillTier wrongTier = getItem(position);
+        final SkillTier tier = getItem(position);
         Log.d("getView", "Adapter position " + position + "");
-        Log.d("getView", "getItem(i) tier number = " + wrongTier.getNumber() + "");
+        Log.d("getView", "getItem(i) tier number = " + tier.getNumber() + "");
         Log.d("getView", "index of that tier = " + skillTiers.indexOf(getItem(position)) + "");
         Log.d("getView", "index of correct tier = " + skillTiers.get(skillTiers.indexOf(getItem(position))).getNumber() + "");
 
@@ -57,7 +57,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         tvTierNumber.setText("Tier " + skillTiers.get(pos).getNumber() + ":");
 
         TextView tvPointsRequired = (TextView) rowView.findViewById(R.id.tvPointsRequired);
-        int pointReq =  skillTiers.get(pos).getPointRequirement() - skillTree.getPointsSpentInThisTree(skillTiers.get(pos).getNumber());
+        int pointReq =  tier.getPointRequirement() - skillTree.getPointsSpentInThisTree(tier.getNumber());
         if (pointReq < 0 ){
             pointReq = 0;
         }
@@ -75,18 +75,18 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         tvs[1] = (TextView) rowView.findViewById(R.id.tvSkill2);
         tvs[2] = (TextView) rowView.findViewById(R.id.tvSkill3);
 
-        if (skillTree.getPointsSpentInThisTree(pos) < skillTiers.get(pos).getPointRequirement()){
+        if (skillTree.getPointsSpentInThisTree(tier.getNumber()) < tier.getPointRequirement()){
             rowView.setBackgroundColor(context.getResources().getColor(R.color.backgroundVeryDark));
             cvs[0].setEnabled(false);
             cvs[1].setEnabled(false);
             cvs[2].setEnabled(false);
 
         }
-        for (int i =0; i < skillTiers.get(pos).getSkillsInTier().size(); i++){
+        for (int i =0; i < tier.getSkillsInTier().size(); i++){
 
-            tvs[i].setText(skillTiers.get(pos).getSkillsInTier().get(i).getName());
+            tvs[i].setText(tier.getSkillsInTier().get(i).getName());
 
-            switch (skillTiers.get(pos).getSkillsInTier().get(i).getTaken()){
+            switch (tier.getSkillsInTier().get(i).getTaken()){
                 case Skill.NO:
                     tvs[i].setTextColor(context.getResources().getColor(R.color.textPrimary));
                     cvs[i].setCardBackgroundColor(context.getResources().getColor(R.color.backgroundCard));
@@ -109,31 +109,31 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                     if (currentBuild.getSkillBuild().getPointsUsed() < currentBuild.getSkillBuild().getPointsAvailable()){
                         CardView cv = (CardView) v;
 
-                        switch (skillTiers.get(pos).getSkillsInTier().get(skill).getTaken()){
+                        switch (tier.getSkillsInTier().get(skill).getTaken()){
                             case Skill.NO:
                                 //Set to normal
                                 tvs[skill].setTextColor(context.getResources().getColor(R.color.primary));
                                 cv.setCardBackgroundColor(context.getResources().getColor(R.color.textPrimary));
-                                skillTiers.get(pos).getSkillsInTier().get(skill).setTaken(Skill.NORMAL);
+                                tier.getSkillsInTier().get(skill).setTaken(Skill.NORMAL);
                                 break;
                             case Skill.NORMAL:
                                 //Set to Ace
                                 tvs[skill].setTextColor(context.getResources().getColor(R.color.textPrimary));
                                 cv.setCardBackgroundColor(context.getResources().getColor(R.color.primary));
-                                skillTiers.get(pos).getSkillsInTier().get(skill).setTaken(Skill.ACE);
+                                tier.getSkillsInTier().get(skill).setTaken(Skill.ACE);
                                 break;
                             case Skill.ACE:
                                 //Set to none
                                 tvs[skill].setTextColor(context.getResources().getColor(R.color.textPrimary));
                                 cv.setCardBackgroundColor(context.getResources().getColor(R.color.backgroundCard));
-                                skillTiers.get(pos).getSkillsInTier().get(skill).setTaken(Skill.NO);
+                                tier.getSkillsInTier().get(skill).setTaken(Skill.NO);
                                 break;
                         }
 
 
 
                         //Update currentBuild (updates DB)
-                        currentBuild.updateSkillTier(context, skillTiers.get(pos).getSkillTree(), skillTiers.get(pos));
+                        currentBuild.updateSkillTier(context, tier.getSkillTree(), tier);
 
                     }
                     else{
@@ -152,7 +152,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
             cvs[i].setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    SkillDialog dialog = SkillDialog.newInstance(skillTiers.get(pos).getSkillsInTier().get(skill));
+                    SkillDialog dialog = SkillDialog.newInstance(tier.getSkillsInTier().get(skill));
                     try {
                         Activity activity = (Activity) context;
                         dialog.show(activity.getFragmentManager(), "skills");
