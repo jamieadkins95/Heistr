@@ -104,8 +104,8 @@ public class SkillBuild {
 
                     newSkill.setNormalDescription(skillFromXML.getNormalDescription());
                     newSkill.setAceDescription(skillFromXML.getAceDescription());
-                    newSkill.setNormalPoints(skillFromXML.getNormalPoints());
-                    newSkill.setAcePoints(skillFromXML.getAcePoints());
+                    newSkill.setNormalPoints(tierFromXML.getNormalCost());
+                    newSkill.setAcePoints(tierFromXML.getAceCost());
 
                     newSkill.setTaken(skillFromDB.getTaken());
 

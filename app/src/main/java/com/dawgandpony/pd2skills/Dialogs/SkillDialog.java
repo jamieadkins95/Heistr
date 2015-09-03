@@ -29,7 +29,12 @@ public class SkillDialog  extends DialogFragment{
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("Normal: " + skill.getNormalDescription() + "\n\nAce: " + skill.getAceDescription())
+        String points = "points";
+        if (skill.getNormalPoints() == 1){
+            points = "point";
+        }
+
+        builder.setMessage("Normal - "+ skill.getNormalPoints() + " " + points + ": " + skill.getNormalDescription() + "\n\nAce - "+ skill.getAcePoints() + " points: " + skill.getAceDescription())
                 .setTitle(skill.getName())
                 .setNegativeButton(R.string.got_it, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

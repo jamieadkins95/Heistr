@@ -112,7 +112,7 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
     @Override
     public void onBuildReady() {
         currentSkillTree = activity.getCurrentBuild().getSkillBuild().getSkillTrees().get(skillTreeNum);
-        
+
 
         tvPointsRemaining.setText(activity.getCurrentBuild().getSkillBuild().getPointsRemaining() + "/120");
 
