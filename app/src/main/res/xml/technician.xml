@@ -105,7 +105,7 @@ If stealth is not an option, the trip mines will highlight special enemies for y
         <ace_cost>8</ace_cost>
         <skill>
             <name>Sentry Targeting Package</name>
-            <abbreviation> STP </abbreviation>
+            <abbreviation>Sentry Targeting</abbreviation>
             <normal>Your sentry gun's accuracy is improved by 100%. </normal>
             <ace>Your sentry gun's rotational speed is increased by 150%. Your sentry gun is loaded with 50% extra ammo.</ace>
             <pd2skills>k</pd2skills>
@@ -134,7 +134,7 @@ Note: You need a sentry gun for this skill to work. </ace>
         <ace_cost>8</ace_cost>
         <skill>
             <name>Sentry Combat Upgrade</name>
-            <abbreviation> SCU </abbreviation>
+            <abbreviation>Sentry Combat</abbreviation>
             <normal>You can reload the Sentry Gun using your own ammo. </normal>
             <ace>Your sentry gun receives a protective shield.</ace>
             <pd2skills>n</pd2skills>
@@ -161,7 +161,7 @@ Note: You need a sentry gun for this skill to work. </ace>
         <ace_cost>8</ace_cost>
         <skill>
             <name>Sentry Tower Defense</name>
-            <abbreviation> STD </abbreviation>
+            <abbreviation>Sentry Defense</abbreviation>
             <normal>You can now place 2 sentry guns instead of just one</normal>
             <ace>Your sentry gun damage is increased by 300%. </ace>
             <pd2skills>q</pd2skills>

@@ -132,7 +132,7 @@
         <ace_cost>8</ace_cost>
         <skill>
             <name>Lockpicking Expert</name>
-            <abbreviation>Lockp</abbreviation>
+            <abbreviation>Lockpick</abbreviation>
             <normal>Increases your lockpicking interaction speed by 25%.</normal>
             <ace>You can now silently crack safes by hand.
 Further increases your lockpicking interaction speed by 25%.

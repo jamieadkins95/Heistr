@@ -46,10 +46,10 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         parentView = parent;
 
         final SkillTier tier = getItem(position);
-        Log.d("getView", "Adapter position " + position + "");
-        Log.d("getView", "getItem(i) tier number = " + tier.getNumber() + "");
-        Log.d("getView", "index of that tier = " + skillTiers.indexOf(getItem(position)) + "");
-        Log.d("getView", "index of correct tier = " + skillTiers.get(skillTiers.indexOf(getItem(position))).getNumber() + "");
+        //Log.d("getView", "Adapter position " + position + "");
+        //Log.d("getView", "getItem(i) tier number = " + tier.getNumber() + "");
+        //Log.d("getView", "index of that tier = " + skillTiers.indexOf(getItem(position)) + "");
+        //Log.d("getView", "index of correct tier = " + skillTiers.get(skillTiers.indexOf(getItem(position))).getNumber() + "");
 
         final int pos = skillTiers.indexOf(getItem(position));
 
@@ -85,7 +85,13 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         }
         for (int i =0; i < tier.getSkillsInTier().size(); i++){
 
-            tvs[i].setText(tier.getSkillsInTier().get(i).getName());
+            if (tier.getSkillsInTier().get(i).getName().length() > 17){
+                tvs[i].setText(tier.getSkillsInTier().get(i).getAbbreviation());
+            }
+            else{
+                tvs[i].setText(tier.getSkillsInTier().get(i).getName());
+            }
+
 
             switch (tier.getSkillsInTier().get(i).getTaken()){
                 case Skill.NO:
