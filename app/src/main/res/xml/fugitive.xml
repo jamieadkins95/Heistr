@@ -47,25 +47,25 @@
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
-            <name>Daredevil</name>
-            <abbreviation>Dare</abbreviation>
-            <normal>Increase your climbing speed by 20%.</normal>
-            <ace>You gain a 15% dodge chance while zip-lining.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Run and Gun</name>
+            <abbreviation>Run Gun</abbreviation>
+            <normal>You gain 10% additional move speed.</normal>
+            <ace>Your movement speed is unhindered while using steel sight.</ace>
+            <pd2skills>e</pd2skills>
         </skill>
         <skill>
-            <name>Hidden Blade</name>
-            <abbreviation>Blade</abbreviation>
-            <normal>Increases your melee weapon concealment by 2.</normal>
-            <ace>Enemies make 95% less noise when shot or meleed to death.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Sixth Sense</name>
+            <abbreviation>Sixth</abbreviation>
+            <normal>When you stand still for 3.5 seconds in stealth, you start highlighting people around you within a 10 meter radius.</normal>
+            <ace>You can pickup items while in casing mode.</ace>
+            <pd2skills>f</pd2skills>
         </skill>
         <skill>
-            <name>Thick Skin</name>
-            <abbreviation>Th Skin</abbreviation>
-            <normal>Your steadiness is increased by 10.</normal>
-            <ace>Increases the armor of all ballistic vests by 20.</ace>
-            <pd2skills>d</pd2skills>
+            <name>Duck and Cover</name>
+            <abbreviation>Cover</abbreviation>
+            <normal>You have a 5% better chance dodging enemy fire while crouching.</normal>
+            <ace>You have an additional 10% chance dodging enemy fire while crouching. </ace>
+            <pd2skills>g</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -74,25 +74,25 @@
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
-            <name>Daredevil</name>
-            <abbreviation>Dare</abbreviation>
-            <normal>Increase your climbing speed by 20%.</normal>
-            <ace>You gain a 15% dodge chance while zip-lining.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Brother's Keeper</name>
+            <abbreviation>Brother</abbreviation>
+            <normal>The damage thugs deal to you is reduced by 10%.</normal>
+            <ace>The damage thugs deal to you is reduced by an additional 25%.</ace>
+            <pd2skills>h</pd2skills>
         </skill>
         <skill>
-            <name>Hidden Blade</name>
-            <abbreviation>Blade</abbreviation>
-            <normal>Increases your melee weapon concealment by 2.</normal>
-            <ace>Enemies make 95% less noise when shot or meleed to death.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Winston Wolfe</name>
+            <abbreviation>Wolfe</abbreviation>
+            <normal>You can now carry 1 additional body bag. </normal>
+            <ace>During stealth, you know how to kill without leaving a trace, reducing your cleaning cost by 75%. .</ace>
+            <pd2skills>i</pd2skills>
         </skill>
         <skill>
-            <name>Thick Skin</name>
-            <abbreviation>Th Skin</abbreviation>
-            <normal>Your steadiness is increased by 10.</normal>
-            <ace>Increases the armor of all ballistic vests by 20.</ace>
-            <pd2skills>d</pd2skills>
+            <name>Quick Fix</name>
+            <abbreviation>Quick</abbreviation>
+            <normal>Decreases your first aid kit deploy time by 50%. </normal>
+            <ace>Crew members that use your first aid kits take 20% less damage for 10 seconds.</ace>
+            <pd2skills>j</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -101,25 +101,25 @@
         <normal_cost>4</normal_cost>
         <ace_cost>8</ace_cost>
         <skill>
-            <name>Daredevil</name>
-            <abbreviation>Dare</abbreviation>
-            <normal>Increase your climbing speed by 20%.</normal>
-            <ace>You gain a 15% dodge chance while zip-lining.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Swan Song</name>
+            <abbreviation>Swan</abbreviation>
+            <normal>When your health reaches 0, instead of instantly going down, you can fight for 3 seconds with a 60% movement speed penalty. </normal>
+            <ace>You no longer need to reload and can fight for an additional 6 seconds.</ace>
+            <pd2skills>k</pd2skills>
         </skill>
         <skill>
-            <name>Hidden Blade</name>
-            <abbreviation>Blade</abbreviation>
-            <normal>Increases your melee weapon concealment by 2.</normal>
-            <ace>Enemies make 95% less noise when shot or meleed to death.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Undertaker</name>
+            <abbreviation>Under</abbreviation>
+            <normal>You unlock the ability to place the body bag case deployable.</normal>
+            <ace>You can now place 2 body bag cases instead of just one.</ace>
+            <pd2skills>l</pd2skills>
         </skill>
         <skill>
-            <name>Thick Skin</name>
-            <abbreviation>Th Skin</abbreviation>
-            <normal>Your steadiness is increased by 10.</normal>
-            <ace>Increases the armor of all ballistic vests by 20.</ace>
-            <pd2skills>d</pd2skills>
+            <name>Uppers</name>
+            <abbreviation>Upper</abbreviation>
+            <normal>Adds 3 more first aid kits to your inventory.</normal>
+            <ace>Adds 7 more first aid kits to your inventory.</ace>
+            <pd2skills>m</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -128,25 +128,25 @@
         <normal_cost>4</normal_cost>
         <ace_cost>8</ace_cost>
         <skill>
-            <name>Daredevil</name>
-            <abbreviation>Dare</abbreviation>
-            <normal>Increase your climbing speed by 20%.</normal>
-            <ace>You gain a 15% dodge chance while zip-lining.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Trigger Happy</name>
+            <abbreviation>Trigger</abbreviation>
+            <normal>Each successful pistol hit grants a 10% damage boost for 2 seconds and can stack 4 times. This does not apply to Akimbo Weapons.</normal>
+            <ace>Increases the damage boost duration to 8. Akimbo remains unaffected.</ace>
+            <pd2skills>n</pd2skills>
         </skill>
         <skill>
-            <name>Hidden Blade</name>
-            <abbreviation>Blade</abbreviation>
-            <normal>Increases your melee weapon concealment by 2.</normal>
-            <ace>Enemies make 95% less noise when shot or meleed to death.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Low Blow</name>
+            <abbreviation>LowBlow</abbreviation>
+            <normal>You gain a 3% critical hit chance for every 3 points of concealment under 35 up to 30%. </normal>
+            <ace>You gain a 3% critical hit chance for every 1 point of concealment under 35 up to 30%.</ace>
+            <pd2skills>o</pd2skills>
         </skill>
         <skill>
-            <name>Thick Skin</name>
-            <abbreviation>Th Skin</abbreviation>
-            <normal>Your steadiness is increased by 10.</normal>
-            <ace>Increases the armor of all ballistic vests by 20.</ace>
-            <pd2skills>d</pd2skills>
+            <name>Counter Striker</name>
+            <abbreviation>Counter</abbreviation>
+            <normal>When charging your melee weapon you will counterattack enemies that try to strike you, knocking them down. The knockdown does not deal any damage. </normal>
+            <ace>You can now counterattack Cloakers.</ace>
+            <pd2skills>p</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -155,25 +155,26 @@
         <normal_cost>4</normal_cost>
         <ace_cost>8</ace_cost>
         <skill>
-            <name>Daredevil</name>
-            <abbreviation>Dare</abbreviation>
-            <normal>Increase your climbing speed by 20%.</normal>
-            <ace>You gain a 15% dodge chance while zip-lining.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Bullseye</name>
+            <abbreviation>Bulls</abbreviation>
+            <normal>You regenerate 15 armor for each successful headshot. This can not occur more than once every 2 seconds. </normal>
+            <ace>You regenerate an additional 30 armor for each successful headshot. </ace>
+            <pd2skills>q</pd2skills>
         </skill>
         <skill>
-            <name>Hidden Blade</name>
-            <abbreviation>Blade</abbreviation>
-            <normal>Increases your melee weapon concealment by 2.</normal>
-            <ace>Enemies make 95% less noise when shot or meleed to death.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Sneaky Bastard</name>
+            <abbreviation>Sneaky</abbreviation>
+            <normal>You gain a 1% dodge chance for every 3 points of concealment under 35 up to 10%. </normal>
+            <ace>You gain a 1% dodge chance for every 1 point of concealment under 35 up to 10%. </ace>
+            <pd2skills>r</pd2skills>
         </skill>
         <skill>
-            <name>Thick Skin</name>
-            <abbreviation>Th Skin</abbreviation>
-            <normal>Your steadiness is increased by 10.</normal>
-            <ace>Increases the armor of all ballistic vests by 20.</ace>
-            <pd2skills>d</pd2skills>
+            <name>Akimbo</name>
+            <abbreviation>Akimbo</abbreviation>
+            <normal>You can dual wield two weapons. These can be found under the Akimbo tab in the inventory menu.
+Dual wielded weapons have 50% stability penalty. </normal>
+            <ace>Your stability penalty with Akimbo weapons is set to 25% and increases the ammo capacity of your Akimbo weapons to 150%. </ace>
+            <pd2skills>s</pd2skills>
         </skill>
     </tier>
 </skill_tree>

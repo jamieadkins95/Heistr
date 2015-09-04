@@ -38,7 +38,7 @@
             <abbreviation>CatBur</abbreviation>
             <normal>You take 75% less damage from falling from non-fatal heights.</normal>
             <ace>Your fall damage is reduced so that you only take armor damage from falling from non-fatal heights. Your custody time is reduced by 50%.</ace>
-            <pd2skills>c</pd2skills>
+            <pd2skills>d</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -47,25 +47,26 @@
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
-            <name>Dead Presidents</name>
-            <abbreviation>Pres</abbreviation>
-            <normal>Adds 10% more value to loose items that you pick up.</normal>
-            <ace>Adds an additional 20% more value to loose items that you pick up.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Fast Hands</name>
+            <abbreviation>Hands</abbreviation>
+            <normal> You can pack and interact with loot bags 25% faster.</normal>
+            <ace>Further increases your pack and interaction speed with loot bags by 50%.
+(Stacks with Basic skill for 75% total).</ace>
+            <pd2skills>e</pd2skills>
         </skill>
         <skill>
-            <name>Sprinter</name>
-            <abbreviation>Sprint</abbreviation>
-            <normal>The time before stamina regeneration starts is reduced by 25% and the regeneration of stamina is increased by 25%.</normal>
-            <ace>Your sprint speed is increased by 25% and you have a 25% better chance dodging enemy fire while sprinting.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Chameleon</name>
+            <abbreviation>Chmln</abbreviation>
+            <normal> In casing mode, you can now mark guards, cameras and your concealment is increased by 25%.</normal>
+            <ace>You are 15% less likely to be targeted when you are close to your crew members.</ace>
+            <pd2skills>f</pd2skills>
         </skill>
         <skill>
-            <name>Cat Burglar</name>
-            <abbreviation>Cat Bur</abbreviation>
-            <normal>You take 75% less damage from falling from non-fatal heights.</normal>
-            <ace>Your fall damage is reduced so that you only take armor damage from falling from non-fatal heights. Your custody time is reduced by 50%.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Cleaner</name>
+            <abbreviation>Clean</abbreviation>
+            <normal>You deal 5% more damage against special enemies. You can now buy a body bag asset which contains 3 body bags that can be shared with your crew. </normal>
+            <ace>1 additional body bag is added to your inventory.</ace>
+            <pd2skills>g</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -74,25 +75,26 @@
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
-            <name>Dead Presidents</name>
-            <abbreviation>Pres</abbreviation>
-            <normal>Adds 10% more value to loose items that you pick up.</normal>
-            <ace>Adds an additional 20% more value to loose items that you pick up.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Shinobi</name>
+            <abbreviation>Shnbi</abbreviation>
+            <normal>Your walk speed is increased by 25% and your crouch speed is increased by 10%.</normal>
+            <ace>Enemies make 95% less noise when shot or meleed to death.
+(Reduces the sound radius to 0.25 meters). </ace>
+            <pd2skills>h</pd2skills>
         </skill>
         <skill>
-            <name>Sprinter</name>
-            <abbreviation>Sprint</abbreviation>
-            <normal>The time before stamina regeneration starts is reduced by 25% and the regeneration of stamina is increased by 25%.</normal>
-            <ace>Your sprint speed is increased by 25% and you have a 25% better chance dodging enemy fire while sprinting.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Martial Arts</name>
+            <abbreviation>M Arts</abbreviation>
+            <normal>You are 50% more likely to knock down an enemy with a melee strike. </normal>
+            <ace>You take 50% less damage from all melee attacks because of training. </ace>
+            <pd2skills>i</pd2skills>
         </skill>
         <skill>
-            <name>Cat Burglar</name>
-            <abbreviation>Cat Bur</abbreviation>
-            <normal>You take 75% less damage from falling from non-fatal heights.</normal>
-            <ace>Your fall damage is reduced so that you only take armor damage from falling from non-fatal heights. Your custody time is reduced by 50%.</ace>
-            <pd2skills>c</pd2skills>
+            <name>SMG Specialist</name>
+            <abbreviation> SMG </abbreviation>
+            <normal>Increases your reload speed of SMG weapons by 35%. </normal>
+            <ace>Increases your rate of fire with SMGs by 20%. </ace>
+            <pd2skills>j</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -101,25 +103,26 @@
         <normal_cost>4</normal_cost>
         <ace_cost>8</ace_cost>
         <skill>
-            <name>Dead Presidents</name>
-            <abbreviation>Pres</abbreviation>
-            <normal>Adds 10% more value to loose items that you pick up.</normal>
-            <ace>Adds an additional 20% more value to loose items that you pick up.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Nine Lives</name>
+            <abbreviation>9lives</abbreviation>
+            <normal>You gain the ability to go into bleedout 1 more time before going into custody.</normal>
+            <ace> When you get into bleedout, you have a 35% chance to get right back up. </ace>
+            <pd2skills>k</pd2skills>
         </skill>
         <skill>
-            <name>Sprinter</name>
-            <abbreviation>Sprint</abbreviation>
-            <normal>The time before stamina regeneration starts is reduced by 25% and the regeneration of stamina is increased by 25%.</normal>
-            <ace>Your sprint speed is increased by 25% and you have a 25% better chance dodging enemy fire while sprinting.</ace>
-            <pd2skills>c</pd2skills>
+            <name>ECM Specialist</name>
+            <abbreviation> ECM </abbreviation>
+            <normal>You can now place 2 ECM jammers instead of just one. </normal>
+            <ace>The ECM jammer duration is increased by 25% and the ECM feedback duration lasts 25% longer. The ECM jammer now delays the pager response time as long as the jammer is active. </ace>
+            <pd2skills>l</pd2skills>
         </skill>
         <skill>
-            <name>Cat Burglar</name>
-            <abbreviation>Cat Bur</abbreviation>
-            <normal>You take 75% less damage from falling from non-fatal heights.</normal>
-            <ace>Your fall damage is reduced so that you only take armor damage from falling from non-fatal heights. Your custody time is reduced by 50%.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Silent Killer</name>
+            <abbreviation>SilKi</abbreviation>
+            <normal>You deal 15% more damage with all silenced weapons. </normal>
+            <ace>You deal 15% more damage and have a 20% chance to pierce enemy armor with silenced weapons.
+(Stacks with Basic skill for 30% total more damage with silenced weapons). </ace>
+            <pd2skills>m</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -128,25 +131,28 @@
         <normal_cost>4</normal_cost>
         <ace_cost>8</ace_cost>
         <skill>
-            <name>Dead Presidents</name>
-            <abbreviation>Pres</abbreviation>
-            <normal>Adds 10% more value to loose items that you pick up.</normal>
-            <ace>Adds an additional 20% more value to loose items that you pick up.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Lockpicking Expert</name>
+            <abbreviation>Lockp</abbreviation>
+            <normal>Increases your lockpicking interaction speed by 25%.</normal>
+            <ace>You can now silently crack safes by hand.
+Further increases your lockpicking interaction speed by 25%.
+(Stacks with Basic skill for 50% total increase in lockpick interaction speed). </ace>
+            <pd2skills>n</pd2skills>
         </skill>
         <skill>
-            <name>Sprinter</name>
-            <abbreviation>Sprint</abbreviation>
-            <normal>The time before stamina regeneration starts is reduced by 25% and the regeneration of stamina is increased by 25%.</normal>
-            <ace>Your sprint speed is increased by 25% and you have a 25% better chance dodging enemy fire while sprinting.</ace>
-            <pd2skills>c</pd2skills>
+            <name>ECM Overdrive</name>
+            <abbreviation> ECM </abbreviation>
+            <normal>Your ECM jammer duration is increased by 25%. </normal>
+            <ace>Your ECM jammer can now also be used to open certain doors. </ace>
+            <pd2skills>o</pd2skills>
         </skill>
         <skill>
-            <name>Cat Burglar</name>
-            <abbreviation>Cat Bur</abbreviation>
-            <normal>You take 75% less damage from falling from non-fatal heights.</normal>
-            <ace>Your fall damage is reduced so that you only take armor damage from falling from non-fatal heights. Your custody time is reduced by 50%.</ace>
-            <pd2skills>c</pd2skills>
+            <name>The Professional</name>
+            <abbreviation> Pro </abbreviation>
+            <normal>Your weapon stability with silenced weapons is increased by 50%. Your snap to zoom is 100% faster with silenced weapons.
+(Reduced recoil for all silenced weapons by 50%).</normal>
+            <ace>Your weapon accuracy with silenced weapons is increased by 50%. You gain a 20% chance to pierce enemy armor with silenced weapons.</ace>
+            <pd2skills>p</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -155,25 +161,28 @@
         <normal_cost>4</normal_cost>
         <ace_cost>8</ace_cost>
         <skill>
-            <name>Dead Presidents</name>
-            <abbreviation>Pres</abbreviation>
-            <normal>Adds 10% more value to loose items that you pick up.</normal>
-            <ace>Adds an additional 20% more value to loose items that you pick up.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Camera Loop</name>
+            <abbreviation>Loop</abbreviation>
+            <normal> 	Interacting with a camera at close range will cause the camera to temporarily see a pre-recording for the next 10 seconds so you can sneak past it. Your crew can only loop 1 camera at a time.</normal>
+            <ace>Camera loop duration is increased by 10 seconds.
+(Stacks with Basic skill for 20 seconds total). </ace>
+            <pd2skills>q</pd2skills>
         </skill>
         <skill>
-            <name>Sprinter</name>
-            <abbreviation>Sprint</abbreviation>
-            <normal>The time before stamina regeneration starts is reduced by 25% and the regeneration of stamina is increased by 25%.</normal>
-            <ace>Your sprint speed is increased by 25% and you have a 25% better chance dodging enemy fire while sprinting.</ace>
-            <pd2skills>c</pd2skills>
+            <name>ECM Feedback</name>
+            <abbreviation> ECM </abbreviation>
+            <normal>You can now interact with ECM jammers to cause a feedback loop. When interacted, the ECM jammer has a 50%-100% chance to incapacitate enemies within a 25 meters radius every 1.5 seconds.
+ECM feedback lasts 15-20 seconds.</normal>
+            <ace>You will now instantly interact with a ECM jammer and the ECM feedback duration is increased by 25%.
+Your ECM jammer has a 100% chance every 4 minutes to recharge itself. </ace>
+            <pd2skills>r</pd2skills>
         </skill>
         <skill>
-            <name>Cat Burglar</name>
-            <abbreviation>Cat Bur</abbreviation>
-            <normal>You take 75% less damage from falling from non-fatal heights.</normal>
-            <ace>Your fall damage is reduced so that you only take armor damage from falling from non-fatal heights. Your custody time is reduced by 50%.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Moving Target</name>
+            <abbreviation>MvTgt</abbreviation>
+            <normal>You can now sprint while strafing.</normal>
+            <ace>You can now sprint in any direction.</ace>
+            <pd2skills>s</pd2skills>
         </skill>
     </tier>
 

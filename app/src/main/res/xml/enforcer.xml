@@ -49,22 +49,22 @@
         <skill>
             <name>Die Hard</name>
             <abbreviation>Die H</abbreviation>
-            <normal>Your weapons are 25% more effective at threatening enemies.</normal>
-            <ace>Your weapons are 50% more effective at threatening enemies.</ace>
+            <normal>You can use your primary weapon in bleedout. </normal>
+            <ace>Your armor recovery rate is increased by 15%. </ace>
             <pd2skills>e</pd2skills>
         </skill>
         <skill>
             <name>UnderDog</name>
             <abbreviation>Under</abbreviation>
-            <normal>ADirectly after you deploy an ammo bag, you can fire your weapon for 5 seconds without depleting your ammunition.</normal>
-            <ace>You can fire 10 seconds longer without depleting your ammunition.</ace>
+            <normal>When you are surrounded by three enemies or more, you receive a 15% damage bonus.</normal>
+            <ace>When you are surrounded by three enemies or more, you receive 15% less damage from enemies. </ace>
             <pd2skills>f</pd2skills>
         </skill>
         <skill>
             <name>Pumping Iron</name>
             <abbreviation>PIron</abbreviation>
-            <normal>You move 50% faster when carrying bags</normal>
-            <ace>You can throw bags 50% further.</ace>
+            <normal>Your melee attacks against non-special enemies deal 50% more damage. </normal>
+            <ace>Your melee attacks against special enemies deal 50% more damage. </ace>
             <pd2skills>g</pd2skills>
         </skill>
     </tier>
@@ -76,22 +76,22 @@
         <skill>
             <name>Shotgun Impact</name>
             <abbreviation>Impact</abbreviation>
-            <normal>Your weapons are 25% more effective at threatening enemies.</normal>
-            <ace>Your weapons are 50% more effective at threatening enemies.</ace>
+            <normal>Your weapon stability with shotguns is increased by 25%. </normal>
+            <ace>You deal 35% more damage with shotguns. </ace>
             <pd2skills>h</pd2skills>
         </skill>
         <skill>
             <name>Stun Resistance</name>
             <abbreviation>Stun </abbreviation>
-            <normal>ADirectly after you deploy an ammo bag, you can fire your weapon for 5 seconds without depleting your ammunition.</normal>
-            <ace>You can fire 10 seconds longer without depleting your ammunition.</ace>
+            <normal>Reduces the visual effect duration of flashbangs by 25%. </normal>
+            <ace>Further reduces the visual effect duration by 50%. </ace>
             <pd2skills>i</pd2skills>
         </skill>
         <skill>
             <name>Tough Guy</name>
             <abbreviation>Tough</abbreviation>
-            <normal>You move 50% faster when carrying bags</normal>
-            <ace>You can throw bags 50% further.</ace>
+            <normal>Reduces your camera shake by 50% when you are damaged by enemy fire. </normal>
+            <ace>Your bleedout health is increased by 25%. </ace>
             <pd2skills>j</pd2skills>
         </skill>
     </tier>
@@ -103,22 +103,22 @@
         <skill>
             <name>Shotgun CQB</name>
             <abbreviation> CQB </abbreviation>
-            <normal>Your weapons are 25% more effective at threatening enemies.</normal>
-            <ace>Your weapons are 50% more effective at threatening enemies.</ace>
+            <normal>Increases your shotgun reload speed by 50%.</normal>
+            <ace>Increases your shotgun steel sight speed by 125%.</ace>
             <pd2skills>k</pd2skills>
         </skill>
         <skill>
             <name>Ammo Specialist</name>
             <abbreviation>Ammo </abbreviation>
-            <normal>ADirectly after you deploy an ammo bag, you can fire your weapon for 5 seconds without depleting your ammunition.</normal>
-            <ace>You can fire 10 seconds longer without depleting your ammunition.</ace>
+            <normal>You can now place 2 ammo bags instead of just one. </normal>
+            <ace>Each ammo bag contains additional 200% ammo.</ace>
             <pd2skills>l</pd2skills>
         </skill>
         <skill>
             <name>Beserker</name>
             <abbreviation>Beserk</abbreviation>
-            <normal>You move 50% faster when carrying bags</normal>
-            <ace>You can throw bags 50% further.</ace>
+            <normal>The lower your health, the more damage you do. When your health is below 25%, you will do up to 250% more melee and saw damage. </normal>
+            <ace>When your health is below 25%, you will do up to 100% more damage with ranged weapons.</ace>
             <pd2skills>m</pd2skills>
         </skill>
     </tier>
@@ -129,23 +129,23 @@
         <ace_cost>8</ace_cost>
         <skill>
             <name>Hard Boiled</name>
-            <abbreviation>Opp</abbreviation>
-            <normal>Your weapons are 25% more effective at threatening enemies.</normal>
-            <ace>Your weapons are 50% more effective at threatening enemies.</ace>
+            <abbreviation>HBoil</abbreviation>
+            <normal>Increases your shotgun weapon accuracy by 20% when firing from the hip. </normal>
+            <ace>Increases your weapon accuracy by 20% when firing from the hip with all weapons. </ace>
             <pd2skills>n</pd2skills>
         </skill>
         <skill>
             <name>Fully Loaded</name>
-            <abbreviation>BS</abbreviation>
-            <normal>ADirectly after you deploy an ammo bag, you can fire your weapon for 5 seconds without depleting your ammunition.</normal>
-            <ace>You can fire 10 seconds longer without depleting your ammunition.</ace>
+            <abbreviation>FulLd</abbreviation>
+            <normal>Your total ammo capacity is increased by 25%. </normal>
+            <ace>Increases your ammo pickup to 175% of the normal rate.</ace>
             <pd2skills>o</pd2skills>
         </skill>
         <skill>
             <name>Portable Saw</name>
-            <abbreviation>BS</abbreviation>
-            <normal>You move 50% faster when carrying bags</normal>
-            <ace>You can throw bags 50% further.</ace>
+            <abbreviation> Saw </abbreviation>
+            <normal>Unlocks the OVE9000 portable saw for you to use. </normal>
+            <ace>Increases your saw blade amount by 1. </ace>
             <pd2skills>p</pd2skills>
         </skill>
     </tier>
@@ -156,24 +156,26 @@
         <ace_cost>8</ace_cost>
         <skill>
             <name>Overkill</name>
-            <abbreviation>Opp</abbreviation>
-            <normal>Your weapons are 25% more effective at threatening enemies.</normal>
-            <ace>Your weapons are 50% more effective at threatening enemies.</ace>
-            <pd2skills>b</pd2skills>
+            <abbreviation> Ovk </abbreviation>
+            <normal>When you kill an enemy using a shotgun or the OVE9000 portable saw, you receive a 75% damage bonus for 5 seconds. </normal>
+            <ace>The damage bonus now applies to all weapons. Skill must still be activated using a shotgun or the OVE9000 portable saw.</ace>
+            <pd2skills>q</pd2skills>
         </skill>
         <skill>
             <name>Iron Man</name>
-            <abbreviation>BS</abbreviation>
-            <normal>ADirectly after you deploy an ammo bag, you can fire your weapon for 5 seconds without depleting your ammunition.</normal>
-            <ace>You can fire 10 seconds longer without depleting your ammunition.</ace>
-            <pd2skills>c</pd2skills>
+            <abbreviation>IronM</abbreviation>
+            <normal>Unlocks the ability to wear the Improved Combined Tactical Vest. </normal>
+            <ace>When you melee Shield enemies, they get knocked back by the sheer force.
+Run and shoot – you can now shoot from the hip while sprinting.</ace>
+            <pd2skills>r</pd2skills>
         </skill>
         <skill>
             <name>Carbon Blade</name>
-            <abbreviation>BS</abbreviation>
-            <normal>You move 50% faster when carrying bags</normal>
-            <ace>You can throw bags 50% further.</ace>
-            <pd2skills>d</pd2skills>
+            <abbreviation>Carbn</abbreviation>
+            <normal>You replace your saw blades with carbon blades, increasing your saw efficiency by 20%. </normal>
+            <ace>Attacking enemies with the OVE9000 portable saw wears it down 50% less than before. Saws are 20% more effective.
+You can use the OVE9000 portable saw as a secondary weapon. </ace>
+            <pd2skills>s</pd2skills>
         </skill>
     </tier>
 </skill_tree>

@@ -38,7 +38,7 @@
             <abbreviation>N of S</abbreviation>
             <normal>You take 50% less damage while interacting with things.</normal>
             <ace>You can now use steel sight while in bleedout.</ace>
-            <pd2skills>c</pd2skills>
+            <pd2skills>d</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -47,25 +47,27 @@
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
-            <name>Rifleman</name>
-            <abbreviation>Rifle</abbreviation>
-            <normal>Your snap to zoom is 100% faster with assault rifles and sniper rifles.</normal>
-            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Sharpshooter</name>
+            <abbreviation>Sharp</abbreviation>
+            <normal>You are 20% more accurate with all single shot weapons.</normal>
+            <ace>Your weapon stability is increased with all rifles by 25%. </ace>
+            <pd2skills>e</pd2skills>
         </skill>
         <skill>
-            <name>Demolition Man</name>
-            <abbreviation>Demo</abbreviation>
-            <normal>Adds 1 more trip mine to your inventory.</normal>
-            <ace>ecreases your trip mine deploy time by 20%.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Combat Engineer</name>
+            <abbreviation>Combt</abbreviation>
+            <normal>Allows you to turn trip mines on or off.</normal>
+            <ace>Upgrades your trip mines with a sensor mode, highlighting enemies that walk past. During stealth, the trip mines will highlight guards and special enemies for you and your crew.
+If stealth is not an option, the trip mines will highlight special enemies for you and your crew.</ace>
+            <pd2skills>f</pd2skills>
         </skill>
         <skill>
-            <name>Nerves of Steel</name>
-            <abbreviation>NoS</abbreviation>
-            <normal>You take 50% less damage while interacting with things.</normal>
-            <ace>You can now use steel sight while in bleedout.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Hardware Expert</name>
+            <abbreviation>Expert</abbreviation>
+            <normal>You fix the drill 25% faster and you also deploy trip mines 20% faster.
+(Can stack with Demolition Man Basic for 40% total reduced time).</normal>
+            <ace>Gives drill a 30% chance to autorestart when it breaks down. You also deploy the sentry gun 50% faster. </ace>
+            <pd2skills>g</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -74,25 +76,26 @@
         <normal_cost>1</normal_cost>
         <ace_cost>3</ace_cost>
         <skill>
-            <name>Rifleman</name>
-            <abbreviation>Rifle</abbreviation>
-            <normal>Your snap to zoom is 100% faster with assault rifles and sniper rifles.</normal>
-            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Sentry gun</name>
+            <abbreviation>Sentry</abbreviation>
+            <normal>Unlocks the sentry gun for you to use.</normal>
+            <ace>Your sentry gun gains 150% more health. </ace>
+            <pd2skills>h</pd2skills>
         </skill>
         <skill>
-            <name>Demolition Man</name>
-            <abbreviation>Demo</abbreviation>
-            <normal>Adds 1 more trip mine to your inventory.</normal>
-            <ace>ecreases your trip mine deploy time by 20%.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Tactical Mines</name>
+            <abbreviation>Mines</abbreviation>
+            <normal>The radius of trip mine explosions are increased by 30%. </normal>
+            <ace>Special enemies marked by your trip mines take 15% more damage. </ace>
+            <pd2skills>i</pd2skills>
         </skill>
         <skill>
-            <name>Nerves of Steel</name>
-            <abbreviation>NoS</abbreviation>
-            <normal>You take 50% less damage while interacting with things.</normal>
-            <ace>You can now use steel sight while in bleedout.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Drill Sergeant</name>
+            <abbreviation>Drill</abbreviation>
+            <normal>Your drilling efficiency is increased by 15%.</normal>
+            <ace>Further increases your drilling efficiency by 15%.
+(Stacks with Basic skill for 30% total increase to drill speed).</ace>
+            <pd2skills>j</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -101,25 +104,27 @@
         <normal_cost>4</normal_cost>
         <ace_cost>8</ace_cost>
         <skill>
-            <name>Rifleman</name>
-            <abbreviation>Rifle</abbreviation>
-            <normal>Your snap to zoom is 100% faster with assault rifles and sniper rifles.</normal>
-            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Sentry Targeting Package</name>
+            <abbreviation> STP </abbreviation>
+            <normal>Your sentry gun's accuracy is improved by 100%. </normal>
+            <ace>Your sentry gun's rotational speed is increased by 150%. Your sentry gun is loaded with 50% extra ammo.</ace>
+            <pd2skills>k</pd2skills>
         </skill>
         <skill>
-            <name>Demolition Man</name>
-            <abbreviation>Demo</abbreviation>
-            <normal>Adds 1 more trip mine to your inventory.</normal>
-            <ace>ecreases your trip mine deploy time by 20%.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Jack Of All Trades</name>
+            <abbreviation>JoaT</abbreviation>
+            <normal>The radius of trip mine explosions are increased by an additional 70%. </normal>
+            <ace>You can now carry sentry guns and trip mines at the same time. When you deplete your trip mines or sentry guns you will switch to the other one.
+Note: You need a sentry gun for this skill to work. </ace>
+            <pd2skills>l</pd2skills>
         </skill>
         <skill>
-            <name>Nerves of Steel</name>
-            <abbreviation>NoS</abbreviation>
-            <normal>You take 50% less damage while interacting with things.</normal>
-            <ace>You can now use steel sight while in bleedout.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Silent Drilling</name>
+            <abbreviation>Silnt</abbreviation>
+            <normal>Your drill makes 65% less noise. Civilians and guards are less likely to hear your drill and sound the alarm.
+(Reduces the sound radius to 9 meters). </normal>
+            <ace>Your drill is silent. Civilians and guards have to see the drill in order to sound the alarm. </ace>
+            <pd2skills>m</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -128,25 +133,25 @@
         <normal_cost>4</normal_cost>
         <ace_cost>8</ace_cost>
         <skill>
-            <name>Rifleman</name>
-            <abbreviation>Rifle</abbreviation>
-            <normal>Your snap to zoom is 100% faster with assault rifles and sniper rifles.</normal>
-            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Sentry Combat Upgrade</name>
+            <abbreviation> SCU </abbreviation>
+            <normal>You can reload the Sentry Gun using your own ammo. </normal>
+            <ace>Your sentry gun receives a protective shield.</ace>
+            <pd2skills>n</pd2skills>
         </skill>
         <skill>
-            <name>Demolition Man</name>
-            <abbreviation>Demo</abbreviation>
-            <normal>Adds 1 more trip mine to your inventory.</normal>
-            <ace>ecreases your trip mine deploy time by 20%.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Shaped Charge</name>
+            <abbreviation>Shape</abbreviation>
+            <normal>Adds 3 more trip mines to your inventory. </normal>
+            <ace>Trip mines can now be converted to shaped charges, used to breach certain safes and doors. </ace>
+            <pd2skills>o</pd2skills>
         </skill>
         <skill>
-            <name>Nerves of Steel</name>
-            <abbreviation>NoS</abbreviation>
-            <normal>You take 50% less damage while interacting with things.</normal>
-            <ace>You can now use steel sight while in bleedout.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Shockproof</name>
+            <abbreviation>Shock</abbreviation>
+            <normal>Taser shock attacks on you backfire, knocking back the Taser.</normal>
+            <ace>Interacting with an enemy Taser while he is electrocuting you will electrocute him, dealing 50% damage to his health.</ace>
+            <pd2skills>p</pd2skills>
         </skill>
     </tier>
     <tier>
@@ -155,25 +160,26 @@
         <normal_cost>4</normal_cost>
         <ace_cost>8</ace_cost>
         <skill>
-            <name>Rifleman</name>
-            <abbreviation>Rifle</abbreviation>
-            <normal>Your snap to zoom is 100% faster with assault rifles and sniper rifles.</normal>
-            <ace>Your weapon zoom level is increased by 25% with assault rifles and sniper rifles.</ace>
-            <pd2skills>b</pd2skills>
+            <name>Sentry Tower Defense</name>
+            <abbreviation> STD </abbreviation>
+            <normal>You can now place 2 sentry guns instead of just one</normal>
+            <ace>Your sentry gun damage is increased by 300%. </ace>
+            <pd2skills>q</pd2skills>
         </skill>
         <skill>
-            <name>Demolition Man</name>
-            <abbreviation>Demo</abbreviation>
-            <normal>Adds 1 more trip mine to your inventory.</normal>
-            <ace>ecreases your trip mine deploy time by 20%.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Mag Plus</name>
+            <abbreviation> Mag </abbreviation>
+            <normal>Your weapon magazine capacity is increased by 5 rounds. </normal>
+            <ace>Further increases your weapon magazine capacity by 10 rounds.
+Note: Does not apply to sniper rifles. </ace>
+            <pd2skills>r</pd2skills>
         </skill>
         <skill>
-            <name>Nerves of Steel</name>
-            <abbreviation>NoS</abbreviation>
-            <normal>You take 50% less damage while interacting with things.</normal>
-            <ace>You can now use steel sight while in bleedout.</ace>
-            <pd2skills>c</pd2skills>
+            <name>Bulletproof</name>
+            <abbreviation>BltPf</abbreviation>
+            <normal>Improves your armor so you can absorb 50% more damage. </normal>
+            <ace>The armor recovery rate of you and your crew is increased by 25%.</ace>
+            <pd2skills>s</pd2skills>
         </skill>
     </tier>
 
