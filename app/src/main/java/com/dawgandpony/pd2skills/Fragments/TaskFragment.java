@@ -38,7 +38,10 @@ public class TaskFragment extends Fragment {
     private DataSourceBuilds dataSourceBuilds;
 
     private long currentBuildID = -1;
-    private String newBuildName = "Hello World?";
+    private String newBuildName = "Something Went Wrong :(";
+    private int infamies = 0;
+    private String pd2URL = "";
+    private long templateBuildID = -1;
 
     private Build currentBuild;
 
@@ -59,7 +62,7 @@ public class TaskFragment extends Fragment {
         mCallbacks = (TaskCallbacks) context;
         Log.d(TAG, "Attached!");
         //Toast.makeText(context, "Attached!", Toast.LENGTH_SHORT).show();
-        start(currentBuildID, newBuildName);
+        start(currentBuildID, newBuildName, infamies, pd2URL, templateBuildID);
     }
 
     /**
@@ -95,13 +98,13 @@ public class TaskFragment extends Fragment {
     /**
      * Start the background task.
      */
-    public void start(long buildID, String newBuildName) {
+    public void start(long buildID, String newBuildName, int infamies, String url, long templateBuildID) {
         if (currentBuild == null){
             Log.d(TAG, "No build, going to retrieve from DB in background.");
 
             //Toast.makeText(getActivity(), "No current build!", Toast.LENGTH_SHORT).show();
             if (!mRunning) {
-                mTask = new GetBuildFromDBTask(newBuildName);
+                mTask = new GetBuildFromDBTask(newBuildName, infamies, url, templateBuildID);
                 mTask.execute(buildID);
                 mRunning = true;
             }
@@ -144,10 +147,16 @@ public class TaskFragment extends Fragment {
     private class GetBuildFromDBTask extends AsyncTask<Long, Integer, Build> {
 
         String name;
+        int infamies;
+        String url;
+        long template;
 
-        public GetBuildFromDBTask(String name) {
+        public GetBuildFromDBTask(String name, int infamies, String url, long template) {
             super();
             this.name = name;
+            this.infamies = infamies;
+            this.url = url;
+            this.template = template;
         }
 
         @Override
@@ -167,7 +176,7 @@ public class TaskFragment extends Fragment {
             dataSourceBuilds = new DataSourceBuilds(getActivity());
             dataSourceBuilds.open();
             if (buildID == Build.NEW_BUILD){
-                currentBuild = dataSourceBuilds.createAndInsertBuild(name);
+                currentBuild = dataSourceBuilds.createAndInsertBuild(name, infamies, url, template);
             }
             else {
                 currentBuild = dataSourceBuilds.getBuild(buildID);
@@ -245,5 +254,17 @@ public class TaskFragment extends Fragment {
 
     public void setCurrentBuildID(long currentBuildID) {
         this.currentBuildID = currentBuildID;
+    }
+
+    public void setInfamies(int infamies) {
+        this.infamies = infamies;
+    }
+
+    public void setPd2URL(String pd2URL) {
+        this.pd2URL = pd2URL;
+    }
+
+    public void setTemplateBuildID(long templateBuildID) {
+        this.templateBuildID = templateBuildID;
     }
 }

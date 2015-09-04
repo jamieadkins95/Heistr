@@ -45,7 +45,7 @@ public class DataSourceBuilds {
 
     }
 
-    public Build createAndInsertBuild(String name){
+    public Build createAndInsertBuild(String name, int infamies, String url, long templateID){
 
         dataSourceSkills = new DataSourceSkills(context);
         dataSourceSkills.open();
@@ -56,7 +56,7 @@ public class DataSourceBuilds {
         buildValues.put(MySQLiteHelper.COLUMN_NAME, name);
         buildValues.put(MySQLiteHelper.COLUMN_SKILL_BUILD_ID, skillBuildID);
         buildValues.put(MySQLiteHelper.COLUMN_WEAPON_BUILD_ID, -1);
-        buildValues.put(MySQLiteHelper.COLUMN_INFAMY_ID, 1);
+        buildValues.put(MySQLiteHelper.COLUMN_INFAMY_ID, infamies);
         buildValues.put(MySQLiteHelper.COLUMN_PERK_DECK, 0);
         buildValues.put(MySQLiteHelper.COLUMN_ARMOUR, 0);
 

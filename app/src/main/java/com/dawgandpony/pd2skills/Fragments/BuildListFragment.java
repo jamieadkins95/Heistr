@@ -1,36 +1,32 @@
 package com.dawgandpony.pd2skills.Fragments;
 
-import android.support.v7.app.AlertDialog;
-import android.content.DialogInterface;
+import android.app.DialogFragment;
+import android.app.Fragment;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.ActionMode;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
-import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
+import com.dawgandpony.pd2skills.Dialogs.NewBuildDialog;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterBuildList;
 import com.melnykov.fab.FloatingActionButton;
@@ -40,13 +36,19 @@ import java.util.ArrayList;
 /**
  * A fragment containing the list of skill builds
  */
-public class BuildListFragment extends Fragment {
+public class BuildListFragment extends Fragment implements NewBuildDialog.NewBuildDialogListener{
 
     public final static String EXTRA_BUILD_ID = "com.dawgandpony.pd2skills.BUILDID";
     public final static String EXTRA_BUILD_NAME = "com.dawgandpony.pd2skills.BUILDNAME";
+    public final static String EXTRA_BUILD_INFAMIES = "com.dawgandpony.pd2skills.INFAMIES";
+    public final static String EXTRA_BUILD_URL = "com.dawgandpony.pd2skills.URL";
+    public final static String EXTRA_BUILD_TEMPLATE = "com.dawgandpony.pd2skills.TEMPLATE";
 
     ListView lvBuilds;
+    ArrayList<Build> buildList;
     CardView cv;
+
+    public static final int DIALOG_FRAGMENT = 1;
 
 
     public BuildListFragment() {
@@ -148,7 +150,7 @@ public class BuildListFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final EditText txtBuildName = new EditText(getActivity());
+                /*final EditText txtBuildName = new EditText(getActivity());
 
                 txtBuildName.setHeight(100);
                 txtBuildName.setWidth(340);
@@ -191,8 +193,14 @@ public class BuildListFragment extends Fragment {
                             }
                         })
 
-                        .show();
+                        .show();*/
 
+                if (buildList != null){
+                    // Create an instance of the dialog fragment and show it
+                    DialogFragment dialog = NewBuildDialog.newInstance(buildList);
+                    dialog.setTargetFragment(BuildListFragment.this, DIALOG_FRAGMENT);
+                    dialog.show(getActivity().getFragmentManager(), "NewBuildDialogFragment");
+                }
 
 
 
@@ -203,10 +211,13 @@ public class BuildListFragment extends Fragment {
         return rootView;
     }
 
-    private void MoveToEditBuildActivity(String name){
+    private void MoveToEditBuildActivity(String name, int infamies, String pd2SkillsURL, long templateBuildID){
         Intent intent = new Intent(getActivity(), EditBuildActivity.class);
         intent.putExtra(EXTRA_BUILD_ID, Build.NEW_BUILD);
         intent.putExtra(EXTRA_BUILD_NAME, name);
+        intent.putExtra(EXTRA_BUILD_INFAMIES, infamies);
+        intent.putExtra(EXTRA_BUILD_URL, pd2SkillsURL);
+        intent.putExtra(EXTRA_BUILD_TEMPLATE, templateBuildID);
         startActivity(intent);
     }
 
@@ -220,6 +231,18 @@ public class BuildListFragment extends Fragment {
     public void onResume() {
         super.onResume();
         new GetBuildsFromDBTask(lvBuilds).execute();
+    }
+
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog, String name, int infamies, String pd2SkillsURL, int templateBuildPos) {
+        long templateBuildID = -1;
+        if (templateBuildPos > -1){
+            templateBuildID = buildList.get(templateBuildPos).getId();
+        }
+
+
+        //Toast.makeText(getActivity(),name + " - " + infamies + " - " + templateBuildID,Toast.LENGTH_LONG).show();
+        MoveToEditBuildActivity(name, infamies, pd2SkillsURL, templateBuildID);
     }
 
 
@@ -255,13 +278,9 @@ public class BuildListFragment extends Fragment {
         protected void onPostExecute(ArrayList<Build> builds) {
             super.onPostExecute(builds);
 
-            ArrayList<String> testStrings = new ArrayList<>();
-            for (Build b : builds){
-                testStrings.add(b.getSkillBuild() + "");
-            }
 
 
-
+            buildList = builds;
             ArrayAdapterBuildList itemsAdapter =
                     new ArrayAdapterBuildList(getActivity(), builds);
 

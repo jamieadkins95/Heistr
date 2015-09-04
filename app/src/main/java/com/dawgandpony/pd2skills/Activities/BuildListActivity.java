@@ -1,32 +1,13 @@
 package com.dawgandpony.pd2skills.Activities;
 
-import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.os.AsyncTask;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.view.ContextMenu;
-import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
-import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Fragments.BuildListFragment;
 import com.dawgandpony.pd2skills.R;
-import com.dawgandpony.pd2skills.BuildObjects.Build;
-
-
-import java.util.ArrayList;
 
 
 public class BuildListActivity extends AppCompatActivity {
@@ -39,7 +20,7 @@ public class BuildListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build_list);
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
+            getFragmentManager().beginTransaction()
                     .add(R.id.container, new BuildListFragment())
                     .commit();
         }

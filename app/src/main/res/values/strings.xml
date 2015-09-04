@@ -41,6 +41,9 @@
     <string name="perk_deck_default">Crew Chief</string>
     <string name="detectionShort">Det</string>
     <string name="got_it">Got it!</string>
+    <string name="hint_huild_name">Build Name</string>
+    <string name="hint_url">PD2Skills URL - Coming Soon!</string>
+    <string name="cb_infamies">Auto select infamies</string>
 
 
     <string-array name="skill_trees">

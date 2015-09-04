@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:padding="@dimen/activity_horizontal_margin">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:id="@+id/etNewBuildName"
+        android:hint="@string/hint_huild_name"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:id="@+id/cbInfamies"
+            android:text="@string/cb_infamies"/>
+
+        <Spinner
+            android:id="@+id/spTemplate"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+
+            />
+    </LinearLayout>
+
+
+
+    <EditText
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textUri"
+        android:id="@+id/etPD2SkillsURL"
+        android:hint="@string/hint_url"
+        android:enabled="false"/>
+
+
+
+
+</LinearLayout>
