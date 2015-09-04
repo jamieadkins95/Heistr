@@ -122,12 +122,13 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
         this.addDivisor();
         addSection(secPD);
         this.addDivisor();
+        addSection(secArmour);
+        this.addDivisor();
         addSection(secPrimary);
         addSection(secSecondaty);
         addSection(secMelee);
-        this.addDivisor();
+        //this.addDivisor();
 
-        addSection(secArmour);
 
         addBottomSection(secHome);
         addBottomSection(secAbout);
