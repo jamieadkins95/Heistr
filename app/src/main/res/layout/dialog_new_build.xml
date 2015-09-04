@@ -22,6 +22,7 @@
             android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:id="@+id/cbInfamies"
+            android:checked="true"
             android:text="@string/cb_infamies"/>
 
         <Spinner

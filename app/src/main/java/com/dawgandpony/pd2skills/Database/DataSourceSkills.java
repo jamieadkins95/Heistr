@@ -87,22 +87,70 @@ public class DataSourceSkills {
 
     }
 
+    public SkillBuild createAndInsertSkillBuild(long templateID){
+
+        ContentValues skillBuildValues = new ContentValues();
+        skillBuildValues.put(MySQLiteHelper.COLUMN_NAME, "none");
+
+        long skillBuildID = database.insert(MySQLiteHelper.TABLE_SKILL_BUILDS, null, skillBuildValues);
+
+        Cursor cursorBuild = database.query(MySQLiteHelper.TABLE_SKILL_BUILDS,
+                skillBuildColumns, MySQLiteHelper.COLUMN_ID + " = " + skillBuildID, null,
+                null, null, null);
+        cursorBuild.moveToFirst();
+
+        SkillBuild template = getSkillBuild(templateID);
+
+
+        for (int tree = Trees.MASTERMIND; tree <= Trees.FUGITIVE; tree++){
+            for (int tier = Trees.TIER0; tier <= Trees.TIER6; tier++){
+                ContentValues values = new ContentValues();
+
+                values.put(MySQLiteHelper.COLUMN_SKILL_BUILD_ID, skillBuildID);
+                values.put(MySQLiteHelper.COLUMN_TREE, tree);
+                values.put(MySQLiteHelper.COLUMN_TIER, tier);
+
+                values.put(MySQLiteHelper.COLUMNS_SKILLS[0], template.getSkillTrees().get(tree).getTierList().get(tier).getSkillsInTier().get(0).getTaken());
+                if (template.getSkillTrees().get(tree).getTierList().get(tier).getSkillsInTier().size() > 1) {
+                    values.put(MySQLiteHelper.COLUMNS_SKILLS[1], template.getSkillTrees().get(tree).getTierList().get(tier).getSkillsInTier().get(1).getTaken());
+                    values.put(MySQLiteHelper.COLUMNS_SKILLS[2], template.getSkillTrees().get(tree).getTierList().get(tier).getSkillsInTier().get(2).getTaken());
+                }
+                else {
+                    values.put(MySQLiteHelper.COLUMNS_SKILLS[1], Skill.NO);
+                    values.put(MySQLiteHelper.COLUMNS_SKILLS[2], Skill.NO);
+                }
+
+                long id = database.insert(MySQLiteHelper.TABLE_SKILL_TIERS, null, values);
+                //Log.d("DB creation", "Tier ID = " + id + " - Added tier " + tier + " to tree " + tree);
+            }
+        }
+
+
+
+        SkillBuild newSkillBuild = cursorToSkillBuild(cursorBuild);
+        cursorBuild.close();
+
+        //Log.d("SkillBuild inserted DB", newSkillBuild.toString());
+        return newSkillBuild;
+
+
+
+    }
+
     public SkillBuild getSkillBuild(long id){
+        SkillBuild skillBuild = null;
         Cursor cursorSkillBuild = database.query(MySQLiteHelper.TABLE_SKILL_BUILDS,
                 skillBuildColumns, MySQLiteHelper.COLUMN_ID + " = " + id, null,
                 null, null, null);
 
         if (cursorSkillBuild.moveToFirst()){
-
-            SkillBuild skillBuild = cursorToSkillBuild(cursorSkillBuild);
-            cursorSkillBuild.close();
-
-            return skillBuild;
+            skillBuild = cursorToSkillBuild(cursorSkillBuild);
         }
-        else{
-            cursorSkillBuild.close();
-            return null;
-        }
+
+
+        cursorSkillBuild.close();
+
+        return skillBuild;
 
 
 

@@ -47,9 +47,29 @@ public class DataSourceBuilds {
 
     public Build createAndInsertBuild(String name, int infamies, String url, long templateID){
 
+        int perkDeck = 0;
+        int armour = 0;
+
+        Build template = null;
+        if (templateID > 0){
+            template = getBuild(templateID);
+        }
+
         dataSourceSkills = new DataSourceSkills(context);
         dataSourceSkills.open();
-        long skillBuildID = dataSourceSkills.createAndInsertSkillBuild().getId();
+        long skillBuildID;
+        if (template != null){
+            long templateSkillBuildID = template.getSkillBuildID();
+            skillBuildID = dataSourceSkills.createAndInsertSkillBuild(templateSkillBuildID).getId();
+            if (infamies < template.getInfamyID()){
+                infamies = (int) template.getInfamyID();
+            }
+            perkDeck = template.getPerkDeck();
+            armour = template.getArmour();
+        }
+        else {
+            skillBuildID = dataSourceSkills.createAndInsertSkillBuild().getId();
+        }
         dataSourceSkills.close();
 
         ContentValues buildValues = new ContentValues();
@@ -57,23 +77,25 @@ public class DataSourceBuilds {
         buildValues.put(MySQLiteHelper.COLUMN_SKILL_BUILD_ID, skillBuildID);
         buildValues.put(MySQLiteHelper.COLUMN_WEAPON_BUILD_ID, -1);
         buildValues.put(MySQLiteHelper.COLUMN_INFAMY_ID, infamies);
-        buildValues.put(MySQLiteHelper.COLUMN_PERK_DECK, 0);
-        buildValues.put(MySQLiteHelper.COLUMN_ARMOUR, 0);
+        buildValues.put(MySQLiteHelper.COLUMN_PERK_DECK, perkDeck);
+        buildValues.put(MySQLiteHelper.COLUMN_ARMOUR, armour);
 
 
         long buildID = database.insert(MySQLiteHelper.TABLE_BUILDS, null, buildValues);
+
+
 
         Cursor cursorBuild = database.query(MySQLiteHelper.TABLE_BUILDS,
                 buildColumns, MySQLiteHelper.COLUMN_ID + " = " + buildID, null,
                 null, null, null);
         cursorBuild.moveToFirst();
 
-
-
-
-
         Build newBuild = cursorToBuild(cursorBuild);
         cursorBuild.close();
+
+
+
+
 
         Log.d("Build inserted DB", newBuild.toString());
         return newBuild;
@@ -81,6 +103,8 @@ public class DataSourceBuilds {
 
 
     }
+
+
 
     public Build getBuild(long id){
         Build build;
@@ -132,6 +156,9 @@ public class DataSourceBuilds {
         return builds;
 
 
+    }
+
+    private void copyBuild(Build template, Build newBuild) {
     }
 
     public void DeleteBuild(long id){
