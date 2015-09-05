@@ -19,6 +19,7 @@ public class URLEncoder {
 
         SkillBuild skillBuild = build.getSkillBuild();
 
+        //region Skills
         int treeNumber = Trees.MASTERMIND;
         for (SkillTree tree : skillBuild.getSkillTrees()){
             switch (treeNumber){
@@ -41,7 +42,7 @@ public class URLEncoder {
 
             ArrayList<SkillTier> tiers = tree.getTierListInDescendingOrder();
             tiers.add(tree.getTierList().get(0));
-            
+
             for (SkillTier tier : tiers){
                 for (Skill skill : tier.getSkillsInTier()){
                     if (skill.getTaken() == Skill.NORMAL){
@@ -56,6 +57,11 @@ public class URLEncoder {
             url += ":";
             treeNumber++;
         }
+        //endregion
+
+        //region Perkdeck
+        url+= "p:";
+        //endregion
 
         return url;
     }
