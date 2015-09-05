@@ -33,7 +33,8 @@ public class NewBuildDialog extends DialogFragment {
 
     public static NewBuildDialog newInstance(ArrayList<Build> builds) {
         NewBuildDialog dialog = new NewBuildDialog();
-        dialog.buildList = builds;
+        dialog.buildList = new ArrayList<>();
+        dialog.buildList.addAll(builds);
         return dialog;
     }
 

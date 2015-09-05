@@ -101,6 +101,7 @@ public class SkillBuild {
 
                     newSkill.setName(skillFromXML.getName());
                     newSkill.setAbbreviation(skillFromXML.getAbbreviation());
+                    newSkill.setPd2SkillsSymbol(skillFromXML.getPd2SkillsSymbol());
 
                     newSkill.setNormalDescription(skillFromXML.getNormalDescription());
                     newSkill.setAceDescription(skillFromXML.getAceDescription());
@@ -251,6 +252,8 @@ public class SkillBuild {
                             case "ace":
                                 currentSkill.setAceDescription(text);
                                 break;
+                            case "pd2skills":
+                                currentSkill.setPd2SkillsSymbol(text);
                             default:
                                 Log.d("XML", "currentTag didnt match anything!");
                                 break;

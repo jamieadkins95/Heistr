@@ -17,6 +17,7 @@ import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterSkillTierList;
+import com.dawgandpony.pd2skills.utils.URLEncoder;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -115,6 +116,7 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
 
 
         tvPointsRemaining.setText(activity.getCurrentBuild().getSkillBuild().getPointsRemaining() + "/120");
+        tvPointsRemaining.setText(URLEncoder.EncodeBuild(activity.getCurrentBuild()));
 
         final ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, activity.getCurrentBuild(), currentSkillTree);
 

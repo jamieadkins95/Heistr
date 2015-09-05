@@ -10,6 +10,7 @@ public class Skill {
     private String normalDescription;
     private String aceDescription;
     private String abbreviation;
+    private String pd2SkillsSymbol;
     private int normalPoints;
     private int acePoints;
     private int taken;
@@ -64,7 +65,13 @@ public class Skill {
         this.acePoints = acePoints;
     }
 
+    public String getPd2SkillsSymbol() {
+        return pd2SkillsSymbol;
+    }
 
+    public void setPd2SkillsSymbol(String pd2SkillsSymbol) {
+        this.pd2SkillsSymbol = pd2SkillsSymbol;
+    }
 
     public String getName() {
         return name;
