@@ -5,6 +5,7 @@ import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
+import com.dawgandpony.pd2skills.Consts.Trees;
 
 import java.util.ArrayList;
 
@@ -18,9 +19,29 @@ public class URLEncoder {
 
         SkillBuild skillBuild = build.getSkillBuild();
 
+        int treeNumber = Trees.MASTERMIND;
         for (SkillTree tree : skillBuild.getSkillTrees()){
+            switch (treeNumber){
+                case Trees.MASTERMIND:
+                    url += "m";
+                    break;
+                case Trees.ENFORCER:
+                    url += "e";
+                    break;
+                case Trees.TECHNICIAN:
+                    url += "t";
+                    break;
+                case Trees.GHOST:
+                    url += "g";
+                    break;
+                case Trees.FUGITIVE:
+                    url += "f";
+                    break;
+            }
+
             ArrayList<SkillTier> tiers = tree.getTierListInDescendingOrder();
             tiers.add(tree.getTierList().get(0));
+            
             for (SkillTier tier : tiers){
                 for (Skill skill : tier.getSkillsInTier()){
                     if (skill.getTaken() == Skill.NORMAL){
@@ -33,6 +54,7 @@ public class URLEncoder {
                 }
             }
             url += ":";
+            treeNumber++;
         }
 
         return url;
