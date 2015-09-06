@@ -80,6 +80,7 @@
         <item>Sociopath</item>
         <item>Gambler</item>
         <item>Grinder</item>
+        <item>Yakusa</item>
     </string-array>
 
     <string-array name="armour">
@@ -99,6 +100,30 @@
         <item>FJ</item>
         <item>CTV</item>
         <item>ICTV</item>
+    </string-array>
+    <string-array name="armourURLNumbers">
+        <item>1</item>
+        <item>3</item>
+        <item>2</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+    <string-array name="perkDecksURL">
+        <item>c</item>
+        <item>m</item>
+        <item>a</item>
+        <item>r</item>
+        <item>h</item>
+        <item>o</item>
+        <item>b</item>
+        <item>i</item>
+        <item>s</item>
+        <item>g</item>
+        <item>r</item>
+        <item>y</item>
     </string-array>
 
 

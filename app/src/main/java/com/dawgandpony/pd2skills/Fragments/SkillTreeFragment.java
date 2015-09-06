@@ -116,7 +116,7 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
 
 
         tvPointsRemaining.setText(activity.getCurrentBuild().getSkillBuild().getPointsRemaining() + "/120");
-        tvPointsRemaining.setText(URLEncoder.EncodeBuild(activity.getCurrentBuild()));
+        tvPointsRemaining.setText(URLEncoder.EncodeBuild(activity, activity.getCurrentBuild()));
 
         final ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, activity.getCurrentBuild(), currentSkillTree);
 

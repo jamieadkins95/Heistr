@@ -1,11 +1,14 @@
 package com.dawgandpony.pd2skills.utils;
 
+import android.content.Context;
+
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
 import com.dawgandpony.pd2skills.Consts.Trees;
+import com.dawgandpony.pd2skills.R;
 
 import java.util.ArrayList;
 
@@ -14,7 +17,7 @@ import java.util.ArrayList;
  */
 public class URLEncoder {
 
-    public static String EncodeBuild(Build build){
+    public static String EncodeBuild(Context context, Build build){
         String url = "http://pd2skills.com/#/v3/";
 
         SkillBuild skillBuild = build.getSkillBuild();
@@ -59,9 +62,42 @@ public class URLEncoder {
         }
         //endregion
 
-        //region Perkdeck
-        url+= "p:";
+        //region Infamy
+        url += "i";
+        if (build.getInfamies().get(Trees.MASTERMIND)){
+            url += "b";
+        }
+        if (build.getInfamies().get(Trees.ENFORCER)){
+            url += "c";
+        }
+        if (build.getInfamies().get(Trees.TECHNICIAN)){
+            url += "d";
+        }
+        if (build.getInfamies().get(Trees.GHOST)){
+            url += "e";
+        }
+        url += "a:";
         //endregion
+
+        //region Perkdeck
+        String perkDeckShort = context.getResources().getStringArray(R.array.perkDecksURL)[build.getPerkDeck()];
+        url+= "p" + perkDeckShort.toUpperCase()+"8::";
+        //endregion
+
+
+        //region Primary Weapon
+        //url+="w2:";
+        //endregion
+
+        //region Secondary Weapon
+        //url+="s7:";
+        //endregion
+
+        //region Armour
+        url+="a" + context.getResources().getStringArray(R.array.armourURLNumbers)[build.getArmour()];
+        //end region
+
+
 
         return url;
     }
@@ -71,6 +107,8 @@ public class URLEncoder {
 
         return b;
     }
+
+
 
 
 }
