@@ -44,6 +44,8 @@
     <string name="hint_huild_name">Build Name</string>
     <string name="hint_url">PD2Skills URL - Coming Soon!</string>
     <string name="cb_infamies">Auto select infamies</string>
+    <string name="big_oil">Big Oil</string>
+    <string name="action_URL">PD2Skills URL</string>
 
 
     <string-array name="skill_trees">

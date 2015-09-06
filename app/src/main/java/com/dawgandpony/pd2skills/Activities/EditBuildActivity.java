@@ -1,11 +1,23 @@
 package com.dawgandpony.pd2skills.Activities;
 
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.widget.AbsListView;
+import android.widget.EditText;
+import android.widget.GridLayout;
+import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
@@ -19,6 +31,7 @@ import com.dawgandpony.pd2skills.Fragments.PerkDeckFragment;
 import com.dawgandpony.pd2skills.Fragments.SkillTreeFragment;
 import com.dawgandpony.pd2skills.Fragments.TaskFragment;
 import com.dawgandpony.pd2skills.R;
+import com.dawgandpony.pd2skills.utils.URLEncoder;
 
 import java.util.ArrayList;
 
@@ -145,6 +158,47 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
             //mTaskFragment.start(currentBuildID, newBuildName);
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_edit_build, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_URL:
+                final EditText txtURL = new EditText(this);
+
+                //txtURL.setHeight(300);
+                txtURL.setWidth(340);
+                txtURL.setGravity(Gravity.LEFT);
+                txtURL.setText(URLEncoder.encodeBuild(this, currentBuild));
+
+                txtURL.setImeOptions(EditorInfo.IME_ACTION_DONE);
+
+                //txtBuildName.setTextAppearance(getActivity(), R.color.abc_search_url_text_normal);
+                new AlertDialog.Builder(this)
+                        .setTitle("pd2skills.com URL")
+                        .setView(txtURL)
+                        .setNegativeButton(R.string.got_it, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // do nothing
+                            }
+                        })
+
+                        .show();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 
     private void InitRetainedFragment() {
         FragmentManager fm = getSupportFragmentManager();

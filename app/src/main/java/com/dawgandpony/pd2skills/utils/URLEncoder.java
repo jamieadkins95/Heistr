@@ -17,7 +17,7 @@ import java.util.ArrayList;
  */
 public class URLEncoder {
 
-    public static String EncodeBuild(Context context, Build build){
+    public static String encodeBuild(Context context, Build build){
         String url = "http://pd2skills.com/#/v3/";
 
         SkillBuild skillBuild = build.getSkillBuild();
@@ -102,7 +102,7 @@ public class URLEncoder {
         return url;
     }
 
-    public static Build DecodeURL(String url){
+    public static Build decodeURL(String url){
         Build b = new Build();
 
         return b;

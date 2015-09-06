@@ -1,8 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context=".BuildListActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+    <item android:id="@+id/action_URL" android:title="@string/action_URL"
         android:orderInCategory="100" app:showAsAction="never" />
-    <item android:id="@+id/action_big_oil" android:title="@string/big_oil"
-        android:orderInCategory="99" app:showAsAction="never" />
 </menu>
