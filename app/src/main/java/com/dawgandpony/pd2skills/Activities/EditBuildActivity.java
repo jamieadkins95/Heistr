@@ -174,7 +174,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
             case R.id.action_URL:
                 final EditText txtURL = new EditText(this);
 
-                //txtURL.setHeight(300);
+                txtURL.setHeight(150);
                 txtURL.setWidth(340);
                 txtURL.setGravity(Gravity.LEFT);
                 txtURL.setText(URLEncoder.encodeBuild(this, currentBuild));
