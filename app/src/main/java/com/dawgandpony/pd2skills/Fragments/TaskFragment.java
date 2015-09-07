@@ -200,6 +200,7 @@ public class TaskFragment extends Fragment {
             //Toast.makeText(getApplicationContext(), "Retrieved skill build from DB", Toast.LENGTH_SHORT).show();
             Log.d("DB", "Retrieved skill build from DB");
             currentBuild = build;
+            currentBuildID = currentBuild.getId();
             mCallbacks.onPostExecute(build);
             mRunning = false;
         }
