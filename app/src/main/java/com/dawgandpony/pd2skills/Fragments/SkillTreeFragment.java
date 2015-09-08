@@ -1,7 +1,6 @@
 package com.dawgandpony.pd2skills.Fragments;
 
 
-import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v7.widget.CardView;
@@ -12,19 +11,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
-import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterSkillTierList;
-import com.dawgandpony.pd2skills.utils.URLEncoder;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SkillTreeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SkillTreeFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks{
+public class SkillTreeFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks, ArrayAdapterSkillTierList.AdapterEvents{
     // the fragment initialization parameters
     private static final String ARG_TREE = "tree";
 
@@ -123,7 +120,7 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
         tvPointsRemaining.setText(activity.getCurrentBuild().getSkillBuild().getPointsRemaining() + "/120");
         //tvPointsRemaining.setText(URLEncoder.EncodeBuild(activity, activity.getCurrentBuild()));
 
-        final ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, activity.getCurrentBuild(), currentSkillTree);
+        final ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, this, activity.getCurrentBuild(), currentSkillTree);
 
         listView.setAdapter(arrayAdapterSkillTiers);
         cvUnlockTree.setEnabled(true);
@@ -159,12 +156,22 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
                 //Update currentBuild (updates DB)
                 activity.getCurrentBuild().updateSkillTier(activity, skillTreeNum, currentSkillTree.getTierList().get(0));
                 arrayAdapterSkillTiers.updateTiers();
+                updatePointsRemaining();
             }
         });
     }
 
     @Override
     public void onBuildUpdated() {
+        updatePointsRemaining();
+    }
+
+    @Override
+    public void onSkillTaken(int tierNumber, int skillNumber) {
+        updatePointsRemaining();
+    }
+
+    private void updatePointsRemaining() {
         tvPointsRemaining.setText(activity.getCurrentBuild().getSkillBuild().getPointsRemaining() + "/120");
     }
 }
