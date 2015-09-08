@@ -175,12 +175,7 @@ public class TaskFragment extends Fragment {
 
             dataSourceBuilds = new DataSourceBuilds(getActivity());
             dataSourceBuilds.open();
-            if (buildID == Build.NEW_BUILD){
-                currentBuild = dataSourceBuilds.createAndInsertBuild(name, infamies, url, template);
-            }
-            else {
-                currentBuild = dataSourceBuilds.getBuild(buildID);
-            }
+            currentBuild = dataSourceBuilds.getBuild(buildID);
             dataSourceBuilds.close();
 
             return currentBuild;
@@ -249,23 +244,11 @@ public class TaskFragment extends Fragment {
         mCallbacks = null;
     }
 
-    public void setNewBuildName(String newBuildName) {
-        this.newBuildName = newBuildName;
-    }
+
 
     public void setCurrentBuildID(long currentBuildID) {
         this.currentBuildID = currentBuildID;
     }
 
-    public void setInfamies(int infamies) {
-        this.infamies = infamies;
-    }
 
-    public void setPd2URL(String pd2URL) {
-        this.pd2URL = pd2URL;
-    }
-
-    public void setTemplateBuildID(long templateBuildID) {
-        this.templateBuildID = templateBuildID;
-    }
 }

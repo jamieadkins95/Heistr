@@ -211,15 +211,6 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
         return rootView;
     }
 
-    private void MoveToEditBuildActivity(String name, int infamies, String pd2SkillsURL, long templateBuildID){
-        Intent intent = new Intent(getActivity(), EditBuildActivity.class);
-        intent.putExtra(EXTRA_BUILD_ID, Build.NEW_BUILD);
-        intent.putExtra(EXTRA_BUILD_NAME, name);
-        intent.putExtra(EXTRA_BUILD_INFAMIES, infamies);
-        intent.putExtra(EXTRA_BUILD_URL, pd2SkillsURL);
-        intent.putExtra(EXTRA_BUILD_TEMPLATE, templateBuildID);
-        startActivity(intent);
-    }
 
     private void MoveToEditBuildActivity(long id){
         Intent intent = new Intent(getActivity(), EditBuildActivity.class);
@@ -242,7 +233,43 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
 
 
         //Toast.makeText(getActivity(),name + " - " + infamies + " - " + templateBuildID,Toast.LENGTH_LONG).show();
-        MoveToEditBuildActivity(name, infamies, pd2SkillsURL, templateBuildID);
+        //MoveToEditBuildActivity(name, infamies, pd2SkillsURL, templateBuildID);
+        new CreateNewBuild(name, infamies, pd2SkillsURL, templateBuildID).execute();
+    }
+
+    private class CreateNewBuild extends AsyncTask<Void, Void, Build>{
+
+        String name;
+        int infamies;
+        String url;
+        long templateID;
+
+        public CreateNewBuild(String name, int infamies, String pd2SkillsURL, long templateBuildID) {
+            super();
+            this.name=  name;
+            this.infamies = infamies;
+            this.url = pd2SkillsURL;
+            this.templateID = templateBuildID;
+        }
+
+        @Override
+        protected Build doInBackground(Void... params) {
+            DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(getActivity());
+            dataSourceBuilds.open();
+            Build b = dataSourceBuilds.createAndInsertBuild(name, infamies, url, templateID);
+            dataSourceBuilds.close();
+
+            return b;
+        }
+
+        @Override
+        protected void onPostExecute(Build build) {
+            super.onPostExecute(build);
+
+            MoveToEditBuildActivity(build.getId());
+
+
+        }
     }
 
 

@@ -52,10 +52,6 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
     private Build currentBuild;
 
     private long currentBuildID;
-    private String newBuildName;
-    private int infamies;
-    private String pd2URL;
-    private long templateBuildID;
 
     private TaskFragment mTaskFragment;
     private ArrayList<BuildReadyCallbacks> mListCallbacks;
@@ -209,10 +205,6 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
         if (mTaskFragment == null) {
             mTaskFragment = new TaskFragment();
             mTaskFragment.setCurrentBuildID(currentBuildID);
-            mTaskFragment.setNewBuildName(newBuildName);
-            mTaskFragment.setInfamies(infamies);
-            mTaskFragment.setPd2URL(pd2URL);
-            mTaskFragment.setTemplateBuildID(templateBuildID);
             fm.beginTransaction().add(mTaskFragment, TAG_TASK_FRAGMENT).commit();
         }
         //mTaskFragment.start(currentBuildID, newBuildName);
@@ -228,10 +220,6 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
         else{
             intentFromPreviousActivity = getIntent();
             currentBuildID = intentFromPreviousActivity.getLongExtra(BuildListFragment.EXTRA_BUILD_ID, Build.NEW_BUILD);
-            newBuildName =  intentFromPreviousActivity.getStringExtra(BuildListFragment.EXTRA_BUILD_NAME);
-            infamies = intentFromPreviousActivity.getIntExtra(BuildListFragment.EXTRA_BUILD_INFAMIES, 0);
-            pd2URL = intentFromPreviousActivity.getStringExtra(BuildListFragment.EXTRA_BUILD_URL);
-            templateBuildID = intentFromPreviousActivity.getLongExtra(BuildListFragment.EXTRA_BUILD_TEMPLATE, Build.NEW_BUILD);
         }
 
 
