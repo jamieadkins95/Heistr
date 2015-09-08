@@ -124,25 +124,25 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:id="@+id/btnNone"
 
-
-                style="?android:attr/borderlessButtonStyle"
+                style="@style/NoneButton"
                 android:text="None"/>
 
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="1"
-
+                android:id="@+id/btnNormal"
                 android:layout_height="match_parent"
-                style="?android:attr/borderlessButtonStyle"
+                style="@style/NormalButton"
                 android:text="Normal"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:id="@+id/btnAce"
 
-
-                style="?android:attr/borderlessButtonStyle"
+                style="@style/AceButton"
                 android:text="Ace"/>
         </LinearLayout>
 

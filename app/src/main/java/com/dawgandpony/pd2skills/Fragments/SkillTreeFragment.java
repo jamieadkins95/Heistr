@@ -8,12 +8,14 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
+import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterSkillTierList;
@@ -24,7 +26,7 @@ import com.dawgandpony.pd2skills.utils.URLEncoder;
  * Use the {@link SkillTreeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SkillTreeFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks, ArrayAdapterSkillTierList.AdapterEvents{
+public class SkillTreeFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks, ArrayAdapterSkillTierList.AdapterEvents {
     // the fragment initialization parameters
     private static final String ARG_TREE = "tree";
 
@@ -36,8 +38,16 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
     CardView cvUnlockTree;
     TextView tvUnlockTree;
     TextView tvPointsRemaining;
-
     TextView tvSkillInfo;
+
+    Button btnNone;
+    Button btnNormal;
+    Button btnAce;
+
+
+    ArrayAdapterSkillTierList mAdapter;
+    int currentTier = 1;
+    int currentSkill = 0;
 
 
     /**
@@ -71,18 +81,15 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
         }
 
 
-
-
     }
 
     @Override
     public void onResume() {
         super.onResume();
         activity = (EditBuildActivity) getActivity();
-        if (activity.getCurrentBuild() == null){
+        if (activity.getCurrentBuild() == null) {
             activity.listenIn(this);
-        }
-        else {
+        } else {
             onBuildReady();
         }
     }
@@ -107,37 +114,36 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
         tvPointsRemaining = (TextView) rootView.findViewById(R.id.tvPointsRemaining);
         tvSkillInfo = (TextView) rootView.findViewById(R.id.tvSkillDesc);
 
+        btnNone = (Button) rootView.findViewById(R.id.btnNone);
+        btnNormal = (Button) rootView.findViewById(R.id.btnNormal);
+        btnAce = (Button) rootView.findViewById(R.id.btnAce);
+
+
         cvUnlockTree.setEnabled(false);
-
-
-
 
 
         return rootView;
     }
 
 
-
-
     @Override
     public void onBuildReady() {
         currentSkillTree = activity.getCurrentBuild().getSkillBuild().getSkillTrees().get(skillTreeNum);
 
-        tvSkillInfo.setText(currentSkillTree.getTierList().get(1).getSkillsInTier().get(0).getDescription());
+        tvSkillInfo.setText(currentSkillTree.getTierList().get(currentTier).getSkillsInTier().get(currentSkill).getDescription());
         tvPointsRemaining.setText(activity.getCurrentBuild().getSkillBuild().getPointsRemaining() + "/120");
         //tvPointsRemaining.setText(URLEncoder.EncodeBuild(activity, activity.getCurrentBuild()));
 
-        final ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, this, activity.getCurrentBuild(), currentSkillTree);
+        mAdapter = new ArrayAdapterSkillTierList(activity, this, activity.getCurrentBuild(), currentSkillTree);
 
-        listView.setAdapter(arrayAdapterSkillTiers);
+        listView.setAdapter(mAdapter);
         cvUnlockTree.setEnabled(true);
 
-        if (currentSkillTree.getTierList().get(0).getSkillsInTier().get(0).getTaken() > Skill.NO){
+        if (currentSkillTree.getTierList().get(0).getSkillsInTier().get(0).getTaken() > Skill.NO) {
             tvUnlockTree.setTextColor(activity.getResources().getColor(R.color.textPrimary));
             cvUnlockTree.setCardBackgroundColor(activity.getResources().getColor(R.color.primary));
 
-        }
-        else {
+        } else {
             tvUnlockTree.setTextColor(activity.getResources().getColor(R.color.textPrimary));
             cvUnlockTree.setCardBackgroundColor(activity.getResources().getColor(R.color.backgroundCard));
         }
@@ -162,9 +168,108 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
 
                 //Update currentBuild (updates DB)
                 activity.getCurrentBuild().updateSkillTier(activity, skillTreeNum, currentSkillTree.getTierList().get(0));
-                arrayAdapterSkillTiers.updateTiers();
+                mAdapter.updateTiers();
             }
         });
+
+        btnNone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SetSkillToNone();
+            }
+        });
+
+        btnNormal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SetSkillToNormal();
+            }
+        });
+
+        btnAce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SetSkillToAce();
+            }
+        });
+    }
+
+    private void SetSkillToAce() {
+        SkillTier tier = currentSkillTree.getTierList().get(currentTier);
+
+        final int skillCost = tier.getAceCost();
+        final int pointsUsed = activity.getCurrentBuild().getSkillBuild().getPointsUsed();
+
+        if (pointsUsed + skillCost <= activity.getCurrentBuild().getSkillBuild().getPointsAvailable()) {
+            //Set to Ace
+            tier.getSkillsInTier().get(currentSkill).setTaken(Skill.ACE);
+
+        }
+
+
+        //Update currentBuild (updates DB)
+        //currentBuild.updateSkillTier(context, tier.getSkillTree(), tier);
+
+        UpdateSkillDesc();
+    }
+
+    private void SetSkillToNormal() {
+        SkillTier tier = currentSkillTree.getTierList().get(currentTier);
+        int pointsInThisSkill = 0;
+        if (tier.getSkillsInTier().get(currentSkill).getTaken() == Skill.ACE) {
+            pointsInThisSkill = tier.getAceCost();
+        } else if (tier.getSkillsInTier().get(currentSkill).getTaken() == Skill.NORMAL) {
+            pointsInThisSkill = tier.getNormalCost();
+        }
+
+
+        final int skillCost = tier.getNormalCost();
+        int pointsUsed = activity.getCurrentBuild().getSkillBuild().getPointsUsed();
+
+        if (pointsUsed + skillCost - pointsInThisSkill <= activity.getCurrentBuild().getSkillBuild().getPointsAvailable()) {
+            //Set to Normal
+            tier.getSkillsInTier().get(currentSkill).setTaken(Skill.NORMAL);
+
+        }
+
+
+        //Update currentBuild (updates DB)
+        //currentBuild.updateSkillTier(context, tier.getSkillTree(), tier);
+
+        UpdateSkillDesc();
+    }
+
+    private void SetSkillToNone() {
+        SkillTier tier = currentSkillTree.getTierList().get(currentTier);
+
+        //Set to None
+        tier.getSkillsInTier().get(currentSkill).setTaken(Skill.NO);
+
+        //Update currentBuild (updates DB)
+        //currentBuild.updateSkillTier(context, tier.getSkillTree(), tier);
+
+        UpdateSkillDesc();
+    }
+
+    private void UpdateSkillDesc() {
+        tvSkillInfo.setText(currentSkillTree.getTierList().get(currentTier).getSkillsInTier().get(currentSkill).getDescription());
+        switch (currentSkillTree.getTierList().get(currentTier).getSkillsInTier().get(currentSkill).getTaken()){
+            case Skill.NO:
+                tvSkillInfo.setTextColor(getResources().getColor(R.color.textPrimary));
+                tvSkillInfo.setBackgroundColor(getResources().getColor(R.color.backgroundDark));
+                break;
+            case Skill.NORMAL:
+                tvSkillInfo.setTextColor(getResources().getColor(R.color.primary));
+                tvSkillInfo.setBackgroundColor(getResources().getColor(R.color.textPrimary));
+                break;
+            case Skill.ACE:
+                tvSkillInfo.setTextColor(getResources().getColor(R.color.textPrimary));
+                tvSkillInfo.setBackgroundColor(getResources().getColor(R.color.primary));
+                break;
+        }
+
+        mAdapter.updateTiers();
+
     }
 
     @Override
@@ -174,6 +279,15 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
 
     @Override
     public void onSkillSelected(int tierNumber, int skillNumber) {
-        tvSkillInfo.setText(currentSkillTree.getTierList().get(tierNumber).getSkillsInTier().get(skillNumber).getDescription());
+        currentTier = tierNumber;
+        currentSkill = skillNumber;
+
+        UpdateSkillDesc();
+
+
+
+
+
+        tvPointsRemaining.setText(activity.getCurrentBuild().getSkillBuild().getPointsRemaining() + "/120");
     }
 }

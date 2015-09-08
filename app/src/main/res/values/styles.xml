@@ -27,6 +27,21 @@
 
     </style>
 
+    <style name="AceButton" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@color/primary</item>
+        <item name="android:textColor">@color/textPrimary</item>
+    </style>
+
+    <style name="NormalButton" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@color/textPrimary</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    <style name="NoneButton" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@color/backgroundDark</item>
+        <item name="android:textColor">@color/textPrimary</item>
+    </style>
+
 
 
 </resources>
