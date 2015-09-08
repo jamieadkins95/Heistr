@@ -87,6 +87,7 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
 
     @Override
     public void onDestroy() {
+        super.onDestroy();
         activity.stopListening(this);
     }
 
