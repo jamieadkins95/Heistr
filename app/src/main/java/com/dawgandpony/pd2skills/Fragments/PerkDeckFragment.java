@@ -88,5 +88,10 @@ public class PerkDeckFragment extends Fragment implements EditBuildActivity.Buil
 
     }
 
+    @Override
+    public void onBuildUpdated() {
+
+    }
+
 
 }

@@ -88,4 +88,11 @@ public class InfamyFragment extends Fragment implements EditBuildActivity.BuildR
             }
         });
     }
+
+    @Override
+    public void onBuildUpdated() {
+
+    }
+
+
 }

@@ -86,6 +86,11 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
     }
 
     @Override
+    public void onDestroy() {
+        activity.stopListening(this);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
@@ -156,5 +161,10 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
                 arrayAdapterSkillTiers.updateTiers();
             }
         });
+    }
+
+    @Override
+    public void onBuildUpdated() {
+        tvPointsRemaining.setText(activity.getCurrentBuild().getSkillBuild().getPointsRemaining() + "/120");
     }
 }

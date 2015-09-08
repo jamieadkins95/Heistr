@@ -147,13 +147,6 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
 
     }
 
-    public void InitBuildRetrieval() {
-        if (mTaskFragment.isRunning()) {
-            mTaskFragment.cancel();
-        } else {
-            //mTaskFragment.start(currentBuildID, newBuildName);
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -262,6 +255,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
 
     public interface BuildReadyCallbacks{
         void onBuildReady();
+        void onBuildUpdated();
     }
 
 

@@ -84,5 +84,10 @@ public class ArmourFragment extends Fragment implements EditBuildActivity.BuildR
 
     }
 
+    @Override
+    public void onBuildUpdated() {
+
+    }
+
 
 }
