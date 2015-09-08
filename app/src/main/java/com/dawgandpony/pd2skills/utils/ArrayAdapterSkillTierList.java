@@ -78,9 +78,9 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
 
         if (skillTree.getPointsSpentInThisTree(tier.getNumber()) < tier.getPointRequirement()){
             rowView.setBackgroundColor(context.getResources().getColor(R.color.backgroundVeryDark));
-            cvs[0].setEnabled(false);
-            cvs[1].setEnabled(false);
-            cvs[2].setEnabled(false);
+            //cvs[0].setEnabled(false);
+            //cvs[1].setEnabled(false);
+            //cvs[2].setEnabled(false);
             tier.ResetSkills();
 
         }
@@ -118,7 +118,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                     int taken = tier.getSkillsInTier().get(skill).getTaken();
                     int skillCost = 0;
 
-                    switch (taken){
+                    switch (taken) {
                         case Skill.NO:
                             skillCost = tier.getNormalCost();
                             break;
@@ -128,33 +128,31 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                     }
                     final int pointsUsed = currentBuild.getSkillBuild().getPointsUsed();
 
-                    if (pointsUsed + skillCost <= currentBuild.getSkillBuild().getPointsAvailable()){
+                    if (skillTree.getPointsSpentInThisTree(tier.getNumber()) >= tier.getPointRequirement()){ //if tier is unlocked
+                        if (pointsUsed + skillCost <= currentBuild.getSkillBuild().getPointsAvailable()) { //if there are enough points left
 
 
-                        switch (taken){
-                            case Skill.NO:
-                                //Set to normal
-                                tier.getSkillsInTier().get(skill).setTaken(Skill.NORMAL);
-                                break;
-                            case Skill.NORMAL:
-                                //Set to Ace
-                                tier.getSkillsInTier().get(skill).setTaken(Skill.ACE);
-                                break;
-                            case Skill.ACE:
-                                //Set to none
-                                tier.getSkillsInTier().get(skill).setTaken(Skill.NO);
-                                break;
+                            switch (taken) {
+                                case Skill.NO:
+                                    //Set to normal
+                                    tier.getSkillsInTier().get(skill).setTaken(Skill.NORMAL);
+                                    break;
+                                case Skill.NORMAL:
+                                    //Set to Ace
+                                    tier.getSkillsInTier().get(skill).setTaken(Skill.ACE);
+                                    break;
+                                case Skill.ACE:
+                                    //Set to none
+                                    tier.getSkillsInTier().get(skill).setTaken(Skill.NO);
+                                    break;
+                            }
+
+
+                        } else {
+                            //Set to none
+                            tier.getSkillsInTier().get(skill).setTaken(Skill.NO);
+                            //Toast.makeText(context, "Not enough skill points remaining!", Toast.LENGTH_SHORT).show();
                         }
-
-
-
-
-
-                    }
-                    else{
-                        //Set to none
-                        tier.getSkillsInTier().get(skill).setTaken(Skill.NO);
-                        //Toast.makeText(context, "Not enough skill points remaining!", Toast.LENGTH_SHORT).show();
                     }
 
 
