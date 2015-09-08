@@ -36,6 +36,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
     SkillTree skillTree;
     Context context;
     ViewGroup parentView;
+    private AdapterEvents mListener;
 
     @Override
     public View getView(int position, View convertView, final ViewGroup parent) {
@@ -112,6 +113,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
             cvs[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    mListener.onSkillSelected(tier.getNumber(), skill);
                     CardView cv = (CardView) v;
 
                     int taken = tier.getSkillsInTier().get(skill).getTaken();
@@ -196,35 +198,23 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         return rowView;
     }
 
-    public ArrayAdapterSkillTierList(Context context, Build currentBuild, SkillTree skillTree){
+    public ArrayAdapterSkillTierList(Context context, Fragment listener, Build currentBuild, SkillTree skillTree){
         super(context, -1, skillTree.getTierListInDescendingOrder());
         this.currentBuild = currentBuild;
         this.skillTiers = skillTree.getTierListInDescendingOrder();
         this.skillTree = skillTree;
         this.context = context;
+        mListener = (AdapterEvents) listener;
     }
 
     public void updateTiers(){
-        /*ViewGroup parent;
-        if (parentView != null) {
-            parent = parentView;
-
-            for (int i = 0; i < parent.getChildCount(); i++) {
-                updateTier(i, parent);
-            }
-        }
-        else{
-            Log.e("SkillTierAdapter", "parentview is null!");
-        }*/
-
-
-
 
         for (int i = 0; i < skillTree.getTierList().size(); i++){
             if (skillTree.getPointsSpentInThisTree(skillTree.getTierList().get(i).getNumber()) < skillTree.getTierList().get(i).getPointRequirement()){
                 skillTree.getTierList().get(i).ResetSkills();
                 currentBuild.updateSkillTier(context, skillTree.getTierList().get(i).getSkillTree(), skillTree.getTierList().get(i));
             }
+
 
         }
 
@@ -278,6 +268,12 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
             }
 
     }
+
+
+    public interface AdapterEvents{
+        void onSkillSelected(int tierNumber, int skillNumber);
+    }
+
 
 
 

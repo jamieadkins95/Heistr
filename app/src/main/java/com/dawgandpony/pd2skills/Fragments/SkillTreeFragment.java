@@ -24,7 +24,7 @@ import com.dawgandpony.pd2skills.utils.URLEncoder;
  * Use the {@link SkillTreeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SkillTreeFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks{
+public class SkillTreeFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks, ArrayAdapterSkillTierList.AdapterEvents{
     // the fragment initialization parameters
     private static final String ARG_TREE = "tree";
 
@@ -36,6 +36,8 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
     CardView cvUnlockTree;
     TextView tvUnlockTree;
     TextView tvPointsRemaining;
+
+    TextView tvSkillInfo;
 
 
     /**
@@ -103,6 +105,7 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
         cvUnlockTree = (CardView) rootView.findViewById(R.id.cvUnlockSkillTree);
         tvUnlockTree = (TextView) rootView.findViewById(R.id.tvUnlockSkillTree);
         tvPointsRemaining = (TextView) rootView.findViewById(R.id.tvPointsRemaining);
+        tvSkillInfo = (TextView) rootView.findViewById(R.id.tvSkillDesc);
 
         cvUnlockTree.setEnabled(false);
 
@@ -120,11 +123,11 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
     public void onBuildReady() {
         currentSkillTree = activity.getCurrentBuild().getSkillBuild().getSkillTrees().get(skillTreeNum);
 
-
+        tvSkillInfo.setText(currentSkillTree.getTierList().get(1).getSkillsInTier().get(0).getDescription());
         tvPointsRemaining.setText(activity.getCurrentBuild().getSkillBuild().getPointsRemaining() + "/120");
         //tvPointsRemaining.setText(URLEncoder.EncodeBuild(activity, activity.getCurrentBuild()));
 
-        final ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, activity.getCurrentBuild(), currentSkillTree);
+        final ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, this, activity.getCurrentBuild(), currentSkillTree);
 
         listView.setAdapter(arrayAdapterSkillTiers);
         cvUnlockTree.setEnabled(true);
@@ -167,5 +170,10 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
     @Override
     public void onBuildUpdated() {
         tvPointsRemaining.setText(activity.getCurrentBuild().getSkillBuild().getPointsRemaining() + "/120");
+    }
+
+    @Override
+    public void onSkillSelected(int tierNumber, int skillNumber) {
+        tvSkillInfo.setText(currentSkillTree.getTierList().get(tierNumber).getSkillsInTier().get(skillNumber).getDescription());
     }
 }

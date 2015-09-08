@@ -113,6 +113,14 @@ public class Skill {
     public void setAbbreviation(String abbreviation) {
         this.abbreviation = abbreviation;
     }
+
+    public String getDescription() {
+        String points = "points";
+        if (getNormalPoints() == 1){
+            points = "point";
+        }
+        return "Normal - "+ getNormalPoints() + " " + points + ": " + getNormalDescription() + "\n\nAce - "+ getAcePoints() + " points: " + getAceDescription();
+    }
 }
 
 
