@@ -1,6 +1,8 @@
 package com.dawgandpony.pd2skills.utils;
 
 import android.content.Context;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
@@ -17,8 +19,10 @@ import java.util.ArrayList;
  */
 public class URLEncoder {
 
+    final private static String baseURL = "http://pd2skills.com/#/v3/";
+
     public static String encodeBuild(Context context, Build build){
-        String url = "http://pd2skills.com/#/v3/";
+        String url = baseURL;
 
         SkillBuild skillBuild = build.getSkillBuild();
 
@@ -102,8 +106,46 @@ public class URLEncoder {
         return url;
     }
 
-    public static Build decodeURL(String url){
+    public static Build decodeURL(Context context, String url){
         Build b = new Build();
+        String base = url.substring(0, baseURL.length());
+        String remaining = url.substring(base.length());
+
+        if (base.equals(baseURL)){
+            Log.d("URL DECODER", remaining);
+
+            while (!remaining.equals("")){
+                switch (remaining.charAt(0)){
+                    case 'm':
+                        //mastermind tree
+                        break;
+                    case 'e':
+                        //enforcer
+                        break;
+                    case 't':
+                        //tech
+                        break;
+                    case 'g':
+                        //ghost
+                        break;
+                    case 'f':
+                        //fugitive
+                        break;
+                    case 'i':
+                        //infamy
+                        break;
+                    case 'p':
+                        //perkdeck
+                        break;
+                    case 'a':
+                        //armour
+                        break;
+                }
+            }
+        }
+        else{
+            b = null;
+        }
 
         return b;
     }

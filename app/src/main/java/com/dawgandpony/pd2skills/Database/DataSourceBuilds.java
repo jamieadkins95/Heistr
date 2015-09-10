@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
+import com.dawgandpony.pd2skills.utils.URLEncoder;
 
 import java.util.ArrayList;
 
@@ -51,8 +52,11 @@ public class DataSourceBuilds {
         int armour = 0;
 
         Build template = null;
-        if (templateID > 0){
-            template = getBuild(templateID);
+        template = URLEncoder.decodeURL(context, url);
+        if (template == null){
+            if (templateID > 0){
+                template = getBuild(templateID);
+            }
         }
 
         dataSourceSkills = new DataSourceSkills(context);
