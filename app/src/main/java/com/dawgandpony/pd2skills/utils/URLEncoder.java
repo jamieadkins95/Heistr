@@ -21,6 +21,9 @@ public class URLEncoder {
 
     final private static String baseURL = "http://pd2skills.com/#/v3/";
 
+    final private static int tierIndex = 0;
+    final private static int skillIndex = 0;
+
     public static String encodeBuild(Context context, Build build){
         String url = baseURL;
 
@@ -114,33 +117,50 @@ public class URLEncoder {
         if (base.equals(baseURL)){
             Log.d("URL DECODER", remaining);
 
+            b.setSkillBuild(SkillBuild.newNonDBInstance());
+
             while (!remaining.equals("")){
+                int end = remaining.indexOf(":");
                 switch (remaining.charAt(0)){
-                    case 'm':
-                        //mastermind tree
+                    case 'm': //mastermind tree
+                        SkillTree treeM = getSkillTreeFromLetters(remaining);
+                        b.getSkillBuild().getSkillTrees().set(Trees.MASTERMIND, treeM);
+
                         break;
-                    case 'e':
-                        //enforcer
+                    case 'e': //enforcer
+                        SkillTree treeE = getSkillTreeFromLetters(remaining);
+                        b.getSkillBuild().getSkillTrees().set(Trees.ENFORCER, treeE);
                         break;
-                    case 't':
-                        //tech
+                    case 't': //tech
+                        SkillTree treeT = getSkillTreeFromLetters(remaining);
+                        b.getSkillBuild().getSkillTrees().set(Trees.TECHNICIAN, treeT);
                         break;
-                    case 'g':
-                        //ghost
+                    case 'g': //ghost
+                        SkillTree treeG = getSkillTreeFromLetters(remaining);
+                        b.getSkillBuild().getSkillTrees().set(Trees.GHOST, treeG);
                         break;
-                    case 'f':
-                        //fugitive
+                    case 'f': //fugitive
+                        SkillTree treeF = getSkillTreeFromLetters(remaining);
+                        b.getSkillBuild().getSkillTrees().set(Trees.FUGITIVE, treeF);
                         break;
-                    case 'i':
-                        //infamy
+                    case 'i': //infamy
+
                         break;
-                    case 'p':
-                        //perkdeck
+                    case 'p': //perkdeck
+
                         break;
-                    case 'a':
-                        //armour
+                    case 'a': //armour
+
+                        break;
+                    case ':': //end
+                        remaining = "";
                         break;
                 }
+
+                if (remaining.length() > 0){
+                    remaining = remaining.substring(end + 1);
+                }
+
             }
         }
         else{
@@ -150,7 +170,51 @@ public class URLEncoder {
         return b;
     }
 
+    //6 qrs
+    //5 nop
+    //4 klm
+    //3 hij
+    //2 efg
+    //1 bcd
+    //0 -a-
+    private static SkillTree getSkillTreeFromLetters(String url){
+        int end = url.indexOf(":");
+        String treeString = url.substring(1, end);
+        SkillTree tree = SkillTree.newNonDBInstance();
+        Log.d("Tree from URL", treeString);
 
+
+
+        for (char character : treeString.toCharArray()){
+            int[] pos = tierIndexFromLetter(Character.toLowerCase(character));
+            Skill skill = new Skill();
+            if (character == Character.toLowerCase(character)){
+                skill.setTaken(Skill.NORMAL);
+            }
+            else {
+                skill.setTaken(Skill.ACE);
+            }
+
+            tree.getTierList().get(pos[tierIndex]).getSkillsInTier().set(pos[skillIndex], skill);
+        }
+
+        return tree;
+    }
+
+    private static int[] tierIndexFromLetter(char letter){
+        int numValue = (int) letter - 95;
+        int[] indexes = new int[2];
+        int tier = 0;
+        int skill = 0;
+        if (letter != 'a'){
+            tier = numValue / 3;
+            skill = numValue % 3;
+        }
+        indexes[tierIndex] = tier;
+        indexes[skillIndex] = skill;
+        Log.d("URL Letter conversion", letter + " turned into tier " + tier + ", skill " + skill);
+        return indexes;
+    }
 
 
 }

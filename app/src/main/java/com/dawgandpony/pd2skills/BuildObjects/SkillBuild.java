@@ -43,6 +43,15 @@ public class SkillBuild {
         skillTrees = new ArrayList<SkillTree>();
     }
 
+    public static SkillBuild newNonDBInstance(){
+        SkillBuild skillBuild = new SkillBuild();
+        for (int i = Trees.MASTERMIND; i <= Trees.FUGITIVE; i++){
+            skillBuild.getSkillTrees().add(SkillTree.newNonDBInstance());
+        }
+
+        return skillBuild;
+    }
+
     public long getId() {
         return id;
     }

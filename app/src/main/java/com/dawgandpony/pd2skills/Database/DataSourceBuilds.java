@@ -64,7 +64,13 @@ public class DataSourceBuilds {
         long skillBuildID;
         if (template != null){
             long templateSkillBuildID = template.getSkillBuildID();
-            skillBuildID = dataSourceSkills.createAndInsertSkillBuild(templateSkillBuildID).getId();
+
+            if (templateSkillBuildID == -1){
+                skillBuildID = dataSourceSkills.createAndInsertSkillBuild(template.getSkillBuild()).getId();
+            }
+            else{
+                skillBuildID = dataSourceSkills.createAndInsertSkillBuild(templateSkillBuildID).getId();
+            }
             if (infamies < template.getInfamyID()){
                 infamies = (int) template.getInfamyID();
             }

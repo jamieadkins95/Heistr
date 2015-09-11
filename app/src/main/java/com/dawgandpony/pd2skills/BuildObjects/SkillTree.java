@@ -1,5 +1,7 @@
 package com.dawgandpony.pd2skills.BuildObjects;
 
+import com.dawgandpony.pd2skills.Consts.Trees;
+
 import java.util.ArrayList;
 
 /**
@@ -22,6 +24,15 @@ public class SkillTree {
 
     public SkillTree(){
         skillTiers = new ArrayList<SkillTier>();
+    }
+
+    public static SkillTree newNonDBInstance(){
+        SkillTree skillTree = new SkillTree();
+        for (int i = Trees.TIER0; i <= Trees.TIER6; i++){
+            skillTree.getTierList().add(SkillTier.newNonDBInstance(i));
+        }
+
+        return skillTree;
     }
 
     @Override

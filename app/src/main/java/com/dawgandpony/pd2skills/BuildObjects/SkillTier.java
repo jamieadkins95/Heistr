@@ -38,6 +38,21 @@ public class SkillTier {
         skillsInTier = new ArrayList<Skill>();
     }
 
+    public static SkillTier newNonDBInstance(int tierNumber){
+        SkillTier skillTier = new SkillTier();
+        if (tierNumber == 0){
+            skillTier.getSkillsInTier().add(new Skill());
+        }
+        else {
+            for (int i = 0; i < 3; i++){
+                skillTier.getSkillsInTier().add(new Skill());
+            }
+        }
+
+
+        return skillTier;
+    }
+
     public void setPointRequirement(int pointRequirement) {
         this.pointRequirement = pointRequirement;
     }
