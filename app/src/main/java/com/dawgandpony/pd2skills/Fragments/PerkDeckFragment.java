@@ -1,23 +1,20 @@
 package com.dawgandpony.pd2skills.Fragments;
 
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.ListView;
-import android.widget.RadioButton;
+import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
-import com.dawgandpony.pd2skills.BuildObjects.Build;
+import com.dawgandpony.pd2skills.Dialogs.PerkDeckDialog;
 import com.dawgandpony.pd2skills.R;
-import com.dawgandpony.pd2skills.utils.ArrayAdapterSkillTierList;
-
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -81,8 +78,36 @@ public class PerkDeckFragment extends Fragment implements EditBuildActivity.Buil
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int selected = lvPerkDecks.getCheckedItemPosition();
-                activity.getCurrentBuild().updatePerkDeck(activity, selected);
+                if (selected == activity.getCurrentBuild().getPerkDeck()){
+                    PerkDeckDialog dialog = PerkDeckDialog.newInstance(selected);
+                    try {
+                        Activity activity = getActivity();
+                        dialog.show(activity.getFragmentManager(), "perkdeck");
+                    } catch (Exception e) {
+                        Toast.makeText(activity, "Cannot show perkdeck details :(", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else {
+                    activity.getCurrentBuild().updatePerkDeck(activity, selected);
+                }
 
+            }
+        });
+
+        lvPerkDecks.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                int selected = lvPerkDecks.getCheckedItemPosition();
+                PerkDeckDialog dialog = PerkDeckDialog.newInstance(selected);
+                try {
+                    Activity activity = getActivity();
+                    dialog.show(activity.getFragmentManager(), "perkdeck");
+                } catch (Exception e) {
+                    Toast.makeText(activity, "Cannot show perkdeck details :(", Toast.LENGTH_SHORT).show();
+                }
+
+
+                return true;
             }
         });
 

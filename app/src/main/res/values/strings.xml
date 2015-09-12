@@ -126,8 +126,23 @@
         <item>i</item>
         <item>s</item>
         <item>g</item>
-        <item>r</item>
+        <item>n</item>
         <item>y</item>
+    </string-array>
+
+    <string-array name="perkDeckDescs" formatted="false">
+        <item>+25% health\n+10%armour+2%health for every hostage and +8% damage reduction for having at least one.</item>
+        <item>+40% health\n4% health regen every 5 secs</item>
+        <item>+35% armour\n+20% armour regen</item>
+        <item>+25% dodge\n-80% weapon swap time</item>
+        <item>+45% armour regen\n-20% armour\nAkimbo\nLol hitman</item>
+        <item>+40% dodge (ballistic vests)\n+65% armour ballistic vests\n+10% armour regen</item>
+        <item>+20% dodge\n Quicket corpse bagging and lockpicking</item>
+        <item>+24% damage reduction\n20% health regen on melee (once every 15 seconds)</item>
+        <item>+8% damage reduction\n60 armour regen on kill\n10% health regen on kill\n75% chance of spreading panic on kill</item>
+        <item>16&#8211;20 health regen for you and crew on ammo pickup\n</item>
+        <item>Damaging an enemy heals 4 life points every 0.5 seconds for 6 seconds.</item>
+        <item>Up to +60% armour regen and +20% movement speed when below 50% health</item>
     </string-array>
 
 
