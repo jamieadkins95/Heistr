@@ -71,7 +71,7 @@ public class DataSourceBuilds {
             else{
                 skillBuildID = dataSourceSkills.createAndInsertSkillBuild(templateSkillBuildID).getId();
             }
-            if (infamies < template.getInfamyID()){
+            if (infamies < template.getInfamyID() || url.length() > 0){
                 infamies = (int) template.getInfamyID();
             }
             perkDeck = template.getPerkDeck();
