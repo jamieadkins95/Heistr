@@ -65,7 +65,7 @@ public class DataSourceBuilds {
         if (template != null){
             long templateSkillBuildID = template.getSkillBuildID();
 
-            if (templateSkillBuildID == -1){
+            if (templateSkillBuildID == 0){
                 skillBuildID = dataSourceSkills.createAndInsertSkillBuild(template.getSkillBuild()).getId();
             }
             else{

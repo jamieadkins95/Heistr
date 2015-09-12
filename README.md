@@ -1,13 +1,10 @@
 # Heistr
 This is the source code for an Android app that lets you create skill and weapon builds for Payday 2.
-It is currently WiP and is not yet published on the play store.
+You can download the beta version [here](https://play.google.com/apps/testing/com.dawgandpony.pd2skills):
 
 # Coming Soon
  - The ability to customise weapons
- - When creating a new build the ability to use another build as a template
- - Auto create a build with infamies checked.
  - An overall summary of the build
- - Compatability with PD2Skills.com (Encoding and decoding)
 
 # Thanks to
  - Fabio Biola - [MaterialNavigationDrawer library](https://github.com/neokree/MaterialNavigationDrawer) (Apache 2.0)

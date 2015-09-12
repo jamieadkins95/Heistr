@@ -22,7 +22,7 @@ public class URLEncoder {
     final private static String baseURL = "http://pd2skills.com/#/v3/";
 
     final private static int tierIndex = 0;
-    final private static int skillIndex = 0;
+    final private static int skillIndex = 1;
 
     public static String encodeBuild(Context context, Build build){
         String url = baseURL;
@@ -150,10 +150,15 @@ public class URLEncoder {
 
                         break;
                     case 'a': //armour
+                        String[] armours = context.getResources().getStringArray(R.array.armourURLNumbers);
 
+                        String fromUrl = String.valueOf(remaining.charAt(1));
+                        int realArmour = java.util.Arrays.asList(armours).indexOf(fromUrl);
+                        b.setArmour(realArmour);
+                        remaining = "";
                         break;
                     case ':': //end
-                        remaining = "";
+
                         break;
                 }
 
@@ -203,17 +208,15 @@ public class URLEncoder {
 
     private static int[] tierIndexFromLetter(char letter){
         int numValue = (int) letter - 95;
-        int[] indexes = new int[2];
+
         int tier = 0;
         int skill = 0;
         if (letter != 'a'){
             tier = numValue / 3;
             skill = numValue % 3;
         }
-        indexes[tierIndex] = tier;
-        indexes[skillIndex] = skill;
         Log.d("URL Letter conversion", letter + " turned into tier " + tier + ", skill " + skill);
-        return indexes;
+        return new int[]{tier, skill};
     }
 
 
