@@ -113,8 +113,12 @@ public class URLEncoder {
 
     public static Build decodeURL(Context context, String url){
         Build b = new Build();
-        String base = url.substring(0, baseURL.length());
-        String remaining = url.substring(base.length());
+        String base = "";
+        String remaining = "";
+        if (url.length() >= baseURL.length()){
+            base = url.substring(0, baseURL.length());
+            remaining = url.substring(base.length());
+        }
 
         if (base.equals(baseURL)){
             Log.d("URL DECODER", remaining);

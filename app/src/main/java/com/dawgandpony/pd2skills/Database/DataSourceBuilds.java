@@ -168,9 +168,6 @@ public class DataSourceBuilds {
 
     }
 
-    private void copyBuild(Build template, Build newBuild) {
-    }
-
     public void DeleteBuild(long id){
 
         database.delete(MySQLiteHelper.TABLE_BUILDS, MySQLiteHelper.COLUMN_ID + " = " + id, null);
