@@ -153,4 +153,18 @@ public class Build {
         Random r = new Random();
         return r.nextInt(75);
     }
+
+    public boolean infamyReductionInTree(SkillTier tier){
+        boolean infamyInThisTree = false;
+        if (tier.getSkillTree() < Trees.FUGITIVE){
+            infamyInThisTree = getInfamies().get(tier.getSkillTree());
+        }
+        else{
+            if (getInfamyID() > 1){
+                infamyInThisTree = true;
+            }
+        }
+
+        return infamyInThisTree;
+    }
 }

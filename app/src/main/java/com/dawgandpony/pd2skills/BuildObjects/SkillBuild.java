@@ -95,7 +95,7 @@ public class SkillBuild {
 
                 newSkillTier.setId(tierFromDB.getId());
                 newSkillTier.setSkillBuildID(tierFromDB.getSkillBuildID());
-                newSkillTier.setPointRequirement(tierFromXML.getPointRequirement());
+                newSkillTier.setPointRequirement(tierFromXML.getPointRequirement(false));
                 newSkillTier.setNumber(tierFromXML.getNumber());
                 newSkillTier.setSkillTree(tierFromDB.getSkillTree());
 

@@ -20,6 +20,7 @@ import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
+import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Dialogs.SkillDialog;
 import com.dawgandpony.pd2skills.R;
 
@@ -58,7 +59,8 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         tvTierNumber.setText("Tier " + skillTiers.get(pos).getNumber() + ":");
 
         TextView tvPointsRequired = (TextView) rowView.findViewById(R.id.tvPointsRequired);
-        int pointReq =  tier.getPointRequirement() - skillTree.getPointsSpentInThisTree(tier.getNumber());
+
+        int pointReq =  tier.getPointRequirement(currentBuild.infamyReductionInTree(tier)) - skillTree.getPointsSpentInThisTree(tier.getNumber());
         if (pointReq < 0 ){
             pointReq = 0;
         }
@@ -76,7 +78,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         tvs[1] = (TextView) rowView.findViewById(R.id.tvSkill2);
         tvs[2] = (TextView) rowView.findViewById(R.id.tvSkill3);
 
-        if (skillTree.getPointsSpentInThisTree(tier.getNumber()) < tier.getPointRequirement()){
+        if (skillTree.getPointsSpentInThisTree(tier.getNumber()) < tier.getPointRequirement(currentBuild.infamyReductionInTree(tier))){
             rowView.setBackgroundColor(context.getResources().getColor(R.color.backgroundVeryDark));
             //cvs[0].setEnabled(false);
             //cvs[1].setEnabled(false);
@@ -128,7 +130,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                     }
                     final int pointsUsed = currentBuild.getSkillBuild().getPointsUsed();
 
-                    if (skillTree.getPointsSpentInThisTree(tier.getNumber()) >= tier.getPointRequirement()){ //if tier is unlocked
+                    if (skillTree.getPointsSpentInThisTree(tier.getNumber()) >= tier.getPointRequirement(currentBuild.infamyReductionInTree(tier))){ //if tier is unlocked
                         if (pointsUsed + skillCost <= currentBuild.getSkillBuild().getPointsAvailable()) { //if there are enough points left
 
 
@@ -199,7 +201,10 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
     public void updateTiers(){
 
         for (int i = 0; i < skillTree.getTierList().size(); i++){
-            if (skillTree.getPointsSpentInThisTree(skillTree.getTierList().get(i).getNumber()) < skillTree.getTierList().get(i).getPointRequirement()){
+            if (skillTree.getPointsSpentInThisTree(
+                    skillTree.getTierList().get(i).getNumber()) <
+                    skillTree.getTierList().get(i).getPointRequirement(currentBuild.infamyReductionInTree(skillTree.getTierList().get(i)))){
+
                 skillTree.getTierList().get(i).ResetSkills();
                 currentBuild.updateSkillTier(context, skillTree.getTierList().get(i).getSkillTree(), skillTree.getTierList().get(i));
             }

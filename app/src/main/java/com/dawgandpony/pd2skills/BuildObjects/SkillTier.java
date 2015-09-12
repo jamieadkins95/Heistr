@@ -62,8 +62,16 @@ public class SkillTier {
         return skillsInTier;
     }
 
-    public int getPointRequirement() {
-        return pointRequirement;
+    public int getPointRequirement(boolean infamyInThisTree) {
+        int points = pointRequirement;
+        if (infamyInThisTree){
+            if (number >= 3){
+                int deduction = points / 10;
+                points -= deduction;
+            }
+        }
+
+        return points;
     }
 
     public long getSkillBuildID() {
