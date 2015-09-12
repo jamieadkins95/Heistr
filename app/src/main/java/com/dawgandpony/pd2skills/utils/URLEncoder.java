@@ -10,6 +10,8 @@ import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
 import com.dawgandpony.pd2skills.Consts.Trees;
+import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
+import com.dawgandpony.pd2skills.Database.DataSourceInfamies;
 import com.dawgandpony.pd2skills.R;
 
 import java.util.ArrayList;
@@ -144,10 +146,12 @@ public class URLEncoder {
                         b.getSkillBuild().getSkillTrees().set(Trees.FUGITIVE, treeF);
                         break;
                     case 'i': //infamy
-
+                        b.setInfamies(DataSourceInfamies.idToInfamy(findInfamies(remaining)));
                         break;
                     case 'p': //perkdeck
-
+                        String[] perkDecks = context.getResources().getStringArray(R.array.perkDecksURL);
+                        final int perkDeck = findPerkDeck(remaining, perkDecks);
+                        b.setPerkDeck(perkDeck);
                         break;
                     case 'a': //armour
                         String[] armours = context.getResources().getStringArray(R.array.armourURLNumbers);
@@ -173,6 +177,48 @@ public class URLEncoder {
         }
 
         return b;
+    }
+
+    private static int findPerkDeck(String remaining, String[] possiblePerkDecks) {
+        char[] chars = remaining.toCharArray();
+        int deck = 0;
+        for (int i = 0; i < chars.length; i ++){
+            if (Character.isLetter(chars[i])){
+                if (Character.toUpperCase(chars[i]) == chars[i]){
+                    deck = java.util.Arrays.asList(possiblePerkDecks).indexOf(Character.toString(Character.toLowerCase(chars[i])));
+                }
+            }
+        }
+        return deck;
+    }
+
+    public static int findInfamies(String remaining) {
+        int end = remaining.indexOf(":");
+        String infamies = remaining.substring(1, end);
+        int id = 1;
+        while (infamies.length() > 0){
+            if (infamies.charAt(0) == 'b'){ //Mastermind
+                id += 8;
+            }
+            if (infamies.charAt(0) == 'c'){ //Enforcer
+                id += 4;
+            }
+            if (infamies.charAt(0) == 'd'){ //Tech
+                id += 2;
+            }
+            if (infamies.charAt(0) == 'e'){ //Ghost
+                id += 1;
+            }
+            if (infamies.length() > 1){
+                infamies = infamies.substring(1);
+            }
+            else {
+                infamies = "";
+            }
+
+        }
+
+        return id;
     }
 
     //6 qrs
