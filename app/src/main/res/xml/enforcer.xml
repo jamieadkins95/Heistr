@@ -29,7 +29,7 @@
         <skill>
             <name>Bullet Storm</name>
             <abbreviation>BStorm</abbreviation>
-            <normal>ADirectly after you deploy an ammo bag, you can fire your weapon for 5 seconds without depleting your ammunition.</normal>
+            <normal>Directly after you deploy an ammo bag, you can fire your weapon for 5 seconds without depleting your ammunition.</normal>
             <ace>You can fire 10 seconds longer without depleting your ammunition.</ace>
             <pd2skills>c</pd2skills>
         </skill>

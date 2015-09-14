@@ -84,7 +84,7 @@
         <item>Sociopath</item>
         <item>Gambler</item>
         <item>Grinder</item>
-        <item>Yakusa</item>
+        <item>Yakuza</item>
     </string-array>
 
     <string-array name="armour">
@@ -131,7 +131,7 @@
     </string-array>
 
     <string-array name="perkDeckDescs" formatted="false">
-        <item>+25% health\n+10%armour+2%health for every hostage and +8% damage reduction for having at least one.</item>
+        <item>+25% health\n+10%armour\n+2%health for every hostage and +8% damage reduction for having at least one.</item>
         <item>+40% health\n4% health regen every 5 secs</item>
         <item>+35% armour\n+20% armour regen</item>
         <item>+25% dodge\n-80% weapon swap time</item>

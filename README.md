@@ -5,6 +5,8 @@ You can download the beta version [here](https://play.google.com/apps/testing/co
 # Coming Soon
  - The ability to customise weapons
  - An overall summary of the build
+ - EHP and breakpoint calculations
+ - Possible online features such as 'Build of the Week'
 
 # Thanks to
  - Fabio Biola - [MaterialNavigationDrawer library](https://github.com/neokree/MaterialNavigationDrawer) (Apache 2.0)

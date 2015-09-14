@@ -30,7 +30,7 @@
             <name>Demolition Man</name>
             <abbreviation>Demoman</abbreviation>
             <normal>Adds 1 more trip mine to your inventory.</normal>
-            <ace>ecreases your trip mine deploy time by 20%.</ace>
+            <ace>Decreases your trip mine deploy time by 20%.</ace>
             <pd2skills>c</pd2skills>
         </skill>
         <skill>
