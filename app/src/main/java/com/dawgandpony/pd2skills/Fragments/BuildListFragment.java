@@ -72,6 +72,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
             @Override
             public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
                 mode.setTitle(lvBuilds.getCheckedItemCount() + " selected builds");
+
             }
 
             @Override
@@ -94,6 +95,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
                         mode.finish();
                         return true;
                     default:
+                        RenameBuilds();
                         mode.finish();
                         return false;
                 }
@@ -113,13 +115,43 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
 
                         new GetBuildsFromDBTask(lvBuilds).execute();
 
-                        Toast.makeText(getActivity(), "Build(s) deleted", Toast.LENGTH_SHORT).show();
+
                         Log.d("Context Action", "Delete build " + selectedBuild.getSkillBuildID());
 
                         fab.show();
 
                     }
                 }
+
+                Toast.makeText(getActivity(), "Build(s) deleted", Toast.LENGTH_SHORT).show();
+            }
+
+            private void RenameBuilds() {
+                SparseBooleanArray checked = lvBuilds.getCheckedItemPositions();
+
+                String newName = "new name";
+
+                for (int i = 0; i < checked.size();i++){
+                    if (checked.valueAt(i)){
+                        Build selectedBuild = (Build) lvBuilds.getItemAtPosition(checked.keyAt(i));
+                        DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(getActivity());
+                        dataSourceBuilds.open();
+                        dataSourceBuilds.RenameBuild(selectedBuild.getId(), newName);
+                        dataSourceBuilds.close();
+
+                        new GetBuildsFromDBTask(lvBuilds).execute();
+
+
+
+
+                        fab.show();
+
+                    }
+
+
+                }
+
+                Toast.makeText(getActivity(), "Build(s) renamed", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -150,50 +182,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*final EditText txtBuildName = new EditText(getActivity());
 
-                txtBuildName.setHeight(100);
-                txtBuildName.setWidth(340);
-                txtBuildName.setGravity(Gravity.LEFT);
-
-
-
-                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT);
-                lp.setMargins(4,16,4,16);
-
-                txtBuildName.setLayoutParams(lp);
-
-
-                txtBuildName.setImeOptions(EditorInfo.IME_ACTION_DONE);
-
-                //txtBuildName.setTextAppearance(getActivity(), R.color.abc_search_url_text_normal);
-                new AlertDialog.Builder(getActivity())
-                        .setTitle("New Build")
-                        .setMessage(R.string.message_new_build)
-                        .setView(txtBuildName)
-                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                try {
-                                    //Go to the build edit activity with a new build
-                                    MoveToEditBuildActivity(txtBuildName.getText().toString());
-
-                                } catch (Exception e) {
-                                    Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
-                                }
-
-
-                            }
-                        })
-                        .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                // do nothing
-                            }
-                        })
-
-                        .show();*/
 
                 if (buildList != null){
                     // Create an instance of the dialog fragment and show it
@@ -213,6 +202,10 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
 
 
     private void MoveToEditBuildActivity(long id){
+
+        for (int i = 0; i < lvBuilds.getAdapter().getCount(); i++){
+            lvBuilds.setItemChecked(i, false);
+        }
         Intent intent = new Intent(getActivity(), EditBuildActivity.class);
         intent.putExtra(EXTRA_BUILD_ID, id);
         startActivity(intent);

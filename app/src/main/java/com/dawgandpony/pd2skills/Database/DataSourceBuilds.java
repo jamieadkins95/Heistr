@@ -237,4 +237,11 @@ public class DataSourceBuilds {
     }
 
 
+    public void RenameBuild(long id, String newName) {
+        ContentValues values = new ContentValues();
+        values.put(MySQLiteHelper.COLUMN_NAME, newName);
+
+        database.update(MySQLiteHelper.TABLE_BUILDS, values, MySQLiteHelper.COLUMN_ID + " = " + id, null);
+        Log.d("DB", "Name updated for build " + id + " to " + newName);
+    }
 }
