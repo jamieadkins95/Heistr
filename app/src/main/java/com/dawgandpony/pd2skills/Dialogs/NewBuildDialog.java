@@ -39,7 +39,7 @@ public class NewBuildDialog extends DialogFragment {
     }
 
     public interface NewBuildDialogListener {
-        public void onDialogPositiveClick(DialogFragment dialog, String name, int infamies, String pd2SkillsURL, int templateBuildPos);
+        public void onDialogNewBuild(DialogFragment dialog, String name, int infamies, String pd2SkillsURL, int templateBuildPos);
     }
 
     NewBuildDialogListener mListener;
@@ -102,7 +102,7 @@ public class NewBuildDialog extends DialogFragment {
                         int selected = spTemplate.getSelectedItemPosition() - 1; // -1 for templete text
 
 
-                        mListener.onDialogPositiveClick(NewBuildDialog.this, name, infamies, url, selected);
+                        mListener.onDialogNewBuild(NewBuildDialog.this, name, infamies, url, selected);
 
                     }
                 })

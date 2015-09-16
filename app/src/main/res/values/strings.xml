@@ -49,6 +49,7 @@
     <string name="new_build_or">or</string>
     <string name="new_build_with">with</string>
     <string name="action_rename">Rename</string>
+    <string name="cancel">Cancel</string>
 
 
     <string-array name="skill_trees">

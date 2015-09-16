@@ -27,6 +27,7 @@ import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Dialogs.NewBuildDialog;
+import com.dawgandpony.pd2skills.Dialogs.RenameBuildDialog;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterBuildList;
 import com.melnykov.fab.FloatingActionButton;
@@ -36,7 +37,7 @@ import java.util.ArrayList;
 /**
  * A fragment containing the list of skill builds
  */
-public class BuildListFragment extends Fragment implements NewBuildDialog.NewBuildDialogListener{
+public class BuildListFragment extends Fragment implements NewBuildDialog.NewBuildDialogListener, RenameBuildDialog.RenameBuildDialogListener{
 
     public final static String EXTRA_BUILD_ID = "com.dawgandpony.pd2skills.BUILDID";
     public final static String EXTRA_BUILD_NAME = "com.dawgandpony.pd2skills.BUILDNAME";
@@ -48,7 +49,8 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
     ArrayList<Build> buildList;
     CardView cv;
 
-    public static final int DIALOG_FRAGMENT = 1;
+    public static final int NEW_DIALOG_FRAGMENT = 1;
+    public static final int RENAME_DIALOG_FRAGMENT = 2;
 
 
     public BuildListFragment() {
@@ -95,7 +97,10 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
                         mode.finish();
                         return true;
                     default:
-                        RenameBuilds();
+                        DialogFragment dialog = RenameBuildDialog.newInstance(lvBuilds.getCheckedItemPositions());
+                        dialog.setTargetFragment(BuildListFragment.this, RENAME_DIALOG_FRAGMENT);
+                        dialog.show(getActivity().getFragmentManager(), "RenameBuildDialogFragment");
+
                         mode.finish();
                         return false;
                 }
@@ -126,33 +131,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
                 Toast.makeText(getActivity(), "Build(s) deleted", Toast.LENGTH_SHORT).show();
             }
 
-            private void RenameBuilds() {
-                SparseBooleanArray checked = lvBuilds.getCheckedItemPositions();
 
-                String newName = "new name";
-
-                for (int i = 0; i < checked.size();i++){
-                    if (checked.valueAt(i)){
-                        Build selectedBuild = (Build) lvBuilds.getItemAtPosition(checked.keyAt(i));
-                        DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(getActivity());
-                        dataSourceBuilds.open();
-                        dataSourceBuilds.RenameBuild(selectedBuild.getId(), newName);
-                        dataSourceBuilds.close();
-
-                        new GetBuildsFromDBTask(lvBuilds).execute();
-
-
-
-
-                        fab.show();
-
-                    }
-
-
-                }
-
-                Toast.makeText(getActivity(), "Build(s) renamed", Toast.LENGTH_SHORT).show();
-            }
 
             @Override
             public void onDestroyActionMode(ActionMode mode) {
@@ -187,7 +166,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
                 if (buildList != null){
                     // Create an instance of the dialog fragment and show it
                     DialogFragment dialog = NewBuildDialog.newInstance(buildList);
-                    dialog.setTargetFragment(BuildListFragment.this, DIALOG_FRAGMENT);
+                    dialog.setTargetFragment(BuildListFragment.this, NEW_DIALOG_FRAGMENT);
                     dialog.show(getActivity().getFragmentManager(), "NewBuildDialogFragment");
                 }
 
@@ -218,7 +197,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
     }
 
     @Override
-    public void onDialogPositiveClick(DialogFragment dialog, String name, int infamies, String pd2SkillsURL, int templateBuildPos) {
+    public void onDialogNewBuild(DialogFragment dialog, String name, int infamies, String pd2SkillsURL, int templateBuildPos) {
         long templateBuildID = -1;
         if (templateBuildPos > -1){
             templateBuildID = buildList.get(templateBuildPos).getId();
@@ -228,6 +207,22 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
         //Toast.makeText(getActivity(),name + " - " + infamies + " - " + templateBuildID,Toast.LENGTH_LONG).show();
         //MoveToEditBuildActivity(name, infamies, pd2SkillsURL, templateBuildID);
         new CreateNewBuild(name, infamies, pd2SkillsURL, templateBuildID).execute();
+    }
+
+    @Override
+    public void onDialogRenameBuild(DialogFragment dialog, String name, SparseBooleanArray pos) {
+        DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(getActivity());
+        dataSourceBuilds.open();
+        for (int i = 0; i < lvBuilds.getCount(); i ++){
+            if (pos.get(i)){
+                Build b = (Build) lvBuilds.getItemAtPosition(i);
+                dataSourceBuilds.renameBuild(b.getId(), name);
+                Log.d("Renaming", "Build " + i + "wants to be renamed");
+            }
+        }
+        dataSourceBuilds.close();
+
+        new GetBuildsFromDBTask(lvBuilds).execute();
     }
 
     private class CreateNewBuild extends AsyncTask<Void, Void, Build>{

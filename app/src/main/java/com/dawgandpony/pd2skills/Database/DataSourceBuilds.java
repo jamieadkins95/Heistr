@@ -237,7 +237,7 @@ public class DataSourceBuilds {
     }
 
 
-    public void RenameBuild(long id, String newName) {
+    public void renameBuild(long id, String newName) {
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMN_NAME, newName);
 
