@@ -1,5 +1,6 @@
 package com.dawgandpony.pd2skills.Activities;
 
+import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,6 +25,7 @@ import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
+import com.dawgandpony.pd2skills.Dialogs.RenameBuildDialog;
 import com.dawgandpony.pd2skills.Fragments.ArmourFragment;
 import com.dawgandpony.pd2skills.Fragments.BlankFragment;
 import com.dawgandpony.pd2skills.Fragments.BuildListFragment;
@@ -41,7 +44,7 @@ import it.neokree.materialnavigationdrawer.elements.MaterialSection;
 /**
  * Created by Jamie on 15/07/2015.
  */
-public class EditBuildActivity extends MaterialNavigationDrawer implements TaskFragment.TaskCallbacks{
+public class EditBuildActivity extends MaterialNavigationDrawer implements TaskFragment.TaskCallbacks, RenameBuildDialog.RenameBuildDialogListener{
 
     private static final String TAG_TASK_FRAGMENT = "task_fragment";
     private final static String BUILD_ID = "BuildID";
@@ -183,6 +186,11 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
                         .show();
                 return true;
 
+            case R.id.action_rename:
+                DialogFragment dialog = RenameBuildDialog.newInstance(true, null);
+                dialog.show(getFragmentManager(), "RenameBuildDialogFragment");
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -251,6 +259,14 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
             }
         }
 
+    }
+
+    @Override
+    public void onDialogRenameBuild(DialogFragment dialog, String name, SparseBooleanArray buildPositions) {
+        DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(this);
+        dataSourceBuilds.open();
+        dataSourceBuilds.renameBuild(currentBuild.getId(), name);
+        dataSourceBuilds.close();
     }
 
     public interface BuildReadyCallbacks{

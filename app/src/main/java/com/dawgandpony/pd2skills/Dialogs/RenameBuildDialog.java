@@ -23,10 +23,16 @@ import java.util.List;
 public class RenameBuildDialog extends DialogFragment {
     SparseBooleanArray buildPositions;
     RenameBuildDialogListener mListener;
+    boolean callingFromActivity;
 
-    public static RenameBuildDialog newInstance(SparseBooleanArray buildPositions) {
+    public static RenameBuildDialog newInstance(boolean callingFromActivity, SparseBooleanArray buildPositions) {
         RenameBuildDialog dialog = new RenameBuildDialog();
-        dialog.buildPositions = buildPositions.clone();
+        dialog.buildPositions = null;
+        if (buildPositions != null){
+            dialog.buildPositions = buildPositions.clone();
+        }
+
+        dialog.callingFromActivity = callingFromActivity;
         return dialog;
     }
 
@@ -75,7 +81,13 @@ public class RenameBuildDialog extends DialogFragment {
         // Verify that the host activity implements the callback interface
         try {
             // Instantiate the NoticeDialogListener so we can send events to the host
-            mListener = (RenameBuildDialogListener) getTargetFragment();
+            if (callingFromActivity){
+                mListener = (RenameBuildDialogListener) activity;
+            }
+            else {
+                mListener = (RenameBuildDialogListener) getTargetFragment();
+            }
+
         } catch (ClassCastException e) {
             // The activity doesn't implement the interface, throw exception
             throw new ClassCastException(activity.toString()

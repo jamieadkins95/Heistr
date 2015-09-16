@@ -96,12 +96,15 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
                         DeleteBuilds();
                         mode.finish();
                         return true;
-                    default:
-                        DialogFragment dialog = RenameBuildDialog.newInstance(lvBuilds.getCheckedItemPositions());
+                    case R.id.action_rename:
+                        DialogFragment dialog = RenameBuildDialog.newInstance(false, lvBuilds.getCheckedItemPositions());
                         dialog.setTargetFragment(BuildListFragment.this, RENAME_DIALOG_FRAGMENT);
                         dialog.show(getActivity().getFragmentManager(), "RenameBuildDialogFragment");
 
                         mode.finish();
+                        return true;
+
+                    default:
                         return false;
                 }
 
