@@ -124,6 +124,7 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
         final ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, this, activity.getCurrentBuild(), currentSkillTree);
 
         listView.setAdapter(arrayAdapterSkillTiers);
+        listView.setSelection(listView.getCount()-1);
         cvUnlockTree.setEnabled(true);
 
         if (currentSkillTree.getTierList().get(0).getSkillsInTier().get(0).getTaken() > Skill.NO){
