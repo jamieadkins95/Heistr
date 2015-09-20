@@ -19,6 +19,7 @@ import android.widget.EditText;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
+import com.dawgandpony.pd2skills.Dialogs.PD2SkillsExportDialog;
 import com.dawgandpony.pd2skills.Dialogs.RenameBuildDialog;
 import com.dawgandpony.pd2skills.Fragments.ArmourFragment;
 import com.dawgandpony.pd2skills.Fragments.BlankFragment;
@@ -88,6 +89,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
 
         setDrawerHeaderImage(R.drawable.payday_2_logo);
 
+
         MaterialSection secInfamy = newSection("Infamy", InfamyFragment.newInstance());
 
 
@@ -111,14 +113,6 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
         MaterialSection secHome = newSection("Home", R.drawable.ic_home_white_24dp, intent);
 
 
-
-
-
-
-
-
-
-
         addSection(secMas);
         addSection(secEnf);
         addSection(secTech);
@@ -140,9 +134,6 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
         addBottomSection(secHome);
         addBottomSection(secAbout);
         addBottomSection(secSettings);
-
-
-
     }
 
 
@@ -159,26 +150,8 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
         // Handle presses on the action bar items
         switch (item.getItemId()) {
             case R.id.action_URL:
-                final EditText txtURL = new EditText(this);
-
-                txtURL.setHeight(150);
-                txtURL.setWidth(340);
-                txtURL.setGravity(Gravity.LEFT);
-                txtURL.setText(URLEncoder.encodeBuild(this, currentBuild));
-
-                txtURL.setImeOptions(EditorInfo.IME_ACTION_DONE);
-
-                //txtBuildName.setTextAppearance(getActivity(), R.color.abc_search_url_text_normal);
-                new AlertDialog.Builder(this)
-                        .setTitle("pd2skills.com URL")
-                        .setView(txtURL)
-                        .setNegativeButton(R.string.got_it, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                // do nothing
-                            }
-                        })
-
-                        .show();
+                DialogFragment dialog = PD2SkillsExportDialog.newInstance(URLEncoder.encodeBuild(this, currentBuild));
+                dialog.show(getFragmentManager(), "PD2SkillsExportDialogFragment");
                 return true;
 
             case R.id.action_rename:
