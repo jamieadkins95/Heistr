@@ -4,7 +4,6 @@ import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
@@ -14,15 +13,10 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
-import android.widget.AbsListView;
 import android.widget.EditText;
-import android.widget.GridLayout;
-import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
-import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Dialogs.RenameBuildDialog;
@@ -37,6 +31,7 @@ import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.URLEncoder;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.neokree.materialnavigationdrawer.elements.MaterialSection;
@@ -50,7 +45,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
     private final static String BUILD_ID = "BuildID";
     private static final String TAG = EditBuildActivity.class.getSimpleName();
 
-    private Intent intentFromPreviousActivity;
+    private Intent intent;
 
     private Build currentBuild;
 
@@ -187,13 +182,17 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
                 return true;
 
             case R.id.action_rename:
-                DialogFragment dialog = RenameBuildDialog.newInstance(true, null);
-                dialog.show(getFragmentManager(), "RenameBuildDialogFragment");
+                showRenameBuildDialog();
                 return true;
 
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void showRenameBuildDialog() {
+        DialogFragment dialog = RenameBuildDialog.newInstance(true, null);
+        dialog.show(getFragmentManager(), "RenameBuildDialogFragment");
     }
 
 
@@ -219,8 +218,23 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
 
         }
         else{
-            intentFromPreviousActivity = getIntent();
-            currentBuildID = intentFromPreviousActivity.getLongExtra(BuildListFragment.EXTRA_BUILD_ID, Build.NEW_BUILD);
+            intent = getIntent();
+            final String action = intent.getAction();
+            if (Intent.ACTION_VIEW.equals(action)) {
+                final List<String> segments = intent.getData().getPathSegments();
+                Log.d("Intents", intent.getData().toString());
+                DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(this);
+                dataSourceBuilds.open();
+                Build b = dataSourceBuilds.createAndInsertBuild("PD2Skills Build", 0, intent.getData().toString(), -1);
+                dataSourceBuilds.close();
+                currentBuildID = b.getId();
+
+                showRenameBuildDialog();
+            }
+            else{
+                currentBuildID = intent.getLongExtra(BuildListFragment.EXTRA_BUILD_ID, Build.NEW_BUILD);
+            }
+
         }
 
 

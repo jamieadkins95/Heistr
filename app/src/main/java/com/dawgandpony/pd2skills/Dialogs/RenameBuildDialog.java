@@ -55,7 +55,7 @@ public class RenameBuildDialog extends DialogFragment {
 
         builder.setView(v);
 
-        String title = "Rename Builds";
+        String title = "Rename Build(s)";
 
         builder.setTitle(title)
                 .setPositiveButton(R.string.action_rename, new DialogInterface.OnClickListener(){

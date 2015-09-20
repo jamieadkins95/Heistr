@@ -45,7 +45,7 @@ public class BuildListActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_settings){
-            Toast.makeText(this, "LOL, no settings!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Coming Soon!", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }
