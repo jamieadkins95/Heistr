@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon_group>
+    <group_name>pistol</group_name>
+    <weapon>
+        <pd2skills>25</pd2skills>
+        <name>Gruber Kurz</name>
+        <rof>667</rof>
+        <total>154</total>
+        <mag>14</mag>
+        <damage>17.5</damage>
+        <accuracy>16</accuracy>
+        <stability>20</stability>
+        <concealment>30</concealment>
+        <threat>4</threat>
+        <attachments></attachments>
+    </weapon>
+
+</weapon_group>

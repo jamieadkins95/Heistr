@@ -20,6 +20,7 @@ public class Build {
     String name = "";
     long skillBuildID;
     SkillBuild skillBuild;
+    WeaponBuild weaponBuild;
     ArrayList<Boolean> infamies;
     
     int perkDeck = 0;
@@ -32,7 +33,13 @@ public class Build {
         for (int i = 0; i < 4; i++){infamies.add(false);};
     }
 
+    public WeaponBuild getWeaponBuild() {
+        return weaponBuild;
+    }
 
+    public void setWeaponBuild(WeaponBuild weaponBuild) {
+        this.weaponBuild = weaponBuild;
+    }
 
     public String getName() {
         return name;

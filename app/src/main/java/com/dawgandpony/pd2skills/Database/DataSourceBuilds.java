@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
+import com.dawgandpony.pd2skills.BuildObjects.WeaponBuild;
 import com.dawgandpony.pd2skills.utils.URLEncoder;
 
 import java.util.ArrayList;
@@ -30,7 +31,6 @@ public class DataSourceBuilds {
             MySQLiteHelper.COLUMN_PERK_DECK,
             MySQLiteHelper.COLUMN_ARMOUR};
 
-    private DataSourceSkills dataSourceSkills;
 
     public DataSourceBuilds(Context context){
         dbHelper = new MySQLiteHelper(context);
@@ -59,18 +59,34 @@ public class DataSourceBuilds {
             }
         }
 
-        dataSourceSkills = new DataSourceSkills(context);
+        DataSourceSkills dataSourceSkills = new DataSourceSkills(context);
+        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context);
         dataSourceSkills.open();
+        dataSourceWeapons.open();
         long skillBuildID;
+        long weaponBuildID;
         if (template != null){
             long templateSkillBuildID = template.getSkillBuildID();
+            long templateWeaponBuildID = template.getWeaponBuild().getId();
 
             if (templateSkillBuildID == 0){
+                //PD2skills URL
                 skillBuildID = dataSourceSkills.createAndInsertSkillBuild(template.getSkillBuild()).getId();
             }
             else{
+                //template
                 skillBuildID = dataSourceSkills.createAndInsertSkillBuild(templateSkillBuildID).getId();
             }
+
+            if (templateWeaponBuildID == 0){
+                //TODO: When Pd2skill URL is enetered
+                weaponBuildID = dataSourceWeapons.createAndInsertWeaponBuild().getId();
+            }
+            else {
+                //TODO: template selected
+                weaponBuildID = dataSourceWeapons.createAndInsertWeaponBuild().getId();
+            }
+
             if (infamies < template.getInfamyID() || url.length() > 0){
                 infamies = (int) template.getInfamyID();
             }
@@ -79,13 +95,15 @@ public class DataSourceBuilds {
         }
         else {
             skillBuildID = dataSourceSkills.createAndInsertSkillBuild().getId();
+            weaponBuildID = dataSourceWeapons.createAndInsertWeaponBuild().getId();
         }
         dataSourceSkills.close();
+        dataSourceWeapons.close();
 
         ContentValues buildValues = new ContentValues();
         buildValues.put(MySQLiteHelper.COLUMN_NAME, name);
         buildValues.put(MySQLiteHelper.COLUMN_SKILL_BUILD_ID, skillBuildID);
-        buildValues.put(MySQLiteHelper.COLUMN_WEAPON_BUILD_ID, -1);
+        buildValues.put(MySQLiteHelper.COLUMN_WEAPON_BUILD_ID, weaponBuildID);
         buildValues.put(MySQLiteHelper.COLUMN_INFAMY_ID, infamies);
         buildValues.put(MySQLiteHelper.COLUMN_PERK_DECK, perkDeck);
         buildValues.put(MySQLiteHelper.COLUMN_ARMOUR, armour);
@@ -229,8 +247,13 @@ public class DataSourceBuilds {
         SkillBuild skillBuildFromDB = SkillBuild.getSkillBuildFromDB(skillBuildID, context);
         SkillBuild mergedSkillBuild = SkillBuild.mergeBuilds(skillBuildFromXML, skillBuildFromDB);
 
+        WeaponBuild weaponBuildFromDB = WeaponBuild.getWeaponBuildFromDB(context, weaponBuildID);
+        WeaponBuild weaponBuildFromXML = WeaponBuild.getWeaponBuildFromXML(context.getResources(), weaponBuildFromDB);
+        WeaponBuild mergedWeaponBuild = WeaponBuild.mergeBuilds(weaponBuildFromDB, weaponBuildFromXML);
+
 
         build.setSkillBuild(mergedSkillBuild);
+        build.setWeaponBuild(mergedWeaponBuild);
 
 
         return build;
