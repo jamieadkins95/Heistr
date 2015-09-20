@@ -79,6 +79,7 @@ public class WeaponBuild {
         XmlResourceParser xmlParser = null;
 
         long pd2skillsID;
+        String pd2SkillsXML = "";
 
         //Go get the xml for all the trees
         for (int i = 0; i < 3; i++) {
@@ -152,18 +153,18 @@ public class WeaponBuild {
                         String text = xmlParser.getText();
                         //Log.d("XML", "Text " + text);
                         //Log.d("Current Tag", currentTag + "");
-                        String pd2Skills = "";
+
                         switch (currentTag){
                             case "pd2skills":
-                                pd2Skills = text;
+                                pd2SkillsXML = text;
                                 break;
                             case "name":
-                                if (pd2Skills.equals(pd2skillsID + "")){
+                                if (pd2SkillsXML.equals(pd2skillsID + "")){
                                     currentWeapon.setName(text);
                                 }
                                 break;
                             default:
-                                Log.d("XML", "currentTag didnt match anything!");
+                                //Log.d("XML", "currentTag didnt match anything!");
                                 break;
 
 

@@ -264,7 +264,7 @@ public class SkillBuild {
                             case "pd2skills":
                                 currentSkill.setPd2SkillsSymbol(text);
                             default:
-                                Log.d("XML", "currentTag didnt match anything!");
+                                //Log.d("XML", "currentTag didnt match anything!");
                                 break;
 
 

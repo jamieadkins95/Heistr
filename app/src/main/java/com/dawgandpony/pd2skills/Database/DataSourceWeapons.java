@@ -66,6 +66,8 @@ public class DataSourceWeapons {
             for (String weaponColumn : weaponColumns) {
                 values.put(weaponColumn, -1);
             }
+            values.remove(MySQLiteHelper.COLUMN_ID);
+            values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 10);
 
             weaponIDs[weapon] = database.insert(MySQLiteHelper.TABLE_WEAPONS, null, values);
             Log.d("Weapon inserted DB", weaponIDs[weapon] + "");
@@ -87,7 +89,7 @@ public class DataSourceWeapons {
         WeaponBuild newWeaponBuild = cursorToWeaponBuild(cursorBuild);
         cursorBuild.close();
 
-        Log.d("WeaponBuild inserted DB", newWeaponBuild.toString());
+        Log.d("WeaponBuild inserted DB", newWeaponBuild.getId() + "");
         return newWeaponBuild;
 
 

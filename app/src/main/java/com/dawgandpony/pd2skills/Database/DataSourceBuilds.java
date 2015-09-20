@@ -47,7 +47,7 @@ public class DataSourceBuilds {
     }
 
     public Build createAndInsertBuild(String name, int infamies, String url, long templateID){
-
+        Log.d("Build DB", "Creating new build");
         int perkDeck = 0;
         int armour = 0;
 
@@ -125,7 +125,7 @@ public class DataSourceBuilds {
 
 
 
-        Log.d("Build inserted DB", newBuild.toString());
+        Log.d("Build DB", "Build created: " + newBuild.getId() + "");
         return newBuild;
 
 

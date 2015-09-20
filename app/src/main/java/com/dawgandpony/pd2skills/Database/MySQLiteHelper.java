@@ -12,7 +12,7 @@ import android.util.Log;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pd2skills.db";
-    private static final int DATABASE_VERSION = 13;
+    private static final int DATABASE_VERSION = 17;
 
     //region Skills
     public static final String TABLE_SKILL_BUILDS = "tbSkillBuilds";
@@ -55,24 +55,24 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + TABLE_BUILDS + "(" + COLUMN_ID
             + " integer primary key autoincrement, " + COLUMN_NAME
             + " text, "  + COLUMN_SKILL_BUILD_ID
-            + " integer," + COLUMN_WEAPON_BUILD_ID
-            + " integer," + COLUMN_INFAMY_ID
-            + " integer," + COLUMN_PERK_DECK
-            + " integer," + COLUMN_ARMOUR
+            + " integer, " + COLUMN_WEAPON_BUILD_ID
+            + " integer, " + COLUMN_INFAMY_ID
+            + " integer, " + COLUMN_PERK_DECK
+            + " integer, " + COLUMN_ARMOUR
             + " integer);";
     //endregion
 
     //region Weapons
     public static final String TABLE_WEAPON_BUILDS = "tbWeaponBuilds";
-    public static final String COLUMN_PRIMARY_WEAPON = "primary";
-    public static final String COLUMN_SECONDARY_WEAPON = "secondary";
-    public static final String COLUMN_MELEE_WEAPON = "melee";
+    public static final String COLUMN_PRIMARY_WEAPON = "primaryW";
+    public static final String COLUMN_SECONDARY_WEAPON = "secondaryW";
+    public static final String COLUMN_MELEE_WEAPON = "meleeW";
 
     private static final String CREATE_WEAPON_BUILD_TABLE = "create table if not exists "
             + TABLE_WEAPON_BUILDS + "(" + COLUMN_ID
             + " integer primary key autoincrement, " + COLUMN_PRIMARY_WEAPON
-            + " integer," + COLUMN_SECONDARY_WEAPON
-            + " integer," + COLUMN_MELEE_WEAPON
+            + " integer, " + COLUMN_SECONDARY_WEAPON
+            + " integer, " + COLUMN_MELEE_WEAPON
             + " integer);";
 
     public static final String TABLE_WEAPONS = "tbWeapons";
@@ -153,10 +153,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 "Upgrading database from version " + oldVersion + " to "
                         + newVersion + ", which will destroy some old data");
 
-        /*db.execSQL("DROP TABLE IF EXISTS " + TABLE_BUILDS);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_BUILDS);       These are not changing so no need to delete them.
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_BUILDS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_BUILDS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_TIERS);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_INFAMY);*/
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_INFAMY);
 
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_WEAPON_BUILDS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_WEAPONS);
