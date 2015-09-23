@@ -66,10 +66,10 @@ public class DataSourceBuilds {
         long skillBuildID;
         long weaponBuildID;
         if (template != null){
-            long templateSkillBuildID = template.getSkillBuildID();
+            long templateSkillBuildID = template.getSkillBuild().getId();
             long templateWeaponBuildID = template.getWeaponBuild().getId();
 
-            if (templateSkillBuildID == 0){
+            if (templateSkillBuildID == Build.PD2SKILLS){
                 //PD2skills URL
                 skillBuildID = dataSourceSkills.createAndInsertSkillBuild(template.getSkillBuild()).getId();
             }
@@ -78,7 +78,7 @@ public class DataSourceBuilds {
                 skillBuildID = dataSourceSkills.createAndInsertSkillBuild(templateSkillBuildID).getId();
             }
 
-            if (templateWeaponBuildID == 0){
+            if (templateWeaponBuildID == Build.PD2SKILLS){
                 //TODO: When Pd2skill URL is enetered
                 weaponBuildID = dataSourceWeapons.createAndInsertWeaponBuild().getId();
             }
@@ -236,7 +236,7 @@ public class DataSourceBuilds {
 
         build.setId(buildID);
         build.setName(name);
-        build.setSkillBuildID(skillBuildID);
+        //build.setSkillBuildID(skillBuildID);
         build.setInfamies(DataSourceInfamies.idToInfamy(infamyID));
         // TODO: Weapon builds
         build.setPerkDeck(perkDeck);

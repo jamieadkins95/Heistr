@@ -124,7 +124,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
                         new GetBuildsFromDBTask(lvBuilds).execute();
 
 
-                        Log.d("Context Action", "Delete build " + selectedBuild.getSkillBuildID());
+                        Log.d("Context Action", "Delete build " + selectedBuild.getSkillBuild().getId());
 
                         fab.show();
 

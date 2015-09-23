@@ -13,12 +13,11 @@ import java.util.Random;
  * Created by Jamie on 14/07/2015.
  */
 public class Build {
-
+    public final static long PD2SKILLS = -2;
     public final static long NEW_BUILD = -1;
 
     long id;
     String name = "";
-    long skillBuildID;
     SkillBuild skillBuild;
     WeaponBuild weaponBuild;
     ArrayList<Boolean> infamies;
@@ -80,14 +79,6 @@ public class Build {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public long getSkillBuildID() {
-        return skillBuildID;
-    }
-
-    public void setSkillBuildID(long skillBuildID) {
-        this.skillBuildID = skillBuildID;
     }
 
     public void updateInfamy(Context context, int infamy, boolean enabled){
