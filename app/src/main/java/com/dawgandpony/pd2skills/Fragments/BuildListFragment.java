@@ -47,7 +47,6 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
 
     ListView lvBuilds;
     ArrayList<Build> buildList;
-    CardView cv;
 
     public static final int NEW_DIALOG_FRAGMENT = 1;
     public static final int RENAME_DIALOG_FRAGMENT = 2;

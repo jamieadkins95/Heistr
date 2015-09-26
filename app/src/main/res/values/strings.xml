@@ -35,6 +35,14 @@
     <string name="weapon_attribute_stability_shorthand">Stab:</string>
     <string name="weapon_attribute_concealment_shorthand">Con:</string>
 
+    <string name="weapon_attribute_magazine">Magazine Size:</string>
+    <string name="weapon_attribute_ammo">Total Ammo:</string>
+    <string name="weapon_attribute_rof">Rate of Fire:</string>
+    <string name="weapon_attribute_damage">Damage:</string>
+    <string name="weapon_attribute_accuracy">Accuracy:</string>
+    <string name="weapon_attribute_stability">Stability:</string>
+    <string name="weapon_attribute_concealment">Concealment:</string>
+
 
     <string name="message_new_build">Enter a name for this new build.</string>
     <string name="armour_default">Suit</string>
@@ -50,6 +58,14 @@
     <string name="new_build_with">with</string>
     <string name="action_rename">Rename</string>
     <string name="cancel">Cancel</string>
+
+    <string name="default20">20.0</string>
+    <string name="default0">0</string>
+    <string name="attribute">Attribute</string>
+    <string name="base">Base</string>
+    <string name="mod">Mod</string>
+    <string name="skill">Skill</string>
+    <string name="empty_weapon_list">No weapons yet.</string>
 
 
     <string-array name="skill_trees">

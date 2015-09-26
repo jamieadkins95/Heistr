@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/CardViewStyle"
+    android:id="@+id/cvBuilds"
+    cardview:cardElevation="4dp"
+    cardview:cardBackgroundColor="@color/backgroundCard"
+    android:foreground="@drawable/selector_build_list"
+    android:layout_margin="5dp">
+
+    <!--android:background="@drawable/shadow"
+    -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:id="@+id/rlBuilds"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/llWeaponName"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvName"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:text="Untitled Weapon"
+                android:textColor="@color/textPrimary"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:id="@+id/tvPrimaryWeaponName"
+                android:text="Car-4"
+                android:textColor="@color/textHint"
+                android:textSize="30sp"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <!--Weapons-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/llWeapons"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_below="@+id/llWeaponName"
+            >
+
+
+
+            <!--Primary Weapon-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textSecondary"
+                        android:text="@string/attribute"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:text="@string/weapon_attribute_magazine"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:text="@string/weapon_attribute_ammo"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:text="@string/weapon_attribute_rof"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:text="@string/weapon_attribute_damage"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:text="@string/weapon_attribute_accuracy"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:text="@string/weapon_attribute_stability"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:text="@string/weapon_attribute_concealment"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.33"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textSecondary"
+                        android:layout_gravity="center"
+                        android:text="@string/base"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvMagValue"
+                        android:text="@string/default20"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvAmmoValue"
+                        android:text="@string/default20"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvRoFValue"
+                        android:text="@string/default20"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvDamageValue"
+                        android:text="@string/default20"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:text="@string/default20"
+                        android:id="@+id/tvAccuracyValue"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:id="@+id/tvStabilityValue"
+                        android:layout_gravity="center"
+                        android:text="@string/default20"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvConcealmentValue"
+                        android:text="@string/default20"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.33"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/primaryAccent"
+                        android:layout_gravity="center"
+                        android:text="@string/mod"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvMagValueMod"
+                        android:text="@string/default0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvAmmoValueMod"
+                        android:text="@string/default0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvRoFValueMod"
+                        android:text="@string/default0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvDamageValueMod"
+                        android:text="@string/default0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:text="@string/default0"
+                        android:id="@+id/tvAccuracyValueMod"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:id="@+id/tvStabilityValueMod"
+                        android:layout_gravity="center"
+                        android:text="@string/default0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvConcealmentValueMod"
+                        android:text="@string/default0"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.33"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/primaryAccentBlue"
+                        android:layout_gravity="center"
+                        android:text="@string/skill"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvMagValueSkill"
+                        android:text="@string/default0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvAmmoValueSkill"
+                        android:text="@string/default0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvRoFValueSkill"
+                        android:text="@string/default0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvDamageValueSkill"
+                        android:text="@string/default0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:text="@string/default0"
+                        android:id="@+id/tvAccuracyValueSkill"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:id="@+id/tvStabilityValueSkill"
+                        android:layout_gravity="center"
+                        android:text="@string/default0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvConcealmentValueSkill"
+                        android:text="@string/default0"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+
