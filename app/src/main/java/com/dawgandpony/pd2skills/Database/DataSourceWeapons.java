@@ -23,11 +23,14 @@ import java.util.ArrayList;
  */
 public class DataSourceWeapons {
 
+    private Context mContext;
     private SQLiteDatabase database;
     private MySQLiteHelper dbHelper;
     private String[] weaponBuildColumns = { MySQLiteHelper.COLUMN_ID, MySQLiteHelper.COLUMN_PRIMARY_WEAPON, MySQLiteHelper.COLUMN_SECONDARY_WEAPON, MySQLiteHelper.COLUMN_MELEE_WEAPON};
     private String[] weaponColumns = { MySQLiteHelper.COLUMN_ID,
             MySQLiteHelper.COLUMN_PD2SKILLS_ID,
+            MySQLiteHelper.COLUMN_WEAPON_TYPE,
+            MySQLiteHelper.COLUMN_NAME,
             MySQLiteHelper.COLUMN_MOD_BARREL,
             MySQLiteHelper.COLUMN_MOD_BARREL_EXTENSION,
             MySQLiteHelper.COLUMN_MOD_BAYONET,
@@ -46,6 +49,7 @@ public class DataSourceWeapons {
 
     public DataSourceWeapons(Context context){
         dbHelper = new MySQLiteHelper(context);
+        mContext = context;
     }
 
     public void open() throws SQLException {
@@ -68,14 +72,18 @@ public class DataSourceWeapons {
                 values.put(weaponColumn, -1);
             }
             values.remove(MySQLiteHelper.COLUMN_ID);
+            values.put(MySQLiteHelper.COLUMN_WEAPON_TYPE, weapon);
             switch ( weapon){
                 case 0:
+                    values.put(MySQLiteHelper.COLUMN_NAME, "primary");
                     values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 10);
                     break;
                 case 1:
+                    values.put(MySQLiteHelper.COLUMN_NAME, "seceondary");
                     values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 25);
                     break;
                 case 2:
+                    values.put(MySQLiteHelper.COLUMN_NAME, "melee");
                     values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 25);
                     break;
             }
@@ -227,10 +235,16 @@ public class DataSourceWeapons {
         Weapon weapon =  new Weapon();
         weapon.setId(cursorWeapon.getLong(0));
         weapon.setPd2skillsID(cursorWeapon.getLong(1));
+        weapon.setWeaponType(cursorWeapon.getInt(2));
         weapon.setName("Retr");
         weapon.setAttachments(attachmentsFromDB(cursorWeapon));
 
-        return weapon;
+        ArrayList<Long> id = new ArrayList<>();
+        id.add(weapon.getPd2skillsID());
+        Weapon xml = WeaponBuild.getWeaponsFromXML(mContext.getResources(), weapon.getWeaponType(), id).get(0);
+
+        Weapon merged = WeaponBuild.mergeWeapon(weapon, xml);
+        return merged;
     }
 
     private ArrayList<Attachment> attachmentsFromDB(Cursor dbAttachments){

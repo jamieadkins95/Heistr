@@ -248,12 +248,9 @@ public class DataSourceBuilds {
         SkillBuild mergedSkillBuild = SkillBuild.mergeBuilds(skillBuildFromXML, skillBuildFromDB);
 
         WeaponBuild weaponBuildFromDB = WeaponBuild.getWeaponBuildFromDB(context, weaponBuildID);
-        WeaponBuild weaponBuildFromXML = WeaponBuild.getWeaponBuildFromXML(context.getResources(), weaponBuildFromDB);
-        WeaponBuild mergedWeaponBuild = WeaponBuild.mergeBuilds(weaponBuildFromDB, weaponBuildFromXML);
-
 
         build.setSkillBuild(mergedSkillBuild);
-        build.setWeaponBuild(mergedWeaponBuild);
+        build.setWeaponBuild(weaponBuildFromDB);
 
 
         return build;

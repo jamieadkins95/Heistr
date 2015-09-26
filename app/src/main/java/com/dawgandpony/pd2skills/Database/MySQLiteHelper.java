@@ -12,7 +12,7 @@ import android.util.Log;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pd2skills.db";
-    private static final int DATABASE_VERSION = 18;
+    private static final int DATABASE_VERSION = 20;
 
     //region Skills
     public static final String TABLE_SKILL_BUILDS = "tbSkillBuilds";
@@ -76,6 +76,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + " integer);";
 
     public static final String TABLE_WEAPONS = "tbWeapons";
+    public static final String COLUMN_WEAPON_TYPE = "weaponType";
     public static final String COLUMN_PD2SKILLS_ID= "pd2skillsID";
     public static final String COLUMN_MOD_BARREL= "barrel";
     public static final String COLUMN_MOD_BARREL_EXTENSION = "barrelExt";
@@ -97,7 +98,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     private static final String CREATE_WEAPON_TABLE = "create table if not exists "
             + TABLE_WEAPONS + "(" + COLUMN_ID
             + " integer primary key autoincrement, " + COLUMN_PD2SKILLS_ID
-            + " integer," + COLUMN_MOD_BARREL
+            + " integer," + COLUMN_WEAPON_TYPE
+            + " integer," + COLUMN_NAME
+            + " text," + COLUMN_MOD_BARREL
             + " integer," + COLUMN_MOD_BARREL_EXTENSION
             + " integer," + COLUMN_MOD_BAYONET
             + " integer," + COLUMN_MOD_CUSTOM
