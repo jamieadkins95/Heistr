@@ -23,6 +23,7 @@ import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Database.DataSourceWeapons;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterBuildList;
+import com.dawgandpony.pd2skills.utils.ArrayAdapterWeaponList;
 import com.melnykov.fab.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -37,8 +38,22 @@ public class WeaponListFragment extends Fragment {
     ListView lvCurrentWeapon;
     ListView lvOtherWeapons;
     ArrayList<Weapon> weaponList;
+    int weaponType = 0;
+
+    EditBuildActivity activity;
 
     public WeaponListFragment() {
+
+    }
+
+    public static WeaponListFragment newInstance(int weaponType) {
+
+        Bundle args = new Bundle();
+
+        WeaponListFragment fragment = new WeaponListFragment();
+        fragment.weaponType = weaponType;
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
@@ -46,6 +61,8 @@ public class WeaponListFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_weapon_list, container, false);
+
+        activity = (EditBuildActivity) getActivity();
 
         this.lvCurrentWeapon = (ListView) rootView.findViewById(R.id.lvCurrentWeapon);
         this.lvOtherWeapons = (ListView) rootView.findViewById(R.id.lvOtherWeapons);
@@ -116,7 +133,7 @@ public class WeaponListFragment extends Fragment {
         });
 
 
-        new GetWeaponsFromDBTask(lvOtherWeapons).execute();
+        new GetWeaponsFromDBTask(activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType].getId(), lvCurrentWeapon, lvOtherWeapons).execute();
 
         //region FAB onClick
         fab.setOnClickListener(new View.OnClickListener() {
@@ -158,11 +175,15 @@ public class WeaponListFragment extends Fragment {
         DataSourceWeapons dataSourceWeapons;
 
         ListView listViewWeapons;
+        ListView listViewCurrent;
+        long current;
 
-        public GetWeaponsFromDBTask(ListView lv) {
+        public GetWeaponsFromDBTask(long currentWeaponID, ListView lvCurrent, ListView lv) {
             super();
 
             listViewWeapons = lv;
+            current = currentWeaponID;
+            listViewCurrent = lvCurrent;
 
         }
 
@@ -174,7 +195,7 @@ public class WeaponListFragment extends Fragment {
             //Get list of skill builds from database.
             dataSourceWeapons = new DataSourceWeapons(getActivity());
             dataSourceWeapons.open();
-            weapons = dataSourceWeapons.getAllWeapons();
+            weapons = dataSourceWeapons.getAllWeapons(weaponType);
             dataSourceWeapons.close();
 
 
@@ -185,14 +206,23 @@ public class WeaponListFragment extends Fragment {
         protected void onPostExecute(ArrayList<Weapon> weapons) {
             super.onPostExecute(weapons);
 
-
-
             weaponList = weapons;
-            //ArrayAdapterBuildList itemsAdapter =
-                    //new ArrayAdapterBuildList(getActivity(), weapons);
+            ArrayAdapterWeaponList itemsAdapter =
+                    new ArrayAdapterWeaponList(getActivity(), weapons);
 
-            //listViewWeapons.setAdapter(itemsAdapter);
+            listViewWeapons.setAdapter(itemsAdapter);
 
+            ArrayList<Weapon> currentWeapon = new ArrayList<>();
+            for (Weapon w : weapons){
+                if (w.getId() == current){
+                    currentWeapon.add(w);
+                }
+            }
+
+            ArrayAdapterWeaponList currentAdapter =
+                    new ArrayAdapterWeaponList(getActivity(), currentWeapon);
+
+            listViewCurrent.setAdapter(currentAdapter);
         }
     }
 }

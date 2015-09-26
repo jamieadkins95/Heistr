@@ -160,7 +160,7 @@ public class WeaponBuild {
                                 break;
                             case "name":
                                 if (pd2SkillsXML.equals(pd2SkillsID + "")) {
-                                    currentWeapon.setName(text);
+                                    currentWeapon.setWeaponName(text);
                                 }
                                 break;
                             case "rof":
@@ -274,7 +274,8 @@ public class WeaponBuild {
     public static Weapon mergeWeapon(Weapon weaponFromDB, Weapon weaponFromXML){
         Weapon merged = new Weapon();
         merged.setId(weaponFromDB.getId());
-        merged.setName(weaponFromXML.getName());
+        merged.setName(weaponFromDB.getName());
+        merged.setWeaponName(weaponFromXML.getWeaponName());
         merged.setWeaponType(weaponFromDB.getWeaponType());
         merged.setPd2skillsID(weaponFromDB.getPd2skillsID());
         merged.setROF(weaponFromXML.getROF());

@@ -79,7 +79,7 @@ public class DataSourceWeapons {
                     values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 10);
                     break;
                 case 1:
-                    values.put(MySQLiteHelper.COLUMN_NAME, "seceondary");
+                    values.put(MySQLiteHelper.COLUMN_NAME, "secondary");
                     values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 25);
                     break;
                 case 2:
@@ -180,7 +180,7 @@ public class DataSourceWeapons {
 
     }
 
-    public ArrayList<Weapon> getAllWeapons(){
+    public ArrayList<Weapon> getAllWeapons(int weaponType){
         ArrayList<Weapon> weapons = new ArrayList<>();
 
         Cursor cursorWeapons = database.query(MySQLiteHelper.TABLE_WEAPONS,
@@ -193,7 +193,9 @@ public class DataSourceWeapons {
 
             while (!cursorWeapons.isAfterLast()){
                 Weapon weapon = cursorToWeapon(cursorWeapons);
-                weapons.add(weapon);
+                if (weapon.getWeaponType() == weaponType){
+                    weapons.add(weapon);
+                }
                 cursorWeapons.moveToNext();
             }
 
@@ -236,7 +238,7 @@ public class DataSourceWeapons {
         weapon.setId(cursorWeapon.getLong(0));
         weapon.setPd2skillsID(cursorWeapon.getLong(1));
         weapon.setWeaponType(cursorWeapon.getInt(2));
-        weapon.setName("Retr");
+        weapon.setName(cursorWeapon.getString(3));
         weapon.setAttachments(attachmentsFromDB(cursorWeapon));
 
         ArrayList<Long> id = new ArrayList<>();
