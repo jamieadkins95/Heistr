@@ -253,26 +253,41 @@ public class WeaponBuild {
         WeaponBuild mergedBuild = new WeaponBuild();
         mergedBuild.setId(weaponBuildFromDB.getId());
 
-        for (int weapon = PRIMARY; weapon <= MELEE; weapon ++){
-            Weapon merged = new Weapon();
-            merged.setId(weaponBuildFromDB.getWeapons()[weapon].getId());
-            merged.setName(weaponBuildFromXML.getWeapons()[weapon].getName());
-            merged.setPd2skillsID(weaponBuildFromDB.getWeapons()[weapon].getPd2skillsID());
-            merged.setROF(weaponBuildFromXML.getWeapons()[weapon].getROF());
-            merged.setTotalAmmo(weaponBuildFromXML.getWeapons()[weapon].getTotalAmmo());
-            merged.setMagSize(weaponBuildFromXML.getWeapons()[weapon].getMagSize());
-            merged.setDamage(weaponBuildFromXML.getWeapons()[weapon].getDamage());
-            merged.setAccuracy(weaponBuildFromXML.getWeapons()[weapon].getAccuracy());
-            merged.setStability(weaponBuildFromXML.getWeapons()[weapon].getStability());
-            merged.setConcealment(weaponBuildFromXML.getWeapons()[weapon].getConcealment());
-            merged.setThreat(weaponBuildFromXML.getWeapons()[weapon].getThreat());
-            merged.setPossibleAttachments(weaponBuildFromXML.getWeapons()[weapon].getPossibleAttachments());
-            merged.setAttachments(weaponBuildFromDB.getWeapons()[weapon].getAttachments());
-            mergedBuild.getWeapons()[weapon] = merged;
-        }
+        Weapon[] weapons = mergeWeapons(weaponBuildFromDB, weaponBuildFromXML);
+        mergedBuild.setPrimaryWeapon(weapons[PRIMARY]);
+        mergedBuild.setSecondaryWeapon(weapons[SECONDARY]);
+        mergedBuild.setMeleeWeapon(weapons[MELEE]);
 
 
         return mergedBuild;
+    }
+
+    public static Weapon[] mergeWeapons(WeaponBuild weaponBuildFromDB, WeaponBuild weaponBuildFromXML) {
+        Weapon[] weapons = new Weapon[3];
+        for (int weapon = PRIMARY; weapon <= MELEE; weapon ++){
+            Weapon merged = mergeWeapon(weaponBuildFromDB.getWeapons()[weapon], weaponBuildFromXML.getWeapons()[weapon]);
+            weapons[weapon] = merged;
+        }
+        return weapons;
+    }
+
+    public static Weapon mergeWeapon(Weapon weaponFromDB, Weapon weaponFromXML){
+        Weapon merged = new Weapon();
+        merged.setId(weaponFromDB.getId());
+        merged.setName(weaponFromXML.getName());
+        merged.setPd2skillsID(weaponFromDB.getPd2skillsID());
+        merged.setROF(weaponFromXML.getROF());
+        merged.setTotalAmmo(weaponFromXML.getTotalAmmo());
+        merged.setMagSize(weaponFromXML.getMagSize());
+        merged.setDamage(weaponFromXML.getDamage());
+        merged.setAccuracy(weaponFromXML.getAccuracy());
+        merged.setStability(weaponFromXML.getStability());
+        merged.setConcealment(weaponFromXML.getConcealment());
+        merged.setThreat(weaponFromXML.getThreat());
+        merged.setPossibleAttachments(weaponFromXML.getPossibleAttachments());
+        merged.setAttachments(weaponFromDB.getAttachments());
+
+        return merged;
     }
 
     private static ArrayList<Long> attachmentsFromXML(String xml){

@@ -172,6 +172,33 @@ public class DataSourceWeapons {
 
     }
 
+    public ArrayList<Weapon> getAllWeapons(){
+        ArrayList<Weapon> weapons = new ArrayList<>();
+
+        Cursor cursorWeapons = database.query(MySQLiteHelper.TABLE_WEAPONS,
+                weaponColumns, null, null,
+                null, null, null);
+
+
+
+        if (cursorWeapons.moveToFirst()){
+
+            while (!cursorWeapons.isAfterLast()){
+                Weapon weapon = cursorToWeapon(cursorWeapons);
+                weapons.add(weapon);
+                cursorWeapons.moveToNext();
+            }
+
+
+
+        }
+
+        cursorWeapons.close();
+        return weapons;
+
+
+    }
+
 
 
     private WeaponBuild cursorToWeaponBuild(Cursor cursorWeaponBuild){
