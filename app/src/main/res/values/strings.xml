@@ -133,17 +133,17 @@
     </string-array>
 
     <string-array name="perkDeckDescs" formatted="false">
-        <item>+25% health\n+10%armour\n+2%health for every hostage and +8% damage reduction for having at least one.</item>
-        <item>+40% health\n4% health regen every 5 secs</item>
-        <item>+35% armour\n+20% armour regen</item>
-        <item>+25% dodge\n-80% weapon swap time</item>
-        <item>+45% armour regen\n-20% armour\nAkimbo\nLol hitman</item>
-        <item>+40% dodge (ballistic vests)\n+65% armour ballistic vests\n+10% armour regen</item>
-        <item>+20% dodge\n Quicket corpse bagging and lockpicking</item>
-        <item>+24% damage reduction\n20% health regen on melee (once every 15 seconds)</item>
-        <item>+8% damage reduction\n60 armour regen on kill\n10% health regen on kill\n75% chance of spreading panic on kill</item>
-        <item>16&#8211;20 health regen for you and crew on ammo pickup\n</item>
-        <item>Damaging an enemy heals 4 life points every 0.5 seconds for 6 seconds.</item>
+        <item>+25% health (+15% crew health)\n+10% armour (+5% crew armour)\n+50% stamina (+50% crew stamina)\n+25% shout Distance\n+2% health and 4% stamina (for entire crew) for every hostage you have up to 10\n+8% damage Reduction for having at least one hostage</item>
+        <item>+80% health\n4% health regen every 5 seconds\n+15% chance of being targeted by cops around teammates\nChance to spread panic using LMGs, SMGs or Snipers</item>
+        <item>+35% armour\n+20% armour regen (+10% Crew armour regen)</item>
+        <item>+25% dodge\n-80% weapon swap time\n-15% chance of being targeted by cops around teammates\n+25% chance to pierce tan armour</item>
+        <item>+45% armour regen\n-20% armour\nAkimbo with +25% ammo and -50% stability</item>
+        <item>\n+5% dodge\n+35% dodge (ballistic vests)\n+65% armour (ballistic vests)\n+10% armour regen</item>
+        <item>+20% dodge\n+25% lockpicking speed (stacks multiplicatively with Lockpicking Expert)\n+20% body bagging speed\n-10% pager answering time\n-5% chance of being targeted when stationary</item>
+        <item>+24% damage reduction within 18m of an enemy\n+8% damage reduction when surrounded by 3 enemies or more\nSuccessful melee hits add a +20% melee damage buff for 7 seconds and can stack up to 4 times.\n20% health regen on melee (once every 10 seconds)</item>
+        <item>+8% damage reduction within 18m of an enemy\n60 armour regen on kill (once every 2 seconds)\n10% health regen on melee kill (once every 2 seconds)\n75% chance of spreading panic upon killing an enemy within 18m of you.</item>
+        <item>16&#8211;20 health regen (for entire crew) when picking up ammo (every 4 seconds)\nWhen you pick up ammo, your crew also gets an ammo pickup worth 50% of a normal one (every 5 seconds)</item>
+        <item>4 health regen every 0.5 seconds for 6 seconds on hit (can stack but will only occur every 1.5 seconds, only with Two-Piece Suit or Lightweight Ballistic Vest)\n+40% health\n+10% chance to pierce tan armour</item>
         <item>Up to +60% armour regen and +20% movement speed when below 50% health</item>
     </string-array>
 
