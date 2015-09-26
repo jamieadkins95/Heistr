@@ -29,13 +29,23 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.card_view_build, parent, false);
         //CardView cardView = (CardView) rowView.findViewById(R.id.cvBuilds);
-        TextView textView = (TextView) rowView.findViewById(R.id.tvName);
-        TextView textViewArmour = (TextView) rowView.findViewById(R.id.tvArmour);
-        TextView textViewPerkDeck = (TextView) rowView.findViewById(R.id.tvPerkDeck);
-        TextView textViewDetection = (TextView) rowView.findViewById(R.id.tvDetection);
+        TextView tv = (TextView) rowView.findViewById(R.id.tvName);
+        TextView tvArmour = (TextView) rowView.findViewById(R.id.tvArmour);
+        TextView tvPerkDeck = (TextView) rowView.findViewById(R.id.tvPerkDeck);
+        TextView tvDetection = (TextView) rowView.findViewById(R.id.tvDetection);
         
-        TextView textViewPrimaryWeapon = (TextView) rowView.findViewById(R.id.tvPrimaryWeaponName);
-        TextView textViewSecondaryWeapon = (TextView) rowView.findViewById(R.id.tvSecondaryWeaponName);
+        TextView tvPrimaryWeapon = (TextView) rowView.findViewById(R.id.tvPrimaryWeaponName);
+        TextView tvSecondaryWeapon = (TextView) rowView.findViewById(R.id.tvSecondaryWeaponName);
+
+        TextView tvPrimaryDamage = (TextView) rowView.findViewById(R.id.tvDamageValuePrimary);
+        TextView tvPrimaryAccuracy = (TextView) rowView.findViewById(R.id.tvAccuracyValuePrimary);
+        TextView tvPrimaryStability = (TextView) rowView.findViewById(R.id.tvStabilityValuePrimary);
+        TextView tvPrimaryConcealment = (TextView) rowView.findViewById(R.id.tvConcealmentValuePrimary);
+
+        TextView tvSecondaryDamage = (TextView) rowView.findViewById(R.id.tvDamageValueSecondary);
+        TextView tvSecondaryAccuracy = (TextView) rowView.findViewById(R.id.tvAccuracyValueSecondary);
+        TextView tvSecondaryStability = (TextView) rowView.findViewById(R.id.tvStabilityValueSecondary);
+        TextView tvSecondaryConcealment = (TextView) rowView.findViewById(R.id.tvConcealmentValueSecondary);
 
         TextView mastermind = (TextView) rowView.findViewById(R.id.masSkillName);
         TextView mastermindSkillCount = (TextView) rowView.findViewById(R.id.masSkillCount);
@@ -49,22 +59,31 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         TextView fugitiveSkillCount = (TextView) rowView.findViewById(R.id.fugSkillCount);
 
         //Set build name
-        textView.setText(getItem(position).getName());
+        tv.setText(getItem(position).getName());
 
         //Set Armour
         String armour = context.getResources().getTextArray(R.array.armourShortened)[getItem(position).getArmour()].toString();
-        textViewArmour.setText(armour);
+        tvArmour.setText(armour);
 
         //Set Perk Deck
         String perkDeck = context.getResources().getTextArray(R.array.perkDecks)[getItem(position).getPerkDeck()].toString();
-        textViewPerkDeck.setText(perkDeck);
+        tvPerkDeck.setText(perkDeck);
         
         //Set Weapons
-        textViewPrimaryWeapon.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getName());
-        textViewSecondaryWeapon.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getName());
+        tvPrimaryWeapon.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getName());
+        tvPrimaryDamage.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getDamage() + "");
+        tvPrimaryAccuracy.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getAccuracy() + "");
+        tvPrimaryStability.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getStability() + "");
+        tvPrimaryConcealment.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getConcealment() + "");
+
+        tvSecondaryWeapon.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getName());
+        tvSecondaryDamage.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getDamage() + "");
+        tvSecondaryAccuracy.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getAccuracy() + "");
+        tvSecondaryStability.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getStability() + "");
+        tvSecondaryConcealment.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getConcealment() + "");
 
         //Set Detection
-        textViewDetection.setText(getItem(position).getDetection() + "");
+        tvDetection.setText(getItem(position).getDetection() + "");
 
         mastermindSkillCount.setText(getItem(position).getSkillBuild().getSkillTrees().get(Trees.MASTERMIND).getSkillCount() + "");
         enforcerSkillCount.setText(getItem(position).getSkillBuild().getSkillTrees().get(Trees.ENFORCER).getSkillCount() + "");

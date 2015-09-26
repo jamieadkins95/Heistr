@@ -7,6 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.dawgandpony.pd2skills.BuildObjects.Attachment;
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
@@ -67,7 +68,17 @@ public class DataSourceWeapons {
                 values.put(weaponColumn, -1);
             }
             values.remove(MySQLiteHelper.COLUMN_ID);
-            values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 10);
+            switch ( weapon){
+                case 0:
+                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 10);
+                    break;
+                case 1:
+                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 25);
+                    break;
+                case 2:
+                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 25);
+                    break;
+            }
 
             weaponIDs[weapon] = database.insert(MySQLiteHelper.TABLE_WEAPONS, null, values);
             Log.d("Weapon inserted DB", weaponIDs[weapon] + "");
@@ -190,8 +201,14 @@ public class DataSourceWeapons {
         weapon.setId(cursorWeapon.getLong(0));
         weapon.setPd2skillsID(cursorWeapon.getLong(1));
         weapon.setName("Retr");
+        weapon.setAttachments(attachmentsFromDB(cursorWeapon));
 
         return weapon;
+    }
+
+    private ArrayList<Attachment> attachmentsFromDB(Cursor dbAttachments){
+        ArrayList<Attachment> attachments = new ArrayList<>();
+        return attachments;
     }
 
 
