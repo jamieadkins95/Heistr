@@ -27,5 +27,4 @@ dependencies {
     compile 'com.android.support:design:23.0.0'
     compile 'it.neokree:MaterialNavigationDrawer:1.3.3'
     compile 'com.melnykov:floatingactionbutton:1.3.0'
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
 }

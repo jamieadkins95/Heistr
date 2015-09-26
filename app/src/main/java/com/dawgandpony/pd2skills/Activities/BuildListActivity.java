@@ -8,7 +8,6 @@ import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.Fragments.BuildListFragment;
 import com.dawgandpony.pd2skills.R;
-import com.squareup.leakcanary.LeakCanary;
 
 
 public class BuildListActivity extends AppCompatActivity {
@@ -19,7 +18,6 @@ public class BuildListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LeakCanary.install(this.getApplication());
         setContentView(R.layout.activity_build_list);
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
