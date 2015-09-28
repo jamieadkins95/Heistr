@@ -11,3 +11,7 @@ You can download the beta version [here](https://play.google.com/apps/testing/co
 # Thanks to
  - Fabio Biola - [MaterialNavigationDrawer library](https://github.com/neokree/MaterialNavigationDrawer) (Apache 2.0)
  - Melnykov Oleksandr - [FloatingActionButton library](https://github.com/makovkastar/FloatingActionButton) (Apache 2.0)
+
+# License
+
+This project (referred to as 'Heistr') is released under the **The GNU General Public License v3.0 (GPLv3)**, which can be found in the `LICENSE` file in the root of this project.
