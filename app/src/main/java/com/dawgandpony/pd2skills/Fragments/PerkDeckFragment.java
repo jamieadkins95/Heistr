@@ -94,10 +94,10 @@ public class PerkDeckFragment extends Fragment implements EditBuildActivity.Buil
             }
         });
 
-        lvPerkDecks.setOnLongClickListener(new View.OnLongClickListener() {
+        lvPerkDecks.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public boolean onLongClick(View v) {
-                int selected = lvPerkDecks.getCheckedItemPosition();
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                int selected = (int) id;
                 PerkDeckDialog dialog = PerkDeckDialog.newInstance(selected);
                 try {
                     Activity activity = getActivity();
@@ -105,8 +105,6 @@ public class PerkDeckFragment extends Fragment implements EditBuildActivity.Buil
                 } catch (Exception e) {
                     Toast.makeText(activity, "Cannot show perkdeck details :(", Toast.LENGTH_SHORT).show();
                 }
-
-
                 return true;
             }
         });
