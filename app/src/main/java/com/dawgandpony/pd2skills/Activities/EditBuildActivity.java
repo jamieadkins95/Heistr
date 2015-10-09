@@ -88,12 +88,10 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
 
 
 
-
         setDrawerHeaderImage(R.drawable.payday_2_logo);
 
 
         MaterialSection secInfamy = newSection("Infamy", InfamyFragment.newInstance());
-
 
         MaterialSection secMas = newSection("Mastermind", SkillTreeFragment.newInstance(Trees.MASTERMIND));
         MaterialSection secEnf = newSection("Enforcer", SkillTreeFragment.newInstance(Trees.ENFORCER));
