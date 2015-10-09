@@ -24,6 +24,7 @@ import com.dawgandpony.pd2skills.Database.DataSourceWeapons;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterBuildList;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterWeaponList;
+import com.dawgandpony.pd2skills.utils.ArrayAdapterWeaponListSmall;
 import com.melnykov.fab.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -207,8 +208,11 @@ public class WeaponListFragment extends Fragment {
             super.onPostExecute(weapons);
 
             weaponList = weapons;
-            ArrayAdapterWeaponList itemsAdapter =
-                    new ArrayAdapterWeaponList(getActivity(), weapons);
+            //ArrayAdapterWeaponList itemsAdapter =
+            //        new ArrayAdapterWeaponList(getActivity(), weapons);
+
+            ArrayAdapterWeaponListSmall itemsAdapter =
+                    new ArrayAdapterWeaponListSmall(getActivity(), weapons);
 
             listViewWeapons.setAdapter(itemsAdapter);
 
@@ -219,8 +223,11 @@ public class WeaponListFragment extends Fragment {
                 }
             }
 
-            ArrayAdapterWeaponList currentAdapter =
-                    new ArrayAdapterWeaponList(getActivity(), currentWeapon);
+            //ArrayAdapterWeaponList currentAdapter =
+            //        new ArrayAdapterWeaponList(getActivity(), currentWeapon);
+
+            ArrayAdapterWeaponListSmall currentAdapter =
+                    new ArrayAdapterWeaponListSmall(getActivity(), currentWeapon);
 
             listViewCurrent.setAdapter(currentAdapter);
         }

@@ -27,7 +27,7 @@ public class DataSourceWeapons {
     private SQLiteDatabase database;
     private MySQLiteHelper dbHelper;
     private String[] weaponBuildColumns = { MySQLiteHelper.COLUMN_ID, MySQLiteHelper.COLUMN_PRIMARY_WEAPON, MySQLiteHelper.COLUMN_SECONDARY_WEAPON, MySQLiteHelper.COLUMN_MELEE_WEAPON};
-    private String[] weaponColumns = { MySQLiteHelper.COLUMN_ID,
+    private static String[] weaponColumns = { MySQLiteHelper.COLUMN_ID,
             MySQLiteHelper.COLUMN_PD2SKILLS_ID,
             MySQLiteHelper.COLUMN_WEAPON_TYPE,
             MySQLiteHelper.COLUMN_NAME,
@@ -62,40 +62,11 @@ public class DataSourceWeapons {
     }
 
     public WeaponBuild createAndInsertWeaponBuild(){
-        long[] weaponIDs = new long[3];
-
-        for (int weapon = 0; weapon < 3; weapon++){
-
-            ContentValues values = new ContentValues();
-
-            for (String weaponColumn : weaponColumns) {
-                values.put(weaponColumn, -1);
-            }
-            values.remove(MySQLiteHelper.COLUMN_ID);
-            values.put(MySQLiteHelper.COLUMN_WEAPON_TYPE, weapon);
-            switch ( weapon){
-                case 0:
-                    values.put(MySQLiteHelper.COLUMN_NAME, "primary");
-                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 10);
-                    break;
-                case 1:
-                    values.put(MySQLiteHelper.COLUMN_NAME, "secondary");
-                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 25);
-                    break;
-                case 2:
-                    values.put(MySQLiteHelper.COLUMN_NAME, "melee");
-                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 25);
-                    break;
-            }
-
-            weaponIDs[weapon] = database.insert(MySQLiteHelper.TABLE_WEAPONS, null, values);
-            Log.d("Weapon inserted DB", weaponIDs[weapon] + "");
-        }
 
         ContentValues weaponBuildValues = new ContentValues();
-        weaponBuildValues.put(MySQLiteHelper.COLUMN_PRIMARY_WEAPON, weaponIDs[0]);
-        weaponBuildValues.put(MySQLiteHelper.COLUMN_SECONDARY_WEAPON, weaponIDs[1]);
-        weaponBuildValues.put(MySQLiteHelper.COLUMN_MELEE_WEAPON, weaponIDs[2]);
+        weaponBuildValues.put(MySQLiteHelper.COLUMN_PRIMARY_WEAPON, 1);
+        weaponBuildValues.put(MySQLiteHelper.COLUMN_SECONDARY_WEAPON, 2);
+        weaponBuildValues.put(MySQLiteHelper.COLUMN_MELEE_WEAPON, 3);
 
         long weaponBuildID = database.insert(MySQLiteHelper.TABLE_WEAPON_BUILDS, null, weaponBuildValues);
 
@@ -255,4 +226,7 @@ public class DataSourceWeapons {
     }
 
 
+    public static String[] getWeaponColumns() {
+        return weaponColumns;
+    }
 }

@@ -12,7 +12,7 @@ import android.util.Log;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pd2skills.db";
-    private static final int DATABASE_VERSION = 20;
+    private static final int DATABASE_VERSION = 21;
 
     //region Skills
     public static final String TABLE_SKILL_BUILDS = "tbSkillBuilds";
@@ -121,7 +121,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 
     //region Infamies
-    public static final String TABLE_INFAMY = "tbBuilds";
+    public static final String TABLE_INFAMY = "tbInfamy";
     public static final String COLUMN_INFAMY_MASTERMIND = "mastermind";
     public static final String COLUMN_INFAMY_ENFORCER = "enforcer";
     public static final String COLUMN_INFAMY_TECHNICIAN = "technician";
@@ -146,7 +146,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_WEAPON_BUILD_TABLE);
         db.execSQL(CREATE_WEAPON_TABLE);
         InitInfamies(db);
+        AddBaseWeapons(db);
     }
+
 
 
 
@@ -186,6 +188,39 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 }
             }
         }
+    }
+
+    private void AddBaseWeapons(SQLiteDatabase db) {
+        long[] weaponIDs = new long[3];
+
+        for (int weapon = 0; weapon < 3; weapon++){
+
+            ContentValues values = new ContentValues();
+
+            for (String weaponColumn : DataSourceWeapons.getWeaponColumns()) {
+                values.put(weaponColumn, -1);
+            }
+            values.remove(MySQLiteHelper.COLUMN_ID);
+            values.put(MySQLiteHelper.COLUMN_WEAPON_TYPE, weapon);
+            switch ( weapon){
+                case 0:
+                    values.put(MySQLiteHelper.COLUMN_NAME, "example");
+                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 10);
+                    break;
+                case 1:
+                    values.put(MySQLiteHelper.COLUMN_NAME, "example");
+                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 25);
+                    break;
+                case 2:
+                    values.put(MySQLiteHelper.COLUMN_NAME, "example");
+                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 25);
+                    break;
+            }
+
+            weaponIDs[weapon] = db.insert(MySQLiteHelper.TABLE_WEAPONS, null, values);
+            Log.d("Weapon inserted DB", weaponIDs[weapon] + "");
+        }
+
     }
 
 
