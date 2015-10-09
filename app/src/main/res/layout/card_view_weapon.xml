@@ -187,7 +187,6 @@
 
 
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="0.33"
@@ -312,6 +311,70 @@
                         android:textColor="@color/textHint"
                         android:layout_gravity="center"
                         android:id="@+id/tvConcealmentValueSkill"
+                        android:text="@string/default0"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.33"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/primary"
+                        android:layout_gravity="center"
+                        android:text="@string/totsl"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvMagValueTotal"
+                        android:text="@string/default0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvAmmoValueTotal"
+                        android:text="@string/default0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvRoFValueTotal"
+                        android:text="@string/default0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvDamageValueTotal"
+                        android:text="@string/default0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:text="@string/default0"
+                        android:id="@+id/tvAccuracyValueTotal"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:id="@+id/tvStabilityValueTotal"
+                        android:layout_gravity="center"
+                        android:text="@string/default0"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textHint"
+                        android:layout_gravity="center"
+                        android:id="@+id/tvConcealmentValueTotal"
                         android:text="@string/default0"/>
 
 

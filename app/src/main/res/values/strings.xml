@@ -66,6 +66,7 @@
     <string name="mod">Mod</string>
     <string name="skill">Skill</string>
     <string name="empty_weapon_list">No weapons yet.</string>
+    <string name="totsl">Total</string>
 
 
     <string-array name="skill_trees">
