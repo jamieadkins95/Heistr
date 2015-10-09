@@ -77,7 +77,7 @@ public class WeaponListFragment extends Fragment {
         this.lvOtherWeapons.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
             @Override
             public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
-                mode.setTitle(lvOtherWeapons.getCheckedItemCount() + " selected builds");
+                mode.setTitle(lvOtherWeapons.getCheckedItemCount() + " selected weapons");
 
             }
 
