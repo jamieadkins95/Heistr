@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -15,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
@@ -58,7 +61,7 @@ public class WeaponListFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_weapon_list, container, false);
@@ -78,7 +81,6 @@ public class WeaponListFragment extends Fragment {
             @Override
             public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
                 mode.setTitle(lvOtherWeapons.getCheckedItemCount() + " selected weapons");
-
             }
 
             @Override
@@ -97,7 +99,7 @@ public class WeaponListFragment extends Fragment {
             public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.action_delete:
-
+                        DeleteWeapons();
                         mode.finish();
                         return true;
                     case R.id.action_rename:
@@ -107,13 +109,36 @@ public class WeaponListFragment extends Fragment {
                     default:
                         return false;
                 }
-
             }
 
 
             @Override
             public void onDestroyActionMode(ActionMode mode) {
 
+            }
+
+            private void DeleteWeapons() {
+                SparseBooleanArray checked = lvOtherWeapons.getCheckedItemPositions();
+
+                for (int i = 0; i < checked.size();i++){
+                    if (checked.valueAt(i)){
+                        Build selectedBuild = (Build) lvOtherWeapons.getItemAtPosition(checked.keyAt(i));
+                        DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(getActivity());
+                        dataSourceBuilds.open();
+                        dataSourceBuilds.DeleteBuild(selectedBuild.getId());
+                        dataSourceBuilds.close();
+
+                        new GetWeaponsFromDBTask(activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType].getId(), lvCurrentWeapon, lvOtherWeapons).execute();
+
+
+                        Log.d("Context Action", "Delete build " + selectedBuild.getSkillBuild().getId());
+
+                        fab.show();
+
+                    }
+                }
+
+                Toast.makeText(getActivity(), "Build(s) deleted", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -208,11 +233,16 @@ public class WeaponListFragment extends Fragment {
             super.onPostExecute(weapons);
 
             weaponList = weapons;
-            //ArrayAdapterWeaponList itemsAdapter =
-            //        new ArrayAdapterWeaponList(getActivity(), weapons);
+
+            ArrayList<Weapon> allWeaponsButEquipped = new ArrayList<>();
+            for (Weapon w : weapons){
+                if (w.getId() != activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType].getId()){
+                    allWeaponsButEquipped.add(w);
+                }
+            }
 
             ArrayAdapterWeaponListSmall itemsAdapter =
-                    new ArrayAdapterWeaponListSmall(getActivity(), weapons);
+                    new ArrayAdapterWeaponListSmall(getActivity(), allWeaponsButEquipped);
 
             listViewWeapons.setAdapter(itemsAdapter);
 
@@ -222,9 +252,6 @@ public class WeaponListFragment extends Fragment {
                     currentWeapon.add(w);
                 }
             }
-
-            //ArrayAdapterWeaponList currentAdapter =
-            //        new ArrayAdapterWeaponList(getActivity(), currentWeapon);
 
             ArrayAdapterWeaponListSmall currentAdapter =
                     new ArrayAdapterWeaponListSmall(getActivity(), currentWeapon);

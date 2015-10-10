@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.BuildObjects.Attachment;
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
@@ -178,6 +179,14 @@ public class DataSourceWeapons {
         return weapons;
 
 
+    }
+
+    public void deleteWeapon(long id){
+        if (id > 3){
+            database.delete(MySQLiteHelper.TABLE_WEAPONS, MySQLiteHelper.COLUMN_ID + " = " + id, null);
+        } else {
+            Toast.makeText(mContext, "Can't delete example weapons", Toast.LENGTH_SHORT).show();
+        }
     }
 
 

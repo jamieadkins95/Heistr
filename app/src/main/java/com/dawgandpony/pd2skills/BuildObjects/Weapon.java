@@ -108,6 +108,11 @@ public class Weapon {
         return stability;
     }
 
+    @Override
+    public String toString() {
+        return getName();
+    }
+
     public void setStability(float stability) {
         this.stability = stability;
     }

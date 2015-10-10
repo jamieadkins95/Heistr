@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/lvCurrentWeapon"
-
+        android:paddingTop="8dp"
         android:layout_below="@+id/tvEquipped"
         android:divider="@null"
         android:dividerHeight="10dp"/>
@@ -28,6 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lvCurrentWeapon"
+        android:paddingTop="8dp"
         android:text="Your other weapons:"
         android:id="@+id/tvOthers"/>
 
@@ -35,6 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/lvOtherWeapons"
+        android:paddingTop="8dp"
         android:layout_below="@+id/tvOthers"
         android:divider="@null"
         android:dividerHeight="10dp"/>

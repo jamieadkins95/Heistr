@@ -103,7 +103,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
 
         MaterialSection secPrimary = newSection("Primary Weapon", WeaponListFragment.newInstance(WeaponBuild.PRIMARY));
         MaterialSection secSecondaty = newSection("Secondary Weapon", WeaponListFragment.newInstance(WeaponBuild.SECONDARY));
-        MaterialSection secMelee = newSection("Melee Weapon", WeaponListFragment.newInstance(WeaponBuild.MELEE));
+        MaterialSection secMelee = newSection("Melee Weapon", new BlankFragment());
 
         MaterialSection secArmour = newSection("Armour", ArmourFragment.newInstance());
 
