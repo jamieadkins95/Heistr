@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
+import com.dawgandpony.pd2skills.BuildObjects.Weapon;
 import com.dawgandpony.pd2skills.BuildObjects.WeaponBuild;
 import com.dawgandpony.pd2skills.utils.URLEncoder;
 
@@ -244,7 +245,33 @@ public class DataSourceBuilds {
         SkillBuild skillBuildFromDB = SkillBuild.getSkillBuildFromDB(skillBuildID, context);
         SkillBuild mergedSkillBuild = SkillBuild.mergeBuilds(skillBuildFromXML, skillBuildFromDB);
 
+        ArrayList<Weapon> weaponInfo = new ArrayList<>();
+
+        weaponInfo.addAll(WeaponBuild.getWeaponsFromXML(context.getResources(), WeaponBuild.PRIMARY));
+        weaponInfo.addAll(WeaponBuild.getWeaponsFromXML(context.getResources(), WeaponBuild.SECONDARY));
+        weaponInfo.addAll(WeaponBuild.getWeaponsFromXML(context.getResources(), WeaponBuild.MELEE));
+
+        build.setWeaponsFromXML(weaponInfo);
+
         WeaponBuild weaponBuildFromDB = WeaponBuild.getWeaponBuildFromDB(context, weaponBuildID);
+
+        for (Weapon w : weaponInfo){
+            if (weaponBuildFromDB.getPrimaryWeapon().getPd2skillsID() == w.getPd2skillsID()){
+                if (weaponBuildFromDB.getPrimaryWeapon().getWeaponType() == w.getWeaponType()){
+                    weaponBuildFromDB.setPrimaryWeapon(WeaponBuild.mergeWeapon(weaponBuildFromDB.getPrimaryWeapon(), w));
+                }
+            }
+            if (weaponBuildFromDB.getSecondaryWeapon().getPd2skillsID() == w.getPd2skillsID()){
+                if (weaponBuildFromDB.getSecondaryWeapon().getWeaponType() == w.getWeaponType()){
+                    weaponBuildFromDB.setSecondaryWeapon(WeaponBuild.mergeWeapon(weaponBuildFromDB.getSecondaryWeapon(), w));
+                }
+            }
+            if (weaponBuildFromDB.getMeleeWeapon().getPd2skillsID() == w.getPd2skillsID()){
+                if (weaponBuildFromDB.getMeleeWeapon().getWeaponType() == w.getWeaponType()){
+                    weaponBuildFromDB.setMeleeWeapon(WeaponBuild.mergeWeapon(weaponBuildFromDB.getMeleeWeapon(), w));
+                }
+            }
+        }
 
         build.setSkillBuild(mergedSkillBuild);
         build.setWeaponBuild(weaponBuildFromDB);

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon_group>
     <group_name>pistol</group_name>
+    <weapon_type>secondary</weapon_type>
     <weapon>
         <pd2skills>25</pd2skills>
         <name>Gruber Kurz</name>

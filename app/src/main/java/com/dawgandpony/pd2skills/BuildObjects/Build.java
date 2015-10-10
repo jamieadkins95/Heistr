@@ -21,6 +21,8 @@ public class Build {
     SkillBuild skillBuild;
     WeaponBuild weaponBuild;
     ArrayList<Boolean> infamies;
+
+    ArrayList<Weapon> weaponsFromXML;
     
     int perkDeck = 0;
     int armour = 0;
@@ -75,6 +77,14 @@ public class Build {
     public long getId() {
 
         return id;
+    }
+
+    public ArrayList<Weapon> getWeaponsFromXML() {
+        return weaponsFromXML;
+    }
+
+    public void setWeaponsFromXML(ArrayList<Weapon> weaponsFromXML) {
+        this.weaponsFromXML = weaponsFromXML;
     }
 
     public void setId(long id) {

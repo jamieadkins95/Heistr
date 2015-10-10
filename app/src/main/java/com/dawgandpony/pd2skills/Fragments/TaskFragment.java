@@ -12,7 +12,10 @@ import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
+import com.dawgandpony.pd2skills.BuildObjects.Weapon;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
+
+import java.util.ArrayList;
 
 /**
  * TaskFragment manages a single background task and retains itself across
@@ -26,10 +29,10 @@ public class TaskFragment extends Fragment {
      * Callback interface through which the fragment can report the task's
      * progress and results back to the Activity.
      */
-    public static interface TaskCallbacks {
+    public interface TaskCallbacks {
         void onPreExecute();
         void onCancelled();
-        void onPostExecute(Build build);
+        void onBuildReady(Build build);
     }
 
     private TaskCallbacks mCallbacks;
@@ -101,23 +104,15 @@ public class TaskFragment extends Fragment {
     public void start(long buildID, String newBuildName, int infamies, String url, long templateBuildID) {
         if (currentBuild == null){
             Log.d(TAG, "No build, going to retrieve from DB in background.");
-
-            //Toast.makeText(getActivity(), "No current build!", Toast.LENGTH_SHORT).show();
             if (!mRunning) {
                 mTask = new GetBuildFromDBTask(newBuildName, infamies, url, templateBuildID);
                 mTask.execute(buildID);
                 mRunning = true;
             }
-        }
-        else /*if (currentBuild.getId() == buildID)*/{
-            //Toast.makeText(getActivity(), "Already got the current build!", Toast.LENGTH_SHORT).show();
+        } else /*if (currentBuild.getId() == buildID)*/{
             Log.d(TAG, "Already have the current build!. no need to retrieve from DB");
-            mCallbacks.onPostExecute(currentBuild);
+            mCallbacks.onBuildReady(currentBuild);
         }
-        /*else {
-            Log.d(TAG, "Already have the current build!. no need to retrieve from DB");
-            Toast.makeText(getActivity(), "Already got a different build!", Toast.LENGTH_SHORT).show();
-        }*/
 
     }
 
@@ -196,12 +191,13 @@ public class TaskFragment extends Fragment {
             Log.d("DB", "Retrieved skill build from DB");
             currentBuild = build;
             currentBuildID = currentBuild.getId();
-            mCallbacks.onPostExecute(build);
             mRunning = false;
+            mCallbacks.onBuildReady(build);
         }
 
 
     }
+
 
     /************************/
     /***** LOGS & STUFF *****/

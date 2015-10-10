@@ -17,6 +17,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
+import com.dawgandpony.pd2skills.BuildObjects.Weapon;
 import com.dawgandpony.pd2skills.BuildObjects.WeaponBuild;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
@@ -235,7 +236,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
     }
 
     @Override
-    public void onPostExecute(Build build) {
+    public void onBuildReady(Build build) {
         currentBuild = build;
         currentBuildID = build.getId();
         if (mListCallbacks == null){
@@ -259,6 +260,10 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
     public interface BuildReadyCallbacks{
         void onBuildReady();
         void onBuildUpdated();
+    }
+
+    public interface WeaponsCallbacks{
+        void onWeaponsReady();
     }
 
 

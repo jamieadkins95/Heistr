@@ -5,8 +5,6 @@ import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.util.Log;
 
-import com.dawgandpony.pd2skills.Consts.Trees;
-import com.dawgandpony.pd2skills.Database.DataSourceSkills;
 import com.dawgandpony.pd2skills.Database.DataSourceWeapons;
 import com.dawgandpony.pd2skills.R;
 
@@ -85,189 +83,117 @@ public class WeaponBuild {
         }
     }
 
-    public static ArrayList<Weapon> getWeaponsFromXML(Resources res, int weaponType, ArrayList<Long> pd2SkillsIDs) {
+    public static ArrayList<Weapon> getWeaponsFromXML(Resources res, int weaponType) {
         XmlResourceParser xmlParser = null;
         ArrayList<Weapon> weapons = new ArrayList<>();
 
-        String pd2SkillsXML = "";
+        //Get the xml for the correct weapon type
+        switch (weaponType) {
+            case PRIMARY:
+                xmlParser = res.getXml(R.xml.primary_weapons);
+                break;
+            case SECONDARY:
+                xmlParser = res.getXml(R.xml.secondary_weapons);
+                break;
+            case MELEE:
+                xmlParser = res.getXml(R.xml.melee_weapons);
+                break;
+            default:
 
-        //Go get the xml for all the trees
-        for (long pd2SkillsID : pd2SkillsIDs) {
-
-            //Get the xml for the correct tree
-            switch (weaponType) {
-                case PRIMARY:
-                    xmlParser = res.getXml(R.xml.primary_weapons);
-                    break;
-                case SECONDARY:
-                    xmlParser = res.getXml(R.xml.secondary_weapons);
-                    break;
-                case MELEE:
-                    xmlParser = res.getXml(R.xml.melee_weapons);
-                    break;
-                default:
-
-                    Log.e("Error", "Something went wrong while we were retrieving the weapons");
-                    break;
-            }
-
-
-            try {
-                int eventType = xmlParser.getEventType();
-
-                Weapon currentWeapon = null;
-                String currentTag = "";
-
-                while (eventType != XmlPullParser.END_DOCUMENT) {
-
-                    if (eventType == XmlPullParser.START_DOCUMENT) {
-                        //Log.d("XML", "Start Document");
-                    } else if (eventType == XmlPullParser.START_TAG) {
-
-                        //Log.d("XML", "Start tag " + xmlParser.getName());
-                        currentTag = xmlParser.getName();
-
-                        switch (currentTag) {
-                            case "weapon":
-                                currentWeapon = new Weapon();
-                                break;
-                        }
-
-                    } else if (eventType == XmlPullParser.END_TAG) {
-                        //Log.d("XML", "End tag " + xmlParser.getName());
-                        currentTag = xmlParser.getName();
-                        switch (currentTag) {
-                            case "weapon":
-                                if (pd2SkillsXML.equals(pd2SkillsID + "")) {
-                                    weapons.add(currentWeapon);
-                                }
-
-                            break;
-                        }
-
-
-                    } else if (eventType == XmlPullParser.TEXT) {
-                        String text = xmlParser.getText();
-                        //Log.d("XML", "Text " + text);
-                        //Log.d("Current Tag", currentTag + "");
-
-                        switch (currentTag) {
-                            case "pd2skills":
-                                pd2SkillsXML = text;
-                                if (pd2SkillsXML.equals(pd2SkillsID + "")) {
-                                    currentWeapon.setPd2skillsID(Long.parseLong(text));
-                                }
-                                break;
-                            case "name":
-                                if (pd2SkillsXML.equals(pd2SkillsID + "")) {
-                                    currentWeapon.setWeaponName(text);
-                                }
-                                break;
-                            case "rof":
-                                if (pd2SkillsXML.equals(pd2SkillsID + "")) {
-                                    currentWeapon.setROF(Integer.parseInt(text));
-                                }
-                                break;
-                            case "total":
-                                if (pd2SkillsXML.equals(pd2SkillsID + "")) {
-                                    currentWeapon.setTotalAmmo(Integer.parseInt(text));
-                                }
-                                break;
-                            case "mag":
-                                if (pd2SkillsXML.equals(pd2SkillsID + "")) {
-                                    currentWeapon.setMagSize(Integer.parseInt(text));
-                                }
-                                break;
-                            case "damage":
-                                if (pd2SkillsXML.equals(pd2SkillsID + "")) {
-                                    currentWeapon.setDamage(Float.parseFloat(text));
-                                }
-                                break;
-                            case "accuracy":
-                                if (pd2SkillsXML.equals(pd2SkillsID + "")) {
-                                    currentWeapon.setAccuracy(Float.parseFloat(text));
-                                }
-                                break;
-                            case "stability":
-                                if (pd2SkillsXML.equals(pd2SkillsID + "")) {
-                                    currentWeapon.setStability(Float.parseFloat(text));
-                                }
-                                break;
-                            case "concealment":
-                                if (pd2SkillsXML.equals(pd2SkillsID + "")) {
-                                    currentWeapon.setConcealment(Integer.parseInt(text));
-                                }
-                                break;
-                            case "threat":
-                                if (pd2SkillsXML.equals(pd2SkillsID + "")) {
-                                    currentWeapon.setThreat(Integer.parseInt(text));
-                                }
-                                break;
-                            case "attachments":
-                                if (pd2SkillsXML.equals(pd2SkillsID + "")) {
-                                    currentWeapon.setPossibleAttachments(attachmentsFromXML(text));
-                                }
-                                break;
-                            default:
-                                //Log.d("XML", "currentTag didnt match anything!");
-                                break;
-
-
-                        }
-                    }
-                    eventType = xmlParser.next();
-                }
-
-                //Log.d("XML", "End Document");
-            } catch (Exception e) {
-                Log.e("Error", e.toString());
-                xmlParser.close();
-                //Toast.makeText(getBaseContext(), "Something went wrong while we were retrieving the skills", Toast.LENGTH_SHORT).show();
-            }
-
+                Log.e("Error", "Something went wrong while we were retrieving the weapons");
+                break;
         }
+
+
+        try {
+            int eventType = xmlParser.getEventType();
+
+            Weapon currentWeapon = null;
+            String currentTag = "";
+
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+
+                if (eventType == XmlPullParser.START_DOCUMENT) {
+                    //Log.d("XML", "Start Document");
+                } else if (eventType == XmlPullParser.START_TAG) {
+
+                    //Log.d("XML", "Start tag " + xmlParser.getName());
+                    currentTag = xmlParser.getName();
+
+                    switch (currentTag) {
+                        case "weapon":
+                            currentWeapon = new Weapon();
+                            break;
+                    }
+
+                } else if (eventType == XmlPullParser.END_TAG) {
+                    //Log.d("XML", "End tag " + xmlParser.getName());
+                    currentTag = xmlParser.getName();
+                    switch (currentTag) {
+                        case "weapon":
+                            currentWeapon.setWeaponType(weaponType);
+                            weapons.add(currentWeapon);
+                            break;
+                    }
+
+
+                } else if (eventType == XmlPullParser.TEXT) {
+                    String text = xmlParser.getText();
+                    //Log.d("XML", "Text " + text);
+                    //Log.d("Current Tag", currentTag + "");
+
+                    switch (currentTag) {
+                        case "pd2skills":
+                            currentWeapon.setPd2skillsID(Long.parseLong(text));
+                            break;
+                        case "name":
+                            currentWeapon.setWeaponName(text);
+                            break;
+                        case "rof":
+                            currentWeapon.setROF(Integer.parseInt(text));
+                            break;
+                        case "total":
+                            currentWeapon.setTotalAmmo(Integer.parseInt(text));
+                            break;
+                        case "mag":
+                            currentWeapon.setMagSize(Integer.parseInt(text));
+                            break;
+                        case "damage":
+                            currentWeapon.setDamage(Float.parseFloat(text));
+                            break;
+                        case "accuracy":
+                            currentWeapon.setAccuracy(Float.parseFloat(text));
+                            break;
+                        case "stability":
+                            currentWeapon.setStability(Float.parseFloat(text));
+                            break;
+                        case "concealment":
+                            currentWeapon.setConcealment(Integer.parseInt(text));
+                            break;
+                        case "threat":
+                            currentWeapon.setThreat(Integer.parseInt(text));
+                            break;
+                        case "attachments":
+                            currentWeapon.setPossibleAttachments(attachmentsFromXML(text));
+                            break;
+                        default:
+                            //Log.d("XML", "currentTag didnt match anything!");
+                            break;
+                    }
+                }
+                eventType = xmlParser.next();
+            }
+
+            //Log.d("XML", "End Document");
+        } catch (Exception e) {
+            Log.e("Error", e.toString());
+            xmlParser.close();
+            //Toast.makeText(getBaseContext(), "Something went wrong while we were retrieving the skills", Toast.LENGTH_SHORT).show();
+        }
+
+
         xmlParser.close();
         //Log.d("Result from XML", skillBuildFromXML.toString());
-        return weapons;
-    }
-
-    public static WeaponBuild getWeaponBuildFromXML(Resources res, WeaponBuild weaponBuildFromDB) {
-        WeaponBuild weaponBuildFromXML = new WeaponBuild();
-        ArrayList<Long> primary = new ArrayList<>();
-        primary.add(weaponBuildFromDB.getPrimaryWeapon().getPd2skillsID());
-        weaponBuildFromXML.setPrimaryWeapon(getWeaponsFromXML(res, PRIMARY, primary).get(0));
-
-        ArrayList<Long> secondary = new ArrayList<>();
-        secondary.add(weaponBuildFromDB.getSecondaryWeapon().getPd2skillsID());
-        weaponBuildFromXML.setSecondaryWeapon(getWeaponsFromXML(res, SECONDARY, secondary).get(0));
-
-        ArrayList<Long> melee = new ArrayList<>();
-        melee.add(weaponBuildFromDB.getMeleeWeapon().getPd2skillsID());
-        weaponBuildFromXML.setMeleeWeapon(getWeaponsFromXML(res, MELEE, melee).get(0));
-
-        return weaponBuildFromXML;
-    }
-
-    public static WeaponBuild mergeBuilds(WeaponBuild weaponBuildFromDB, WeaponBuild weaponBuildFromXML) {
-
-        WeaponBuild mergedBuild = new WeaponBuild();
-        mergedBuild.setId(weaponBuildFromDB.getId());
-
-        Weapon[] weapons = mergeWeapons(weaponBuildFromDB, weaponBuildFromXML);
-        mergedBuild.setPrimaryWeapon(weapons[PRIMARY]);
-        mergedBuild.setSecondaryWeapon(weapons[SECONDARY]);
-        mergedBuild.setMeleeWeapon(weapons[MELEE]);
-
-
-        return mergedBuild;
-    }
-
-    public static Weapon[] mergeWeapons(WeaponBuild weaponBuildFromDB, WeaponBuild weaponBuildFromXML) {
-        Weapon[] weapons = new Weapon[3];
-        for (int weapon = PRIMARY; weapon <= MELEE; weapon ++){
-            Weapon merged = mergeWeapon(weaponBuildFromDB.getWeapons()[weapon], weaponBuildFromXML.getWeapons()[weapon]);
-            weapons[weapon] = merged;
-        }
         return weapons;
     }
 

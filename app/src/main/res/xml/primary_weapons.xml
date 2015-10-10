@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon_group>
     <group_name>assault</group_name>
+    <weapon_type>primary</weapon_type>
     <weapon>
         <pd2skills>24</pd2skills>
         <name>Golden AK</name>

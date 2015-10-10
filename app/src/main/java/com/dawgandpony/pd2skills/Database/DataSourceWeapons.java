@@ -221,12 +221,7 @@ public class DataSourceWeapons {
         weapon.setName(cursorWeapon.getString(3));
         weapon.setAttachments(attachmentsFromDB(cursorWeapon));
 
-        ArrayList<Long> id = new ArrayList<>();
-        id.add(weapon.getPd2skillsID());
-        Weapon xml = WeaponBuild.getWeaponsFromXML(mContext.getResources(), weapon.getWeaponType(), id).get(0);
-
-        Weapon merged = WeaponBuild.mergeWeapon(weapon, xml);
-        return merged;
+        return weapon;
     }
 
     private ArrayList<Attachment> attachmentsFromDB(Cursor dbAttachments){
