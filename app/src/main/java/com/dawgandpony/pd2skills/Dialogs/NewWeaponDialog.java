@@ -65,6 +65,7 @@ public class NewWeaponDialog extends DialogFragment {
         Spinner spBase = (Spinner) v.findViewById(R.id.spBaseWeapon);
         List<String> list = new ArrayList<>();
         List<String> list2 = new ArrayList<>();
+        list2.add("Select Template");
 
         for (Weapon w : allWeapons){
             list.add(w.getWeaponName());
@@ -78,19 +79,25 @@ public class NewWeaponDialog extends DialogFragment {
             }
         }
         final ArrayAdapter<String> adapterTemplates = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, list2);
-
+        adapterTemplates.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         final ArrayAdapter<String> adapterBase = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, list);
         adapterBase.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spBase.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        spBase.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 adapterTemplates.clear();
+                adapterTemplates.add("Select Template");
                 for (Weapon w : userWeaponList){
                     if (w.getPd2skillsID() == allWeapons.get((int) id).getPd2skillsID()){
                         adapterTemplates.add(w.getName());
                     }
                 }
                 adapterTemplates.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 

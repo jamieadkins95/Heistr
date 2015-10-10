@@ -1,5 +1,6 @@
 package com.dawgandpony.pd2skills.Fragments;
 
+import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -24,6 +25,7 @@ import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Database.DataSourceWeapons;
+import com.dawgandpony.pd2skills.Dialogs.NewWeaponDialog;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterBuildList;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterWeaponList;
@@ -35,14 +37,14 @@ import java.util.ArrayList;
 /**
  * Created by Jamie on 26/09/2015.
  */
-public class WeaponListFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks{
+public class WeaponListFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks, NewWeaponDialog.NewWeaponDialogListener{
 
     public final static String EXTRA_WEAPON_ID = "com.dawgandpony.pd2skills.WEAPONID";
 
     ListView lvCurrentWeapon;
     ListView lvOtherWeapons;
     ArrayList<Weapon> weaponList;
-    ArrayList<Weapon> baseWeaponList;
+    ArrayList<Weapon> baseWeaponInfo;
     int weaponType = 0;
 
     EditBuildActivity activity;
@@ -68,6 +70,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
         View rootView = inflater.inflate(R.layout.fragment_weapon_list, container, false);
 
         activity = (EditBuildActivity) getActivity();
+        baseWeaponInfo = new ArrayList<>();
 
         this.lvCurrentWeapon = (ListView) rootView.findViewById(R.id.lvCurrentWeapon);
         this.lvOtherWeapons = (ListView) rootView.findViewById(R.id.lvOtherWeapons);
@@ -164,16 +167,11 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 if (weaponList != null){
-                    // Create an instance of the dialog fragment and show it
-                    //DialogFragment dialog = NewBuildDialog.newInstance(weaponList);
-                    //dialog.setTargetFragment(BuildListFragment.this, NEW_DIALOG_FRAGMENT);
-                    //dialog.show(getActivity().getFragmentManager(), "NewBuildDialogFragment");
+                    NewWeaponDialog dialog = NewWeaponDialog.newInstance(weaponList, baseWeaponInfo);
+                    dialog.setTargetFragment(WeaponListFragment.this, BuildListFragment.NEW_DIALOG_FRAGMENT);
+                    dialog.show(getActivity().getFragmentManager(), "NewWeaponDialogFragment");
                 }
-
-
 
             }
         });
@@ -208,12 +206,22 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
     @Override
     public void onBuildReady() {
+        for (Weapon w : activity.getCurrentBuild().getWeaponsFromXML()){
+            if (w.getWeaponType() == weaponType){
+                baseWeaponInfo.add(w);
+            }
+        }
         new GetWeaponsFromDBTask(activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType].getId(), lvCurrentWeapon, lvOtherWeapons).execute();
     }
 
     @Override
     public void onBuildUpdated() {
 
+    }
+
+    @Override
+    public void onDialogNewWeapon(DialogFragment dialog, String name, long baseWeaponID, int templateWeaponPos) {
+        Toast.makeText(getActivity(), "New weapon!", Toast.LENGTH_SHORT).show();
     }
 
     private class GetWeaponsFromDBTask extends AsyncTask<Void, Integer, ArrayList<Weapon>> {
