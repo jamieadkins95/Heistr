@@ -61,7 +61,7 @@ public class DataSourceBuilds {
         }
 
         DataSourceSkills dataSourceSkills = new DataSourceSkills(context);
-        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context);
+        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context, WeaponBuild.getWeaponsFromXML(context.getResources()));
         dataSourceSkills.open();
         dataSourceWeapons.open();
         long skillBuildID;
@@ -234,9 +234,7 @@ public class DataSourceBuilds {
 
         build.setId(buildID);
         build.setName(name);
-        //build.setSkillBuildID(skillBuildID);
         build.setInfamies(DataSourceInfamies.idToInfamy(infamyID));
-        // TODO: Weapon builds
         build.setPerkDeck(perkDeck);
         build.setArmour(armour);
 
@@ -245,33 +243,15 @@ public class DataSourceBuilds {
         SkillBuild skillBuildFromDB = SkillBuild.getSkillBuildFromDB(skillBuildID, context);
         SkillBuild mergedSkillBuild = SkillBuild.mergeBuilds(skillBuildFromXML, skillBuildFromDB);
 
-        ArrayList<Weapon> weaponInfo = new ArrayList<>();
+        ArrayList<Weapon> weaponInfo = WeaponBuild.getWeaponsFromXML(context.getResources());
 
-        weaponInfo.addAll(WeaponBuild.getWeaponsFromXML(context.getResources(), WeaponBuild.PRIMARY));
-        weaponInfo.addAll(WeaponBuild.getWeaponsFromXML(context.getResources(), WeaponBuild.SECONDARY));
-        weaponInfo.addAll(WeaponBuild.getWeaponsFromXML(context.getResources(), WeaponBuild.MELEE));
 
         build.setWeaponsFromXML(weaponInfo);
 
-        WeaponBuild weaponBuildFromDB = WeaponBuild.getWeaponBuildFromDB(context, weaponBuildID);
-
-        for (Weapon w : weaponInfo){
-            if (weaponBuildFromDB.getPrimaryWeapon().getPd2skillsID() == w.getPd2skillsID()){
-                if (weaponBuildFromDB.getPrimaryWeapon().getWeaponType() == w.getWeaponType()){
-                    weaponBuildFromDB.setPrimaryWeapon(WeaponBuild.mergeWeapon(weaponBuildFromDB.getPrimaryWeapon(), w));
-                }
-            }
-            if (weaponBuildFromDB.getSecondaryWeapon().getPd2skillsID() == w.getPd2skillsID()){
-                if (weaponBuildFromDB.getSecondaryWeapon().getWeaponType() == w.getWeaponType()){
-                    weaponBuildFromDB.setSecondaryWeapon(WeaponBuild.mergeWeapon(weaponBuildFromDB.getSecondaryWeapon(), w));
-                }
-            }
-            if (weaponBuildFromDB.getMeleeWeapon().getPd2skillsID() == w.getPd2skillsID()){
-                if (weaponBuildFromDB.getMeleeWeapon().getWeaponType() == w.getWeaponType()){
-                    weaponBuildFromDB.setMeleeWeapon(WeaponBuild.mergeWeapon(weaponBuildFromDB.getMeleeWeapon(), w));
-                }
-            }
-        }
+        DataSourceWeapons dataSourceWeapons =  new DataSourceWeapons(context, weaponInfo);
+        dataSourceWeapons.open();
+        WeaponBuild weaponBuildFromDB = dataSourceWeapons.getWeaponBuild(weaponBuildID);
+        dataSourceWeapons.close();
 
         build.setSkillBuild(mergedSkillBuild);
         build.setWeaponBuild(weaponBuildFromDB);

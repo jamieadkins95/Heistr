@@ -64,24 +64,6 @@ public class WeaponBuild {
         return weapons;
     }
 
-    public static WeaponBuild getWeaponBuildFromDB(Context context, long weaponBuildID) {
-        WeaponBuild weaponBuildFromDB = null;
-        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context);
-        dataSourceWeapons.open();
-
-        try {
-
-            weaponBuildFromDB = dataSourceWeapons.getWeaponBuild(weaponBuildID);
-
-        }
-        catch(Exception e){
-            Log.e("Error", e.toString());
-        }
-        finally {
-            dataSourceWeapons.close();
-            return weaponBuildFromDB;
-        }
-    }
 
     public static ArrayList<Weapon> getWeaponsFromXML(Resources res, int weaponType) {
         XmlResourceParser xmlParser = null;
@@ -194,6 +176,17 @@ public class WeaponBuild {
 
         xmlParser.close();
         //Log.d("Result from XML", skillBuildFromXML.toString());
+        return weapons;
+    }
+
+    public static ArrayList<Weapon> getWeaponsFromXML(Resources res) {
+
+        ArrayList<Weapon> weapons = new ArrayList<>();
+
+        for (int i = 0; i < 3; i++){
+            weapons.addAll(getWeaponsFromXML(res, i));
+        }
+
         return weapons;
     }
 

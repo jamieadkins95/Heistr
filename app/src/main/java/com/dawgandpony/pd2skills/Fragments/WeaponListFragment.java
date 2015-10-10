@@ -35,13 +35,14 @@ import java.util.ArrayList;
 /**
  * Created by Jamie on 26/09/2015.
  */
-public class WeaponListFragment extends Fragment {
+public class WeaponListFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks{
 
     public final static String EXTRA_WEAPON_ID = "com.dawgandpony.pd2skills.WEAPONID";
 
     ListView lvCurrentWeapon;
     ListView lvOtherWeapons;
     ArrayList<Weapon> weaponList;
+    ArrayList<Weapon> baseWeaponList;
     int weaponType = 0;
 
     EditBuildActivity activity;
@@ -120,8 +121,8 @@ public class WeaponListFragment extends Fragment {
             private void DeleteWeapons() {
                 SparseBooleanArray checked = lvOtherWeapons.getCheckedItemPositions();
 
-                for (int i = 0; i < checked.size();i++){
-                    if (checked.valueAt(i)){
+                for (int i = 0; i < checked.size(); i++) {
+                    if (checked.valueAt(i)) {
                         Build selectedBuild = (Build) lvOtherWeapons.getItemAtPosition(checked.keyAt(i));
                         DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(getActivity());
                         dataSourceBuilds.open();
@@ -159,8 +160,6 @@ public class WeaponListFragment extends Fragment {
         });
 
 
-        new GetWeaponsFromDBTask(activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType].getId(), lvCurrentWeapon, lvOtherWeapons).execute();
-
         //region FAB onClick
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -180,20 +179,41 @@ public class WeaponListFragment extends Fragment {
         });
         //endregion
 
+        if (activity.getCurrentBuild() == null){
+            activity.listenIn(this);
+        }
+        else {
+            onBuildReady();
+        }
+
         return rootView;
     }
 
-    private void MoveToEditWeaponActivity(long id){
-
+    @Override
+    public void onPause() {
+        super.onPause();
         for (int i = 0; i < lvCurrentWeapon.getAdapter().getCount(); i++){
             lvCurrentWeapon.setItemChecked(i, false);
         }
         for (int i = 0; i < lvOtherWeapons.getAdapter().getCount(); i++){
             lvOtherWeapons.setItemChecked(i, false);
         }
+    }
+
+    private void MoveToEditWeaponActivity(long id){
         //Intent intent = new Intent(getActivity(), EditBuildActivity.class);
         //intent.putExtra(EXTRA_WEAPON_ID, id);
         //startActivity(intent);
+    }
+
+    @Override
+    public void onBuildReady() {
+        new GetWeaponsFromDBTask(activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType].getId(), lvCurrentWeapon, lvOtherWeapons).execute();
+    }
+
+    @Override
+    public void onBuildUpdated() {
+
     }
 
     private class GetWeaponsFromDBTask extends AsyncTask<Void, Integer, ArrayList<Weapon>> {
@@ -215,15 +235,13 @@ public class WeaponListFragment extends Fragment {
 
         @Override
         protected ArrayList<Weapon> doInBackground(Void... params) {
-
             ArrayList<Weapon> weapons;
 
             //Get list of skill builds from database.
-            dataSourceWeapons = new DataSourceWeapons(getActivity());
+            dataSourceWeapons = new DataSourceWeapons(getActivity(), activity.getCurrentBuild().getWeaponsFromXML());
             dataSourceWeapons.open();
             weapons = dataSourceWeapons.getAllWeapons(weaponType);
             dataSourceWeapons.close();
-
 
             return weapons;
         }
