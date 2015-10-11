@@ -113,9 +113,14 @@ public class EditBuildActivity2 extends AppCompatActivity implements TaskFragmen
         super.onSaveInstanceState(savedInstanceState);
     }
 
+
     @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
+    public void onBackPressed() {
+        if (mDrawerLayout.isDrawerOpen(GravityCompat.START)){
+            finish();
+        } else {
+            mDrawerLayout.openDrawer(GravityCompat.START);
+        }
     }
 
     @Override
