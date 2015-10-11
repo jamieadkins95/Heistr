@@ -12,8 +12,7 @@ import android.util.Log;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pd2skills.db";
-    private static final int DATABASE_VERSION = 12;
-
+    private static final int DATABASE_VERSION = 21;
 
     //region Skills
     public static final String TABLE_SKILL_BUILDS = "tbSkillBuilds";
@@ -56,15 +55,73 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + TABLE_BUILDS + "(" + COLUMN_ID
             + " integer primary key autoincrement, " + COLUMN_NAME
             + " text, "  + COLUMN_SKILL_BUILD_ID
-            + " integer," + COLUMN_WEAPON_BUILD_ID
-            + " integer," + COLUMN_INFAMY_ID
-            + " integer," + COLUMN_PERK_DECK
-            + " integer," + COLUMN_ARMOUR
+            + " integer, " + COLUMN_WEAPON_BUILD_ID
+            + " integer, " + COLUMN_INFAMY_ID
+            + " integer, " + COLUMN_PERK_DECK
+            + " integer, " + COLUMN_ARMOUR
             + " integer);";
     //endregion
 
+    //region Weapons
+    public static final String TABLE_WEAPON_BUILDS = "tbWeaponBuilds";
+    public static final String COLUMN_PRIMARY_WEAPON = "primaryW";
+    public static final String COLUMN_SECONDARY_WEAPON = "secondaryW";
+    public static final String COLUMN_MELEE_WEAPON = "meleeW";
+
+    private static final String CREATE_WEAPON_BUILD_TABLE = "create table if not exists "
+            + TABLE_WEAPON_BUILDS + "(" + COLUMN_ID
+            + " integer primary key autoincrement, " + COLUMN_PRIMARY_WEAPON
+            + " integer, " + COLUMN_SECONDARY_WEAPON
+            + " integer, " + COLUMN_MELEE_WEAPON
+            + " integer);";
+
+    public static final String TABLE_WEAPONS = "tbWeapons";
+    public static final String COLUMN_WEAPON_TYPE = "weaponType";
+    public static final String COLUMN_PD2SKILLS_ID= "pd2skillsID";
+    public static final String COLUMN_MOD_BARREL= "barrel";
+    public static final String COLUMN_MOD_BARREL_EXTENSION = "barrelExt";
+    public static final String COLUMN_MOD_BAYONET = "bayonet";
+    public static final String COLUMN_MOD_CUSTOM = "modCustom"; //Just to make sure not a keyword
+    public static final String COLUMN_MOD_EXTRA = "modExtra"; //Just to make sure not a keyword
+    public static final String COLUMN_MOD_FOREGRIP = "foregrip";
+    public static final String COLUMN_MOD_GADGET = "gadget";
+    public static final String COLUMN_MOD_GRIP = "grip";
+    public static final String COLUMN_MOD_LOWER_RECEIVER = "lReceiver";
+    public static final String COLUMN_MOD_MAGAZINE = "magazine";
+    public static final String COLUMN_MOD_SIGHT = "sight";
+    public static final String COLUMN_MOD_SLIDE = "slide";
+    public static final String COLUMN_MOD_STOCK = "stock";
+    public static final String COLUMN_MOD_SUPPRESSOR = "suppressor";
+    public static final String COLUMN_MOD_UPPER_RECEIVER = "uReceiver";
+
+
+    private static final String CREATE_WEAPON_TABLE = "create table if not exists "
+            + TABLE_WEAPONS + "(" + COLUMN_ID
+            + " integer primary key autoincrement, " + COLUMN_PD2SKILLS_ID
+            + " integer," + COLUMN_WEAPON_TYPE
+            + " integer," + COLUMN_NAME
+            + " text," + COLUMN_MOD_BARREL
+            + " integer," + COLUMN_MOD_BARREL_EXTENSION
+            + " integer," + COLUMN_MOD_BAYONET
+            + " integer," + COLUMN_MOD_CUSTOM
+            + " integer," + COLUMN_MOD_EXTRA
+            + " integer," + COLUMN_MOD_FOREGRIP
+            + " integer," + COLUMN_MOD_GADGET
+            + " integer," + COLUMN_MOD_GRIP
+            + " integer," + COLUMN_MOD_LOWER_RECEIVER
+            + " integer," + COLUMN_MOD_MAGAZINE
+            + " integer," + COLUMN_MOD_SIGHT
+            + " integer," + COLUMN_MOD_SLIDE
+            + " integer," + COLUMN_MOD_STOCK
+            + " integer," + COLUMN_MOD_SUPPRESSOR
+            + " integer," + COLUMN_MOD_UPPER_RECEIVER
+            + " integer);";
+    //endregion
+
+
+
     //region Infamies
-    public static final String TABLE_INFAMY = "tbBuilds";
+    public static final String TABLE_INFAMY = "tbInfamy";
     public static final String COLUMN_INFAMY_MASTERMIND = "mastermind";
     public static final String COLUMN_INFAMY_ENFORCER = "enforcer";
     public static final String COLUMN_INFAMY_TECHNICIAN = "technician";
@@ -86,8 +143,12 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_SKILL_TIER_TABLE);
         db.execSQL(CREATE_BUILD_TABLE);
         db.execSQL(CREATE_INFAMY_TABLE);
+        db.execSQL(CREATE_WEAPON_BUILD_TABLE);
+        db.execSQL(CREATE_WEAPON_TABLE);
         InitInfamies(db);
+        AddBaseWeapons(db);
     }
+
 
 
 
@@ -101,6 +162,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_BUILDS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_TIERS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_INFAMY);
+
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_WEAPON_BUILDS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_WEAPONS);
         onCreate(db);
     }
 
@@ -124,6 +188,39 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 }
             }
         }
+    }
+
+    private void AddBaseWeapons(SQLiteDatabase db) {
+        long[] weaponIDs = new long[3];
+
+        for (int weapon = 0; weapon < 3; weapon++){
+
+            ContentValues values = new ContentValues();
+
+            for (String weaponColumn : DataSourceWeapons.getWeaponColumns()) {
+                values.put(weaponColumn, -1);
+            }
+            values.remove(MySQLiteHelper.COLUMN_ID);
+            values.put(MySQLiteHelper.COLUMN_WEAPON_TYPE, weapon);
+            switch ( weapon){
+                case 0:
+                    values.put(MySQLiteHelper.COLUMN_NAME, "example");
+                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 10);
+                    break;
+                case 1:
+                    values.put(MySQLiteHelper.COLUMN_NAME, "example");
+                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 25);
+                    break;
+                case 2:
+                    values.put(MySQLiteHelper.COLUMN_NAME, "example");
+                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 25);
+                    break;
+            }
+
+            weaponIDs[weapon] = db.insert(MySQLiteHelper.TABLE_WEAPONS, null, values);
+            Log.d("Weapon inserted DB", weaponIDs[weapon] + "");
+        }
+
     }
 
 

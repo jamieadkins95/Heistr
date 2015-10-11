@@ -61,8 +61,8 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-
+                    android:layout_weight="1.6"
+                    android:id="@+id/tvPrimaryWeaponName"
                     android:text="Car-4"
                     android:textColor="@color/textSecondary"
                     android:textSize="20sp"
@@ -100,7 +100,7 @@
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="0.5"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -110,28 +110,28 @@
                         android:textColor="@color/textHint"
                         android:layout_gravity="center"
                         android:id="@+id/tvDamageValuePrimary"
-                        android:text="0"/>
+                        android:text="20.0"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:text="0"
+                        android:text="20.0"
                         android:id="@+id/tvAccuracyValuePrimary"
                         android:layout_gravity="center"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:id="@+id/tvStabiltyValuePrimary"
+                        android:id="@+id/tvStabilityValuePrimary"
                         android:layout_gravity="center"
-                        android:text="0"/>
+                        android:text="20.0"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
                         android:layout_gravity="center"
                         android:id="@+id/tvConcealmentValuePrimary"
-                        android:text="0"/>
+                        android:text="20.0"/>
 
 
                 </LinearLayout>
@@ -149,8 +149,8 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-
+                    android:layout_weight="1.6"
+                    android:id="@+id/tvSecondaryWeaponName"
                     android:text="Loco"
                     android:textColor="@color/textSecondary"
                     android:textSize="20sp"
@@ -188,7 +188,7 @@
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="0.5"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -198,28 +198,28 @@
                         android:textColor="@color/textHint"
                         android:layout_gravity="center"
                         android:id="@+id/tvDamageValueSecondary"
-                        android:text="0"/>
+                        android:text="20.0"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:text="0"
+                        android:text="20.0"
                         android:id="@+id/tvAccuracyValueSecondary"
                         android:layout_gravity="center"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:id="@+id/tvStabiltyValueSecondary"
+                        android:id="@+id/tvStabilityValueSecondary"
                         android:layout_gravity="center"
-                        android:text="0"/>
+                        android:text="20.0"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
                         android:layout_gravity="center"
                         android:id="@+id/tvConcealmentValueSecondary"
-                        android:text="0"/>
+                        android:text="20.0"/>
 
 
                 </LinearLayout>

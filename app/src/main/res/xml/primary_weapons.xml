@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon_group>
+    <group_name>assault</group_name>
+    <weapon_type>primary</weapon_type>
+    <weapon>
+        <pd2skills>24</pd2skills>
+        <name>Golden AK</name>
+        <rof>561</rof>
+        <total>90</total>
+        <mag>30</mag>
+        <damage>40</damage>
+        <accuracy>10</accuracy>
+        <stability>12.5</stability>
+        <concealment>11</concealment>
+        <threat>22</threat>
+        <attachments></attachments>
+    </weapon>
+    <weapon>
+        <pd2skills>10</pd2skills>
+        <name>Car-4</name>
+        <rof>600</rof>
+        <total>150</total>
+        <mag>30</mag>
+        <damage>22.5</damage>
+        <accuracy>12</accuracy>
+        <stability>17.5</stability>
+        <concealment>20</concealment>
+        <threat>14</threat>
+        <attachments></attachments>
+    </weapon>
+</weapon_group>

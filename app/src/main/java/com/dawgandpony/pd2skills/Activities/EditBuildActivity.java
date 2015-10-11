@@ -17,6 +17,8 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
+import com.dawgandpony.pd2skills.BuildObjects.Weapon;
+import com.dawgandpony.pd2skills.BuildObjects.WeaponBuild;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Dialogs.PD2SkillsExportDialog;
@@ -28,6 +30,7 @@ import com.dawgandpony.pd2skills.Fragments.InfamyFragment;
 import com.dawgandpony.pd2skills.Fragments.PerkDeckFragment;
 import com.dawgandpony.pd2skills.Fragments.SkillTreeFragment;
 import com.dawgandpony.pd2skills.Fragments.TaskFragment;
+import com.dawgandpony.pd2skills.Fragments.WeaponListFragment;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.URLEncoder;
 
@@ -99,8 +102,8 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
 
         MaterialSection secPD = newSection("Perk Deck", PerkDeckFragment.newInstance());
 
-        MaterialSection secPrimary = newSection("Primary Weapon", new BlankFragment());
-        MaterialSection secSecondaty = newSection("Secondary Weapon", new BlankFragment());
+        MaterialSection secPrimary = newSection("Primary Weapon", WeaponListFragment.newInstance(WeaponBuild.PRIMARY));
+        MaterialSection secSecondaty = newSection("Secondary Weapon", WeaponListFragment.newInstance(WeaponBuild.SECONDARY));
         MaterialSection secMelee = newSection("Melee Weapon", new BlankFragment());
 
         MaterialSection secArmour = newSection("Armour", ArmourFragment.newInstance());
@@ -233,7 +236,7 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
     }
 
     @Override
-    public void onPostExecute(Build build) {
+    public void onBuildReady(Build build) {
         currentBuild = build;
         currentBuildID = build.getId();
         if (mListCallbacks == null){
@@ -257,6 +260,10 @@ public class EditBuildActivity extends MaterialNavigationDrawer implements TaskF
     public interface BuildReadyCallbacks{
         void onBuildReady();
         void onBuildUpdated();
+    }
+
+    public interface WeaponsCallbacks{
+        void onWeaponsReady();
     }
 
 

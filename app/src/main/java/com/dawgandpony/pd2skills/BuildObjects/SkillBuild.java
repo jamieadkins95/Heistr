@@ -19,6 +19,7 @@ import java.util.ArrayList;
  * Created by Jamie on 15/07/2015.
  */
 public class SkillBuild {
+
     long id = -1;
 
     ArrayList<SkillTree> skillTrees;
@@ -44,7 +45,9 @@ public class SkillBuild {
     }
 
     public static SkillBuild newNonDBInstance(){
+
         SkillBuild skillBuild = new SkillBuild();
+        skillBuild.setId(Build.PD2SKILLS);
         for (int i = Trees.MASTERMIND; i <= Trees.FUGITIVE; i++){
             skillBuild.getSkillTrees().add(SkillTree.newNonDBInstance());
         }
@@ -79,6 +82,7 @@ public class SkillBuild {
     public static SkillBuild mergeBuilds(SkillBuild skillBuildFromXML, SkillBuild skillBuildFromDB) {
 
         SkillBuild mergedSkillBuild = new SkillBuild();
+        mergedSkillBuild.setId(skillBuildFromDB.getId());
 
         for (int tree = Trees.MASTERMIND; tree <= Trees.FUGITIVE; tree++){
             SkillTree newTree = new SkillTree();
@@ -264,7 +268,7 @@ public class SkillBuild {
                             case "pd2skills":
                                 currentSkill.setPd2SkillsSymbol(text);
                             default:
-                                Log.d("XML", "currentTag didnt match anything!");
+                                //Log.d("XML", "currentTag didnt match anything!");
                                 break;
 
 

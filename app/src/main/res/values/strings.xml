@@ -32,13 +32,21 @@
 
 
 
-    <string name="weapon_attribute_magazine_shorthand">Mag:</string>
-    <string name="weapon_attribute_ammo_shorthand">Amm:</string>
-    <string name="weapon_attribute_rof_shorthand">RoF:</string>
-    <string name="weapon_attribute_damage_shorthand">Dam:</string>
-    <string name="weapon_attribute_accuracy_shorthand">Acc:</string>
-    <string name="weapon_attribute_stability_shorthand">Stab:</string>
-    <string name="weapon_attribute_concealment_shorthand">Con:</string>
+    <string name="weapon_attribute_magazine_shorthand">Mag</string>
+    <string name="weapon_attribute_ammo_shorthand">Amm</string>
+    <string name="weapon_attribute_rof_shorthand">RoF</string>
+    <string name="weapon_attribute_damage_shorthand">Dam</string>
+    <string name="weapon_attribute_accuracy_shorthand">Acc</string>
+    <string name="weapon_attribute_stability_shorthand">Stab</string>
+    <string name="weapon_attribute_concealment_shorthand">Con</string>
+
+    <string name="weapon_attribute_magazine">Magazine Size</string>
+    <string name="weapon_attribute_ammo">Total Ammo</string>
+    <string name="weapon_attribute_rof">Rate of Fire</string>
+    <string name="weapon_attribute_damage">Damage</string>
+    <string name="weapon_attribute_accuracy">Accuracy</string>
+    <string name="weapon_attribute_stability">Stability</string>
+    <string name="weapon_attribute_concealment">Concealment</string>
 
 
     <string name="message_new_build">Enter a name for this new build.</string>
@@ -55,6 +63,21 @@
     <string name="new_build_with">with</string>
     <string name="action_rename">Rename</string>
     <string name="cancel">Cancel</string>
+
+    <string name="default20">20.0</string>
+    <string name="default0">0</string>
+    <string name="attribute">Attribute</string>
+    <string name="base">Base</string>
+    <string name="mod">Mod</string>
+    <string name="skill">Skill</string>
+    <string name="empty_weapon_list">No weapons yet.</string>
+    <string name="totsl">Total</string>
+    <string name="action_make_current">Make current</string>
+    <string name="hint_weapon_name">Weapon Name</string>
+    <string name="create">Create</string>
+    <string name="new_weapon_template">as a template</string>
+    <string name="new_weapon_is">is a</string>
+    <string name="new_weapon_using">using</string>
 
 
     <string-array name="skill_trees">
@@ -163,6 +186,13 @@
     <string name="primary_weapon">Primary Weapon</string>
     <string name="secondary_weapon">Secondary Weapon</string>
     <string name="melee_weapon">Melee Weapon</string>
+    <string name="title_activity_edit_weapon">EditWeaponActivity</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    
+    <string name="action_equip">Equip</string>
 
 
 </resources>

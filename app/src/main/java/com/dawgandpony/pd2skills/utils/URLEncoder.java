@@ -9,6 +9,8 @@ import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
+import com.dawgandpony.pd2skills.BuildObjects.Weapon;
+import com.dawgandpony.pd2skills.BuildObjects.WeaponBuild;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Database.DataSourceInfamies;
@@ -124,6 +126,8 @@ public class URLEncoder {
             Log.d("URL DECODER", remaining);
 
             b.setSkillBuild(SkillBuild.newNonDBInstance());
+            b.setWeaponBuild(new WeaponBuild());
+            b.getWeaponBuild().setId(Build.PD2SKILLS);
 
             while (!remaining.equals("")){
                 int end = remaining.indexOf(":");

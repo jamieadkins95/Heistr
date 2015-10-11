@@ -79,7 +79,7 @@ public class NewBuildDialog extends DialogFragment {
         // Pass null as the parent view because its going in the dialog layout
 
         builder.setTitle("New Build")
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
 
                         //Name

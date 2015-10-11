@@ -34,6 +34,11 @@
             android:name=".Activities.EditBuildActivity2"
             android:label="@string/title_activity_edit_build2" >
         </activity>
+        <activity
+        android:name=".Activities.EditWeaponActivity"
+        android:theme="@style/AppThemeNoActionBar"
+        android:label="@string/title_activity_edit_weapon" >
+    </activity>
     </application>
 
 </manifest>

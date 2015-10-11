@@ -13,14 +13,16 @@ import java.util.Random;
  * Created by Jamie on 14/07/2015.
  */
 public class Build {
-
+    public final static long PD2SKILLS = -2;
     public final static long NEW_BUILD = -1;
 
     long id;
     String name = "";
-    long skillBuildID;
     SkillBuild skillBuild;
+    WeaponBuild weaponBuild;
     ArrayList<Boolean> infamies;
+
+    ArrayList<Weapon> weaponsFromXML;
     
     int perkDeck = 0;
     int armour = 0;
@@ -32,7 +34,13 @@ public class Build {
         for (int i = 0; i < 4; i++){infamies.add(false);};
     }
 
+    public WeaponBuild getWeaponBuild() {
+        return weaponBuild;
+    }
 
+    public void setWeaponBuild(WeaponBuild weaponBuild) {
+        this.weaponBuild = weaponBuild;
+    }
 
     public String getName() {
         return name;
@@ -71,16 +79,16 @@ public class Build {
         return id;
     }
 
+    public ArrayList<Weapon> getWeaponsFromXML() {
+        return weaponsFromXML;
+    }
+
+    public void setWeaponsFromXML(ArrayList<Weapon> weaponsFromXML) {
+        this.weaponsFromXML = weaponsFromXML;
+    }
+
     public void setId(long id) {
         this.id = id;
-    }
-
-    public long getSkillBuildID() {
-        return skillBuildID;
-    }
-
-    public void setSkillBuildID(long skillBuildID) {
-        this.skillBuildID = skillBuildID;
     }
 
     public void updateInfamy(Context context, int infamy, boolean enabled){
