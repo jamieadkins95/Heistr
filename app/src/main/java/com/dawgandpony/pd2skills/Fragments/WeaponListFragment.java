@@ -1,5 +1,6 @@
 package com.dawgandpony.pd2skills.Fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -37,7 +38,6 @@ import java.util.ArrayList;
 public class WeaponListFragment extends Fragment implements EditBuildActivity2.BuildReadyCallbacks, EditBuildActivity2.WeaponsCallbacks, NewWeaponDialog.NewWeaponDialogListener{
 
     public final static String EXTRA_WEAPON_ID = "com.dawgandpony.pd2skills.WEAPONID";
-    public static final int WEAPON_EDIT_REQUEST = 505;  // The request code
 
     ListView lvCurrentWeapon;
     ListView lvOtherWeapons;
@@ -199,7 +199,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity2.B
     private void MoveToEditWeaponActivity(long id){
         Intent intent = new Intent(getActivity(), EditWeaponActivity.class);
         intent.putExtra(EXTRA_WEAPON_ID, id);
-        startActivityForResult(intent, WEAPON_EDIT_REQUEST);
+        getActivity().startActivityForResult(intent, EditBuildActivity2.WEAPON_EDIT_REQUEST);
     }
 
     @Override

@@ -50,6 +50,7 @@ public class EditBuildActivity2 extends AppCompatActivity implements TaskFragmen
     private final static String BUILD_ID = "BuildID";
     private final static String FRAGMENT_INDEX = "FragmentInd";
     private final static String ACTIVITY_START = "StartAct";
+    public static final int WEAPON_EDIT_REQUEST = 505;  // The request code
     private static final String TAG = EditBuildActivity2.class.getSimpleName();
 
     private Intent intent;
@@ -230,8 +231,11 @@ public class EditBuildActivity2 extends AppCompatActivity implements TaskFragmen
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         // Check which request we're responding to
-        if (requestCode == WeaponListFragment.WEAPON_EDIT_REQUEST) {
+        if (requestCode == WEAPON_EDIT_REQUEST) {
             // Make sure the request was successful
+            int type = intent.getIntExtra(EditWeaponActivity.EXTRA_WEAPON_TYPE, WeaponBuild.PRIMARY);
+            int id = mNavigationView.getMenu().getItem(8 + type).getItemId();
+            //mNavigationView.getMenu().performIdentifierAction(id, 0);
             if (resultCode == Activity.RESULT_OK) {
                 // Equip Weapon
                 Toast.makeText(this, "Equipped weapon", Toast.LENGTH_SHORT).show();

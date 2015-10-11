@@ -35,6 +35,7 @@ import com.dawgandpony.pd2skills.R;
  */
 public class EditWeaponActivity extends AppCompatActivity {
 
+    public static final String EXTRA_WEAPON_TYPE = "WeaponType";
     Weapon currentWeapon;
 
     @Override
@@ -68,6 +69,7 @@ public class EditWeaponActivity extends AppCompatActivity {
             case android.R.id.home:
                 Intent intent = this.getIntent();
                 intent.putExtra(WeaponListFragment.EXTRA_WEAPON_ID, -2);
+                intent.putExtra(EXTRA_WEAPON_TYPE, 0);
                 this.setResult(RESULT_CANCELED, intent);
                 finish();
                 return true;
