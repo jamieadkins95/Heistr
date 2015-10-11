@@ -24,6 +24,11 @@
     <string name="technician_shorthand">Tech</string>
     <string name="ghost_shorthand">Gho</string>
     <string name="fugitive_shorthand">Fug</string>
+    <string name="mastermind">Mastermind</string>
+    <string name="enforcer">Enforcer</string>
+    <string name="technician">Technician</string>
+    <string name="ghost">Ghost</string>
+    <string name="fugitive">Fugitive</string>
 
 
 
@@ -146,7 +151,18 @@
         <item>4 health regen every 0.5 seconds for 6 seconds on hit (can stack but will only occur every 1.5 seconds, only with Two-Piece Suit or Lightweight Ballistic Vest)\n+20% health\n+10% chance to pierce tan armour</item>
         <item>Up to +60% armour regen and +20% movement speed when below 50% health</item>
     </string-array>
+    <string name="title_activity_edit_build2">EditBuildActivity2</string>
 
+    <string name="hello_world">Hello world!</string>
+    <string name="build_list">Build List</string>
+    <string name="action_about">About</string>
+    <string name="header_navigation">Navigation</string>
+    <string name="infamy">Infamy</string>
+    <string name="perk_deck">Perk Deck</string>
+    <string name="armour">Armour</string>
+    <string name="primary_weapon">Primary Weapon</string>
+    <string name="secondary_weapon">Secondary Weapon</string>
+    <string name="melee_weapon">Melee Weapon</string>
 
 
 </resources>
