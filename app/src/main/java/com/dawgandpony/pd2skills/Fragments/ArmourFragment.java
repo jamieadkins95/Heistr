@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity2;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.R;

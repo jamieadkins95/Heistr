@@ -12,7 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity2;
 import com.dawgandpony.pd2skills.Dialogs.PerkDeckDialog;
 import com.dawgandpony.pd2skills.R;

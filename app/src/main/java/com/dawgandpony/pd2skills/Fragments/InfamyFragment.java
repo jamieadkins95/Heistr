@@ -14,7 +14,6 @@ import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Switch;
 
-import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity2;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.R;

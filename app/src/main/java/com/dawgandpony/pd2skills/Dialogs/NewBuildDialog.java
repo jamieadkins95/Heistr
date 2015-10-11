@@ -16,7 +16,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
+
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.Fragments.BuildListFragment;
 import com.dawgandpony.pd2skills.R;

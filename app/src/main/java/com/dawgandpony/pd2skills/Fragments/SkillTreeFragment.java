@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity2;
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTree;

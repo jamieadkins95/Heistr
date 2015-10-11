@@ -21,7 +21,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity2;
 import com.dawgandpony.pd2skills.Activities.EditWeaponActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
