@@ -15,6 +15,14 @@
         <item name="android:textColorSecondary">@color/primary</item>
         <item name="android:navigationBarColor">@color/primary</item>
     </style>
+    <style name="EditBuildActivity" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorAccent">@color/primaryAccent</item>
+        <item name="android:colorPrimaryDark">@color/primaryDark</item>
+        <item name="android:textColorSecondary">@color/textSecondary</item>
+        <item name="android:textColorHighlight">@color/primaryAccent</item>
+        <item name="android:navigationBarColor">@color/primary</item>
+    </style>
 
     <style name="MyNavigationDrawerTheme" parent="MaterialNavigationDrawerTheme">
         <item name="colorPrimary">@color/primary</item>

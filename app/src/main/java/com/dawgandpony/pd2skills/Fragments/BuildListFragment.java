@@ -24,6 +24,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
+import com.dawgandpony.pd2skills.Activities.EditBuildActivity2;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Dialogs.NewBuildDialog;
@@ -187,7 +188,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
         for (int i = 0; i < lvBuilds.getAdapter().getCount(); i++){
             lvBuilds.setItemChecked(i, false);
         }
-        Intent intent = new Intent(getActivity(), EditBuildActivity.class);
+        Intent intent = new Intent(getActivity(), EditBuildActivity2.class);
         intent.putExtra(EXTRA_BUILD_ID, id);
         startActivity(intent);
     }

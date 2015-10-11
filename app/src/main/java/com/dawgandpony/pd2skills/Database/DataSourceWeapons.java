@@ -62,7 +62,6 @@ public class DataSourceWeapons {
 
     public void close(){
         dbHelper.close();
-
     }
 
     public WeaponBuild createAndInsertWeaponBuild(){

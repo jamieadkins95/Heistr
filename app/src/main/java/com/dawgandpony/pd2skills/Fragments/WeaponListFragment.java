@@ -1,12 +1,12 @@
 package com.dawgandpony.pd2skills.Fragments;
 
 import android.app.Activity;
-import android.app.DialogFragment;
-import android.app.Fragment;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.ActionMode;
@@ -22,6 +22,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
+import com.dawgandpony.pd2skills.Activities.EditBuildActivity2;
 import com.dawgandpony.pd2skills.Activities.EditWeaponActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
@@ -39,7 +40,7 @@ import java.util.ArrayList;
 /**
  * Created by Jamie on 26/09/2015.
  */
-public class WeaponListFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks, NewWeaponDialog.NewWeaponDialogListener{
+public class WeaponListFragment extends Fragment implements EditBuildActivity2.BuildReadyCallbacks, NewWeaponDialog.NewWeaponDialogListener{
 
     public final static String EXTRA_WEAPON_ID = "com.dawgandpony.pd2skills.WEAPONID";
     static final int WEAPON_EDIT_REQUEST = 505;  // The request code
@@ -50,7 +51,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     ArrayList<Weapon> baseWeaponInfo;
     int weaponType = 0;
 
-    EditBuildActivity activity;
+    EditBuildActivity2 activity;
 
     public WeaponListFragment() {
 
@@ -72,7 +73,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
         View rootView = inflater.inflate(R.layout.fragment_weapon_list, container, false);
 
-        activity = (EditBuildActivity) getActivity();
+        activity = (EditBuildActivity2) getActivity();
         baseWeaponInfo = new ArrayList<>();
 
         this.lvCurrentWeapon = (ListView) rootView.findViewById(R.id.lvCurrentWeapon);
@@ -173,20 +174,12 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
                 if (weaponList != null){
                     NewWeaponDialog dialog = NewWeaponDialog.newInstance(weaponList, baseWeaponInfo);
                     dialog.setTargetFragment(WeaponListFragment.this, BuildListFragment.NEW_DIALOG_FRAGMENT);
-                    dialog.show(getActivity().getFragmentManager(), "NewWeaponDialogFragment");
+                    dialog.show(getActivity().getSupportFragmentManager(), "NewWeaponDialogFragment");
                 }
 
             }
         });
         //endregion
-
-        if (activity.getCurrentBuild() == null){
-            activity.listenIn(this);
-        }
-        else {
-            onBuildReady();
-        }
-
         return rootView;
     }
 
@@ -208,18 +201,30 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     @Override
     public void onPause() {
         super.onPause();
-        for (int i = 0; i < lvCurrentWeapon.getAdapter().getCount(); i++){
+        /*for (int i = 0; i < lvCurrentWeapon.getAdapter().getCount(); i++){
             lvCurrentWeapon.setItemChecked(i, false);
         }
         for (int i = 0; i < lvOtherWeapons.getAdapter().getCount(); i++){
             lvOtherWeapons.setItemChecked(i, false);
-        }
+        }*/
     }
 
     private void MoveToEditWeaponActivity(long id){
         Intent intent = new Intent(getActivity(), EditWeaponActivity.class);
         intent.putExtra(EXTRA_WEAPON_ID, id);
         startActivityForResult(intent, WEAPON_EDIT_REQUEST);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (activity.getCurrentBuild() == null){
+            activity.listenIn(this);
+        }
+        else {
+            onBuildReady();
+        }
+
     }
 
     @Override
@@ -261,7 +266,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
         @Override
         protected ArrayList<Weapon> doInBackground(Void... params) {
-            ArrayList<Weapon> weapons;
+            ArrayList<Weapon> weapons = null;
 
             //Get list of skill builds from database.
             dataSourceWeapons = new DataSourceWeapons(getActivity(), activity.getCurrentBuild().getWeaponsFromXML());

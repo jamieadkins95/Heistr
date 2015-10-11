@@ -2,7 +2,7 @@ package com.dawgandpony.pd2skills.Fragments;
 
 
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.Switch;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
+import com.dawgandpony.pd2skills.Activities.EditBuildActivity2;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.R;
 
@@ -25,12 +26,12 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class InfamyFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks {
+public class InfamyFragment extends Fragment implements EditBuildActivity2.BuildReadyCallbacks {
 
     ListView lvInfamies;
 
 
-    EditBuildActivity activity;
+    EditBuildActivity2 activity;
 
 
     public InfamyFragment() {
@@ -46,7 +47,7 @@ public class InfamyFragment extends Fragment implements EditBuildActivity.BuildR
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        activity = (EditBuildActivity) getActivity();
+        activity = (EditBuildActivity2) getActivity();
 
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_infamy, container, false);
