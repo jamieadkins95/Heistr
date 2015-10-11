@@ -169,6 +169,13 @@
         <item>4 health regen every 0.5 seconds for 6 seconds on hit (can stack but will only occur every 1.5 seconds, only with Two-Piece Suit or Lightweight Ballistic Vest)\n+20% health\n+10% chance to pierce tan armour</item>
         <item>Up to +60% armour regen and +20% movement speed when below 50% health</item>
     </string-array>
+    <string name="title_activity_edit_weapon">EditWeaponActivity</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="hello_world">Hello world!</string>
 
 
 

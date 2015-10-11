@@ -21,6 +21,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
+import com.dawgandpony.pd2skills.Activities.EditWeaponActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
@@ -199,9 +200,9 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     }
 
     private void MoveToEditWeaponActivity(long id){
-        //Intent intent = new Intent(getActivity(), EditBuildActivity.class);
-        //intent.putExtra(EXTRA_WEAPON_ID, id);
-        //startActivity(intent);
+        Intent intent = new Intent(getActivity(), EditWeaponActivity.class);
+        intent.putExtra(EXTRA_WEAPON_ID, id);
+        startActivity(intent);
     }
 
     @Override
