@@ -27,6 +27,7 @@ import java.util.List;
 
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
 import com.dawgandpony.pd2skills.Fragments.BlankFragment;
+import com.dawgandpony.pd2skills.Fragments.WeaponListFragment;
 import com.dawgandpony.pd2skills.R;
 
 /**
@@ -66,8 +67,14 @@ public class EditWeaponActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 Intent intent = this.getIntent();
-                intent.putExtra("LOL", "TODO");
+                intent.putExtra(WeaponListFragment.EXTRA_WEAPON_ID, -2);
                 this.setResult(RESULT_CANCELED, intent);
+                finish();
+                return true;
+            case R.id.action_equip:
+                Intent intent2 = this.getIntent();
+                intent2.putExtra(WeaponListFragment.EXTRA_WEAPON_ID, -2);
+                this.setResult(RESULT_OK, intent2);
                 finish();
                 return true;
         }

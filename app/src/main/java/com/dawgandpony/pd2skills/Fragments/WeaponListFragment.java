@@ -1,9 +1,6 @@
 package com.dawgandpony.pd2skills.Fragments;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -25,12 +22,10 @@ import com.dawgandpony.pd2skills.Activities.EditBuildActivity2;
 import com.dawgandpony.pd2skills.Activities.EditWeaponActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
+import com.dawgandpony.pd2skills.BuildObjects.WeaponBuild;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
-import com.dawgandpony.pd2skills.Database.DataSourceWeapons;
 import com.dawgandpony.pd2skills.Dialogs.NewWeaponDialog;
 import com.dawgandpony.pd2skills.R;
-import com.dawgandpony.pd2skills.utils.ArrayAdapterBuildList;
-import com.dawgandpony.pd2skills.utils.ArrayAdapterWeaponList;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterWeaponListSmall;
 import com.melnykov.fab.FloatingActionButton;
 
@@ -39,10 +34,10 @@ import java.util.ArrayList;
 /**
  * Created by Jamie on 26/09/2015.
  */
-public class WeaponListFragment extends Fragment implements EditBuildActivity2.BuildReadyCallbacks, NewWeaponDialog.NewWeaponDialogListener{
+public class WeaponListFragment extends Fragment implements EditBuildActivity2.BuildReadyCallbacks, EditBuildActivity2.WeaponsCallbacks, NewWeaponDialog.NewWeaponDialogListener{
 
     public final static String EXTRA_WEAPON_ID = "com.dawgandpony.pd2skills.WEAPONID";
-    static final int WEAPON_EDIT_REQUEST = 505;  // The request code
+    public static final int WEAPON_EDIT_REQUEST = 505;  // The request code
 
     ListView lvCurrentWeapon;
     ListView lvOtherWeapons;
@@ -135,7 +130,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity2.B
                         dataSourceBuilds.DeleteBuild(selectedBuild.getId());
                         dataSourceBuilds.close();
 
-                        new GetWeaponsFromDBTask(activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType].getId(), lvCurrentWeapon, lvOtherWeapons).execute();
+                        //// TODO: 11/10/2015 refresh weapons
 
 
                         Log.d("Context Action", "Delete build " + selectedBuild.getSkillBuild().getId());
@@ -182,20 +177,6 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity2.B
         return rootView;
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // Check which request we're responding to
-        if (requestCode == WEAPON_EDIT_REQUEST) {
-            // Make sure the request was successful
-            if (resultCode == Activity.RESULT_OK) {
-                // Equip Weapon
-                Toast.makeText(getActivity(), "Equipped weapon", Toast.LENGTH_SHORT).show();
-            } else if (resultCode == Activity.RESULT_CANCELED){
-                // Don't equip weapon
-                Toast.makeText(getActivity(), "Didn't equip weapon", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
 
     @Override
     public void onPause() {
@@ -206,6 +187,13 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity2.B
         for (int i = 0; i < lvOtherWeapons.getAdapter().getCount(); i++){
             lvOtherWeapons.setItemChecked(i, false);
         }*/
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        activity.stopListening(this);
+        activity.stopListeningWeapon();
     }
 
     private void MoveToEditWeaponActivity(long id){
@@ -219,9 +207,13 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity2.B
         super.onResume();
         if (activity.getCurrentBuild() == null){
             activity.listenIn(this);
-        }
-        else {
+        } else {
             onBuildReady();
+        }
+        if(activity.getAllWeapons() == null){
+            activity.listenInWeapon(this);
+        } else {
+            onWeaponsReady();
         }
 
     }
@@ -233,7 +225,6 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity2.B
                 baseWeaponInfo.add(w);
             }
         }
-        new GetWeaponsFromDBTask(activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType].getId(), lvCurrentWeapon, lvOtherWeapons).execute();
     }
 
     @Override
@@ -246,65 +237,32 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity2.B
         Toast.makeText(getActivity(), "New weapon!", Toast.LENGTH_SHORT).show();
     }
 
-    private class GetWeaponsFromDBTask extends AsyncTask<Void, Integer, ArrayList<Weapon>> {
 
-        DataSourceWeapons dataSourceWeapons;
-
-        ListView listViewWeapons;
-        ListView listViewCurrent;
-        long current;
-
-        public GetWeaponsFromDBTask(long currentWeaponID, ListView lvCurrent, ListView lv) {
-            super();
-
-            listViewWeapons = lv;
-            current = currentWeaponID;
-            listViewCurrent = lvCurrent;
-
-        }
-
-        @Override
-        protected ArrayList<Weapon> doInBackground(Void... params) {
-            ArrayList<Weapon> weapons = null;
-
-            //Get list of skill builds from database.
-            dataSourceWeapons = new DataSourceWeapons(getActivity(), activity.getCurrentBuild().getWeaponsFromXML());
-            dataSourceWeapons.open();
-            weapons = dataSourceWeapons.getAllWeapons(weaponType);
-            dataSourceWeapons.close();
-
-            return weapons;
-        }
-
-        @Override
-        protected void onPostExecute(ArrayList<Weapon> weapons) {
-            super.onPostExecute(weapons);
-
-            weaponList = weapons;
-
-            ArrayList<Weapon> allWeaponsButEquipped = new ArrayList<>();
-            for (Weapon w : weapons){
-                if (w.getId() != activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType].getId()){
-                    allWeaponsButEquipped.add(w);
-                }
+    @Override
+    public void onWeaponsReady() {
+        weaponList = activity.getAllWeapons()[weaponType];
+        ArrayList<Weapon> allWeaponsButEquipped = new ArrayList<>();
+        for (Weapon w : weaponList){
+            if (w.getId() != activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType].getId()){
+                allWeaponsButEquipped.add(w);
             }
-
-            ArrayAdapterWeaponListSmall itemsAdapter =
-                    new ArrayAdapterWeaponListSmall(getActivity(), allWeaponsButEquipped);
-
-            listViewWeapons.setAdapter(itemsAdapter);
-
-            ArrayList<Weapon> currentWeapon = new ArrayList<>();
-            for (Weapon w : weapons){
-                if (w.getId() == current){
-                    currentWeapon.add(w);
-                }
-            }
-
-            ArrayAdapterWeaponListSmall currentAdapter =
-                    new ArrayAdapterWeaponListSmall(getActivity(), currentWeapon);
-
-            listViewCurrent.setAdapter(currentAdapter);
         }
+
+        ArrayAdapterWeaponListSmall itemsAdapter =
+                new ArrayAdapterWeaponListSmall(getActivity(), allWeaponsButEquipped);
+
+        lvOtherWeapons.setAdapter(itemsAdapter);
+
+        ArrayList<Weapon> currentWeapon = new ArrayList<>();
+        for (Weapon w : weaponList){
+            if (w.getId() == activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType].getId()){
+                currentWeapon.add(w);
+            }
+        }
+
+        ArrayAdapterWeaponListSmall currentAdapter =
+                new ArrayAdapterWeaponListSmall(getActivity(), currentWeapon);
+
+        lvCurrentWeapon.setAdapter(currentAdapter);
     }
 }

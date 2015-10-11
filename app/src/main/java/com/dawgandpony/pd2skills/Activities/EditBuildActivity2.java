@@ -1,16 +1,14 @@
 package com.dawgandpony.pd2skills.Activities;
 
+import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
+import android.os.AsyncTask;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -20,12 +18,14 @@ import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
+import com.dawgandpony.pd2skills.BuildObjects.Weapon;
 import com.dawgandpony.pd2skills.BuildObjects.WeaponBuild;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
+import com.dawgandpony.pd2skills.Database.DataSourceWeapons;
 import com.dawgandpony.pd2skills.Dialogs.PD2SkillsExportDialog;
 import com.dawgandpony.pd2skills.Dialogs.RenameBuildDialog;
 import com.dawgandpony.pd2skills.Fragments.ArmourFragment;
@@ -57,6 +57,8 @@ public class EditBuildActivity2 extends AppCompatActivity implements TaskFragmen
     private long currentBuildID;
     private TaskFragment mTaskFragment;
     private ArrayList<BuildReadyCallbacks> mListCallbacks;
+    private WeaponsCallbacks mWeaponCallbacks = null;
+    private ArrayList<Weapon>[] allWeapons;
 
     private boolean activityStart = true;
     private int currentFragment = 0;
@@ -219,10 +221,25 @@ public class EditBuildActivity2 extends AppCompatActivity implements TaskFragmen
                             transaction.replace(R.id.contentFragment, fragment);
                             transaction.commit();
                         }
-                        
+
                         return true;
                     }
                 });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // Check which request we're responding to
+        if (requestCode == WeaponListFragment.WEAPON_EDIT_REQUEST) {
+            // Make sure the request was successful
+            if (resultCode == Activity.RESULT_OK) {
+                // Equip Weapon
+                Toast.makeText(this, "Equipped weapon", Toast.LENGTH_SHORT).show();
+            } else if (resultCode == Activity.RESULT_CANCELED){
+                // Don't equip weapon
+                Toast.makeText(this, "Didn't equip weapon", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
 
@@ -255,6 +272,8 @@ public class EditBuildActivity2 extends AppCompatActivity implements TaskFragmen
                 b.onBuildReady();
             }
         }
+
+        new GetWeaponsFromDBTask().execute();
     }
 
     public interface BuildReadyCallbacks{
@@ -314,12 +333,56 @@ public class EditBuildActivity2 extends AppCompatActivity implements TaskFragmen
         mListCallbacks.add((BuildReadyCallbacks) f);
     }
 
+    public void listenInWeapon(Fragment f){
+        mWeaponCallbacks = (WeaponsCallbacks) f;
+    }
+
     public void stopListening(Fragment f){
         mListCallbacks.remove(f);
     }
 
+    public void stopListeningWeapon(){
+        mWeaponCallbacks = null;
+    }
+
     public Build getCurrentBuild() {
         return currentBuild;
+    }
+
+
+    public ArrayList<Weapon>[] getAllWeapons() {
+        return allWeapons;
+    }
+
+    public class GetWeaponsFromDBTask extends AsyncTask<Void, Integer, ArrayList<Weapon>[]> {
+
+        public GetWeaponsFromDBTask() {
+            super();
+        }
+
+        @Override
+        protected ArrayList<Weapon>[] doInBackground(Void... params) {
+            ArrayList<Weapon>[] weapons = new ArrayList[3];
+
+            //Get list of skill builds from database.
+            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(EditBuildActivity2.this, currentBuild.getWeaponsFromXML());
+            dataSourceWeapons.open();
+            weapons[WeaponBuild.PRIMARY] = dataSourceWeapons.getAllWeapons(WeaponBuild.PRIMARY);
+            weapons[WeaponBuild.SECONDARY] = dataSourceWeapons.getAllWeapons(WeaponBuild.SECONDARY);
+            weapons[WeaponBuild.MELEE] = dataSourceWeapons.getAllWeapons(WeaponBuild.MELEE);
+            dataSourceWeapons.close();
+
+            return weapons;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<Weapon>[] weapons) {
+            super.onPostExecute(weapons);
+            allWeapons = weapons;
+            if(mWeaponCallbacks != null){
+                mWeaponCallbacks.onWeaponsReady();
+            }
+        }
     }
 
 }
