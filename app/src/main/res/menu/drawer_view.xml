@@ -41,6 +41,7 @@
     <item android:title="@string/header_navigation">
         <menu>
             <item
+                android:id="@+id/nav_home"
                 android:icon="@drawable/ic_home_white_24dp"
                 android:title="@string/build_list" />
             <item

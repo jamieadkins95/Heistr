@@ -199,6 +199,12 @@ public class EditBuildActivity2 extends AppCompatActivity implements TaskFragmen
                                 fragment = WeaponListFragment.newInstance(WeaponBuild.SECONDARY);
                                 currentFragment = 9;
                                 break;
+                            case R.id.nav_home:
+                                fragment = null;
+                                currentFragment = 0;
+                                Intent intent = new Intent(EditBuildActivity2.this, BuildListActivity.class);
+                                startActivity(intent);
+                                break;
                             default:
                                 fragment = new BlankFragment();
                                 currentFragment = 10;
@@ -207,11 +213,13 @@ public class EditBuildActivity2 extends AppCompatActivity implements TaskFragmen
 
                         mDrawerLayout.closeDrawers();
 
-                        FragmentManager fm = getSupportFragmentManager();
-                        FragmentTransaction transaction = fm.beginTransaction();
-                        transaction.replace(R.id.contentFragment, fragment);
-                        transaction.commit();
-
+                        if (fragment != null){
+                            FragmentManager fm = getSupportFragmentManager();
+                            FragmentTransaction transaction = fm.beginTransaction();
+                            transaction.replace(R.id.contentFragment, fragment);
+                            transaction.commit();
+                        }
+                        
                         return true;
                     }
                 });
