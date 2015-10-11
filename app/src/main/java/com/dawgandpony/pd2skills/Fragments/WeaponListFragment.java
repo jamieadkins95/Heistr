@@ -1,5 +1,6 @@
 package com.dawgandpony.pd2skills.Fragments;
 
+import android.app.Activity;
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.Intent;
@@ -41,6 +42,7 @@ import java.util.ArrayList;
 public class WeaponListFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks, NewWeaponDialog.NewWeaponDialogListener{
 
     public final static String EXTRA_WEAPON_ID = "com.dawgandpony.pd2skills.WEAPONID";
+    static final int WEAPON_EDIT_REQUEST = 505;  // The request code
 
     ListView lvCurrentWeapon;
     ListView lvOtherWeapons;
@@ -189,6 +191,21 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     }
 
     @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // Check which request we're responding to
+        if (requestCode == WEAPON_EDIT_REQUEST) {
+            // Make sure the request was successful
+            if (resultCode == Activity.RESULT_OK) {
+                // Equip Weapon
+                Toast.makeText(getActivity(), "Equipped weapon", Toast.LENGTH_SHORT).show();
+            } else if (resultCode == Activity.RESULT_CANCELED){
+                // Don't equip weapon
+                Toast.makeText(getActivity(), "Didn't equip weapon", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    @Override
     public void onPause() {
         super.onPause();
         for (int i = 0; i < lvCurrentWeapon.getAdapter().getCount(); i++){
@@ -202,7 +219,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     private void MoveToEditWeaponActivity(long id){
         Intent intent = new Intent(getActivity(), EditWeaponActivity.class);
         intent.putExtra(EXTRA_WEAPON_ID, id);
-        startActivity(intent);
+        startActivityForResult(intent, WEAPON_EDIT_REQUEST);
     }
 
     @Override

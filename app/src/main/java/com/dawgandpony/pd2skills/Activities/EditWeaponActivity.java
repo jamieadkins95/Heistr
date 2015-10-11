@@ -1,5 +1,6 @@
 package com.dawgandpony.pd2skills.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -24,6 +25,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.dawgandpony.pd2skills.BuildObjects.Weapon;
 import com.dawgandpony.pd2skills.Fragments.BlankFragment;
 import com.dawgandpony.pd2skills.R;
 
@@ -31,6 +33,8 @@ import com.dawgandpony.pd2skills.R;
  * Created by Jamie on 11/10/2015.
  */
 public class EditWeaponActivity extends AppCompatActivity {
+
+    Weapon currentWeapon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,25 @@ public class EditWeaponActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.edit_weapon, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent = this.getIntent();
+                intent.putExtra("LOL", "TODO");
+                this.setResult(RESULT_CANCELED, intent);
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
         adapter.addFragment(new BlankFragment(), "Category 1");
@@ -62,8 +85,6 @@ public class EditWeaponActivity extends AppCompatActivity {
         adapter.addFragment(new BlankFragment(), "Category 3");
         adapter.addFragment(new BlankFragment(), "Category 3");
         adapter.addFragment(new BlankFragment(), "Category 3");
-
-
 
         viewPager.setAdapter(adapter);
     }
