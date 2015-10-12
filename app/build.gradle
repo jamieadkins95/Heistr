@@ -8,8 +8,8 @@ android {
         applicationId "com.dawgandpony.pd2skills"
         minSdkVersion 11
         targetSdkVersion 23
-        versionCode 17
-        versionName "1.2.3"
+        versionCode 18
+        versionName "1.2.4.1"
     }
     buildTypes {
         release {
