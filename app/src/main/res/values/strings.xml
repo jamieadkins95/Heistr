@@ -30,7 +30,23 @@
     <string name="ghost">Ghost</string>
     <string name="fugitive">Fugitive</string>
 
-
+    <string-array name="attachment_types">
+        <item>Barrel</item>
+        <item>Barrel Extension</item>
+        <item>Bayonet</item>
+        <item>Custom</item>
+        <item>Extra</item>
+        <item>Foregrip</item>
+        <item>Gadget</item>
+        <item>Grip</item>
+        <item>Lower Receiver</item>
+        <item>Magazine</item>
+        <item>Sight</item>
+        <item>Slide</item>
+        <item>Stock</item>
+        <item>Suppressor</item>
+        <item>Upper Receiver</item>
+    </string-array>
 
     <string name="weapon_attribute_magazine_shorthand">Mag</string>
     <string name="weapon_attribute_ammo_shorthand">Amm</string>

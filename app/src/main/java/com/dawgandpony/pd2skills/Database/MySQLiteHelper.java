@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.dawgandpony.pd2skills.BuildObjects.Attachment;
+
 /**
  * Created by Jamie on 15/07/2015.
  */
@@ -78,21 +80,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String TABLE_WEAPONS = "tbWeapons";
     public static final String COLUMN_WEAPON_TYPE = "weaponType";
     public static final String COLUMN_PD2SKILLS_ID= "pd2skillsID";
-    public static final String COLUMN_MOD_BARREL= "barrel";
-    public static final String COLUMN_MOD_BARREL_EXTENSION = "barrelExt";
-    public static final String COLUMN_MOD_BAYONET = "bayonet";
-    public static final String COLUMN_MOD_CUSTOM = "modCustom"; //Just to make sure not a keyword
-    public static final String COLUMN_MOD_EXTRA = "modExtra"; //Just to make sure not a keyword
-    public static final String COLUMN_MOD_FOREGRIP = "foregrip";
-    public static final String COLUMN_MOD_GADGET = "gadget";
-    public static final String COLUMN_MOD_GRIP = "grip";
-    public static final String COLUMN_MOD_LOWER_RECEIVER = "lReceiver";
-    public static final String COLUMN_MOD_MAGAZINE = "magazine";
-    public static final String COLUMN_MOD_SIGHT = "sight";
-    public static final String COLUMN_MOD_SLIDE = "slide";
-    public static final String COLUMN_MOD_STOCK = "stock";
-    public static final String COLUMN_MOD_SUPPRESSOR = "suppressor";
-    public static final String COLUMN_MOD_UPPER_RECEIVER = "uReceiver";
+    public static final String[] COLUMNS_ATTACHMENTS = new String[]{"barrel", "barrelExt",
+            "bayonet", "modCustom", "modExtra", "foregrip", "gadget", "grip", "lReceiver",
+            "magazine", "sight", "slide", "stock", "suppressor", "uReceiver"};
 
 
     private static final String CREATE_WEAPON_TABLE = "create table if not exists "
@@ -100,21 +90,21 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + " integer primary key autoincrement, " + COLUMN_PD2SKILLS_ID
             + " integer," + COLUMN_WEAPON_TYPE
             + " integer," + COLUMN_NAME
-            + " text," + COLUMN_MOD_BARREL
-            + " integer," + COLUMN_MOD_BARREL_EXTENSION
-            + " integer," + COLUMN_MOD_BAYONET
-            + " integer," + COLUMN_MOD_CUSTOM
-            + " integer," + COLUMN_MOD_EXTRA
-            + " integer," + COLUMN_MOD_FOREGRIP
-            + " integer," + COLUMN_MOD_GADGET
-            + " integer," + COLUMN_MOD_GRIP
-            + " integer," + COLUMN_MOD_LOWER_RECEIVER
-            + " integer," + COLUMN_MOD_MAGAZINE
-            + " integer," + COLUMN_MOD_SIGHT
-            + " integer," + COLUMN_MOD_SLIDE
-            + " integer," + COLUMN_MOD_STOCK
-            + " integer," + COLUMN_MOD_SUPPRESSOR
-            + " integer," + COLUMN_MOD_UPPER_RECEIVER
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_BARREL]
+            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_BARREL_EXTENSION]
+            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_BAYONET]
+            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_CUSTOM]
+            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_EXTRA]
+            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_FOREGRIP]
+            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_GADGET]
+            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_GRIP]
+            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_LOWER_RECEIVER]
+            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_MAGAZINE]
+            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_SIGHT]
+            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_SLIDE]
+            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_STOCK]
+            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_SUPPRESSOR]
+            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_UPPER_RECEIVER]
             + " integer);";
     //endregion
 

@@ -26,6 +26,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
+import com.dawgandpony.pd2skills.Database.DataSourceWeapons;
+import com.dawgandpony.pd2skills.Database.MySQLiteHelper;
 import com.dawgandpony.pd2skills.Fragments.BlankFragment;
 import com.dawgandpony.pd2skills.Fragments.WeaponListFragment;
 import com.dawgandpony.pd2skills.R;
@@ -85,15 +87,13 @@ public class EditWeaponActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
-        adapter.addFragment(new BlankFragment(), "Category 1");
-        adapter.addFragment(new BlankFragment(), "Category 2");
-        adapter.addFragment(new BlankFragment(), "Category 3");
-        adapter.addFragment(new BlankFragment(), "Category 3");
-        adapter.addFragment(new BlankFragment(), "Category 3");
-        adapter.addFragment(new BlankFragment(), "Category 3");
-        adapter.addFragment(new BlankFragment(), "Category 3");
-        adapter.addFragment(new BlankFragment(), "Category 3");
-        adapter.addFragment(new BlankFragment(), "Category 3");
+        
+        adapter.addFragment(new BlankFragment(), "Overview");
+
+        String[] attachment_types = getResources().getStringArray(R.array.attachment_types);
+        for (int i = 0; i < MySQLiteHelper.COLUMNS_ATTACHMENTS.length; i++){
+            adapter.addFragment(new BlankFragment(), attachment_types[i]);
+        }
 
         viewPager.setAdapter(adapter);
     }
