@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.dawgandpony.pd2skills.Activities.EditBuildActivity2;
+import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Skill;
 import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
 import com.dawgandpony.pd2skills.R;
@@ -21,11 +21,11 @@ import com.dawgandpony.pd2skills.utils.ArrayAdapterSkillTierList;
  * Use the {@link SkillTreeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SkillTreeFragment extends Fragment implements EditBuildActivity2.BuildReadyCallbacks, ArrayAdapterSkillTierList.AdapterEvents{
+public class SkillTreeFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks, ArrayAdapterSkillTierList.AdapterEvents{
     // the fragment initialization parameters
     private static final String ARG_TREE = "tree";
 
-    EditBuildActivity2 activity;
+    EditBuildActivity activity;
     private int skillTreeNum;
     SkillTree currentSkillTree;
 
@@ -73,7 +73,7 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity2.Bu
     @Override
     public void onResume() {
         super.onResume();
-        activity = (EditBuildActivity2) getActivity();
+        activity = (EditBuildActivity) getActivity();
         if (activity.getCurrentBuild() == null){
             activity.listenIn(this);
         }

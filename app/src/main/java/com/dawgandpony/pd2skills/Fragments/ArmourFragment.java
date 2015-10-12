@@ -10,8 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.dawgandpony.pd2skills.Activities.EditBuildActivity2;
-import com.dawgandpony.pd2skills.BuildObjects.Build;
+import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.R;
 
 
@@ -22,13 +21,13 @@ import java.util.Arrays;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ArmourFragment extends Fragment implements EditBuildActivity2.BuildReadyCallbacks{
+public class ArmourFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks{
 
     ListView lvArmour;
 
 
 
-    EditBuildActivity2 activity;
+    EditBuildActivity activity;
 
 
     public ArmourFragment() {
@@ -49,7 +48,7 @@ public class ArmourFragment extends Fragment implements EditBuildActivity2.Build
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        activity = (EditBuildActivity2) getActivity();
+        activity = (EditBuildActivity) getActivity();
 
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_armour, container, false);

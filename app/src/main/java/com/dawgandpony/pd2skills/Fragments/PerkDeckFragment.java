@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.dawgandpony.pd2skills.Activities.EditBuildActivity2;
+import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.Dialogs.PerkDeckDialog;
 import com.dawgandpony.pd2skills.R;
 
@@ -22,13 +22,13 @@ import java.util.Arrays;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PerkDeckFragment extends Fragment implements EditBuildActivity2.BuildReadyCallbacks{
+public class PerkDeckFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks{
 
     ListView lvPerkDecks;
 
 
 
-    EditBuildActivity2 activity;
+    EditBuildActivity activity;
 
 
     public PerkDeckFragment() {
@@ -49,7 +49,7 @@ public class PerkDeckFragment extends Fragment implements EditBuildActivity2.Bui
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        activity = (EditBuildActivity2) getActivity();
+        activity = (EditBuildActivity) getActivity();
 
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_perk_deck, container, false);

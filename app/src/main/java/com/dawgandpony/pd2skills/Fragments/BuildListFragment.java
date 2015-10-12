@@ -7,7 +7,6 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.ActionMode;
@@ -19,11 +18,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.dawgandpony.pd2skills.Activities.EditBuildActivity2;
+import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Dialogs.NewBuildDialog;
@@ -187,7 +185,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
         for (int i = 0; i < lvBuilds.getAdapter().getCount(); i++){
             lvBuilds.setItemChecked(i, false);
         }
-        Intent intent = new Intent(getActivity(), EditBuildActivity2.class);
+        Intent intent = new Intent(getActivity(), EditBuildActivity.class);
         intent.putExtra(EXTRA_BUILD_ID, id);
         startActivity(intent);
     }

@@ -19,11 +19,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.dawgandpony.pd2skills.Activities.EditBuildActivity2;
+import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.Activities.EditWeaponActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
-import com.dawgandpony.pd2skills.BuildObjects.WeaponBuild;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Dialogs.NewWeaponDialog;
 import com.dawgandpony.pd2skills.R;
@@ -35,7 +34,7 @@ import java.util.ArrayList;
 /**
  * Created by Jamie on 26/09/2015.
  */
-public class WeaponListFragment extends Fragment implements EditBuildActivity2.BuildReadyCallbacks, EditBuildActivity2.WeaponsCallbacks, NewWeaponDialog.NewWeaponDialogListener{
+public class WeaponListFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks, EditBuildActivity.WeaponsCallbacks, NewWeaponDialog.NewWeaponDialogListener{
 
     public final static String EXTRA_WEAPON_ID = "com.dawgandpony.pd2skills.WEAPONID";
 
@@ -45,7 +44,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity2.B
     ArrayList<Weapon> baseWeaponInfo;
     int weaponType = 0;
 
-    EditBuildActivity2 activity;
+    EditBuildActivity activity;
 
     public WeaponListFragment() {
 
@@ -67,7 +66,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity2.B
 
         View rootView = inflater.inflate(R.layout.fragment_weapon_list, container, false);
 
-        activity = (EditBuildActivity2) getActivity();
+        activity = (EditBuildActivity) getActivity();
         baseWeaponInfo = new ArrayList<>();
 
         this.lvCurrentWeapon = (ListView) rootView.findViewById(R.id.lvCurrentWeapon);
@@ -180,7 +179,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity2.B
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         // Check which request we're responding to
-        if (requestCode == EditBuildActivity2.WEAPON_EDIT_REQUEST) {
+        if (requestCode == EditBuildActivity.WEAPON_EDIT_REQUEST) {
             // Make sure the request was successful
             //int type = data.getIntExtra(EditWeaponActivity.EXTRA_WEAPON_TYPE, WeaponBuild.PRIMARY);
             //int id = mNavigationView.getMenu().getItem(8 + type).getItemId();
@@ -216,7 +215,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity2.B
     private void MoveToEditWeaponActivity(long id){
         Intent intent = new Intent(getActivity(), EditWeaponActivity.class);
         intent.putExtra(EXTRA_WEAPON_ID, id);
-        startActivityForResult(intent, EditBuildActivity2.WEAPON_EDIT_REQUEST);
+        startActivityForResult(intent, EditBuildActivity.WEAPON_EDIT_REQUEST);
     }
 
     @Override

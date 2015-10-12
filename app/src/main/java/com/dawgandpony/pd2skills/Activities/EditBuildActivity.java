@@ -1,6 +1,5 @@
 package com.dawgandpony.pd2skills.Activities;
 
-import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -18,7 +17,6 @@ import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
@@ -42,7 +40,7 @@ import com.dawgandpony.pd2skills.utils.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EditBuildActivity2 extends AppCompatActivity implements TaskFragment.TaskCallbacks, RenameBuildDialog.RenameBuildDialogListener{
+public class EditBuildActivity extends AppCompatActivity implements TaskFragment.TaskCallbacks, RenameBuildDialog.RenameBuildDialogListener{
 
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
@@ -51,7 +49,7 @@ public class EditBuildActivity2 extends AppCompatActivity implements TaskFragmen
     private final static String FRAGMENT_INDEX = "FragmentInd";
     private final static String ACTIVITY_START = "StartAct";
     public static final int WEAPON_EDIT_REQUEST = 505;  // The request code
-    private static final String TAG = EditBuildActivity2.class.getSimpleName();
+    private static final String TAG = EditBuildActivity.class.getSimpleName();
 
     private Intent intent;
     private Build currentBuild;
@@ -200,7 +198,7 @@ public class EditBuildActivity2 extends AppCompatActivity implements TaskFragmen
                             case R.id.nav_home:
                                 loadFragment(10);
                                 currentFragment = 0;
-                                Intent intent = new Intent(EditBuildActivity2.this, BuildListActivity.class);
+                                Intent intent = new Intent(EditBuildActivity.this, BuildListActivity.class);
                                 startActivity(intent);
                                 break;
                             default:
@@ -342,7 +340,7 @@ public class EditBuildActivity2 extends AppCompatActivity implements TaskFragmen
             ArrayList<Weapon>[] weapons = new ArrayList[3];
 
             //Get list of skill builds from database.
-            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(EditBuildActivity2.this, currentBuild.getWeaponsFromXML());
+            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(EditBuildActivity.this, currentBuild.getWeaponsFromXML());
             dataSourceWeapons.open();
             weapons[WeaponBuild.PRIMARY] = dataSourceWeapons.getAllWeapons(WeaponBuild.PRIMARY);
             weapons[WeaponBuild.SECONDARY] = dataSourceWeapons.getAllWeapons(WeaponBuild.SECONDARY);
@@ -408,7 +406,7 @@ public class EditBuildActivity2 extends AppCompatActivity implements TaskFragmen
             case 10:
                 fragment = null;
                 currentFragment = 0;
-                Intent intent = new Intent(EditBuildActivity2.this, BuildListActivity.class);
+                Intent intent = new Intent(EditBuildActivity.this, BuildListActivity.class);
                 startActivity(intent);
                 break;
             default:

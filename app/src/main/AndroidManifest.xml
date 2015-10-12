@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.EditBuildActivity2"
+            android:name=".Activities.EditBuildActivity"
             android:theme="@style/EditBuildActivity"
             android:label="@string/title_activity_edit_build2" >
             <intent-filter>

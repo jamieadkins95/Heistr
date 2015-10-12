@@ -21,7 +21,6 @@
         <item name="colorAccent">@color/primaryAccent</item>
         <item name="android:colorPrimaryDark">@color/primaryDark</item>
         <item name="android:textColorSecondary">@color/textSecondary</item>
-        <item name="android:textColorHighlight">@color/primaryAccent</item>
         <item name="android:navigationBarColor">@color/primary</item>
     </style>
 
