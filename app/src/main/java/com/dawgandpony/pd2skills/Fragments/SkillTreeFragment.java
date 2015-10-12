@@ -85,7 +85,7 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity2.Bu
     @Override
     public void onDetach() {
         super.onDetach();
-        activity.stopListening(this);
+        activity = null;
     }
 
     @Override

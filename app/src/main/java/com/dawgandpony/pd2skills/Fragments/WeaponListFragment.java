@@ -177,6 +177,23 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity2.B
         return rootView;
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // Check which request we're responding to
+        if (requestCode == EditBuildActivity2.WEAPON_EDIT_REQUEST) {
+            // Make sure the request was successful
+            //int type = data.getIntExtra(EditWeaponActivity.EXTRA_WEAPON_TYPE, WeaponBuild.PRIMARY);
+            //int id = mNavigationView.getMenu().getItem(8 + type).getItemId();
+            //mNavigationView.getMenu().performIdentifierAction(id, 0);
+            if (resultCode == Activity.RESULT_OK) {
+                // Equip Weapon
+                Toast.makeText(getActivity(), "Equipped weapon", Toast.LENGTH_SHORT).show();
+            } else if (resultCode == Activity.RESULT_CANCELED){
+                // Don't equip weapon
+                Toast.makeText(getActivity(), "Didn't equip weapon", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
     @Override
     public void onPause() {
@@ -199,7 +216,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity2.B
     private void MoveToEditWeaponActivity(long id){
         Intent intent = new Intent(getActivity(), EditWeaponActivity.class);
         intent.putExtra(EXTRA_WEAPON_ID, id);
-        getActivity().startActivityForResult(intent, EditBuildActivity2.WEAPON_EDIT_REQUEST);
+        startActivityForResult(intent, EditBuildActivity2.WEAPON_EDIT_REQUEST);
     }
 
     @Override
