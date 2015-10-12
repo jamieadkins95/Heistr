@@ -186,10 +186,10 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
             //mNavigationView.getMenu().performIdentifierAction(id, 0);
             if (resultCode == Activity.RESULT_OK) {
                 // Equip Weapon
-                Toast.makeText(getActivity(), "Equipped weapon", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Changes were saved and weapon was equipped", Toast.LENGTH_SHORT).show();
             } else if (resultCode == Activity.RESULT_CANCELED){
                 // Don't equip weapon
-                Toast.makeText(getActivity(), "Didn't equip weapon", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Changes were saved and weapon was not equipped", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -250,7 +250,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
     @Override
     public void onDialogNewWeapon(DialogFragment dialog, String name, long baseWeaponID, int templateWeaponPos) {
-        Toast.makeText(getActivity(), "New weapon!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "WIP!", Toast.LENGTH_SHORT).show();
     }
 
 

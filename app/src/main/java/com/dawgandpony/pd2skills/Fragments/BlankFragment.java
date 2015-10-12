@@ -16,10 +16,24 @@ import com.dawgandpony.pd2skills.R;
  */
 public class BlankFragment extends Fragment {
 
+    private static final String ARG_TEXT = "textArg";
+
+    String text = "";
 
     public BlankFragment() {
         // Required empty public constructor
     }
+
+    public static BlankFragment newInstance(String text){
+        BlankFragment fragment = new BlankFragment();
+
+        Bundle args = new Bundle();
+        args.putString(ARG_TEXT, text);
+        fragment.setArguments(args);
+
+        return fragment;
+    }
+
 
 
     @Override
@@ -28,7 +42,11 @@ public class BlankFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_blank, container, false);
 
-        //TextView textView = (TextView) rootView.findViewById(R.id.)
+        TextView textView = (TextView) rootView.findViewById(R.id.tvBlank);
+        if (getArguments() != null){
+            textView.setText(getArguments().getString(ARG_TEXT));
+        }
+
         return rootView;
     }
 

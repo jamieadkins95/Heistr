@@ -87,8 +87,8 @@ public class EditWeaponActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
-        
-        adapter.addFragment(new BlankFragment(), "Overview");
+
+        adapter.addFragment(BlankFragment.newInstance("WIP"), "Overview");
 
         String[] attachment_types = getResources().getStringArray(R.array.attachment_types);
         for (int i = 0; i < MySQLiteHelper.COLUMNS_ATTACHMENTS.length; i++){
