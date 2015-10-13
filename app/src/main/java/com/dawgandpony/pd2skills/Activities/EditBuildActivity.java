@@ -32,6 +32,7 @@ import com.dawgandpony.pd2skills.Fragments.BuildListFragment;
 import com.dawgandpony.pd2skills.Fragments.InfamyFragment;
 import com.dawgandpony.pd2skills.Fragments.PerkDeckFragment;
 import com.dawgandpony.pd2skills.Fragments.SkillTreeFragment;
+import com.dawgandpony.pd2skills.Fragments.SkillTreeParentFragment;
 import com.dawgandpony.pd2skills.Fragments.TaskFragment;
 import com.dawgandpony.pd2skills.Fragments.WeaponListFragment;
 import com.dawgandpony.pd2skills.R;
@@ -59,7 +60,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     private WeaponsCallbacks mWeaponCallbacks = null;
     private ArrayList<Weapon>[] allWeapons;
 
-    private int currentFragment = R.id.nav_mastermind;
+    private int currentFragment = R.id.nav_skill_trees;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -309,7 +310,10 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         currentFragment = id;
         Fragment fragment;
         switch (id){
-            case R.id.nav_mastermind:
+            case R.id.nav_skill_trees:
+                fragment = new SkillTreeParentFragment();
+                break;
+            /*case R.id.nav_mastermind:
                 fragment = SkillTreeFragment.newInstance(Trees.MASTERMIND);
                 break;
             case R.id.nav_enforcer:
@@ -323,7 +327,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
                 break;
             case R.id.nav_fugitive:
                 fragment = SkillTreeFragment.newInstance(Trees.FUGITIVE);
-                break;
+                break;*/
             case R.id.nav_infamy:
                 fragment = InfamyFragment.newInstance();
                 break;
