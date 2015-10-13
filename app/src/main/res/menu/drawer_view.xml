@@ -2,40 +2,52 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_mastermind"
-            android:checked="true"
-            android:title="@string/mastermind" />
-        <item
-            android:id="@+id/nav_enforcer"
-            android:title="@string/enforcer" />
-        <item
-            android:id="@+id/nav_tech"
-            android:title="@string/technician" />
-        <item
-            android:id="@+id/nav_ghost"
-            android:title="@string/ghost" />
-        <item
-            android:id="@+id/nav_fugitive"
-            android:title="@string/fugitive" />
-        <item
-            android:id="@+id/nav_infamy"
-            android:title="@string/infamy" />
-        <item
-            android:id="@+id/nav_perk_deck"
-            android:title="@string/perk_deck" />
-        <item
-            android:id="@+id/nav_armour"
-            android:title="@string/armour" />
-        <item
-            android:id="@+id/nav_primary"
-            android:title="@string/primary_weapon" />
-        <item
-            android:id="@+id/nav_secondary"
-            android:title="@string/secondary_weapon" />
-        <item
-            android:id="@+id/nav_melee"
-            android:title="@string/melee_weapon" />
+        <item android:title="Skill Trees">
+            <menu>
+                <item
+                    android:id="@+id/nav_mastermind"
+                    android:checked="true"
+                    android:title="@string/mastermind" />
+                <item
+                    android:id="@+id/nav_enforcer"
+                    android:title="@string/enforcer" />
+                <item
+                    android:id="@+id/nav_tech"
+                    android:title="@string/technician" />
+                <item
+                    android:id="@+id/nav_ghost"
+                    android:title="@string/ghost" />
+                <item
+                    android:id="@+id/nav_fugitive"
+                    android:title="@string/fugitive" />
+            </menu>
+        </item>
+        <item android:title="Weapons">
+            <menu>
+                <item
+                    android:id="@+id/nav_primary"
+                    android:title="@string/primary_weapon" />
+                <item
+                    android:id="@+id/nav_secondary"
+                    android:title="@string/secondary_weapon" />
+                <item
+                    android:id="@+id/nav_melee"
+                    android:title="@string/melee_weapon" />
+            </menu>
+        </item>
+        <item android:title="Other">
+            <menu>
+                <item
+                    android:id="@+id/nav_infamy"
+                    android:title="@string/infamy" />
+                <item
+                    android:id="@+id/nav_perk_deck"
+                    android:title="@string/perk_deck" />
+                <item
+                    android:id="@+id/nav_armour"
+                    android:title="@string/armour" />
+            </menu>
+        </item>
     </group>
 
     <item android:title="@string/header_navigation">
