@@ -3,6 +3,7 @@ package com.dawgandpony.pd2skills.Activities;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.annotation.TransitionRes;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -48,6 +49,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     private static final String TAG_TASK_FRAGMENT = "task_fragment";
     private final static String BUILD_ID = "BuildID";
     private final static String FRAGMENT_INDEX = "FragmentInd";
+    public final static String SKILL_TREE_INDEX = "SkillTreeInd";
     private final static String ACTIVITY_START = "StartAct";
     public static final int WEAPON_EDIT_REQUEST = 505;  // The request code
     private static final String TAG = EditBuildActivity.class.getSimpleName();
@@ -61,6 +63,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     private ArrayList<Weapon>[] allWeapons;
 
     private int currentFragment = R.id.nav_skill_trees;
+    private int currentSkillTree = Trees.MASTERMIND;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +73,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
 
         if (savedInstanceState != null) {
             currentFragment = savedInstanceState.getInt(FRAGMENT_INDEX);
+            currentSkillTree = savedInstanceState.getInt(SKILL_TREE_INDEX);
         }
 
         setContentView(R.layout.activity_edit_build2);
@@ -108,6 +112,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putLong(BUILD_ID, currentBuild.getId());
         savedInstanceState.putInt(FRAGMENT_INDEX, currentFragment);
+        savedInstanceState.putInt(SKILL_TREE_INDEX, currentSkillTree);
         super.onSaveInstanceState(savedInstanceState);
     }
 
@@ -311,7 +316,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         Fragment fragment;
         switch (id){
             case R.id.nav_skill_trees:
-                fragment = new SkillTreeParentFragment();
+                fragment = SkillTreeParentFragment.newInstance(currentSkillTree);
                 break;
             /*case R.id.nav_mastermind:
                 fragment = SkillTreeFragment.newInstance(Trees.MASTERMIND);

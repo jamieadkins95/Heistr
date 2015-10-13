@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Database.MySQLiteHelper;
 import com.dawgandpony.pd2skills.R;
@@ -23,6 +24,22 @@ import java.util.List;
  * Created by Jamie on 13/10/2015.
  */
 public class SkillTreeParentFragment extends Fragment {
+
+    Adapter mAdapter;
+
+    public static SkillTreeParentFragment newInstance(int currentTree){
+        SkillTreeParentFragment fragment = new SkillTreeParentFragment();
+        Bundle args = new Bundle();
+        args.putInt(EditBuildActivity.SKILL_TREE_INDEX, currentTree);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mAdapter = new Adapter(getChildFragmentManager());
+    }
 
     @Nullable
     @Override
@@ -44,14 +61,15 @@ public class SkillTreeParentFragment extends Fragment {
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        Adapter adapter = new Adapter(getChildFragmentManager());
+
 
         for (int i = Trees.MASTERMIND; i <= Trees.FUGITIVE; i++){
             String title = getResources().getStringArray(R.array.skill_trees)[i];
-            adapter.addFragment(SkillTreeFragment.newInstance(i), title);
+            mAdapter.addFragment(SkillTreeFragment.newInstance(i), title);
         }
 
-        viewPager.setAdapter(adapter);
+        viewPager.setAdapter(mAdapter);
+        viewPager.setCurrentItem(getArguments().getInt(EditBuildActivity.SKILL_TREE_INDEX));
     }
 
     static class Adapter extends FragmentPagerAdapter {
