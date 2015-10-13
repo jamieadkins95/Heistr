@@ -1,6 +1,7 @@
 package com.dawgandpony.pd2skills.Fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
+import com.dawgandpony.pd2skills.Activities.EditWeaponActivity;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.Database.MySQLiteHelper;
 import com.dawgandpony.pd2skills.R;
@@ -26,6 +28,7 @@ import java.util.List;
 public class SkillTreeParentFragment extends Fragment {
 
     Adapter mAdapter;
+    EditBuildActivity activity;
 
     public static SkillTreeParentFragment newInstance(int currentTree){
         SkillTreeParentFragment fragment = new SkillTreeParentFragment();
@@ -33,6 +36,18 @@ public class SkillTreeParentFragment extends Fragment {
         args.putInt(EditBuildActivity.SKILL_TREE_INDEX, currentTree);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        activity = (EditBuildActivity) getActivity();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        activity = null;
     }
 
     @Override
@@ -70,6 +85,22 @@ public class SkillTreeParentFragment extends Fragment {
 
         viewPager.setAdapter(mAdapter);
         viewPager.setCurrentItem(getArguments().getInt(EditBuildActivity.SKILL_TREE_INDEX));
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                activity.updateCurrentSkillTree(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     static class Adapter extends FragmentPagerAdapter {

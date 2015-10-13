@@ -367,4 +367,8 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         }
     }
 
+    public void updateCurrentSkillTree(int tree){
+        currentSkillTree = tree;
+    }
+
 }
