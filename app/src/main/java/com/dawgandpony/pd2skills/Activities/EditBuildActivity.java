@@ -59,7 +59,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     private WeaponsCallbacks mWeaponCallbacks = null;
     private ArrayList<Weapon>[] allWeapons;
 
-    private int currentFragment = 0;
+    private int currentFragment = R.id.nav_mastermind;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +97,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
             mListCallbacks = new ArrayList<>();
         }
 
-        setTitle(mNavigationView.getMenu().getItem(currentFragment).getTitle());
+        //setTitle(mNavigationView.getMenu().getItem(currentFragment).getTitle());
 
         InitRetainedFragment();
 
@@ -153,63 +153,8 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         menuItem.setChecked(true);
                         setTitle(menuItem.getTitle());
-
-                        switch (menuItem.getItemId()){
-                            case R.id.nav_mastermind:
-                                loadFragment(0);
-                                currentFragment = 0;
-                                break;
-                            case R.id.nav_enforcer:
-                                loadFragment(1);
-                                currentFragment = 1;
-                                break;
-                            case R.id.nav_tech:
-                                loadFragment(2);
-                                currentFragment = 2;
-                                break;
-                            case R.id.nav_ghost:
-                                loadFragment(3);
-                                currentFragment = 3;
-                                break;
-                            case R.id.nav_fugitive:
-                                loadFragment(4);
-                                currentFragment = 4;
-                                break;
-                            case R.id.nav_infamy:
-                                loadFragment(5);
-                                currentFragment = 5;
-                                break;
-                            case R.id.nav_perk_deck:
-                                loadFragment(6);
-                                currentFragment = 6;
-                                break;
-                            case R.id.nav_armour:
-                                loadFragment(7);
-                                currentFragment = 7;
-                                break;
-                            case R.id.nav_primary:
-                                loadFragment(8);
-                                currentFragment = 8;
-                                break;
-                            case R.id.nav_secondary:
-                                loadFragment(9);
-                                currentFragment = 9;
-                                break;
-                            case R.id.nav_home:
-                                loadFragment(10);
-                                currentFragment = 0;
-                                Intent intent = new Intent(EditBuildActivity.this, BuildListActivity.class);
-                                startActivity(intent);
-                                break;
-                            default:
-                                loadFragment(0);
-                                currentFragment = 10;
-                                break;
-                        }
-
+                        loadFragment(menuItem.getItemId());
                         mDrawerLayout.closeDrawers();
-
-
                         return true;
                     }
                 });
@@ -360,60 +305,50 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         }
     }
 
-    public void loadFragment(int index){
+    public void loadFragment(int id){
+        currentFragment = id;
         Fragment fragment;
-        switch (index){
-            case 0:
+        switch (id){
+            case R.id.nav_mastermind:
                 fragment = SkillTreeFragment.newInstance(Trees.MASTERMIND);
-                currentFragment = 0;
                 break;
-            case 1:
+            case R.id.nav_enforcer:
                 fragment = SkillTreeFragment.newInstance(Trees.ENFORCER);
-                currentFragment = 1;
                 break;
-            case 2:
+            case R.id.nav_tech:
                 fragment = SkillTreeFragment.newInstance(Trees.TECHNICIAN);
-                currentFragment = 2;
                 break;
-            case 3:
+            case R.id.nav_ghost:
                 fragment = SkillTreeFragment.newInstance(Trees.GHOST);
-                currentFragment = 3;
                 break;
-            case 4:
+            case R.id.nav_fugitive:
                 fragment = SkillTreeFragment.newInstance(Trees.FUGITIVE);
-                currentFragment = 4;
                 break;
-            case 5:
+            case R.id.nav_infamy:
                 fragment = InfamyFragment.newInstance();
-                currentFragment = 5;
                 break;
-            case 6:
+            case R.id.nav_perk_deck:
                 fragment = PerkDeckFragment.newInstance();
-                currentFragment = 6;
                 break;
-            case 7:
+            case R.id.nav_armour:
                 fragment = ArmourFragment.newInstance();
-                currentFragment = 7;
                 break;
-            case 8:
+            case R.id.nav_primary:
                 fragment = WeaponListFragment.newInstance(WeaponBuild.PRIMARY);
-                currentFragment = 8;
                 break;
-            case 9:
+            case R.id.nav_secondary:
                 fragment = WeaponListFragment.newInstance(WeaponBuild.SECONDARY);
-                currentFragment = 9;
                 break;
-            case 10:
+            case R.id.nav_home:
                 fragment = null;
-                currentFragment = 0;
                 Intent intent = new Intent(EditBuildActivity.this, BuildListActivity.class);
                 startActivity(intent);
                 break;
             default:
                 fragment = new BlankFragment();
-                currentFragment = 10;
                 break;
         }
+
 
         if (fragment != null){
             FragmentManager fm = getSupportFragmentManager();
