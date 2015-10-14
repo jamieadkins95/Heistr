@@ -76,7 +76,9 @@ public class TaskFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "onCreate(Bundle)");
         super.onCreate(savedInstanceState);
-        currentBuildID = savedInstanceState.getLong(EXTRA_CURRENT_BUILD_ID);
+        if (savedInstanceState != null){
+            currentBuildID = savedInstanceState.getLong(EXTRA_CURRENT_BUILD_ID);
+        }
         setRetainInstance(true);
     }
 
