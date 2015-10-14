@@ -42,6 +42,7 @@ public class SkillTreeParentFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         activity = (EditBuildActivity) getActivity();
+        getActivity().setTitle(getString(R.string.skill_trees));
     }
 
     @Override
