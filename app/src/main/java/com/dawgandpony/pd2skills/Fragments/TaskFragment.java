@@ -23,6 +23,7 @@ import java.util.ArrayList;
  */
 public class TaskFragment extends Fragment {
     private static final String TAG = TaskFragment.class.getSimpleName();
+    private static final String EXTRA_CURRENT_BUILD_ID = "CURRENT_BUILD_ID";
     private static final boolean DEBUG = true; // Set this to false to disable logs.
 
     /**
@@ -75,6 +76,7 @@ public class TaskFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "onCreate(Bundle)");
         super.onCreate(savedInstanceState);
+        currentBuildID = savedInstanceState.getLong(EXTRA_CURRENT_BUILD_ID);
         setRetainInstance(true);
     }
 
@@ -91,8 +93,11 @@ public class TaskFragment extends Fragment {
         cancel();
     }
 
-
-
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putLong(EXTRA_CURRENT_BUILD_ID, currentBuildID);
+        super.onSaveInstanceState(outState);
+    }
 
     /*****************************/
     /***** TASK FRAGMENT API *****/
