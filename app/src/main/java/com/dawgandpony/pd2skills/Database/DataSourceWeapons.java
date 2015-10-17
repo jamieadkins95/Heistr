@@ -89,6 +89,27 @@ public class DataSourceWeapons {
 
     }
 
+    public Weapon createAndInsertWeapon(String name, long pd2skillsID, int weaponType){
+        ContentValues weaponValues = new ContentValues();
+        weaponValues.put(MySQLiteHelper.COLUMN_NAME, name);
+        weaponValues.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, pd2skillsID);
+        weaponValues.put(MySQLiteHelper.COLUMN_WEAPON_TYPE, weaponType);
+
+        long weaponID = database.insert(MySQLiteHelper.TABLE_WEAPONS, null, weaponValues);
+
+        Cursor cursorBuild = database.query(MySQLiteHelper.TABLE_WEAPONS,
+                weaponBuildColumns, MySQLiteHelper.COLUMN_ID + " = " + weaponID, null,
+                null, null, null);
+        cursorBuild.moveToFirst();
+
+
+        Weapon newWeapon = cursorToWeapon(cursorBuild);
+        cursorBuild.close();
+
+        Log.d("WeaponBuild inserted DB", newWeapon.getId() + "");
+        return newWeapon;
+    }
+
 
 
     public WeaponBuild getWeaponBuild(long id){

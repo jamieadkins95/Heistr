@@ -2,6 +2,7 @@ package com.dawgandpony.pd2skills.Fragments;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -24,6 +25,7 @@ import com.dawgandpony.pd2skills.Activities.EditWeaponActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
+import com.dawgandpony.pd2skills.Database.DataSourceWeapons;
 import com.dawgandpony.pd2skills.Dialogs.NewWeaponDialog;
 import com.dawgandpony.pd2skills.R;
 import com.dawgandpony.pd2skills.utils.ArrayAdapterWeaponListSmall;
@@ -250,7 +252,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
     @Override
     public void onDialogNewWeapon(DialogFragment dialog, String name, long baseWeaponID, int templateWeaponPos) {
-        Toast.makeText(getActivity(), "WIP!", Toast.LENGTH_SHORT).show();
+        new CreateNewWeapon(name, baseWeaponID).execute();
     }
 
 
@@ -280,5 +282,34 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
                 new ArrayAdapterWeaponListSmall(getActivity(), currentWeapon);
 
         lvCurrentWeapon.setAdapter(currentAdapter);
+    }
+
+    private class CreateNewWeapon extends AsyncTask<Void, Void, Weapon> {
+
+        String name;
+        long pd2skillsid;
+        int weaponType;
+
+        public CreateNewWeapon(String name, long pd2skillsid) {
+            super();
+            this.name = name;
+            this.pd2skillsid = pd2skillsid;
+        }
+
+        @Override
+        protected Weapon doInBackground(Void... params) {
+            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(getActivity(), baseWeaponInfo);
+            dataSourceWeapons.open();
+            Weapon w = dataSourceWeapons.createAndInsertWeapon(name, pd2skillsid, weaponType);
+            dataSourceWeapons.close();
+
+            return w;
+        }
+
+        @Override
+        protected void onPostExecute(Weapon w) {
+            super.onPostExecute(w);
+            MoveToEditWeaponActivity(w.getId());
+        }
     }
 }
