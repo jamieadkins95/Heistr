@@ -213,6 +213,19 @@ public class WeaponBuild {
 
     private static ArrayList<Long> attachmentsFromXML(String xml){
         ArrayList<Long> possibleAttachments = new ArrayList<>();
+        String current = "";
+        for (Character c : xml.toCharArray()){
+            if (c == ','){
+                possibleAttachments.add(Long.parseLong(current));
+                current = "";
+            } else {
+                current += c;
+            }
+        }
+        if (current.length() > 0 ){
+            possibleAttachments.add(Long.parseLong(current));
+        }
+
         return possibleAttachments;
     }
 }

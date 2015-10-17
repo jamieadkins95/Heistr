@@ -7,6 +7,12 @@ import java.util.ArrayList;
  */
 public class Weapon {
 
+    public static final int DAMAGE = 0;
+    public static final int ACCURACY = 0;
+    public static final int STABILITY = 0;
+    public static final int CONCEALMENT = 0;
+    public static final int THREAT = 0;
+
     long id = -1;
     long pd2skillsID = -1;
     String name = "Prim";
@@ -22,7 +28,7 @@ public class Weapon {
     int concealment = 0;
     int threat = 0;
     ArrayList<Long> possibleAttachments;
-    ArrayList<Attachment> attachments;
+    ArrayList<Long> attachments;
 
     public String getWeaponName() {
         return weaponName;
@@ -141,11 +147,11 @@ public class Weapon {
         this.possibleAttachments = possibleAttachments;
     }
 
-    public ArrayList<Attachment> getAttachments() {
+    public ArrayList<Long> getAttachments() {
         return attachments;
     }
 
-    public void setAttachments(ArrayList<Attachment> attachments) {
+    public void setAttachments(ArrayList<Long> attachments) {
         this.attachments = attachments;
     }
 

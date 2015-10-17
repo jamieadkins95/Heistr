@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<attachments>
+    <attachment_group>
+        <group_name>Barrel</group_name>
+        <attachment>
+            <name>Modern Barrel</name>
+            <pd2skills>51</pd2skills>
+            <damage>5</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>1</concealment>
+            <threat>0</threat>
+        </attachment>
+    </attachment_group>
+
+    <attachment_group>
+        <group_name>BarrelExt</group_name>
+        <attachment>
+            <name>Medium Suppressor</name>
+            <pd2skills>3</pd2skills>
+            <damage>-7.5</damage>
+            <accuracy>0</accuracy>
+            <stability>2.5</stability>
+            <concealment>-2</concealment>
+            <threat>-22</threat>
+        </attachment>
+    </attachment_group>
+</attachments>

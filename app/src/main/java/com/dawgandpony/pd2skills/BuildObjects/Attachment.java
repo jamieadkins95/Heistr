@@ -8,8 +8,8 @@ public class Attachment {
     public static final int MOD_BARREL= 0;
     public static final int MOD_BARREL_EXTENSION = 1;
     public static final int MOD_BAYONET = 2;
-    public static final int MOD_CUSTOM = 3; //Just to make sure not a keyword
-    public static final int MOD_EXTRA = 4; //Just to make sure not a keyword
+    public static final int MOD_CUSTOM = 3;
+    public static final int MOD_EXTRA = 4;
     public static final int MOD_FOREGRIP = 5;
     public static final int MOD_GADGET = 6;
     public static final int MOD_GRIP = 7;

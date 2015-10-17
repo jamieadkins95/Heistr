@@ -243,7 +243,11 @@ public class DataSourceWeapons {
         weapon.setPd2skillsID(cursorWeapon.getLong(1));
         weapon.setWeaponType(cursorWeapon.getInt(2));
         weapon.setName(cursorWeapon.getString(3));
-        weapon.setAttachments(attachmentsFromDB(cursorWeapon));
+        ArrayList<Long> attachments = new ArrayList<>();
+        for (int i = Attachment.MOD_BARREL; i <= Attachment.MOD_UPPER_RECEIVER; i++){
+            attachments.add(cursorWeapon.getLong(i));
+        }
+        weapon.setAttachments(attachments);
 
         Weapon merged = null;
         for (Weapon w : baseWeaponInfo){
@@ -256,13 +260,6 @@ public class DataSourceWeapons {
         }
 
         return merged;
-    }
-
-
-
-    private ArrayList<Attachment> attachmentsFromDB(Cursor dbAttachments){
-        ArrayList<Attachment> attachments = new ArrayList<>();
-        return attachments;
     }
 
 
