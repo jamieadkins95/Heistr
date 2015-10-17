@@ -98,7 +98,7 @@ public class DataSourceWeapons {
         long weaponID = database.insert(MySQLiteHelper.TABLE_WEAPONS, null, weaponValues);
 
         Cursor cursorBuild = database.query(MySQLiteHelper.TABLE_WEAPONS,
-                weaponBuildColumns, MySQLiteHelper.COLUMN_ID + " = " + weaponID, null,
+                weaponColumns, MySQLiteHelper.COLUMN_ID + " = " + weaponID, null,
                 null, null, null);
         cursorBuild.moveToFirst();
 
@@ -247,8 +247,11 @@ public class DataSourceWeapons {
 
         Weapon merged = null;
         for (Weapon w : baseWeaponInfo){
-            if (w.getPd2skillsID() == weapon.getPd2skillsID() && w.getWeaponType() == weapon.getWeaponType()){
-                merged = WeaponBuild.mergeWeapon(weapon, w);
+            if (w.getPd2skillsID() == weapon.getPd2skillsID()){
+                if (w.getWeaponType() == weapon.getWeaponType()){
+                    merged = WeaponBuild.mergeWeapon(weapon, w);
+                }
+
             }
         }
 

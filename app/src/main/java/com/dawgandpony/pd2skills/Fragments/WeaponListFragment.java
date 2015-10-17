@@ -181,6 +181,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         // Check which request we're responding to
+        activity.retrieveWeapons();
         if (requestCode == EditBuildActivity.WEAPON_EDIT_REQUEST) {
             // Make sure the request was successful
             //int type = data.getIntExtra(EditWeaponActivity.EXTRA_WEAPON_TYPE, WeaponBuild.PRIMARY);
@@ -199,12 +200,12 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     @Override
     public void onPause() {
         super.onPause();
-        /*for (int i = 0; i < lvCurrentWeapon.getAdapter().getCount(); i++){
+        for (int i = 0; i < lvCurrentWeapon.getAdapter().getCount(); i++){
             lvCurrentWeapon.setItemChecked(i, false);
         }
         for (int i = 0; i < lvOtherWeapons.getAdapter().getCount(); i++){
             lvOtherWeapons.setItemChecked(i, false);
-        }*/
+        }
     }
 
     @Override
@@ -288,7 +289,6 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
         String name;
         long pd2skillsid;
-        int weaponType;
 
         public CreateNewWeapon(String name, long pd2skillsid) {
             super();

@@ -199,7 +199,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
             }
         }
 
-        new GetWeaponsFromDBTask().execute();
+        retrieveWeapons();
     }
 
     public interface BuildReadyCallbacks{
@@ -209,6 +209,10 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
 
     public interface WeaponsCallbacks{
         void onWeaponsReady();
+    }
+
+    public void retrieveWeapons(){
+        new GetWeaponsFromDBTask().execute();
     }
 
     private void InitRetainedFragment() {

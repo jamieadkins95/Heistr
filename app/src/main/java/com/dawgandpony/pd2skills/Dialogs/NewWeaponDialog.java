@@ -117,14 +117,16 @@ public class NewWeaponDialog extends DialogFragment {
                         EditText etName = (EditText) getDialog().findViewById(R.id.etNewWeaponName);
                         final String name = etName.getText().toString();
 
-
+                        //Template
+                        Spinner spBaseWeapon = (Spinner) getDialog().findViewById(R.id.spBaseWeapon);
+                        int selectedBase = spBaseWeapon.getSelectedItemPosition(); // -1 for templete text
 
                         //Template
                         Spinner spTemplate = (Spinner) getDialog().findViewById(R.id.spTemplate);
                         int selected = spTemplate.getSelectedItemPosition() - 1; // -1 for templete text
 
 
-                        mListener.onDialogNewWeapon(NewWeaponDialog.this, name, 100000, selected);
+                        mListener.onDialogNewWeapon(NewWeaponDialog.this, name, allWeapons.get(selectedBase).getPd2skillsID(), selected);
 
                     }
                 })

@@ -3,7 +3,7 @@
     <group_name>melee</group_name>
     <weapon_type>melee</weapon_type>
     <weapon>
-        <pd2skills>25</pd2skills>
+        <pd2skills>100000</pd2skills>
         <name>tazer</name>
         <rof>667</rof>
         <total>154</total>

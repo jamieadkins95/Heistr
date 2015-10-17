@@ -203,7 +203,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                     break;
                 case 2:
                     values.put(MySQLiteHelper.COLUMN_NAME, "example");
-                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 25);
+                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 100000);
                     break;
             }
 
