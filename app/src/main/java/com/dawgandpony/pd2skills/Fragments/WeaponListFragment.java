@@ -24,6 +24,7 @@ import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.Activities.EditWeaponActivity;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
+import com.dawgandpony.pd2skills.BuildObjects.WeaponBuild;
 import com.dawgandpony.pd2skills.Database.DataSourceBuilds;
 import com.dawgandpony.pd2skills.Database.DataSourceWeapons;
 import com.dawgandpony.pd2skills.Dialogs.NewWeaponDialog;
@@ -42,9 +43,12 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
     ListView lvCurrentWeapon;
     ListView lvOtherWeapons;
-    ArrayList<Weapon> weaponList;
+    private ArrayList<Weapon> allWeapons;
     ArrayList<Weapon> baseWeaponInfo;
     int weaponType = 0;
+
+    ArrayAdapterWeaponListSmall mOtherAdapter;
+    ArrayAdapterWeaponListSmall currentAdapter;
 
     EditBuildActivity activity;
 
@@ -79,7 +83,6 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
         final FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fabNewBuild);
         fab.attachToListView(lvOtherWeapons);
 
-
         this.lvOtherWeapons.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
             @Override
             public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
@@ -106,6 +109,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
                         mode.finish();
                         return true;
                     case R.id.action_rename:
+                        Toast.makeText(getActivity(), "WIP", Toast.LENGTH_SHORT).show();
                         mode.finish();
                         return true;
 
@@ -125,23 +129,24 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
                 for (int i = 0; i < checked.size(); i++) {
                     if (checked.valueAt(i)) {
-                        Build selectedBuild = (Build) lvOtherWeapons.getItemAtPosition(checked.keyAt(i));
-                        DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(getActivity());
+                        Weapon selected = (Weapon) lvOtherWeapons.getItemAtPosition(checked.keyAt(i));
+                        DataSourceWeapons dataSourceBuilds = new DataSourceWeapons(getActivity(), baseWeaponInfo);
                         dataSourceBuilds.open();
-                        dataSourceBuilds.DeleteBuild(selectedBuild.getId());
+                        dataSourceBuilds.deleteWeapon(selected.getId());
                         dataSourceBuilds.close();
 
                         //// TODO: 11/10/2015 refresh weapons
 
 
-                        Log.d("Context Action", "Delete build " + selectedBuild.getSkillBuild().getId());
+                        Log.d("Context Action", "Delete weapon " + selected.getId());
 
                         fab.show();
 
                     }
                 }
 
-                Toast.makeText(getActivity(), "Build(s) deleted", Toast.LENGTH_SHORT).show();
+                new GetWeaponsFromDBTask().execute();
+                Toast.makeText(getActivity(), "Weapon(s) deleted", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -166,8 +171,8 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (weaponList != null){
-                    NewWeaponDialog dialog = NewWeaponDialog.newInstance(weaponList, baseWeaponInfo);
+                if (allWeapons != null){
+                    NewWeaponDialog dialog = NewWeaponDialog.newInstance(allWeapons, baseWeaponInfo);
                     dialog.setTargetFragment(WeaponListFragment.this, BuildListFragment.NEW_DIALOG_FRAGMENT);
                     dialog.show(getActivity().getSupportFragmentManager(), "NewWeaponDialogFragment");
                 }
@@ -181,7 +186,6 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         // Check which request we're responding to
-        activity.retrieveWeapons();
         if (requestCode == EditBuildActivity.WEAPON_EDIT_REQUEST) {
             // Make sure the request was successful
             //int type = data.getIntExtra(EditWeaponActivity.EXTRA_WEAPON_TYPE, WeaponBuild.PRIMARY);
@@ -212,7 +216,6 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     public void onDetach() {
         super.onDetach();
         activity.stopListening(this);
-        activity.stopListeningWeapon();
     }
 
     private void MoveToEditWeaponActivity(long id){
@@ -229,21 +232,15 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
         } else {
             onBuildReady();
         }
-        if(activity.getAllWeapons() == null){
-            activity.listenInWeapon(this);
-        } else {
-            onWeaponsReady();
-        }
-
     }
 
     @Override
     public void onBuildReady() {
         for (Weapon w : activity.getCurrentBuild().getWeaponsFromXML()){
-            if (w.getWeaponType() == weaponType){
-                baseWeaponInfo.add(w);
-            }
+            baseWeaponInfo.add(w);
         }
+
+        new GetWeaponsFromDBTask().execute();
     }
 
     @Override
@@ -259,30 +256,68 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
     @Override
     public void onWeaponsReady() {
-        weaponList = activity.getAllWeapons()[weaponType];
         ArrayList<Weapon> allWeaponsButEquipped = new ArrayList<>();
-        for (Weapon w : weaponList){
+        for (Weapon w : allWeapons){
             if (w.getId() != activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType].getId()){
                 allWeaponsButEquipped.add(w);
             }
         }
 
-        ArrayAdapterWeaponListSmall itemsAdapter =
-                new ArrayAdapterWeaponListSmall(getActivity(), allWeaponsButEquipped);
+        if (mOtherAdapter == null){
+            mOtherAdapter = new ArrayAdapterWeaponListSmall(getActivity(), allWeaponsButEquipped);
+        } else {
+            mOtherAdapter.clear();
+            mOtherAdapter.addAll(allWeaponsButEquipped);
+            mOtherAdapter.notifyDataSetChanged();
+        }
 
-        lvOtherWeapons.setAdapter(itemsAdapter);
+
+        lvOtherWeapons.setAdapter(mOtherAdapter);
 
         ArrayList<Weapon> currentWeapon = new ArrayList<>();
-        for (Weapon w : weaponList){
+        for (Weapon w : allWeapons){
             if (w.getId() == activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType].getId()){
                 currentWeapon.add(w);
             }
         }
 
-        ArrayAdapterWeaponListSmall currentAdapter =
-                new ArrayAdapterWeaponListSmall(getActivity(), currentWeapon);
+        if (currentAdapter == null){
+            currentAdapter = new ArrayAdapterWeaponListSmall(getActivity(), currentWeapon);
+        } else {
+            currentAdapter.clear();
+            currentAdapter.addAll(currentWeapon);
+            currentAdapter.notifyDataSetChanged();
+        }
+
 
         lvCurrentWeapon.setAdapter(currentAdapter);
+    }
+
+    public class GetWeaponsFromDBTask extends AsyncTask<Void, Integer, ArrayList<Weapon>> {
+
+        public GetWeaponsFromDBTask() {
+            super();
+        }
+
+        @Override
+        protected ArrayList<Weapon> doInBackground(Void... params) {
+            ArrayList<Weapon> weapons = new ArrayList<>();
+
+            //Get list of skill builds from database.
+            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(getActivity(), baseWeaponInfo);
+            dataSourceWeapons.open();
+            weapons = dataSourceWeapons.getAllWeapons(weaponType);
+            dataSourceWeapons.close();
+
+            return weapons;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<Weapon> weapons) {
+            super.onPostExecute(weapons);
+            allWeapons = weapons;
+            onWeaponsReady();
+        }
     }
 
     private class CreateNewWeapon extends AsyncTask<Void, Void, Weapon> {

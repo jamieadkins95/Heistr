@@ -59,8 +59,6 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     private long currentBuildID;
     private TaskFragment mTaskFragment;
     private ArrayList<BuildReadyCallbacks> mListCallbacks;
-    private WeaponsCallbacks mWeaponCallbacks = null;
-    private ArrayList<Weapon>[] allWeapons;
 
     private int currentFragment = R.id.nav_skill_trees;
     private int currentSkillTree = Trees.MASTERMIND;
@@ -198,8 +196,6 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
                 b.onBuildReady();
             }
         }
-
-        retrieveWeapons();
     }
 
     public interface BuildReadyCallbacks{
@@ -209,10 +205,6 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
 
     public interface WeaponsCallbacks{
         void onWeaponsReady();
-    }
-
-    public void retrieveWeapons(){
-        new GetWeaponsFromDBTask().execute();
     }
 
     private void InitRetainedFragment() {
@@ -263,57 +255,14 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         mListCallbacks.add((BuildReadyCallbacks) f);
     }
 
-    public void listenInWeapon(Fragment f){
-        mWeaponCallbacks = (WeaponsCallbacks) f;
-    }
-
     public void stopListening(Fragment f){
         mListCallbacks.remove(f);
-    }
-
-    public void stopListeningWeapon(){
-        mWeaponCallbacks = null;
     }
 
     public Build getCurrentBuild() {
         return currentBuild;
     }
 
-
-    public ArrayList<Weapon>[] getAllWeapons() {
-        return allWeapons;
-    }
-
-    public class GetWeaponsFromDBTask extends AsyncTask<Void, Integer, ArrayList<Weapon>[]> {
-
-        public GetWeaponsFromDBTask() {
-            super();
-        }
-
-        @Override
-        protected ArrayList<Weapon>[] doInBackground(Void... params) {
-            ArrayList<Weapon>[] weapons = new ArrayList[3];
-
-            //Get list of skill builds from database.
-            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(EditBuildActivity.this, currentBuild.getWeaponsFromXML());
-            dataSourceWeapons.open();
-            weapons[WeaponBuild.PRIMARY] = dataSourceWeapons.getAllWeapons(WeaponBuild.PRIMARY);
-            weapons[WeaponBuild.SECONDARY] = dataSourceWeapons.getAllWeapons(WeaponBuild.SECONDARY);
-            weapons[WeaponBuild.MELEE] = dataSourceWeapons.getAllWeapons(WeaponBuild.MELEE);
-            dataSourceWeapons.close();
-
-            return weapons;
-        }
-
-        @Override
-        protected void onPostExecute(ArrayList<Weapon>[] weapons) {
-            super.onPostExecute(weapons);
-            allWeapons = weapons;
-            if(mWeaponCallbacks != null){
-                mWeaponCallbacks.onWeaponsReady();
-            }
-        }
-    }
 
     public void loadFragment(int id){
         currentFragment = id;
