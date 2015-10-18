@@ -1,11 +1,9 @@
 package com.dawgandpony.pd2skills.BuildObjects;
 
-import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.util.Log;
 
-import com.dawgandpony.pd2skills.Database.DataSourceWeapons;
 import com.dawgandpony.pd2skills.R;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -199,12 +197,12 @@ public class WeaponBuild {
         merged.setPd2skillsID(weaponFromDB.getPd2skillsID());
         merged.setROF(weaponFromXML.getROF());
         merged.setTotalAmmo(weaponFromXML.getTotalAmmo());
-        merged.setMagSize(weaponFromXML.getMagSize());
+        merged.setMagSize(weaponFromXML.getBaseMagSize());
         merged.setDamage(weaponFromXML.getBaseDamage());
-        merged.setAccuracy(weaponFromXML.getAccuracy());
-        merged.setStability(weaponFromXML.getStability());
-        merged.setConcealment(weaponFromXML.getConcealment());
-        merged.setThreat(weaponFromXML.getThreat());
+        merged.setAccuracy(weaponFromXML.getBaseAccuracy());
+        merged.setStability(weaponFromXML.getBaseStability());
+        merged.setConcealment(weaponFromXML.getBaseConcealment());
+        merged.setThreat(weaponFromXML.getBaseThreat());
         merged.setPossibleAttachments(weaponFromXML.getPossibleAttachments());
         merged.setAttachments(weaponFromDB.getAttachments());
 

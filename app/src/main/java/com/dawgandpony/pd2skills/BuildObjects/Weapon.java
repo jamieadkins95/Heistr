@@ -87,8 +87,17 @@ public class Weapon {
         this.totalAmmo = totalAmmo;
     }
 
-    public int getMagSize() {
+    public int getBaseMagSize() {
         return magSize;
+    }
+
+    public int getMagSize() {
+        int mag = 0;
+        mag += magSize;
+        for (Attachment attachment : attachments){
+            mag += attachment.getMagsize();
+        }
+        return mag;
     }
 
     public void setMagSize(int magSize) {
@@ -112,16 +121,34 @@ public class Weapon {
         this.damage = damage;
     }
 
-    public float getAccuracy() {
+    public float getBaseAccuracy() {
         return accuracy;
+    }
+
+    public float getAccuracy() {
+        float acc = 0;
+        acc += accuracy;
+        for (Attachment attachment : attachments){
+            acc += attachment.getAccuracy();
+        }
+        return acc;
     }
 
     public void setAccuracy(float accuracy) {
         this.accuracy = accuracy;
     }
 
-    public float getStability() {
+    public float getBaseStability() {
         return stability;
+    }
+
+    public float getStability() {
+        float stab = 0;
+        stab += stability;
+        for (Attachment attachment : attachments){
+            stab += attachment.getStability();
+        }
+        return stab;
     }
 
     @Override
@@ -133,16 +160,34 @@ public class Weapon {
         this.stability = stability;
     }
 
-    public int getConcealment() {
+    public int getBaseConcealment() {
         return concealment;
+    }
+
+    public int getConcealment() {
+        int con = 0;
+        con += concealment;
+        for (Attachment attachment : attachments){
+            con += attachment.getConcealment();
+        }
+        return con;
     }
 
     public void setConcealment(int concealment) {
         this.concealment = concealment;
     }
 
-    public int getThreat() {
+    public int getBaseThreat() {
         return threat;
+    }
+
+    public int getThreat() {
+        int t = 0;
+        t += threat;
+        for (Attachment attachment : attachments){
+            t += attachment.getThreat();
+        }
+        return t;
     }
 
     public void setThreat(int threat) {

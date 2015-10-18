@@ -46,8 +46,8 @@ public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon>{
         TextView tvAccuracy = (TextView) rowView.findViewById(R.id.tvAccuracyValue);
         TextView tvAccuracyTotal = (TextView) rowView.findViewById(R.id.tvAccuracyValueTotal);
         float[] accuracy = new float[4];
-        accuracy[BASE] = getItem(position).getAccuracy();
-        accuracy[TOTAL] = getItem(position).getAccuracy();
+        accuracy[BASE] = getItem(position).getBaseAccuracy();
+        accuracy[TOTAL] = getItem(position).getBaseAccuracy();
         tvAccuracy.setText(accuracy[BASE] + "");
         tvAccuracyTotal.setText(accuracy[TOTAL] + "");
         //endregion
@@ -55,8 +55,8 @@ public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon>{
         TextView tvStability = (TextView) rowView.findViewById(R.id.tvStabilityValue);
         TextView tvStabilityTotal = (TextView) rowView.findViewById(R.id.tvStabilityValueTotal);
         float[] stability = new float[4];
-        stability[BASE] = getItem(position).getStability();
-        stability[TOTAL] = getItem(position).getStability();
+        stability[BASE] = getItem(position).getBaseStability();
+        stability[TOTAL] = getItem(position).getBaseStability();
         tvStability.setText(stability[BASE] + "");
         tvStabilityTotal.setText(stability[TOTAL] + "");
         //endregion
@@ -64,8 +64,8 @@ public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon>{
         TextView tvConcealment = (TextView) rowView.findViewById(R.id.tvConcealmentValue);
         TextView tvConcealmentTotal = (TextView) rowView.findViewById(R.id.tvConcealmentValueTotal);
         int[] concealment = new int[4];
-        concealment[BASE] = getItem(position).getConcealment();
-        concealment[TOTAL] = getItem(position).getConcealment();
+        concealment[BASE] = getItem(position).getBaseConcealment();
+        concealment[TOTAL] = getItem(position).getBaseConcealment();
         tvConcealment.setText(concealment[BASE] + "");
         tvConcealmentTotal.setText(concealment[TOTAL] + "");
         //endregion
@@ -91,8 +91,8 @@ public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon>{
         TextView tvMag = (TextView) rowView.findViewById(R.id.tvMagValue);
         TextView tvMagTotal = (TextView) rowView.findViewById(R.id.tvMagValueTotal);
         int[] mag = new int[4];
-        mag[BASE] = getItem(position).getMagSize();
-        mag[TOTAL] = getItem(position).getMagSize();
+        mag[BASE] = getItem(position).getBaseMagSize();
+        mag[TOTAL] = getItem(position).getBaseMagSize();
         tvMag.setText(mag[BASE] + "");
         tvMagTotal.setText(mag[TOTAL] + "");
         //endregion
