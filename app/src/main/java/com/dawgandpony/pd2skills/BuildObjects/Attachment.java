@@ -35,6 +35,7 @@ public class Attachment {
     long pd2skillsID = -1;
     String name = "attach";
     int attachmentGroup = -1;
+    private int magsize = 100;
     private float damage = 100;
     private float accuracy = 100;
     private float stability = 100;
@@ -94,6 +95,8 @@ public class Attachment {
                         case "name":
                             currentAttachment.setName(text);
                             break;
+                        case "magsize":
+                            currentAttachment.setMagsize(Integer.parseInt(text));
                         case "damage":
                             currentAttachment.setDamage(Float.parseFloat(text));
                             break;
@@ -207,5 +210,13 @@ public class Attachment {
 
     public int getAttachmentType() {
         return attachmentGroup;
+    }
+
+    public int getMagsize() {
+        return magsize;
+    }
+
+    public void setMagsize(int magsize) {
+        this.magsize = magsize;
     }
 }

@@ -5,7 +5,18 @@
         <attachment>
             <name>Modern Barrel</name>
             <pd2skills>51</pd2skills>
+            <magsize>0</magsize>
             <damage>5</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>1</concealment>
+            <threat>0</threat>
+        </attachment>
+        <attachment>
+            <name>Modern Barrel</name>
+            <pd2skills>52</pd2skills>
+            <magsize>0</magsize>
+            <damage>-5</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>1</concealment>
@@ -18,6 +29,7 @@
         <attachment>
             <name>Medium Suppressor</name>
             <pd2skills>3</pd2skills>
+            <magsize>0</magsize>
             <damage>-7.5</damage>
             <accuracy>0</accuracy>
             <stability>2.5</stability>

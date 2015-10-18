@@ -7,9 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
-import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.R;
 
 import java.util.List;
@@ -39,7 +37,7 @@ public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon>{
         TextView tvDamage = (TextView) rowView.findViewById(R.id.tvDamageValue);
         TextView tvDamageTotal = (TextView) rowView.findViewById(R.id.tvDamageValueTotal);
         float[] damage = new float[4];
-        damage[BASE] = getItem(position).getDamage();
+        damage[BASE] = getItem(position).getBaseDamage();
         damage[TOTAL] = getItem(position).getDamage();
         tvDamage.setText(damage[BASE] + "");
         tvDamageTotal.setText(damage[TOTAL] + "");

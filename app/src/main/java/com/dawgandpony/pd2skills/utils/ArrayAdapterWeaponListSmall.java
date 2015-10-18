@@ -36,7 +36,7 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
         //region Damage
         TextView tvDamageTotal = (TextView) rowView.findViewById(R.id.tvDamageValueTotal);
         float[] damage = new float[4];
-        damage[BASE] = getItem(position).getDamage();
+        damage[BASE] = getItem(position).getBaseDamage();
         damage[TOTAL] = getItem(position).getDamage();
         tvDamageTotal.setText(damage[TOTAL] + "");
         //endregion

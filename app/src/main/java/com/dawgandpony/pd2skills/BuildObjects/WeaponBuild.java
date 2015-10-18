@@ -200,7 +200,7 @@ public class WeaponBuild {
         merged.setROF(weaponFromXML.getROF());
         merged.setTotalAmmo(weaponFromXML.getTotalAmmo());
         merged.setMagSize(weaponFromXML.getMagSize());
-        merged.setDamage(weaponFromXML.getDamage());
+        merged.setDamage(weaponFromXML.getBaseDamage());
         merged.setAccuracy(weaponFromXML.getAccuracy());
         merged.setStability(weaponFromXML.getStability());
         merged.setConcealment(weaponFromXML.getConcealment());

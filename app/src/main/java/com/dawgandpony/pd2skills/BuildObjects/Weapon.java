@@ -95,8 +95,17 @@ public class Weapon {
         this.magSize = magSize;
     }
 
-    public float getDamage() {
+    public float getBaseDamage() {
         return damage;
+    }
+
+    public float getDamage() {
+        float damageAdj = 0;
+        damageAdj += damage;
+        for (Attachment attachment : attachments){
+            damageAdj += attachment.getDamage();
+        }
+        return damageAdj;
     }
 
     public void setDamage(float damage) {
