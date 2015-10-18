@@ -23,6 +23,7 @@ public class Build {
     ArrayList<Boolean> infamies;
 
     ArrayList<Weapon> weaponsFromXML;
+    ArrayList<Attachment> attachmentsFromXML;
     
     int perkDeck = 0;
     int armour = 0;
@@ -85,6 +86,14 @@ public class Build {
 
     public void setWeaponsFromXML(ArrayList<Weapon> weaponsFromXML) {
         this.weaponsFromXML = weaponsFromXML;
+    }
+
+    public ArrayList<Attachment> getAttachmentsFromXML() {
+        return attachmentsFromXML;
+    }
+
+    public void setAttachmentsFromXML(ArrayList<Attachment> attachmentsFromXML) {
+        this.attachmentsFromXML = attachmentsFromXML;
     }
 
     public void setId(long id) {

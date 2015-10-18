@@ -7,6 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.dawgandpony.pd2skills.BuildObjects.Attachment;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
@@ -61,7 +62,7 @@ public class DataSourceBuilds {
         }
 
         DataSourceSkills dataSourceSkills = new DataSourceSkills(context);
-        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context, WeaponBuild.getWeaponsFromXML(context.getResources()));
+        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context, WeaponBuild.getWeaponsFromXML(context.getResources()), Attachment.getAttachmentsFromXML(context.getResources()));
         dataSourceSkills.open();
         dataSourceWeapons.open();
         long skillBuildID;
@@ -244,11 +245,13 @@ public class DataSourceBuilds {
         SkillBuild mergedSkillBuild = SkillBuild.mergeBuilds(skillBuildFromXML, skillBuildFromDB);
 
         ArrayList<Weapon> weaponInfo = WeaponBuild.getWeaponsFromXML(context.getResources());
+        ArrayList<Attachment> attachmentInfo = Attachment.getAttachmentsFromXML(context.getResources());
 
 
         build.setWeaponsFromXML(weaponInfo);
+        build.setAttachmentsFromXML(attachmentInfo);
 
-        DataSourceWeapons dataSourceWeapons =  new DataSourceWeapons(context, weaponInfo);
+        DataSourceWeapons dataSourceWeapons =  new DataSourceWeapons(context, weaponInfo, attachmentInfo);
         dataSourceWeapons.open();
         WeaponBuild weaponBuildFromDB = dataSourceWeapons.getWeaponBuild(weaponBuildID);
         dataSourceWeapons.close();

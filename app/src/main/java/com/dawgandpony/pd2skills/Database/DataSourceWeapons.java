@@ -49,11 +49,13 @@ public class DataSourceWeapons {
             MySQLiteHelper.COLUMNS_ATTACHMENTS[Attachment.MOD_UPPER_RECEIVER]};
 
     private ArrayList<Weapon> baseWeaponInfo;
+    private final ArrayList<Attachment> baseAttachmentInfo;
 
-    public DataSourceWeapons(Context context, ArrayList<Weapon> baseWeaponInfo){
+    public DataSourceWeapons(Context context, ArrayList<Weapon> baseWeaponInfo, ArrayList<Attachment> baseAttachmentInfo){
         dbHelper = new MySQLiteHelper(context);
         mContext = context;
         this.baseWeaponInfo = baseWeaponInfo;
+        this.baseAttachmentInfo = baseAttachmentInfo;
     }
 
     public void open() throws SQLException {
@@ -247,7 +249,17 @@ public class DataSourceWeapons {
         for (int i = Attachment.MOD_BARREL; i <= Attachment.MOD_UPPER_RECEIVER; i++){
             attachments.add(cursorWeapon.getLong(i));
         }
-        weapon.setAttachments(attachments);
+
+        ArrayList<Attachment> equippedAttachments = new ArrayList<>();
+        for (Attachment xml : baseAttachmentInfo){
+            for (Long id : attachments){
+                if (xml.getPd2skillsID() == id){
+                    equippedAttachments.add(xml);
+                }
+            }
+
+        }
+        weapon.setAttachments(equippedAttachments);
 
         Weapon merged = null;
         for (Weapon w : baseWeaponInfo){

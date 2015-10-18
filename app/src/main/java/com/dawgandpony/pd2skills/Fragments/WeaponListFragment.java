@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.Activities.EditBuildActivity;
 import com.dawgandpony.pd2skills.Activities.EditWeaponActivity;
+import com.dawgandpony.pd2skills.BuildObjects.Attachment;
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
 import com.dawgandpony.pd2skills.BuildObjects.WeaponBuild;
@@ -45,6 +46,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     ListView lvOtherWeapons;
     private ArrayList<Weapon> allWeapons;
     ArrayList<Weapon> baseWeaponInfo;
+    ArrayList<Attachment> baseAttachmentInfo;
     int weaponType = 0;
 
     ArrayAdapterWeaponListSmall mOtherAdapter;
@@ -74,6 +76,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
         activity = (EditBuildActivity) getActivity();
         baseWeaponInfo = new ArrayList<>();
+        baseAttachmentInfo = new ArrayList<>();
 
         this.lvCurrentWeapon = (ListView) rootView.findViewById(R.id.lvCurrentWeapon);
         this.lvOtherWeapons = (ListView) rootView.findViewById(R.id.lvOtherWeapons);
@@ -130,7 +133,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
                 for (int i = 0; i < checked.size(); i++) {
                     if (checked.valueAt(i)) {
                         Weapon selected = (Weapon) lvOtherWeapons.getItemAtPosition(checked.keyAt(i));
-                        DataSourceWeapons dataSourceBuilds = new DataSourceWeapons(getActivity(), baseWeaponInfo);
+                        DataSourceWeapons dataSourceBuilds = new DataSourceWeapons(getActivity(), baseWeaponInfo, baseAttachmentInfo);
                         dataSourceBuilds.open();
                         dataSourceBuilds.deleteWeapon(selected.getId());
                         dataSourceBuilds.close();
@@ -221,6 +224,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     private void MoveToEditWeaponActivity(long id){
         Intent intent = new Intent(getActivity(), EditWeaponActivity.class);
         intent.putExtra(EXTRA_WEAPON_ID, id);
+        intent.putExtra(EditWeaponActivity.EXTRA_WEAPON_TYPE, weaponType);
         startActivityForResult(intent, EditBuildActivity.WEAPON_EDIT_REQUEST);
     }
 
@@ -238,6 +242,9 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     public void onBuildReady() {
         for (Weapon w : activity.getCurrentBuild().getWeaponsFromXML()){
             baseWeaponInfo.add(w);
+        }
+        for (Attachment a : activity.getCurrentBuild().getAttachmentsFromXML()){
+            baseAttachmentInfo.add(a);
         }
 
         new GetWeaponsFromDBTask().execute();
@@ -304,7 +311,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
             ArrayList<Weapon> weapons = new ArrayList<>();
 
             //Get list of skill builds from database.
-            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(getActivity(), baseWeaponInfo);
+            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(getActivity(), baseWeaponInfo, baseAttachmentInfo);
             dataSourceWeapons.open();
             weapons = dataSourceWeapons.getAllWeapons(weaponType);
             dataSourceWeapons.close();
@@ -333,7 +340,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
         @Override
         protected Weapon doInBackground(Void... params) {
-            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(getActivity(), baseWeaponInfo);
+            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(getActivity(), baseWeaponInfo, baseAttachmentInfo);
             dataSourceWeapons.open();
             Weapon w = dataSourceWeapons.createAndInsertWeapon(name, pd2skillsid, weaponType);
             dataSourceWeapons.close();
