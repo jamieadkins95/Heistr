@@ -271,4 +271,21 @@ public class DataSourceBuilds {
         database.update(MySQLiteHelper.TABLE_BUILDS, values, MySQLiteHelper.COLUMN_ID + " = " + id, null);
         Log.d("DB", "Name updated for build " + id + " to " + newName);
     }
+
+    public void updateWeaponBuild(long id, int weaponType, long weaponID) {
+        ContentValues values = new ContentValues();
+        switch (weaponType){
+            case WeaponBuild.PRIMARY:
+                values.put(MySQLiteHelper.COLUMN_PRIMARY_WEAPON, weaponID);
+                break;
+            case WeaponBuild.SECONDARY:
+                values.put(MySQLiteHelper.COLUMN_SECONDARY_WEAPON, weaponID);
+                break;
+            case WeaponBuild.MELEE:
+                values.put(MySQLiteHelper.COLUMN_MELEE_WEAPON, weaponID);
+                break;
+        }
+
+        database.update(MySQLiteHelper.TABLE_WEAPON_BUILDS, values, MySQLiteHelper.COLUMN_ID + " = " + id, null);
+    }
 }

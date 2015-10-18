@@ -99,14 +99,13 @@ public class EditWeaponActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 Intent intent = this.getIntent();
-                intent.putExtra(WeaponListFragment.EXTRA_WEAPON_ID, -2);
-                intent.putExtra(EXTRA_WEAPON_TYPE, 0);
+                intent.putExtra(WeaponListFragment.EXTRA_WEAPON_ID, currentWeapon.getId());
                 this.setResult(RESULT_CANCELED, intent);
                 finish();
                 return true;
             case R.id.action_equip:
                 Intent intent2 = this.getIntent();
-                intent2.putExtra(WeaponListFragment.EXTRA_WEAPON_ID, -2);
+                intent2.putExtra(WeaponListFragment.EXTRA_WEAPON_ID, currentWeapon.getId());
                 this.setResult(RESULT_OK, intent2);
                 finish();
                 return true;

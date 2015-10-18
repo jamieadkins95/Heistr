@@ -138,6 +138,14 @@ public class Build {
 
     }
 
+    public void updateWeaponBuild(Context context, int weaponType, long weaponID) {
+        DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(context);
+        dataSourceBuilds.open();
+        dataSourceBuilds.updateWeaponBuild(weaponBuild.getId(), weaponType, weaponID);
+        dataSourceBuilds.close();
+        //weaponBuild.getWeapons()[weaponType]
+    }
+
     public ArrayList<Boolean> getInfamies() {
         return infamies;
     }

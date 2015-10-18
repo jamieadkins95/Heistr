@@ -196,6 +196,9 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
             //mNavigationView.getMenu().performIdentifierAction(id, 0);
             if (resultCode == Activity.RESULT_OK) {
                 // Equip Weapon
+                Bundle bundle = data.getExtras();
+                long id = bundle.getLong(EXTRA_WEAPON_ID);
+                activity.getCurrentBuild().updateWeaponBuild(getActivity(), weaponType, id);
                 Toast.makeText(getActivity(), "Changes were saved and weapon was equipped", Toast.LENGTH_SHORT).show();
             } else if (resultCode == Activity.RESULT_CANCELED){
                 // Don't equip weapon
