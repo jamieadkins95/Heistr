@@ -82,13 +82,32 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
             attachments.add(a.getName());
         }
 
+        int count = 0;
+        int index = -1;
+        for (Attachment a : possibleAttachments){
+            for (Attachment e : activity.getCurrentWeapon().getAttachments()){
+                if (a.getPd2skillsID() ==  e.getPd2skillsID()){
+                    index = count;
+                }
+            }
+            count++;
+        }
+
+        if (index != -1){
+            currentAttachmentIndex = index;
+        }
+
+
+
+
         ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_single_choice, attachments);
         lvAttachments.setAdapter(mAdapter2);
-        //lvAttachments.setItemChecked(currentAttachmentIndex, true);
+        lvAttachments.setItemChecked(currentAttachmentIndex, true);
         lvAttachments.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 currentAttachmentIndex = lvAttachments.getCheckedItemPosition();
+                activity.updateCurrentWeapon(attachmentType, currentAttachmentIndex);
                 Toast.makeText(getActivity(), possibleAttachments.get(currentAttachmentIndex).getPd2skillsID() + "", Toast.LENGTH_SHORT).show();
                 //activity.getCurrentBuild().updateArmour(activity, selected);
 

@@ -205,6 +205,15 @@ public class EditWeaponActivity extends AppCompatActivity {
         return attachmentsSplitUp.get(attachmentType);
     }
 
+    public void updateCurrentWeapon(int attachmentType, int currentAttachmentIndex) {
+        Attachment newAttachment = attachmentsSplitUp.get(attachmentType).get(currentAttachmentIndex);
+        //currentWeapon.getAttachments().set(attachmentType, newAttachment);
+        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(this, baseWeaponInfo, baseAttachmentInfo);
+        dataSourceWeapons.open();
+        dataSourceWeapons.updateAttachment(currentWeapon.getId(), attachmentType, newAttachment.getPd2skillsID());
+        dataSourceWeapons.close();
+    }
+
     @Override
     protected void onStop() {
         super.onStop();

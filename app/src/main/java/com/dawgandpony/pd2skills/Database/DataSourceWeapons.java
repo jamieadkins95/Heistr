@@ -214,6 +214,12 @@ public class DataSourceWeapons {
         }
     }
 
+    public void updateAttachment(long id, int attachmentType, long attachmentID){
+        ContentValues values =  new ContentValues();
+        values.put(MySQLiteHelper.COLUMNS_ATTACHMENTS[attachmentType], attachmentID);
+        database.update(MySQLiteHelper.TABLE_WEAPONS, values, MySQLiteHelper.COLUMN_ID + " = " + id, null);
+    }
+
 
 
     private WeaponBuild cursorToWeaponBuild(Cursor cursorWeaponBuild){
