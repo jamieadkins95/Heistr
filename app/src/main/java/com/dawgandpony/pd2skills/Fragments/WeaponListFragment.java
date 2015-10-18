@@ -240,12 +240,8 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
     @Override
     public void onBuildReady() {
-        for (Weapon w : activity.getCurrentBuild().getWeaponsFromXML()){
-            baseWeaponInfo.add(w);
-        }
-        for (Attachment a : activity.getCurrentBuild().getAttachmentsFromXML()){
-            baseAttachmentInfo.add(a);
-        }
+        baseWeaponInfo = activity.getCurrentBuild().getWeaponsFromXML();
+        baseAttachmentInfo = activity.getCurrentBuild().getAttachmentsFromXML();
 
         new GetWeaponsFromDBTask().execute();
     }

@@ -253,7 +253,7 @@ public class DataSourceWeapons {
         weapon.setName(cursorWeapon.getString(3));
         ArrayList<Long> attachments = new ArrayList<>();
         for (int i = Attachment.MOD_BARREL; i <= Attachment.MOD_UPPER_RECEIVER; i++){
-            attachments.add(cursorWeapon.getLong(i));
+            attachments.add(cursorWeapon.getLong(4 + i));
         }
 
         ArrayList<Attachment> equippedAttachments = new ArrayList<>();
