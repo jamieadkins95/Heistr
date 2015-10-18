@@ -204,4 +204,8 @@ public class Attachment {
     public String getName(){
         return name;
     }
+
+    public int getAttachmentType() {
+        return attachmentGroup;
+    }
 }

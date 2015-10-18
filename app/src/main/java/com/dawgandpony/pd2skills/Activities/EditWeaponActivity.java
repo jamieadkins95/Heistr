@@ -32,6 +32,7 @@ import com.dawgandpony.pd2skills.BuildObjects.Weapon;
 import com.dawgandpony.pd2skills.BuildObjects.WeaponBuild;
 import com.dawgandpony.pd2skills.Database.DataSourceWeapons;
 import com.dawgandpony.pd2skills.Database.MySQLiteHelper;
+import com.dawgandpony.pd2skills.Fragments.AttachmentListFragment;
 import com.dawgandpony.pd2skills.Fragments.BlankFragment;
 import com.dawgandpony.pd2skills.Fragments.WeaponListFragment;
 import com.dawgandpony.pd2skills.R;
@@ -48,6 +49,8 @@ public class EditWeaponActivity extends AppCompatActivity {
     int weaponType = -1;
     ArrayList<Weapon> baseWeaponInfo;
     ArrayList<Attachment> baseAttachmentInfo;
+    ArrayList<ArrayList<Attachment>> attachmentsSplitUp;
+    ArrayList<WeaponsCallbacks> mListeners;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,17 +115,19 @@ public class EditWeaponActivity extends AppCompatActivity {
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        Adapter adapter = new Adapter(getSupportFragmentManager());
+        mListeners = new ArrayList<>();
+        final Adapter adapter = new Adapter(getSupportFragmentManager());
 
         adapter.addFragment(BlankFragment.newInstance("WIP"), "Overview");
 
         String[] attachment_types = getResources().getStringArray(R.array.attachment_types);
         for (int i = 0; i < MySQLiteHelper.COLUMNS_ATTACHMENTS.length; i++){
-            adapter.addFragment(new BlankFragment(), attachment_types[i]);
+            adapter.addFragment(AttachmentListFragment.newInstance(i), attachment_types[i]);
         }
 
         viewPager.setAdapter(adapter);
     }
+
 
     static class Adapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragments = new ArrayList<>();
@@ -180,6 +185,32 @@ public class EditWeaponActivity extends AppCompatActivity {
         }
     }
 
+    public interface WeaponsCallbacks{
+        void onWeaponReady();
+    }
+
+    public void listen(Fragment fragment){
+        mListeners.add((WeaponsCallbacks) fragment);
+    }
+
+    public void stopListening(Fragment fragment){
+        mListeners.remove((WeaponsCallbacks) fragment);
+    }
+
+    public Weapon getCurrentWeapon() {
+        return currentWeapon;
+    }
+
+    public ArrayList<Attachment> getPossibleAttachments(int attachmentType){
+        return attachmentsSplitUp.get(attachmentType);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mListeners = null;
+    }
+
     public class GetAttachmentsXMLTask extends AsyncTask<Void, Integer, ArrayList<Attachment>> {
 
 
@@ -201,6 +232,7 @@ public class EditWeaponActivity extends AppCompatActivity {
         protected void onPostExecute(ArrayList<Attachment> attachments) {
             super.onPostExecute(attachments);
             baseAttachmentInfo = attachments;
+
             onAttachmentInfoReady();
         }
     }
@@ -228,6 +260,19 @@ public class EditWeaponActivity extends AppCompatActivity {
         protected void onPostExecute(Weapon weapon) {
             super.onPostExecute(weapon);
             currentWeapon = weapon;
+
+            attachmentsSplitUp = new ArrayList<>();
+            for (int i = Attachment.MOD_BARREL; i <= Attachment.MOD_UPPER_RECEIVER; i++){
+                attachmentsSplitUp.add(new ArrayList<Attachment>());
+            }
+            for (Attachment attachment : baseAttachmentInfo){
+                for (Long l : currentWeapon.getPossibleAttachments()){
+                    if (l == attachment.getPd2skillsID()){
+                        attachmentsSplitUp.get(attachment.getAttachmentType()).add(attachment);
+                    }
+                }
+            }
+
             onWeaponReady();
         }
     }
@@ -241,8 +286,10 @@ public class EditWeaponActivity extends AppCompatActivity {
     }
 
     private void onWeaponReady() {
-        for (Attachment a : currentWeapon.getAttachments()){
-            Log.d(TAG, a.getName());
+        if (mListeners != null){
+            for (WeaponsCallbacks listener : mListeners){
+                listener.onWeaponReady();
+            }
         }
     }
 

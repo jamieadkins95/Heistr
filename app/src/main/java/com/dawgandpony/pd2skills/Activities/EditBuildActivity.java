@@ -271,21 +271,6 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
             case R.id.nav_skill_trees:
                 fragment = SkillTreeParentFragment.newInstance(currentSkillTree);
                 break;
-            /*case R.id.nav_mastermind:
-                fragment = SkillTreeFragment.newInstance(Trees.MASTERMIND);
-                break;
-            case R.id.nav_enforcer:
-                fragment = SkillTreeFragment.newInstance(Trees.ENFORCER);
-                break;
-            case R.id.nav_tech:
-                fragment = SkillTreeFragment.newInstance(Trees.TECHNICIAN);
-                break;
-            case R.id.nav_ghost:
-                fragment = SkillTreeFragment.newInstance(Trees.GHOST);
-                break;
-            case R.id.nav_fugitive:
-                fragment = SkillTreeFragment.newInstance(Trees.FUGITIVE);
-                break;*/
             case R.id.nav_infamy:
                 fragment = InfamyFragment.newInstance();
                 break;
