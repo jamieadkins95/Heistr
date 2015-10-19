@@ -274,9 +274,10 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
     @Override
     public void onWeaponsReady() {
+        Weapon currentEquippedWeapon = activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType];
         ArrayList<Weapon> allWeaponsButEquipped = new ArrayList<>();
         for (Weapon w : allWeapons){
-            if (w.getId() != activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType].getId()){
+            if (currentEquippedWeapon == null || w.getId() != currentEquippedWeapon.getId()){
                 allWeaponsButEquipped.add(w);
             }
         }
@@ -294,7 +295,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
         ArrayList<Weapon> currentWeapon = new ArrayList<>();
         for (Weapon w : allWeapons){
-            if (w.getId() == activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType].getId()){
+            if (currentEquippedWeapon != null && w.getId() == currentEquippedWeapon.getId()){
                 currentWeapon.add(w);
             }
         }

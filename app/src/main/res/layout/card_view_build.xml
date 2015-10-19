@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1.6"
                     android:id="@+id/tvPrimaryWeaponName"
-                    android:text="Car-4"
+
                     android:textColor="@color/textSecondary"
                     android:textSize="20sp"
                     android:layout_gravity="center"
@@ -109,13 +109,11 @@
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
                         android:layout_gravity="center"
-                        android:id="@+id/tvDamageValuePrimary"
-                        android:text="20.0"/>
+                        android:id="@+id/tvDamageValuePrimary" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:text="20.0"
                         android:id="@+id/tvAccuracyValuePrimary"
                         android:layout_gravity="center"/>
                     <TextView
@@ -123,15 +121,13 @@
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
                         android:id="@+id/tvStabilityValuePrimary"
-                        android:layout_gravity="center"
-                        android:text="20.0"/>
+                        android:layout_gravity="center"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
                         android:layout_gravity="center"
-                        android:id="@+id/tvConcealmentValuePrimary"
-                        android:text="20.0"/>
+                        android:id="@+id/tvConcealmentValuePrimary"/>
 
 
                 </LinearLayout>
@@ -151,7 +147,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1.6"
                     android:id="@+id/tvSecondaryWeaponName"
-                    android:text="Loco"
                     android:textColor="@color/textSecondary"
                     android:textSize="20sp"
                     android:layout_gravity="center"
@@ -197,13 +192,11 @@
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
                         android:layout_gravity="center"
-                        android:id="@+id/tvDamageValueSecondary"
-                        android:text="20.0"/>
+                        android:id="@+id/tvDamageValueSecondary"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:text="20.0"
                         android:id="@+id/tvAccuracyValueSecondary"
                         android:layout_gravity="center"/>
                     <TextView
@@ -211,15 +204,13 @@
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
                         android:id="@+id/tvStabilityValueSecondary"
-                        android:layout_gravity="center"
-                        android:text="20.0"/>
+                        android:layout_gravity="center"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
                         android:layout_gravity="center"
-                        android:id="@+id/tvConcealmentValueSecondary"
-                        android:text="20.0"/>
+                        android:id="@+id/tvConcealmentValueSecondary"/>
 
 
                 </LinearLayout>

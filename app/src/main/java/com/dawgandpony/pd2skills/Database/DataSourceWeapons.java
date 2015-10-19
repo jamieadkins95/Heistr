@@ -69,9 +69,9 @@ public class DataSourceWeapons {
     public WeaponBuild createAndInsertWeaponBuild(){
 
         ContentValues weaponBuildValues = new ContentValues();
-        weaponBuildValues.put(MySQLiteHelper.COLUMN_PRIMARY_WEAPON, 1);
-        weaponBuildValues.put(MySQLiteHelper.COLUMN_SECONDARY_WEAPON, 2);
-        weaponBuildValues.put(MySQLiteHelper.COLUMN_MELEE_WEAPON, 3);
+        weaponBuildValues.put(MySQLiteHelper.COLUMN_PRIMARY_WEAPON, -1);
+        weaponBuildValues.put(MySQLiteHelper.COLUMN_SECONDARY_WEAPON, -1);
+        weaponBuildValues.put(MySQLiteHelper.COLUMN_MELEE_WEAPON, -1);
 
         long weaponBuildID = database.insert(MySQLiteHelper.TABLE_WEAPON_BUILDS, null, weaponBuildValues);
 

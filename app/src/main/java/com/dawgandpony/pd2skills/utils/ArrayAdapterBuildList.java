@@ -69,17 +69,21 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         tvPerkDeck.setText(perkDeck);
         
         //Set Weapons
-        tvPrimaryWeapon.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getWeaponName());
-        tvPrimaryDamage.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getDamage() + "");
-        tvPrimaryAccuracy.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getAccuracy() + "");
-        tvPrimaryStability.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getStability() + "");
-        tvPrimaryConcealment.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getConcealment() + "");
+        if (getItem(position).getWeaponBuild().getPrimaryWeapon() != null){
+            tvPrimaryWeapon.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getWeaponName());
+            tvPrimaryDamage.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getDamage() + "");
+            tvPrimaryAccuracy.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getAccuracy() + "");
+            tvPrimaryStability.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getStability() + "");
+            tvPrimaryConcealment.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getConcealment() + "");
+        }
 
-        tvSecondaryWeapon.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getWeaponName());
-        tvSecondaryDamage.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getDamage() + "");
-        tvSecondaryAccuracy.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getAccuracy() + "");
-        tvSecondaryStability.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getStability() + "");
-        tvSecondaryConcealment.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getConcealment() + "");
+        if (getItem(position).getWeaponBuild().getSecondaryWeapon() != null){
+            tvSecondaryWeapon.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getWeaponName());
+            tvSecondaryDamage.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getDamage() + "");
+            tvSecondaryAccuracy.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getAccuracy() + "");
+            tvSecondaryStability.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getStability() + "");
+            tvSecondaryConcealment.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getConcealment() + "");
+        }
 
         //Set Detection
         tvDetection.setText(getItem(position).getDetection() + "");
