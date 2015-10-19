@@ -175,7 +175,13 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
             @Override
             public void onClick(View v) {
                 if (allWeapons != null){
-                    NewWeaponDialog dialog = NewWeaponDialog.newInstance(allWeapons, baseWeaponInfo);
+                    ArrayList<Weapon> baseWeaponInfoType = new ArrayList<Weapon>();
+                    for (Weapon w : baseWeaponInfo){
+                        if (w.getWeaponType() == weaponType){
+                            baseWeaponInfoType.add(w);
+                        }
+                    }
+                    NewWeaponDialog dialog = NewWeaponDialog.newInstance(allWeapons, baseWeaponInfoType);
                     dialog.setTargetFragment(WeaponListFragment.this, BuildListFragment.NEW_DIALOG_FRAGMENT);
                     dialog.show(getActivity().getSupportFragmentManager(), "NewWeaponDialogFragment");
                 }
