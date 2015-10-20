@@ -46,8 +46,8 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
 
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
-    private static final String TAG_TASK_FRAGMENT = "task_fragment";
-    private final static String BUILD_ID = "BuildID";
+    public static final String TAG_TASK_FRAGMENT = "task_fragment";
+    protected final static String BUILD_ID = "BuildID";
     private final static String FRAGMENT_INDEX = "FragmentInd";
     public final static String SKILL_TREE_INDEX = "SkillTreeInd";
     private final static String ACTIVITY_START = "StartAct";

@@ -28,29 +28,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.dawgandpony.pd2skills.BuildObjects.Attachment;
+import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
 import com.dawgandpony.pd2skills.BuildObjects.WeaponBuild;
 import com.dawgandpony.pd2skills.Database.DataSourceWeapons;
 import com.dawgandpony.pd2skills.Database.MySQLiteHelper;
 import com.dawgandpony.pd2skills.Fragments.AttachmentListFragment;
 import com.dawgandpony.pd2skills.Fragments.BlankFragment;
+import com.dawgandpony.pd2skills.Fragments.BuildListFragment;
+import com.dawgandpony.pd2skills.Fragments.TaskFragment;
 import com.dawgandpony.pd2skills.Fragments.WeaponListFragment;
 import com.dawgandpony.pd2skills.R;
 
 /**
  * Created by Jamie on 11/10/2015.
  */
-public class EditWeaponActivity extends AppCompatActivity {
+public class EditWeaponActivity extends AppCompatActivity implements TaskFragment.TaskCallbacks{
 
     public static final String EXTRA_WEAPON_TYPE = "WeaponType";
     private static final String TAG = "EditWeaponActivity";
     Weapon currentWeapon;
+    Build currentBuild;
     long currentWeaponID = -2;
+    long currentBuildID = -2;
+    boolean activityReady = false;
+    boolean infoReady = false;
     int weaponType = -1;
     ArrayList<Weapon> baseWeaponInfo;
     ArrayList<Attachment> baseAttachmentInfo;
     ArrayList<ArrayList<Attachment>> attachmentsSplitUp;
     ArrayList<WeaponsCallbacks> mListeners;
+    ArrayList<EditBuildActivity.BuildReadyCallbacks> mBuildListeners;
+
+    private TaskFragment mTaskFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,13 +78,18 @@ public class EditWeaponActivity extends AppCompatActivity {
 
         if (savedInstanceState == null){
             currentWeaponID = getIntent().getLongExtra(WeaponListFragment.EXTRA_WEAPON_ID, -1);
+            currentBuildID = getIntent().getLongExtra(BuildListFragment.EXTRA_BUILD_ID, -1);
             weaponType = getIntent().getIntExtra(EXTRA_WEAPON_TYPE, -1);
         } else {
             currentWeaponID = savedInstanceState.getLong(WeaponListFragment.EXTRA_WEAPON_ID);
+            currentBuildID = savedInstanceState.getLong(BuildListFragment.EXTRA_BUILD_ID);
             weaponType = savedInstanceState.getInt(EXTRA_WEAPON_TYPE);
         }
+        activityReady = true;
 
-        new GetWeaponsXMLTask(weaponType).execute();
+        if (infoReady){
+            onInfoReady();
+        }
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
@@ -88,9 +103,25 @@ public class EditWeaponActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        FragmentManager fm = getSupportFragmentManager();
+        mTaskFragment = (TaskFragment) fm.findFragmentByTag(EditBuildActivity.TAG_TASK_FRAGMENT);
+
+        // If we haven't retained the worker fragment, then create it
+        // and set this UIFragment as the TaskFragment's target fragment.
+        if (mTaskFragment == null) {
+            mTaskFragment = new TaskFragment();
+            mTaskFragment.setCurrentBuildID(currentBuildID);
+            fm.beginTransaction().add(mTaskFragment, EditBuildActivity.TAG_TASK_FRAGMENT).commit();
+        }
+    }
+
+    @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putLong(WeaponListFragment.EXTRA_WEAPON_ID, currentWeaponID);
+        outState.putLong(WeaponListFragment.EXTRA_WEAPON_ID, currentWeapon.getId());
         outState.putInt(EXTRA_WEAPON_TYPE, weaponType);
+        outState.putLong(EditBuildActivity.BUILD_ID, currentBuild.getId());
         super.onSaveInstanceState(outState);
     }
 
@@ -115,6 +146,7 @@ public class EditWeaponActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         mListeners = new ArrayList<>();
+        mBuildListeners = new ArrayList<>();
         final Adapter adapter = new Adapter(getSupportFragmentManager());
 
         adapter.addFragment(BlankFragment.newInstance("WIP"), "Overview");
@@ -125,6 +157,31 @@ public class EditWeaponActivity extends AppCompatActivity {
         }
 
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void onPreExecute() {
+
+    }
+
+    @Override
+    public void onCancelled() {
+
+    }
+
+    @Override
+    public void onBuildReady(Build build) {
+
+        currentBuild = build;
+        currentBuildID = build.getId();
+        baseWeaponInfo = currentBuild.getWeaponsFromXML();
+        baseAttachmentInfo = currentBuild.getAttachmentsFromXML();
+
+        infoReady = true;
+
+        if (activityReady){
+            onInfoReady();
+        }
     }
 
 
@@ -157,43 +214,18 @@ public class EditWeaponActivity extends AppCompatActivity {
         }
     }
 
-    public class GetWeaponsXMLTask extends AsyncTask<Void, Integer, ArrayList<Weapon>> {
-
-        private final int type;
-
-        public GetWeaponsXMLTask(int weaponType) {
-            super();
-            this.type = weaponType;
-        }
-
-        @Override
-        protected ArrayList<Weapon> doInBackground(Void... params) {
-            ArrayList<Weapon> weapons = new ArrayList<>();
-
-            //Get list of skill builds from database.
-            weapons = WeaponBuild.getWeaponsFromXML(getResources(), type);
-
-            return weapons;
-        }
-
-        @Override
-        protected void onPostExecute(ArrayList<Weapon> weapons) {
-            super.onPostExecute(weapons);
-            baseWeaponInfo = weapons;
-            onBaseInfoReady();
-        }
-    }
-
     public interface WeaponsCallbacks{
         void onWeaponReady();
     }
 
     public void listen(Fragment fragment){
         mListeners.add((WeaponsCallbacks) fragment);
+        mBuildListeners.add((EditBuildActivity.BuildReadyCallbacks) fragment);
     }
 
     public void stopListening(Fragment fragment){
-        mListeners.remove((WeaponsCallbacks) fragment);
+        mListeners.remove(fragment);
+        mBuildListeners.remove(fragment);
     }
 
     public Weapon getCurrentWeapon() {
@@ -217,33 +249,10 @@ public class EditWeaponActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         mListeners = null;
+        mBuildListeners = null;
     }
 
-    public class GetAttachmentsXMLTask extends AsyncTask<Void, Integer, ArrayList<Attachment>> {
 
-
-        public GetAttachmentsXMLTask() {
-            super();
-        }
-
-        @Override
-        protected ArrayList<Attachment> doInBackground(Void... params) {
-            ArrayList<Attachment> attachments = new ArrayList<>();
-
-            //Get list of skill builds from database.
-            attachments = Attachment.getAttachmentsFromXML(getResources());
-
-            return attachments;
-        }
-
-        @Override
-        protected void onPostExecute(ArrayList<Attachment> attachments) {
-            super.onPostExecute(attachments);
-            baseAttachmentInfo = attachments;
-
-            onAttachmentInfoReady();
-        }
-    }
 
     public class GetWeaponFromDB extends AsyncTask<Void, Integer, Weapon> {
 
@@ -285,11 +294,7 @@ public class EditWeaponActivity extends AppCompatActivity {
         }
     }
 
-    private void onBaseInfoReady() {
-        new GetAttachmentsXMLTask().execute();
-    }
-
-    private void onAttachmentInfoReady() {
+    private void onInfoReady() {
         new GetWeaponFromDB(currentWeaponID).execute();
     }
 
@@ -299,10 +304,11 @@ public class EditWeaponActivity extends AppCompatActivity {
                 listener.onWeaponReady();
             }
         }
-    }
 
-    //todo Retrieve weapon
-    //todo retrieve attachments from xml
-    //link attacments with possible attachments
-    //display in fragment
+        if (mBuildListeners != null) {
+            for (EditBuildActivity.BuildReadyCallbacks b : mBuildListeners){
+                b.onBuildReady();
+            }
+        }
+    }
 }

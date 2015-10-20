@@ -240,6 +240,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
         Intent intent = new Intent(getActivity(), EditWeaponActivity.class);
         intent.putExtra(EXTRA_WEAPON_ID, id);
         intent.putExtra(EditWeaponActivity.EXTRA_WEAPON_TYPE, weaponType);
+        intent.putExtra(BuildListFragment.EXTRA_BUILD_ID, activity.getCurrentBuild().getId());
         startActivityForResult(intent, EditBuildActivity.WEAPON_EDIT_REQUEST);
     }
 

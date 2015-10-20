@@ -42,10 +42,6 @@ public class TaskFragment extends Fragment {
     private DataSourceBuilds dataSourceBuilds;
 
     private long currentBuildID = -1;
-    private String newBuildName = "Something Went Wrong :(";
-    private int infamies = 0;
-    private String pd2URL = "";
-    private long templateBuildID = -1;
 
     private Build currentBuild;
 
@@ -66,7 +62,7 @@ public class TaskFragment extends Fragment {
         mCallbacks = (TaskCallbacks) context;
         Log.d(TAG, "Attached!");
         //Toast.makeText(context, "Attached!", Toast.LENGTH_SHORT).show();
-        start(currentBuildID, newBuildName, infamies, pd2URL, templateBuildID);
+        start(currentBuildID);
     }
 
     /**
@@ -108,11 +104,11 @@ public class TaskFragment extends Fragment {
     /**
      * Start the background task.
      */
-    public void start(long buildID, String newBuildName, int infamies, String url, long templateBuildID) {
+    public void start(long buildID) {
         if (currentBuild == null){
             Log.d(TAG, "No build, going to retrieve from DB in background.");
             if (!mRunning) {
-                mTask = new GetBuildFromDBTask(newBuildName, infamies, url, templateBuildID);
+                mTask = new GetBuildFromDBTask();
                 mTask.execute(buildID);
                 mRunning = true;
             }
@@ -148,17 +144,10 @@ public class TaskFragment extends Fragment {
 
     private class GetBuildFromDBTask extends AsyncTask<Long, Integer, Build> {
 
-        String name;
-        int infamies;
-        String url;
-        long template;
 
-        public GetBuildFromDBTask(String name, int infamies, String url, long template) {
+
+        public GetBuildFromDBTask() {
             super();
-            this.name = name;
-            this.infamies = infamies;
-            this.url = url;
-            this.template = template;
         }
 
         @Override

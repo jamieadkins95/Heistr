@@ -21,7 +21,7 @@ import java.util.Arrays;
 /**
  * Created by Jamie on 18/10/2015.
  */
-public class AttachmentListFragment extends Fragment implements EditWeaponActivity.WeaponsCallbacks{
+public class AttachmentListFragment extends Fragment implements EditWeaponActivity.WeaponsCallbacks, EditBuildActivity.BuildReadyCallbacks{
 
     private static final String ARG_ATTACHMENT_TYPE = "AttachmentType";
     ListView lvAttachments;
@@ -113,7 +113,15 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
 
             }
         });
-
+        
     }
 
+    @Override
+    public void onBuildReady() {
+    }
+
+    @Override
+    public void onBuildUpdated() {
+
+    }
 }
