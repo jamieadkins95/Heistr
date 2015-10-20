@@ -70,7 +70,7 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
     @Override
     public void onPause() {
         super.onPause();
-        activity.stopListening(this);
+        activity = null;
     }
 
     @Override
@@ -97,9 +97,6 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
             currentAttachmentIndex = index;
         }
 
-
-
-
         ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_single_choice, attachments);
         lvAttachments.setAdapter(mAdapter2);
         lvAttachments.setItemChecked(currentAttachmentIndex, true);
@@ -109,11 +106,9 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
                 currentAttachmentIndex = lvAttachments.getCheckedItemPosition();
                 activity.updateCurrentWeapon(attachmentType, currentAttachmentIndex);
                 Toast.makeText(getActivity(), possibleAttachments.get(currentAttachmentIndex).getPd2skillsID() + "", Toast.LENGTH_SHORT).show();
-                //activity.getCurrentBuild().updateArmour(activity, selected);
-
             }
         });
-        
+
     }
 
     @Override
