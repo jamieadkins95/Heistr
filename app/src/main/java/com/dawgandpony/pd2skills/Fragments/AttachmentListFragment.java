@@ -1,7 +1,9 @@
 package com.dawgandpony.pd2skills.Fragments;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -106,6 +108,23 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
                 currentAttachmentIndex = lvAttachments.getCheckedItemPosition();
                 activity.updateCurrentWeapon(attachmentType, currentAttachmentIndex);
                 Toast.makeText(getActivity(), possibleAttachments.get(currentAttachmentIndex).getPd2skillsID() + "", Toast.LENGTH_SHORT).show();
+            }
+        });
+        lvAttachments.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Attachment selectedAttachment = possibleAttachments.get((int) id);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage(selectedAttachment.toString(getResources()))
+                        .setPositiveButton(R.string.got_it, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                            }
+                        })
+                        .create()
+                        .show();
+
+
+                return true;
             }
         });
 

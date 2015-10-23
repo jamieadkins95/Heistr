@@ -219,4 +219,30 @@ public class Attachment {
     public void setMagsize(int magsize) {
         this.magsize = magsize;
     }
+
+    public String toString(Resources res) {
+        String info = "";
+
+        if (magsize != 0){
+            info += res.getString(R.string.weapon_attribute_magazine) + ": " + magsize + "\n";
+        }
+        if (damage != 0){
+            info += res.getString(R.string.weapon_attribute_damage) + ": " + damage + "\n";
+        }
+        if (accuracy != 0){
+            info += res.getString(R.string.weapon_attribute_accuracy) + ": " + accuracy + "\n";
+        }
+        if (stability != 0){
+            info += res.getString(R.string.weapon_attribute_stability) + ": " + stability + "\n";
+        }
+        if (concealment != 0){
+            info += res.getString(R.string.weapon_attribute_concealment) + ": " + concealment + "\n";
+        }
+        if (threat != 0){
+            info += res.getString(R.string.weapon_attribute_threat) + ": " + threat + "\n";
+        }
+
+        info += "\n\nThis is just a placeholder. Really sorry about how unhelpful this is.";
+        return info;
+    }
 }
