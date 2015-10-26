@@ -72,11 +72,10 @@ public class TaskFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "onCreate(Bundle)");
         super.onCreate(savedInstanceState);
-        if (savedInstanceState != null){
-            currentBuildID = savedInstanceState.getLong(EXTRA_CURRENT_BUILD_ID);
-        }
         setRetainInstance(true);
     }
+
+
 
     /**
      * Note that this method is <em>not</em> called when the Fragment is being
@@ -96,6 +95,8 @@ public class TaskFragment extends Fragment {
         outState.putLong(EXTRA_CURRENT_BUILD_ID, currentBuildID);
         super.onSaveInstanceState(outState);
     }
+
+
 
     /*****************************/
     /***** TASK FRAGMENT API *****/
@@ -202,6 +203,9 @@ public class TaskFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         if (DEBUG) Log.i(TAG, "onActivityCreated(Bundle)");
+        if (savedInstanceState != null){
+            currentBuildID = savedInstanceState.getLong(EXTRA_CURRENT_BUILD_ID);
+        }
         super.onActivityCreated(savedInstanceState);
     }
 
