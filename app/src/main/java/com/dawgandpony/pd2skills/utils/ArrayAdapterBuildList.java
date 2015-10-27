@@ -86,7 +86,7 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         }
 
         //Set Detection
-        tvDetection.setText(getItem(position).getDetection() + "");
+        tvDetection.setText("?"); //getItem(position).getDetection()
 
         mastermindSkillCount.setText(getItem(position).getSkillBuild().getSkillTrees().get(Trees.MASTERMIND).getSkillCount() + "");
         enforcerSkillCount.setText(getItem(position).getSkillBuild().getSkillTrees().get(Trees.ENFORCER).getSkillCount() + "");
