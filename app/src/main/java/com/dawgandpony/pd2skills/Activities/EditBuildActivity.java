@@ -280,12 +280,12 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
             case R.id.nav_armour:
                 fragment = ArmourFragment.newInstance();
                 break;
-            /*case R.id.nav_primary:
+            case R.id.nav_primary:
                 fragment = WeaponListFragment.newInstance(WeaponBuild.PRIMARY);
                 break;
             case R.id.nav_secondary:
                 fragment = WeaponListFragment.newInstance(WeaponBuild.SECONDARY);
-                break;*/
+                break;
             case R.id.nav_home:
                 fragment = null;
                 Intent intent = new Intent(EditBuildActivity.this, BuildListActivity.class);

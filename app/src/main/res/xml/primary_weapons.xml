@@ -4,7 +4,7 @@
         <group_name>assault</group_name>
         <weapon_type>primary</weapon_type>
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>1</pd2skills>
             <name>m16</name>
             <rof>500</rof>
             <total>90</total>
@@ -18,7 +18,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>2</pd2skills>
             <name>famas</name>
             <rof>500</rof>
             <total>240</total>
@@ -32,7 +32,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>3</pd2skills>
             <name>scar</name>
             <rof>500</rof>
             <total>100</total>
@@ -46,7 +46,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>4</pd2skills>
             <name>sub2000</name>
             <rof>500</rof>
             <total>99</total>
@@ -60,7 +60,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>5</pd2skills>
             <name>fal</name>
             <rof>500</rof>
             <total>100</total>
@@ -74,7 +74,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>6</pd2skills>
             <name>akm</name>
             <rof>500</rof>
             <total>90</total>
@@ -88,7 +88,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>7</pd2skills>
             <name>galil</name>
             <rof>500</rof>
             <total>150</total>
@@ -102,7 +102,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>8</pd2skills>
             <name>l85a2</name>
             <rof>500</rof>
             <total>150</total>
@@ -116,7 +116,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>9</pd2skills>
             <name>s552</name>
             <rof>500</rof>
             <total>240</total>
@@ -144,7 +144,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>11</pd2skills>
             <name>amcar</name>
             <rof>500</rof>
             <total>220</total>
@@ -158,7 +158,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>12</pd2skills>
             <name>asval</name>
             <rof>500</rof>
             <total>220</total>
@@ -172,7 +172,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>13</pd2skills>
             <name>new_m4</name>
             <rof>500</rof>
             <total>150</total>
@@ -186,7 +186,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>14</pd2skills>
             <name>vhs</name>
             <rof>500</rof>
             <total>150</total>
@@ -200,7 +200,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>15</pd2skills>
             <name>new_m14</name>
             <rof>500</rof>
             <total>70</total>
@@ -214,7 +214,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>16</pd2skills>
             <name>ak5</name>
             <rof>500</rof>
             <total>150</total>
@@ -228,7 +228,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>17</pd2skills>
             <name>g36</name>
             <rof>500</rof>
             <total>240</total>
@@ -242,7 +242,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>18</pd2skills>
             <name>g3</name>
             <rof>500</rof>
             <total>100</total>
@@ -256,7 +256,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>19</pd2skills>
             <name>ak74</name>
             <rof>500</rof>
             <total>150</total>
@@ -270,7 +270,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>20</pd2skills>
             <name>aug</name>
             <rof>500</rof>
             <total>150</total>
@@ -287,7 +287,7 @@
         <group_name>shotgun</group_name>
         <weapon_type>primary</weapon_type>
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>21</pd2skills>
             <name>ksg</name>
             <rof>500</rof>
             <total>42</total>
@@ -301,7 +301,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>22</pd2skills>
             <name>serbu</name>
             <rof>500</rof>
             <total>42</total>
@@ -315,7 +315,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>23</pd2skills>
             <name>r870</name>
             <rof>500</rof>
             <total>42</total>
@@ -329,7 +329,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>24</pd2skills>
             <name>aa12</name>
             <rof>500</rof>
             <total>72</total>
@@ -343,7 +343,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>25</pd2skills>
             <name>saiga</name>
             <rof>500</rof>
             <total>70</total>
@@ -357,7 +357,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>26</pd2skills>
             <name>judge</name>
             <rof>500</rof>
             <total>25</total>
@@ -371,7 +371,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>27</pd2skills>
             <name>striker</name>
             <rof>500</rof>
             <total>72</total>
@@ -385,7 +385,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>28</pd2skills>
             <name>benelli</name>
             <rof>500</rof>
             <total>64</total>
@@ -399,7 +399,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>29</pd2skills>
             <name>spas12</name>
             <rof>500</rof>
             <total>66</total>
@@ -413,7 +413,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>30</pd2skills>
             <name>b682</name>
             <rof>500</rof>
             <total>28</total>
@@ -427,7 +427,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>31</pd2skills>
             <name>huntsman</name>
             <rof>500</rof>
             <total>32</total>
@@ -444,7 +444,7 @@
         <group_name>akimbo</group_name>
         <weapon_type>primary</weapon_type>
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>32</pd2skills>
             <name>x_deagle</name>
             <rof>500</rof>
             <total>60</total>
@@ -458,7 +458,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>33</pd2skills>
             <name>x_usp</name>
             <rof>500</rof>
             <total>104</total>
@@ -472,7 +472,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>34</pd2skills>
             <name>x_g22c</name>
             <rof>500</rof>
             <total>96</total>
@@ -486,7 +486,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>35</pd2skills>
             <name>x_1911</name>
             <rof>500</rof>
             <total>100</total>
@@ -500,7 +500,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>36</pd2skills>
             <name>jowi</name>
             <rof>500</rof>
             <total>160</total>
@@ -514,7 +514,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>37</pd2skills>
             <name>x_g17</name>
             <rof>500</rof>
             <total>170</total>
@@ -528,7 +528,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>38</pd2skills>
             <name>x_b92fs</name>
             <rof>500</rof>
             <total>168</total>
@@ -545,7 +545,7 @@
         <group_name>sniper</group_name>
         <weapon_type>primary</weapon_type>
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>39</pd2skills>
             <name>r93</name>
             <rof>500</rof>
             <total>30</total>
@@ -559,7 +559,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>40</pd2skills>
             <name>wa2000</name>
             <rof>500</rof>
             <total>40</total>
@@ -573,7 +573,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>41</pd2skills>
             <name>winchester1874</name>
             <rof>500</rof>
             <total>45</total>
@@ -587,7 +587,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>42</pd2skills>
             <name>msr</name>
             <rof>500</rof>
             <total>40</total>
@@ -601,7 +601,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>43</pd2skills>
             <name>m95</name>
             <rof>500</rof>
             <total>15</total>
@@ -615,7 +615,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>44</pd2skills>
             <name>mosin</name>
             <rof>500</rof>
             <total>25</total>
@@ -632,7 +632,7 @@
         <group_name>lmg</group_name>
         <weapon_type>primary</weapon_type>
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>45</pd2skills>
             <name>par</name>
             <rof>500</rof>
             <total>400</total>
@@ -646,7 +646,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>46</pd2skills>
             <name>m249</name>
             <rof>500</rof>
             <total>400</total>
@@ -660,7 +660,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>47</pd2skills>
             <name>mg42</name>
             <rof>500</rof>
             <total>450</total>
@@ -674,7 +674,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>48</pd2skills>
             <name>rpk</name>
             <rof>500</rof>
             <total>300</total>
@@ -688,7 +688,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
+            <pd2skills>49</pd2skills>
             <name>hk21</name>
             <rof>500</rof>
             <total>300</total>
