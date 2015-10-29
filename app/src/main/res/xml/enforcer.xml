@@ -115,7 +115,7 @@
             <pd2skills>l</pd2skills>
         </skill>
         <skill>
-            <name>Beserker</name>
+            <name>Berserker</name>
             <abbreviation>Beserk</abbreviation>
             <normal>The lower your health, the more damage you do. When your health is below 25%, you will do up to 250% more melee and saw damage. </normal>
             <ace>When your health is below 25%, you will do up to 100% more damage with ranged weapons.</ace>
