@@ -204,12 +204,11 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
                 // Equip Weapon
                 Bundle bundle = data.getExtras();
                 long id = bundle.getLong(EXTRA_WEAPON_ID);
-                Weapon weapon = null;
-                for (Weapon w : allWeapons){
-                    if (w.getId() == id){
-                        weapon = w;
-                    }
-                }
+                DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(getActivity(), baseWeaponInfo, baseAttachmentInfo);
+                dataSourceWeapons.open();
+                Weapon weapon = dataSourceWeapons.getWeapon(id);
+                dataSourceWeapons.close();
+
                 activity.getCurrentBuild().updateWeaponBuild(getActivity(), weaponType, weapon);
                 Toast.makeText(getActivity(), "Changes were saved and weapon was equipped", Toast.LENGTH_SHORT).show();
             } else if (resultCode == Activity.RESULT_CANCELED){
