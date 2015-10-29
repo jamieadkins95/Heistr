@@ -22,6 +22,7 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
     static final int MOD = 2;
     static final int TOTAL = 3;
 
+    private final long equipped;
     List<Weapon> weapons;
     Context context;
 
@@ -32,6 +33,11 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
         View rowView = inflater.inflate(R.layout.card_view_weapon_small, parent, false);
         TextView tvName = (TextView) rowView.findViewById(R.id.tvName);
         TextView tvWeaponName = (TextView) rowView.findViewById(R.id.tvPrimaryWeaponName);
+        TextView tvEquipped = (TextView) rowView.findViewById(R.id.tvEquipped);
+
+        if (getItem(position).getId() == equipped){
+            tvEquipped.setVisibility(View.VISIBLE);
+        }
 
         //region Damage
         TextView tvDamageTotal = (TextView) rowView.findViewById(R.id.tvDamageValueTotal);
@@ -92,10 +98,11 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
         return rowView;
     }
 
-    public ArrayAdapterWeaponListSmall(Context context, List<Weapon> weapons){
+    public ArrayAdapterWeaponListSmall(Context context, List<Weapon> weapons, long equippedID){
         super(context, -1, weapons);
         this.weapons = weapons;
         this.context = context;
+        this.equipped = equippedID;
     }
 
 

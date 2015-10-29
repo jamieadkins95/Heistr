@@ -228,6 +228,21 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llWeapons"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvEquipped"
+                android:text="@string/equipped"
+                android:visibility="gone"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
 
 
 

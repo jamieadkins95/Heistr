@@ -42,7 +42,6 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
     public final static String EXTRA_WEAPON_ID = "com.dawgandpony.pd2skills.WEAPONID";
 
-    ListView lvCurrentWeapon;
     ListView lvOtherWeapons;
     private ArrayList<Weapon> allWeapons;
     ArrayList<Weapon> baseWeaponInfo;
@@ -50,7 +49,6 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     int weaponType = 0;
 
     ArrayAdapterWeaponListSmall mOtherAdapter;
-    ArrayAdapterWeaponListSmall currentAdapter;
 
     EditBuildActivity activity;
 
@@ -78,7 +76,6 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
         baseWeaponInfo = new ArrayList<>();
         baseAttachmentInfo = new ArrayList<>();
 
-        this.lvCurrentWeapon = (ListView) rootView.findViewById(R.id.lvCurrentWeapon);
         this.lvOtherWeapons = (ListView) rootView.findViewById(R.id.lvOtherWeapons);
         this.lvOtherWeapons.setEmptyView(rootView.findViewById(R.id.emptyElement));
         this.lvOtherWeapons.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
@@ -161,15 +158,6 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
             }
         });
 
-        this.lvCurrentWeapon.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Weapon selectedWeapon = (Weapon) lvCurrentWeapon.getItemAtPosition(position);
-                MoveToEditWeaponActivity(selectedWeapon.getId());
-            }
-        });
-
-
         //region FAB onClick
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -210,6 +198,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
                 dataSourceWeapons.close();
 
                 activity.getCurrentBuild().updateWeaponBuild(getActivity(), weaponType, weapon);
+                mOtherAdapter.notifyDataSetChanged();
                 Toast.makeText(getActivity(), "Changes were saved and weapon was equipped", Toast.LENGTH_SHORT).show();
             } else if (resultCode == Activity.RESULT_CANCELED){
                 // Don't equip weapon
@@ -221,9 +210,6 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     @Override
     public void onPause() {
         super.onPause();
-        for (int i = 0; i < lvCurrentWeapon.getAdapter().getCount(); i++){
-            lvCurrentWeapon.setItemChecked(i, false);
-        }
         for (int i = 0; i < lvOtherWeapons.getAdapter().getCount(); i++){
             lvOtherWeapons.setItemChecked(i, false);
         }
@@ -274,42 +260,15 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
     @Override
     public void onWeaponsReady() {
-        Weapon currentEquippedWeapon = activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType];
-        ArrayList<Weapon> allWeaponsButEquipped = new ArrayList<>();
-        for (Weapon w : allWeapons){
-            if (currentEquippedWeapon == null || w.getId() != currentEquippedWeapon.getId()){
-                allWeaponsButEquipped.add(w);
-            }
-        }
-
-        if (mOtherAdapter == null){
-            mOtherAdapter = new ArrayAdapterWeaponListSmall(getActivity(), allWeaponsButEquipped);
+        Weapon weapon = activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType];
+        if (weapon != null){
+            mOtherAdapter = new ArrayAdapterWeaponListSmall(getActivity(), allWeapons, weapon.getId());
         } else {
-            mOtherAdapter.clear();
-            mOtherAdapter.addAll(allWeaponsButEquipped);
-            mOtherAdapter.notifyDataSetChanged();
+            mOtherAdapter = new ArrayAdapterWeaponListSmall(getActivity(), allWeapons, -1);
         }
-
 
         lvOtherWeapons.setAdapter(mOtherAdapter);
 
-        ArrayList<Weapon> currentWeapon = new ArrayList<>();
-        for (Weapon w : allWeapons){
-            if (currentEquippedWeapon != null && w.getId() == currentEquippedWeapon.getId()){
-                currentWeapon.add(w);
-            }
-        }
-
-        if (currentAdapter == null){
-            currentAdapter = new ArrayAdapterWeaponListSmall(getActivity(), currentWeapon);
-        } else {
-            currentAdapter.clear();
-            currentAdapter.addAll(currentWeapon);
-            currentAdapter.notifyDataSetChanged();
-        }
-
-
-        lvCurrentWeapon.setAdapter(currentAdapter);
     }
 
     public class GetWeaponsFromDBTask extends AsyncTask<Void, Integer, ArrayList<Weapon>> {
