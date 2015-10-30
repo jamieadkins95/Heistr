@@ -135,9 +135,6 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
                         dataSourceBuilds.deleteWeapon(selected.getId());
                         dataSourceBuilds.close();
 
-                        //// TODO: 11/10/2015 refresh weapons
-
-
                         Log.d("Context Action", "Delete weapon " + selected.getId());
 
                         fab.show();
