@@ -5,7 +5,7 @@
         <weapon_type>primary</weapon_type>
         <weapon>
             <pd2skills>1</pd2skills>
-            <name>m16</name>
+            <name>AMR 16</name>
             <rof>500</rof>
             <total>90</total>
             <mag>30</mag>
@@ -19,7 +19,7 @@
 
         <weapon>
             <pd2skills>2</pd2skills>
-            <name>famas</name>
+            <name>Clarion</name>
             <rof>500</rof>
             <total>240</total>
             <mag>30</mag>
@@ -33,7 +33,7 @@
 
         <weapon>
             <pd2skills>3</pd2skills>
-            <name>scar</name>
+            <name>Eagle Heavy</name>
             <rof>500</rof>
             <total>100</total>
             <mag>20</mag>
@@ -47,7 +47,7 @@
 
         <weapon>
             <pd2skills>4</pd2skills>
-            <name>sub2000</name>
+            <name>Cavity 9mm</name>
             <rof>500</rof>
             <total>99</total>
             <mag>33</mag>
@@ -61,7 +61,7 @@
 
         <weapon>
             <pd2skills>5</pd2skills>
-            <name>fal</name>
+            <name>Falcon Rifle</name>
             <rof>500</rof>
             <total>100</total>
             <mag>20</mag>
@@ -75,7 +75,7 @@
 
         <weapon>
             <pd2skills>6</pd2skills>
-            <name>akm</name>
+            <name>AK.762</name>
             <rof>500</rof>
             <total>90</total>
             <mag>30</mag>
@@ -89,7 +89,7 @@
 
         <weapon>
             <pd2skills>7</pd2skills>
-            <name>galil</name>
+            <name>Gecko 7.62</name>
             <rof>500</rof>
             <total>150</total>
             <mag>30</mag>
@@ -103,7 +103,7 @@
 
         <weapon>
             <pd2skills>8</pd2skills>
-            <name>l85a2</name>
+            <name>Queen's Wrath</name>
             <rof>500</rof>
             <total>150</total>
             <mag>30</mag>
@@ -117,7 +117,7 @@
 
         <weapon>
             <pd2skills>9</pd2skills>
-            <name>s552</name>
+            <name>s552 ??</name>
             <rof>500</rof>
             <total>240</total>
             <mag>30</mag>
@@ -131,7 +131,7 @@
 
         <weapon>
             <pd2skills>10</pd2skills>
-            <name>akm_gold</name>
+            <name>Golden AK.762</name>
             <rof>500</rof>
             <total>90</total>
             <mag>30</mag>
@@ -145,7 +145,7 @@
 
         <weapon>
             <pd2skills>11</pd2skills>
-            <name>amcar</name>
+            <name>AMCAR</name>
             <rof>500</rof>
             <total>220</total>
             <mag>20</mag>
@@ -159,7 +159,7 @@
 
         <weapon>
             <pd2skills>12</pd2skills>
-            <name>asval</name>
+            <name>Valkyria</name>
             <rof>500</rof>
             <total>220</total>
             <mag>20</mag>
@@ -173,7 +173,7 @@
 
         <weapon>
             <pd2skills>13</pd2skills>
-            <name>new_m4</name>
+            <name>CAR-4</name>
             <rof>500</rof>
             <total>150</total>
             <mag>30</mag>
@@ -187,7 +187,7 @@
 
         <weapon>
             <pd2skills>14</pd2skills>
-            <name>vhs</name>
+            <name>Lion's Roar</name>
             <rof>500</rof>
             <total>150</total>
             <mag>30</mag>
@@ -201,7 +201,7 @@
 
         <weapon>
             <pd2skills>15</pd2skills>
-            <name>new_m14</name>
+            <name>M308</name>
             <rof>500</rof>
             <total>70</total>
             <mag>10</mag>
@@ -215,7 +215,7 @@
 
         <weapon>
             <pd2skills>16</pd2skills>
-            <name>ak5</name>
+            <name>AK5</name>
             <rof>500</rof>
             <total>150</total>
             <mag>30</mag>
@@ -229,7 +229,7 @@
 
         <weapon>
             <pd2skills>17</pd2skills>
-            <name>g36</name>
+            <name>JP36</name>
             <rof>500</rof>
             <total>240</total>
             <mag>30</mag>
@@ -243,7 +243,7 @@
 
         <weapon>
             <pd2skills>18</pd2skills>
-            <name>g3</name>
+            <name>Gewehr 3</name>
             <rof>500</rof>
             <total>100</total>
             <mag>20</mag>
@@ -257,7 +257,7 @@
 
         <weapon>
             <pd2skills>19</pd2skills>
-            <name>ak74</name>
+            <name>AK</name>
             <rof>500</rof>
             <total>150</total>
             <mag>30</mag>
@@ -271,7 +271,7 @@
 
         <weapon>
             <pd2skills>20</pd2skills>
-            <name>aug</name>
+            <name>UAR</name>
             <rof>500</rof>
             <total>150</total>
             <mag>30</mag>
@@ -288,7 +288,7 @@
         <weapon_type>primary</weapon_type>
         <weapon>
             <pd2skills>21</pd2skills>
-            <name>ksg</name>
+            <name>Raven</name>
             <rof>500</rof>
             <total>42</total>
             <mag>14</mag>
@@ -301,22 +301,8 @@
         </weapon>
 
         <weapon>
-            <pd2skills>22</pd2skills>
-            <name>serbu</name>
-            <rof>500</rof>
-            <total>42</total>
-            <mag>6</mag>
-            <damage>58</damage>
-            <accuracy>48</accuracy>
-            <stability>36</stability>
-            <concealment>23</concealment>
-            <threat>20</threat>
-            <attachments>51</attachments>
-        </weapon>
-
-        <weapon>
             <pd2skills>23</pd2skills>
-            <name>r870</name>
+            <name>Reinfield 880</name>
             <rof>500</rof>
             <total>42</total>
             <mag>6</mag>
@@ -330,7 +316,7 @@
 
         <weapon>
             <pd2skills>24</pd2skills>
-            <name>aa12</name>
+            <name>Steakout 12G</name>
             <rof>500</rof>
             <total>72</total>
             <mag>8</mag>
@@ -344,7 +330,7 @@
 
         <weapon>
             <pd2skills>25</pd2skills>
-            <name>saiga</name>
+            <name>IHZMA</name>
             <rof>500</rof>
             <total>70</total>
             <mag>7</mag>
@@ -357,36 +343,8 @@
         </weapon>
 
         <weapon>
-            <pd2skills>26</pd2skills>
-            <name>judge</name>
-            <rof>500</rof>
-            <total>25</total>
-            <mag>5</mag>
-            <damage>95</damage>
-            <accuracy>52</accuracy>
-            <stability>28</stability>
-            <concealment>29</concealment>
-            <threat>20</threat>
-            <attachments>51</attachments>
-        </weapon>
-
-        <weapon>
-            <pd2skills>27</pd2skills>
-            <name>striker</name>
-            <rof>500</rof>
-            <total>72</total>
-            <mag>12</mag>
-            <damage>23</damage>
-            <accuracy>28</accuracy>
-            <stability>44</stability>
-            <concealment>21</concealment>
-            <threat>20</threat>
-            <attachments>51</attachments>
-        </weapon>
-
-        <weapon>
             <pd2skills>28</pd2skills>
-            <name>benelli</name>
+            <name>M1014</name>
             <rof>500</rof>
             <total>64</total>
             <mag>8</mag>
@@ -400,7 +358,7 @@
 
         <weapon>
             <pd2skills>29</pd2skills>
-            <name>spas12</name>
+            <name>Predator</name>
             <rof>500</rof>
             <total>66</total>
             <mag>6</mag>
@@ -414,7 +372,7 @@
 
         <weapon>
             <pd2skills>30</pd2skills>
-            <name>b682</name>
+            <name>Joceline</name>
             <rof>500</rof>
             <total>28</total>
             <mag>2</mag>
@@ -428,7 +386,7 @@
 
         <weapon>
             <pd2skills>31</pd2skills>
-            <name>huntsman</name>
+            <name>Mosconi</name>
             <rof>500</rof>
             <total>32</total>
             <mag>2</mag>
@@ -445,7 +403,7 @@
         <weapon_type>primary</weapon_type>
         <weapon>
             <pd2skills>32</pd2skills>
-            <name>x_deagle</name>
+            <name>Akimbo Deagle</name>
             <rof>500</rof>
             <total>60</total>
             <mag>20</mag>
@@ -459,7 +417,7 @@
 
         <weapon>
             <pd2skills>33</pd2skills>
-            <name>x_usp</name>
+            <name>Akimbo Interceptors</name>
             <rof>500</rof>
             <total>104</total>
             <mag>26</mag>
@@ -473,7 +431,7 @@
 
         <weapon>
             <pd2skills>34</pd2skills>
-            <name>x_g22c</name>
+            <name>Akimbo Chimano Custom</name>
             <rof>500</rof>
             <total>96</total>
             <mag>32</mag>
@@ -487,7 +445,7 @@
 
         <weapon>
             <pd2skills>35</pd2skills>
-            <name>x_1911</name>
+            <name>Akimbo Crosskill</name>
             <rof>500</rof>
             <total>100</total>
             <mag>20</mag>
@@ -501,7 +459,7 @@
 
         <weapon>
             <pd2skills>36</pd2skills>
-            <name>jowi</name>
+            <name>Akimbo Chimano Compact</name>
             <rof>500</rof>
             <total>160</total>
             <mag>20</mag>
@@ -515,7 +473,7 @@
 
         <weapon>
             <pd2skills>37</pd2skills>
-            <name>x_g17</name>
+            <name>Akimbo Chimano 88</name>
             <rof>500</rof>
             <total>170</total>
             <mag>34</mag>
@@ -529,7 +487,7 @@
 
         <weapon>
             <pd2skills>38</pd2skills>
-            <name>x_b92fs</name>
+            <name>Akimbo Bernettis</name>
             <rof>500</rof>
             <total>168</total>
             <mag>28</mag>
@@ -546,7 +504,7 @@
         <weapon_type>primary</weapon_type>
         <weapon>
             <pd2skills>39</pd2skills>
-            <name>r93</name>
+            <name>R93</name>
             <rof>500</rof>
             <total>30</total>
             <mag>6</mag>
@@ -560,7 +518,7 @@
 
         <weapon>
             <pd2skills>40</pd2skills>
-            <name>wa2000</name>
+            <name>Lebensauger</name>
             <rof>500</rof>
             <total>40</total>
             <mag>10</mag>
@@ -574,7 +532,7 @@
 
         <weapon>
             <pd2skills>41</pd2skills>
-            <name>winchester1874</name>
+            <name>Repeater 1874</name>
             <rof>500</rof>
             <total>45</total>
             <mag>15</mag>
@@ -588,7 +546,7 @@
 
         <weapon>
             <pd2skills>42</pd2skills>
-            <name>msr</name>
+            <name>Rattlesnake</name>
             <rof>500</rof>
             <total>40</total>
             <mag>10</mag>
@@ -602,7 +560,7 @@
 
         <weapon>
             <pd2skills>43</pd2skills>
-            <name>m95</name>
+            <name>Thanatos</name>
             <rof>500</rof>
             <total>15</total>
             <mag>5</mag>
@@ -616,7 +574,7 @@
 
         <weapon>
             <pd2skills>44</pd2skills>
-            <name>mosin</name>
+            <name>Nagant</name>
             <rof>500</rof>
             <total>25</total>
             <mag>5</mag>
@@ -633,7 +591,7 @@
         <weapon_type>primary</weapon_type>
         <weapon>
             <pd2skills>45</pd2skills>
-            <name>par</name>
+            <name>KSP58</name>
             <rof>500</rof>
             <total>400</total>
             <mag>200</mag>
@@ -647,7 +605,7 @@
 
         <weapon>
             <pd2skills>46</pd2skills>
-            <name>m249</name>
+            <name>KSP</name>
             <rof>500</rof>
             <total>400</total>
             <mag>200</mag>
@@ -661,7 +619,7 @@
 
         <weapon>
             <pd2skills>47</pd2skills>
-            <name>mg42</name>
+            <name>Buzzsaw 42</name>
             <rof>500</rof>
             <total>450</total>
             <mag>150</mag>
@@ -675,7 +633,7 @@
 
         <weapon>
             <pd2skills>48</pd2skills>
-            <name>rpk</name>
+            <name>RPK</name>
             <rof>500</rof>
             <total>300</total>
             <mag>100</mag>
@@ -689,7 +647,7 @@
 
         <weapon>
             <pd2skills>49</pd2skills>
-            <name>hk21</name>
+            <name>Brenner 21</name>
             <rof>500</rof>
             <total>300</total>
             <mag>150</mag>
