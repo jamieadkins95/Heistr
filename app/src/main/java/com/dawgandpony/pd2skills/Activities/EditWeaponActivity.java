@@ -278,6 +278,8 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
             super.onPostExecute(weapon);
             currentWeapon = weapon;
 
+            setTitle(weapon.getName());
+
             attachmentsSplitUp = new ArrayList<>();
             for (int i = Attachment.MOD_BARREL; i <= Attachment.MOD_UPPER_RECEIVER; i++){
                 attachmentsSplitUp.add(new ArrayList<Attachment>());

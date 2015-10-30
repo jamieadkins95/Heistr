@@ -19,7 +19,7 @@
         <activity
             android:name=".Activities.EditBuildActivity"
             android:theme="@style/EditBuildActivity"
-            android:label="@string/title_activity_edit_build2" >
+            android:label="@string/title_activity_edit_build" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
