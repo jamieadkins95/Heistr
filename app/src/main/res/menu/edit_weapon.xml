@@ -4,6 +4,5 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.dawgandpony.pd2skills.Activities.EditBuildActivity">
     <item android:id="@+id/action_equip" android:title="@string/action_equip"
-        android:icon="@drawable/ic_check_white_24dp"
         app:showAsAction="withText|ifRoom" />
 </menu>
