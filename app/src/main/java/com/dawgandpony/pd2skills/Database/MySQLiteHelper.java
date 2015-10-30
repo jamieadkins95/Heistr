@@ -136,7 +136,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_WEAPON_BUILD_TABLE);
         db.execSQL(CREATE_WEAPON_TABLE);
         InitInfamies(db);
-        AddBaseWeapons(db);
+        //AddBaseWeapons(db);
     }
 
 
