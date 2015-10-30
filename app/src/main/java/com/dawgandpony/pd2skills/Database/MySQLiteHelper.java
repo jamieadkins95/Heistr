@@ -14,7 +14,7 @@ import com.dawgandpony.pd2skills.BuildObjects.Attachment;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pd2skills.db";
-    private static final int DATABASE_VERSION = 21;
+    private static final int DATABASE_VERSION = 22;
 
     //region Skills
     public static final String TABLE_SKILL_BUILDS = "tbSkillBuilds";
