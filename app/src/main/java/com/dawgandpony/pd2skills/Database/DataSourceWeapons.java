@@ -207,11 +207,7 @@ public class DataSourceWeapons {
     }
 
     public void deleteWeapon(long id){
-        if (id > 3){
             database.delete(MySQLiteHelper.TABLE_WEAPONS, MySQLiteHelper.COLUMN_ID + " = " + id, null);
-        } else {
-            Toast.makeText(mContext, "Can't delete example weapons", Toast.LENGTH_SHORT).show();
-        }
     }
 
     public void updateAttachment(long id, int attachmentType, long attachmentID){
