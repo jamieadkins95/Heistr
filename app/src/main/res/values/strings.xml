@@ -211,6 +211,7 @@
     <string name="skill_trees">Skill Trees</string>
     <string name="weapon_attribute_threat">Threat</string>
     <string name="equipped">Equipped</string>
+    <string name="weapon_placeholder_text">WIP</string>
 
 
 </resources>

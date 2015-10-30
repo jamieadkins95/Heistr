@@ -149,7 +149,7 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
         mBuildListeners = new ArrayList<>();
         final Adapter adapter = new Adapter(getSupportFragmentManager());
 
-        adapter.addFragment(BlankFragment.newInstance("WIP"), "Overview");
+        adapter.addFragment(BlankFragment.newInstance(getString(R.string.weapon_placeholder_text)), "Overview");
 
         String[] attachment_types = getResources().getStringArray(R.array.attachment_types);
         for (int i = 0; i < MySQLiteHelper.COLUMNS_ATTACHMENTS.length; i++){
