@@ -1,6 +1,7 @@
 package com.dawgandpony.pd2skills.utils;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +37,7 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
         TextView tvEquipped = (TextView) rowView.findViewById(R.id.tvEquipped);
 
         if (getItem(position).getId() == equipped){
-            tvEquipped.setVisibility(View.VISIBLE);
+            tvName.setTextColor(ContextCompat.getColor(context, R.color.primaryAccent));
         }
 
         //region Damage
