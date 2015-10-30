@@ -6,280 +6,280 @@
         <weapon>
             <pd2skills>1</pd2skills>
             <name>AMR 16</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>90</total>
             <mag>30</mag>
             <damage>80</damage>
             <accuracy>48</accuracy>
             <stability>32</stability>
             <concealment>17</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>2</pd2skills>
             <name>Clarion</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>240</total>
             <mag>30</mag>
             <damage>35</damage>
             <accuracy>28</accuracy>
             <stability>68</stability>
             <concealment>24</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>3</pd2skills>
             <name>Eagle Heavy</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>100</total>
             <mag>20</mag>
             <damage>81</damage>
             <accuracy>64</accuracy>
             <stability>44</stability>
             <concealment>8</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>4</pd2skills>
             <name>Cavity 9mm</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>99</total>
             <mag>33</mag>
             <damage>80</damage>
             <accuracy>72</accuracy>
             <stability>32</stability>
             <concealment>25</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>5</pd2skills>
             <name>Falcon Rifle</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>100</total>
             <mag>20</mag>
             <damage>80</damage>
             <accuracy>60</accuracy>
             <stability>44</stability>
             <concealment>10</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>6</pd2skills>
             <name>AK.762</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>90</total>
             <mag>30</mag>
             <damage>80</damage>
             <accuracy>52</accuracy>
             <stability>44</stability>
             <concealment>13</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>7</pd2skills>
             <name>Gecko 7.62</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>150</total>
             <mag>30</mag>
             <damage>42</damage>
             <accuracy>40</accuracy>
             <stability>68</stability>
             <concealment>15</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>8</pd2skills>
             <name>Queen's Wrath</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>150</total>
             <mag>30</mag>
             <damage>40</damage>
             <accuracy>56</accuracy>
             <stability>60</stability>
             <concealment>16</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>9</pd2skills>
             <name>s552 ??</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>240</total>
             <mag>30</mag>
             <damage>35</damage>
             <accuracy>28</accuracy>
             <stability>56</stability>
             <concealment>22</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>10</pd2skills>
             <name>Golden AK.762</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>90</total>
             <mag>30</mag>
             <damage>80</damage>
             <accuracy>52</accuracy>
             <stability>44</stability>
             <concealment>11</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>11</pd2skills>
             <name>AMCAR</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>220</total>
             <mag>20</mag>
             <damage>36</damage>
             <accuracy>28</accuracy>
             <stability>76</stability>
             <concealment>21</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>12</pd2skills>
             <name>Valkyria</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>220</total>
             <mag>20</mag>
             <damage>36</damage>
             <accuracy>48</accuracy>
             <stability>64</stability>
             <concealment>26</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>13</pd2skills>
             <name>CAR-4</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>150</total>
             <mag>30</mag>
             <damage>38</damage>
             <accuracy>36</accuracy>
             <stability>60</stability>
             <concealment>20</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>14</pd2skills>
             <name>Lion's Roar</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>150</total>
             <mag>30</mag>
             <damage>40</damage>
             <accuracy>52</accuracy>
             <stability>60</stability>
             <concealment>17</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>15</pd2skills>
             <name>M308</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>70</total>
             <mag>10</mag>
             <damage>160</damage>
             <accuracy>76</accuracy>
             <stability>36</stability>
             <concealment>8</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>16</pd2skills>
             <name>AK5</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>150</total>
             <mag>30</mag>
             <damage>38</damage>
             <accuracy>52</accuracy>
             <stability>60</stability>
             <concealment>18</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>17</pd2skills>
             <name>JP36</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>240</total>
             <mag>30</mag>
             <damage>36</damage>
             <accuracy>32</accuracy>
             <stability>64</stability>
             <concealment>19</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>18</pd2skills>
             <name>Gewehr 3</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>100</total>
             <mag>20</mag>
             <damage>80</damage>
             <accuracy>60</accuracy>
             <stability>48</stability>
             <concealment>12</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>19</pd2skills>
             <name>AK</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>150</total>
             <mag>30</mag>
             <damage>40</damage>
             <accuracy>40</accuracy>
             <stability>60</stability>
             <concealment>16</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>20</pd2skills>
             <name>UAR</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>150</total>
             <mag>30</mag>
             <damage>38</damage>
             <accuracy>56</accuracy>
             <stability>40</stability>
             <concealment>20</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
     </weapon_group>
@@ -289,112 +289,112 @@
         <weapon>
             <pd2skills>21</pd2skills>
             <name>Raven</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>42</total>
             <mag>14</mag>
             <damage>59</damage>
             <accuracy>44</accuracy>
             <stability>44</stability>
             <concealment>22</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>23</pd2skills>
             <name>Reinfield 880</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>42</total>
             <mag>6</mag>
             <damage>59</damage>
             <accuracy>40</accuracy>
             <stability>32</stability>
             <concealment>11</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>24</pd2skills>
             <name>Steakout 12G</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>72</total>
             <mag>8</mag>
             <damage>23</damage>
             <accuracy>28</accuracy>
             <stability>44</stability>
             <concealment>9</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>25</pd2skills>
             <name>IHZMA</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>70</total>
             <mag>7</mag>
             <damage>23</damage>
             <accuracy>28</accuracy>
             <stability>44</stability>
             <concealment>13</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>28</pd2skills>
             <name>M1014</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>64</total>
             <mag>8</mag>
             <damage>30</damage>
             <accuracy>28</accuracy>
             <stability>44</stability>
             <concealment>12</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>29</pd2skills>
             <name>Predator</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>66</total>
             <mag>6</mag>
             <damage>30</damage>
             <accuracy>28</accuracy>
             <stability>44</stability>
             <concealment>14</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>30</pd2skills>
             <name>Joceline</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>28</total>
             <mag>2</mag>
             <damage>145</damage>
             <accuracy>60</accuracy>
             <stability>28</stability>
             <concealment>5</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>31</pd2skills>
             <name>Mosconi</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>32</total>
             <mag>2</mag>
             <damage>145</damage>
             <accuracy>60</accuracy>
             <stability>36</stability>
             <concealment>7</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
     </weapon_group>
@@ -404,98 +404,98 @@
         <weapon>
             <pd2skills>32</pd2skills>
             <name>Akimbo Deagle</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>60</total>
             <mag>20</mag>
             <damage>160</damage>
             <accuracy>76</accuracy>
             <stability>28</stability>
             <concealment>26</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>33</pd2skills>
             <name>Akimbo Interceptors</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>104</total>
             <mag>26</mag>
             <damage>80</damage>
             <accuracy>68</accuracy>
             <stability>52</stability>
             <concealment>29</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>34</pd2skills>
             <name>Akimbo Chimano Custom</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>96</total>
             <mag>32</mag>
             <damage>80</damage>
             <accuracy>68</accuracy>
             <stability>52</stability>
             <concealment>29</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>35</pd2skills>
             <name>Akimbo Crosskill</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>100</total>
             <mag>20</mag>
             <damage>80</damage>
             <accuracy>68</accuracy>
             <stability>52</stability>
             <concealment>27</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>36</pd2skills>
             <name>Akimbo Chimano Compact</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>160</total>
             <mag>20</mag>
             <damage>40</damage>
             <accuracy>52</accuracy>
             <stability>60</stability>
             <concealment>30</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>37</pd2skills>
             <name>Akimbo Chimano 88</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>170</total>
             <mag>34</mag>
             <damage>40</damage>
             <accuracy>52</accuracy>
             <stability>60</stability>
             <concealment>30</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>38</pd2skills>
             <name>Akimbo Bernettis</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>168</total>
             <mag>28</mag>
             <damage>40</damage>
             <accuracy>52</accuracy>
             <stability>60</stability>
             <concealment>28</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
     </weapon_group>
@@ -505,84 +505,84 @@
         <weapon>
             <pd2skills>39</pd2skills>
             <name>R93</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>30</total>
             <mag>6</mag>
             <damage>140</damage>
             <accuracy>92</accuracy>
             <stability>12</stability>
             <concealment>5</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>40</pd2skills>
             <name>Lebensauger</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>40</total>
             <mag>10</mag>
             <damage>160</damage>
             <accuracy>92</accuracy>
             <stability>20</stability>
             <concealment>16</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>41</pd2skills>
             <name>Repeater 1874</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>45</total>
             <mag>15</mag>
             <damage>160</damage>
             <accuracy>92</accuracy>
             <stability>20</stability>
             <concealment>12</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>42</pd2skills>
             <name>Rattlesnake</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>40</total>
             <mag>10</mag>
             <damage>160</damage>
             <accuracy>84</accuracy>
             <stability>28</stability>
             <concealment>5</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>43</pd2skills>
             <name>Thanatos</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>15</total>
             <mag>5</mag>
             <damage>145</damage>
             <accuracy>92</accuracy>
             <stability>4</stability>
             <concealment>1</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>44</pd2skills>
             <name>Nagant</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>25</total>
             <mag>5</mag>
             <damage>140</damage>
             <accuracy>92</accuracy>
             <stability>12</stability>
             <concealment>6</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
     </weapon_group>
@@ -592,70 +592,70 @@
         <weapon>
             <pd2skills>45</pd2skills>
             <name>KSP58</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>400</total>
             <mag>200</mag>
             <damage>37</damage>
             <accuracy>32</accuracy>
             <stability>36</stability>
             <concealment>2</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>46</pd2skills>
             <name>KSP</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>400</total>
             <mag>200</mag>
             <damage>36</damage>
             <accuracy>28</accuracy>
             <stability>36</stability>
             <concealment>2</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>47</pd2skills>
             <name>Buzzsaw 42</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>450</total>
             <mag>150</mag>
             <damage>36</damage>
             <accuracy>28</accuracy>
             <stability>36</stability>
             <concealment>2</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>48</pd2skills>
             <name>RPK</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>300</total>
             <mag>100</mag>
             <damage>40</damage>
             <accuracy>28</accuracy>
             <stability>36</stability>
             <concealment>5</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
 
         <weapon>
             <pd2skills>49</pd2skills>
             <name>Brenner 21</name>
-            <rof>500</rof>
+            <rof>0</rof>
             <total>300</total>
             <mag>150</mag>
             <damage>40</damage>
             <accuracy>36</accuracy>
             <stability>36</stability>
             <concealment>2</concealment>
-            <threat>20</threat>
+            <threat>0</threat>
             <attachments>51</attachments>
         </weapon>
     </weapon_group>
