@@ -5,12 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.R;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -75,6 +77,9 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
             tvPrimaryAccuracy.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getAccuracy() + "");
             tvPrimaryStability.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getStability() + "");
             tvPrimaryConcealment.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getConcealment() + "");
+        } else {
+            LinearLayout llPrimary = (LinearLayout) rowView.findViewById(R.id.llPrimary);
+            llPrimary.setVisibility(View.INVISIBLE);
         }
 
         if (getItem(position).getWeaponBuild().getSecondaryWeapon() != null){
@@ -83,6 +88,9 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
             tvSecondaryAccuracy.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getAccuracy() + "");
             tvSecondaryStability.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getStability() + "");
             tvSecondaryConcealment.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getConcealment() + "");
+        } else {
+            LinearLayout llSecondary = (LinearLayout) rowView.findViewById(R.id.llSecondary);
+            llSecondary.setVisibility(View.INVISIBLE);
         }
 
         //Set Detection
