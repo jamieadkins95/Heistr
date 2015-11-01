@@ -220,7 +220,7 @@
     <group_name>shotgun</group_name>
     <weapon_type>secondary</weapon_type>
         <weapon>
-            <pd2skills>26</pd2skills>
+            <pd2skills>16</pd2skills>
             <name>Judge</name>
             <rof>0</rof>
             <total>25</total>
@@ -234,7 +234,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>27</pd2skills>
+            <pd2skills>17</pd2skills>
             <name>Street Sweeper</name>
             <rof>0</rof>
             <total>72</total>
@@ -248,7 +248,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>22</pd2skills>
+            <pd2skills>18</pd2skills>
             <name>Locomotive</name>
             <rof>0</rof>
             <total>42</total>
@@ -265,7 +265,7 @@
         <group_name>smg</group_name>
         <weapon_type>secondary</weapon_type>
         <weapon>
-            <pd2skills>16</pd2skills>
+            <pd2skills>19</pd2skills>
             <name>Mark 10</name>
             <rof>0</rof>
             <total>160</total>
@@ -279,7 +279,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>17</pd2skills>
+            <pd2skills>20</pd2skills>
             <name>Uzi</name>
             <rof>0</rof>
             <total>150</total>
@@ -293,7 +293,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>18</pd2skills>
+            <pd2skills>21</pd2skills>
             <name>Kobus 90</name>
             <rof>0</rof>
             <total>150</total>
@@ -307,7 +307,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>19</pd2skills>
+            <pd2skills>22</pd2skills>
             <name>Micro Uzi</name>
             <rof>0</rof>
             <total>224</total>
@@ -321,7 +321,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>20</pd2skills>
+            <pd2skills>23</pd2skills>
             <name>Jacket's Piece</name>
             <rof>0</rof>
             <total>160</total>
@@ -335,7 +335,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>21</pd2skills>
+            <pd2skills>24</pd2skills>
             <name>CMP</name>
             <rof>0</rof>
             <total>210</total>
@@ -349,7 +349,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>22</pd2skills>
+            <pd2skills>25</pd2skills>
             <name>Chicago Typewriter</name>
             <rof>0</rof>
             <total>150</total>
@@ -363,7 +363,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>23</pd2skills>
+            <pd2skills>26</pd2skills>
             <name>SpecOps</name>
             <rof>0</rof>
             <total>160</total>
@@ -377,7 +377,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>24</pd2skills>
+            <pd2skills>27</pd2skills>
             <name>Cobra</name>
             <rof>0</rof>
             <total>220</total>
@@ -391,7 +391,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>25</pd2skills>
+            <pd2skills>28</pd2skills>
             <name>Kross Vertex</name>
             <rof>0</rof>
             <total>150</total>
@@ -405,7 +405,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>26</pd2skills>
+            <pd2skills>29</pd2skills>
             <name>Patchett L2A1</name>
             <rof>0</rof>
             <total>220</total>
@@ -419,7 +419,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>27</pd2skills>
+            <pd2skills>30</pd2skills>
             <name>Swedish K</name>
             <rof>0</rof>
             <total>80</total>
@@ -433,7 +433,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>28</pd2skills>
+            <pd2skills>31</pd2skills>
             <name>Krinkov</name>
             <rof>0</rof>
             <total>90</total>
@@ -447,7 +447,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>29</pd2skills>
+            <pd2skills>32</pd2skills>
             <name>Compact-5</name>
             <rof>0</rof>
             <total>210</total>
@@ -461,7 +461,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>30</pd2skills>
+            <pd2skills>33</pd2skills>
             <name>Para</name>
             <rof>0</rof>
             <total>150</total>
@@ -475,7 +475,7 @@
         </weapon>
 
         <weapon>
-            <pd2skills>31</pd2skills>
+            <pd2skills>34</pd2skills>
             <name>Blaster 9mm</name>
             <rof>0</rof>
             <total>220</total>
