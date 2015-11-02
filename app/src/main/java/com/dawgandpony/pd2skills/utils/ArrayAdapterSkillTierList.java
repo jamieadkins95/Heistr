@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.PorterDuff;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -88,13 +89,42 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         }
         for (int i =0; i < tier.getSkillsInTier().size(); i++){
 
+            String name = "";
+
             if (tier.getSkillsInTier().get(i).getName().length() > 17){
-                tvs[i].setText(tier.getSkillsInTier().get(i).getAbbreviation());
+                name = tier.getSkillsInTier().get(i).getAbbreviation();
             }
             else{
-                tvs[i].setText(tier.getSkillsInTier().get(i).getName());
+                name = tier.getSkillsInTier().get(i).getName();
             }
 
+            switch (context.getResources().getDisplayMetrics().densityDpi){
+                case DisplayMetrics.DENSITY_XHIGH:
+                    if (name.length() > 10){
+                        name = name.substring(0,10);
+                    }
+                    break;
+
+                case DisplayMetrics.DENSITY_HIGH:
+                    if (name.length() > 10){
+                        name = name.substring(0,10);
+                    }
+                    break;
+
+                case DisplayMetrics.DENSITY_XXHIGH:
+                    if (name.length() > 10){
+                        name = name.substring(0,10);
+                    }
+                    break;
+
+                case DisplayMetrics.DENSITY_MEDIUM:
+                    if (name.length() > 10){
+                        name = name.substring(0,10);
+                    }
+                    break;
+            }
+
+            tvs[i].setText(name);
 
             switch (tier.getSkillsInTier().get(i).getTaken()){
                 case Skill.NO:
