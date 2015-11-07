@@ -241,7 +241,7 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
         //currentWeapon.getAttachments().set(attachmentType, newAttachment);
         DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(this, baseWeaponInfo, baseAttachmentInfo);
         dataSourceWeapons.open();
-        dataSourceWeapons.updateAttachment(currentWeapon.getId(), attachmentType, newAttachment.getPd2skillsID());
+        dataSourceWeapons.updateAttachment(currentWeapon.getId(), attachmentType, newAttachment.getPd2());
         dataSourceWeapons.close();
     }
 

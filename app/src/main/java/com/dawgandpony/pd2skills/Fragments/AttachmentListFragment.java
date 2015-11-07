@@ -88,7 +88,7 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
         int index = -1;
         for (Attachment a : possibleAttachments){
             for (Attachment e : activity.getCurrentWeapon().getAttachments()){
-                if (a.getPd2skillsID() ==  e.getPd2skillsID()){
+                if (a.getPd2().equals(e.getPd2())){
                     index = count;
                 }
             }

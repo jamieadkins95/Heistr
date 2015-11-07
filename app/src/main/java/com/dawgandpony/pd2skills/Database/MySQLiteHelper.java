@@ -14,7 +14,7 @@ import com.dawgandpony.pd2skills.BuildObjects.Attachment;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pd2skills.db";
-    private static final int DATABASE_VERSION = 22;
+    private static final int DATABASE_VERSION = 23;
 
     //region Skills
     public static final String TABLE_SKILL_BUILDS = "tbSkillBuilds";
@@ -91,21 +91,21 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + " integer," + COLUMN_WEAPON_TYPE
             + " integer," + COLUMN_NAME
             + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_BARREL]
-            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_BARREL_EXTENSION]
-            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_BAYONET]
-            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_CUSTOM]
-            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_EXTRA]
-            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_FOREGRIP]
-            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_GADGET]
-            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_GRIP]
-            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_LOWER_RECEIVER]
-            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_MAGAZINE]
-            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_SIGHT]
-            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_SLIDE]
-            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_STOCK]
-            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_SUPPRESSOR]
-            + " integer," + COLUMNS_ATTACHMENTS[Attachment.MOD_UPPER_RECEIVER]
-            + " integer);";
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_BARREL_EXTENSION]
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_BAYONET]
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_CUSTOM]
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_EXTRA]
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_FOREGRIP]
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_GADGET]
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_GRIP]
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_LOWER_RECEIVER]
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_MAGAZINE]
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_SIGHT]
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_SLIDE]
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_STOCK]
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_SUPPRESSOR]
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_UPPER_RECEIVER]
+            + " text);";
     //endregion
 
 

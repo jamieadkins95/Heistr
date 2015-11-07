@@ -210,7 +210,7 @@ public class DataSourceWeapons {
             database.delete(MySQLiteHelper.TABLE_WEAPONS, MySQLiteHelper.COLUMN_ID + " = " + id, null);
     }
 
-    public void updateAttachment(long id, int attachmentType, long attachmentID){
+    public void updateAttachment(long id, int attachmentType, String attachmentID){
         ContentValues values =  new ContentValues();
         values.put(MySQLiteHelper.COLUMNS_ATTACHMENTS[attachmentType], attachmentID);
         database.update(MySQLiteHelper.TABLE_WEAPONS, values, MySQLiteHelper.COLUMN_ID + " = " + id, null);
@@ -247,15 +247,15 @@ public class DataSourceWeapons {
         weapon.setPd2skillsID(cursorWeapon.getLong(1));
         weapon.setWeaponType(cursorWeapon.getInt(2));
         weapon.setName(cursorWeapon.getString(3));
-        ArrayList<Long> attachments = new ArrayList<>();
+        ArrayList<String> attachments = new ArrayList<>();
         for (int i = Attachment.MOD_BARREL; i <= Attachment.MOD_UPPER_RECEIVER; i++){
-            attachments.add(cursorWeapon.getLong(4 + i));
+            attachments.add(cursorWeapon.getString(4 + i));
         }
 
         ArrayList<Attachment> equippedAttachments = new ArrayList<>();
         for (Attachment xml : baseAttachmentInfo){
-            for (Long id : attachments){
-                if (xml.getPd2skillsID() == id){
+            for (String id : attachments){
+                if (xml.getPd2().equals(id)){
                     equippedAttachments.add(xml);
                 }
             }
