@@ -18,8 +18,8 @@
         </activity>
         <activity
             android:name=".Activities.EditBuildActivity"
-            android:theme="@style/EditBuildActivity"
-            android:label="@string/title_activity_edit_build" >
+            android:label="@string/title_activity_edit_build"
+            android:theme="@style/EditBuildActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -32,10 +32,14 @@
             </intent-filter>
         </activity>
         <activity
-        android:name=".Activities.EditWeaponActivity"
-        android:theme="@style/AppThemeNoActionBar"
-        android:label="@string/title_activity_edit_weapon" >
-    </activity>
+            android:name=".Activities.EditWeaponActivity"
+            android:label="@string/title_activity_edit_weapon"
+            android:theme="@style/AppThemeNoActionBar" >
+        </activity>
+        <activity
+            android:name=".Activities.SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
     </application>
 
 </manifest>
