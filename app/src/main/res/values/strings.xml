@@ -212,6 +212,9 @@
     <string name="weapon_attribute_threat">Threat</string>
     <string name="equipped">Equipped</string>
     <string name="weapon_placeholder_text">WIP</string>
+    <string name="builds_deleted">com.dawgandpony.pd2skills.BUILDS_DELETED</string>
+    <string name="dialog_builds_deleted">Update 1.3.1 has deleted your builds. This was necessary because of a change to how builds are stored internally.\n\nSorry for the inconvenience!</string>
+    <string name="dialog_title_builds_deleted">Latest Update</string>
 
 
 </resources>

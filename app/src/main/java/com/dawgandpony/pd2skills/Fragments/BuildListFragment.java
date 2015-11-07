@@ -2,11 +2,14 @@ package com.dawgandpony.pd2skills.Fragments;
 
 import android.app.DialogFragment;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.ActionMode;
@@ -65,6 +68,27 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
 
         final FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fabNewBuild);
         fab.attachToListView(lvBuilds);
+
+
+        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        if (sharedPref.getInt(getString(R.string.builds_deleted), 0) == 0){
+            // 1. Instantiate an AlertDialog.Builder with its constructor
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+            // 2. Chain together various setter methods to set the dialog characteristics
+            builder.setMessage(R.string.dialog_builds_deleted)
+                    .setTitle(R.string.dialog_title_builds_deleted)
+                    .setPositiveButton(R.string.got_it, null);
+
+            // 3. Get the AlertDialog from create()
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
+
+
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(getString(R.string.builds_deleted), 1);
+        editor.commit();
 
 
         this.lvBuilds.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
