@@ -70,7 +70,7 @@ public class WeaponBuild {
         //Get the xml for the correct weapon type
         switch (weaponType) {
             case PRIMARY:
-                xmlParser = res.getXml(R.xml.primary_weapons);
+                xmlParser = res.getXml(R.xml.primary_weapons2);
                 break;
             case SECONDARY:
                 xmlParser = res.getXml(R.xml.secondary_weapons);
@@ -209,19 +209,19 @@ public class WeaponBuild {
         return merged;
     }
 
-    private static ArrayList<Long> attachmentsFromXML(String xml){
-        ArrayList<Long> possibleAttachments = new ArrayList<>();
+    private static ArrayList<String> attachmentsFromXML(String xml){
+        ArrayList<String> possibleAttachments = new ArrayList<>();
         String current = "";
         for (Character c : xml.toCharArray()){
             if (c == ','){
-                possibleAttachments.add(Long.parseLong(current));
+                possibleAttachments.add(current);
                 current = "";
             } else {
                 current += c;
             }
         }
         if (current.length() > 0 ){
-            possibleAttachments.add(Long.parseLong(current));
+            possibleAttachments.add(current);
         }
 
         return possibleAttachments;

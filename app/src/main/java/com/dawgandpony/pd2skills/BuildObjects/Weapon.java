@@ -27,7 +27,7 @@ public class Weapon {
     float stability = 0;
     int concealment = 0;
     int threat = 0;
-    ArrayList<Long> possibleAttachmentIDs;
+    ArrayList<String> possibleAttachmentIDs;
     ArrayList<Long> attachmentIDs;
     ArrayList<Attachment> attachments;
 
@@ -194,11 +194,11 @@ public class Weapon {
         this.threat = threat;
     }
 
-    public ArrayList<Long> getPossibleAttachments() {
+    public ArrayList<String> getPossibleAttachments() {
         return possibleAttachmentIDs;
     }
 
-    public void setPossibleAttachments(ArrayList<Long> possibleAttachments) {
+    public void setPossibleAttachments(ArrayList<String> possibleAttachments) {
         this.possibleAttachmentIDs = possibleAttachments;
     }
 

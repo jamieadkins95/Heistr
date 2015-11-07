@@ -33,6 +33,7 @@ public class Attachment {
 
     long id = -1;
     long pd2skillsID = -1;
+    String pd2 = "attach";
     String name = "attach";
     int attachmentGroup = -1;
     private int magsize = 100;
@@ -45,7 +46,7 @@ public class Attachment {
     //region XML
     public static ArrayList<Attachment> getAttachmentsFromXML(Resources res){
         ArrayList<Attachment> attachments = new ArrayList<>();
-        XmlResourceParser xmlParser = res.getXml(R.xml.attachments);
+        XmlResourceParser xmlParser = res.getXml(R.xml.attachments2);
 
         try {
             int eventType = xmlParser.getEventType();
@@ -89,6 +90,9 @@ public class Attachment {
                         case "group_name":
                             attachmentGroup = text;
                             break;
+                        case "pd2":
+                            currentAttachment.setPd2(text);
+                            break;
                         case "pd2skills":
                             currentAttachment.setPd2skillsID(Long.parseLong(text));
                             break;
@@ -108,9 +112,6 @@ public class Attachment {
                             break;
                         case "concealment":
                             currentAttachment.setConcealment(Integer.parseInt(text));
-                            break;
-                        case "threat":
-                            currentAttachment.setThreat(Integer.parseInt(text));
                             break;
                         default:
                             //Log.d("XML", "currentTag didnt match anything!");
@@ -136,11 +137,74 @@ public class Attachment {
     public static int attachmentGroupFromString(String xmlString){
         int group = -1;
         switch (xmlString){
-            case "Barrel":
+            case "barrel":
                 group = MOD_BARREL;
                 break;
-            case "BarrelExt":
+            case "barrel_ext":
                 group = MOD_BARREL_EXTENSION;
+                break;
+            case "sight":
+                group = MOD_SIGHT;
+                break;
+            case "grip":
+                group = MOD_GRIP;
+                break;
+            case "upper_body":
+                group = MOD_UPPER_RECEIVER;
+                break;
+            case "foregrip":
+                group = MOD_FOREGRIP;
+                break;
+            case "bayonet":
+                group = MOD_BAYONET;
+                break;
+            case "stock_adapter":
+                group = MOD_UPPER_RECEIVER;
+                break;
+            case "lower_receiver":
+                group = MOD_LOWER_RECEIVER;
+                break;
+            case "stock":
+                group = MOD_STOCK;
+                break;
+            case "drag_handle":
+                group = MOD_UPPER_RECEIVER;
+                break;
+            case "extra":
+                group = MOD_EXTRA;
+                break;
+            case "magazine":
+                group = MOD_MAGAZINE;
+                break;
+            case "lower_body":
+                group = MOD_UPPER_RECEIVER;
+                break;
+            case "gadget":
+                group = MOD_GADGET;
+                break;
+            case "lower_reciever":
+                group = MOD_LOWER_RECEIVER;
+                break;
+            case "custom":
+                group = MOD_CUSTOM;
+                break;
+            case "upper_reciever":
+                group = MOD_UPPER_RECEIVER;
+                break;
+            case "sight_special":
+                group = MOD_SIGHT;
+                break;
+            case "vertical_grip":
+                group = MOD_GRIP;
+                break;
+            case "slide":
+                group = MOD_SLIDE;
+                break;
+            case "foregrip_ext":
+                group = MOD_FOREGRIP;
+                break;
+            default:
+                group = MOD_UPPER_RECEIVER;
                 break;
         }
 
@@ -218,6 +282,14 @@ public class Attachment {
 
     public void setMagsize(int magsize) {
         this.magsize = magsize;
+    }
+
+    public String getPd2() {
+        return pd2;
+    }
+
+    public void setPd2(String pd2) {
+        this.pd2 = pd2;
     }
 
     public String toString(Resources res) {

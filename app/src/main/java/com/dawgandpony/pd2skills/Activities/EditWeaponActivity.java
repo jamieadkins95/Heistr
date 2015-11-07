@@ -285,8 +285,8 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
                 attachmentsSplitUp.add(new ArrayList<Attachment>());
             }
             for (Attachment attachment : baseAttachmentInfo){
-                for (Long l : currentWeapon.getPossibleAttachments()){
-                    if (l == attachment.getPd2skillsID()){
+                for (String s : currentWeapon.getPossibleAttachments()){
+                    if (s.equals(attachment.getPd2())){
                         attachmentsSplitUp.get(attachment.getAttachmentType()).add(attachment);
                     }
                 }
