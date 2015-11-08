@@ -54,8 +54,9 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_armour, container, false);
         lvAttachments = (ListView) rootView.findViewById(R.id.lvArmour);
+        lvAttachments.setEmptyView(rootView.findViewById(R.id.emptyElement));
 
-        return  rootView;
+        return rootView;
     }
 
     @Override

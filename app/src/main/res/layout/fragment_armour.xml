@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -10,5 +10,35 @@
         android:id="@+id/lvArmour"
         android:choiceMode="singleChoice"/>
 
+    <RelativeLayout
+        android:id="@+id/emptyElement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/emptyTxt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/empty_attachment_list"
+            android:textColor="@color/textHint"
+            android:textSize="19sp"
+            android:layout_below="@+id/emptyTxt2"
+
+            />
+
+        <TextView
+            android:id="@+id/emptyTxt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sad_face"
+            android:textColor="@color/textHint"
+            android:textSize="50sp"
+            android:paddingBottom="30dp"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>
