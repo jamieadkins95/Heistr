@@ -310,9 +310,6 @@ public class Attachment {
         if (concealment != 0){
             info += res.getString(R.string.weapon_attribute_concealment) + ": " + concealment + "\n";
         }
-        if (threat != 0){
-            info += res.getString(R.string.weapon_attribute_threat) + ": " + threat + "\n";
-        }
 
         info += "\n\nThis is just a placeholder. Really sorry about how unhelpful this is.";
         return info;

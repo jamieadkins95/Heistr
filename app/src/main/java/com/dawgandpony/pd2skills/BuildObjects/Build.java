@@ -175,8 +175,112 @@ public class Build {
     }
 
     public int getDetection(){
-        Random r = new Random();
-        return r.nextInt(75);
+        int concealment = 30;
+
+        if (getWeaponBuild().getPrimaryWeapon() != null) {
+            concealment += getWeaponBuild().getPrimaryWeapon().getConcealment();
+        } else {
+            concealment += 30;
+        }
+
+        if (getWeaponBuild().getSecondaryWeapon() != null) {
+            concealment += getWeaponBuild().getSecondaryWeapon().getConcealment();
+        } else {
+            concealment += 30;
+        }
+
+        concealment += getArmourConcealment();
+
+        return getDetectionFromConcealment(concealment);
+    }
+
+    private int getArmourConcealment() {
+        switch (armour){
+            case 1:
+                return 30;
+            case 2:
+                return 26;
+            case 3:
+                return 23;
+            case 4:
+                return 21;
+            case 5:
+                return 18;
+            case 6:
+                return 12;
+            case 7:
+                return 1;
+            default:
+                return 30;
+        }
+    }
+
+    private int getDetectionFromConcealment(int concealment) {
+
+        if (concealment >= 119){
+            return 3;
+        } else if (concealment <= 91) {
+            return 75;
+        } else {
+            switch (concealment) {
+                case 118:
+                    return 4;
+                case 117:
+                    return 6;
+                case 116:
+                    return 7;
+                case 115:
+                    return 9;
+                case 114:
+                    return 10;
+                case 113:
+                    return 12;
+                case 112:
+                    return 13;
+                case 111:
+                    return 14;
+                case 110:
+                    return 16;
+                case 109:
+                    return 17;
+                case 108:
+                    return 19;
+                case 107:
+                    return 20;
+                case 106:
+                    return 22;
+                case 105:
+                    return 23;
+                case 104:
+                    return 26;
+                case 103:
+                    return 29;
+                case 102:
+                    return 32;
+                case 101:
+                    return 35;
+                case 100:
+                    return 43;
+                case 99:
+                    return 45;
+                case 98:
+                    return 46;
+                case 97:
+                    return 49;
+                case 96:
+                    return 52;
+                case 95:
+                    return 55;
+                case 94:
+                    return 58;
+                case 93:
+                    return 63;
+                case 92:
+                    return 69;
+                default:
+                    return 0;
+            }
+        }
     }
 
     public boolean infamyReductionInTree(SkillTier tier){
