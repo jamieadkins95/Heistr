@@ -76,7 +76,13 @@ public class Attachment {
                     switch (currentTag) {
                         case "attachment":
                             currentAttachment.setAttachmentGroup(attachmentGroupFromString(attachmentGroup));
-                            attachments.add(currentAttachment);
+                            if (currentAttachment.getName().contains("ERROR")
+                                    || currentAttachment.getName().contains("Standard Issue Part")
+                                    || currentAttachment.getName().contains("No modification") ) {
+                                Log.d("Attachment", currentAttachment.getName() + " doesn't do anything so not going to include it");
+                            } else {
+                                attachments.add(currentAttachment);
+                            }
                             break;
                     }
 
