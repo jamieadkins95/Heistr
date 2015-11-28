@@ -754,4 +754,128 @@
             <attachments>wpn_fps_lmg_hk21_s_standard,wpn_fps_lmg_hk21_fg_short,wpn_fps_lmg_hk21_fg_long,wpn_fps_lmg_hk21_m_standard,wpn_fps_lmg_hk21_g_standard,wpn_fps_lmg_hk21_g_ergo,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_lmg_hk21_b_short,wpn_fps_lmg_hk21_b_long,wpn_fps_upg_bp_lmg_lionbipod,wpn_fps_lmg_hk21_body_upper,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_lmg_hk21_body_lower,</attachments>
         </weapon>
     </weapon_group>
+    <weapon_group>
+    <group_name>special</group_name>
+    <weapon_type>primary</weapon_type>
+        <weapon>
+            <pd2>wpn_fps_bow_long</pd2>
+            <pd2skills>76</pd2skills>
+            <name>English Longbow</name>
+            <rof>0</rof>
+            <total>35</total>
+            <mag>1</mag>
+            <damage>65</damage>
+            <accuracy>96</accuracy>
+            <stability>96</stability>
+            <concealment>29</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_bow_long_b_standard,wpn_fps_bow_long_m_standard,wpn_fps_bow_long_m_explosive,wpn_fps_bow_long_m_poison,wpn_fps_bow_long_body_standard,</attachments>
+        </weapon>
+
+        <weapon>
+            <pd2>wpn_fps_bow_plainsrider</pd2>
+            <pd2skills>207</pd2skills>
+            <name>Plainsrider Bow</name>
+            <rof>0</rof>
+            <total>50</total>
+            <mag>1</mag>
+            <damage>97</damage>
+            <accuracy>96</accuracy>
+            <stability>96</stability>
+            <concealment>30</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_bow_plainsrider_b_standard,wpn_fps_bow_plainsrider_m_standard,wpn_fps_upg_a_bow_explosion,wpn_fps_upg_a_bow_poison,wpn_fps_bow_plainsrider_body_standard,</attachments>
+        </weapon>
+
+        <weapon>
+            <pd2>wpn_fps_bow_arblast</pd2>
+            <pd2skills>17</pd2skills>
+            <name>Heavy Crossbow</name>
+            <rof>0</rof>
+            <total>35</total>
+            <mag>1</mag>
+            <damage>53</damage>
+            <accuracy>96</accuracy>
+            <stability>96</stability>
+            <concealment>28</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_bow_arblast_m_standard,wpn_fps_bow_arblast_m_poison,wpn_fps_bow_arblast_m_explosive,wpn_fps_bow_arblast_b_steel,wpn_fps_bow_arblast_body_standard,wpn_fps_bow_arblast_g_standard,</attachments>
+        </weapon>
+
+        <weapon>
+            <pd2>wpn_fps_bow_frankish</pd2>
+            <pd2skills>79</pd2skills>
+            <name>Light Crossbow</name>
+            <rof>0</rof>
+            <total>50</total>
+            <mag>1</mag>
+            <damage>120</damage>
+            <accuracy>96</accuracy>
+            <stability>96</stability>
+            <concealment>29</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_bow_frankish_m_standard,wpn_fps_bow_frankish_m_poison,wpn_fps_bow_frankish_m_explosive,wpn_fps_bow_frankish_b_steel,wpn_fps_bow_frankish_body_standard,wpn_fps_bow_frankish_g_standard,</attachments>
+        </weapon>
+
+        <weapon>
+            <pd2>wpn_fps_fla_mk2</pd2>
+            <pd2skills>149</pd2skills>
+            <name>Flamethrower</name>
+            <rof>0</rof>
+            <total>600</total>
+            <mag>300</mag>
+            <damage>14</damage>
+            <accuracy>0</accuracy>
+            <stability>-4</stability>
+            <concealment>7</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_fla_mk2_empty,wpn_fps_fla_mk2_mag_rare,wpn_fps_fla_mk2_mag,wpn_fps_fla_mk2_mag_welldone,wpn_fps_fla_mk2_body,wpn_fps_fla_mk2_body_fierybeast,</attachments>
+        </weapon>
+
+        <weapon>
+            <pd2>wpn_fps_gre_m32</pd2>
+            <pd2skills>1</pd2skills>
+            <name>Piglet Grenade Launcher</name>
+            <rof>0</rof>
+            <total>12</total>
+            <mag>6</mag>
+            <damage>170</damage>
+            <accuracy>96</accuracy>
+            <stability>96</stability>
+            <concealment>10</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_gre_m32_no_stock,wpn_fps_upg_m4_s_standard_vanilla,wpn_fps_upg_m4_s_pts,wpn_fps_upg_m4_s_crane,wpn_fps_upg_m4_s_mk46,wpn_fps_upg_m4_s_ubr,wpn_fps_gre_m32_bolt,wpn_fps_gre_m32_mag,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_gre_m32_barrel,wpn_fps_gre_m32_barrel_short,wpn_fps_gre_m32_upper_reciever,wpn_fps_upg_a_grenade_launcher_incendiary,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_gre_m32_lower_reciever,wpn_fps_gre_m32_stock_adapter,</attachments>
+        </weapon>
+
+        <weapon>
+            <pd2>wpn_fps_gre_m79</pd2>
+            <pd2skills>208</pd2skills>
+            <name>GL40 Grenade Launcher</name>
+            <rof>0</rof>
+            <total>6</total>
+            <mag>1</mag>
+            <damage>170</damage>
+            <accuracy>96</accuracy>
+            <stability>96</stability>
+            <concealment>18</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_gre_m79_sight_up,wpn_fps_gre_m79_barrel,wpn_fps_gre_m79_barrel_short,wpn_fps_gre_m79_stock,wpn_fps_gre_m79_stock_short,wpn_fps_gre_m79_barrelcatch,wpn_fps_gre_m79_grenade,wpn_fps_upg_a_grenade_launcher_incendiary,</attachments>
+        </weapon>
+
+        <weapon>
+            <pd2>wpn_fps_saw</pd2>
+            <pd2skills>65</pd2skills>
+            <name>OVE9000 Saw</name>
+            <rof>0</rof>
+            <total>300</total>
+            <mag>150</mag>
+            <damage>23</damage>
+            <accuracy>8</accuracy>
+            <stability>24</stability>
+            <concealment>16</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_saw_b_normal,wpn_fps_saw_m_blade,wpn_fps_saw_m_blade_durable,wpn_fps_saw_m_blade_sharp,wpn_fps_saw_body_standard,wpn_fps_saw_body_silent,wpn_fps_saw_body_speed,</attachments>
+        </weapon>
+        
+    </weapon_group>
 </primary>
