@@ -4,8 +4,9 @@
         <group_name>pistol</group_name>
         <weapon_type>secondary</weapon_type>
         <weapon>
-            <pd2skills>1</pd2skills>
-            <name>Chimano Custom</name>
+            <pd2>wpn_fps_pis_g22c</pd2>
+            <pd2skills>23</pd2skills>
+            <name>Chimano Custom Pistol</name>
             <rof>0</rof>
             <total>96</total>
             <mag>16</mag>
@@ -14,12 +15,13 @@
             <stability>52</stability>
             <concealment>29</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_g22c_body_standard,wpn_fps_pis_g18c_m_mag_33rnd,wpn_fps_pis_g18c_m_mag_17rnd,wpn_fps_upg_o_rmr,wpn_fps_pis_g22c_b_standard,wpn_fps_pis_g22c_b_long,wpn_fps_pis_g18c_co_1,wpn_fps_pis_g18c_co_comp_2,wpn_fps_upg_ns_pis_large,wpn_fps_upg_ns_pis_medium,wpn_fps_upg_ns_pis_small,wpn_fps_upg_ns_pis_large_kac,wpn_fps_upg_ns_pis_medium_gem,wpn_fps_upg_ns_pis_medium_slim,wpn_fps_upg_pis_ns_flash,wpn_fps_upg_ns_pis_meatgrinder,wpn_fps_upg_ns_pis_ipsccomp,wpn_fps_upg_ns_ass_filter,wpn_fps_upg_ns_pis_jungle,wpn_fps_pis_g18c_g_ergo,wpn_fps_pis_g26_g_gripforce,wpn_fps_pis_g26_g_laser,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>2</pd2skills>
-            <name>Broomstick</name>
+            <pd2>wpn_fps_pis_c96</pd2>
+            <pd2skills>27</pd2skills>
+            <name>Broomstick Pistol</name>
             <rof>0</rof>
             <total>150</total>
             <mag>10</mag>
@@ -28,12 +30,13 @@
             <stability>60</stability>
             <concealment>28</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_c96_body_standard,wpn_fps_pis_c96_s_solid,wpn_fps_pis_c96_nozzle,wpn_fps_upg_ns_pis_large,wpn_fps_upg_ns_pis_medium,wpn_fps_upg_ns_pis_small,wpn_fps_upg_ns_pis_large_kac,wpn_fps_upg_ns_pis_medium_gem,wpn_fps_upg_ns_pis_medium_slim,wpn_fps_upg_pis_ns_flash,wpn_fps_upg_ns_ass_filter,wpn_fps_upg_ns_pis_jungle,wpn_fps_pis_c96_sight,wpn_fps_upg_o_rmr,wpn_fps_pis_c96_b_long,wpn_fps_pis_c96_b_standard,wpn_fps_pis_c96_m_extended,wpn_fps_pis_c96_m_standard,wpn_fps_pis_c96_g_standard,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>3</pd2skills>
-            <name>Interceptor</name>
+            <pd2>wpn_fps_pis_usp</pd2>
+            <pd2skills>33</pd2skills>
+            <name>Interceptor 45 Pistol</name>
             <rof>0</rof>
             <total>91</total>
             <mag>13</mag>
@@ -42,12 +45,13 @@
             <stability>52</stability>
             <concealment>29</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_usp_body_standard,wpn_fps_upg_o_rmr,wpn_fps_pis_usp_m_standard,wpn_fps_pis_usp_m_extended,wpn_fps_pis_usp_co_comp_1,wpn_fps_pis_usp_co_comp_2,wpn_fps_upg_ns_pis_large,wpn_fps_upg_ns_pis_medium,wpn_fps_upg_ns_pis_small,wpn_fps_upg_ns_pis_large_kac,wpn_fps_upg_ns_pis_medium_gem,wpn_fps_upg_ns_pis_medium_slim,wpn_fps_upg_pis_ns_flash,wpn_fps_upg_ns_pis_meatgrinder,wpn_fps_upg_ns_pis_ipsccomp,wpn_fps_upg_ns_ass_filter,wpn_fps_upg_ns_pis_jungle,wpn_fps_pis_usp_b_match,wpn_fps_pis_usp_b_expert,wpn_fps_pis_usp_b_tactical,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>4</pd2skills>
-            <name>Gruber Kurz</name>
+            <pd2>wpn_fps_pis_ppk</pd2>
+            <pd2skills>64</pd2skills>
+            <name>Gruber Kurz Pistol</name>
             <rof>0</rof>
             <total>154</total>
             <mag>14</mag>
@@ -56,12 +60,13 @@
             <stability>60</stability>
             <concealment>30</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_ppk_body_standard,wpn_fps_upg_o_rmr,wpn_fps_upg_ns_pis_large,wpn_fps_upg_ns_pis_medium,wpn_fps_upg_ns_pis_small,wpn_fps_upg_ns_pis_large_kac,wpn_fps_upg_ns_pis_medium_gem,wpn_fps_upg_ns_pis_medium_slim,wpn_fps_upg_pis_ns_flash,wpn_fps_upg_ns_pis_meatgrinder,wpn_fps_upg_ns_pis_ipsccomp,wpn_fps_upg_ns_ass_filter,wpn_fps_upg_ns_pis_jungle,wpn_fps_pis_ppk_fl_mount,wpn_fps_pis_ppk_b_standard,wpn_fps_pis_ppk_b_long,wpn_fps_pis_ppk_m_standard,wpn_fps_pis_ppk_g_standard,wpn_fps_pis_ppk_g_laser,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>5</pd2skills>
-            <name>Chimano 88</name>
+            <pd2>wpn_fps_pis_g17</pd2>
+            <pd2skills>71</pd2skills>
+            <name>Chimano 88 Pistol</name>
             <rof>0</rof>
             <total>153</total>
             <mag>17</mag>
@@ -70,12 +75,13 @@
             <stability>60</stability>
             <concealment>30</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_g17_body_standard,wpn_fps_pis_g17_m_standard,wpn_fps_upg_o_rmr,wpn_fps_pis_g17_b_standard,wpn_fps_upg_ns_pis_large,wpn_fps_upg_ns_pis_medium,wpn_fps_upg_ns_pis_small,wpn_fps_upg_ns_pis_large_kac,wpn_fps_upg_ns_pis_medium_gem,wpn_fps_upg_ns_pis_medium_slim,wpn_fps_upg_pis_ns_flash,wpn_fps_upg_ns_pis_meatgrinder,wpn_fps_upg_ns_pis_ipsccomp,wpn_fps_upg_ns_ass_filter,wpn_fps_upg_ns_pis_jungle,wpn_fps_pis_g26_g_gripforce,wpn_fps_pis_g26_g_laser,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>6</pd2skills>
-            <name>Crosskill</name>
+            <pd2>wpn_fps_pis_1911</pd2>
+            <pd2skills>73</pd2skills>
+            <name>Crosskill Pistol</name>
             <rof>0</rof>
             <total>90</total>
             <mag>10</mag>
@@ -84,12 +90,13 @@
             <stability>52</stability>
             <concealment>29</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_1911_body_standard,wpn_upg_o_marksmansight_rear,wpn_fps_upg_o_rmr,wpn_fps_pis_1911_m_standard,wpn_fps_pis_1911_m_extended,wpn_fps_pis_1911_o_standard,wpn_fps_pis_1911_o_long,wpn_fps_pis_1911_co_1,wpn_fps_pis_1911_co_2,wpn_fps_upg_ns_pis_large,wpn_fps_upg_ns_pis_medium,wpn_fps_upg_ns_pis_small,wpn_fps_upg_ns_pis_large_kac,wpn_fps_upg_ns_pis_medium_gem,wpn_fps_upg_ns_pis_medium_slim,wpn_fps_upg_pis_ns_flash,wpn_fps_upg_ns_pis_meatgrinder,wpn_fps_upg_ns_pis_ipsccomp,wpn_fps_upg_ns_ass_filter,wpn_fps_upg_ns_pis_jungle,wpn_fps_pis_1911_b_standard,wpn_fps_pis_1911_b_long,wpn_fps_pis_1911_b_vented,wpn_fps_pis_1911_g_standard,wpn_fps_pis_1911_g_bling,wpn_fps_pis_1911_g_ergo,wpn_fps_pis_1911_g_engraved,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>7</pd2skills>
-            <name>Peacemaker .45</name>
+            <pd2>wpn_fps_pis_peacemaker</pd2>
+            <pd2skills>78</pd2skills>
+            <name>Peacemaker .45 Revolver</name>
             <rof>0</rof>
             <total>54</total>
             <mag>6</mag>
@@ -98,11 +105,12 @@
             <stability>12</stability>
             <concealment>26</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_pis_peacemaker_body_standard,wpn_fps_pis_peacemaker_s_skeletal,wpn_fps_pis_peacemaker_m_standard,wpn_fps_pis_peacemaker_b_standard,wpn_fps_pis_peacemaker_b_long,wpn_fps_pis_peacemaker_b_short,wpn_fps_pis_peacemaker_g_standard,wpn_fps_pis_peacemaker_g_bling,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>8</pd2skills>
+            <pd2>wpn_fps_pis_2006m</pd2>
+            <pd2skills>88</pd2skills>
             <name>Matever .357</name>
             <rof>0</rof>
             <total>54</total>
@@ -112,12 +120,13 @@
             <stability>12</stability>
             <concealment>20</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_2006m_body_standard,wpn_fps_pis_2006m_fl_adapter,wpn_fps_pis_2006m_m_standard,wpn_fps_pis_2006m_b_long,wpn_fps_pis_2006m_b_medium,wpn_fps_pis_2006m_b_short,wpn_fps_pis_2006m_b_standard,wpn_fps_pis_2006m_g_bling,wpn_fps_pis_2006m_g_standard,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>9</pd2skills>
-            <name>Bernetti 9</name>
+            <pd2>wpn_fps_pis_beretta</pd2>
+            <pd2skills>90</pd2skills>
+            <name>Bernetti 9 Pistol</name>
             <rof>0</rof>
             <total>154</total>
             <mag>14</mag>
@@ -126,12 +135,13 @@
             <stability>60</stability>
             <concealment>30</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_pis_beretta_body_rail,wpn_fps_pis_beretta_b_std,wpn_fps_pis_beretta_g_ergo,wpn_fps_pis_beretta_g_std,wpn_fps_pis_beretta_g_engraved,wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_beretta_body_beretta,wpn_fps_pis_beretta_sl_std,wpn_fps_pis_beretta_sl_brigadier,wpn_fps_pis_beretta_co_co1,wpn_fps_pis_beretta_co_co2,wpn_fps_upg_ns_pis_large,wpn_fps_upg_ns_pis_medium,wpn_fps_upg_ns_pis_small,wpn_fps_upg_ns_pis_large_kac,wpn_fps_upg_ns_pis_medium_gem,wpn_fps_upg_ns_pis_medium_slim,wpn_fps_upg_pis_ns_flash,wpn_fps_upg_ns_pis_meatgrinder,wpn_fps_upg_ns_pis_ipsccomp,wpn_fps_upg_ns_ass_filter,wpn_fps_upg_ns_pis_jungle,wpn_fps_pis_beretta_m_extended,wpn_fps_pis_beretta_m_std,wpn_fps_pis_beretta_o_std,wpn_upg_o_marksmansight_rear,wpn_fps_upg_o_rmr,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>10</pd2skills>
-            <name>LEO</name>
+            <pd2>wpn_fps_pis_hs2000</pd2>
+            <pd2skills>107</pd2skills>
+            <name>LEO Pistol</name>
             <rof>0</rof>
             <total>95</total>
             <mag>19</mag>
@@ -140,12 +150,13 @@
             <stability>52</stability>
             <concealment>29</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_hs2000_body_standard,wpn_fps_upg_o_rmr,wpn_fps_pis_hs2000_m_standard,wpn_fps_pis_hs2000_m_extended,wpn_fps_upg_ns_pis_large,wpn_fps_upg_ns_pis_medium,wpn_fps_upg_ns_pis_small,wpn_fps_upg_ns_pis_large_kac,wpn_fps_upg_ns_pis_medium_gem,wpn_fps_upg_ns_pis_medium_slim,wpn_fps_upg_pis_ns_flash,wpn_fps_upg_ns_pis_meatgrinder,wpn_fps_upg_ns_pis_ipsccomp,wpn_fps_upg_ns_ass_filter,wpn_fps_upg_ns_pis_jungle,wpn_fps_pis_hs2000_sl_standard,wpn_fps_pis_hs2000_sl_custom,wpn_fps_pis_hs2000_sl_long,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>11</pd2skills>
-            <name>Deagle</name>
+            <pd2>wpn_fps_pis_deagle</pd2>
+            <pd2skills>111</pd2skills>
+            <name>Deagle Pistol</name>
             <rof>0</rof>
             <total>50</total>
             <mag>10</mag>
@@ -158,8 +169,9 @@
         </weapon>
 
         <weapon>
-            <pd2skills>12</pd2skills>
-            <name>Chimano Compact</name>
+            <pd2>wpn_fps_pis_g26</pd2>
+            <pd2skills>123</pd2skills>
+            <name>Chimano Compact Pistol</name>
             <rof>0</rof>
             <total>150</total>
             <mag>10</mag>
@@ -168,12 +180,13 @@
             <stability>60</stability>
             <concealment>30</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_g26_body_custom,wpn_fps_pis_g26_body_stardard,wpn_fps_upg_ns_pis_large,wpn_fps_upg_ns_pis_medium,wpn_fps_upg_ns_pis_small,wpn_fps_upg_ns_pis_large_kac,wpn_fps_upg_ns_pis_medium_gem,wpn_fps_upg_ns_pis_medium_slim,wpn_fps_upg_pis_ns_flash,wpn_fps_upg_ns_pis_meatgrinder,wpn_fps_upg_ns_pis_ipsccomp,wpn_fps_upg_ns_ass_filter,wpn_fps_upg_ns_pis_jungle,wpn_fps_upg_o_rmr,wpn_fps_pis_g26_b_custom,wpn_fps_pis_g26_b_standard,wpn_fps_pis_g26_m_contour,wpn_fps_pis_g26_m_standard,wpn_fps_pis_g26_g_gripforce,wpn_fps_pis_g26_g_laser,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>13</pd2skills>
-            <name>Signature .40</name>
+            <pd2>wpn_fps_pis_p226</pd2>
+            <pd2skills>126</pd2skills>
+            <name>Signature .40 Pistol</name>
             <rof>0</rof>
             <total>84</total>
             <mag>12</mag>
@@ -182,12 +195,13 @@
             <stability>52</stability>
             <concealment>29</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_p226_body_standard,wpn_fps_upg_o_rmr,wpn_fps_pis_p226_co_comp_1,wpn_fps_pis_p226_co_comp_2,wpn_fps_upg_ns_pis_large,wpn_fps_upg_ns_pis_medium,wpn_fps_upg_ns_pis_small,wpn_fps_upg_ns_pis_large_kac,wpn_fps_upg_ns_pis_medium_gem,wpn_fps_upg_ns_pis_medium_slim,wpn_fps_upg_pis_ns_flash,wpn_fps_upg_ns_pis_meatgrinder,wpn_fps_upg_ns_pis_ipsccomp,wpn_fps_upg_ns_ass_filter,wpn_fps_upg_ns_pis_jungle,wpn_fps_pis_p226_o_standard,wpn_fps_pis_p226_o_long,wpn_fps_pis_p226_b_standard,wpn_fps_pis_p226_b_equinox,wpn_fps_pis_p226_b_long,wpn_fps_pis_p226_m_standard,wpn_fps_pis_p226_m_extended,wpn_fps_pis_p226_g_standard,wpn_fps_pis_p226_g_ergo,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>14</pd2skills>
-            <name>Bronco .44</name>
+            <pd2>wpn_fps_pis_rage</pd2>
+            <pd2skills>187</pd2skills>
+            <name>Bronco .44 Revolver</name>
             <rof>0</rof>
             <total>54</total>
             <mag>6</mag>
@@ -196,12 +210,13 @@
             <stability>4</stability>
             <concealment>26</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_pis_rage_extra,wpn_fps_pis_rage_o_adapter,wpn_fps_pis_rage_lock,wpn_fps_pis_rage_body_standard,wpn_fps_pis_rage_body_smooth,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_pis_rage_b_standard,wpn_fps_pis_rage_b_short,wpn_fps_pis_rage_b_long,wpn_fps_pis_rage_b_comp1,wpn_fps_pis_rage_b_comp2,wpn_fps_upg_pis_ns_flash,wpn_fps_pis_rage_g_standard,wpn_fps_pis_rage_g_ergo,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>15</pd2skills>
-            <name>STRYK 18c</name>
+            <pd2>wpn_fps_pis_g18c</pd2>
+            <pd2skills>188</pd2skills>
+            <name>STRYK 18c Pistol</name>
             <rof>0</rof>
             <total>160</total>
             <mag>20</mag>
@@ -210,7 +225,7 @@
             <stability>60</stability>
             <concealment>29</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_g18c_body_frame,wpn_fps_pis_g18c_s_stock,wpn_fps_pis_g18c_co_1,wpn_fps_pis_g18c_co_comp_2,wpn_fps_upg_ns_pis_large,wpn_fps_upg_ns_pis_medium,wpn_fps_upg_ns_pis_small,wpn_fps_upg_ns_pis_large_kac,wpn_fps_upg_ns_pis_medium_gem,wpn_fps_upg_ns_pis_medium_slim,wpn_fps_upg_pis_ns_flash,wpn_fps_upg_ns_pis_meatgrinder,wpn_fps_upg_ns_pis_ipsccomp,wpn_fps_upg_ns_ass_filter,wpn_fps_upg_ns_pis_jungle,wpn_fps_upg_o_rmr,wpn_fps_pis_g18c_b_standard,wpn_fps_pis_g18c_m_mag_33rnd,wpn_fps_pis_g18c_m_mag_17rnd,wpn_fps_pis_g18c_g_ergo,wpn_fps_pis_g26_g_gripforce,wpn_fps_pis_g26_g_laser,</attachments>
         </weapon>
 
 
@@ -220,8 +235,9 @@
     <group_name>shotgun</group_name>
     <weapon_type>secondary</weapon_type>
         <weapon>
-            <pd2skills>16</pd2skills>
-            <name>Judge</name>
+            <pd2>wpn_fps_pis_judge</pd2>
+            <pd2skills>100</pd2skills>
+            <name>The Judge Shotgun</name>
             <rof>0</rof>
             <total>25</total>
             <mag>5</mag>
@@ -230,12 +246,13 @@
             <stability>28</stability>
             <concealment>29</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_pis_judge_body_standard,wpn_fps_upg_a_slug,wpn_fps_upg_a_custom,wpn_fps_upg_a_custom_free,wpn_fps_upg_a_explosive,wpn_fps_upg_a_piercing,wpn_fps_upg_a_dragons_breath,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_pis_judge_b_standard,wpn_fps_upg_ns_shot_thick,wpn_fps_upg_ns_shot_shark,wpn_fps_upg_shot_ns_king,wpn_fps_upg_ns_sho_salvo_large,wpn_fps_pis_judge_g_standard,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>17</pd2skills>
-            <name>Street Sweeper</name>
+            <pd2>wpn_fps_sho_striker</pd2>
+            <pd2skills>139</pd2skills>
+            <name>Street Sweeper Shotgun</name>
             <rof>0</rof>
             <total>72</total>
             <mag>12</mag>
@@ -244,12 +261,13 @@
             <stability>44</stability>
             <concealment>21</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_sho_striker_body_standard,wpn_upg_o_marksmansight_rear_vanilla,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_upg_ns_shot_thick,wpn_fps_upg_ns_shot_shark,wpn_fps_upg_shot_ns_king,wpn_fps_upg_ns_sho_salvo_large,wpn_fps_upg_a_slug,wpn_fps_upg_a_custom,wpn_fps_upg_a_custom_free,wpn_fps_upg_a_explosive,wpn_fps_upg_a_piercing,wpn_fps_upg_a_dragons_breath,wpn_fps_sho_striker_b_long,wpn_fps_sho_striker_b_suppressed,wpn_fps_sho_striker_b_standard,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>18</pd2skills>
-            <name>Locomotive</name>
+            <pd2>wpn_fps_shot_serbu</pd2>
+            <pd2skills>83</pd2skills>
+            <name>Locomotive 12G Shotgun</name>
             <rof>0</rof>
             <total>42</total>
             <mag>6</mag>
@@ -258,15 +276,16 @@
             <stability>36</stability>
             <concealment>23</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_shot_r870_s_folding,wpn_fps_upg_m4_s_standard,wpn_fps_upg_m4_s_pts,wpn_fps_shot_shorty_s_nostock_short,wpn_fps_shot_r870_s_nostock_single,wpn_fps_shot_r870_s_nostock_vanilla,wpn_fps_shot_r870_s_solid,wpn_fps_shot_shorty_s_solid_short,wpn_fps_shot_r870_s_solid_single,wpn_fps_upg_m4_s_crane,wpn_fps_upg_m4_s_mk46,wpn_fps_upg_m4_s_ubr,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_shot_shorty_m_extended_short,wpn_fps_upg_m4_g_standard,wpn_fps_upg_m4_g_ergo,wpn_fps_upg_m4_g_sniper,wpn_fps_upg_m4_g_hgrip,wpn_fps_upg_m4_g_mgrip,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_shot_r870_body_standard,wpn_fps_upg_a_slug,wpn_fps_upg_a_custom,wpn_fps_upg_a_custom_free,wpn_fps_upg_a_explosive,wpn_fps_upg_a_piercing,wpn_fps_upg_a_dragons_breath,wpn_fps_shot_r870_body_rack,wpn_fps_shot_r870_s_m4,wpn_fps_upg_ns_shot_thick,wpn_fps_upg_ns_shot_shark,wpn_fps_upg_shot_ns_king,wpn_fps_upg_ns_sho_salvo_large,wpn_fps_shot_r870_b_short,wpn_fps_shot_r870_fg_railed,wpn_fps_shot_r870_fg_small,</attachments>
         </weapon>
     </weapon_group>
     <weapon_group>
         <group_name>smg</group_name>
         <weapon_type>secondary</weapon_type>
         <weapon>
-            <pd2skills>19</pd2skills>
-            <name>Mark 10</name>
+            <pd2>wpn_fps_smg_mac10</pd2>
+            <pd2skills>13</pd2skills>
+            <name>Mark 10 Submachine Gun</name>
             <rof>0</rof>
             <total>160</total>
             <mag>40</mag>
@@ -275,12 +294,13 @@
             <stability>64</stability>
             <concealment>27</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_smg_mac10_s_fold,wpn_fps_smg_mac10_s_skel,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_upg_o_marksmansight_rear_vanilla,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_smg_mac10_m_extended,wpn_fps_smg_mac10_m_short,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_mac10_b_dummy,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_upg_vg_ass_smg_verticalgrip,wpn_fps_upg_vg_ass_smg_stubby,wpn_fps_upg_vg_ass_smg_afg,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_smg_cobray_ns_barrelextension,wpn_fps_smg_cobray_ns_silencer,wpn_fps_smg_mac10_ris_dummy,wpn_fps_smg_mac10_body_mac10,wpn_fps_smg_mac10_body_ris,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>20</pd2skills>
-            <name>Uzi</name>
+            <pd2>wpn_fps_smg_uzi</pd2>
+            <pd2skills>56</pd2skills>
+            <name>Uzi Submachine Gun</name>
             <rof>0</rof>
             <total>150</total>
             <mag>30</mag>
@@ -289,12 +309,13 @@
             <stability>68</stability>
             <concealment>24</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_smg_uzi_s_leather,wpn_fps_smg_uzi_s_solid,wpn_fps_smg_uzi_s_standard,wpn_fps_smg_uzi_s_unfolded,wpn_fps_smg_uzi_fg_rail,wpn_fps_smg_uzi_fg_standard,wpn_fps_smg_uzi_m_standard,wpn_fps_smg_uzi_g_standard,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_uzi_b_standard,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_smg_uzi_b_suppressed,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_smg_uzi_body_standard,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>21</pd2skills>
-            <name>Kobus 90</name>
+            <pd2>wpn_fps_smg_p90</pd2>
+            <pd2skills>58</pd2skills>
+            <name>Kobus 90 Submachine Gun</name>
             <rof>0</rof>
             <total>150</total>
             <mag>50</mag>
@@ -303,12 +324,13 @@
             <stability>60</stability>
             <concealment>25</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_rx30,wpn_fps_upg_o_rx01,wpn_fps_upg_o_reflex,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_cs,wpn_upg_o_marksmansight_rear_vanilla,wpn_fps_smg_p90_m_std,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_p90_body_p90,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_smg_p90_b_legend,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_smg_p90_b_short,wpn_fps_smg_p90_b_long,wpn_fps_smg_p90_b_civilian,wpn_fps_smg_p90_b_ninja,wpn_upg_o_marksmansight_front,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>22</pd2skills>
-            <name>Micro Uzi</name>
+            <pd2>wpn_fps_smg_baka</pd2>
+            <pd2skills>81</pd2skills>
+            <name>Micro Uzi Submachine Gun</name>
             <rof>0</rof>
             <total>224</total>
             <mag>32</mag>
@@ -317,11 +339,12 @@
             <stability>76</stability>
             <concealment>29</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_smg_baka_b_standard,wpn_fps_smg_baka_b_comp,wpn_fps_smg_baka_s_standard,wpn_fps_smg_baka_s_folded,wpn_fps_smg_baka_s_unfolded,wpn_fps_smg_baka_body_standard,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_smg_baka_m_standard,wpn_fps_smg_baka_b_midsupp,wpn_fps_smg_baka_b_smallsupp,wpn_fps_smg_baka_b_longsupp,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_smg_baka_g_standard,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>23</pd2skills>
+            <pd2>wpn_fps_smg_cobray</pd2>
+            <pd2skills>91</pd2skills>
             <name>Jacket's Piece</name>
             <rof>0</rof>
             <total>160</total>
@@ -331,12 +354,13 @@
             <stability>68</stability>
             <concealment>25</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_smg_cobray_s_standard,wpn_fps_upg_m4_s_standard,wpn_fps_upg_m4_s_pts,wpn_fps_upg_m4_s_crane,wpn_fps_upg_m4_s_mk46,wpn_fps_upg_m4_s_ubr,wpn_fps_smg_cobray_bolt,wpn_fps_smg_cobray_s_m4adapter,wpn_fps_smg_cobray_o_adapter,wpn_fps_smg_cobray_m_standard,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_cobray_barrel,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_smg_cobray_body_upper,wpn_fps_smg_cobray_body_upper_jacket,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_smg_cobray_ns_barrelextension,wpn_fps_smg_cobray_ns_silencer,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_upg_vg_ass_smg_verticalgrip,wpn_fps_upg_vg_ass_smg_stubby,wpn_fps_upg_vg_ass_smg_afg,wpn_fps_smg_cobray_body_lower,wpn_fps_smg_cobray_body_lower_jacket,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>24</pd2skills>
-            <name>CMP</name>
+            <pd2>wpn_fps_smg_mp9</pd2>
+            <pd2skills>108</pd2skills>
+            <name>CMP Submachine Gun</name>
             <rof>0</rof>
             <total>210</total>
             <mag>30</mag>
@@ -345,12 +369,13 @@
             <stability>76</stability>
             <concealment>26</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_smg_mp9_s_skel,wpn_fps_smg_mp9_s_fold,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_smg_mp9_m_short,wpn_fps_smg_mp9_m_extended,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_mp9_b_dummy,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_upg_vg_ass_smg_verticalgrip,wpn_fps_upg_vg_ass_smg_stubby,wpn_fps_smg_mp9_body_mp9,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_smg_mp9_b_suppressed,wpn_fps_upg_ass_ns_battle,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>25</pd2skills>
-            <name>Chicago Typewriter</name>
+            <pd2>wpn_fps_smg_thompson</pd2>
+            <pd2skills>116</pd2skills>
+            <name>Chicago Typewriter Submachine Gun</name>
             <rof>0</rof>
             <total>150</total>
             <mag>50</mag>
@@ -359,12 +384,13 @@
             <stability>68</stability>
             <concealment>18</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_smg_thompson_stock,wpn_fps_smg_thompson_stock_discrete,wpn_fps_smg_thompson_stock_nostock,wpn_fps_smg_thompson_foregrip,wpn_fps_smg_thompson_foregrip_discrete,wpn_fps_smg_thompson_drummag,wpn_fps_smg_thompson_grip,wpn_fps_smg_thompson_grip_discrete,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_thompson_barrel,wpn_fps_smg_thompson_barrel_long,wpn_fps_smg_thompson_barrel_short,wpn_fps_smg_thompson_body,wpn_fps_smg_thompson_ns_standard,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_smg_thompson_fl_adapter,wpn_fps_smg_thompson_o_adapter,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>26</pd2skills>
-            <name>SpecOps</name>
+            <pd2>wpn_fps_smg_mp7</pd2>
+            <pd2skills>120</pd2skills>
+            <name>SpecOps Submachine Gun</name>
             <rof>0</rof>
             <total>160</total>
             <mag>20</mag>
@@ -373,12 +399,13 @@
             <stability>68</stability>
             <concealment>23</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_smg_mp7_s_standard,wpn_fps_smg_mp7_s_long,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_smg_mp7_m_short,wpn_fps_smg_mp7_m_extended,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_mp7_b_standard,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_smg_mp7_body_standard,wpn_fps_smg_mp7_b_suppressed,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_upg_vg_ass_smg_stubby,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>27</pd2skills>
-            <name>Cobra</name>
+            <pd2>wpn_fps_smg_scorpion</pd2>
+            <pd2skills>131</pd2skills>
+            <name>Cobra Submachine Gun</name>
             <rof>0</rof>
             <total>220</total>
             <mag>20</mag>
@@ -387,12 +414,13 @@
             <stability>68</stability>
             <concealment>28</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_smg_scorpion_s_nostock,wpn_fps_smg_scorpion_s_standard,wpn_fps_smg_scorpion_s_unfolded,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_smg_scorpion_m_standard,wpn_fps_smg_scorpion_m_extended,wpn_fps_smg_scorpion_g_standard,wpn_fps_smg_scorpion_g_wood,wpn_fps_smg_scorpion_g_ergo,wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_smg_scorpion_b_standard,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_smg_scorpion_body_standard,wpn_fps_smg_scorpion_b_suppressed,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>28</pd2skills>
-            <name>Kross Vertex</name>
+            <pd2>wpn_fps_smg_polymer</pd2>
+            <pd2skills>137</pd2skills>
+            <name>Kross Vertex Submachine Gun</name>
             <rof>0</rof>
             <total>150</total>
             <mag>30</mag>
@@ -401,12 +429,13 @@
             <stability>76</stability>
             <concealment>20</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_smg_polymer_s_standard,wpn_fps_upg_m4_s_standard,wpn_fps_upg_m4_s_pts,wpn_fps_upg_m4_s_crane,wpn_fps_upg_m4_s_mk46,wpn_fps_upg_m4_s_ubr,wpn_fps_smg_polymer_bolt_standard,wpn_fps_smg_polymer_dh_standard,wpn_fps_smg_polymer_extra_sling,wpn_fps_smg_polymer_fg_standard,wpn_fps_smg_polymer_s_adapter,wpn_fps_smg_polymer_m_standard,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_polymer_body_standard,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_upg_vg_ass_smg_verticalgrip,wpn_fps_upg_vg_ass_smg_stubby,wpn_fps_upg_vg_ass_smg_afg,wpn_fps_smg_polymer_barrel_precision,wpn_fps_smg_polymer_ns_silencer,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_smg_polymer_barrel_standard,wpn_fps_smg_polymer_o_iron,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>29</pd2skills>
-            <name>Patchett L2A1</name>
+            <pd2>wpn_fps_smg_sterling</pd2>
+            <pd2skills>152</pd2skills>
+            <name>Patchett L2A1 Submachine Gun</name>
             <rof>0</rof>
             <total>220</total>
             <mag>20</mag>
@@ -415,12 +444,13 @@
             <stability>76</stability>
             <concealment>20</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_sterling_body_standard,wpn_fps_smg_sterling_s_folded,wpn_fps_smg_sterling_s_nostock,wpn_fps_smg_sterling_s_solid,wpn_fps_smg_sterling_s_standard,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_smg_sterling_m_long,wpn_fps_smg_sterling_m_medium,wpn_fps_smg_sterling_m_short,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_smg_sterling_b_long,wpn_fps_smg_sterling_b_short,wpn_fps_smg_sterling_b_standard,wpn_fps_smg_sterling_b_suppressed,wpn_fps_smg_sterling_b_e11,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>30</pd2skills>
-            <name>Swedish K</name>
+            <pd2>wpn_fps_smg_m45</pd2>
+            <pd2skills>155</pd2skills>
+            <name>Swedish K Submachine Gun</name>
             <rof>0</rof>
             <total>80</total>
             <mag>40</mag>
@@ -429,12 +459,13 @@
             <stability>44</stability>
             <concealment>24</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_m45_b_standard,wpn_fps_smg_m45_b_small,wpn_fps_smg_m45_b_green,wpn_fps_smg_m45_s_standard,wpn_fps_smg_m45_s_folded,wpn_fps_smg_m45_body_standard,wpn_fps_smg_m45_body_green,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_smg_m45_m_mag,wpn_fps_smg_m45_m_extended,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_smg_m45_g_standard,wpn_fps_smg_m45_g_bling,wpn_fps_smg_m45_g_ergo,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>31</pd2skills>
-            <name>Krinkov</name>
+            <pd2>wpn_fps_smg_akmsu</pd2>
+            <pd2skills>179</pd2skills>
+            <name>Krinkov Submachine Gun</name>
             <rof>0</rof>
             <total>90</total>
             <mag>30</mag>
@@ -443,12 +474,13 @@
             <stability>44</stability>
             <concealment>21</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_m4_s_standard,wpn_fps_upg_m4_s_pts,wpn_upg_ak_s_folding_vanilla,wpn_upg_ak_s_psl,wpn_upg_ak_s_skfoldable,wpn_fps_upg_m4_s_crane,wpn_fps_upg_m4_s_mk46,wpn_fps_upg_m4_s_ubr,wpn_fps_upg_ak_s_solidstock,wpn_fps_smg_akmsu_fg_standard,wpn_fps_smg_akmsu_fg_rail,wpn_fps_upg_ak_fg_zenit,wpn_upg_ak_m_akm,wpn_fps_upg_ak_m_quad,wpn_fps_upg_ak_m_uspalm,wpn_fps_upg_o_ak_scopemount,wpn_upg_ak_g_standard,wpn_fps_upg_ak_g_hgrip,wpn_fps_upg_ak_g_pgrip,wpn_fps_upg_ak_g_wgrip,wpn_fps_upg_ak_g_rk3,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_akmsu_body_lowerreceiver,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_ass_akm_body_upperreceiver_vanilla,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ns_ass_pbs1,wpn_fps_upg_ass_ns_battle,wpn_fps_upg_vg_ass_smg_verticalgrip,wpn_fps_upg_vg_ass_smg_stubby,wpn_fps_upg_vg_ass_smg_afg,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_smg_akmsu_b_standard,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>32</pd2skills>
-            <name>Compact-5</name>
+            <pd2>wpn_fps_smg_mp5</pd2>
+            <pd2skills>182</pd2skills>
+            <name>Compact-5 Submachine Gun</name>
             <rof>0</rof>
             <total>210</total>
             <mag>30</mag>
@@ -457,12 +489,13 @@
             <stability>76</stability>
             <concealment>23</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_smg_mp5_s_ring,wpn_fps_smg_mp5_s_adjust,wpn_fps_smg_mp5_s_solid,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_smg_mp5_m_std,wpn_fps_smg_mp5_m_drum,wpn_fps_smg_mp5_m_straight,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_mp5_body_mp5,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_upg_vg_ass_smg_verticalgrip,wpn_fps_upg_vg_ass_smg_stubby,wpn_fps_upg_vg_ass_smg_afg,wpn_fps_smg_mp5_fg_m5k,wpn_fps_smg_mp5_fg_mp5a4,wpn_fps_smg_mp5_fg_mp5a5,wpn_fps_smg_mp5_fg_mp5sd,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>33</pd2skills>
-            <name>Para</name>
+            <pd2>wpn_fps_smg_olympic</pd2>
+            <pd2skills>186</pd2skills>
+            <name>Para Submachine Gun</name>
             <rof>0</rof>
             <total>150</total>
             <mag>25</mag>
@@ -471,12 +504,13 @@
             <stability>64</stability>
             <concealment>24</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_smg_olympic_s_short,wpn_fps_smg_olympic_s_adjust,wpn_fps_upg_m4_s_standard,wpn_fps_upg_m4_s_pts,wpn_fps_upg_m4_s_crane,wpn_fps_upg_m4_s_mk46,wpn_fps_upg_m4_s_ubr,wpn_fps_m4_uupg_draghandle,wpn_fps_m4_uupg_draghandle_ballos,wpn_fps_m4_uupg_draghandle_core,wpn_fps_m4_uupg_m_std,wpn_fps_upg_m4_m_drum,wpn_fps_upg_m4_m_pmag,wpn_fps_upg_m4_m_straight_vanilla,wpn_fps_upg_m4_m_quad,wpn_fps_ass_l85a2_m_emag,wpn_fps_upg_m4_m_l5,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_upg_m4_g_standard_vanilla,wpn_fps_upg_m4_g_ergo,wpn_fps_upg_m4_g_sniper,wpn_fps_upg_m4_g_hgrip,wpn_fps_upg_m4_g_mgrip,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_m4_uupg_b_short_vanilla,wpn_fps_m4_uupg_b_medium,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_m4_upper_reciever_edge,wpn_fps_m4_upper_reciever_round,wpn_fps_upg_ass_m4_upper_reciever_ballos,wpn_fps_upg_ass_m4_upper_reciever_core,wpn_fps_ass_m16_o_handle_sight,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_cs,wpn_fps_upg_o_rx30,wpn_fps_upg_o_rx01,wpn_fps_upg_o_reflex,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_vg_ass_smg_verticalgrip,wpn_fps_upg_vg_ass_smg_stubby,wpn_fps_upg_vg_ass_smg_afg,wpn_fps_m4_lower_reciever,wpn_fps_upg_ass_m4_lower_reciever_core,wpn_fps_smg_olympic_fg_olympic,wpn_fps_smg_olympic_fg_railed,wpn_fps_upg_smg_olympic_fg_lr300,</attachments>
         </weapon>
 
         <weapon>
-            <pd2skills>34</pd2skills>
-            <name>Blaster 9mm</name>
+            <pd2>wpn_fps_smg_tec9</pd2>
+            <pd2skills>203</pd2skills>
+            <name>Blaster 9mm Submachine Gun</name>
             <rof>0</rof>
             <total>220</total>
             <mag>20</mag>
@@ -485,8 +519,7 @@
             <stability>76</stability>
             <concealment>27</concealment>
             <threat>0</threat>
-            <attachments>51</attachments>
+            <attachments>wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_tec9_b_long,wpn_fps_smg_tec9_b_standard,wpn_fps_smg_tec9_ns_ext,wpn_fps_smg_tec9_s_unfolded,wpn_fps_smg_tec9_body_standard,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_smg_tec9_m_standard,wpn_fps_smg_tec9_m_extended,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,</attachments>
         </weapon>
-
     </weapon_group>
 </secondary>

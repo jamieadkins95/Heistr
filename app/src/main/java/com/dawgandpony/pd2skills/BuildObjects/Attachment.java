@@ -46,7 +46,7 @@ public class Attachment {
     //region XML
     public static ArrayList<Attachment> getAttachmentsFromXML(Resources res){
         ArrayList<Attachment> attachments = new ArrayList<>();
-        XmlResourceParser xmlParser = res.getXml(R.xml.attachments2);
+        XmlResourceParser xmlParser = res.getXml(R.xml.attachments);
 
         try {
             int eventType = xmlParser.getEventType();
