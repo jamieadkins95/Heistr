@@ -15,21 +15,22 @@ import java.util.ArrayList;
  */
 public class Attachment {
 
-    public static final int MOD_BARREL= 0;
-    public static final int MOD_BARREL_EXTENSION = 1;
-    public static final int MOD_BAYONET = 2;
-    public static final int MOD_CUSTOM = 3;
-    public static final int MOD_EXTRA = 4;
-    public static final int MOD_FOREGRIP = 5;
-    public static final int MOD_GADGET = 6;
-    public static final int MOD_GRIP = 7;
-    public static final int MOD_LOWER_RECEIVER = 8;
-    public static final int MOD_MAGAZINE = 9;
-    public static final int MOD_SIGHT = 10;
-    public static final int MOD_SLIDE = 11;
-    public static final int MOD_STOCK = 12;
-    public static final int MOD_SUPPRESSOR = 13;
-    public static final int MOD_UPPER_RECEIVER = 14;
+    public static final int MOD_AMMO= 0;
+    public static final int MOD_BARREL= 1;
+    public static final int MOD_BARREL_EXTENSION = 2;
+    public static final int MOD_BAYONET = 3;
+    public static final int MOD_CUSTOM = 4;
+    public static final int MOD_EXTRA = 5;
+    public static final int MOD_FOREGRIP = 6;
+    public static final int MOD_GADGET = 7;
+    public static final int MOD_GRIP = 8;
+    public static final int MOD_LOWER_RECEIVER = 9;
+    public static final int MOD_MAGAZINE = 10;
+    public static final int MOD_SIGHT = 11;
+    public static final int MOD_SLIDE = 12;
+    public static final int MOD_STOCK = 13;
+    public static final int MOD_SUPPRESSOR = 14;
+    public static final int MOD_UPPER_RECEIVER = 15;
 
     long id = -1;
     long pd2skillsID = -1;
@@ -76,11 +77,9 @@ public class Attachment {
                     switch (currentTag) {
                         case "attachment":
                             currentAttachment.setAttachmentGroup(attachmentGroupFromString(attachmentGroup));
-                            if (currentAttachment.getName().contains("ERROR")
+                            if (!(currentAttachment.getName().contains("ERROR")
                                     || currentAttachment.getName().contains("Standard Issue Part")
-                                    || currentAttachment.getName().contains("No modification") ) {
-                                Log.d("Attachment", currentAttachment.getName() + " doesn't do anything so not going to include it");
-                            } else {
+                                    || currentAttachment.getName().contains("No modification")) ) {
                                 attachments.add(currentAttachment);
                             }
                             break;
@@ -143,6 +142,9 @@ public class Attachment {
     public static int attachmentGroupFromString(String xmlString){
         int group = -1;
         switch (xmlString){
+            case "ammo":
+                group = MOD_AMMO;
+                break;
             case "barrel":
                 group = MOD_BARREL;
                 break;

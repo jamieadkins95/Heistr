@@ -32,6 +32,7 @@ public class DataSourceWeapons {
             MySQLiteHelper.COLUMN_PD2SKILLS_ID,
             MySQLiteHelper.COLUMN_WEAPON_TYPE,
             MySQLiteHelper.COLUMN_NAME,
+            MySQLiteHelper.COLUMNS_ATTACHMENTS[Attachment.MOD_AMMO],
             MySQLiteHelper.COLUMNS_ATTACHMENTS[Attachment.MOD_BARREL],
             MySQLiteHelper.COLUMNS_ATTACHMENTS[Attachment.MOD_BARREL_EXTENSION],
             MySQLiteHelper.COLUMNS_ATTACHMENTS[Attachment.MOD_BAYONET],
@@ -248,7 +249,7 @@ public class DataSourceWeapons {
         weapon.setWeaponType(cursorWeapon.getInt(2));
         weapon.setName(cursorWeapon.getString(3));
         ArrayList<String> attachments = new ArrayList<>();
-        for (int i = Attachment.MOD_BARREL; i <= Attachment.MOD_UPPER_RECEIVER; i++){
+        for (int i = Attachment.MOD_AMMO; i <= Attachment.MOD_UPPER_RECEIVER; i++){
             attachments.add(cursorWeapon.getString(4 + i));
         }
 

@@ -14,7 +14,7 @@ import com.dawgandpony.pd2skills.BuildObjects.Attachment;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pd2skills.db";
-    private static final int DATABASE_VERSION = 24;
+    private static final int DATABASE_VERSION = 25;
 
     //region Skills
     public static final String TABLE_SKILL_BUILDS = "tbSkillBuilds";
@@ -80,7 +80,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String TABLE_WEAPONS = "tbWeapons";
     public static final String COLUMN_WEAPON_TYPE = "weaponType";
     public static final String COLUMN_PD2SKILLS_ID= "pd2skillsID";
-    public static final String[] COLUMNS_ATTACHMENTS = new String[]{"barrel", "barrelExt",
+    public static final String[] COLUMNS_ATTACHMENTS = new String[]{"ammo", "barrel", "barrelExt",
             "bayonet", "modCustom", "modExtra", "foregrip", "gadget", "grip", "lReceiver",
             "magazine", "sight", "slide", "stock", "suppressor", "uReceiver"};
 
@@ -90,6 +90,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + " integer primary key autoincrement, " + COLUMN_PD2SKILLS_ID
             + " integer," + COLUMN_WEAPON_TYPE
             + " integer," + COLUMN_NAME
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_AMMO]
             + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_BARREL]
             + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_BARREL_EXTENSION]
             + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_BAYONET]

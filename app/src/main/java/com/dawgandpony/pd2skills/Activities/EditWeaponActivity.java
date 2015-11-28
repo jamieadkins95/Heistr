@@ -291,7 +291,7 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
             setTitle(weapon.getName());
 
             attachmentsSplitUp = new ArrayList<>();
-            for (int i = Attachment.MOD_BARREL; i <= Attachment.MOD_UPPER_RECEIVER; i++){
+            for (int i = Attachment.MOD_AMMO; i <= Attachment.MOD_UPPER_RECEIVER; i++){
                 attachmentsSplitUp.add(new ArrayList<Attachment>());
             }
             for (Attachment attachment : baseAttachmentInfo){
