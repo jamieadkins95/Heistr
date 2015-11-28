@@ -70,7 +70,7 @@ public class WeaponBuild {
         //Get the xml for the correct weapon type
         switch (weaponType) {
             case PRIMARY:
-                xmlParser = res.getXml(R.xml.primary_weapons2);
+                xmlParser = res.getXml(R.xml.primary_weapons);
                 break;
             case SECONDARY:
                 xmlParser = res.getXml(R.xml.secondary_weapons);
