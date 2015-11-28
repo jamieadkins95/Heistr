@@ -109,7 +109,6 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
                 if (position != currentAttachmentIndex){
                     currentAttachmentIndex = lvAttachments.getCheckedItemPosition();
                     activity.updateCurrentWeapon(attachmentType, currentAttachmentIndex);
-                    Toast.makeText(getActivity(), possibleAttachments.get(currentAttachmentIndex).getPd2skillsID() + "", Toast.LENGTH_SHORT).show();
                 } else {
                     lvAttachments.setItemChecked(position, false);
                     activity.updateCurrentWeapon(attachmentType, -1);

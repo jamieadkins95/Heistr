@@ -60,6 +60,9 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
     ArrayList<WeaponsCallbacks> mListeners;
     ArrayList<EditBuildActivity.BuildReadyCallbacks> mBuildListeners;
 
+    TabLayout mTabLayout;
+    ViewPager mViewPager;
+
     private TaskFragment mTaskFragment;
 
     @Override
@@ -71,10 +74,8 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-        if (viewPager != null) {
-            setupViewPager(viewPager);
-        }
+        mViewPager = (ViewPager) findViewById(R.id.viewpager);
+
 
         if (savedInstanceState == null){
             currentWeaponID = getIntent().getLongExtra(WeaponListFragment.EXTRA_WEAPON_ID, -1);
@@ -91,9 +92,8 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
             onInfoReady();
         }
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-        tabLayout.setupWithViewPager(viewPager);
+        mTabLayout = (TabLayout) findViewById(R.id.tabs);
+        mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
     }
 
     @Override
@@ -153,7 +153,9 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
 
         String[] attachment_types = getResources().getStringArray(R.array.attachment_types);
         for (int i = 0; i < MySQLiteHelper.COLUMNS_ATTACHMENTS.length; i++){
-            adapter.addFragment(AttachmentListFragment.newInstance(i), attachment_types[i]);
+            if (attachmentsSplitUp.get(i).size() > 0) {
+                adapter.addFragment(AttachmentListFragment.newInstance(i), attachment_types[i]);
+            }
         }
 
         viewPager.setAdapter(adapter);
@@ -320,5 +322,10 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
                 b.onBuildReady();
             }
         }
+
+        if (mViewPager != null) {
+            setupViewPager(mViewPager);
+        }
+        mTabLayout.setupWithViewPager(mViewPager);
     }
 }
