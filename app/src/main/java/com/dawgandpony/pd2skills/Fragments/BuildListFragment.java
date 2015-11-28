@@ -71,7 +71,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
 
 
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-        if (sharedPref.getInt(getString(R.string.builds_deleted), 0) == 0){
+        if (sharedPref.getInt(getString(R.string.builds_deleted_36), 0) == 0){
             // 1. Instantiate an AlertDialog.Builder with its constructor
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
@@ -87,7 +87,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
 
 
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(getString(R.string.builds_deleted), 1);
+        editor.putInt(getString(R.string.builds_deleted_36), 1);
         editor.commit();
 
 
