@@ -73,7 +73,7 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
     @Override
     public void onPause() {
         super.onPause();
-        activity.stopListening(this);
+        //activity.stopListening(this);
         activity = null;
     }
 

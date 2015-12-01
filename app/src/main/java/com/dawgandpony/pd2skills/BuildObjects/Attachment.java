@@ -79,8 +79,20 @@ public class Attachment {
                             currentAttachment.setAttachmentGroup(attachmentGroupFromString(attachmentGroup));
                             if (!(currentAttachment.getName().contains("ERROR")
                                     || currentAttachment.getName().contains("Standard Issue Part")
-                                    || currentAttachment.getName().contains("No modification")) ) {
-                                attachments.add(currentAttachment);
+                                    || currentAttachment.getName().toLowerCase().contains("no modification")
+                                    || currentAttachment.getName().contains("attach")) ) {
+
+                                if (currentAttachment.damage == 0 &&
+                                        currentAttachment.stability == 0 &&
+                                        currentAttachment.accuracy == 0 &&
+                                        currentAttachment.concealment == 0 && currentAttachment.magsize == 0 &&
+                                        !currentAttachment.getName().toLowerCase().contains("laser") &&
+                                        !currentAttachment.getPd2().contains("saw")) {
+                                    Log.e("JAMIEA", currentAttachment.getName());
+                                    Log.e("JAMIEA", currentAttachment.getPd2());
+                                } else {
+                                    attachments.add(currentAttachment);
+                                }
                             }
                             break;
                     }
