@@ -130,6 +130,7 @@
         <item>Gambler</item>
         <item>Grinder</item>
         <item>Yakuza</item>
+        <item>Ex&#8211;Presidents</item>
     </string-array>
 
     <string-array name="armour">
@@ -173,6 +174,7 @@
         <item>g</item>
         <item>n</item>
         <item>y</item>
+        <item>e</item>
     </string-array>
 
     <string-array name="perkDeckDescs" formatted="false">
@@ -188,6 +190,10 @@
         <item>16&#8211;20 health regen (for entire crew) when picking up ammo (every 4 seconds)\n\nWhen you pick up ammo, your crew also gets an ammo pickup worth 50% of a normal one (every 5 seconds)</item>
         <item>4 health regen every 0.5 seconds for 6 seconds on hit (can stack but will only occur every 1.5 seconds, only with Two-Piece Suit or Lightweight Ballistic Vest)\n\n+20% health\n\n+10% chance to pierce tan armour</item>
         <item>Up to +60% armour regen and +20% movement speed when below 50% health</item>
+        <item>While your armour is up, you will store 12 health for every 1 kill you or your team gets. When your armour is completely depleted you will gain health equal to the stored amount. Maximum storable health is determined by armour. Lighter armour stores more.
+            \n\n+40% health
+            \n\n+5% dodge
+            \n\n+20% ballistic vest dodge</item>
     </string-array>
 
     <string name="hello_world">Hello world!</string>
