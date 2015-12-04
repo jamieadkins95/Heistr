@@ -41,7 +41,7 @@ public class NewWeaponDialog extends DialogFragment {
     }
 
     public interface NewWeaponDialogListener {
-        void onDialogNewWeapon(DialogFragment dialog, String name, long baseWeaponID, int templateWeaponPos);
+        void onDialogNewWeapon(DialogFragment dialog, String name, String baseWeaponID, int templateWeaponPos);
     }
 
     NewWeaponDialogListener mListener;
@@ -73,7 +73,7 @@ public class NewWeaponDialog extends DialogFragment {
 
         Spinner spTemplates = (Spinner) v.findViewById(R.id.spTemplate);
         for (Weapon w : userWeaponList){
-            if (w.getPd2skillsID() == allWeapons.get(0).getPd2skillsID()){
+            if (w.getPd2().equals(allWeapons.get(0).getPd2())){
                 templates.add(w);
                 list2.add(w.getName());
             }
@@ -88,7 +88,7 @@ public class NewWeaponDialog extends DialogFragment {
                 adapterTemplates.clear();
                 adapterTemplates.add("Select Template");
                 for (Weapon w : userWeaponList){
-                    if (w.getPd2skillsID() == allWeapons.get((int) id).getPd2skillsID()){
+                    if (w.getPd2().equals(allWeapons.get((int) id).getPd2())){
                         adapterTemplates.add(w.getName());
                     }
                 }
@@ -126,7 +126,7 @@ public class NewWeaponDialog extends DialogFragment {
                         int selected = spTemplate.getSelectedItemPosition() - 1; // -1 for templete text
 
 
-                        mListener.onDialogNewWeapon(NewWeaponDialog.this, name, allWeapons.get(selectedBase).getPd2skillsID(), selected);
+                        mListener.onDialogNewWeapon(NewWeaponDialog.this, name, allWeapons.get(selectedBase).getPd2(), selected);
 
                     }
                 })

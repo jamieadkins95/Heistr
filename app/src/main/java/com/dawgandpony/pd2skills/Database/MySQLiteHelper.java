@@ -14,7 +14,7 @@ import com.dawgandpony.pd2skills.BuildObjects.Attachment;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pd2skills.db";
-    private static final int DATABASE_VERSION = 25;
+    private static final int DATABASE_VERSION = 26;
 
     //region Skills
     public static final String TABLE_SKILL_BUILDS = "tbSkillBuilds";
@@ -79,7 +79,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     public static final String TABLE_WEAPONS = "tbWeapons";
     public static final String COLUMN_WEAPON_TYPE = "weaponType";
-    public static final String COLUMN_PD2SKILLS_ID= "pd2skillsID";
+    public static final String COLUMN_PD2_ID = "pd2skillsID";
     public static final String[] COLUMNS_ATTACHMENTS = new String[]{"ammo", "barrel", "barrelExt",
             "bayonet", "modCustom", "modExtra", "foregrip", "gadget", "grip", "lReceiver",
             "magazine", "sight", "slide", "stock", "suppressor", "uReceiver"};
@@ -87,7 +87,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_WEAPON_TABLE = "create table if not exists "
             + TABLE_WEAPONS + "(" + COLUMN_ID
-            + " integer primary key autoincrement, " + COLUMN_PD2SKILLS_ID
+            + " integer primary key autoincrement, " + COLUMN_PD2_ID
             + " integer," + COLUMN_WEAPON_TYPE
             + " integer," + COLUMN_NAME
             + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_AMMO]
@@ -196,15 +196,15 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             switch ( weapon){
                 case 0:
                     values.put(MySQLiteHelper.COLUMN_NAME, "example");
-                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 10);
+                    values.put(MySQLiteHelper.COLUMN_PD2_ID, 10);
                     break;
                 case 1:
                     values.put(MySQLiteHelper.COLUMN_NAME, "example");
-                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 25);
+                    values.put(MySQLiteHelper.COLUMN_PD2_ID, 25);
                     break;
                 case 2:
                     values.put(MySQLiteHelper.COLUMN_NAME, "example");
-                    values.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, 100000);
+                    values.put(MySQLiteHelper.COLUMN_PD2_ID, 100000);
                     break;
             }
 

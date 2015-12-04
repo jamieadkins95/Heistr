@@ -123,6 +123,9 @@ public class WeaponBuild {
                     //Log.d("Current Tag", currentTag + "");
 
                     switch (currentTag) {
+                        case "pd2":
+                            currentWeapon.setPd2(text);
+                            break;
                         case "pd2skills":
                             currentWeapon.setPd2skillsID(Long.parseLong(text));
                             break;
@@ -194,7 +197,8 @@ public class WeaponBuild {
         merged.setName(weaponFromDB.getName());
         merged.setWeaponName(weaponFromXML.getWeaponName());
         merged.setWeaponType(weaponFromDB.getWeaponType());
-        merged.setPd2skillsID(weaponFromDB.getPd2skillsID());
+        merged.setPd2(weaponFromDB.getPd2());
+        merged.setPd2skillsID(weaponFromXML.getPd2skillsID());
         merged.setROF(weaponFromXML.getROF());
         merged.setTotalAmmo(weaponFromXML.getTotalAmmo());
         merged.setMagSize(weaponFromXML.getBaseMagSize());

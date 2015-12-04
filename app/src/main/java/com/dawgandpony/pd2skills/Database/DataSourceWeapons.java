@@ -6,16 +6,10 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.dawgandpony.pd2skills.BuildObjects.Attachment;
-import com.dawgandpony.pd2skills.BuildObjects.Skill;
-import com.dawgandpony.pd2skills.BuildObjects.SkillBuild;
-import com.dawgandpony.pd2skills.BuildObjects.SkillTier;
-import com.dawgandpony.pd2skills.BuildObjects.SkillTree;
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
 import com.dawgandpony.pd2skills.BuildObjects.WeaponBuild;
-import com.dawgandpony.pd2skills.Consts.Trees;
 
 import java.util.ArrayList;
 
@@ -29,7 +23,7 @@ public class DataSourceWeapons {
     private MySQLiteHelper dbHelper;
     private String[] weaponBuildColumns = { MySQLiteHelper.COLUMN_ID, MySQLiteHelper.COLUMN_PRIMARY_WEAPON, MySQLiteHelper.COLUMN_SECONDARY_WEAPON, MySQLiteHelper.COLUMN_MELEE_WEAPON};
     private static String[] weaponColumns = { MySQLiteHelper.COLUMN_ID,
-            MySQLiteHelper.COLUMN_PD2SKILLS_ID,
+            MySQLiteHelper.COLUMN_PD2_ID,
             MySQLiteHelper.COLUMN_WEAPON_TYPE,
             MySQLiteHelper.COLUMN_NAME,
             MySQLiteHelper.COLUMNS_ATTACHMENTS[Attachment.MOD_AMMO],
@@ -92,10 +86,10 @@ public class DataSourceWeapons {
 
     }
 
-    public Weapon createAndInsertWeapon(String name, long pd2skillsID, int weaponType){
+    public Weapon createAndInsertWeapon(String name, String pd2ID, int weaponType){
         ContentValues weaponValues = new ContentValues();
         weaponValues.put(MySQLiteHelper.COLUMN_NAME, name);
-        weaponValues.put(MySQLiteHelper.COLUMN_PD2SKILLS_ID, pd2skillsID);
+        weaponValues.put(MySQLiteHelper.COLUMN_PD2_ID, pd2ID);
         weaponValues.put(MySQLiteHelper.COLUMN_WEAPON_TYPE, weaponType);
 
         long weaponID = database.insert(MySQLiteHelper.TABLE_WEAPONS, null, weaponValues);
@@ -245,7 +239,7 @@ public class DataSourceWeapons {
 
         Weapon weapon =  new Weapon();
         weapon.setId(cursorWeapon.getLong(0));
-        weapon.setPd2skillsID(cursorWeapon.getLong(1));
+        weapon.setPd2(cursorWeapon.getString(1));
         weapon.setWeaponType(cursorWeapon.getInt(2));
         weapon.setName(cursorWeapon.getString(3));
         ArrayList<String> attachments = new ArrayList<>();
@@ -266,7 +260,7 @@ public class DataSourceWeapons {
 
         Weapon merged = null;
         for (Weapon w : baseWeaponInfo){
-            if (w.getPd2skillsID() == weapon.getPd2skillsID()){
+            if (w.getPd2().equals(weapon.getPd2())) {
                 if (w.getWeaponType() == weapon.getWeaponType()){
                     merged = WeaponBuild.mergeWeapon(weapon, w);
                 }

@@ -250,7 +250,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     }
 
     @Override
-    public void onDialogNewWeapon(DialogFragment dialog, String name, long baseWeaponID, int templateWeaponPos) {
+    public void onDialogNewWeapon(DialogFragment dialog, String name, String baseWeaponID, int templateWeaponPos) {
         new CreateNewWeapon(name, baseWeaponID).execute();
     }
 
@@ -298,19 +298,19 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     private class CreateNewWeapon extends AsyncTask<Void, Void, Weapon> {
 
         String name;
-        long pd2skillsid;
+        String pd2ID;
 
-        public CreateNewWeapon(String name, long pd2skillsid) {
+        public CreateNewWeapon(String name, String pd2ID) {
             super();
             this.name = name;
-            this.pd2skillsid = pd2skillsid;
+            this.pd2ID = pd2ID;
         }
 
         @Override
         protected Weapon doInBackground(Void... params) {
             DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(getActivity(), baseWeaponInfo, baseAttachmentInfo);
             dataSourceWeapons.open();
-            Weapon w = dataSourceWeapons.createAndInsertWeapon(name, pd2skillsid, weaponType);
+            Weapon w = dataSourceWeapons.createAndInsertWeapon(name, pd2ID, weaponType);
             dataSourceWeapons.close();
 
             return w;

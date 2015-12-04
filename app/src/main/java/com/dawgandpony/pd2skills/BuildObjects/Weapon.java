@@ -17,6 +17,7 @@ public class Weapon {
     long pd2skillsID = -1;
     String name = "Prim";
     String weaponName = "Prim2";
+    String pd2 = "wpn";
     int weaponType = WeaponBuild.PRIMARY;
 
     int rateOfFire = 0;
@@ -216,5 +217,13 @@ public class Weapon {
 
     public void setAttachments(ArrayList<Attachment> attachments) {
         this.attachments = attachments;
+    }
+
+    public String getPd2() {
+        return pd2;
+    }
+
+    public void setPd2(String pd2) {
+        this.pd2 = pd2;
     }
 }
