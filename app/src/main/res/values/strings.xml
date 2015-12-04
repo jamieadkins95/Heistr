@@ -5,9 +5,7 @@
     <string name="action_settings">Settings</string>
     <string name="sad_face">:(</string>
     <string name="empty_build_list">No builds yet.</string>
-    <string name="title_activity_edit_build">EditBuildActivity</string>
-
-
+    <string name="title_activity_edit_build">Heistr</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
