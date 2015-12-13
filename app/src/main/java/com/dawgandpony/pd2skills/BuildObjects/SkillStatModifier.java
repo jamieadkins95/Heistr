@@ -27,6 +27,10 @@ public class SkillStatModifier {
         return damageMult;
     }
 
+    public float getStabilityMult() {
+        return stabilityMult;
+    }
+
     public static SkillStatModifier getGunsligerAced() {
         SkillStatModifier modifier = new SkillStatModifier();
         modifier.damage = 15;
@@ -42,7 +46,10 @@ public class SkillStatModifier {
     }
 
     public static SkillStatModifier getShotgunImpactAced() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.damageMult = 1.35f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SHOTGUN);
+        return modifier;
     }
 
     public static SkillStatModifier getPerkDeckBonus() {

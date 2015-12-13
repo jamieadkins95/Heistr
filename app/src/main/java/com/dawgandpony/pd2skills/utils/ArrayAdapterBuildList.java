@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dawgandpony.pd2skills.BuildObjects.Build;
+import com.dawgandpony.pd2skills.BuildObjects.SkillStatChangeManager;
 import com.dawgandpony.pd2skills.Consts.Trees;
 import com.dawgandpony.pd2skills.R;
 
@@ -69,13 +70,15 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         //Set Perk Deck
         String perkDeck = context.getResources().getTextArray(R.array.perkDecks)[getItem(position).getPerkDeck()].toString();
         tvPerkDeck.setText(perkDeck);
+
+        SkillStatChangeManager skillStatChangeManager = getItem(position).getStatChangeManager();
         
         //Set Weapons
         if (getItem(position).getWeaponBuild().getPrimaryWeapon() != null){
             tvPrimaryWeapon.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getWeaponName());
-            tvPrimaryDamage.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getDamage(getItem(position).getStatChangeManager()) + "");
+            tvPrimaryDamage.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getDamage(skillStatChangeManager) + "");
             tvPrimaryAccuracy.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getAccuracy() + "");
-            tvPrimaryStability.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getStability() + "");
+            tvPrimaryStability.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getStability(skillStatChangeManager) + "");
             tvPrimaryConcealment.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getConcealment() + "");
         } else {
             LinearLayout llPrimary = (LinearLayout) rowView.findViewById(R.id.llPrimary);
@@ -84,9 +87,9 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
 
         if (getItem(position).getWeaponBuild().getSecondaryWeapon() != null){
             tvSecondaryWeapon.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getWeaponName());
-            tvSecondaryDamage.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getDamage(getItem(position).getStatChangeManager()) + "");
+            tvSecondaryDamage.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getDamage(skillStatChangeManager) + "");
             tvSecondaryAccuracy.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getAccuracy() + "");
-            tvSecondaryStability.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getStability() + "");
+            tvSecondaryStability.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getStability(skillStatChangeManager) + "");
             tvSecondaryConcealment.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getConcealment() + "");
         } else {
             LinearLayout llSecondary = (LinearLayout) rowView.findViewById(R.id.llSecondary);

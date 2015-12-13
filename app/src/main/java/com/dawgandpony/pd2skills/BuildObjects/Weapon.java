@@ -133,6 +133,7 @@ public class Weapon {
                 }
             }
         }
+
         return damageAdj;
     }
 
@@ -161,12 +162,21 @@ public class Weapon {
         return stability;
     }
 
-    public float getStability() {
+    public float getStability(SkillStatChangeManager skillStatChangeManager) {
         float stab = 0;
         stab += stability;
         for (Attachment attachment : attachments){
             stab += attachment.getStability();
         }
+
+        for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
+            for (int weaponType : modifier.getWeaponTypes()) {
+                if (weaponSubType == weaponType) {
+                    stab *= modifier.getStabilityMult();
+                }
+            }
+        }
+
         return stab;
     }
 

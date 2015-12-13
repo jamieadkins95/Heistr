@@ -28,7 +28,6 @@ public class Build {
     int perkDeck = 0;
     int armour = 0;
 
-    SkillStatChangeManager statChangeManager;
 
 
 
@@ -55,7 +54,6 @@ public class Build {
 
     public void setSkillBuild(SkillBuild skillBuild) {
         this.skillBuild = skillBuild;
-        this.statChangeManager = new SkillStatChangeManager(skillBuild);
     }
 
     public int getPerkDeck() {
@@ -84,7 +82,7 @@ public class Build {
     }
 
     public SkillStatChangeManager getStatChangeManager() {
-        return statChangeManager;
+        return SkillStatChangeManager.getInstance(skillBuild);
     }
 
     public ArrayList<Weapon> getWeaponsFromXML() {

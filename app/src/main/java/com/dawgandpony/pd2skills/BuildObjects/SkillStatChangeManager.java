@@ -28,7 +28,11 @@ public class SkillStatChangeManager {
         return modifiers;
     }
 
-    public SkillStatChangeManager(SkillBuild skillBuild) {
+    public static SkillStatChangeManager getInstance(SkillBuild skillBuild) {
+        return new SkillStatChangeManager(skillBuild);
+    }
+
+    private SkillStatChangeManager(SkillBuild skillBuild) {
         modifiers = new ArrayList<>();
         for (SkillTree tree : skillBuild.getSkillTrees()) {
             for (SkillTier tier : tree.getTierList()) {
@@ -49,6 +53,15 @@ public class SkillStatChangeManager {
                         case "g":
                             break;
                         case "h":
+                            if (tier.getSkillTree() == Trees.ENFORCER) {
+                                if (skill.getTaken() == Skill.NORMAL) {
+                                    modifiers.add(SkillStatModifier.getShotgunImpact());
+                                }
+                                if (skill.getTaken() == Skill.ACE) {
+                                    modifiers.add(SkillStatModifier.getShotgunImpact());
+                                    modifiers.add(SkillStatModifier.getShotgunImpactAced());
+                                }
+                            }
                             break;
                         case "i":
                             break;

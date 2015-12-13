@@ -58,7 +58,7 @@ public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon>{
         TextView tvStabilityTotal = (TextView) rowView.findViewById(R.id.tvStabilityValueTotal);
         float[] stability = new float[4];
         stability[BASE] = getItem(position).getBaseStability();
-        stability[TOTAL] = getItem(position).getStability();
+        stability[TOTAL] = getItem(position).getStability(skillStatChangeManager);
         tvStability.setText(stability[BASE] + "");
         tvStabilityTotal.setText(stability[TOTAL] + "");
         //endregion

@@ -60,7 +60,7 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
         TextView tvStabilityTotal = (TextView) rowView.findViewById(R.id.tvStabilityValueTotal);
         float[] stability = new float[4];
         stability[BASE] = getItem(position).getBaseStability();
-        stability[TOTAL] = getItem(position).getStability();
+        stability[TOTAL] = getItem(position).getStability(skillStatChangeManager);
         tvStabilityTotal.setText(stability[TOTAL] + "");
         //endregion
         //region Conceal
