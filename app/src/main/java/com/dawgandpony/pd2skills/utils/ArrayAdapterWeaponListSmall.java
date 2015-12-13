@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.dawgandpony.pd2skills.BuildObjects.SkillStatChangeManager;
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
 import com.dawgandpony.pd2skills.R;
 
@@ -26,6 +27,7 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
     private final long equipped;
     List<Weapon> weapons;
     Context context;
+    SkillStatChangeManager skillStatChangeManager;
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -44,7 +46,7 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
         TextView tvDamageTotal = (TextView) rowView.findViewById(R.id.tvDamageValueTotal);
         float[] damage = new float[4];
         damage[BASE] = getItem(position).getBaseDamage();
-        damage[TOTAL] = getItem(position).getDamage();
+        damage[TOTAL] = getItem(position).getDamage(skillStatChangeManager);
         tvDamageTotal.setText(damage[TOTAL] + "");
         //endregion
         //region Acc
@@ -54,7 +56,7 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
         accuracy[TOTAL] = getItem(position).getAccuracy();
         tvAccuracyTotal.setText(accuracy[TOTAL] + "");
         //endregion
-        //region Stabi
+        //region Stability
         TextView tvStabilityTotal = (TextView) rowView.findViewById(R.id.tvStabilityValueTotal);
         float[] stability = new float[4];
         stability[BASE] = getItem(position).getBaseStability();
@@ -99,11 +101,12 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
         return rowView;
     }
 
-    public ArrayAdapterWeaponListSmall(Context context, List<Weapon> weapons, long equippedID){
+    public ArrayAdapterWeaponListSmall(Context context, List<Weapon> weapons, long equippedID, SkillStatChangeManager manager){
         super(context, -1, weapons);
         this.weapons = weapons;
         this.context = context;
         this.equipped = equippedID;
+        this.skillStatChangeManager = manager;
     }
 
 

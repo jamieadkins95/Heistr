@@ -19,6 +19,7 @@ public class Weapon {
     String weaponName = "Prim2";
     String pd2 = "wpn";
     int weaponType = WeaponBuild.PRIMARY;
+    int weaponSubType = -1;
 
     int rateOfFire = 0;
     int totalAmmo = 0;
@@ -46,6 +47,14 @@ public class Weapon {
 
     public void setWeaponType(int weaponType) {
         this.weaponType = weaponType;
+    }
+
+    public int getWeaponSubType() {
+        return weaponSubType;
+    }
+
+    public void setWeaponSubType(int weaponSubType) {
+        this.weaponSubType = weaponSubType;
     }
 
     public long getId() {
@@ -109,11 +118,20 @@ public class Weapon {
         return damage;
     }
 
-    public float getDamage() {
+    public float getDamage(SkillStatChangeManager skillStatChangeManager) {
         float damageAdj = 0;
         damageAdj += damage;
         for (Attachment attachment : attachments){
             damageAdj += attachment.getDamage();
+        }
+
+        for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
+            for (int weaponType : modifier.getWeaponTypes()) {
+                if (weaponSubType == weaponType) {
+                    damageAdj += modifier.getDamage();
+                    damageAdj *= modifier.getDamageMult();
+                }
+            }
         }
         return damageAdj;
     }

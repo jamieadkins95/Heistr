@@ -259,9 +259,9 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     public void onWeaponsReady() {
         Weapon weapon = activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType];
         if (weapon != null){
-            mOtherAdapter = new ArrayAdapterWeaponListSmall(getActivity(), allWeapons, weapon.getId());
+            mOtherAdapter = new ArrayAdapterWeaponListSmall(getActivity(), allWeapons, weapon.getId(), activity.getCurrentBuild().getStatChangeManager());
         } else {
-            mOtherAdapter = new ArrayAdapterWeaponListSmall(getActivity(), allWeapons, -1);
+            mOtherAdapter = new ArrayAdapterWeaponListSmall(getActivity(), allWeapons, -1, activity.getCurrentBuild().getStatChangeManager());
         }
 
         lvOtherWeapons.setAdapter(mOtherAdapter);

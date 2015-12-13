@@ -1,25 +1,44 @@
 package com.dawgandpony.pd2skills.BuildObjects;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /**
  * Created by Jamie on 28/11/2015.
  */
 public class SkillStatModifier {
 
-    private float damage;
-    private float damageMult;
+    private float damage = 0;
+    private float damageMult = 1;
+    private float stabilityMult = 1;
 
-    private int weaponType;
 
+    private ArrayList<Integer> weaponTypes = new ArrayList<>();
+
+    public ArrayList<Integer> getWeaponTypes() {
+        return weaponTypes;
+    }
+
+    public float getDamage() {
+        return damage;
+    }
+
+    public float getDamageMult() {
+        return damageMult;
+    }
 
     public static SkillStatModifier getGunsligerAced() {
         SkillStatModifier modifier = new SkillStatModifier();
         modifier.damage = 15;
-        modifier.weaponType = SkillStatChangeManager.WEAPON_TYPE_PISTOL;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_PISTOL);
         return modifier;
     }
 
     public static SkillStatModifier getShotgunImpact() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.stabilityMult = 1.25f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SHOTGUN);
+        return modifier;
     }
 
     public static SkillStatModifier getShotgunImpactAced() {

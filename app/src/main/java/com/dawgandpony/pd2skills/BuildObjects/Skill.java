@@ -6,14 +6,14 @@ package com.dawgandpony.pd2skills.BuildObjects;
  * Created by Jamie on 15/07/2015.
  */
 public class Skill {
-    private String name;
-    private String normalDescription;
-    private String aceDescription;
-    private String abbreviation;
-    private String pd2SkillsSymbol;
-    private int normalPoints;
-    private int acePoints;
-    private int taken;
+    private String name = "";
+    private String normalDescription = "";
+    private String aceDescription = "";
+    private String abbreviation = "";
+    private String pd2SkillsSymbol = "";
+    private int normalPoints = 0;
+    private int acePoints = 0;
+    private int taken = 0;
 
     public final static int NO = 0;
     public final static int NORMAL = 1;
@@ -26,6 +26,7 @@ public class Skill {
         normalPoints = 0;
         acePoints = 0;
         taken = NO;
+        pd2SkillsSymbol = "";
     }
 
     @Override

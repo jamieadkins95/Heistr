@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.dawgandpony.pd2skills.BuildObjects.SkillStatChangeManager;
 import com.dawgandpony.pd2skills.BuildObjects.Weapon;
 import com.dawgandpony.pd2skills.R;
 
@@ -24,6 +25,7 @@ public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon>{
 
     List<Weapon> weapons;
     Context context;
+    SkillStatChangeManager skillStatChangeManager;
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -38,7 +40,7 @@ public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon>{
         TextView tvDamageTotal = (TextView) rowView.findViewById(R.id.tvDamageValueTotal);
         float[] damage = new float[4];
         damage[BASE] = getItem(position).getBaseDamage();
-        damage[TOTAL] = getItem(position).getDamage();
+        damage[TOTAL] = getItem(position).getDamage(skillStatChangeManager);
         tvDamage.setText(damage[BASE] + "");
         tvDamageTotal.setText(damage[TOTAL] + "");
         //endregion
@@ -106,10 +108,11 @@ public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon>{
         return rowView;
     }
 
-    public ArrayAdapterWeaponList(Context context, List<Weapon> weapons){
+    public ArrayAdapterWeaponList(Context context, List<Weapon> weapons, SkillStatChangeManager manager){
         super(context, -1, weapons);
         this.weapons = weapons;
         this.context = context;
+        this.skillStatChangeManager = manager;
     }
 
 

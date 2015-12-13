@@ -88,8 +88,8 @@ public class Attachment {
                                         currentAttachment.concealment == 0 && currentAttachment.magsize == 0 &&
                                         !currentAttachment.getName().toLowerCase().contains("laser") &&
                                         !currentAttachment.getPd2().contains("saw")) {
-                                    Log.e("JAMIEA", currentAttachment.getName());
-                                    Log.e("JAMIEA", currentAttachment.getPd2());
+                                    //Log.e("JAMIEA", currentAttachment.getName());
+                                    //Log.e("JAMIEA", currentAttachment.getPd2());
                                 } else {
                                     attachments.add(currentAttachment);
                                 }

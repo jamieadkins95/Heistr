@@ -90,6 +90,7 @@ public class WeaponBuild {
 
             Weapon currentWeapon = null;
             String currentTag = "";
+            int subType = -1;
 
             while (eventType != XmlPullParser.END_DOCUMENT) {
 
@@ -112,6 +113,7 @@ public class WeaponBuild {
                     switch (currentTag) {
                         case "weapon":
                             currentWeapon.setWeaponType(weaponType);
+                            currentWeapon.setWeaponSubType(subType);
                             weapons.add(currentWeapon);
                             break;
                     }
@@ -123,6 +125,9 @@ public class WeaponBuild {
                     //Log.d("Current Tag", currentTag + "");
 
                     switch (currentTag) {
+                        case "group_name":
+                            subType = xmlGroupToInt(text);
+                            break;
                         case "pd2":
                             currentWeapon.setPd2(text);
                             break;
@@ -180,6 +185,26 @@ public class WeaponBuild {
         return weapons;
     }
 
+    private static int xmlGroupToInt(String xml) {
+        switch (xml) {
+            case "assault":
+                return SkillStatChangeManager.WEAPON_TYPE_ASSAULT;
+            case "shotgun":
+                return SkillStatChangeManager.WEAPON_TYPE_SHOTGUN;
+            case "akimbo":
+                return SkillStatChangeManager.WEAPON_TYPE_AKIMBO;
+            case "sniper":
+                return SkillStatChangeManager.WEAPON_TYPE_SNIPER;
+            case "pistol":
+                return SkillStatChangeManager.WEAPON_TYPE_PISTOL;
+            case "smg":
+                return SkillStatChangeManager.WEAPON_TYPE_SMG;
+            default:
+                return -1;
+        }
+
+    }
+
     public static ArrayList<Weapon> getWeaponsFromXML(Resources res) {
 
         ArrayList<Weapon> weapons = new ArrayList<>();
@@ -197,6 +222,7 @@ public class WeaponBuild {
         merged.setName(weaponFromDB.getName());
         merged.setWeaponName(weaponFromXML.getWeaponName());
         merged.setWeaponType(weaponFromDB.getWeaponType());
+        merged.setWeaponSubType(weaponFromXML.getWeaponSubType());
         merged.setPd2(weaponFromDB.getPd2());
         merged.setPd2skillsID(weaponFromXML.getPd2skillsID());
         merged.setROF(weaponFromXML.getROF());
