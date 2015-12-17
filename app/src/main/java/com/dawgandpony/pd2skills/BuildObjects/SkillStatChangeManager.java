@@ -47,23 +47,43 @@ public class SkillStatChangeManager {
                         case "d":
                             break;
                         case "e":
+                            if (tier.getSkillTree() == Trees.TECHNICIAN) {
+                                if (skill.getTaken() >= Skill.NORMAL) {
+                                    modifiers.add(SkillStatModifier.getSharpshooter());
+                                }
+                                if (skill.getTaken() == Skill.ACE) {
+                                    modifiers.add(SkillStatModifier.getSharpshooterAced());
+                                }
+                            }
                             break;
                         case "f":
                             break;
                         case "g":
+                            if (tier.getSkillTree() == Trees.MASTERMIND) {
+                                if (skill.getTaken() >= Skill.NORMAL) {
+                                    modifiers.add(SkillStatModifier.getLeadership());
+                                }
+                                if (skill.getTaken() == Skill.ACE) {
+                                    modifiers.add(SkillStatModifier.getLeadershipAced());
+                                }
+                            }
                             break;
                         case "h":
                             if (tier.getSkillTree() == Trees.ENFORCER) {
-                                if (skill.getTaken() == Skill.NORMAL) {
+                                if (skill.getTaken() >= Skill.NORMAL) {
                                     modifiers.add(SkillStatModifier.getShotgunImpact());
                                 }
                                 if (skill.getTaken() == Skill.ACE) {
-                                    modifiers.add(SkillStatModifier.getShotgunImpact());
                                     modifiers.add(SkillStatModifier.getShotgunImpactAced());
                                 }
                             }
                             break;
                         case "i":
+                            if (tier.getSkillTree() == Trees.MASTERMIND) {
+                                if (skill.getTaken() >= Skill.NORMAL) {
+                                    modifiers.add(SkillStatModifier.getEquilibrium());
+                                }
+                            }
                             break;
                         case "j":
                             break;
@@ -72,6 +92,14 @@ public class SkillStatChangeManager {
                         case "l":
                             break;
                         case "m":
+                            if (tier.getSkillTree() == Trees.GHOST) {
+                                if (skill.getTaken() == Skill.NORMAL) {
+                                    modifiers.add(SkillStatModifier.getSilentKiller());
+                                }
+                                if (skill.getTaken() == Skill.ACE) {
+                                    modifiers.add(SkillStatModifier.getSilentKillerAced());
+                                }
+                            }
                             break;
                         case "n":
                             break;
@@ -81,12 +109,25 @@ public class SkillStatChangeManager {
                                     modifiers.add(SkillStatModifier.getGunsligerAced());
                                 }
                             }
+                            if (tier.getSkillTree() == Trees.ENFORCER) {
+                                if (skill.getTaken() >= Skill.NORMAL) {
+                                    modifiers.add(SkillStatModifier.getFullyLoaded());
+                                }
+                            }
                             break;
                         case "p":
                             break;
                         case "q":
                             break;
                         case "r":
+                            if (tier.getSkillTree() == Trees.TECHNICIAN) {
+                                if (skill.getTaken() >= Skill.NORMAL) {
+                                    modifiers.add(SkillStatModifier.getMagPlus());
+                                }
+                                if (skill.getTaken() == Skill.ACE) {
+                                    modifiers.add(SkillStatModifier.getMagPlusAced());
+                                }
+                            }
                             break;
                         case "s":
                             break;
@@ -94,5 +135,7 @@ public class SkillStatChangeManager {
                 }
             }
         }
+
+        modifiers.add(SkillStatModifier.getPerkDeckBonus());
     }
 }

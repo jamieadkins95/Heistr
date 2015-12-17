@@ -11,6 +11,9 @@ public class SkillStatModifier {
     private float damage = 0;
     private float damageMult = 1;
     private float stabilityMult = 1;
+    private float accuracyMult = 1;
+    private float ammoMult = 1;
+    private int mag = 0;
 
 
     private ArrayList<Integer> weaponTypes = new ArrayList<>();
@@ -29,6 +32,14 @@ public class SkillStatModifier {
 
     public float getStabilityMult() {
         return stabilityMult;
+    }
+
+    public float getAccuracyMult() {
+        return accuracyMult;
+    }
+
+    public float getAmmoMult() {
+        return ammoMult;
     }
 
     public static SkillStatModifier getGunsligerAced() {
@@ -53,27 +64,45 @@ public class SkillStatModifier {
     }
 
     public static SkillStatModifier getPerkDeckBonus() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.damageMult = 1.05f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_ALL);
+        return modifier;
     }
 
     public static SkillStatModifier getSilentKiller() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.damageMult = 1.15f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SILENCED);
+        return modifier;
     }
 
     public static SkillStatModifier getSilentKillerAced() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.damageMult = 1.30f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SILENCED);
+        return modifier;
     }
 
     public static SkillStatModifier getLeadership() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.stabilityMult = 1.25f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_PISTOL);
+        return modifier;
     }
 
     public static SkillStatModifier getLeadershipAced() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.stabilityMult = 1.50f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_ALL);
+        return modifier;
     }
 
     public static SkillStatModifier getEquilibrium() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.accuracyMult = 1.10f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_PISTOL);
+        return modifier;
     }
 
     public static SkillStatModifier getEquilibriumAced() {
@@ -81,11 +110,10 @@ public class SkillStatModifier {
     }
 
     public static SkillStatModifier getFullyLoaded() {
-        return null;
-    }
-
-    public static SkillStatModifier getFullyLoadedAced() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.ammoMult = 1.25f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_ALL);
+        return modifier;
     }
 
     public static SkillStatModifier getSharpshooter() {
@@ -93,15 +121,25 @@ public class SkillStatModifier {
     }
 
     public static SkillStatModifier getSharpshooterAced() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.stabilityMult = 1.25f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_ASSAULT);
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SNIPER);
+        return modifier;
     }
 
     public static SkillStatModifier getMagPlus() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.mag = 5;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_ALL);
+        return modifier;
     }
 
     public static SkillStatModifier getMagPlusAced() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.mag = 10;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_ALL);
+        return modifier;
     }
 
     public static SkillStatModifier getSMGSpecialist() {
