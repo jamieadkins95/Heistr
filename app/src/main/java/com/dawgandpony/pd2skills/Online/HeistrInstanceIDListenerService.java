@@ -19,9 +19,6 @@ package com.dawgandpony.pd2skills.Online;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.util.Log;
-
-import com.google.android.gms.iid.InstanceID;
 import com.google.android.gms.iid.InstanceIDListenerService;
 
 public class HeistrInstanceIDListenerService extends InstanceIDListenerService {
@@ -37,6 +34,8 @@ public class HeistrInstanceIDListenerService extends InstanceIDListenerService {
     @Override
     public void onTokenRefresh() {
         // Fetch updated Instance ID token and notify our app's server of any changes (if applicable).
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences.edit().putBoolean(RegistrationIntentService.SENT_TO_SERVER, false).apply();
         Intent intent = new Intent(this, RegistrationIntentService.class);
         startService(intent);
     }

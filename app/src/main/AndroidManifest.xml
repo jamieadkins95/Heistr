@@ -3,6 +3,7 @@
     package="com.dawgandpony.pd2skills" >
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <permission android:name="com.dawgandpony.pd2skills.C2D_MESSAGE"
         android:protectionLevel="signature" />
     <uses-permission android:name="com.dawgandpony.pd2skills.permission.C2D_MESSAGE" />

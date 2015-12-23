@@ -28,11 +28,21 @@ import com.google.android.gms.gcm.GcmPubSub;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.android.gms.iid.InstanceID;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegistrationIntentService extends IntentService {
 
-    private static final String SENT_TO_SERVER = "com.dawgandpony.pd2skills.TOKEN_TO_SERVER";
+    public static final String SENT_TO_SERVER = "com.dawgandpony.pd2skills.TOKEN_TO_SERVER";
     public static final String REGISTRATION_COMPLETE = "registrationComplete";
 
     private static final String TAG = "RegIntentService";
@@ -59,16 +69,15 @@ public class RegistrationIntentService extends IntentService {
             // [END get_token]
             Log.i(TAG, "GCM Registration Token: " + token);
 
-            // TODO: Implement this method to send any registration to your app's servers.
-            sendRegistrationToServer(token);
+            if (!sharedPreferences.getBoolean(SENT_TO_SERVER, false)) {
+                sendRegistrationToServer(token);
+                Log.d(TAG, "reg sent");
+                sharedPreferences.edit().putBoolean(SENT_TO_SERVER, true).apply();
+            }
 
             // Subscribe to topic channels
             subscribeTopics(token);
 
-            // You should store a boolean that indicates whether the generated token has been
-            // sent to your server. If the boolean is false, send the token to your server,
-            // otherwise your server should have already received the token.
-            sharedPreferences.edit().putBoolean(SENT_TO_SERVER, true).apply();
             // [END register_for_gcm]
         } catch (Exception e) {
             Log.d(TAG, "Failed to complete token refresh", e);
@@ -90,7 +99,68 @@ public class RegistrationIntentService extends IntentService {
      * @param token The new token.
      */
     private void sendRegistrationToServer(String token) {
-        // Add custom implementation, as needed.
+        HttpURLConnection conn = null;
+        try {
+            URL url = new URL("http://jamieadkins.ddns.net/heistr.php");
+
+            HashMap<String, String> postDataParams = new HashMap<String, String>();
+            postDataParams.put("regKey", token);
+
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setReadTimeout(15000);
+            conn.setConnectTimeout(15000);
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type",
+                    "application/x-www-form-urlencoded");
+            conn.setUseCaches(false);
+            conn.setDoInput(true);
+            conn.setDoOutput(true);
+
+            String data = getPostDataString(postDataParams);
+
+            conn.setFixedLengthStreamingMode(
+                    data.getBytes().length);
+            //Send request
+            DataOutputStream wr = new DataOutputStream (
+                    conn.getOutputStream ());
+            wr.writeBytes (data);
+            wr.flush();
+            wr.close ();
+
+            //Get Response
+            InputStream is = conn.getInputStream();
+            BufferedReader rd = new BufferedReader(new InputStreamReader(is));
+            String line;
+            StringBuffer response = new StringBuffer();
+            while((line = rd.readLine()) != null) {
+                response.append(line);
+                response.append('\r');
+            }
+            rd.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if(conn != null) {
+                conn.disconnect();
+            }
+        }
+    }
+
+    private String getPostDataString(HashMap<String, String> params) throws UnsupportedEncodingException {
+        StringBuilder result = new StringBuilder();
+        boolean first = true;
+        for(Map.Entry<String, String> entry : params.entrySet()){
+            if (first)
+                first = false;
+            else
+                result.append("&");
+
+            result.append(URLEncoder.encode(entry.getKey(), "UTF-8"));
+            result.append("=");
+            result.append(URLEncoder.encode(entry.getValue(), "UTF-8"));
+        }
+
+        return result.toString();
     }
 
     /**
