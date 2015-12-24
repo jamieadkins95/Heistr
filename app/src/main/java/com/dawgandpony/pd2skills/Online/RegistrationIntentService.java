@@ -47,7 +47,7 @@ public class RegistrationIntentService extends IntentService {
     public static final String REGISTRATION_COMPLETE = "registrationComplete";
 
     private static final String TAG = "RegIntentService";
-    private static final String[] TOPICS = {"global"};
+    private static final String[] TOPICS = {"global", "challenges"};
 
     public RegistrationIntentService() {
         super(TAG);
