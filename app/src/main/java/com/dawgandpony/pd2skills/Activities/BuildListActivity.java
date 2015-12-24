@@ -64,8 +64,7 @@ public class BuildListActivity extends AppCompatActivity {
                 apiAvailability.getErrorDialog(this, resultCode, PLAY_SERVICES_RESOLUTION_REQUEST)
                         .show();
             } else {
-                Log.i(TAG, "This device is not supported.");
-                finish();
+                Log.i(TAG, "No GMS.");
             }
             return false;
         }
