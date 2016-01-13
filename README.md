@@ -3,7 +3,6 @@ This is the source code for an Android app that lets you create skill and weapon
 You can download the beta version [here](https://play.google.com/apps/testing/com.dawgandpony.pd2skills):
 
 # Coming Soon
- - Skills integration with weapon stats e.g. Gunsliger
  - An overall summary of the build
  - EHP and breakpoint calculations
  - Possible online features such as 'Build of the Week'
