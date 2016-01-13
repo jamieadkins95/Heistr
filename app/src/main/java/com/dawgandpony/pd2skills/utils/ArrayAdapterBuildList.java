@@ -77,7 +77,7 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         if (getItem(position).getWeaponBuild().getPrimaryWeapon() != null){
             tvPrimaryWeapon.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getWeaponName());
             tvPrimaryDamage.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getDamage(skillStatChangeManager) + "");
-            tvPrimaryAccuracy.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getAccuracy() + "");
+            tvPrimaryAccuracy.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getAccuracy(skillStatChangeManager) + "");
             tvPrimaryStability.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getStability(skillStatChangeManager) + "");
             tvPrimaryConcealment.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getConcealment() + "");
         } else {
@@ -88,7 +88,7 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         if (getItem(position).getWeaponBuild().getSecondaryWeapon() != null){
             tvSecondaryWeapon.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getWeaponName());
             tvSecondaryDamage.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getDamage(skillStatChangeManager) + "");
-            tvSecondaryAccuracy.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getAccuracy() + "");
+            tvSecondaryAccuracy.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getAccuracy(skillStatChangeManager) + "");
             tvSecondaryStability.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getStability(skillStatChangeManager) + "");
             tvSecondaryConcealment.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getConcealment() + "");
         } else {

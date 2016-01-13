@@ -13,6 +13,7 @@ public class SkillStatModifier {
     private float stabilityMult = 1;
     private float accuracyMult = 1;
     private float ammoMult = 1;
+    private float rofMult = 1;
     private int mag = 0;
 
 
@@ -40,6 +41,14 @@ public class SkillStatModifier {
 
     public float getAmmoMult() {
         return ammoMult;
+    }
+
+    public float getRofMult() {
+        return rofMult;
+    }
+
+    public int getMag() {
+        return mag;
     }
 
     public static SkillStatModifier getGunsligerAced() {
@@ -142,27 +151,39 @@ public class SkillStatModifier {
         return modifier;
     }
 
-    public static SkillStatModifier getSMGSpecialist() {
-        return null;
-    }
-
     public static SkillStatModifier getSMGSpecialistAced() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.rofMult = 1.2f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SMG);
+        return modifier;
     }
 
     public static SkillStatModifier getProfessional() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.stabilityMult = 1.5f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SILENCED);
+        return modifier;
     }
 
     public static SkillStatModifier getProfessionalAced() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.accuracyMult = 1.5f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SILENCED);
+        return modifier;
     }
 
     public static SkillStatModifier getAkimbo() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.stabilityMult = 0.5f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_AKIMBO);
+        return modifier;
     }
 
     public static SkillStatModifier getAkimboAced() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.ammoMult = 1.5f;
+        modifier.stabilityMult = 0.75f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_AKIMBO);
+        return modifier;
     }
 }

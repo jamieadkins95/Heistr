@@ -101,12 +101,21 @@ public class Weapon {
         return magSize;
     }
 
-    public int getMagSize() {
+    public int getMagSize(SkillStatChangeManager skillStatChangeManager) {
         int mag = 0;
         mag += magSize;
         for (Attachment attachment : attachments){
             mag += attachment.getMagsize();
         }
+
+        for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
+            for (int weaponType : modifier.getWeaponTypes()) {
+                if (weaponSubType == weaponType || weaponType == SkillStatChangeManager.WEAPON_TYPE_ALL) {
+                    mag += modifier.getMag();
+                }
+            }
+        }
+
         return mag;
     }
 
@@ -125,16 +134,18 @@ public class Weapon {
             damageAdj += attachment.getDamage();
         }
 
+        float mult = 1;
+
         for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
             for (int weaponType : modifier.getWeaponTypes()) {
-                if (weaponSubType == weaponType) {
+                if (weaponSubType == weaponType || weaponType == SkillStatChangeManager.WEAPON_TYPE_ALL) {
                     damageAdj += modifier.getDamage();
-                    damageAdj *= modifier.getDamageMult();
+                    mult += modifier.getDamageMult() - 1;
                 }
             }
         }
 
-        return damageAdj;
+        return damageAdj * mult;
     }
 
     public void setDamage(float damage) {
@@ -145,13 +156,24 @@ public class Weapon {
         return accuracy;
     }
 
-    public float getAccuracy() {
+    public float getAccuracy(SkillStatChangeManager skillStatChangeManager) {
         float acc = 0;
         acc += accuracy;
         for (Attachment attachment : attachments){
             acc += attachment.getAccuracy();
         }
-        return acc;
+
+        float mult = 1;
+
+        for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
+            for (int weaponType : modifier.getWeaponTypes()) {
+                if (weaponSubType == weaponType || weaponType == SkillStatChangeManager.WEAPON_TYPE_ALL) {
+                    mult += modifier.getAccuracyMult() - 1;
+                }
+            }
+        }
+
+        return acc * mult;
     }
 
     public void setAccuracy(float accuracy) {
@@ -169,15 +191,17 @@ public class Weapon {
             stab += attachment.getStability();
         }
 
+        float mult = 1;
+
         for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
             for (int weaponType : modifier.getWeaponTypes()) {
-                if (weaponSubType == weaponType) {
-                    stab *= modifier.getStabilityMult();
+                if (weaponSubType == weaponType || weaponType == SkillStatChangeManager.WEAPON_TYPE_ALL) {
+                    mult += modifier.getStabilityMult() - 1;
                 }
             }
         }
 
-        return stab;
+        return stab * mult;
     }
 
     @Override

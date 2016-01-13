@@ -53,7 +53,7 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
         TextView tvAccuracyTotal = (TextView) rowView.findViewById(R.id.tvAccuracyValueTotal);
         float[] accuracy = new float[4];
         accuracy[BASE] = getItem(position).getBaseAccuracy();
-        accuracy[TOTAL] = getItem(position).getAccuracy();
+        accuracy[TOTAL] = getItem(position).getAccuracy(skillStatChangeManager);
         tvAccuracyTotal.setText(accuracy[TOTAL] + "");
         //endregion
         //region Stability
@@ -88,7 +88,7 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
         TextView tvMagTotal = (TextView) rowView.findViewById(R.id.tvMagValueTotal);
         int[] mag = new int[4];
         mag[BASE] = getItem(position).getBaseMagSize();
-        mag[TOTAL] = getItem(position).getMagSize();
+        mag[TOTAL] = getItem(position).getMagSize(skillStatChangeManager);
         tvMagTotal.setText(mag[TOTAL] + "");
         //endregion
 

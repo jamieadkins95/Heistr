@@ -86,6 +86,11 @@ public class SkillStatChangeManager {
                             }
                             break;
                         case "j":
+                            if (tier.getSkillTree() == Trees.GHOST) {
+                                if (skill.getTaken() == Skill.ACE) {
+                                    modifiers.add(SkillStatModifier.getSMGSpecialistAced());
+                                }
+                            }
                             break;
                         case "k":
                             break;
@@ -116,6 +121,14 @@ public class SkillStatChangeManager {
                             }
                             break;
                         case "p":
+                            if (tier.getSkillTree() == Trees.GHOST) {
+                                if (skill.getTaken() >= Skill.NORMAL) {
+                                    modifiers.add(SkillStatModifier.getProfessional());
+                                }
+                                if (skill.getTaken() == Skill.ACE) {
+                                    modifiers.add(SkillStatModifier.getProfessionalAced());
+                                }
+                            }
                             break;
                         case "q":
                             break;
@@ -130,6 +143,14 @@ public class SkillStatChangeManager {
                             }
                             break;
                         case "s":
+                            if (tier.getSkillTree() == Trees.FUGITIVE) {
+                                if (skill.getTaken() == Skill.NORMAL) {
+                                    modifiers.add(SkillStatModifier.getAkimbo());
+                                }
+                                if (skill.getTaken() == Skill.ACE) {
+                                    modifiers.add(SkillStatModifier.getAkimboAced());
+                                }
+                            }
                             break;
                     }
                 }
