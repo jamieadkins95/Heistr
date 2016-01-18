@@ -49,7 +49,7 @@ public class SkillStatChangeManager {
                         case "e":
                             if (tier.getSkillTree() == Trees.TECHNICIAN) {
                                 if (skill.getTaken() >= Skill.NORMAL) {
-                                    modifiers.add(SkillStatModifier.getSharpshooter());
+                                    //modifiers.add(SkillStatModifier.getSharpshooter());
                                 }
                                 if (skill.getTaken() == Skill.ACE) {
                                     modifiers.add(SkillStatModifier.getSharpshooterAced());
