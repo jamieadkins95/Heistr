@@ -1,0 +1,42 @@
+{
+    	"name" : "InfoGetter",
+    	"description" : "Should get all weapon info",
+    	"author" : "Jamie Adkins",
+    	"contact" : "jamieadkins@live.com",
+    	"version" : "1.0",
+    	"updates" : [
+		{
+			"revision" : 1,
+			"identifier" : "infoGetter",
+		}
+	],
+    	"keybinds" : [
+    	{
+        	"keybind_id" : "keybind_jamiea_test",
+        	"name" : "Get Info",
+        	"description" : "Should get info for all weapons",
+        	"script_path" : "info/test.lua",
+        	"run_in_menu" : true,
+        	"run_in_game" : true,
+        	"localized" : false
+    	},
+	{
+        	"keybind_id" : "keybind_jamiea_test2",
+        	"name" : "Get Info 2",
+        	"description" : "Should get info for all weapons",
+        	"script_path" : "info/test2.lua",
+        	"run_in_menu" : true,
+        	"run_in_game" : true,
+        	"localized" : false
+    	},
+	{
+        	"keybind_id" : "keybind_jamiea_test3",
+        	"name" : "Get Info 3",
+        	"description" : "Should get info for all weapons",
+        	"script_path" : "info/test3.lua",
+        	"run_in_menu" : true,
+        	"run_in_game" : true,
+        	"localized" : false
+    	}
+     ]
+}
