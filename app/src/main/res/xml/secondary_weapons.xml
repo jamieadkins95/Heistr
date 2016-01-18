@@ -291,6 +291,21 @@
             <threat>0</threat>
             <attachments>wpn_fps_shot_r870_s_folding,wpn_fps_upg_m4_s_standard,wpn_fps_upg_m4_s_pts,wpn_fps_shot_shorty_s_nostock_short,wpn_fps_shot_r870_s_nostock_single,wpn_fps_shot_r870_s_nostock_vanilla,wpn_fps_shot_r870_s_solid,wpn_fps_shot_shorty_s_solid_short,wpn_fps_shot_r870_s_solid_single,wpn_fps_upg_m4_s_crane,wpn_fps_upg_m4_s_mk46,wpn_fps_upg_m4_s_ubr,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_shot_shorty_m_extended_short,wpn_fps_upg_m4_g_standard,wpn_fps_upg_m4_g_ergo,wpn_fps_upg_m4_g_sniper,wpn_fps_upg_m4_g_hgrip,wpn_fps_upg_m4_g_mgrip,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_shot_r870_body_standard,wpn_fps_upg_a_slug,wpn_fps_upg_a_custom,wpn_fps_upg_a_custom_free,wpn_fps_upg_a_explosive,wpn_fps_upg_a_piercing,wpn_fps_upg_a_dragons_breath,wpn_fps_shot_r870_body_rack,wpn_fps_shot_r870_s_m4,wpn_fps_upg_ns_shot_thick,wpn_fps_upg_ns_shot_shark,wpn_fps_upg_shot_ns_king,wpn_fps_upg_ns_sho_salvo_large,wpn_fps_shot_r870_b_short,wpn_fps_shot_r870_fg_railed,wpn_fps_shot_r870_fg_small,</attachments>
         </weapon>
+
+        <weapon>
+            <pd2>wpn_fps_shot_m37</pd2>
+            <pd2skills>0</pd2skills>
+            <name>GSPS 12G Shotgun</name>
+            <rof>0</rof>
+            <total>42</total>
+            <mag>7</mag>
+            <damage>59</damage>
+            <accuracy>44</accuracy>
+            <stability>52</stability>
+            <concealment>22</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_shot_m37_s_short,wpn_fps_shot_m37_s_standard,wpn_fps_shot_m37_fg_standard,wpn_fps_shot_m37_m_standard,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_shot_m37_body_standard,wpn_fps_upg_a_slug,wpn_fps_upg_a_custom,wpn_fps_upg_a_custom_free,wpn_fps_upg_a_explosive,wpn_fps_upg_a_piercing,wpn_fps_upg_a_dragons_breath,wpn_fps_upg_ns_shot_thick,wpn_fps_upg_ns_shot_shark,wpn_fps_upg_shot_ns_king,wpn_fps_upg_ns_sho_salvo_large,wpn_fps_shot_m37_b_short,wpn_fps_shot_m37_b_standard,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,wpn_fps_upg_bonus_spread_n1,</attachments>
+        </weapon>
     </weapon_group>
     <weapon_group>
         <group_name>smg</group_name>
