@@ -1,7 +1,6 @@
 # Heistr
 This is the source code for an Android app that lets you create skill and weapon builds for Payday 2.
-You can download Heistr [here](https://play.google.com/store/apps/details?id=com.dawgandpony.pd2skills) or signup for beta updates [here](https://play.google.com/apps/testing/com.dawgandpony.pd2skills)
-You can download the beta version :
+You can download Heistr [here](https://play.google.com/store/apps/details?id=com.dawgandpony.pd2skills) or signup for beta updates [here](https://play.google.com/apps/testing/com.dawgandpony.pd2skills).
 
 # Coming Soon
  - An overall summary of the build
