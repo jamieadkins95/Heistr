@@ -23,7 +23,7 @@ import java.util.Arrays;
 /**
  * Created by Jamie on 18/10/2015.
  */
-public class AttachmentListFragment extends Fragment implements EditWeaponActivity.WeaponsCallbacks, EditBuildActivity.BuildReadyCallbacks{
+public class AttachmentListFragment extends Fragment implements EditWeaponActivity.WeaponsCallbacks, EditBuildActivity.BuildReadyCallbacks, EditWeaponActivity.ViewPagerLifecycle {
 
     private static final String ARG_ATTACHMENT_TYPE = "AttachmentType";
     ListView lvAttachments;
@@ -111,6 +111,7 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
                     currentAttachmentIndex = lvAttachments.getCheckedItemPosition();
                     activity.updateCurrentWeapon(attachmentType, currentAttachmentIndex);
                 } else {
+                    currentAttachmentIndex = -1;
                     lvAttachments.setItemChecked(position, false);
                     activity.updateCurrentWeapon(attachmentType, -1);
                 }
@@ -143,6 +144,16 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
 
     @Override
     public void onBuildUpdated() {
+
+    }
+
+    @Override
+    public void onHide() {
+
+    }
+
+    @Override
+    public void onShow() {
 
     }
 }

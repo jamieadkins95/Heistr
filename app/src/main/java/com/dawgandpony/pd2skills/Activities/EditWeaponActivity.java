@@ -38,6 +38,7 @@ import com.dawgandpony.pd2skills.Fragments.BlankFragment;
 import com.dawgandpony.pd2skills.Fragments.BuildListFragment;
 import com.dawgandpony.pd2skills.Fragments.TaskFragment;
 import com.dawgandpony.pd2skills.Fragments.WeaponListFragment;
+import com.dawgandpony.pd2skills.Fragments.WeaponOverallFragment;
 import com.dawgandpony.pd2skills.R;
 
 /**
@@ -144,12 +145,19 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
         return super.onOptionsItemSelected(item);
     }
 
-    private void setupViewPager(ViewPager viewPager) {
+    public interface ViewPagerLifecycle {
+
+        void onHide();
+
+        void onShow();
+    }
+
+    private void setupViewPager(final ViewPager viewPager) {
         mListeners = new ArrayList<>();
         mBuildListeners = new ArrayList<>();
         final Adapter adapter = new Adapter(getSupportFragmentManager());
 
-        adapter.addFragment(BlankFragment.newInstance(getString(R.string.weapon_placeholder_text)), "Overview");
+        adapter.addFragment(new WeaponOverallFragment(), "Overview");
 
         String[] attachment_types = getResources().getStringArray(R.array.attachment_types);
         for (int i = 0; i < MySQLiteHelper.COLUMNS_ATTACHMENTS.length; i++){
@@ -157,6 +165,33 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
                 adapter.addFragment(AttachmentListFragment.newInstance(i), attachment_types[i]);
             }
         }
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+            int currentPosition = 0;
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                Adapter adapter = (Adapter) mViewPager.getAdapter();
+                ViewPagerLifecycle fragmentToShow = (ViewPagerLifecycle) adapter.getItem(position);
+                fragmentToShow.onShow();
+
+                ViewPagerLifecycle fragmentToHide = (ViewPagerLifecycle) adapter.getItem(currentPosition);
+                fragmentToHide.onHide();
+
+                currentPosition = position;
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         viewPager.setAdapter(adapter);
     }
@@ -226,12 +261,20 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
     }
 
     public void stopListening(Fragment fragment){
-        mListeners.remove(fragment);
-        mBuildListeners.remove(fragment);
+        if (mListeners != null) {
+            mListeners.remove(fragment);
+        }
+        if (mBuildListeners != null) {
+            mBuildListeners.remove(fragment);
+        }
     }
 
     public Weapon getCurrentWeapon() {
         return currentWeapon;
+    }
+
+    public Build getCurrentBuild() {
+        return currentBuild;
     }
 
     public ArrayList<Attachment> getPossibleAttachments(int attachmentType){
@@ -243,15 +286,32 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
         dataSourceWeapons.open();
         if (currentAttachmentIndex != -1){
             Attachment newAttachment = attachmentsSplitUp.get(attachmentType).get(currentAttachmentIndex);
-            //currentWeapon.getAttachments().set(attachmentType, newAttachment);
+            currentWeapon.getAttachments().add(newAttachment);
 
             dataSourceWeapons.updateAttachment(currentWeapon.getId(), attachmentType, newAttachment.getPd2());
 
         } else {
+
+            int attachmentToRemove = -1;
+            for (Attachment a : currentWeapon.getAttachments()) {
+                if (a.getAttachmentType() == attachmentType) {
+                    attachmentToRemove = currentWeapon.getAttachments().indexOf(a);
+                }
+            }
+
+            currentWeapon.getAttachments().remove(attachmentToRemove);
+
+
             dataSourceWeapons.updateAttachment(currentWeapon.getId(), attachmentType, -1 + "");
         }
 
         dataSourceWeapons.close();
+
+        if (mBuildListeners != null) {
+            for (EditBuildActivity.BuildReadyCallbacks b : mBuildListeners){
+                b.onBuildUpdated();
+            }
+        }
 
     }
 
@@ -261,8 +321,6 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
         mListeners = null;
         mBuildListeners = null;
     }
-
-
 
     public class GetWeaponFromDB extends AsyncTask<Void, Integer, Weapon> {
 

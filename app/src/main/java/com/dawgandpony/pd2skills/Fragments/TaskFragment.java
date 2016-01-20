@@ -145,8 +145,6 @@ public class TaskFragment extends Fragment {
 
     private class GetBuildFromDBTask extends AsyncTask<Long, Integer, Build> {
 
-
-
         public GetBuildFromDBTask() {
             super();
         }

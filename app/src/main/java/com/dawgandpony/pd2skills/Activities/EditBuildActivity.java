@@ -256,7 +256,9 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     }
 
     public void stopListening(Fragment f){
-        mListCallbacks.remove(f);
+        if (mListCallbacks != null) {
+            mListCallbacks.remove(f);
+        }
     }
 
     public Build getCurrentBuild() {
