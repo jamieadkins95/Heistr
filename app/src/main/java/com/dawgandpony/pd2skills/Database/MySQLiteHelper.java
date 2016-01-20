@@ -14,7 +14,7 @@ import com.dawgandpony.pd2skills.BuildObjects.Attachment;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pd2skills.db";
-    private static final int DATABASE_VERSION = 26;
+    private static final int DATABASE_VERSION = 28;
 
     //region Skills
     public static final String TABLE_SKILL_BUILDS = "tbSkillBuilds";
@@ -82,7 +82,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_PD2_ID = "pd2skillsID";
     public static final String[] COLUMNS_ATTACHMENTS = new String[]{"ammo", "barrel", "barrelExt",
             "bayonet", "modCustom", "modExtra", "foregrip", "gadget", "grip", "lReceiver",
-            "magazine", "sight", "slide", "stock", "suppressor", "uReceiver"};
+            "magazine", "sight", "slide", "stock", "suppressor", "uReceiver", "bonus"};
 
 
     private static final String CREATE_WEAPON_TABLE = "create table if not exists "
@@ -106,6 +106,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_STOCK]
             + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_SUPPRESSOR]
             + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_UPPER_RECEIVER]
+            + " text," + COLUMNS_ATTACHMENTS[Attachment.MOD_STAT_BOOST]
             + " text);";
     //endregion
 
@@ -139,9 +140,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         InitInfamies(db);
         //AddBaseWeapons(db);
     }
-
-
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

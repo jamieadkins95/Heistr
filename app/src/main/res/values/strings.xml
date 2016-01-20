@@ -45,6 +45,7 @@
         <item>Stock</item>
         <item>Suppressor</item>
         <item>Upper Receiver</item>
+        <item>Stat Boost</item>
     </string-array>
 
     <string name="weapon_attribute_magazine_shorthand">Mag</string>

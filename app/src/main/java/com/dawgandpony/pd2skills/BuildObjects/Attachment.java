@@ -31,6 +31,7 @@ public class Attachment {
     public static final int MOD_STOCK = 13;
     public static final int MOD_SUPPRESSOR = 14;
     public static final int MOD_UPPER_RECEIVER = 15;
+    public static final int MOD_STAT_BOOST = 16;
 
     long id = -1;
     long pd2skillsID = -1;
@@ -222,6 +223,9 @@ public class Attachment {
                 break;
             case "foregrip_ext":
                 group = MOD_FOREGRIP;
+                break;
+            case "bonus":
+                group = MOD_STAT_BOOST;
                 break;
             default:
                 group = MOD_UPPER_RECEIVER;

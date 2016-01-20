@@ -41,7 +41,8 @@ public class DataSourceWeapons {
             MySQLiteHelper.COLUMNS_ATTACHMENTS[Attachment.MOD_SLIDE],
             MySQLiteHelper.COLUMNS_ATTACHMENTS[Attachment.MOD_STOCK],
             MySQLiteHelper.COLUMNS_ATTACHMENTS[Attachment.MOD_SUPPRESSOR],
-            MySQLiteHelper.COLUMNS_ATTACHMENTS[Attachment.MOD_UPPER_RECEIVER]};
+            MySQLiteHelper.COLUMNS_ATTACHMENTS[Attachment.MOD_UPPER_RECEIVER],
+            MySQLiteHelper.COLUMNS_ATTACHMENTS[Attachment.MOD_STAT_BOOST]};
 
     private ArrayList<Weapon> baseWeaponInfo;
     private final ArrayList<Attachment> baseAttachmentInfo;
@@ -243,7 +244,7 @@ public class DataSourceWeapons {
         weapon.setWeaponType(cursorWeapon.getInt(2));
         weapon.setName(cursorWeapon.getString(3));
         ArrayList<String> attachments = new ArrayList<>();
-        for (int i = Attachment.MOD_AMMO; i <= Attachment.MOD_UPPER_RECEIVER; i++){
+        for (int i = Attachment.MOD_AMMO; i <= Attachment.MOD_STAT_BOOST; i++){
             attachments.add(cursorWeapon.getString(4 + i));
         }
 
