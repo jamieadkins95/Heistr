@@ -1,5 +1,7 @@
 package com.dawgandpony.pd2skills.BuildObjects;
 
+import com.dawgandpony.pd2skills.utils.Maths;
+
 import java.util.ArrayList;
 
 /**
@@ -101,22 +103,28 @@ public class Weapon {
         return magSize;
     }
 
-    public int getMagSize(SkillStatChangeManager skillStatChangeManager) {
-        int mag = 0;
-        mag += magSize;
+    public int getAttachmentMagSize() {
+        int magSize = 0;
         for (Attachment attachment : attachments){
-            mag += attachment.getMagsize();
+            magSize += attachment.getMagsize();
         }
+        return magSize;
+    }
 
+    public int getSkillMagSize(SkillStatChangeManager skillStatChangeManager) {
+        int magSize = 0;
         for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
             for (int weaponType : modifier.getWeaponTypes()) {
                 if (weaponSubType == weaponType || weaponType == SkillStatChangeManager.WEAPON_TYPE_ALL) {
-                    mag += modifier.getMag();
+                    magSize += modifier.getMag();
                 }
             }
         }
+        return magSize;
+    }
 
-        return mag;
+    public int getMagSize(SkillStatChangeManager skillStatChangeManager) {
+        return magSize + getAttachmentMagSize() + getSkillMagSize(skillStatChangeManager);
     }
 
     public void setMagSize(int magSize) {
@@ -145,7 +153,7 @@ public class Weapon {
             }
         }
 
-        return damageAdj * mult;
+        return Maths.round(damageAdj * mult);
     }
 
     public void setDamage(float damage) {
@@ -173,7 +181,7 @@ public class Weapon {
             }
         }
 
-        return acc * mult;
+        return Maths.round(acc * mult);
     }
 
     public void setAccuracy(float accuracy) {
@@ -201,7 +209,7 @@ public class Weapon {
             }
         }
 
-        return stab * mult;
+        return Maths.round(stab * mult);
     }
 
     @Override

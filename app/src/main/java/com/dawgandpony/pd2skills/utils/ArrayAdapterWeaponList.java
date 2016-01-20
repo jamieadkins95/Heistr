@@ -91,11 +91,17 @@ public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon>{
         //endregion
         //region mag
         TextView tvMag = (TextView) rowView.findViewById(R.id.tvMagValue);
+        TextView tvMagMod = (TextView) rowView.findViewById(R.id.tvMagValueMod);
+        TextView tvMagSkill = (TextView) rowView.findViewById(R.id.tvMagValueSkill);
         TextView tvMagTotal = (TextView) rowView.findViewById(R.id.tvMagValueTotal);
         int[] mag = new int[4];
         mag[BASE] = getItem(position).getBaseMagSize();
+        mag[MOD] = getItem(position).getAttachmentMagSize();
+        mag[SKILL] = getItem(position).getSkillMagSize(skillStatChangeManager);
         mag[TOTAL] = getItem(position).getMagSize(skillStatChangeManager);
         tvMag.setText(mag[BASE] + "");
+        tvMagMod.setText(mag[MOD] + "");
+        tvMagSkill.setText(mag[SKILL] + "");
         tvMagTotal.setText(mag[TOTAL] + "");
         //endregion
 
