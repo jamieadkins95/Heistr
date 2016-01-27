@@ -126,7 +126,10 @@ public class SkillStatModifier {
     }
 
     public static SkillStatModifier getSharpshooter() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.accuracyMult = 1.20f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SINGLE_SHOT);
+        return modifier;
     }
 
     public static SkillStatModifier getSharpshooterAced() {

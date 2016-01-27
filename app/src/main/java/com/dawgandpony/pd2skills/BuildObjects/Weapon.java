@@ -115,7 +115,7 @@ public class Weapon {
         int magSize = 0;
         for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
             for (int weaponType : modifier.getWeaponTypes()) {
-                if (weaponSubType == weaponType || weaponType == SkillStatChangeManager.WEAPON_TYPE_ALL) {
+                if (doWeaponTypesMatch(weaponType)) {
                     magSize += modifier.getMag();
                 }
             }
@@ -135,6 +135,19 @@ public class Weapon {
         return damage;
     }
 
+    public float getAttachmentDamage() {
+        float damageAdj = 0;
+        damageAdj += damage;
+        for (Attachment attachment : attachments){
+            damageAdj += attachment.getDamage();
+        }
+        return damageAdj;
+    }
+
+    public float getSkillDamage() {
+        
+    }
+
     public float getDamage(SkillStatChangeManager skillStatChangeManager) {
         float damageAdj = 0;
         damageAdj += damage;
@@ -146,7 +159,7 @@ public class Weapon {
 
         for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
             for (int weaponType : modifier.getWeaponTypes()) {
-                if (weaponSubType == weaponType || weaponType == SkillStatChangeManager.WEAPON_TYPE_ALL) {
+                if (doWeaponTypesMatch(weaponType)) {
                     damageAdj += modifier.getDamage();
                     mult += modifier.getDamageMult() - 1;
                 }
@@ -175,7 +188,7 @@ public class Weapon {
 
         for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
             for (int weaponType : modifier.getWeaponTypes()) {
-                if (weaponSubType == weaponType || weaponType == SkillStatChangeManager.WEAPON_TYPE_ALL) {
+                if (doWeaponTypesMatch(weaponType)) {
                     mult += modifier.getAccuracyMult() - 1;
                 }
             }
@@ -203,7 +216,7 @@ public class Weapon {
 
         for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
             for (int weaponType : modifier.getWeaponTypes()) {
-                if (weaponSubType == weaponType || weaponType == SkillStatChangeManager.WEAPON_TYPE_ALL) {
+                if (doWeaponTypesMatch(weaponType)) {
                     mult += modifier.getStabilityMult() - 1;
                 }
             }
@@ -285,5 +298,44 @@ public class Weapon {
 
     public void setPd2(String pd2) {
         this.pd2 = pd2;
+    }
+
+    public boolean isSilenced() {
+        for (Attachment attachment : attachments) {
+            if (attachment.getName().contains("silence") ||
+                    attachment.getPd2().contains("silence") ||
+                    attachment.getName().contains("suppress") ||
+                    attachment.getPd2().contains("suppress")) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean isSingleShot() {
+        for (Attachment attachment : attachments) {
+            if (attachment.getPd2().equals("wpn_fps_upg_i_singlefire")) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private boolean doWeaponTypesMatch(int attachmentType) {
+        if (weaponSubType == attachmentType || attachmentType == SkillStatChangeManager.WEAPON_TYPE_ALL) {
+            return true;
+        }
+
+        if (attachmentType == SkillStatChangeManager.WEAPON_TYPE_SILENCED && isSilenced()) {
+            return true;
+        }
+
+        if (attachmentType == SkillStatChangeManager.WEAPON_TYPE_SINGLE_SHOT && isSingleShot()) {
+            return true;
+        }
+
+        return false;
     }
 }

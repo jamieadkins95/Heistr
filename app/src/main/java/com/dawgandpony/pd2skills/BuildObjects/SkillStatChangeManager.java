@@ -18,6 +18,7 @@ public class SkillStatChangeManager {
     protected static int WEAPON_TYPE_SNIPER = 12;
 
     protected static int WEAPON_TYPE_SILENCED = 13;
+    protected static int WEAPON_TYPE_SINGLE_SHOT = 14;
 
     protected static int WEAPON_TYPE_ALL = 99;
 
@@ -49,7 +50,7 @@ public class SkillStatChangeManager {
                         case "e":
                             if (tier.getSkillTree() == Trees.TECHNICIAN) {
                                 if (skill.getTaken() >= Skill.NORMAL) {
-                                    //modifiers.add(SkillStatModifier.getSharpshooter());
+                                    modifiers.add(SkillStatModifier.getSharpshooter());
                                 }
                                 if (skill.getTaken() == Skill.ACE) {
                                     modifiers.add(SkillStatModifier.getSharpshooterAced());
