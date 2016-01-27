@@ -137,23 +137,18 @@ public class Weapon {
 
     public float getAttachmentDamage() {
         float damageAdj = 0;
-        damageAdj += damage;
         for (Attachment attachment : attachments){
             damageAdj += attachment.getDamage();
         }
         return damageAdj;
     }
 
-    public float getSkillDamage() {
-        
+    public float getSkillDamage(SkillStatChangeManager skillStatChangeManager) {
+        return getDamage(skillStatChangeManager) - damage - getAttachmentDamage();
     }
 
     public float getDamage(SkillStatChangeManager skillStatChangeManager) {
-        float damageAdj = 0;
-        damageAdj += damage;
-        for (Attachment attachment : attachments){
-            damageAdj += attachment.getDamage();
-        }
+        float damageAdj = damage + getAttachmentDamage();
 
         float mult = 1;
 
@@ -177,12 +172,20 @@ public class Weapon {
         return accuracy;
     }
 
-    public float getAccuracy(SkillStatChangeManager skillStatChangeManager) {
+    public float getAttachmentAccuracy() {
         float acc = 0;
-        acc += accuracy;
         for (Attachment attachment : attachments){
             acc += attachment.getAccuracy();
         }
+        return acc;
+    }
+
+    public float getSkillAccuracy(SkillStatChangeManager skillStatChangeManager) {
+        return getAccuracy(skillStatChangeManager) - accuracy - getAttachmentAccuracy();
+    }
+
+    public float getAccuracy(SkillStatChangeManager skillStatChangeManager) {
+        float acc = accuracy + getAttachmentAccuracy();
 
         float mult = 1;
 

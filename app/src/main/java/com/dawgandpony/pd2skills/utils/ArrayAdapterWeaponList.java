@@ -37,20 +37,32 @@ public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon>{
 
         //region Damage
         TextView tvDamage = (TextView) rowView.findViewById(R.id.tvDamageValue);
+        TextView tvDamageMod = (TextView) rowView.findViewById(R.id.tvDamageValueMod);
+        TextView tvDamageSkill = (TextView) rowView.findViewById(R.id.tvDamageValueSkill);
         TextView tvDamageTotal = (TextView) rowView.findViewById(R.id.tvDamageValueTotal);
         float[] damage = new float[4];
         damage[BASE] = getItem(position).getBaseDamage();
+        damage[MOD] = getItem(position).getAttachmentDamage();
+        damage[SKILL] = getItem(position).getSkillDamage(skillStatChangeManager);
         damage[TOTAL] = getItem(position).getDamage(skillStatChangeManager);
         tvDamage.setText(damage[BASE] + "");
+        tvDamageMod.setText(damage[MOD] + "");
+        tvDamageSkill.setText(damage[SKILL] + "");
         tvDamageTotal.setText(damage[TOTAL] + "");
         //endregion
         //region Acc
         TextView tvAccuracy = (TextView) rowView.findViewById(R.id.tvAccuracyValue);
+        TextView tvAccuracyMod = (TextView) rowView.findViewById(R.id.tvAccuracyValueMod);
+        TextView tvAccuracySkill = (TextView) rowView.findViewById(R.id.tvAccuracyValueSkill);
         TextView tvAccuracyTotal = (TextView) rowView.findViewById(R.id.tvAccuracyValueTotal);
         float[] accuracy = new float[4];
         accuracy[BASE] = getItem(position).getBaseAccuracy();
+        accuracy[MOD] = getItem(position).getAttachmentAccuracy();
+        accuracy[SKILL] = getItem(position).getSkillAccuracy(skillStatChangeManager);
         accuracy[TOTAL] = getItem(position).getAccuracy(skillStatChangeManager);
         tvAccuracy.setText(accuracy[BASE] + "");
+        tvAccuracyMod.setText(accuracy[MOD] + "");
+        tvAccuracySkill.setText(accuracy[SKILL] + "");
         tvAccuracyTotal.setText(accuracy[TOTAL] + "");
         //endregion
         //region Stabi
