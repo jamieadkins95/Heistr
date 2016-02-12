@@ -584,6 +584,21 @@
         </weapon>
 
         <weapon>
+            <pd2>wpn_fps_gre_china</pd2>
+            <pd2skills>0</pd2skills>
+            <name>China Puff 40mm Grenade Launcher</name>
+            <rof>0</rof>
+            <total>6</total>
+            <mag>3</mag>
+            <damage>170</damage>
+            <accuracy>96</accuracy>
+            <stability>96</stability>
+            <concealment>18</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_gre_china_s_standard,wpn_fps_gre_china_s_short,wpn_fps_gre_china_m_standard,wpn_fps_gre_m79_grenade_whole,wpn_fps_gre_m79_sight_up,wpn_fps_gre_china_b_standard,wpn_fps_gre_china_body_standard,wpn_fps_gre_china_fg_standard,wpn_fps_upg_a_grenade_launcher_incendiary,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
+        </weapon>
+
+        <weapon>
             <pd2>wpn_fps_bow_hunter</pd2>
             <pd2skills>0</pd2skills>
             <name>Pistol Crossbow</name>
