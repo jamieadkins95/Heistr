@@ -226,7 +226,7 @@ public class WeaponBuild {
         merged.setPd2(weaponFromDB.getPd2());
         merged.setPd2skillsID(weaponFromXML.getPd2skillsID());
         merged.setROF(weaponFromXML.getROF());
-        merged.setTotalAmmo(weaponFromXML.getTotalAmmo());
+        merged.setTotalAmmo(weaponFromXML.getBaseAmmo());
         merged.setMagSize(weaponFromXML.getBaseMagSize());
         merged.setDamage(weaponFromXML.getBaseDamage());
         merged.setAccuracy(weaponFromXML.getBaseAccuracy());

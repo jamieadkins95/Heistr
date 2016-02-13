@@ -281,30 +281,31 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
         return attachmentsSplitUp.get(attachmentType);
     }
 
-    public void updateCurrentWeapon(int attachmentType, int currentAttachmentIndex) {
+    public void updateCurrentWeapon(int attachmentType, int oldAttachmentIndex, int newAttachmentIndex) {
+        String newAttachmentID = "-1";
         DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(this, baseWeaponInfo, baseAttachmentInfo);
         dataSourceWeapons.open();
-        if (currentAttachmentIndex != -1){
-            Attachment newAttachment = attachmentsSplitUp.get(attachmentType).get(currentAttachmentIndex);
-            currentWeapon.getAttachments().add(newAttachment);
 
-            dataSourceWeapons.updateAttachment(currentWeapon.getId(), attachmentType, newAttachment.getPd2());
-
-        } else {
-
+        // Remove old attachment
+        if (oldAttachmentIndex != -1) {
             int attachmentToRemove = -1;
             for (Attachment a : currentWeapon.getAttachments()) {
                 if (a.getAttachmentType() == attachmentType) {
                     attachmentToRemove = currentWeapon.getAttachments().indexOf(a);
                 }
             }
-
             currentWeapon.getAttachments().remove(attachmentToRemove);
-
-
-            dataSourceWeapons.updateAttachment(currentWeapon.getId(), attachmentType, -1 + "");
         }
 
+        if (newAttachmentIndex != -1){
+            Attachment newAttachment = attachmentsSplitUp.get(attachmentType).get(newAttachmentIndex);
+            currentWeapon.getAttachments().add(newAttachment);
+
+            newAttachmentID = newAttachment.getPd2();
+
+        }
+
+        dataSourceWeapons.updateAttachment(currentWeapon.getId(), attachmentType, newAttachmentID);
         dataSourceWeapons.close();
 
         if (mBuildListeners != null) {

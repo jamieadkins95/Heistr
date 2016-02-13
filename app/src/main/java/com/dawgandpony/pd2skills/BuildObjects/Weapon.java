@@ -87,12 +87,44 @@ public class Weapon {
         return rateOfFire;
     }
 
+    public int getAttachmentRof() {
+        return 0;
+    }
+
+    public int getSkillRof() {
+        return 0;
+    }
+
     public void setROF(int rateOfFire) {
         this.rateOfFire = rateOfFire;
     }
 
-    public int getTotalAmmo() {
+    public int getBaseAmmo() {
         return totalAmmo;
+    }
+
+    public int getAttachmentAmmo() {
+        return 0;
+    }
+
+    public int getSkillAmmo(SkillStatChangeManager skillStatChangeManager) {
+        return getTotalAmmo(skillStatChangeManager) - getBaseAmmo();
+    }
+
+    public int getTotalAmmo(SkillStatChangeManager skillStatChangeManager) {
+        float ammoAdj = totalAmmo + getAttachmentAmmo();
+
+        float mult = 1;
+
+        for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
+            for (int weaponType : modifier.getWeaponTypes()) {
+                if (doWeaponTypesMatch(weaponType)) {
+                    mult += modifier.getAmmoMult() - 1;
+                }
+            }
+        }
+
+        return (int) Maths.round(ammoAdj * mult);
     }
 
     public void setTotalAmmo(int totalAmmo) {
@@ -144,7 +176,7 @@ public class Weapon {
     }
 
     public float getSkillDamage(SkillStatChangeManager skillStatChangeManager) {
-        return getDamage(skillStatChangeManager) - damage - getAttachmentDamage();
+        return Maths.round(getDamage(skillStatChangeManager) - damage - getAttachmentDamage());
     }
 
     public float getDamage(SkillStatChangeManager skillStatChangeManager) {
@@ -181,7 +213,7 @@ public class Weapon {
     }
 
     public float getSkillAccuracy(SkillStatChangeManager skillStatChangeManager) {
-        return getAccuracy(skillStatChangeManager) - accuracy - getAttachmentAccuracy();
+        return Maths.round(getAccuracy(skillStatChangeManager) - accuracy - getAttachmentAccuracy());
     }
 
     public float getAccuracy(SkillStatChangeManager skillStatChangeManager) {
@@ -206,6 +238,18 @@ public class Weapon {
 
     public float getBaseStability() {
         return stability;
+    }
+
+    public float getAttachmentStability() {
+        float stab = 0;
+        for (Attachment attachment : attachments){
+            stab += attachment.getStability();
+        }
+        return stab;
+    }
+
+    public float getSkillStability(SkillStatChangeManager skillStatChangeManager) {
+        return Maths.round(getStability(skillStatChangeManager) - stability - getAttachmentStability());
     }
 
     public float getStability(SkillStatChangeManager skillStatChangeManager) {
@@ -239,6 +283,18 @@ public class Weapon {
 
     public int getBaseConcealment() {
         return concealment;
+    }
+
+    public int getAttachmentConcealment() {
+        int con = 0;
+        for (Attachment attachment : attachments){
+            con += attachment.getConcealment();
+        }
+        return con;
+    }
+
+    public int getSkillConcealment(SkillStatChangeManager skillStatChangeManager) {
+        return 0;
     }
 
     public int getConcealment() {

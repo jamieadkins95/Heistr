@@ -107,15 +107,14 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
         lvAttachments.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int oldAttachment = currentAttachmentIndex;
                 if (position != currentAttachmentIndex){
                     currentAttachmentIndex = lvAttachments.getCheckedItemPosition();
-                    activity.updateCurrentWeapon(attachmentType, currentAttachmentIndex);
                 } else {
                     currentAttachmentIndex = -1;
                     lvAttachments.setItemChecked(position, false);
-                    activity.updateCurrentWeapon(attachmentType, -1);
                 }
-
+                activity.updateCurrentWeapon(attachmentType, oldAttachment, currentAttachmentIndex);
             }
         });
         lvAttachments.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {

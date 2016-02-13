@@ -80,8 +80,8 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
         //region ammo
         TextView tvAmmoTotal = (TextView) rowView.findViewById(R.id.tvAmmoValueTotal);
         int[] ammo = new int[4];
-        ammo[BASE] = getItem(position).getTotalAmmo();
-        ammo[TOTAL] = getItem(position).getTotalAmmo();
+        ammo[BASE] = getItem(position).getBaseAmmo();
+        ammo[TOTAL] = getItem(position).getTotalAmmo(skillStatChangeManager);
         tvAmmoTotal.setText(ammo[TOTAL] + "");
         //endregion
         //region mag

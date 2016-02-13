@@ -68,37 +68,61 @@ public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon>{
         //region Stabi
         TextView tvStability = (TextView) rowView.findViewById(R.id.tvStabilityValue);
         TextView tvStabilityTotal = (TextView) rowView.findViewById(R.id.tvStabilityValueTotal);
+        TextView tvStabilityMod = (TextView) rowView.findViewById(R.id.tvStabilityValueMod);
+        TextView tvStabilitySkill = (TextView) rowView.findViewById(R.id.tvStabilityValueSkill);
         float[] stability = new float[4];
         stability[BASE] = getItem(position).getBaseStability();
+        stability[MOD] = getItem(position).getAttachmentStability();
+        stability[SKILL] = getItem(position).getSkillStability(skillStatChangeManager);
         stability[TOTAL] = getItem(position).getStability(skillStatChangeManager);
         tvStability.setText(stability[BASE] + "");
+        tvStabilityMod.setText(stability[MOD] + "");
+        tvStabilitySkill.setText(stability[SKILL] + "");
         tvStabilityTotal.setText(stability[TOTAL] + "");
         //endregion
         //region Conceal
         TextView tvConcealment = (TextView) rowView.findViewById(R.id.tvConcealmentValue);
+        TextView tvConcealmentSkill = (TextView) rowView.findViewById(R.id.tvConcealmentValueSkill);
+        TextView tvConcealmentMod = (TextView) rowView.findViewById(R.id.tvConcealmentValueMod);
         TextView tvConcealmentTotal = (TextView) rowView.findViewById(R.id.tvConcealmentValueTotal);
         int[] concealment = new int[4];
         concealment[BASE] = getItem(position).getBaseConcealment();
+        concealment[MOD] = getItem(position).getAttachmentConcealment();
+        concealment[SKILL] = getItem(position).getSkillConcealment(skillStatChangeManager);
         concealment[TOTAL] = getItem(position).getConcealment();
         tvConcealment.setText(concealment[BASE] + "");
+        tvConcealmentMod.setText(concealment[MOD] + "");
+        tvConcealmentSkill.setText(concealment[SKILL] + "");
         tvConcealmentTotal.setText(concealment[TOTAL] + "");
         //endregion
         //region rof
         TextView tvRof = (TextView) rowView.findViewById(R.id.tvRoFValue);
+        TextView tvRofSkill = (TextView) rowView.findViewById(R.id.tvRoFValueSkill);
+        TextView tvRofMod = (TextView) rowView.findViewById(R.id.tvRoFValueMod);
         TextView tvRofTotal = (TextView) rowView.findViewById(R.id.tvRoFValueTotal);
         int[] rof = new int[4];
         rof[BASE] = getItem(position).getROF();
+        rof[MOD] = getItem(position).getAttachmentRof();
+        rof[SKILL] = getItem(position).getSkillRof();
         rof[TOTAL] = getItem(position).getROF();
         tvRof.setText(rof[BASE] + "");
+        tvRofMod.setText(rof[MOD] + "");
+        tvRofSkill.setText(rof[SKILL] + "");
         tvRofTotal.setText(rof[TOTAL] + "");
         //endregion
         //region ammo
         TextView tvAmmo = (TextView) rowView.findViewById(R.id.tvAmmoValue);
+        TextView tvAmmoSkill = (TextView) rowView.findViewById(R.id.tvAmmoValueSkill);
+        TextView tvAmmoMod = (TextView) rowView.findViewById(R.id.tvAmmoValueMod);
         TextView tvAmmoTotal = (TextView) rowView.findViewById(R.id.tvAmmoValueTotal);
         int[] ammo = new int[4];
-        ammo[BASE] = getItem(position).getTotalAmmo();
-        ammo[TOTAL] = getItem(position).getTotalAmmo();
+        ammo[BASE] = getItem(position).getBaseAmmo();
+        ammo[MOD] = getItem(position).getAttachmentAmmo();
+        ammo[SKILL] = getItem(position).getSkillAmmo(skillStatChangeManager);
+        ammo[TOTAL] = getItem(position).getTotalAmmo(skillStatChangeManager);
         tvAmmo.setText(ammo[BASE] + "");
+        tvAmmoMod.setText(ammo[MOD] + "");
+        tvAmmoSkill.setText(ammo[SKILL] + "");
         tvAmmoTotal.setText(ammo[TOTAL] + "");
         //endregion
         //region mag
