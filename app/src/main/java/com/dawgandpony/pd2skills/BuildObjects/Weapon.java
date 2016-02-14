@@ -213,23 +213,22 @@ public class Weapon {
     }
 
     public float getSkillAccuracy(SkillStatChangeManager skillStatChangeManager) {
-        return Maths.round(getAccuracy(skillStatChangeManager) - accuracy - getAttachmentAccuracy());
-    }
-
-    public float getAccuracy(SkillStatChangeManager skillStatChangeManager) {
-        float acc = accuracy + getAttachmentAccuracy();
-
-        float mult = 1;
+        int skills = 0;
 
         for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
             for (int weaponType : modifier.getWeaponTypes()) {
                 if (doWeaponTypesMatch(weaponType)) {
-                    mult += modifier.getAccuracyMult() - 1;
+                    skills += modifier.getAccuracy();
                 }
             }
         }
 
-        return Maths.round(acc * mult);
+        return skills;
+    }
+
+    public float getAccuracy(SkillStatChangeManager skillStatChangeManager) {
+        float acc = accuracy + getAttachmentAccuracy() + getSkillAccuracy(skillStatChangeManager);
+        return acc;
     }
 
     public void setAccuracy(float accuracy) {
@@ -249,27 +248,22 @@ public class Weapon {
     }
 
     public float getSkillStability(SkillStatChangeManager skillStatChangeManager) {
-        return Maths.round(getStability(skillStatChangeManager) - stability - getAttachmentStability());
-    }
-
-    public float getStability(SkillStatChangeManager skillStatChangeManager) {
-        float stab = 0;
-        stab += stability;
-        for (Attachment attachment : attachments){
-            stab += attachment.getStability();
-        }
-
-        float mult = 1;
+        int skills = 0;
 
         for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
             for (int weaponType : modifier.getWeaponTypes()) {
                 if (doWeaponTypesMatch(weaponType)) {
-                    mult += modifier.getStabilityMult() - 1;
+                    skills += modifier.getStability();
                 }
             }
         }
 
-        return Maths.round(stab * mult);
+        return skills;
+    }
+
+    public float getStability(SkillStatChangeManager skillStatChangeManager) {
+        float stab = stability + getAttachmentStability() + getSkillStability(skillStatChangeManager);
+        return stab;
     }
 
     @Override
