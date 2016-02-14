@@ -64,8 +64,8 @@ Noise created by you intimidates civilians. </normal>
         <skill>
             <name>Leadership</name>
             <abbreviation>Leader</abbreviation>
-            <normal>You and your crew's weapon stability with pistols is increased by 25%. </normal>
-            <ace>You and your crew's weapon stability with all weapons is increased by 50%. </ace>
+            <normal>You and your crew's weapon stability with pistols is increased by 4. </normal>
+            <ace>You and your crew's weapon stability with all weapons is increased by 8. </ace>
             <pd2skills>g</pd2skills>
         </skill>
     </tier>
@@ -77,7 +77,7 @@ Noise created by you intimidates civilians. </normal>
         <skill>
             <name>Spotter</name>
             <abbreviation>Spotter</abbreviation>
-            <normal> 	Special enemies marked by you take 15% additional damage. Range can be increased with Dominator Aced. </normal>
+            <normal>Special enemies marked by you take 15% additional damage. Range can be increased with Dominator Aced. </normal>
             <ace>Unlocks the Spotter asset in the Job Overview menu.
 During stealth, the Spotter will highlight guards for you and your crew.
 If stealth is not an option, the Spotter will highlight special enemies for you and your crew. </ace>
@@ -86,7 +86,7 @@ If stealth is not an option, the Spotter will highlight special enemies for you 
         <skill>
             <name>Equilibrium</name>
             <abbreviation>Equil</abbreviation>
-            <normal>Increases accuracy with pistols and akimbo weapons by 10% and decreases the time it takes to pull and put them away by 50%. </normal>
+            <normal>Increases accuracy with pistols and akimbo weapons by 4 and decreases the time it takes to pull and put them away by 50%. </normal>
             <ace>Increases your rate of fire with pistols and akimbo weapons by 100%. </ace>
             <pd2skills>i</pd2skills>
         </skill>
@@ -136,7 +136,7 @@ The time to convert an enemy is reduced by 65%.</ace>
             <name>Kilmer</name>
             <abbreviation>Kilmer</abbreviation>
             <normal>Increases your reload speed with assault rifles and sniper rifles by 25%. </normal>
-            <ace>Your weapon accuracy while moving with assault rifles and sniper rifles is increased by 50%.
+            <ace>Your weapon accuracy while moving with assault rifles and sniper rifles is increased by 8.
 Run and reload - you can now reload your weapons while sprinting.</ace>
             <pd2skills>n</pd2skills>
         </skill>
@@ -144,7 +144,7 @@ Run and reload - you can now reload your weapons while sprinting.</ace>
             <name>Gunslinger</name>
             <abbreviation>Gunslinger</abbreviation>
             <normal>You reload pistols and akimbo weapons 50% faster. </normal>
-            <ace>You deal +15 additional damage with pistols and +7.5 additional damage with akimbo weapons. </ace>
+            <ace>You deal +15 additional damage with pistols.</ace>
             <pd2skills>o</pd2skills>
         </skill>
         <skill>

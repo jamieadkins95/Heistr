@@ -149,9 +149,9 @@ Further increases your lockpicking interaction speed by 25%.
         <skill>
             <name>The Professional</name>
             <abbreviation> Pro </abbreviation>
-            <normal>Your weapon stability with silenced weapons is increased by 50%. Your snap to zoom is 100% faster with silenced weapons.
+            <normal>Your weapon stability with silenced weapons is increased by 8. Your snap to zoom is 100% faster with silenced weapons.
 (Reduced recoil for all silenced weapons by 50%).</normal>
-            <ace>Your weapon accuracy with silenced weapons is increased by 50%. You gain a 20% chance to pierce enemy armor with silenced weapons.</ace>
+            <ace>Your weapon accuracy with silenced weapons is increased by 8. You gain a 20% chance to pierce enemy armor with silenced weapons.</ace>
             <pd2skills>p</pd2skills>
         </skill>
     </tier>

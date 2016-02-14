@@ -76,7 +76,7 @@
         <skill>
             <name>Shotgun Impact</name>
             <abbreviation>Impact</abbreviation>
-            <normal>Your weapon stability with shotguns is increased by 25%. </normal>
+            <normal>Your weapon stability with shotguns is increased by 4.</normal>
             <ace>You deal 35% more damage with shotguns. </ace>
             <pd2skills>h</pd2skills>
         </skill>
@@ -130,8 +130,8 @@
         <skill>
             <name>Hard Boiled</name>
             <abbreviation>HBoil</abbreviation>
-            <normal>Increases your shotgun weapon accuracy by 20% when firing from the hip. </normal>
-            <ace>Increases your weapon accuracy by 20% when firing from the hip with all weapons. </ace>
+            <normal>Increases your shotgun weapon accuracy by 4 when firing from the hip. </normal>
+            <ace>Increases your weapon accuracy by 4 when firing from the hip with all weapons. </ace>
             <pd2skills>n</pd2skills>
         </skill>
         <skill>

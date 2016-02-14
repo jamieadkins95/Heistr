@@ -172,8 +172,8 @@
             <name>Akimbo</name>
             <abbreviation>Akimbo</abbreviation>
             <normal>You can dual wield two weapons. These can be found under the Akimbo tab in the inventory menu.
-Dual wielded weapons have 50% stability penalty. </normal>
-            <ace>Your stability penalty with Akimbo weapons is set to 25% and increases the ammo capacity of your Akimbo weapons to 150%. </ace>
+Dual wielded weapons have -16 stability penalty. </normal>
+            <ace>Your stability penalty with Akimbo weapons is set to -8 and increases the ammo capacity of your Akimbo weapons to 150%. </ace>
             <pd2skills>s</pd2skills>
         </skill>
     </tier>

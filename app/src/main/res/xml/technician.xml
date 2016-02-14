@@ -49,8 +49,8 @@
         <skill>
             <name>Sharpshooter</name>
             <abbreviation>Sharp</abbreviation>
-            <normal>You are 20% more accurate with all single shot weapons.</normal>
-            <ace>Your weapon stability is increased with all rifles by 25%. </ace>
+            <normal>Weapon accuracy with all single shot weapons is increased by 4.</normal>
+            <ace>Your weapon stability is increased with all rifles by 8. </ace>
             <pd2skills>e</pd2skills>
         </skill>
         <skill>
