@@ -214,8 +214,12 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
     @Override
     public void onDetach() {
+        // Need to stop listening before we nulligy activity by detaching.
+        if (activity != null) {
+            activity.stopListening(this);
+        }
         super.onDetach();
-        activity.stopListening(this);
+        
     }
 
     private void MoveToEditWeaponActivity(long id){
