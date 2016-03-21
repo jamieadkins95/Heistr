@@ -16,4 +16,18 @@
         <threat>0</threat>
         <attachments></attachments>
     </weapon>
+    <weapon>
+        <pd2>wpn_fps_pis_g22c2</pd2>
+        <pd2skills>0</pd2skills>
+        <name>Chimano Custom Pistol lol</name>
+        <rof>0</rof>
+        <total>96</total>
+        <mag>16</mag>
+        <damage>65</damage>
+        <accuracy>68</accuracy>
+        <stability>52</stability>
+        <concealment>29</concealment>
+        <threat>0</threat>
+        <attachments></attachments>
+    </weapon>
 </weapon>

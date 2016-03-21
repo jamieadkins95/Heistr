@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.jamieadkins.heistr.Activities.EditBuildActivity;
+import com.jamieadkins.heistr.BuildObjects.Weapon;
+import com.jamieadkins.heistr.BuildObjects.WeaponBuild;
 import com.jamieadkins.heistr.R;
 
 import java.util.ArrayList;
@@ -23,14 +25,16 @@ public class MeleeWeaponFragment extends Fragment implements EditBuildActivity.B
 
     ListView lvWeapons;
     EditBuildActivity activity;
+    Weapon currentMeleeWeapon;
+    ArrayList<Weapon> meleeWeapons;
 
 
     public MeleeWeaponFragment() {
         // Required empty public constructor
     }
 
-    public static InfamyFragment newInstance() {
-        InfamyFragment fragment = new InfamyFragment();
+    public static MeleeWeaponFragment newInstance() {
+        MeleeWeaponFragment fragment = new MeleeWeaponFragment();
         return fragment;
     }
 
@@ -41,8 +45,8 @@ public class MeleeWeaponFragment extends Fragment implements EditBuildActivity.B
         activity = (EditBuildActivity) getActivity();
 
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_infamy, container, false);
-        lvWeapons = (ListView) rootView.findViewById(R.id.lvInfamy);
+        View rootView = inflater.inflate(R.layout.fragment_armour, container, false);
+        lvWeapons = (ListView) rootView.findViewById(R.id.lvArmour);
 
         if (activity.getCurrentBuild() == null) {
             activity.listenIn(this);
@@ -55,27 +59,30 @@ public class MeleeWeaponFragment extends Fragment implements EditBuildActivity.B
 
     @Override
     public void onBuildReady() {
+        currentMeleeWeapon = activity.getCurrentBuild().getWeaponBuild().getMeleeWeapon();
+        meleeWeapons = activity.getCurrentBuild().getWeaponsFromXML();
+        ArrayList<String> meleeWeaponNames = new ArrayList<>();
+        for (Weapon weapon : meleeWeapons) {
+            if (weapon.getWeaponType() == WeaponBuild.MELEE) {
+                meleeWeaponNames.add(weapon.getWeaponName());
+            }
+        }
 
-        ArrayList<String> infamies = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.infamies)));
-        ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_multiple_choice, infamies);
+        ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_single_choice, meleeWeaponNames);
         lvWeapons.setAdapter(mAdapter2);
 
-        //Get infamies from the currentBuild and check the respective check box.
-        for (int i = 0; i < activity.getCurrentBuild().getInfamies().size(); i++) {
-            lvWeapons.setItemChecked(i, activity.getCurrentBuild().getInfamies().get(i));
+        for (int i = 0; i < meleeWeapons.size(); i++) {
+            if (currentMeleeWeapon != null && currentMeleeWeapon.getPd2().equals(meleeWeapons.get(i).getPd2())) {
+                lvWeapons.setItemChecked(i, true);
+            }
         }
 
         lvWeapons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                //Update the DB whenever the infamies change
-                SparseBooleanArray checked = lvWeapons.getCheckedItemPositions();
-                for (int i = 0; i < checked.size(); i++) {
-                    activity.getCurrentBuild().updateInfamy(activity, checked.keyAt(i), checked.valueAt(i));
-
-                }
-
+                int selected = lvWeapons.getCheckedItemPosition();
+                currentMeleeWeapon = meleeWeapons.get(selected);
+                activity.getCurrentBuild().updateWeaponBuild(getActivity(), WeaponBuild.MELEE, currentMeleeWeapon);
             }
         });
     }
