@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:id="@+id/pager"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:orientation="vertical" android:fitsSystemWindows="true"
-    tools:context="com.dawgandpony.pd2skills.Activities.EditWeaponActivity">
+    tools:context="com.jamieadkins.heistr.Activities.EditWeaponActivity">
 
     <include layout="@layout/include_list_viewpager"/>
 

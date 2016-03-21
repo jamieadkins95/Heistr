@@ -218,7 +218,7 @@
     <string name="weapon_attribute_threat">Threat</string>
     <string name="equipped">Equipped</string>
     <string name="weapon_placeholder_text">WIP</string>
-    <string name="builds_deleted_42">com.dawgandpony.pd2skills.BUILDS_DELETED_42</string>
+    <string name="builds_deleted_42">com.jamieadkins.heistr.BUILDS_DELETED_42</string>
     <string name="dialog_builds_deleted">Update 1.3.4.2 has deleted your builds.
         This was necessary because of a change to how builds are stored internally.
         \n\nReason: Added ability to store stat boosts attachments in database.
