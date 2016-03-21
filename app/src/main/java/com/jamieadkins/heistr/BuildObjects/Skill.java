@@ -1,7 +1,6 @@
 package com.jamieadkins.heistr.BuildObjects;
 
 
-
 /**
  * Created by Jamie on 15/07/2015.
  */
@@ -31,10 +30,10 @@ public class Skill {
 
     @Override
     public String toString() {
-        String text = "Name: " + name +"\nNormal: " + normalDescription + "\nAce: " + aceDescription + "\nTaken: ";
+        String text = "Name: " + name + "\nNormal: " + normalDescription + "\nAce: " + aceDescription + "\nTaken: ";
 
 
-        switch(taken){
+        switch (taken) {
             case NO:
                 text += "no";
                 break;

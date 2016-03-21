@@ -137,7 +137,7 @@ public class Weapon {
 
     public int getAttachmentMagSize() {
         int magSize = 0;
-        for (Attachment attachment : attachments){
+        for (Attachment attachment : attachments) {
             magSize += attachment.getMagsize();
         }
         return magSize;
@@ -169,7 +169,7 @@ public class Weapon {
 
     public float getAttachmentDamage() {
         float damageAdj = 0;
-        for (Attachment attachment : attachments){
+        for (Attachment attachment : attachments) {
             damageAdj += attachment.getDamage();
         }
         return damageAdj;
@@ -206,7 +206,7 @@ public class Weapon {
 
     public float getAttachmentAccuracy() {
         float acc = 0;
-        for (Attachment attachment : attachments){
+        for (Attachment attachment : attachments) {
             acc += attachment.getAccuracy();
         }
         return acc;
@@ -241,7 +241,7 @@ public class Weapon {
 
     public float getAttachmentStability() {
         float stab = 0;
-        for (Attachment attachment : attachments){
+        for (Attachment attachment : attachments) {
             stab += attachment.getStability();
         }
         return stab;
@@ -281,7 +281,7 @@ public class Weapon {
 
     public int getAttachmentConcealment() {
         int con = 0;
-        for (Attachment attachment : attachments){
+        for (Attachment attachment : attachments) {
             con += attachment.getConcealment();
         }
         return con;
@@ -294,7 +294,7 @@ public class Weapon {
     public int getConcealment() {
         int con = 0;
         con += concealment;
-        for (Attachment attachment : attachments){
+        for (Attachment attachment : attachments) {
             con += attachment.getConcealment();
         }
         return con;
@@ -311,7 +311,7 @@ public class Weapon {
     public int getThreat() {
         int t = 0;
         t += threat;
-        for (Attachment attachment : attachments){
+        for (Attachment attachment : attachments) {
             t += attachment.getThreat();
         }
         return t;

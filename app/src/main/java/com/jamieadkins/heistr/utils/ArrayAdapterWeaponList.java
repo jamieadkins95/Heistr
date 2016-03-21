@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by Jamie on 14/07/2015.
  */
-public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon>{
+public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon> {
 
     static final int BASE = 0;
     static final int SKILL = 1;
@@ -150,13 +150,12 @@ public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon>{
         return rowView;
     }
 
-    public ArrayAdapterWeaponList(Context context, List<Weapon> weapons, SkillStatChangeManager manager){
+    public ArrayAdapterWeaponList(Context context, List<Weapon> weapons, SkillStatChangeManager manager) {
         super(context, -1, weapons);
         this.weapons = weapons;
         this.context = context;
         this.skillStatChangeManager = manager;
     }
-
 
 
 }

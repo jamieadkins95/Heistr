@@ -13,18 +13,15 @@ import android.widget.ListView;
 import com.jamieadkins.heistr.Activities.EditBuildActivity;
 import com.jamieadkins.heistr.R;
 
-
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ArmourFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks{
+public class ArmourFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks {
 
     ListView lvArmour;
-
 
 
     EditBuildActivity activity;
@@ -54,14 +51,13 @@ public class ArmourFragment extends Fragment implements EditBuildActivity.BuildR
         View rootView = inflater.inflate(R.layout.fragment_armour, container, false);
         lvArmour = (ListView) rootView.findViewById(R.id.lvArmour);
 
-        if (activity.getCurrentBuild() == null){
+        if (activity.getCurrentBuild() == null) {
             activity.listenIn(this);
-        }
-        else {
+        } else {
             onBuildReady();
         }
 
-        return  rootView;
+        return rootView;
     }
 
     @Override

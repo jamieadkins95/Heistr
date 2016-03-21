@@ -13,13 +13,12 @@ import com.jamieadkins.heistr.BuildObjects.SkillStatChangeManager;
 import com.jamieadkins.heistr.Consts.Trees;
 import com.jamieadkins.heistr.R;
 
-import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
  * Created by Jamie on 14/07/2015.
  */
-public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
+public class ArrayAdapterBuildList extends ArrayAdapter<Build> {
 
 
     List<Build> builds;
@@ -35,7 +34,7 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         TextView tvArmour = (TextView) rowView.findViewById(R.id.tvArmour);
         TextView tvPerkDeck = (TextView) rowView.findViewById(R.id.tvPerkDeck);
         TextView tvDetection = (TextView) rowView.findViewById(R.id.tvDetection);
-        
+
         TextView tvPrimaryWeapon = (TextView) rowView.findViewById(R.id.tvPrimaryWeaponName);
         TextView tvSecondaryWeapon = (TextView) rowView.findViewById(R.id.tvSecondaryWeaponName);
 
@@ -72,9 +71,9 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         tvPerkDeck.setText(perkDeck);
 
         SkillStatChangeManager skillStatChangeManager = getItem(position).getStatChangeManager();
-        
+
         //Set Weapons
-        if (getItem(position).getWeaponBuild().getPrimaryWeapon() != null){
+        if (getItem(position).getWeaponBuild().getPrimaryWeapon() != null) {
             tvPrimaryWeapon.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getWeaponName());
             tvPrimaryDamage.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getDamage(skillStatChangeManager) + "");
             tvPrimaryAccuracy.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getAccuracy(skillStatChangeManager) + "");
@@ -85,7 +84,7 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
             llPrimary.setVisibility(View.INVISIBLE);
         }
 
-        if (getItem(position).getWeaponBuild().getSecondaryWeapon() != null){
+        if (getItem(position).getWeaponBuild().getSecondaryWeapon() != null) {
             tvSecondaryWeapon.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getWeaponName());
             tvSecondaryDamage.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getDamage(skillStatChangeManager) + "");
             tvSecondaryAccuracy.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getAccuracy(skillStatChangeManager) + "");
@@ -108,23 +107,23 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         int highlightedColour = context.getResources().getColor(R.color.textSecondary);
 
         //Set colours if skills are above 15.
-        if (getItem(position).getSkillBuild().getSkillTrees().get(Trees.MASTERMIND).getSkillCount() >= 15){
+        if (getItem(position).getSkillBuild().getSkillTrees().get(Trees.MASTERMIND).getSkillCount() >= 15) {
             mastermind.setTextColor(highlightedColour);
             mastermindSkillCount.setTextColor(highlightedColour);
         }
-        if (getItem(position).getSkillBuild().getSkillTrees().get(Trees.ENFORCER).getSkillCount() >= 15){
+        if (getItem(position).getSkillBuild().getSkillTrees().get(Trees.ENFORCER).getSkillCount() >= 15) {
             enforcer.setTextColor(highlightedColour);
             enforcerSkillCount.setTextColor(highlightedColour);
         }
-        if (getItem(position).getSkillBuild().getSkillTrees().get(Trees.TECHNICIAN).getSkillCount() >= 15){
+        if (getItem(position).getSkillBuild().getSkillTrees().get(Trees.TECHNICIAN).getSkillCount() >= 15) {
             technician.setTextColor(highlightedColour);
             technicianSkillCount.setTextColor(highlightedColour);
         }
-        if (getItem(position).getSkillBuild().getSkillTrees().get(Trees.GHOST).getSkillCount() >= 15){
+        if (getItem(position).getSkillBuild().getSkillTrees().get(Trees.GHOST).getSkillCount() >= 15) {
             ghost.setTextColor(highlightedColour);
             ghostSkillCount.setTextColor(highlightedColour);
         }
-        if (getItem(position).getSkillBuild().getSkillTrees().get(Trees.FUGITIVE).getSkillCount() >= 15){
+        if (getItem(position).getSkillBuild().getSkillTrees().get(Trees.FUGITIVE).getSkillCount() >= 15) {
             fugitive.setTextColor(highlightedColour);
             fugitiveSkillCount.setTextColor(highlightedColour);
         }
@@ -133,12 +132,11 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build>{
         return rowView;
     }
 
-    public ArrayAdapterBuildList(Context context, List<Build> b){
+    public ArrayAdapterBuildList(Context context, List<Build> b) {
         super(context, -1, b);
         this.builds = b;
         this.context = context;
     }
-
 
 
 }

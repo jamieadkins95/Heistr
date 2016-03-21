@@ -22,10 +22,9 @@ import java.util.Arrays;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PerkDeckFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks{
+public class PerkDeckFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks {
 
     ListView lvPerkDecks;
-
 
 
     EditBuildActivity activity;
@@ -56,14 +55,13 @@ public class PerkDeckFragment extends Fragment implements EditBuildActivity.Buil
         lvPerkDecks = (ListView) rootView.findViewById(R.id.lvPerkDeck);
 
 
-        if (activity.getCurrentBuild() == null){
+        if (activity.getCurrentBuild() == null) {
             activity.listenIn(this);
-        }
-        else {
+        } else {
             onBuildReady();
         }
 
-        return  rootView;
+        return rootView;
     }
 
     @Override
@@ -78,7 +76,7 @@ public class PerkDeckFragment extends Fragment implements EditBuildActivity.Buil
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int selected = lvPerkDecks.getCheckedItemPosition();
-                if (selected == activity.getCurrentBuild().getPerkDeck()){
+                if (selected == activity.getCurrentBuild().getPerkDeck()) {
                     PerkDeckDialog dialog = PerkDeckDialog.newInstance(selected);
                     try {
                         Activity activity = getActivity();
@@ -86,8 +84,7 @@ public class PerkDeckFragment extends Fragment implements EditBuildActivity.Buil
                     } catch (Exception e) {
                         Toast.makeText(activity, "Cannot show perkdeck details :(", Toast.LENGTH_SHORT).show();
                     }
-                }
-                else {
+                } else {
                     activity.getCurrentBuild().updatePerkDeck(activity, selected);
                 }
 

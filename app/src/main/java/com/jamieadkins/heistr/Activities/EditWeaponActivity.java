@@ -3,48 +3,35 @@ package com.jamieadkins.heistr.Activities;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import com.jamieadkins.heistr.BuildObjects.Attachment;
 import com.jamieadkins.heistr.BuildObjects.Build;
 import com.jamieadkins.heistr.BuildObjects.Weapon;
-import com.jamieadkins.heistr.BuildObjects.WeaponBuild;
 import com.jamieadkins.heistr.Database.DataSourceWeapons;
 import com.jamieadkins.heistr.Database.MySQLiteHelper;
 import com.jamieadkins.heistr.Fragments.AttachmentListFragment;
-import com.jamieadkins.heistr.Fragments.BlankFragment;
 import com.jamieadkins.heistr.Fragments.BuildListFragment;
 import com.jamieadkins.heistr.Fragments.TaskFragment;
 import com.jamieadkins.heistr.Fragments.WeaponListFragment;
 import com.jamieadkins.heistr.Fragments.WeaponOverallFragment;
 import com.jamieadkins.heistr.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Jamie on 11/10/2015.
  */
-public class EditWeaponActivity extends AppCompatActivity implements TaskFragment.TaskCallbacks{
+public class EditWeaponActivity extends AppCompatActivity implements TaskFragment.TaskCallbacks {
 
     public static final String EXTRA_WEAPON_TYPE = "WeaponType";
     private static final String TAG = "EditWeaponActivity";
@@ -78,7 +65,7 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
 
 
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
             currentWeaponID = getIntent().getLongExtra(WeaponListFragment.EXTRA_WEAPON_ID, -1);
             currentBuildID = getIntent().getLongExtra(BuildListFragment.EXTRA_BUILD_ID, -1);
             weaponType = getIntent().getIntExtra(EXTRA_WEAPON_TYPE, -1);
@@ -89,7 +76,7 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
         }
         activityReady = true;
 
-        if (infoReady){
+        if (infoReady) {
             onInfoReady();
         }
 
@@ -160,7 +147,7 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
         adapter.addFragment(new WeaponOverallFragment(), "Overview");
 
         String[] attachment_types = getResources().getStringArray(R.array.attachment_types);
-        for (int i = 0; i < MySQLiteHelper.COLUMNS_ATTACHMENTS.length; i++){
+        for (int i = 0; i < MySQLiteHelper.COLUMNS_ATTACHMENTS.length; i++) {
             if (attachmentsSplitUp.get(i).size() > 0) {
                 adapter.addFragment(AttachmentListFragment.newInstance(i), attachment_types[i]);
             }
@@ -216,7 +203,7 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
 
         infoReady = true;
 
-        if (activityReady){
+        if (activityReady) {
             onInfoReady();
         }
     }
@@ -251,16 +238,16 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
         }
     }
 
-    public interface WeaponsCallbacks{
+    public interface WeaponsCallbacks {
         void onWeaponReady();
     }
 
-    public void listen(Fragment fragment){
+    public void listen(Fragment fragment) {
         mListeners.add((WeaponsCallbacks) fragment);
         mBuildListeners.add((EditBuildActivity.BuildReadyCallbacks) fragment);
     }
 
-    public void stopListening(Fragment fragment){
+    public void stopListening(Fragment fragment) {
         if (mListeners != null) {
             mListeners.remove(fragment);
         }
@@ -277,7 +264,7 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
         return currentBuild;
     }
 
-    public ArrayList<Attachment> getPossibleAttachments(int attachmentType){
+    public ArrayList<Attachment> getPossibleAttachments(int attachmentType) {
         return attachmentsSplitUp.get(attachmentType);
     }
 
@@ -297,7 +284,7 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
             currentWeapon.getAttachments().remove(attachmentToRemove);
         }
 
-        if (newAttachmentIndex != -1){
+        if (newAttachmentIndex != -1) {
             Attachment newAttachment = attachmentsSplitUp.get(attachmentType).get(newAttachmentIndex);
             currentWeapon.getAttachments().add(newAttachment);
 
@@ -309,7 +296,7 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
         dataSourceWeapons.close();
 
         if (mBuildListeners != null) {
-            for (EditBuildActivity.BuildReadyCallbacks b : mBuildListeners){
+            for (EditBuildActivity.BuildReadyCallbacks b : mBuildListeners) {
                 b.onBuildUpdated();
             }
         }
@@ -350,12 +337,12 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
             setTitle(weapon.getName());
 
             attachmentsSplitUp = new ArrayList<>();
-            for (int i = Attachment.MOD_AMMO; i <= Attachment.MOD_STAT_BOOST; i++){
+            for (int i = Attachment.MOD_AMMO; i <= Attachment.MOD_STAT_BOOST; i++) {
                 attachmentsSplitUp.add(new ArrayList<Attachment>());
             }
-            for (Attachment attachment : baseAttachmentInfo){
-                for (String s : currentWeapon.getPossibleAttachments()){
-                    if (s.equals(attachment.getPd2())){
+            for (Attachment attachment : baseAttachmentInfo) {
+                for (String s : currentWeapon.getPossibleAttachments()) {
+                    if (s.equals(attachment.getPd2())) {
                         attachmentsSplitUp.get(attachment.getAttachmentType()).add(attachment);
                     }
                 }
@@ -370,14 +357,14 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
     }
 
     private void onWeaponReady() {
-        if (mListeners != null){
-            for (WeaponsCallbacks listener : mListeners){
+        if (mListeners != null) {
+            for (WeaponsCallbacks listener : mListeners) {
                 listener.onWeaponReady();
             }
         }
 
         if (mBuildListeners != null) {
-            for (EditBuildActivity.BuildReadyCallbacks b : mBuildListeners){
+            for (EditBuildActivity.BuildReadyCallbacks b : mBuildListeners) {
                 b.onBuildReady();
             }
         }

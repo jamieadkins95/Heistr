@@ -22,13 +22,13 @@ public class SkillTree {
         this.name = name;
     }
 
-    public SkillTree(){
+    public SkillTree() {
         skillTiers = new ArrayList<SkillTier>();
     }
 
-    public static SkillTree newNonDBInstance(){
+    public static SkillTree newNonDBInstance() {
         SkillTree skillTree = new SkillTree();
-        for (int i = Trees.TIER0; i <= Trees.TIER6; i++){
+        for (int i = Trees.TIER0; i <= Trees.TIER6; i++) {
             skillTree.getTierList().add(SkillTier.newNonDBInstance(i));
         }
 
@@ -38,7 +38,7 @@ public class SkillTree {
     @Override
     public String toString() {
         String text = name + " tree:";
-        for (SkillTier t : skillTiers){
+        for (SkillTier t : skillTiers) {
             text += "\n" + t.toString();
         }
         return text;
@@ -58,9 +58,8 @@ public class SkillTree {
 
     public int getSkillCount() {
         int count = 0;
-        for (SkillTier tier : skillTiers){
-            for (Skill skill : tier.getSkillsInTier())
-            {
+        for (SkillTier tier : skillTiers) {
+            for (Skill skill : tier.getSkillsInTier()) {
                 count += skill.getTaken();
             }
 
@@ -68,9 +67,9 @@ public class SkillTree {
         return count;
     }
 
-    public ArrayList<SkillTier> getTierListInDescendingOrder(){
+    public ArrayList<SkillTier> getTierListInDescendingOrder() {
         ArrayList<SkillTier> descending = new ArrayList<>();
-        for (int tier = skillTiers.size() - 1; tier > 0; tier--){
+        for (int tier = skillTiers.size() - 1; tier > 0; tier--) {
             descending.add(skillTiers.get(tier));
 
         }
@@ -78,15 +77,16 @@ public class SkillTree {
         return descending;
     }
 
-    public int getPointsSpentInThisTree(){
+    public int getPointsSpentInThisTree() {
         return getPointsSpentInThisTree(7);
     }
-    public int getPointsSpentInThisTree(int upToTier){
+
+    public int getPointsSpentInThisTree(int upToTier) {
         int total = 0;
-        for (int i = 0; i < upToTier; i++){
-            SkillTier tier =skillTiers.get(i);
-            for (Skill skill : tier.getSkillsInTier()){
-                switch (skill.getTaken()){
+        for (int i = 0; i < upToTier; i++) {
+            SkillTier tier = skillTiers.get(i);
+            for (Skill skill : tier.getSkillsInTier()) {
+                switch (skill.getTaken()) {
                     case Skill.NORMAL:
                         total += tier.getNormalCost();
                         break;

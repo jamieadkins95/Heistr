@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by Jamie on 14/07/2015.
  */
-public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
+public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon> {
 
     static final int BASE = 0;
     static final int SKILL = 1;
@@ -38,7 +38,7 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
         TextView tvWeaponName = (TextView) rowView.findViewById(R.id.tvPrimaryWeaponName);
         TextView tvEquipped = (TextView) rowView.findViewById(R.id.tvEquipped);
 
-        if (getItem(position).getId() == equipped){
+        if (getItem(position).getId() == equipped) {
             tvName.setTextColor(ContextCompat.getColor(context, R.color.primaryAccent));
         }
 
@@ -101,14 +101,13 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon>{
         return rowView;
     }
 
-    public ArrayAdapterWeaponListSmall(Context context, List<Weapon> weapons, long equippedID, SkillStatChangeManager manager){
+    public ArrayAdapterWeaponListSmall(Context context, List<Weapon> weapons, long equippedID, SkillStatChangeManager manager) {
         super(context, -1, weapons);
         this.weapons = weapons;
         this.context = context;
         this.equipped = equippedID;
         this.skillStatChangeManager = manager;
     }
-
 
 
 }

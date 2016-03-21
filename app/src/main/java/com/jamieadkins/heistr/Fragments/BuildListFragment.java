@@ -38,7 +38,7 @@ import java.util.ArrayList;
 /**
  * A fragment containing the list of skill builds
  */
-public class BuildListFragment extends Fragment implements NewBuildDialog.NewBuildDialogListener, RenameBuildDialog.RenameBuildDialogListener{
+public class BuildListFragment extends Fragment implements NewBuildDialog.NewBuildDialogListener, RenameBuildDialog.RenameBuildDialogListener {
 
     public final static String EXTRA_BUILD_ID = "com.jamieadkins.heistr.BUILDID";
     public final static String EXTRA_BUILD_NAME = "com.jamieadkins.heistr.BUILDNAME";
@@ -71,7 +71,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
 
 
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-        if (sharedPref.getInt(getString(R.string.builds_deleted_42), 0) == 0){
+        if (sharedPref.getInt(getString(R.string.builds_deleted_42), 0) == 0) {
             // 1. Instantiate an AlertDialog.Builder with its constructor
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
@@ -134,8 +134,8 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
             private void DeleteBuilds() {
                 SparseBooleanArray checked = lvBuilds.getCheckedItemPositions();
 
-                for (int i = 0; i < checked.size();i++){
-                    if (checked.valueAt(i)){
+                for (int i = 0; i < checked.size(); i++) {
+                    if (checked.valueAt(i)) {
                         Build selectedBuild = (Build) lvBuilds.getItemAtPosition(checked.keyAt(i));
                         DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(getActivity());
                         dataSourceBuilds.open();
@@ -154,7 +154,6 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
 
                 Toast.makeText(getActivity(), "Build(s) deleted", Toast.LENGTH_SHORT).show();
             }
-
 
 
             @Override
@@ -178,8 +177,8 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
 
         //Weird workaround to get the colour of the FAB correct
         ColorStateList csl = new ColorStateList(
-                new int[][] {{android.R.attr.state_pressed},{}},
-                new int[] {Color.rgb(187, 222, 251), Color.rgb(33,150,243)});
+                new int[][]{{android.R.attr.state_pressed}, {}},
+                new int[]{Color.rgb(187, 222, 251), Color.rgb(33, 150, 243)});
         //fab.setBackgroundTintList(csl);
         //region FAB onClick
         fab.setOnClickListener(new View.OnClickListener() {
@@ -187,13 +186,12 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
             public void onClick(View v) {
 
 
-                if (buildList != null){
+                if (buildList != null) {
                     // Create an instance of the dialog fragment and show it
                     DialogFragment dialog = NewBuildDialog.newInstance(buildList);
                     dialog.setTargetFragment(BuildListFragment.this, NEW_DIALOG_FRAGMENT);
                     dialog.show(getActivity().getFragmentManager(), "NewBuildDialogFragment");
                 }
-
 
 
             }
@@ -204,9 +202,9 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
     }
 
 
-    private void MoveToEditBuildActivity(long id){
+    private void MoveToEditBuildActivity(long id) {
 
-        for (int i = 0; i < lvBuilds.getAdapter().getCount(); i++){
+        for (int i = 0; i < lvBuilds.getAdapter().getCount(); i++) {
             lvBuilds.setItemChecked(i, false);
         }
         Intent intent = new Intent(getActivity(), EditBuildActivity.class);
@@ -223,7 +221,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
     @Override
     public void onDialogNewBuild(DialogFragment dialog, String name, int infamies, String pd2SkillsURL, int templateBuildPos) {
         long templateBuildID = -1;
-        if (templateBuildPos > -1){
+        if (templateBuildPos > -1) {
             templateBuildID = buildList.get(templateBuildPos).getId();
         }
 
@@ -237,8 +235,8 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
     public void onDialogRenameBuild(DialogFragment dialog, String name, SparseBooleanArray pos) {
         DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(getActivity());
         dataSourceBuilds.open();
-        for (int i = 0; i < lvBuilds.getCount(); i ++){
-            if (pos.get(i)){
+        for (int i = 0; i < lvBuilds.getCount(); i++) {
+            if (pos.get(i)) {
                 Build b = (Build) lvBuilds.getItemAtPosition(i);
                 dataSourceBuilds.renameBuild(b.getId(), name);
                 Log.d("Renaming", "Build " + i + "wants to be renamed");
@@ -249,7 +247,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
         new GetBuildsFromDBTask(lvBuilds).execute();
     }
 
-    private class CreateNewBuild extends AsyncTask<Void, Void, Build>{
+    private class CreateNewBuild extends AsyncTask<Void, Void, Build> {
 
         String name;
         int infamies;
@@ -258,7 +256,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
 
         public CreateNewBuild(String name, int infamies, String pd2SkillsURL, long templateBuildID) {
             super();
-            this.name=  name;
+            this.name = name;
             this.infamies = infamies;
             this.url = pd2SkillsURL;
             this.templateID = templateBuildID;
@@ -316,7 +314,6 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
         @Override
         protected void onPostExecute(ArrayList<Build> builds) {
             super.onPostExecute(builds);
-
 
 
             buildList = builds;

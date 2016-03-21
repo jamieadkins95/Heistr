@@ -7,7 +7,6 @@ import com.jamieadkins.heistr.Database.DataSourceBuilds;
 import com.jamieadkins.heistr.Database.DataSourceSkills;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * Created by Jamie on 14/07/2015.
@@ -24,16 +23,17 @@ public class Build {
 
     ArrayList<Weapon> weaponsFromXML;
     ArrayList<Attachment> attachmentsFromXML;
-    
+
     int perkDeck = 0;
     int armour = 0;
 
 
-
-
     public Build() {
         infamies = new ArrayList<>();
-        for (int i = 0; i < 4; i++){infamies.add(false);};
+        for (int i = 0; i < 4; i++) {
+            infamies.add(false);
+        }
+        ;
     }
 
     public WeaponBuild getWeaponBuild() {
@@ -105,7 +105,7 @@ public class Build {
         this.id = id;
     }
 
-    public void updateInfamy(Context context, int infamy, boolean enabled){
+    public void updateInfamy(Context context, int infamy, boolean enabled) {
         getInfamies().set(infamy, enabled);
         DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(context);
         dataSourceBuilds.open();
@@ -114,7 +114,7 @@ public class Build {
 
     }
 
-    public void updatePerkDeck(Context context, int selected){
+    public void updatePerkDeck(Context context, int selected) {
         perkDeck = selected;
         DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(context);
         dataSourceBuilds.open();
@@ -123,7 +123,7 @@ public class Build {
 
     }
 
-    public void updateSkillTier(Context context, int skillTree, SkillTier updatedTier){
+    public void updateSkillTier(Context context, int skillTree, SkillTier updatedTier) {
         int tierNumber = updatedTier.getNumber();
         skillBuild.getSkillTrees().get(skillTree).getTierList().set(tierNumber, updatedTier);
 
@@ -134,7 +134,7 @@ public class Build {
 
     }
 
-    public void updateArmour(Context context, int selected){
+    public void updateArmour(Context context, int selected) {
         armour = selected;
         DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(context);
         dataSourceBuilds.open();
@@ -164,22 +164,22 @@ public class Build {
      */
     public long getInfamyID() {
         int id = 1;
-        if (getInfamies().get(Trees.MASTERMIND)){
+        if (getInfamies().get(Trees.MASTERMIND)) {
             id += 8;
         }
-        if (getInfamies().get(Trees.ENFORCER)){
+        if (getInfamies().get(Trees.ENFORCER)) {
             id += 4;
         }
-        if (getInfamies().get(Trees.TECHNICIAN)){
+        if (getInfamies().get(Trees.TECHNICIAN)) {
             id += 2;
         }
-        if (getInfamies().get(Trees.GHOST)){
+        if (getInfamies().get(Trees.GHOST)) {
             id += 1;
         }
         return id;
     }
 
-    public int getDetection(){
+    public int getDetection() {
         int concealment = 30;
 
         if (getWeaponBuild().getPrimaryWeapon() != null) {
@@ -200,7 +200,7 @@ public class Build {
     }
 
     private int getArmourConcealment() {
-        switch (armour){
+        switch (armour) {
             case 1:
                 return 30;
             case 2:
@@ -222,7 +222,7 @@ public class Build {
 
     private int getDetectionFromConcealment(int concealment) {
 
-        if (concealment >= 119){
+        if (concealment >= 119) {
             return 3;
         } else if (concealment <= 91) {
             return 75;
@@ -288,13 +288,12 @@ public class Build {
         }
     }
 
-    public boolean infamyReductionInTree(SkillTier tier){
+    public boolean infamyReductionInTree(SkillTier tier) {
         boolean infamyInThisTree = false;
-        if (tier.getSkillTree() < Trees.FUGITIVE){
+        if (tier.getSkillTree() < Trees.FUGITIVE) {
             infamyInThisTree = getInfamies().get(tier.getSkillTree());
-        }
-        else{
-            if (getInfamyID() > 1){
+        } else {
+            if (getInfamyID() > 1) {
                 infamyInThisTree = true;
             }
         }

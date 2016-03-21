@@ -14,9 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jamieadkins.heistr.Activities.EditBuildActivity;
-import com.jamieadkins.heistr.Activities.EditWeaponActivity;
 import com.jamieadkins.heistr.Consts.Trees;
-import com.jamieadkins.heistr.Database.MySQLiteHelper;
 import com.jamieadkins.heistr.R;
 
 import java.util.ArrayList;
@@ -30,7 +28,7 @@ public class SkillTreeParentFragment extends Fragment {
     Adapter mAdapter;
     EditBuildActivity activity;
 
-    public static SkillTreeParentFragment newInstance(int currentTree){
+    public static SkillTreeParentFragment newInstance(int currentTree) {
         SkillTreeParentFragment fragment = new SkillTreeParentFragment();
         Bundle args = new Bundle();
         args.putInt(EditBuildActivity.SKILL_TREE_INDEX, currentTree);
@@ -79,7 +77,7 @@ public class SkillTreeParentFragment extends Fragment {
     private void setupViewPager(ViewPager viewPager) {
 
 
-        for (int i = Trees.MASTERMIND; i <= Trees.FUGITIVE; i++){
+        for (int i = Trees.MASTERMIND; i <= Trees.FUGITIVE; i++) {
             String title = getResources().getStringArray(R.array.skill_trees)[i];
             mAdapter.addFragment(SkillTreeFragment.newInstance(i), title);
         }

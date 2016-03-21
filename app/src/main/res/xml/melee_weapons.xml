@@ -3,16 +3,17 @@
     <group_name>melee</group_name>
     <weapon_type>melee</weapon_type>
     <weapon>
-        <pd2skills>100000</pd2skills>
-        <name>tazer</name>
-        <rof>667</rof>
-        <total>154</total>
-        <mag>14</mag>
-        <damage>17.5</damage>
-        <accuracy>16</accuracy>
-        <stability>20</stability>
-        <concealment>32</concealment>
-        <threat>4</threat>
+        <pd2>wpn_fps_pis_g22c</pd2>
+        <pd2skills>0</pd2skills>
+        <name>Chimano Custom Pistol</name>
+        <rof>0</rof>
+        <total>96</total>
+        <mag>16</mag>
+        <damage>65</damage>
+        <accuracy>68</accuracy>
+        <stability>52</stability>
+        <concealment>29</concealment>
+        <threat>0</threat>
         <attachments></attachments>
     </weapon>
 </weapon>

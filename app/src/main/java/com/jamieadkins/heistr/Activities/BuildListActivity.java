@@ -37,7 +37,7 @@ public class BuildListActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        if (id == R.id.action_settings){
+        if (id == R.id.action_settings) {
             Toast.makeText(this, "Coming Soon!", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);

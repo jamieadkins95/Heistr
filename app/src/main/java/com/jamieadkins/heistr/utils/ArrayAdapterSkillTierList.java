@@ -2,17 +2,12 @@ package com.jamieadkins.heistr.utils;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.PorterDuff;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.GridView;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,17 +15,15 @@ import com.jamieadkins.heistr.BuildObjects.Build;
 import com.jamieadkins.heistr.BuildObjects.Skill;
 import com.jamieadkins.heistr.BuildObjects.SkillTier;
 import com.jamieadkins.heistr.BuildObjects.SkillTree;
-import com.jamieadkins.heistr.Consts.Trees;
 import com.jamieadkins.heistr.Dialogs.SkillDialog;
 import com.jamieadkins.heistr.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Jamie on 14/07/2015.
  */
-public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
+public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier> {
 
     Build currentBuild;
     List<SkillTier> skillTiers;
@@ -60,8 +53,8 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
 
         TextView tvPointsRequired = (TextView) rowView.findViewById(R.id.tvPointsRequired);
 
-        int pointReq =  tier.getPointRequirement(currentBuild.infamyReductionInTree(tier)) - skillTree.getPointsSpentInThisTree(tier.getNumber());
-        if (pointReq < 0 ){
+        int pointReq = tier.getPointRequirement(currentBuild.infamyReductionInTree(tier)) - skillTree.getPointsSpentInThisTree(tier.getNumber());
+        if (pointReq < 0) {
             pointReq = 0;
         }
         tvPointsRequired.setText(pointReq + " more to unlock");
@@ -73,12 +66,12 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         cvs[1] = (CardView) rowView.findViewById(R.id.cvSkill2);
         cvs[2] = (CardView) rowView.findViewById(R.id.cvSkill3);
 
-        final TextView[] tvs =  new TextView[3];
+        final TextView[] tvs = new TextView[3];
         tvs[0] = (TextView) rowView.findViewById(R.id.tvSkill1);
         tvs[1] = (TextView) rowView.findViewById(R.id.tvSkill2);
         tvs[2] = (TextView) rowView.findViewById(R.id.tvSkill3);
 
-        if (skillTree.getPointsSpentInThisTree(tier.getNumber()) < tier.getPointRequirement(currentBuild.infamyReductionInTree(tier))){
+        if (skillTree.getPointsSpentInThisTree(tier.getNumber()) < tier.getPointRequirement(currentBuild.infamyReductionInTree(tier))) {
             rowView.setBackgroundColor(context.getResources().getColor(R.color.backgroundVeryDark));
             //cvs[0].setEnabled(false);
             //cvs[1].setEnabled(false);
@@ -86,17 +79,16 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
             tier.ResetSkills();
 
         }
-        for (int i =0; i < tier.getSkillsInTier().size(); i++){
+        for (int i = 0; i < tier.getSkillsInTier().size(); i++) {
 
-            if (tier.getSkillsInTier().get(i).getName().length() > 17){
+            if (tier.getSkillsInTier().get(i).getName().length() > 17) {
                 tvs[i].setText(tier.getSkillsInTier().get(i).getAbbreviation());
-            }
-            else{
+            } else {
                 tvs[i].setText(tier.getSkillsInTier().get(i).getName());
             }
 
 
-            switch (tier.getSkillsInTier().get(i).getTaken()){
+            switch (tier.getSkillsInTier().get(i).getTaken()) {
                 case Skill.NO:
                     tvs[i].setTextColor(context.getResources().getColor(R.color.textPrimary));
                     cvs[i].setCardBackgroundColor(context.getResources().getColor(R.color.backgroundCard));
@@ -130,7 +122,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
                     }
                     final int pointsUsed = currentBuild.getSkillBuild().getPointsUsed();
 
-                    if (skillTree.getPointsSpentInThisTree(tier.getNumber()) >= tier.getPointRequirement(currentBuild.infamyReductionInTree(tier))){ //if tier is unlocked
+                    if (skillTree.getPointsSpentInThisTree(tier.getNumber()) >= tier.getPointRequirement(currentBuild.infamyReductionInTree(tier))) { //if tier is unlocked
                         if (pointsUsed + skillCost <= currentBuild.getSkillBuild().getPointsAvailable()) { //if there are enough points left
 
 
@@ -189,21 +181,21 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
         return rowView;
     }
 
-    public ArrayAdapterSkillTierList(Context context, Fragment listener, Build currentBuild, SkillTree skillTree){
+    public ArrayAdapterSkillTierList(Context context, Fragment listener, Build currentBuild, SkillTree skillTree) {
         super(context, -1, skillTree.getTierListInDescendingOrder());
         this.currentBuild = currentBuild;
         this.skillTiers = skillTree.getTierListInDescendingOrder();
         this.skillTree = skillTree;
         this.context = context;
-        this.mListener= (AdapterEvents) listener;
+        this.mListener = (AdapterEvents) listener;
     }
 
-    public void updateTiers(){
+    public void updateTiers() {
 
-        for (int i = 0; i < skillTree.getTierList().size(); i++){
+        for (int i = 0; i < skillTree.getTierList().size(); i++) {
             if (skillTree.getPointsSpentInThisTree(
                     skillTree.getTierList().get(i).getNumber()) <
-                    skillTree.getTierList().get(i).getPointRequirement(currentBuild.infamyReductionInTree(skillTree.getTierList().get(i)))){
+                    skillTree.getTierList().get(i).getPointRequirement(currentBuild.infamyReductionInTree(skillTree.getTierList().get(i)))) {
 
                 skillTree.getTierList().get(i).ResetSkills();
                 currentBuild.updateSkillTier(context, skillTree.getTierList().get(i).getSkillTree(), skillTree.getTierList().get(i));
@@ -215,7 +207,7 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier>{
     }
 
 
-    public interface AdapterEvents{
+    public interface AdapterEvents {
         void onSkillTaken(int tierNumber, int skillNumber);
     }
 

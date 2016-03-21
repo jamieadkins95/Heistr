@@ -1,6 +1,5 @@
 package com.jamieadkins.heistr.Fragments;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.SparseBooleanArray;
@@ -20,15 +19,13 @@ import java.util.Arrays;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class InfamyFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks {
+public class MeleeWeaponFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks {
 
-    ListView lvInfamies;
-
-
+    ListView lvWeapons;
     EditBuildActivity activity;
 
 
-    public InfamyFragment() {
+    public MeleeWeaponFragment() {
         // Required empty public constructor
     }
 
@@ -45,7 +42,7 @@ public class InfamyFragment extends Fragment implements EditBuildActivity.BuildR
 
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_infamy, container, false);
-        lvInfamies = (ListView) rootView.findViewById(R.id.lvInfamy);
+        lvWeapons = (ListView) rootView.findViewById(R.id.lvInfamy);
 
         if (activity.getCurrentBuild() == null) {
             activity.listenIn(this);
@@ -61,19 +58,19 @@ public class InfamyFragment extends Fragment implements EditBuildActivity.BuildR
 
         ArrayList<String> infamies = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.infamies)));
         ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_multiple_choice, infamies);
-        lvInfamies.setAdapter(mAdapter2);
+        lvWeapons.setAdapter(mAdapter2);
 
         //Get infamies from the currentBuild and check the respective check box.
         for (int i = 0; i < activity.getCurrentBuild().getInfamies().size(); i++) {
-            lvInfamies.setItemChecked(i, activity.getCurrentBuild().getInfamies().get(i));
+            lvWeapons.setItemChecked(i, activity.getCurrentBuild().getInfamies().get(i));
         }
 
-        lvInfamies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvWeapons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 //Update the DB whenever the infamies change
-                SparseBooleanArray checked = lvInfamies.getCheckedItemPositions();
+                SparseBooleanArray checked = lvWeapons.getCheckedItemPositions();
                 for (int i = 0; i < checked.size(); i++) {
                     activity.getCurrentBuild().updateInfamy(activity, checked.keyAt(i), checked.valueAt(i));
 

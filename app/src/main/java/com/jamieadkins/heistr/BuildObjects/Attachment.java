@@ -15,8 +15,8 @@ import java.util.ArrayList;
  */
 public class Attachment {
 
-    public static final int MOD_AMMO= 0;
-    public static final int MOD_BARREL= 1;
+    public static final int MOD_AMMO = 0;
+    public static final int MOD_BARREL = 1;
     public static final int MOD_BARREL_EXTENSION = 2;
     public static final int MOD_BAYONET = 3;
     public static final int MOD_CUSTOM = 4;
@@ -46,7 +46,7 @@ public class Attachment {
     private int threat = 100;
 
     //region XML
-    public static ArrayList<Attachment> getAttachmentsFromXML(Resources res){
+    public static ArrayList<Attachment> getAttachmentsFromXML(Resources res) {
         ArrayList<Attachment> attachments = new ArrayList<>();
         XmlResourceParser xmlParser = res.getXml(R.xml.attachments);
 
@@ -81,7 +81,7 @@ public class Attachment {
                             if (!(currentAttachment.getName().contains("ERROR")
                                     || currentAttachment.getName().contains("Standard Issue Part")
                                     || currentAttachment.getName().toLowerCase().contains("no modification")
-                                    || currentAttachment.getName().contains("attach")) ) {
+                                    || currentAttachment.getName().contains("attach"))) {
 
                                 if (currentAttachment.damage == 0 &&
                                         currentAttachment.stability == 0 &&
@@ -152,9 +152,9 @@ public class Attachment {
         return attachments;
     }
 
-    public static int attachmentGroupFromString(String xmlString){
+    public static int attachmentGroupFromString(String xmlString) {
         int group = -1;
-        switch (xmlString){
+        switch (xmlString) {
             case "ammo":
                 group = MOD_AMMO;
                 break;
@@ -292,7 +292,7 @@ public class Attachment {
         return pd2skillsID;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
@@ -319,19 +319,19 @@ public class Attachment {
     public String toString(Resources res) {
         String info = "";
 
-        if (magsize != 0){
+        if (magsize != 0) {
             info += res.getString(R.string.weapon_attribute_magazine) + ": " + magsize + "\n";
         }
-        if (damage != 0){
+        if (damage != 0) {
             info += res.getString(R.string.weapon_attribute_damage) + ": " + damage + "\n";
         }
-        if (accuracy != 0){
+        if (accuracy != 0) {
             info += res.getString(R.string.weapon_attribute_accuracy) + ": " + accuracy + "\n";
         }
-        if (stability != 0){
+        if (stability != 0) {
             info += res.getString(R.string.weapon_attribute_stability) + ": " + stability + "\n";
         }
-        if (concealment != 0){
+        if (concealment != 0) {
             info += res.getString(R.string.weapon_attribute_concealment) + ": " + concealment + "\n";
         }
 

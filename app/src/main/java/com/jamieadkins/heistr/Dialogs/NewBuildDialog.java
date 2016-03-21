@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -13,12 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
-
 
 import com.jamieadkins.heistr.BuildObjects.Build;
-import com.jamieadkins.heistr.Fragments.BuildListFragment;
 import com.jamieadkins.heistr.R;
 
 import java.util.ArrayList;
@@ -64,7 +59,7 @@ public class NewBuildDialog extends DialogFragment {
         List<String> list = new ArrayList<>();
         list.add("Select Template");
 
-        for (Build b : buildList){
+        for (Build b : buildList) {
             list.add(b.getName());
         }
 
@@ -72,7 +67,6 @@ public class NewBuildDialog extends DialogFragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spTemplate.setAdapter(adapter);
-
 
 
         // Inflate and set the layout for the dialog
@@ -110,7 +104,6 @@ public class NewBuildDialog extends DialogFragment {
                     public void onClick(DialogInterface dialog, int which) {
                     }
                 });
-
 
 
         // Create the AlertDialog object and return it

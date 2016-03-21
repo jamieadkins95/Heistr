@@ -6,13 +6,12 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 
-import com.jamieadkins.heistr.BuildObjects.Skill;
 import com.jamieadkins.heistr.R;
 
 /**
  * Created by Jamie on 23/08/2015.
  */
-public class PerkDeckDialog extends DialogFragment{
+public class PerkDeckDialog extends DialogFragment {
     int perkDeck;
 
     public static PerkDeckDialog newInstance(int perkDeck) {

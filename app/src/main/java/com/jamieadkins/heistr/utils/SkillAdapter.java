@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -23,7 +22,7 @@ public class SkillAdapter extends BaseAdapter {
     };
 
     // Constructor
-    public SkillAdapter(Context c){
+    public SkillAdapter(Context c) {
         mContext = c;
     }
 
@@ -52,7 +51,6 @@ public class SkillAdapter extends BaseAdapter {
                 Toast.makeText(mContext, position + "", Toast.LENGTH_SHORT).show();
             }
         });
-
 
 
         return imageView;

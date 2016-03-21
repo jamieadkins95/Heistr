@@ -23,9 +23,6 @@ public class WeaponBuild {
     private Weapon[] weapons = new Weapon[3];
 
 
-
-
-
     public long getId() {
         return id;
     }
@@ -58,7 +55,7 @@ public class WeaponBuild {
         this.weapons[MELEE] = meleeWeapon;
     }
 
-    public Weapon[] getWeapons(){
+    public Weapon[] getWeapons() {
         return weapons;
     }
 
@@ -209,14 +206,14 @@ public class WeaponBuild {
 
         ArrayList<Weapon> weapons = new ArrayList<>();
 
-        for (int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             weapons.addAll(getWeaponsFromXML(res, i));
         }
 
         return weapons;
     }
 
-    public static Weapon mergeWeapon(Weapon weaponFromDB, Weapon weaponFromXML){
+    public static Weapon mergeWeapon(Weapon weaponFromDB, Weapon weaponFromXML) {
         Weapon merged = new Weapon();
         merged.setId(weaponFromDB.getId());
         merged.setName(weaponFromDB.getName());
@@ -239,18 +236,18 @@ public class WeaponBuild {
         return merged;
     }
 
-    private static ArrayList<String> attachmentsFromXML(String xml){
+    private static ArrayList<String> attachmentsFromXML(String xml) {
         ArrayList<String> possibleAttachments = new ArrayList<>();
         String current = "";
-        for (Character c : xml.toCharArray()){
-            if (c == ','){
+        for (Character c : xml.toCharArray()) {
+            if (c == ',') {
                 possibleAttachments.add(current);
                 current = "";
             } else {
                 current += c;
             }
         }
-        if (current.length() > 0 ){
+        if (current.length() > 0) {
             possibleAttachments.add(current);
         }
 

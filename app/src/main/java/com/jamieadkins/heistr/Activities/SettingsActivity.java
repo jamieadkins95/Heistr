@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
-import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
@@ -23,14 +22,11 @@ import java.util.List;
 
 
 /**
- * A {@link PreferenceActivity} that presents a set of application settings. On
- * handset devices, settings are presented as a single list. On tablets,
- * settings are split by category, with category headers shown to the left of
- * the list of settings.
- * <p/>
- * See <a href="http://developer.android.com/design/patterns/settings.html">
- * Android Design: Settings</a> for design guidelines and the <a
- * href="http://developer.android.com/guide/topics/ui/settings.html">Settings
+ * A {@link PreferenceActivity} that presents a set of application settings. On handset devices,
+ * settings are presented as a single list. On tablets, settings are split by category, with
+ * category headers shown to the left of the list of settings. <p/> See <a
+ * href="http://developer.android.com/design/patterns/settings.html"> Android Design: Settings</a>
+ * for design guidelines and the <a href="http://developer.android.com/guide/topics/ui/settings.html">Settings
  * API Guide</a> for more information on developing a Settings UI.
  */
 public class SettingsActivity extends PreferenceActivity {
@@ -45,8 +41,8 @@ public class SettingsActivity extends PreferenceActivity {
     }
 
     /**
-     * Helper method to determine if the device has an extra-large screen. For
-     * example, 10" tablets are extra-large.
+     * Helper method to determine if the device has an extra-large screen. For example, 10" tablets
+     * are extra-large.
      */
     private static boolean isXLargeTablet(Context context) {
         return (context.getResources().getConfiguration().screenLayout
@@ -64,8 +60,8 @@ public class SettingsActivity extends PreferenceActivity {
     }
 
     /**
-     * A preference value change listener that updates the preference's summary
-     * to reflect its new value.
+     * A preference value change listener that updates the preference's summary to reflect its new
+     * value.
      */
     private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
         @Override
@@ -116,11 +112,10 @@ public class SettingsActivity extends PreferenceActivity {
     };
 
     /**
-     * Binds a preference's summary to its value. More specifically, when the
-     * preference's value is changed, its summary (line of text below the
-     * preference title) is updated to reflect the value. The summary is also
-     * immediately updated upon calling this method. The exact display format is
-     * dependent on the type of preference.
+     * Binds a preference's summary to its value. More specifically, when the preference's value is
+     * changed, its summary (line of text below the preference title) is updated to reflect the
+     * value. The summary is also immediately updated upon calling this method. The exact display
+     * format is dependent on the type of preference.
      *
      * @see #sBindPreferenceSummaryToValueListener
      */
@@ -137,8 +132,8 @@ public class SettingsActivity extends PreferenceActivity {
     }
 
     /**
-     * This fragment shows general preferences only. It is used when the
-     * activity is showing a two-pane settings UI.
+     * This fragment shows general preferences only. It is used when the activity is showing a
+     * two-pane settings UI.
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static class GeneralPreferenceFragment extends PreferenceFragment {
@@ -157,8 +152,8 @@ public class SettingsActivity extends PreferenceActivity {
     }
 
     /**
-     * This fragment shows notification preferences only. It is used when the
-     * activity is showing a two-pane settings UI.
+     * This fragment shows notification preferences only. It is used when the activity is showing a
+     * two-pane settings UI.
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static class NotificationPreferenceFragment extends PreferenceFragment {
@@ -176,8 +171,8 @@ public class SettingsActivity extends PreferenceActivity {
     }
 
     /**
-     * This fragment shows data and sync preferences only. It is used when the
-     * activity is showing a two-pane settings UI.
+     * This fragment shows data and sync preferences only. It is used when the activity is showing a
+     * two-pane settings UI.
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static class DataSyncPreferenceFragment extends PreferenceFragment {

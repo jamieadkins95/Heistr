@@ -17,11 +17,10 @@ import com.jamieadkins.heistr.R;
 import com.jamieadkins.heistr.utils.ArrayAdapterSkillTierList;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link SkillTreeFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * A simple {@link Fragment} subclass. Use the {@link SkillTreeFragment#newInstance} factory method
+ * to create an instance of this fragment.
  */
-public class SkillTreeFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks, ArrayAdapterSkillTierList.AdapterEvents{
+public class SkillTreeFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks, ArrayAdapterSkillTierList.AdapterEvents {
     // the fragment initialization parameters
     private static final String ARG_TREE = "tree";
 
@@ -36,8 +35,8 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
 
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
+     * Use this factory method to create a new instance of this fragment using the provided
+     * parameters.
      *
      * @param skillTree Which tree we are dealing with, Mastermind etc.
      * @return A new instance of fragment SkillTreeFragment.
@@ -66,18 +65,15 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
         }
 
 
-
-
     }
 
     @Override
     public void onResume() {
         super.onResume();
         activity = (EditBuildActivity) getActivity();
-        if (activity.getCurrentBuild() == null){
+        if (activity.getCurrentBuild() == null) {
             activity.listenIn(this);
-        }
-        else {
+        } else {
             onBuildReady();
         }
     }
@@ -104,13 +100,8 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
         cvUnlockTree.setEnabled(false);
 
 
-
-
-
         return rootView;
     }
-
-
 
 
     @Override
@@ -124,15 +115,14 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
         final ArrayAdapterSkillTierList arrayAdapterSkillTiers = new ArrayAdapterSkillTierList(activity, this, activity.getCurrentBuild(), currentSkillTree);
 
         listView.setAdapter(arrayAdapterSkillTiers);
-        listView.setSelection(listView.getCount()-1);
+        listView.setSelection(listView.getCount() - 1);
         cvUnlockTree.setEnabled(true);
 
-        if (currentSkillTree.getTierList().get(0).getSkillsInTier().get(0).getTaken() > Skill.NO){
+        if (currentSkillTree.getTierList().get(0).getSkillsInTier().get(0).getTaken() > Skill.NO) {
             tvUnlockTree.setTextColor(activity.getResources().getColor(R.color.textPrimary));
             cvUnlockTree.setCardBackgroundColor(activity.getResources().getColor(R.color.primary));
 
-        }
-        else {
+        } else {
             tvUnlockTree.setTextColor(activity.getResources().getColor(R.color.textPrimary));
             cvUnlockTree.setCardBackgroundColor(activity.getResources().getColor(R.color.backgroundCard));
         }

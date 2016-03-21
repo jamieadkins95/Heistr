@@ -24,7 +24,7 @@ public class BlankFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static BlankFragment newInstance(String text){
+    public static BlankFragment newInstance(String text) {
         BlankFragment fragment = new BlankFragment();
 
         Bundle args = new Bundle();
@@ -35,7 +35,6 @@ public class BlankFragment extends Fragment {
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -43,7 +42,7 @@ public class BlankFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_blank, container, false);
 
         TextView textView = (TextView) rootView.findViewById(R.id.tvBlank);
-        if (getArguments() != null){
+        if (getArguments() != null) {
             textView.setText(getArguments().getString(ARG_TEXT));
         }
 

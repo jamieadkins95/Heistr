@@ -56,7 +56,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     private static final String CREATE_BUILD_TABLE = "create table if not exists "
             + TABLE_BUILDS + "(" + COLUMN_ID
             + " integer primary key autoincrement, " + COLUMN_NAME
-            + " text, "  + COLUMN_SKILL_BUILD_ID
+            + " text, " + COLUMN_SKILL_BUILD_ID
             + " integer, " + COLUMN_WEAPON_BUILD_ID
             + " integer, " + COLUMN_INFAMY_ID
             + " integer, " + COLUMN_PERK_DECK
@@ -111,7 +111,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     //endregion
 
 
-
     //region Infamies
     public static final String TABLE_INFAMY = "tbInfamy";
     public static final String COLUMN_INFAMY_MASTERMIND = "mastermind";
@@ -122,7 +121,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     private static final String CREATE_INFAMY_TABLE = "create table if not exists "
             + TABLE_INFAMY + "(" + COLUMN_ID
             + " integer primary key autoincrement, " + COLUMN_INFAMY_MASTERMIND
-            + " integer, "  + COLUMN_INFAMY_ENFORCER
+            + " integer, " + COLUMN_INFAMY_ENFORCER
             + " integer," + COLUMN_INFAMY_TECHNICIAN
             + " integer," + COLUMN_INFAMY_GHOST
             + " integer);";
@@ -164,10 +163,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     private void InitInfamies(SQLiteDatabase db) {
         ContentValues values = new ContentValues();
 
-        for (int i = 0; i < 2; i++){
-            for (int j = 0; j < 2; j++){
-                for (int k = 0; k < 2; k++){
-                    for (int l = 0; l < 2; l++){
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                for (int k = 0; k < 2; k++) {
+                    for (int l = 0; l < 2; l++) {
                         values.put(COLUMN_INFAMY_MASTERMIND, i);
                         values.put(COLUMN_INFAMY_ENFORCER, j);
                         values.put(COLUMN_INFAMY_TECHNICIAN, k);
@@ -182,7 +181,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     private void AddBaseWeapons(SQLiteDatabase db) {
         long[] weaponIDs = new long[3];
 
-        for (int weapon = 0; weapon < 3; weapon++){
+        for (int weapon = 0; weapon < 3; weapon++) {
 
             ContentValues values = new ContentValues();
 
@@ -191,7 +190,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             }
             values.remove(MySQLiteHelper.COLUMN_ID);
             values.put(MySQLiteHelper.COLUMN_WEAPON_TYPE, weapon);
-            switch ( weapon){
+            switch (weapon) {
                 case 0:
                     values.put(MySQLiteHelper.COLUMN_NAME, "example");
                     values.put(MySQLiteHelper.COLUMN_PD2_ID, 10);

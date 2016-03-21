@@ -10,14 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.jamieadkins.heistr.BuildObjects.Build;
 import com.jamieadkins.heistr.BuildObjects.Weapon;
 import com.jamieadkins.heistr.R;
-import com.jamieadkins.heistr.utils.ArrayAdapterWeaponList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,13 +64,13 @@ public class NewWeaponDialog extends DialogFragment {
         List<String> list2 = new ArrayList<>();
         list2.add("Select Template");
 
-        for (Weapon w : allWeapons){
+        for (Weapon w : allWeapons) {
             list.add(w.getWeaponName());
         }
 
         Spinner spTemplates = (Spinner) v.findViewById(R.id.spTemplate);
-        for (Weapon w : userWeaponList){
-            if (w.getPd2().equals(allWeapons.get(0).getPd2())){
+        for (Weapon w : userWeaponList) {
+            if (w.getPd2().equals(allWeapons.get(0).getPd2())) {
                 templates.add(w);
                 list2.add(w.getName());
             }
@@ -87,8 +84,8 @@ public class NewWeaponDialog extends DialogFragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 adapterTemplates.clear();
                 adapterTemplates.add("Select Template");
-                for (Weapon w : userWeaponList){
-                    if (w.getPd2().equals(allWeapons.get((int) id).getPd2())){
+                for (Weapon w : userWeaponList) {
+                    if (w.getPd2().equals(allWeapons.get((int) id).getPd2())) {
                         adapterTemplates.add(w.getName());
                     }
                 }
@@ -103,7 +100,6 @@ public class NewWeaponDialog extends DialogFragment {
 
         spBase.setAdapter(adapterBase);
         spTemplates.setAdapter(adapterTemplates);
-
 
 
         // Inflate and set the layout for the dialog
@@ -134,7 +130,6 @@ public class NewWeaponDialog extends DialogFragment {
                     public void onClick(DialogInterface dialog, int which) {
                     }
                 });
-
 
 
         // Create the AlertDialog object and return it

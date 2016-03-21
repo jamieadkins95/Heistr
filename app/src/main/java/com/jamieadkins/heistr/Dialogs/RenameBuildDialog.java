@@ -11,11 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
-import com.jamieadkins.heistr.BuildObjects.Skill;
 import com.jamieadkins.heistr.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Jamie on 16/09/2015.
@@ -28,7 +24,7 @@ public class RenameBuildDialog extends DialogFragment {
     public static RenameBuildDialog newInstance(boolean callingFromActivity, SparseBooleanArray buildPositions) {
         RenameBuildDialog dialog = new RenameBuildDialog();
         dialog.buildPositions = null;
-        if (buildPositions != null){
+        if (buildPositions != null) {
             dialog.buildPositions = buildPositions.clone();
         }
 
@@ -58,7 +54,7 @@ public class RenameBuildDialog extends DialogFragment {
         String title = "Rename Build(s)";
 
         builder.setTitle(title)
-                .setPositiveButton(R.string.action_rename, new DialogInterface.OnClickListener(){
+                .setPositiveButton(R.string.action_rename, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //Name
@@ -81,10 +77,9 @@ public class RenameBuildDialog extends DialogFragment {
         // Verify that the host activity implements the callback interface
         try {
             // Instantiate the NoticeDialogListener so we can send events to the host
-            if (callingFromActivity){
+            if (callingFromActivity) {
                 mListener = (RenameBuildDialogListener) activity;
-            }
-            else {
+            } else {
                 mListener = (RenameBuildDialogListener) getTargetFragment();
             }
 

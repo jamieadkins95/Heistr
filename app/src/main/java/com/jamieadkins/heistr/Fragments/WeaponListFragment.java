@@ -23,10 +23,7 @@ import android.widget.Toast;
 import com.jamieadkins.heistr.Activities.EditBuildActivity;
 import com.jamieadkins.heistr.Activities.EditWeaponActivity;
 import com.jamieadkins.heistr.BuildObjects.Attachment;
-import com.jamieadkins.heistr.BuildObjects.Build;
 import com.jamieadkins.heistr.BuildObjects.Weapon;
-import com.jamieadkins.heistr.BuildObjects.WeaponBuild;
-import com.jamieadkins.heistr.Database.DataSourceBuilds;
 import com.jamieadkins.heistr.Database.DataSourceWeapons;
 import com.jamieadkins.heistr.Dialogs.NewWeaponDialog;
 import com.jamieadkins.heistr.R;
@@ -38,7 +35,7 @@ import java.util.ArrayList;
 /**
  * Created by Jamie on 26/09/2015.
  */
-public class WeaponListFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks, EditBuildActivity.WeaponsCallbacks, NewWeaponDialog.NewWeaponDialogListener{
+public class WeaponListFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks, EditBuildActivity.WeaponsCallbacks, NewWeaponDialog.NewWeaponDialogListener {
 
     public final static String EXTRA_WEAPON_ID = "com.jamieadkins.heistr.WEAPONID";
 
@@ -159,10 +156,10 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (allWeapons != null){
+                if (allWeapons != null) {
                     ArrayList<Weapon> baseWeaponInfoType = new ArrayList<Weapon>();
-                    for (Weapon w : baseWeaponInfo){
-                        if (w.getWeaponType() == weaponType){
+                    for (Weapon w : baseWeaponInfo) {
+                        if (w.getWeaponType() == weaponType) {
                             baseWeaponInfoType.add(w);
                         }
                     }
@@ -197,7 +194,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
                 activity.getCurrentBuild().updateWeaponBuild(getActivity(), weaponType, weapon);
                 mOtherAdapter.notifyDataSetChanged();
                 Toast.makeText(getActivity(), "Changes were saved and weapon was equipped", Toast.LENGTH_SHORT).show();
-            } else if (resultCode == Activity.RESULT_CANCELED){
+            } else if (resultCode == Activity.RESULT_CANCELED) {
                 // Don't equip weapon
                 Toast.makeText(getActivity(), "Changes were saved and weapon was not equipped", Toast.LENGTH_SHORT).show();
             }
@@ -207,7 +204,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     @Override
     public void onPause() {
         super.onPause();
-        for (int i = 0; i < lvOtherWeapons.getAdapter().getCount(); i++){
+        for (int i = 0; i < lvOtherWeapons.getAdapter().getCount(); i++) {
             lvOtherWeapons.setItemChecked(i, false);
         }
     }
@@ -219,10 +216,10 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
             activity.stopListening(this);
         }
         super.onDetach();
-        
+
     }
 
-    private void MoveToEditWeaponActivity(long id){
+    private void MoveToEditWeaponActivity(long id) {
         Intent intent = new Intent(getActivity(), EditWeaponActivity.class);
         intent.putExtra(EXTRA_WEAPON_ID, id);
         intent.putExtra(EditWeaponActivity.EXTRA_WEAPON_TYPE, weaponType);
@@ -233,7 +230,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     @Override
     public void onResume() {
         super.onResume();
-        if (activity.getCurrentBuild() == null){
+        if (activity.getCurrentBuild() == null) {
             activity.listenIn(this);
         } else {
             onBuildReady();
@@ -262,7 +259,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     @Override
     public void onWeaponsReady() {
         Weapon weapon = activity.getCurrentBuild().getWeaponBuild().getWeapons()[weaponType];
-        if (weapon != null){
+        if (weapon != null) {
             mOtherAdapter = new ArrayAdapterWeaponListSmall(getActivity(), allWeapons, weapon.getId(), activity.getCurrentBuild().getStatChangeManager());
         } else {
             mOtherAdapter = new ArrayAdapterWeaponListSmall(getActivity(), allWeapons, -1, activity.getCurrentBuild().getStatChangeManager());

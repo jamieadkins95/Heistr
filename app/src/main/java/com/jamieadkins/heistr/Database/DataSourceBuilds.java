@@ -25,7 +25,7 @@ public class DataSourceBuilds {
     private Context context;
     private SQLiteDatabase database;
     private MySQLiteHelper dbHelper;
-    private String[] buildColumns = { MySQLiteHelper.COLUMN_ID,
+    private String[] buildColumns = {MySQLiteHelper.COLUMN_ID,
             MySQLiteHelper.COLUMN_NAME,
             MySQLiteHelper.COLUMN_SKILL_BUILD_ID,
             MySQLiteHelper.COLUMN_WEAPON_BUILD_ID,
@@ -34,7 +34,7 @@ public class DataSourceBuilds {
             MySQLiteHelper.COLUMN_ARMOUR};
 
 
-    public DataSourceBuilds(Context context){
+    public DataSourceBuilds(Context context) {
         dbHelper = new MySQLiteHelper(context);
         this.context = context;
     }
@@ -43,20 +43,20 @@ public class DataSourceBuilds {
         database = dbHelper.getWritableDatabase();
     }
 
-    public void close(){
+    public void close() {
         dbHelper.close();
 
     }
 
-    public Build createAndInsertBuild(String name, int infamies, String url, long templateID){
+    public Build createAndInsertBuild(String name, int infamies, String url, long templateID) {
         Log.d("Build DB", "Creating new build");
         int perkDeck = 0;
         int armour = 0;
 
         Build template = null;
         template = URLEncoder.decodeURL(context, url);
-        if (template == null){
-            if (templateID > 0){
+        if (template == null) {
+            if (templateID > 0) {
                 template = getBuild(templateID);
             }
         }
@@ -67,35 +67,32 @@ public class DataSourceBuilds {
         dataSourceWeapons.open();
         long skillBuildID;
         long weaponBuildID;
-        if (template != null){
+        if (template != null) {
             long templateSkillBuildID = template.getSkillBuild().getId();
             long templateWeaponBuildID = template.getWeaponBuild().getId();
 
-            if (templateSkillBuildID == Build.PD2SKILLS){
+            if (templateSkillBuildID == Build.PD2SKILLS) {
                 //PD2skills URL
                 skillBuildID = dataSourceSkills.createAndInsertSkillBuild(template.getSkillBuild()).getId();
-            }
-            else{
+            } else {
                 //template
                 skillBuildID = dataSourceSkills.createAndInsertSkillBuild(templateSkillBuildID).getId();
             }
 
-            if (templateWeaponBuildID == Build.PD2SKILLS){
+            if (templateWeaponBuildID == Build.PD2SKILLS) {
                 //TODO: When Pd2skill URL is enetered
                 weaponBuildID = dataSourceWeapons.createAndInsertWeaponBuild().getId();
-            }
-            else {
+            } else {
                 //TODO: template selected
                 weaponBuildID = dataSourceWeapons.createAndInsertWeaponBuild().getId();
             }
 
-            if (infamies < template.getInfamyID() || url.length() > 0){
+            if (infamies < template.getInfamyID() || url.length() > 0) {
                 infamies = (int) template.getInfamyID();
             }
             perkDeck = template.getPerkDeck();
             armour = template.getArmour();
-        }
-        else {
+        } else {
             skillBuildID = dataSourceSkills.createAndInsertSkillBuild().getId();
             weaponBuildID = dataSourceWeapons.createAndInsertWeaponBuild().getId();
         }
@@ -114,7 +111,6 @@ public class DataSourceBuilds {
         long buildID = database.insert(MySQLiteHelper.TABLE_BUILDS, null, buildValues);
 
 
-
         Cursor cursorBuild = database.query(MySQLiteHelper.TABLE_BUILDS,
                 buildColumns, MySQLiteHelper.COLUMN_ID + " = " + buildID, null,
                 null, null, null);
@@ -124,19 +120,14 @@ public class DataSourceBuilds {
         cursorBuild.close();
 
 
-
-
-
         Log.d("Build DB", "Build created: " + newBuild.getId() + "");
         return newBuild;
-
 
 
     }
 
 
-
-    public Build getBuild(long id){
+    public Build getBuild(long id) {
         Build build;
 
         Cursor cursorBuild = database.query(MySQLiteHelper.TABLE_BUILDS,
@@ -151,15 +142,14 @@ public class DataSourceBuilds {
 
         } else {
             cursorBuild.close();
-            build =  null;
+            build = null;
         }
-
 
 
         return build;
     }
 
-    public ArrayList<Build> getAllBuilds(){
+    public ArrayList<Build> getAllBuilds() {
         ArrayList<Build> builds = new ArrayList<>();
 
         Cursor cursorBuild = database.query(MySQLiteHelper.TABLE_BUILDS,
@@ -167,15 +157,13 @@ public class DataSourceBuilds {
                 null, null, null);
 
 
+        if (cursorBuild.moveToFirst()) {
 
-        if (cursorBuild.moveToFirst()){
-
-            while (!cursorBuild.isAfterLast()){
+            while (!cursorBuild.isAfterLast()) {
                 Build build = cursorToBuild(cursorBuild);
                 builds.add(build);
                 cursorBuild.moveToNext();
             }
-
 
 
         }
@@ -188,11 +176,11 @@ public class DataSourceBuilds {
 
     }
 
-    public void DeleteBuild(long id){
+    public void DeleteBuild(long id) {
         database.delete(MySQLiteHelper.TABLE_BUILDS, MySQLiteHelper.COLUMN_ID + " = " + id, null);
     }
 
-    public void updateInfamy(long buildID, long infamyID){
+    public void updateInfamy(long buildID, long infamyID) {
 
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMN_INFAMY_ID, infamyID);
@@ -201,7 +189,7 @@ public class DataSourceBuilds {
         Log.d("DB", "Infamy updated for build " + buildID + " to " + infamyID);
     }
 
-    public void updatePerkDeck(long buildID, long selected){
+    public void updatePerkDeck(long buildID, long selected) {
 
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMN_PERK_DECK, selected);
@@ -210,7 +198,7 @@ public class DataSourceBuilds {
         Log.d("DB", "Perk Deck updated for build " + buildID + " to " + selected);
     }
 
-    public void updateArmour(long buildID, long selected){
+    public void updateArmour(long buildID, long selected) {
 
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMN_ARMOUR, selected);
@@ -219,7 +207,7 @@ public class DataSourceBuilds {
         Log.d("DB", "Armour updated for build " + buildID + " to " + selected);
     }
 
-    private Build cursorToBuild(Cursor cursorBuild){
+    private Build cursorToBuild(Cursor cursorBuild) {
 
         Build build = new Build();
         long buildID = cursorBuild.getLong(0);
@@ -229,8 +217,6 @@ public class DataSourceBuilds {
         long infamyID = cursorBuild.getLong(4);
         int perkDeck = cursorBuild.getInt(5);
         int armour = cursorBuild.getInt(6);
-
-
 
 
         build.setId(buildID);
@@ -251,7 +237,7 @@ public class DataSourceBuilds {
         build.setWeaponsFromXML(weaponInfo);
         build.setAttachmentsFromXML(attachmentInfo);
 
-        DataSourceWeapons dataSourceWeapons =  new DataSourceWeapons(context, weaponInfo, attachmentInfo);
+        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context, weaponInfo, attachmentInfo);
         dataSourceWeapons.open();
         WeaponBuild weaponBuildFromDB = dataSourceWeapons.getWeaponBuild(weaponBuildID);
         dataSourceWeapons.close();
@@ -274,7 +260,7 @@ public class DataSourceBuilds {
 
     public void updateWeaponBuild(long id, int weaponType, long weaponID) {
         ContentValues values = new ContentValues();
-        switch (weaponType){
+        switch (weaponType) {
             case WeaponBuild.PRIMARY:
                 values.put(MySQLiteHelper.COLUMN_PRIMARY_WEAPON, weaponID);
                 break;

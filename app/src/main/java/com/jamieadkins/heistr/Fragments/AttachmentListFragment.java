@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.jamieadkins.heistr.Activities.EditBuildActivity;
 import com.jamieadkins.heistr.Activities.EditWeaponActivity;
@@ -18,7 +17,6 @@ import com.jamieadkins.heistr.BuildObjects.Attachment;
 import com.jamieadkins.heistr.R;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Created by Jamie on 18/10/2015.
@@ -63,7 +61,7 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
     public void onResume() {
         super.onResume();
         activity = (EditWeaponActivity) getActivity();
-        if (activity.getCurrentWeapon() != null){
+        if (activity.getCurrentWeapon() != null) {
             onWeaponReady();
         } else {
             activity.listen(this);
@@ -82,22 +80,22 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
         possibleAttachments = activity.getPossibleAttachments(attachmentType);
 
         ArrayList<String> attachments = new ArrayList<>();
-        for (Attachment a : possibleAttachments){
+        for (Attachment a : possibleAttachments) {
             attachments.add(a.getName());
         }
 
         int count = 0;
         int index = -1;
-        for (Attachment a : possibleAttachments){
-            for (Attachment e : activity.getCurrentWeapon().getAttachments()){
-                if (a.getPd2().equals(e.getPd2())){
+        for (Attachment a : possibleAttachments) {
+            for (Attachment e : activity.getCurrentWeapon().getAttachments()) {
+                if (a.getPd2().equals(e.getPd2())) {
                     index = count;
                 }
             }
             count++;
         }
 
-        if (index != -1){
+        if (index != -1) {
             currentAttachmentIndex = index;
         }
 
@@ -108,7 +106,7 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int oldAttachment = currentAttachmentIndex;
-                if (position != currentAttachmentIndex){
+                if (position != currentAttachmentIndex) {
                     currentAttachmentIndex = lvAttachments.getCheckedItemPosition();
                 } else {
                     currentAttachmentIndex = -1;

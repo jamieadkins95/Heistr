@@ -1,7 +1,6 @@
 package com.jamieadkins.heistr.Fragments;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -87,7 +86,7 @@ public class WeaponOverallFragment extends Fragment implements EditWeaponActivit
 
     @Override
     public void onShow() {
-        if (activity.getCurrentBuild() != null){
+        if (activity.getCurrentBuild() != null) {
             onBuildReady();
         } else {
             activity.listen(this);

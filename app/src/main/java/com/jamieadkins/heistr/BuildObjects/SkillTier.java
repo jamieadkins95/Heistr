@@ -1,7 +1,5 @@
 package com.jamieadkins.heistr.BuildObjects;
 
-import com.jamieadkins.heistr.BuildObjects.Skill;
-
 import java.util.ArrayList;
 
 /**
@@ -28,7 +26,7 @@ public class SkillTier {
     @Override
     public String toString() {
         String text = "Tier " + number;
-        for (Skill s : skillsInTier){
+        for (Skill s : skillsInTier) {
             text += "\n" + s.toString();
         }
         return text;
@@ -38,13 +36,12 @@ public class SkillTier {
         skillsInTier = new ArrayList<Skill>();
     }
 
-    public static SkillTier newNonDBInstance(int tierNumber){
+    public static SkillTier newNonDBInstance(int tierNumber) {
         SkillTier skillTier = new SkillTier();
-        if (tierNumber == 0){
+        if (tierNumber == 0) {
             skillTier.getSkillsInTier().add(new Skill());
-        }
-        else {
-            for (int i = 0; i < 3; i++){
+        } else {
+            for (int i = 0; i < 3; i++) {
                 skillTier.getSkillsInTier().add(new Skill());
             }
         }
@@ -64,8 +61,8 @@ public class SkillTier {
 
     public int getPointRequirement(boolean infamyInThisTree) {
         int points = pointRequirement;
-        if (infamyInThisTree){
-            if (number >= 3){
+        if (infamyInThisTree) {
+            if (number >= 3) {
                 int deduction = points / 10;
                 points -= deduction;
             }
@@ -115,7 +112,7 @@ public class SkillTier {
     }
 
     public void ResetSkills() {
-        for (Skill skill : skillsInTier){
+        for (Skill skill : skillsInTier) {
             skill.setTaken(Skill.NO);
         }
     }

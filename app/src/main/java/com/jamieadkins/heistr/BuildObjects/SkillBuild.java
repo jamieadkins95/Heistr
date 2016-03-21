@@ -3,9 +3,7 @@ package com.jamieadkins.heistr.BuildObjects;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
-import android.support.annotation.NonNull;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.jamieadkins.heistr.Consts.Trees;
 import com.jamieadkins.heistr.Database.DataSourceSkills;
@@ -26,11 +24,10 @@ public class SkillBuild {
     int pointsAvailable = 120;
 
 
-
     @Override
     public String toString() {
         String text = "";
-        for (SkillTree st : skillTrees){
+        for (SkillTree st : skillTrees) {
             text += "\n" + st.toString();
         }
         return text;
@@ -40,15 +37,15 @@ public class SkillBuild {
         return skillTrees;
     }
 
-    public SkillBuild(){
+    public SkillBuild() {
         skillTrees = new ArrayList<SkillTree>();
     }
 
-    public static SkillBuild newNonDBInstance(){
+    public static SkillBuild newNonDBInstance() {
 
         SkillBuild skillBuild = new SkillBuild();
         skillBuild.setId(Build.PD2SKILLS);
-        for (int i = Trees.MASTERMIND; i <= Trees.FUGITIVE; i++){
+        for (int i = Trees.MASTERMIND; i <= Trees.FUGITIVE; i++) {
             skillBuild.getSkillTrees().add(SkillTree.newNonDBInstance());
         }
 
@@ -65,7 +62,7 @@ public class SkillBuild {
 
     public int getPointsUsed() {
         int total = 0;
-        for (SkillTree tree : skillTrees){
+        for (SkillTree tree : skillTrees) {
             total += tree.getPointsSpentInThisTree();
         }
         return total;
@@ -84,7 +81,7 @@ public class SkillBuild {
         SkillBuild mergedSkillBuild = new SkillBuild();
         mergedSkillBuild.setId(skillBuildFromDB.getId());
 
-        for (int tree = Trees.MASTERMIND; tree <= Trees.FUGITIVE; tree++){
+        for (int tree = Trees.MASTERMIND; tree <= Trees.FUGITIVE; tree++) {
             SkillTree newTree = new SkillTree();
             SkillTree treeFromXML = skillBuildFromXML.getSkillTrees().get(tree);
             SkillTree treeFromDB = skillBuildFromDB.getSkillTrees().get(tree);
@@ -92,7 +89,7 @@ public class SkillBuild {
             newTree.setSkillBuildID(treeFromDB.getSkillBuildID());
             newTree.setName(treeFromXML.getName());
 
-            for (int tier = Trees.TIER0; tier <= Trees.TIER6; tier++){
+            for (int tier = Trees.TIER0; tier <= Trees.TIER6; tier++) {
                 SkillTier newSkillTier = new SkillTier();
                 SkillTier tierFromXML = treeFromXML.getTierList().get(tier);
                 SkillTier tierFromDB = treeFromDB.getTierList().get(tier);
@@ -107,7 +104,7 @@ public class SkillBuild {
                 newSkillTier.setAceCost(tierFromXML.getAceCost());
 
 
-                for (int skill = 0; skill < tierFromXML.getSkillsInTier().size(); skill++){
+                for (int skill = 0; skill < tierFromXML.getSkillsInTier().size(); skill++) {
                     Skill newSkill = new Skill();
                     Skill skillFromXML = tierFromXML.getSkillsInTier().get(skill);
                     Skill skillFromDB = tierFromDB.getSkillsInTier().get(skill);
@@ -147,11 +144,9 @@ public class SkillBuild {
 
             skillBuildFromDB = dataSourceSkills.getSkillBuild(id);
 
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             Log.e("Error", e.toString());
-        }
-        finally {
+        } finally {
             dataSourceSkills.close();
             return skillBuildFromDB;
         }
@@ -205,7 +200,7 @@ public class SkillBuild {
                         //Log.d("XML", "Start tag " + xmlParser.getName());
                         currentTag = xmlParser.getName();
 
-                        switch (xmlParser.getName()){
+                        switch (xmlParser.getName()) {
                             case "skill_tree":
                                 currentSkillTree = new SkillTree();
                                 break;
@@ -220,7 +215,7 @@ public class SkillBuild {
                     } else if (eventType == XmlPullParser.END_TAG) {
                         //Log.d("XML", "End tag " + xmlParser.getName());
                         currentTag = xmlParser.getName();
-                        switch (xmlParser.getName()){
+                        switch (xmlParser.getName()) {
                             case "skill_tree":
                                 skillBuildFromXML.getSkillTrees().add(currentSkillTree);
                                 break;
@@ -237,7 +232,7 @@ public class SkillBuild {
                         String text = xmlParser.getText();
                         //Log.d("XML", "Text " + text);
                         //Log.d("Current Tag", currentTag + "");
-                        switch (currentTag.toString()){
+                        switch (currentTag.toString()) {
                             case "tree_name":
                                 currentSkillTree.setName(text);
                                 break;
@@ -277,7 +272,7 @@ public class SkillBuild {
                     eventType = xmlParser.next();
                 }
 
-               //Log.d("XML", "End Document");
+                //Log.d("XML", "End Document");
             } catch (Exception e) {
                 Log.e("Error", e.toString());
                 xmlParser.close();

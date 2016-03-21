@@ -2,8 +2,7 @@ package com.jamieadkins.heistr.Activities;
 
 import android.app.DialogFragment;
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.support.annotation.TransitionRes;
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,7 +11,6 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.SparseBooleanArray;
@@ -20,19 +18,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.jamieadkins.heistr.BuildObjects.Build;
-import com.jamieadkins.heistr.BuildObjects.Weapon;
 import com.jamieadkins.heistr.BuildObjects.WeaponBuild;
 import com.jamieadkins.heistr.Consts.Trees;
 import com.jamieadkins.heistr.Database.DataSourceBuilds;
-import com.jamieadkins.heistr.Database.DataSourceWeapons;
 import com.jamieadkins.heistr.Dialogs.PD2SkillsExportDialog;
 import com.jamieadkins.heistr.Dialogs.RenameBuildDialog;
 import com.jamieadkins.heistr.Fragments.ArmourFragment;
 import com.jamieadkins.heistr.Fragments.BlankFragment;
 import com.jamieadkins.heistr.Fragments.BuildListFragment;
 import com.jamieadkins.heistr.Fragments.InfamyFragment;
+import com.jamieadkins.heistr.Fragments.MeleeWeaponFragment;
 import com.jamieadkins.heistr.Fragments.PerkDeckFragment;
-import com.jamieadkins.heistr.Fragments.SkillTreeFragment;
 import com.jamieadkins.heistr.Fragments.SkillTreeParentFragment;
 import com.jamieadkins.heistr.Fragments.TaskFragment;
 import com.jamieadkins.heistr.Fragments.WeaponListFragment;
@@ -42,7 +38,7 @@ import com.jamieadkins.heistr.utils.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EditBuildActivity extends AppCompatActivity implements TaskFragment.TaskCallbacks, RenameBuildDialog.RenameBuildDialogListener{
+public class EditBuildActivity extends AppCompatActivity implements TaskFragment.TaskCallbacks, RenameBuildDialog.RenameBuildDialogListener {
 
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
@@ -96,7 +92,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     @Override
     protected void onResume() {
         super.onResume();
-        if (mListCallbacks == null){
+        if (mListCallbacks == null) {
             mListCallbacks = new ArrayList<>();
         }
 
@@ -117,7 +113,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
 
     @Override
     public void onBackPressed() {
-        if (mDrawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             finish();
         } else {
             mDrawerLayout.openDrawer(GravityCompat.START);
@@ -165,8 +161,6 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     }
 
 
-
-
     @Override
     public void onDialogRenameBuild(DialogFragment dialog, String name, SparseBooleanArray buildPositions) {
         DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(this);
@@ -189,21 +183,22 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     public void onBuildReady(Build build) {
         currentBuild = build;
         currentBuildID = build.getId();
-        if (mListCallbacks == null){
+        if (mListCallbacks == null) {
             mListCallbacks = new ArrayList<>();
-        }else{
-            for (BuildReadyCallbacks b : mListCallbacks){
+        } else {
+            for (BuildReadyCallbacks b : mListCallbacks) {
                 b.onBuildReady();
             }
         }
     }
 
-    public interface BuildReadyCallbacks{
+    public interface BuildReadyCallbacks {
         void onBuildReady();
+
         void onBuildUpdated();
     }
 
-    public interface WeaponsCallbacks{
+    public interface WeaponsCallbacks {
         void onWeaponsReady();
     }
 
@@ -225,8 +220,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         if (savedInstanceState != null) {
             // Restore value of members from saved state
             currentBuildID = savedInstanceState.getLong(BUILD_ID);
-        }
-        else{
+        } else {
             intent = getIntent();
             final String action = intent.getAction();
             if (Intent.ACTION_VIEW.equals(action)) {
@@ -239,8 +233,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
                 currentBuildID = b.getId();
 
                 showRenameBuildDialog();
-            }
-            else{
+            } else {
                 currentBuildID = intent.getLongExtra(BuildListFragment.EXTRA_BUILD_ID, Build.NEW_BUILD);
             }
         }
@@ -251,11 +244,11 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         dialog.show(getFragmentManager(), "RenameBuildDialogFragment");
     }
 
-    public void listenIn(Fragment f){
+    public void listenIn(Fragment f) {
         mListCallbacks.add((BuildReadyCallbacks) f);
     }
 
-    public void stopListening(Fragment f){
+    public void stopListening(Fragment f) {
         if (mListCallbacks != null) {
             mListCallbacks.remove(f);
         }
@@ -266,10 +259,10 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     }
 
 
-    public void loadFragment(int id){
+    public void loadFragment(int id) {
         currentFragment = id;
         Fragment fragment;
-        switch (id){
+        switch (id) {
             case R.id.nav_skill_trees:
                 fragment = SkillTreeParentFragment.newInstance(currentSkillTree);
                 break;
@@ -288,6 +281,9 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
             case R.id.nav_secondary:
                 fragment = WeaponListFragment.newInstance(WeaponBuild.SECONDARY);
                 break;
+            case R.id.nav_melee:
+                fragment = MeleeWeaponFragment.newInstance();
+                break;
             case R.id.nav_home:
                 fragment = null;
                 Intent intent = new Intent(EditBuildActivity.this, BuildListActivity.class);
@@ -299,7 +295,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         }
 
 
-        if (fragment != null){
+        if (fragment != null) {
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction transaction = fm.beginTransaction();
             transaction.replace(R.id.contentFragment, fragment);
@@ -307,7 +303,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         }
     }
 
-    public void updateCurrentSkillTree(int tree){
+    public void updateCurrentSkillTree(int tree) {
         currentSkillTree = tree;
     }
 

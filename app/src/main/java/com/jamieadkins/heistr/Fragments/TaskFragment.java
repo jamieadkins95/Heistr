@@ -1,25 +1,17 @@
 package com.jamieadkins.heistr.Fragments;
 
 import android.app.Activity;
-import android.app.DialogFragment;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.jamieadkins.heistr.BuildObjects.Build;
-import com.jamieadkins.heistr.BuildObjects.SkillBuild;
-import com.jamieadkins.heistr.BuildObjects.Weapon;
 import com.jamieadkins.heistr.Database.DataSourceBuilds;
 
-import java.util.ArrayList;
-
 /**
- * TaskFragment manages a single background task and retains itself across
- * configuration changes.
+ * TaskFragment manages a single background task and retains itself across configuration changes.
  */
 public class TaskFragment extends Fragment {
     private static final String TAG = TaskFragment.class.getSimpleName();
@@ -27,12 +19,14 @@ public class TaskFragment extends Fragment {
     private static final boolean DEBUG = true; // Set this to false to disable logs.
 
     /**
-     * Callback interface through which the fragment can report the task's
-     * progress and results back to the Activity.
+     * Callback interface through which the fragment can report the task's progress and results back
+     * to the Activity.
      */
     public interface TaskCallbacks {
         void onPreExecute();
+
         void onCancelled();
+
         void onBuildReady(Build build);
     }
 
@@ -46,13 +40,11 @@ public class TaskFragment extends Fragment {
     private Build currentBuild;
 
 
-
     /**
-     * Hold a reference to the target fragment so we can report the task's current
-     * progress and results. We do so in {@link #onAttach(Activity)} since it is
-     * guaranteed to be the first method called after a configuration change
-     * occurs (remember, the UIFragment will be recreated after each configuration
-     * change, so we will need to obtain a reference to the new instance).
+     * Hold a reference to the target fragment so we can report the task's current progress and
+     * results. We do so in {@link #onAttach(Activity)} since it is guaranteed to be the first
+     * method called after a configuration change occurs (remember, the UIFragment will be recreated
+     * after each configuration change, so we will need to obtain a reference to the new instance).
      */
     @Override
     public void onAttach(Context context) {
@@ -76,12 +68,10 @@ public class TaskFragment extends Fragment {
     }
 
 
-
     /**
-     * Note that this method is <em>not</em> called when the Fragment is being
-     * retained across Activity instances. It will, however, be called when its
-     * parent Activity is being destroyed for good (such as when the user clicks
-     * the back button, etc.).
+     * Note that this method is <em>not</em> called when the Fragment is being retained across
+     * Activity instances. It will, however, be called when its parent Activity is being destroyed
+     * for good (such as when the user clicks the back button, etc.).
      */
     @Override
     public void onDestroy() {
@@ -97,7 +87,6 @@ public class TaskFragment extends Fragment {
     }
 
 
-
     /*****************************/
     /***** TASK FRAGMENT API *****/
     /*****************************/
@@ -106,14 +95,14 @@ public class TaskFragment extends Fragment {
      * Start the background task.
      */
     public void start(long buildID) {
-        if (currentBuild == null){
+        if (currentBuild == null) {
             Log.d(TAG, "No build, going to retrieve from DB in background.");
             if (!mRunning) {
                 mTask = new GetBuildFromDBTask();
                 mTask.execute(buildID);
                 mRunning = true;
             }
-        } else /*if (currentBuild.getId() == buildID)*/{
+        } else /*if (currentBuild.getId() == buildID)*/ {
             Log.d(TAG, "Already have the current build!. no need to retrieve from DB");
             mCallbacks.onBuildReady(currentBuild);
         }
@@ -201,7 +190,7 @@ public class TaskFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         if (DEBUG) Log.i(TAG, "onActivityCreated(Bundle)");
-        if (savedInstanceState != null){
+        if (savedInstanceState != null) {
             currentBuildID = savedInstanceState.getLong(EXTRA_CURRENT_BUILD_ID);
         }
         super.onActivityCreated(savedInstanceState);
@@ -237,7 +226,6 @@ public class TaskFragment extends Fragment {
         super.onDetach();
         mCallbacks = null;
     }
-
 
 
     public void setCurrentBuildID(long currentBuildID) {

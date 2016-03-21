@@ -21,8 +21,8 @@ public class DataSourceWeapons {
     private Context mContext;
     private SQLiteDatabase database;
     private MySQLiteHelper dbHelper;
-    private String[] weaponBuildColumns = { MySQLiteHelper.COLUMN_ID, MySQLiteHelper.COLUMN_PRIMARY_WEAPON, MySQLiteHelper.COLUMN_SECONDARY_WEAPON, MySQLiteHelper.COLUMN_MELEE_WEAPON};
-    private static String[] weaponColumns = { MySQLiteHelper.COLUMN_ID,
+    private String[] weaponBuildColumns = {MySQLiteHelper.COLUMN_ID, MySQLiteHelper.COLUMN_PRIMARY_WEAPON, MySQLiteHelper.COLUMN_SECONDARY_WEAPON, MySQLiteHelper.COLUMN_MELEE_WEAPON};
+    private static String[] weaponColumns = {MySQLiteHelper.COLUMN_ID,
             MySQLiteHelper.COLUMN_PD2_ID,
             MySQLiteHelper.COLUMN_WEAPON_TYPE,
             MySQLiteHelper.COLUMN_NAME,
@@ -47,7 +47,7 @@ public class DataSourceWeapons {
     private ArrayList<Weapon> baseWeaponInfo;
     private final ArrayList<Attachment> baseAttachmentInfo;
 
-    public DataSourceWeapons(Context context, ArrayList<Weapon> baseWeaponInfo, ArrayList<Attachment> baseAttachmentInfo){
+    public DataSourceWeapons(Context context, ArrayList<Weapon> baseWeaponInfo, ArrayList<Attachment> baseAttachmentInfo) {
         dbHelper = new MySQLiteHelper(context);
         mContext = context;
         this.baseWeaponInfo = baseWeaponInfo;
@@ -58,11 +58,11 @@ public class DataSourceWeapons {
         database = dbHelper.getWritableDatabase();
     }
 
-    public void close(){
+    public void close() {
         dbHelper.close();
     }
 
-    public WeaponBuild createAndInsertWeaponBuild(){
+    public WeaponBuild createAndInsertWeaponBuild() {
 
         ContentValues weaponBuildValues = new ContentValues();
         weaponBuildValues.put(MySQLiteHelper.COLUMN_PRIMARY_WEAPON, -1);
@@ -84,10 +84,9 @@ public class DataSourceWeapons {
         return newWeaponBuild;
 
 
-
     }
 
-    public Weapon createAndInsertWeapon(String name, String pd2ID, int weaponType){
+    public Weapon createAndInsertWeapon(String name, String pd2ID, int weaponType) {
         ContentValues weaponValues = new ContentValues();
         weaponValues.put(MySQLiteHelper.COLUMN_NAME, name);
         weaponValues.put(MySQLiteHelper.COLUMN_PD2_ID, pd2ID);
@@ -109,14 +108,13 @@ public class DataSourceWeapons {
     }
 
 
-
-    public WeaponBuild getWeaponBuild(long id){
+    public WeaponBuild getWeaponBuild(long id) {
         WeaponBuild weaponBuild = null;
         Cursor cursorWeaponBuild = database.query(MySQLiteHelper.TABLE_WEAPON_BUILDS,
                 weaponBuildColumns, MySQLiteHelper.COLUMN_ID + " = " + id, null,
                 null, null, null);
 
-        if (cursorWeaponBuild.moveToFirst()){
+        if (cursorWeaponBuild.moveToFirst()) {
             weaponBuild = cursorToWeaponBuild(cursorWeaponBuild);
         }
 
@@ -126,16 +124,15 @@ public class DataSourceWeapons {
         return weaponBuild;
 
 
-
     }
 
-    public Weapon getWeapon(long id){
+    public Weapon getWeapon(long id) {
         Weapon weapon = null;
         Cursor cursorWeapon = database.query(MySQLiteHelper.TABLE_WEAPONS,
                 weaponColumns, MySQLiteHelper.COLUMN_ID + " = " + id, null,
                 null, null, null);
 
-        if (cursorWeapon.moveToFirst()){
+        if (cursorWeapon.moveToFirst()) {
             weapon = cursorToWeapon(cursorWeapon);
         }
 
@@ -146,7 +143,7 @@ public class DataSourceWeapons {
 
     }
 
-    public ArrayList<WeaponBuild> getAllWeaponBuilds(){
+    public ArrayList<WeaponBuild> getAllWeaponBuilds() {
         ArrayList<WeaponBuild> weaponBuilds = new ArrayList<>();
 
         Cursor cursorWeaponBuild = database.query(MySQLiteHelper.TABLE_WEAPON_BUILDS,
@@ -154,15 +151,13 @@ public class DataSourceWeapons {
                 null, null, null);
 
 
+        if (cursorWeaponBuild.moveToFirst()) {
 
-        if (cursorWeaponBuild.moveToFirst()){
-
-            while (!cursorWeaponBuild.isAfterLast()){
+            while (!cursorWeaponBuild.isAfterLast()) {
                 WeaponBuild weaponBuild = cursorToWeaponBuild(cursorWeaponBuild);
                 weaponBuilds.add(weaponBuild);
                 cursorWeaponBuild.moveToNext();
             }
-
 
 
         }
@@ -173,7 +168,7 @@ public class DataSourceWeapons {
 
     }
 
-    public ArrayList<Weapon> getAllWeapons(int weaponType){
+    public ArrayList<Weapon> getAllWeapons(int weaponType) {
         ArrayList<Weapon> weapons = new ArrayList<>();
 
         Cursor cursorWeapons = database.query(MySQLiteHelper.TABLE_WEAPONS,
@@ -181,17 +176,15 @@ public class DataSourceWeapons {
                 null, null, null);
 
 
+        if (cursorWeapons.moveToFirst()) {
 
-        if (cursorWeapons.moveToFirst()){
-
-            while (!cursorWeapons.isAfterLast()){
+            while (!cursorWeapons.isAfterLast()) {
                 Weapon weapon = cursorToWeapon(cursorWeapons);
-                if (weapon.getWeaponType() == weaponType){
+                if (weapon.getWeaponType() == weaponType) {
                     weapons.add(weapon);
                 }
                 cursorWeapons.moveToNext();
             }
-
 
 
         }
@@ -202,21 +195,20 @@ public class DataSourceWeapons {
 
     }
 
-    public void deleteWeapon(long id){
-            database.delete(MySQLiteHelper.TABLE_WEAPONS, MySQLiteHelper.COLUMN_ID + " = " + id, null);
+    public void deleteWeapon(long id) {
+        database.delete(MySQLiteHelper.TABLE_WEAPONS, MySQLiteHelper.COLUMN_ID + " = " + id, null);
     }
 
-    public void updateAttachment(long id, int attachmentType, String attachmentID){
-        ContentValues values =  new ContentValues();
+    public void updateAttachment(long id, int attachmentType, String attachmentID) {
+        ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMNS_ATTACHMENTS[attachmentType], attachmentID);
         database.update(MySQLiteHelper.TABLE_WEAPONS, values, MySQLiteHelper.COLUMN_ID + " = " + id, null);
     }
 
 
+    private WeaponBuild cursorToWeaponBuild(Cursor cursorWeaponBuild) {
 
-    private WeaponBuild cursorToWeaponBuild(Cursor cursorWeaponBuild){
-
-        WeaponBuild weaponBuild =  new WeaponBuild();
+        WeaponBuild weaponBuild = new WeaponBuild();
         long id = cursorWeaponBuild.getLong(0);
         long primary = cursorWeaponBuild.getLong(1);
         long secondary = cursorWeaponBuild.getLong(2);
@@ -236,22 +228,22 @@ public class DataSourceWeapons {
     }
 
 
-    private Weapon cursorToWeapon(Cursor cursorWeapon){
+    private Weapon cursorToWeapon(Cursor cursorWeapon) {
 
-        Weapon weapon =  new Weapon();
+        Weapon weapon = new Weapon();
         weapon.setId(cursorWeapon.getLong(0));
         weapon.setPd2(cursorWeapon.getString(1));
         weapon.setWeaponType(cursorWeapon.getInt(2));
         weapon.setName(cursorWeapon.getString(3));
         ArrayList<String> attachments = new ArrayList<>();
-        for (int i = Attachment.MOD_AMMO; i <= Attachment.MOD_STAT_BOOST; i++){
+        for (int i = Attachment.MOD_AMMO; i <= Attachment.MOD_STAT_BOOST; i++) {
             attachments.add(cursorWeapon.getString(4 + i));
         }
 
         ArrayList<Attachment> equippedAttachments = new ArrayList<>();
-        for (Attachment xml : baseAttachmentInfo){
-            for (String id : attachments){
-                if (xml.getPd2().equals(id)){
+        for (Attachment xml : baseAttachmentInfo) {
+            for (String id : attachments) {
+                if (xml.getPd2().equals(id)) {
                     equippedAttachments.add(xml);
                 }
             }
@@ -260,9 +252,9 @@ public class DataSourceWeapons {
         weapon.setAttachments(equippedAttachments);
 
         Weapon merged = null;
-        for (Weapon w : baseWeaponInfo){
+        for (Weapon w : baseWeaponInfo) {
             if (w.getPd2().equals(weapon.getPd2())) {
-                if (w.getWeaponType() == weapon.getWeaponType()){
+                if (w.getWeaponType() == weapon.getWeaponType()) {
                     merged = WeaponBuild.mergeWeapon(weapon, w);
                 }
 

@@ -21,8 +21,13 @@ public class SkillButton extends Button {
         super(context, attrs);
     }
 
-    public void setNormal(boolean isNormal) {mIsNormal = isNormal;}
-    public void setAced(boolean isAced) {mIsAced = isAced;}
+    public void setNormal(boolean isNormal) {
+        mIsNormal = isNormal;
+    }
+
+    public void setAced(boolean isAced) {
+        mIsAced = isAced;
+    }
 
     public boolean isNormal() {
         return mIsNormal;
