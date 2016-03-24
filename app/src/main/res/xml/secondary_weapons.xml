@@ -311,6 +311,20 @@
         <group_name>smg</group_name>
         <weapon_type>secondary</weapon_type>
         <weapon>
+            <pd2>wpn_fps_smg_sr2</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Heather Submachine Gun</name>
+            <rof>0</rof>
+            <total>160</total>
+            <mag>32</mag>
+            <damage>40</damage>
+            <accuracy>52</accuracy>
+            <stability>44</stability>
+            <concealment>25</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_smg_sr2_s_folded,wpn_fps_smg_sr2_s_unfolded,wpn_fps_smg_sr2_fg_standard,wpn_fps_smg_sr2_m_mag,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_sr2_body_lower,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_smg_sr2_ns_silencer,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_smg_sr2_vg_standard,wpn_fps_upg_vg_ass_smg_verticalgrip,wpn_fps_upg_vg_ass_smg_stubby,wpn_fps_upg_vg_ass_smg_afg,wpn_fps_smg_sr2_b_standard,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
+        </weapon>
+        <weapon>
             <pd2>wpn_fps_smg_mac10</pd2>
             <pd2skills>0</pd2skills>
             <name>Mark 10 Submachine Gun</name>
