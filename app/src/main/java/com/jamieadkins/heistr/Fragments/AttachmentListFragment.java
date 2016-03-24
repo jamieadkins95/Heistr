@@ -50,7 +50,7 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
         activity = (EditWeaponActivity) getActivity();
         attachmentType = getArguments().getInt(ARG_ATTACHMENT_TYPE);
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_armour, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_attachment_list, container, false);
         lvAttachments = (ListView) rootView.findViewById(R.id.lvArmour);
         lvAttachments.setEmptyView(rootView.findViewById(R.id.emptyElement));
 

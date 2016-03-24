@@ -30,7 +30,7 @@ public class WeaponOverallFragment extends Fragment implements EditWeaponActivit
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+        activity = (EditWeaponActivity) getActivity();
         View rootView = inflater.inflate(R.layout.fragment_weapon_overall, container, false);
         activity = (EditWeaponActivity) getActivity();
 
@@ -45,20 +45,25 @@ public class WeaponOverallFragment extends Fragment implements EditWeaponActivit
     public void onResume() {
         super.onResume();
 
+        activity = (EditWeaponActivity) getActivity();
+        if (activity.getCurrentWeapon() != null) {
+            onWeaponReady();
+        } else {
+            activity.listen(this);
+        }
+
         onShow();
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        activity.stopListening(this);
+        activity = null;
     }
 
     @Override
     public void onBuildReady() {
         buildReady = true;
-
-        setAdapter();
     }
 
     @Override
@@ -77,6 +82,8 @@ public class WeaponOverallFragment extends Fragment implements EditWeaponActivit
     @Override
     public void onWeaponReady() {
         weaponReady = true;
+
+        setAdapter();
     }
 
     @Override

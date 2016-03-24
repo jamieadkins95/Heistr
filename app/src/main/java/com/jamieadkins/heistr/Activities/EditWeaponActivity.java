@@ -140,8 +140,12 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
     }
 
     private void setupViewPager(final ViewPager viewPager) {
-        mListeners = new ArrayList<>();
-        mBuildListeners = new ArrayList<>();
+        if (mListeners == null) {
+            mListeners = new ArrayList<>();
+        }
+        if (mBuildListeners == null) {
+            mBuildListeners = new ArrayList<>();
+        }
         final Adapter adapter = new Adapter(getSupportFragmentManager());
 
         adapter.addFragment(new WeaponOverallFragment(), "Overview");
@@ -243,7 +247,14 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
     }
 
     public void listen(Fragment fragment) {
+        if (mListeners == null) {
+            mListeners = new ArrayList<>();
+        }
         mListeners.add((WeaponsCallbacks) fragment);
+
+        if (mBuildListeners == null) {
+            mBuildListeners = new ArrayList<>();
+        }
         mBuildListeners.add((EditBuildActivity.BuildReadyCallbacks) fragment);
     }
 
