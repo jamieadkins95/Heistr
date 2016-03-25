@@ -31,6 +31,7 @@ public class Weapon {
     float stability = 0;
     int concealment = 0;
     int threat = 0;
+    String firemode = "auto";
     ArrayList<String> possibleAttachmentIDs;
     ArrayList<Long> attachmentIDs;
     ArrayList<Attachment> attachments;
@@ -81,6 +82,14 @@ public class Weapon {
 
     public void setPd2skillsID(long pd2skillsID) {
         this.pd2skillsID = pd2skillsID;
+    }
+
+    public String getFiremode() {
+        return firemode;
+    }
+
+    public void setFiremode(String firemode) {
+        this.firemode = firemode;
     }
 
     public int getROF() {
@@ -355,10 +364,7 @@ public class Weapon {
 
     public boolean isSilenced() {
         for (Attachment attachment : attachments) {
-            if (attachment.getName().contains("silence") ||
-                    attachment.getPd2().contains("silence") ||
-                    attachment.getName().contains("suppress") ||
-                    attachment.getPd2().contains("suppress")) {
+            if (attachment.getSubtype().equals("silencer")) {
                 return true;
             }
         }
@@ -367,6 +373,10 @@ public class Weapon {
     }
 
     public boolean isSingleShot() {
+        if (firemode.equals("single")) {
+            return true;
+        }
+
         for (Attachment attachment : attachments) {
             if (attachment.getPd2().equals("wpn_fps_upg_i_singlefire")) {
                 return true;

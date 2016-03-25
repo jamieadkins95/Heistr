@@ -134,6 +134,9 @@ public class WeaponBuild {
                         case "name":
                             currentWeapon.setWeaponName(text);
                             break;
+                        case "firemode":
+                            currentWeapon.setFiremode(text);
+                            break;
                         case "rof":
                             currentWeapon.setROF(Integer.parseInt(text));
                             break;

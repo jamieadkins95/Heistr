@@ -37,6 +37,7 @@ public class Attachment {
     long pd2skillsID = -1;
     String pd2 = "attach";
     String name = "attach";
+    String subtype = "none";
     int attachmentGroup = -1;
     private int magsize = 100;
     private float damage = 100;
@@ -113,6 +114,9 @@ public class Attachment {
                             break;
                         case "pd2skills":
                             currentAttachment.setPd2skillsID(Long.parseLong(text));
+                            break;
+                        case "subtype":
+                            currentAttachment.setSubtype(text);
                             break;
                         case "name":
                             currentAttachment.setName(text);
@@ -306,6 +310,14 @@ public class Attachment {
 
     public void setMagsize(int magsize) {
         this.magsize = magsize;
+    }
+
+    public String getSubtype() {
+        return subtype;
+    }
+
+    public void setSubtype(String subtype) {
+        this.subtype = subtype;
     }
 
     public String getPd2() {
