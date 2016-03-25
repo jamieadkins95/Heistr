@@ -22,6 +22,7 @@ public class Build {
     ArrayList<Boolean> infamies;
 
     ArrayList<Weapon> weaponsFromXML;
+    ArrayList<MeleeWeapon> meleeWeaponsFromXML;
     ArrayList<Attachment> attachmentsFromXML;
 
     int perkDeck = 0;
@@ -93,6 +94,14 @@ public class Build {
         this.weaponsFromXML = weaponsFromXML;
     }
 
+    public ArrayList<MeleeWeapon> getMeleeWeaponsFromXML() {
+        return meleeWeaponsFromXML;
+    }
+
+    public void setMeleeWeaponsFromXML(ArrayList<MeleeWeapon> meleeWeaponsFromXML) {
+        this.meleeWeaponsFromXML = meleeWeaponsFromXML;
+    }
+
     public ArrayList<Attachment> getAttachmentsFromXML() {
         return attachmentsFromXML;
     }
@@ -151,6 +160,14 @@ public class Build {
         weaponBuild.getWeapons()[weaponType] = weapon;
     }
 
+    public void updateWeaponBuild(Context context, MeleeWeapon meleeWeapon) {
+        DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(context);
+        dataSourceBuilds.open();
+        dataSourceBuilds.updateMeleeWeapon(weaponBuild.getId(), meleeWeapon);
+        dataSourceBuilds.close();
+        weaponBuild.setMeleeWeapon(meleeWeapon);
+    }
+
     public ArrayList<Boolean> getInfamies() {
         return infamies;
     }
@@ -180,7 +197,7 @@ public class Build {
     }
 
     public int getDetection() {
-        int concealment = 30;
+        int concealment = 0;
 
         if (getWeaponBuild().getPrimaryWeapon() != null) {
             concealment += getWeaponBuild().getPrimaryWeapon().getConcealment();
@@ -190,6 +207,12 @@ public class Build {
 
         if (getWeaponBuild().getSecondaryWeapon() != null) {
             concealment += getWeaponBuild().getSecondaryWeapon().getConcealment();
+        } else {
+            concealment += 30;
+        }
+
+        if (getWeaponBuild().getMeleeWeapon() != null) {
+            concealment += getWeaponBuild().getMeleeWeapon().getConcealment();
         } else {
             concealment += 30;
         }

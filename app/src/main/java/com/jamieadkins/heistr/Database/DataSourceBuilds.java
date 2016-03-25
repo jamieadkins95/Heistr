@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.jamieadkins.heistr.BuildObjects.Attachment;
 import com.jamieadkins.heistr.BuildObjects.Build;
+import com.jamieadkins.heistr.BuildObjects.MeleeWeapon;
 import com.jamieadkins.heistr.BuildObjects.SkillBuild;
 import com.jamieadkins.heistr.BuildObjects.Weapon;
 import com.jamieadkins.heistr.BuildObjects.WeaponBuild;
@@ -62,7 +63,7 @@ public class DataSourceBuilds {
         }
 
         DataSourceSkills dataSourceSkills = new DataSourceSkills(context);
-        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context, WeaponBuild.getWeaponsFromXML(context.getResources()), Attachment.getAttachmentsFromXML(context.getResources()));
+        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context, WeaponBuild.getWeaponsFromXML(context.getResources()), MeleeWeapon.getMeleeWeaponsFromXML(context.getResources()), Attachment.getAttachmentsFromXML(context.getResources()));
         dataSourceSkills.open();
         dataSourceWeapons.open();
         long skillBuildID;
@@ -231,13 +232,15 @@ public class DataSourceBuilds {
         SkillBuild mergedSkillBuild = SkillBuild.mergeBuilds(skillBuildFromXML, skillBuildFromDB);
 
         ArrayList<Weapon> weaponInfo = WeaponBuild.getWeaponsFromXML(context.getResources());
+        ArrayList<MeleeWeapon> meleeWeaponInfo = MeleeWeapon.getMeleeWeaponsFromXML(context.getResources());
         ArrayList<Attachment> attachmentInfo = Attachment.getAttachmentsFromXML(context.getResources());
 
 
         build.setWeaponsFromXML(weaponInfo);
+        build.setMeleeWeaponsFromXML(meleeWeaponInfo);
         build.setAttachmentsFromXML(attachmentInfo);
 
-        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context, weaponInfo, attachmentInfo);
+        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context, weaponInfo, meleeWeaponInfo, attachmentInfo);
         dataSourceWeapons.open();
         WeaponBuild weaponBuildFromDB = dataSourceWeapons.getWeaponBuild(weaponBuildID);
         dataSourceWeapons.close();
@@ -267,9 +270,17 @@ public class DataSourceBuilds {
             case WeaponBuild.SECONDARY:
                 values.put(MySQLiteHelper.COLUMN_SECONDARY_WEAPON, weaponID);
                 break;
-            case WeaponBuild.MELEE:
-                values.put(MySQLiteHelper.COLUMN_MELEE_WEAPON, weaponID);
-                break;
+        }
+
+        database.update(MySQLiteHelper.TABLE_WEAPON_BUILDS, values, MySQLiteHelper.COLUMN_ID + " = " + id, null);
+    }
+
+    public void updateMeleeWeapon(long id, MeleeWeapon meleeWeapon) {
+        ContentValues values = new ContentValues();
+        if (meleeWeapon != null) {
+            values.put(MySQLiteHelper.COLUMN_MELEE_WEAPON, meleeWeapon.getPd2());
+        } else {
+            values.putNull(MySQLiteHelper.COLUMN_MELEE_WEAPON);
         }
 
         database.update(MySQLiteHelper.TABLE_WEAPON_BUILDS, values, MySQLiteHelper.COLUMN_ID + " = " + id, null);

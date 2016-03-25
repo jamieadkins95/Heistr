@@ -2,7 +2,6 @@ package com.jamieadkins.heistr.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +10,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.jamieadkins.heistr.Activities.EditBuildActivity;
-import com.jamieadkins.heistr.BuildObjects.Weapon;
-import com.jamieadkins.heistr.BuildObjects.WeaponBuild;
+import com.jamieadkins.heistr.BuildObjects.MeleeWeapon;
 import com.jamieadkins.heistr.R;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,8 +22,8 @@ public class MeleeWeaponFragment extends Fragment implements EditBuildActivity.B
 
     ListView lvWeapons;
     EditBuildActivity activity;
-    Weapon currentMeleeWeapon;
-    ArrayList<Weapon> meleeWeapons;
+    MeleeWeapon currentMeleeWeapon;
+    ArrayList<MeleeWeapon> meleeWeapons;
 
 
     public MeleeWeaponFragment() {
@@ -60,12 +57,10 @@ public class MeleeWeaponFragment extends Fragment implements EditBuildActivity.B
     @Override
     public void onBuildReady() {
         currentMeleeWeapon = activity.getCurrentBuild().getWeaponBuild().getMeleeWeapon();
-        meleeWeapons = activity.getCurrentBuild().getWeaponsFromXML();
+        meleeWeapons = activity.getCurrentBuild().getMeleeWeaponsFromXML();
         ArrayList<String> meleeWeaponNames = new ArrayList<>();
-        for (Weapon weapon : meleeWeapons) {
-            if (weapon.getWeaponType() == WeaponBuild.MELEE) {
-                meleeWeaponNames.add(weapon.getWeaponName());
-            }
+        for (MeleeWeapon weapon : meleeWeapons) {
+            meleeWeaponNames.add(weapon.getWeaponName());
         }
 
         ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_single_choice, meleeWeaponNames);
@@ -80,9 +75,21 @@ public class MeleeWeaponFragment extends Fragment implements EditBuildActivity.B
         lvWeapons.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                int selected = lvWeapons.getCheckedItemPosition();
-                currentMeleeWeapon = meleeWeapons.get(selected);
-                activity.getCurrentBuild().updateWeaponBuild(getActivity(), WeaponBuild.MELEE, currentMeleeWeapon);
+                String oldMelee = (currentMeleeWeapon != null) ? currentMeleeWeapon.getPd2() : "none";
+                String name = (String) lvWeapons.getItemAtPosition(position);
+                MeleeWeapon newMelee = null;
+                for (MeleeWeapon meleeWeapon : meleeWeapons) {
+                    if (meleeWeapon.getWeaponName().equals(name)) {
+                        newMelee = meleeWeapon;
+                    }
+                }
+                if (!newMelee.getPd2().equals(oldMelee)) {
+                    currentMeleeWeapon = newMelee;
+                } else {
+                    currentMeleeWeapon = null;
+                    lvWeapons.setItemChecked(position, false);
+                }
+                activity.getCurrentBuild().updateWeaponBuild(activity, currentMeleeWeapon);
             }
         });
     }

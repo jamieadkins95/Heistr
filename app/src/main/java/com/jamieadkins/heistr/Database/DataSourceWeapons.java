@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.jamieadkins.heistr.BuildObjects.Attachment;
+import com.jamieadkins.heistr.BuildObjects.MeleeWeapon;
 import com.jamieadkins.heistr.BuildObjects.Weapon;
 import com.jamieadkins.heistr.BuildObjects.WeaponBuild;
 
@@ -45,12 +46,23 @@ public class DataSourceWeapons {
             MySQLiteHelper.COLUMNS_ATTACHMENTS[Attachment.MOD_STAT_BOOST]};
 
     private ArrayList<Weapon> baseWeaponInfo;
+    private ArrayList<MeleeWeapon> meleeWeaponInfo;
     private final ArrayList<Attachment> baseAttachmentInfo;
 
     public DataSourceWeapons(Context context, ArrayList<Weapon> baseWeaponInfo, ArrayList<Attachment> baseAttachmentInfo) {
         dbHelper = new MySQLiteHelper(context);
         mContext = context;
         this.baseWeaponInfo = baseWeaponInfo;
+        this.baseAttachmentInfo = baseAttachmentInfo;
+    }
+
+    public DataSourceWeapons(Context context, ArrayList<Weapon> baseWeaponInfo,
+                             ArrayList<MeleeWeapon> meleeWeaponInfo,
+                             ArrayList<Attachment> baseAttachmentInfo) {
+        dbHelper = new MySQLiteHelper(context);
+        mContext = context;
+        this.baseWeaponInfo = baseWeaponInfo;
+        this.meleeWeaponInfo = meleeWeaponInfo;
         this.baseAttachmentInfo = baseAttachmentInfo;
     }
 
@@ -212,17 +224,21 @@ public class DataSourceWeapons {
         long id = cursorWeaponBuild.getLong(0);
         long primary = cursorWeaponBuild.getLong(1);
         long secondary = cursorWeaponBuild.getLong(2);
-        long melee = cursorWeaponBuild.getLong(3);
+        String melee = cursorWeaponBuild.getString(3);
 
         Weapon primaryWeapon = getWeapon(primary);
         Weapon secondaryWeapon = getWeapon(secondary);
-        Weapon meleeWeapon = getWeapon(melee);
+        MeleeWeapon meleeWeapon = null;
+        for (MeleeWeapon m : meleeWeaponInfo) {
+            if (m.getPd2().equals(melee)) {
+                meleeWeapon = m;
+            }
+        }
 
         weaponBuild.setId(id);
         weaponBuild.setPrimaryWeapon(primaryWeapon);
         weaponBuild.setSecondaryWeapon(secondaryWeapon);
         weaponBuild.setMeleeWeapon(meleeWeapon);
-
 
         return weaponBuild;
     }

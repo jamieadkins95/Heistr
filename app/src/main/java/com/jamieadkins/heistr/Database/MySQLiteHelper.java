@@ -14,7 +14,7 @@ import com.jamieadkins.heistr.BuildObjects.Attachment;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pd2skills.db";
-    private static final int DATABASE_VERSION = 28;
+    private static final int DATABASE_VERSION = 29;
 
     //region Skills
     public static final String TABLE_SKILL_BUILDS = "tbSkillBuilds";
@@ -75,7 +75,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + " integer primary key autoincrement, " + COLUMN_PRIMARY_WEAPON
             + " integer, " + COLUMN_SECONDARY_WEAPON
             + " integer, " + COLUMN_MELEE_WEAPON
-            + " integer);";
+            + " text);";
 
     public static final String TABLE_WEAPONS = "tbWeapons";
     public static final String COLUMN_WEAPON_TYPE = "weaponType";

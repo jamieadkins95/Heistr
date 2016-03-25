@@ -17,10 +17,10 @@ public class WeaponBuild {
 
     public final static int PRIMARY = 0;
     public final static int SECONDARY = 1;
-    public final static int MELEE = 2;
 
     private long id = -1;
-    private Weapon[] weapons = new Weapon[3];
+    private Weapon[] weapons = new Weapon[2];
+    private MeleeWeapon meleeWeapon;
 
 
     public long getId() {
@@ -47,12 +47,12 @@ public class WeaponBuild {
         this.weapons[SECONDARY] = secondaryWeapon;
     }
 
-    public Weapon getMeleeWeapon() {
-        return weapons[MELEE];
+    public MeleeWeapon getMeleeWeapon() {
+        return meleeWeapon;
     }
 
-    public void setMeleeWeapon(Weapon meleeWeapon) {
-        this.weapons[MELEE] = meleeWeapon;
+    public void setMeleeWeapon(MeleeWeapon meleeWeapon) {
+        this.meleeWeapon = meleeWeapon;
     }
 
     public Weapon[] getWeapons() {
@@ -71,9 +71,6 @@ public class WeaponBuild {
                 break;
             case SECONDARY:
                 xmlParser = res.getXml(R.xml.secondary_weapons);
-                break;
-            case MELEE:
-                xmlParser = res.getXml(R.xml.melee_weapons);
                 break;
             default:
 
@@ -209,7 +206,7 @@ public class WeaponBuild {
 
         ArrayList<Weapon> weapons = new ArrayList<>();
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             weapons.addAll(getWeaponsFromXML(res, i));
         }
 
