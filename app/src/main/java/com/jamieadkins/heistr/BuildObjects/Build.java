@@ -196,6 +196,9 @@ public class Build {
 
         concealment += getArmourConcealment();
 
+        // Blending in concealment bonus
+        concealment++;
+
         return getDetectionFromConcealment(concealment);
     }
 
