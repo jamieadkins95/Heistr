@@ -81,7 +81,7 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build> {
             tvPrimaryConcealment.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getConcealment() + "");
         } else {
             LinearLayout llPrimary = (LinearLayout) rowView.findViewById(R.id.llPrimary);
-            llPrimary.setVisibility(View.INVISIBLE);
+            llPrimary.setVisibility(View.GONE);
         }
 
         if (getItem(position).getWeaponBuild().getSecondaryWeapon() != null) {
@@ -92,7 +92,7 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build> {
             tvSecondaryConcealment.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getConcealment() + "");
         } else {
             LinearLayout llSecondary = (LinearLayout) rowView.findViewById(R.id.llSecondary);
-            llSecondary.setVisibility(View.INVISIBLE);
+            llSecondary.setVisibility(View.GONE);
         }
 
         //Set Detection
