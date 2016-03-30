@@ -1,12 +1,21 @@
 package com.jamieadkins.heistr.Activities;
 
+import android.Manifest;
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.nfc.NdefMessage;
+import android.nfc.NdefRecord;
+import android.nfc.NfcAdapter;
+import android.nfc.NfcEvent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -36,9 +45,11 @@ import com.jamieadkins.heistr.R;
 import com.jamieadkins.heistr.utils.URLEncoder;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class EditBuildActivity extends AppCompatActivity implements TaskFragment.TaskCallbacks, RenameBuildDialog.RenameBuildDialogListener {
+import static android.nfc.NdefRecord.createMime;
+
+public class EditBuildActivity extends AppCompatActivity implements TaskFragment.TaskCallbacks,
+        RenameBuildDialog.RenameBuildDialogListener, NfcAdapter.CreateNdefMessageCallback {
 
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
@@ -48,6 +59,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     public final static String SKILL_TREE_INDEX = "SkillTreeInd";
     private final static String ACTIVITY_START = "StartAct";
     public static final int WEAPON_EDIT_REQUEST = 505;  // The request code
+    private static final int NFC_PERMISSIONS = 506;  // The request code
     private static final String TAG = EditBuildActivity.class.getSimpleName();
 
     private Intent intent;
@@ -58,6 +70,8 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
 
     private int currentFragment = R.id.nav_skill_trees;
     private int currentSkillTree = Trees.MASTERMIND;
+
+    private NfcAdapter mNfcAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +101,30 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
 
         loadFragment(currentFragment);
 
+        // Check for available NFC Adapter
+        mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        if (mNfcAdapter != null) {
+            // Register callback
+            mNfcAdapter.setNdefPushMessageCallback(this, this);
+        }
+    }
+
+    @Override
+    public NdefMessage createNdefMessage(NfcEvent event) {
+        // NFC should be auto granted, but doesn't hurt to check.
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.NFC)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.NFC}, NFC_PERMISSIONS);
+        }
+
+        String url = URLEncoder.encodeBuild(this, currentBuild);
+        NdefMessage msg = new NdefMessage(
+                new NdefRecord[] { createMime(
+                        "application/vnd.com.jamieadkins.heistr", url.getBytes())
+                });
+        return msg;
     }
 
     @Override
@@ -96,10 +134,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
             mListCallbacks = new ArrayList<>();
         }
 
-        //setTitle(mNavigationView.getMenu().getItem(currentFragment).getTitle());
-
         InitRetainedFragment();
-
     }
 
     @Override
@@ -109,7 +144,6 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         savedInstanceState.putInt(SKILL_TREE_INDEX, currentSkillTree);
         super.onSaveInstanceState(savedInstanceState);
     }
-
 
     @Override
     public void onBackPressed() {
@@ -224,11 +258,24 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
             intent = getIntent();
             final String action = intent.getAction();
             if (Intent.ACTION_VIEW.equals(action)) {
-                final List<String> segments = intent.getData().getPathSegments();
                 Log.d("Intents", intent.getData().toString());
                 DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(this);
                 dataSourceBuilds.open();
                 Build b = dataSourceBuilds.createAndInsertBuild("PD2Skills Build", 0, intent.getData().toString(), -1);
+                dataSourceBuilds.close();
+                currentBuildID = b.getId();
+
+                showRenameBuildDialog();
+            } else if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)) {
+                Parcelable[] rawMsgs = intent.getParcelableArrayExtra(
+                        NfcAdapter.EXTRA_NDEF_MESSAGES);
+                // only one message sent during the beam
+                NdefMessage msg = (NdefMessage) rawMsgs[0];
+                String url = new String(msg.getRecords()[0].getPayload());
+
+                DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(this);
+                dataSourceBuilds.open();
+                Build b = dataSourceBuilds.createAndInsertBuild("PD2Skills Build", 0, url, -1);
                 dataSourceBuilds.close();
                 currentBuildID = b.getId();
 

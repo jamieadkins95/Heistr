@@ -2,11 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jamieadkins.heistr" >
 
+    <uses-permission android:name="android.permission.NFC"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
         <activity
             android:name=".Activities.BuildListActivity"
             android:label="@string/app_name" >
@@ -29,6 +32,12 @@
                 <data
                     android:host="pd2skills.com"
                     android:scheme="http" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="application/vnd.com.jamieadkins.heistr"/>
             </intent-filter>
         </activity>
         <activity
