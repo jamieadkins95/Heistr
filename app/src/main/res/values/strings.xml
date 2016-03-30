@@ -132,6 +132,7 @@
         <item>Grinder</item>
         <item>Yakuza</item>
         <item>Ex&#8211;Presidents</item>
+        <item>Maniac</item>
     </string-array>
 
     <string-array name="armour">
@@ -176,6 +177,7 @@
         <item>n</item>
         <item>y</item>
         <item>e</item>
+        <item>n</item>
     </string-array>
 
     <string-array name="perkDeckDescs" formatted="false">
@@ -195,6 +197,11 @@
             \n\n+40% health
             \n\n+5% dodge
             \n\n+20% ballistic vest dodge</item>
+        <item>40% of damage dealt is converted into Hysteria up to 240 every 4s.
+            \n\nMax stack of 600.
+            \n\nYou gain 1.5 damage absorption for every 25 stacks.
+            \n\nStacks decay 60% + 40 every 8s
+            \n\nTeammates benefit from your hysteria. Hysteria stacks from multiple crew members do not stack and only the highest damage absorption will have an effect.</item>
     </string-array>
 
     <string name="hello_world">Hello world!</string>
