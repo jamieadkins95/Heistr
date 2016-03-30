@@ -78,6 +78,15 @@ public class MeleeWeapon {
         this.concealment = concealment;
     }
 
+    @Override
+    public String toString() {
+        return "Damage: " + damage + "\n" +
+                "Knockdown: " + knockdown + "\n" +
+                "Charge time: " + charge + "\n" +
+                "Range: " + range + "\n" +
+                "Concealment: " + concealment;
+    }
+
     public static ArrayList<MeleeWeapon> getMeleeWeaponsFromXML(Resources res) {
         XmlResourceParser xmlParser = res.getXml(R.xml.melee_weapons);
         ArrayList<MeleeWeapon> weapons = new ArrayList<>();

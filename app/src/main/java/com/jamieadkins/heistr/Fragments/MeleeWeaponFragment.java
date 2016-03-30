@@ -2,6 +2,7 @@ package com.jamieadkins.heistr.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -90,6 +91,28 @@ public class MeleeWeaponFragment extends Fragment implements EditBuildActivity.B
                     lvWeapons.setItemChecked(position, false);
                 }
                 activity.getCurrentBuild().updateWeaponBuild(activity, currentMeleeWeapon);
+            }
+        });
+
+        lvWeapons.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                String name = (String) lvWeapons.getItemAtPosition(position);
+                MeleeWeapon selectedMeleeWeapon = null;
+                for (MeleeWeapon meleeWeapon : meleeWeapons) {
+                    if (meleeWeapon.getWeaponName().equals(name)) {
+                        selectedMeleeWeapon = meleeWeapon;
+                    }
+                }
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle(selectedMeleeWeapon.getWeaponName())
+                        .setMessage(selectedMeleeWeapon.toString())
+                        .setPositiveButton(R.string.got_it, null)
+                        .create()
+                        .show();
+
+                return true;
             }
         });
     }
