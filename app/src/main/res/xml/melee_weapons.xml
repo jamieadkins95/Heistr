@@ -731,4 +731,14 @@
         <range>185</range>
         <concealment>30</concealment>
     </weapon>
+
+    <weapon>
+        <pd2>zeus</pd2>
+        <name>Electrical Brass Knuckles</name>
+        <damage>20 (20)</damage>
+        <knockdown>20 (20)</knockdown>
+        <charge>2</charge>
+        <range>200</range>
+        <concealment>30</concealment>
+    </weapon>
 </melee>

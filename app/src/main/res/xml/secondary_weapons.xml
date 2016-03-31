@@ -4,6 +4,22 @@
         <group_name>pistol</group_name>
         <weapon_type>secondary</weapon_type>
         <weapon>
+            <pd2>wpn_fps_pis_pl14</pd2>
+            <pd2skills>0</pd2skills>
+            <firemode>single</firemode>
+            <name>White Streak Pistol</name>
+            <rof>0</rof>
+            <total>60</total>
+            <mag>12</mag>
+            <damage>145</damage>
+            <accuracy>68</accuracy>
+            <stability>32</stability>
+            <concealment>29</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_pl14_b_comp,wpn_fps_pis_pl14_b_standard,wpn_fps_pis_pl14_body_standard,wpn_fps_pis_pl14_sl_standard,wpn_fps_upg_o_rmr,wpn_fps_pis_pl14_m_extended,wpn_fps_pis_pl14_m_standard,wpn_fps_upg_ns_pis_large,wpn_fps_upg_ns_pis_medium,wpn_fps_upg_ns_pis_small,wpn_fps_upg_ns_pis_large_kac,wpn_fps_upg_ns_pis_medium_gem,wpn_fps_upg_ns_pis_medium_slim,wpn_fps_upg_pis_ns_flash,wpn_fps_upg_ns_pis_meatgrinder,wpn_fps_upg_ns_pis_ipsccomp,wpn_fps_upg_ns_ass_filter,wpn_fps_upg_ns_pis_jungle,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
+        </weapon>
+
+        <weapon>
             <pd2>wpn_fps_pis_g22c</pd2>
             <pd2skills>0</pd2skills>
             <firemode>single</firemode>
