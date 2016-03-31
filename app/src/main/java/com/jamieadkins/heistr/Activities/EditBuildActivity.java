@@ -123,6 +123,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         NdefMessage msg = new NdefMessage(
                 new NdefRecord[] { createMime(
                         "application/vnd.com.jamieadkins.heistr", url.getBytes())
+                        ,NdefRecord.createApplicationRecord("com.jamieadkins.heistr")
                 });
         return msg;
     }
