@@ -337,6 +337,11 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
                 Intent intent = new Intent(EditBuildActivity.this, BuildListActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.nav_settings:
+                fragment = null;
+                Intent settingsIntent = new Intent(EditBuildActivity.this, SettingsActivity.class);
+                startActivity(settingsIntent);
+                break;
             default:
                 fragment = new BlankFragment();
                 break;

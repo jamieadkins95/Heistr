@@ -216,10 +216,6 @@
     <string name="melee_weapon">Melee Weapon</string>
     <string name="title_activity_edit_weapon">Edit Weapon</string>
 
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
-
     <string name="action_equip">Equip</string>
     <string name="skill_trees">Skill Trees</string>
     <string name="weapon_attribute_threat">Threat</string>
@@ -233,6 +229,15 @@
         \n\nThanks for your patience.\n\nJamie</string>
     <string name="dialog_title_builds_deleted">Latest Update</string>
     <string name="empty_attachment_list">No Attachments</string>
+    <string name="pref_skill_name_length">Skill name character limit</string>
+    <string name="pref_skill_name_length_summ">Max characters of a skill\'s name to display</string>
+    <string name="pref_weapon_name_length">Weapon name character limit</string>
+    <string name="pref_skill_weapon_name_length_summ">Max characters of a weapon\'s name to display</string>
+    <string name="pref_weapon_nickname_length">Weapon nickname character limit</string>
+    <string name="pref_skill_weapon_nickname_length_summ">Max characters of a weapon\'s nickname to display</string>
+    <string name="pref_build_name_length">Build name character limit</string>
+    <string name="pref_build_name_length_summ">Max characters of a build\'s name to display</string>
+    <string name="pref_category">Small Screen Support</string>
 
 
 </resources>

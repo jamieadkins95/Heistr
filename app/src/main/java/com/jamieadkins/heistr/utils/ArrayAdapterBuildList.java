@@ -1,6 +1,8 @@
 package com.jamieadkins.heistr.utils;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.support.v7.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +62,10 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build> {
         TextView fugitiveSkillCount = (TextView) rowView.findViewById(R.id.fugSkillCount);
 
         //Set build name
-        tv.setText(getItem(position).getName());
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        String key = "pref_build_name_length";
+        int maxChars = Math.min(Integer.parseInt(preferences.getString(key, "100")), getItem(position).getName().length());
+        tv.setText(getItem(position).getName().substring(0, maxChars));
 
         //Set Armour
         String armour = context.getResources().getTextArray(R.array.armourShortened)[getItem(position).getArmour()].toString();
@@ -74,7 +79,9 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build> {
 
         //Set Weapons
         if (getItem(position).getWeaponBuild().getPrimaryWeapon() != null) {
-            tvPrimaryWeapon.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getWeaponName());
+            key = "pref_weapon_name_length";
+            maxChars = Math.min(Integer.parseInt(preferences.getString(key, "100")), getItem(position).getWeaponBuild().getPrimaryWeapon().getWeaponName().length());
+            tvPrimaryWeapon.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getWeaponName().substring(0, maxChars));
             tvPrimaryDamage.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getDamage(skillStatChangeManager) + "");
             tvPrimaryAccuracy.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getAccuracy(skillStatChangeManager) + "");
             tvPrimaryStability.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getStability(skillStatChangeManager) + "");
@@ -85,7 +92,9 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build> {
         }
 
         if (getItem(position).getWeaponBuild().getSecondaryWeapon() != null) {
-            tvSecondaryWeapon.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getWeaponName());
+            key = "pref_weapon_name_length";
+            maxChars = Math.min(Integer.parseInt(preferences.getString(key, "100")), getItem(position).getWeaponBuild().getSecondaryWeapon().getWeaponName().length());
+            tvSecondaryWeapon.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getWeaponName().substring(0, maxChars));
             tvSecondaryDamage.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getDamage(skillStatChangeManager) + "");
             tvSecondaryAccuracy.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getAccuracy(skillStatChangeManager) + "");
             tvSecondaryStability.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getStability(skillStatChangeManager) + "");

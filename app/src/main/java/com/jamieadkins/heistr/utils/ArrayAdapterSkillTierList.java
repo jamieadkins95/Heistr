@@ -2,7 +2,9 @@ package com.jamieadkins.heistr.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -81,12 +83,10 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier> {
         }
         for (int i = 0; i < tier.getSkillsInTier().size(); i++) {
 
-            if (tier.getSkillsInTier().get(i).getName().length() > 17) {
-                tvs[i].setText(tier.getSkillsInTier().get(i).getAbbreviation());
-            } else {
-                tvs[i].setText(tier.getSkillsInTier().get(i).getName());
-            }
-
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+            String key = "pref_skill_name_length";
+            int maxChars = Math.min(Integer.parseInt(preferences.getString(key, "100")), tier.getSkillsInTier().get(i).getName().length());
+            tvs[i].setText(tier.getSkillsInTier().get(i).getName().substring(0, maxChars));
 
             switch (tier.getSkillsInTier().get(i).getTaken()) {
                 case Skill.NO:

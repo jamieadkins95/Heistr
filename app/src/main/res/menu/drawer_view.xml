@@ -3,41 +3,42 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_skill_trees"
-            android:checked="true"
-            android:title="@string/skill_trees" />
+                android:id="@+id/nav_skill_trees"
+                android:checked="true"
+                android:title="@string/skill_trees" />
         <item
-            android:id="@+id/nav_infamy"
-            android:title="@string/infamy" />
+                android:id="@+id/nav_infamy"
+                android:title="@string/infamy" />
         <item
-            android:id="@+id/nav_perk_deck"
-            android:title="@string/perk_deck" />
+                android:id="@+id/nav_perk_deck"
+                android:title="@string/perk_deck" />
         <item
-            android:id="@+id/nav_armour"
-            android:title="@string/armour" />
+                android:id="@+id/nav_armour"
+                android:title="@string/armour" />
         <item
-            android:id="@+id/nav_primary"
-            android:title="@string/primary_weapon" />
+                android:id="@+id/nav_primary"
+                android:title="@string/primary_weapon" />
         <item
-            android:id="@+id/nav_secondary"
-            android:title="@string/secondary_weapon" />
+                android:id="@+id/nav_secondary"
+                android:title="@string/secondary_weapon" />
         <item
-            android:id="@+id/nav_melee"
-            android:title="@string/melee_weapon" />
+                android:id="@+id/nav_melee"
+                android:title="@string/melee_weapon" />
     </group>
 
     <item android:title="@string/header_navigation">
         <menu>
             <item
-                android:id="@+id/nav_home"
-                android:icon="@drawable/ic_home_white_24dp"
-                android:title="@string/build_list" />
+                    android:id="@+id/nav_home"
+                    android:icon="@drawable/ic_home_white_24dp"
+                    android:title="@string/build_list" />
             <item
-                android:icon="@drawable/ic_info_black_24dp"
-                android:title="@string/action_about" />
+                    android:icon="@drawable/ic_info_black_24dp"
+                    android:title="@string/action_about" />
             <item
-                android:icon="@drawable/ic_settings_black_24dp"
-                android:title="@string/action_settings" />
+                    android:id="@+id/nav_settings"
+                    android:icon="@drawable/ic_settings_black_24dp"
+                    android:title="@string/action_settings" />
         </menu>
     </item>
 

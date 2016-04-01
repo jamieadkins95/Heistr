@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+            android:title="@string/pref_category"
+            android:key="pref_key_length_settings">
+        <EditTextPreference
+                android:key="pref_build_name_length"
+                android:title="@string/pref_build_name_length"
+                android:summary="@string/pref_build_name_length_summ"
+                android:dialogLayout="@layout/preference_edit_text"
+                android:defaultValue="100" />
+        <EditTextPreference
+                android:key="pref_skill_name_length"
+                android:title="@string/pref_skill_name_length"
+                android:summary="@string/pref_skill_name_length_summ"
+                android:dialogLayout="@layout/preference_edit_text"
+                android:defaultValue="100" />
+        <EditTextPreference
+                android:key="pref_weapon_name_length"
+                android:title="@string/pref_weapon_name_length"
+                android:summary="@string/pref_skill_weapon_name_length_summ"
+                android:dialogLayout="@layout/preference_edit_text"
+                android:defaultValue="100" />
+        <EditTextPreference
+                android:key="pref_weapon_nickname_length"
+                android:title="@string/pref_weapon_nickname_length"
+                android:summary="@string/pref_skill_weapon_nickname_length_summ"
+                android:dialogLayout="@layout/preference_edit_text"
+                android:defaultValue="100" />
+    </PreferenceCategory>
+</PreferenceScreen>
