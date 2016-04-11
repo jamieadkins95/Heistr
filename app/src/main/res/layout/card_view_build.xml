@@ -19,45 +19,69 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:id="@+id/rlBuilds"
-        >
+        android:id="@+id/rlBuilds">
+
+        <LinearLayout android:id="@+id/llName"
+                      android:layout_width="match_parent"
+                      android:orientation="horizontal"
+                      android:layout_height="wrap_content">
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="10"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvName"
+                    android:textSize="30sp"
+                    android:text="@string/untitled_build"
+                    android:textColor="@color/textPrimary"
+                    />
+
+            <!--Detection-->
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
 
 
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/detectionShort"
+                        android:textColor="@color/textHint"
+                        android:textSize="15sp"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
 
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvName"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-
-            android:layout_alignParentTop="true"
-            android:textSize="30sp"
-            android:text="@string/untitled_build"
-            android:textColor="@color/textPrimary"
-            />
+                        android:id="@+id/tvDetection"
+                        android:text="75"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="20sp"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
 
         <!--Weapons-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/llWeapons"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:layout_below="@+id/tvName"
-            >
-
-
+            android:layout_below="@+id/llName">
 
             <!--Primary Weapon-->
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:id="@+id/llPrimary"
                 android:layout_height="wrap_content">
-
 
                 <TextView
                     android:layout_width="0dp"
@@ -73,6 +97,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
+                    android:paddingLeft="10dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -81,27 +106,31 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:text="@string/weapon_attribute_damage_shorthand"/>
+                        android:layout_gravity="left"
+                        android:text="@string/weapon_attribute_damage"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:text="@string/weapon_attribute_accuracy_shorthand"/>
+                        android:layout_gravity="left"
+                        android:text="@string/weapon_attribute_accuracy"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:text="@string/weapon_attribute_stability_shorthand"/>
+                        android:layout_gravity="left"
+                        android:text="@string/weapon_attribute_stability"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:text="@string/weapon_attribute_concealment_shorthand"/>
+                        android:layout_gravity="left"
+                        android:text="@string/weapon_attribute_concealment"/>
 
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.5"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -109,40 +138,39 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:layout_gravity="center"
+                        android:layout_gravity="right"
                         android:id="@+id/tvDamageValuePrimary" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
                         android:id="@+id/tvAccuracyValuePrimary"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="right"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
                         android:id="@+id/tvStabilityValuePrimary"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="right"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:layout_gravity="center"
+                        android:layout_gravity="right"
                         android:id="@+id/tvConcealmentValuePrimary"/>
 
 
                 </LinearLayout>
-
             </LinearLayout>
 
 
             <!--Secondary Weapon-->
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_weight="1"
+                android:paddingTop="10dp"
                 android:id="@+id/llSecondary"
                 android:layout_height="wrap_content">
-
 
                 <TextView
                     android:layout_width="0dp"
@@ -153,10 +181,10 @@
                     android:textSize="20sp"
                     android:layout_gravity="center"
                     android:gravity="center"/>
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
+                    android:paddingLeft="10dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -165,27 +193,31 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:text="@string/weapon_attribute_damage_shorthand"/>
+                        android:layout_gravity="left"
+                        android:text="@string/weapon_attribute_damage"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:text="@string/weapon_attribute_accuracy_shorthand"/>
+                        android:layout_gravity="left"
+                        android:text="@string/weapon_attribute_accuracy"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:text="@string/weapon_attribute_stability_shorthand"/>
+                        android:layout_gravity="left"
+                        android:text="@string/weapon_attribute_stability"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:text="@string/weapon_attribute_concealment_shorthand"/>
+                        android:layout_gravity="left"
+                        android:text="@string/weapon_attribute_concealment"/>
 
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.5"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -193,68 +225,30 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:layout_gravity="center"
+                        android:layout_gravity="right"
                         android:id="@+id/tvDamageValueSecondary"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
                         android:id="@+id/tvAccuracyValueSecondary"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="right"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
                         android:id="@+id/tvStabilityValueSecondary"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="right"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:textColor="@color/textHint"
-                        android:layout_gravity="center"
+                        android:layout_gravity="right"
                         android:id="@+id/tvConcealmentValueSecondary"/>
 
 
                 </LinearLayout>
-
             </LinearLayout>
-
-            <!--Detection-->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="0.4"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-
-                    android:text="@string/detectionShort"
-                    android:textColor="@color/textHint"
-                    android:textSize="15sp"
-                    android:layout_gravity="center"
-                    android:gravity="center"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:id="@+id/tvDetection"
-                    android:text="75"
-                    android:textColor="@color/textSecondary"
-                    android:textSize="20sp"
-                    android:layout_gravity="center"
-                    android:gravity="center"/>
-
-
-
-            </LinearLayout>
-
-
         </LinearLayout>
 
         <!--Skill Tree Values-->
