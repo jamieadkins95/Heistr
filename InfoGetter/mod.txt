@@ -13,9 +13,9 @@
     	"keybinds" : [
     	{
         	"keybind_id" : "keybind_jamiea_test",
-        	"name" : "Get Info",
+        	"name" : "Weapon info extract",
         	"description" : "Should get info for all weapons",
-        	"script_path" : "info/test.lua",
+        	"script_path" : "info/weapons.lua",
         	"run_in_menu" : true,
         	"run_in_game" : true,
         	"localized" : false
@@ -31,9 +31,9 @@
     	},
 	{
         	"keybind_id" : "keybind_jamiea_test3",
-        	"name" : "Get Info 3",
+        	"name" : "Melee weapon info extract",
         	"description" : "Should get info for all weapons",
-        	"script_path" : "info/test3.lua",
+        	"script_path" : "info/melee.lua",
         	"run_in_menu" : true,
         	"run_in_game" : true,
         	"localized" : false
