@@ -1,0 +1,6 @@
+{
+  "name": "Heistr",
+  "tagline": "Heistr - A Payday2 skills and builds app for Android",
+  "body": "# Heistr\r\nThis is the source code for an Android app that lets you create skill and weapon builds for Payday 2.\r\nYou can download Heistr [here](https://play.google.com/store/apps/details?id=com.dawgandpony.pd2skills) or signup for beta updates [here](https://play.google.com/apps/testing/com.dawgandpony.pd2skills).\r\n\r\n# Coming Soon\r\n - An overall summary of the build\r\n - EHP and breakpoint calculations\r\n - Possible online features such as 'Build of the Week'\r\n\r\n# Thanks to\r\n - Melnykov Oleksandr - [FloatingActionButton library](https://github.com/makovkastar/FloatingActionButton) (Apache 2.0)\r\n\r\n# License\r\n\r\nThis project (referred to as 'Heistr') is released under the **The GNU General Public License v3.0 (GPLv3)**, which can be found in the `LICENSE` file in the root of this project.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
