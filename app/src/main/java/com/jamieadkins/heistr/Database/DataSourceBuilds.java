@@ -34,10 +34,16 @@ public class DataSourceBuilds {
             MySQLiteHelper.COLUMN_PERK_DECK,
             MySQLiteHelper.COLUMN_ARMOUR};
 
+    ArrayList<Weapon> baseWeaponInfo;
+    ArrayList<MeleeWeapon> meleeWeaponInfo;
+    ArrayList<Attachment> baseAttachmentInfo;
 
     public DataSourceBuilds(Context context) {
         dbHelper = new MySQLiteHelper(context);
         this.context = context;
+        this.baseWeaponInfo = WeaponBuild.getWeaponsFromXML(context.getResources());
+        this.meleeWeaponInfo = MeleeWeapon.getMeleeWeaponsFromXML(context.getResources());
+        this.baseAttachmentInfo = Attachment.getAttachmentsFromXML(context.getResources());
     }
 
     public void open() throws SQLException {
@@ -63,7 +69,7 @@ public class DataSourceBuilds {
         }
 
         DataSourceSkills dataSourceSkills = new DataSourceSkills(context);
-        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context, WeaponBuild.getWeaponsFromXML(context.getResources()), MeleeWeapon.getMeleeWeaponsFromXML(context.getResources()), Attachment.getAttachmentsFromXML(context.getResources()));
+        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context, baseWeaponInfo, meleeWeaponInfo, baseAttachmentInfo);
         dataSourceSkills.open();
         dataSourceWeapons.open();
         long skillBuildID;
@@ -231,16 +237,11 @@ public class DataSourceBuilds {
         SkillBuild skillBuildFromDB = SkillBuild.getSkillBuildFromDB(skillBuildID, context);
         SkillBuild mergedSkillBuild = SkillBuild.mergeBuilds(skillBuildFromXML, skillBuildFromDB);
 
-        ArrayList<Weapon> weaponInfo = WeaponBuild.getWeaponsFromXML(context.getResources());
-        ArrayList<MeleeWeapon> meleeWeaponInfo = MeleeWeapon.getMeleeWeaponsFromXML(context.getResources());
-        ArrayList<Attachment> attachmentInfo = Attachment.getAttachmentsFromXML(context.getResources());
-
-
-        build.setWeaponsFromXML(weaponInfo);
+        build.setWeaponsFromXML(baseWeaponInfo);
         build.setMeleeWeaponsFromXML(meleeWeaponInfo);
-        build.setAttachmentsFromXML(attachmentInfo);
+        build.setAttachmentsFromXML(baseAttachmentInfo);
 
-        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context, weaponInfo, meleeWeaponInfo, attachmentInfo);
+        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context, baseWeaponInfo, meleeWeaponInfo, baseAttachmentInfo);
         dataSourceWeapons.open();
         WeaponBuild weaponBuildFromDB = dataSourceWeapons.getWeaponBuild(weaponBuildID);
         dataSourceWeapons.close();
