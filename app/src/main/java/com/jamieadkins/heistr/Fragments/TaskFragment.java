@@ -163,7 +163,9 @@ public class TaskFragment extends Fragment {
         @Override
         protected void onCancelled() {
             // Proxy the call to the Activity.
-            mCallbacks.onCancelled();
+            if (mCallbacks != null) {
+                mCallbacks.onCancelled();
+            }
             mRunning = false;
         }
 

@@ -127,7 +127,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
                 for (int i = 0; i < checked.size(); i++) {
                     if (checked.valueAt(i)) {
                         Weapon selected = (Weapon) lvOtherWeapons.getItemAtPosition(checked.keyAt(i));
-                        DataSourceWeapons dataSourceBuilds = new DataSourceWeapons(getActivity(), baseWeaponInfo, baseAttachmentInfo);
+                        DataSourceWeapons dataSourceBuilds = new DataSourceWeapons(getActivity());
                         dataSourceBuilds.open();
                         dataSourceBuilds.deleteWeapon(selected.getId());
                         dataSourceBuilds.close();
@@ -186,7 +186,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
                 // Equip Weapon
                 Bundle bundle = data.getExtras();
                 long id = bundle.getLong(EXTRA_WEAPON_ID);
-                DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(getActivity(), baseWeaponInfo, baseAttachmentInfo);
+                DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(getActivity());
                 dataSourceWeapons.open();
                 Weapon weapon = dataSourceWeapons.getWeapon(id);
                 dataSourceWeapons.close();
@@ -280,7 +280,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
             ArrayList<Weapon> weapons = new ArrayList<>();
 
             //Get list of skill builds from database.
-            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(getActivity(), baseWeaponInfo, baseAttachmentInfo);
+            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(getActivity());
             dataSourceWeapons.open();
             weapons = dataSourceWeapons.getAllWeapons(weaponType);
             dataSourceWeapons.close();
@@ -309,7 +309,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
 
         @Override
         protected Weapon doInBackground(Void... params) {
-            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(getActivity(), baseWeaponInfo, baseAttachmentInfo);
+            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(getActivity());
             dataSourceWeapons.open();
             Weapon w = dataSourceWeapons.createAndInsertWeapon(name, pd2ID, weaponType);
             dataSourceWeapons.close();

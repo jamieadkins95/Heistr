@@ -42,8 +42,8 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
     boolean activityReady = false;
     boolean infoReady = false;
     int weaponType = -1;
-    ArrayList<Weapon> baseWeaponInfo;
     ArrayList<Attachment> baseAttachmentInfo;
+    ArrayList<Attachment> overriderAttachmentInfo;
     ArrayList<ArrayList<Attachment>> attachmentsSplitUp;
     ArrayList<WeaponsCallbacks> mListeners;
     ArrayList<EditBuildActivity.BuildReadyCallbacks> mBuildListeners;
@@ -206,8 +206,8 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
 
         currentBuild = build;
         currentBuildID = build.getId();
-        baseWeaponInfo = currentBuild.getWeaponsFromXML();
         baseAttachmentInfo = currentBuild.getAttachmentsFromXML();
+        overriderAttachmentInfo = currentBuild.getAttachmentsOverridesFromXML();
 
         infoReady = true;
 
@@ -285,7 +285,7 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
 
     public void updateCurrentWeapon(int attachmentType, int oldAttachmentIndex, int newAttachmentIndex) {
         String newAttachmentID = "-1";
-        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(this, baseWeaponInfo, baseAttachmentInfo);
+        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(this);
         dataSourceWeapons.open();
 
         // Remove old attachment
@@ -336,7 +336,7 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
 
         @Override
         protected Weapon doInBackground(Void... params) {
-            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(EditWeaponActivity.this, baseWeaponInfo, baseAttachmentInfo);
+            DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(EditWeaponActivity.this);
             dataSourceWeapons.open();
             Weapon weapon = dataSourceWeapons.getWeapon(id);
             dataSourceWeapons.close();
@@ -355,10 +355,26 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
             for (int i = Attachment.MOD_AMMO; i <= Attachment.MOD_STAT_BOOST; i++) {
                 attachmentsSplitUp.add(new ArrayList<Attachment>());
             }
+
+            ArrayList<String> attachmentBlackList = new ArrayList<>();
+            for (Attachment xml : overriderAttachmentInfo) {
+                for (String s : currentWeapon.getPossibleAttachments()) {
+                    if (xml.getPd2().equals(s)) {
+                        if (weapon.getPd2().equals(xml.getWeaponToOverride())) {
+                            attachmentsSplitUp.get(xml.getAttachmentType()).add(xml);
+                            attachmentBlackList.add(xml.getPd2());
+                        }
+                    }
+                }
+
+            }
+
             for (Attachment attachment : baseAttachmentInfo) {
                 for (String s : currentWeapon.getPossibleAttachments()) {
                     if (s.equals(attachment.getPd2())) {
-                        attachmentsSplitUp.get(attachment.getAttachmentType()).add(attachment);
+                        if (!attachmentBlackList.contains(attachment.getPd2())) {
+                            attachmentsSplitUp.get(attachment.getAttachmentType()).add(attachment);
+                        }
                     }
                 }
             }

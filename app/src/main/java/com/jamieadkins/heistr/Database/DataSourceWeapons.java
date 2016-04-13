@@ -48,22 +48,15 @@ public class DataSourceWeapons {
     private ArrayList<Weapon> baseWeaponInfo;
     private ArrayList<MeleeWeapon> meleeWeaponInfo;
     private final ArrayList<Attachment> baseAttachmentInfo;
+    private final ArrayList<Attachment> overrideAttachmentInfo;
 
-    public DataSourceWeapons(Context context, ArrayList<Weapon> baseWeaponInfo, ArrayList<Attachment> baseAttachmentInfo) {
+    public DataSourceWeapons(Context context) {
         dbHelper = new MySQLiteHelper(context);
         mContext = context;
-        this.baseWeaponInfo = baseWeaponInfo;
-        this.baseAttachmentInfo = baseAttachmentInfo;
-    }
-
-    public DataSourceWeapons(Context context, ArrayList<Weapon> baseWeaponInfo,
-                             ArrayList<MeleeWeapon> meleeWeaponInfo,
-                             ArrayList<Attachment> baseAttachmentInfo) {
-        dbHelper = new MySQLiteHelper(context);
-        mContext = context;
-        this.baseWeaponInfo = baseWeaponInfo;
-        this.meleeWeaponInfo = meleeWeaponInfo;
-        this.baseAttachmentInfo = baseAttachmentInfo;
+        this.baseWeaponInfo = WeaponBuild.getWeaponsFromXML(context.getResources());
+        this.baseAttachmentInfo = Attachment.getAttachmentsFromXML(context.getResources());
+        this.meleeWeaponInfo = MeleeWeapon.getMeleeWeaponsFromXML(context.getResources());
+        this.overrideAttachmentInfo = Attachment.getAttachmentOverrides(context.getResources());
     }
 
     public void open() throws SQLException {
@@ -257,10 +250,26 @@ public class DataSourceWeapons {
         }
 
         ArrayList<Attachment> equippedAttachments = new ArrayList<>();
+
+        ArrayList<String> attachmentBlackList = new ArrayList<>();
+        for (Attachment xml : overrideAttachmentInfo) {
+            for (String id : attachments) {
+                if (xml.getPd2().equals(id)) {
+                    if (weapon.getPd2().equals(xml.getWeaponToOverride())) {
+                        equippedAttachments.add(xml);
+                        attachmentBlackList.add(xml.getPd2());
+                    }
+                }
+            }
+
+        }
+
         for (Attachment xml : baseAttachmentInfo) {
             for (String id : attachments) {
                 if (xml.getPd2().equals(id)) {
-                    equippedAttachments.add(xml);
+                    if (!attachmentBlackList.contains(xml.getPd2())) {
+                        equippedAttachments.add(xml);
+                    }
                 }
             }
 

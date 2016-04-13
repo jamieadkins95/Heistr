@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<overrides>
+    <attachment_group>
+        <group_name>barrel</group_name>
+        <attachment>
+            <weapon>wpn_fps_ass_m16</weapon>
+            <pd2>wpn_fps_upg_ass_m4_b_beowulf</pd2>
+            <name>DMR Kit</name>
+            <total_ammo>-18</total_ammo>
+            <magsize>0</magsize>
+            <damage>80</damage>
+            <accuracy>16</accuracy>
+            <stability>-16</stability>
+            <concealment>-4</concealment>
+        </attachment>
+
+        <attachment>
+            <weapon>wpn_fps_ass_74</weapon>
+            <pd2>wpn_fps_upg_ass_ak_b_zastava</pd2>
+            <name>DMR Kit</name>
+            <total_ammo>-90</total_ammo>
+            <magsize>0</magsize>
+            <damage>120</damage>
+            <accuracy>12</accuracy>
+            <stability>-36</stability>
+            <concealment>-4</concealment>
+        </attachment>
+    </attachment_group>
+    <attachment_group>
+        <group_name>magazine</group_name>
+        <attachment>
+            <weapon>wpn_fps_x_deagle</weapon>
+            <pd2>wpn_fps_pis_deagle_m_extended</pd2>
+            <name>Extended Magazine</name>
+            <total_ammo>0</total_ammo>
+            <magsize>12</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>-2</concealment>
+        </attachment>
+        <attachment>
+            <weapon>wpn_fps_pis_x_usp</weapon>
+            <pd2>wpn_fps_pis_usp_m_extended</pd2>
+            <name>Extended Magazine</name>
+            <total_ammo>0</total_ammo>
+            <magsize>16</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>-1</concealment>
+        </attachment>
+        <attachment>
+            <weapon>wpn_fps_pis_x_g22c</weapon>
+            <pd2>wpn_fps_pis_g18c_m_mag_33rnd</pd2>
+            <name>Extended Magazine</name>
+            <total_ammo>0</total_ammo>
+            <magsize>24</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>-1</concealment>
+        </attachment>
+        <attachment>
+            <weapon>wpn_fps_x_1911</weapon>
+            <pd2>wpn_fps_pis_1911_m_extended</pd2>
+            <name>12rnd Mag.</name>
+            <total_ammo>0</total_ammo>
+            <magsize>12</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>-1</concealment>
+        </attachment>
+        <attachment>
+            <weapon>wpn_fps_x_b92fs</weapon>
+            <pd2>wpn_fps_pis_beretta_m_extended</pd2>
+            <name>Extended Magazine</name>
+            <total_ammo>0</total_ammo>
+            <magsize>24</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>-2</concealment>
+        </attachment>
+    </attachment_group>
+    <attachment_group>
+        <group_name>grip</group_name>
+        <attachment>
+            <weapon>wpn_fps_snp_m95</weapon>
+            <pd2>wpn_fps_upg_m4_g_mgrip</pd2>
+            <name>Straight Grip</name>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>1</concealment>
+        </attachment>
+    </attachment_group>
+
+</overrides>

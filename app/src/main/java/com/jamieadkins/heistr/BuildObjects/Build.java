@@ -24,6 +24,7 @@ public class Build {
     ArrayList<Weapon> weaponsFromXML;
     ArrayList<MeleeWeapon> meleeWeaponsFromXML;
     ArrayList<Attachment> attachmentsFromXML;
+    ArrayList<Attachment> attachmentsOverridesFromXML;
 
     int perkDeck = 0;
     int armour = 0;
@@ -108,6 +109,14 @@ public class Build {
 
     public void setAttachmentsFromXML(ArrayList<Attachment> attachmentsFromXML) {
         this.attachmentsFromXML = attachmentsFromXML;
+    }
+
+    public ArrayList<Attachment> getAttachmentsOverridesFromXML() {
+        return attachmentsOverridesFromXML;
+    }
+
+    public void setAttachmentsOverridesFromXML(ArrayList<Attachment> attachmentsOverridesFromXML) {
+        this.attachmentsOverridesFromXML = attachmentsOverridesFromXML;
     }
 
     public void setId(long id) {

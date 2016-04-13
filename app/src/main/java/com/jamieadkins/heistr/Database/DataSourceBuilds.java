@@ -37,6 +37,7 @@ public class DataSourceBuilds {
     ArrayList<Weapon> baseWeaponInfo;
     ArrayList<MeleeWeapon> meleeWeaponInfo;
     ArrayList<Attachment> baseAttachmentInfo;
+    ArrayList<Attachment> overrideAttachmentInfo;
 
     public DataSourceBuilds(Context context) {
         dbHelper = new MySQLiteHelper(context);
@@ -44,6 +45,7 @@ public class DataSourceBuilds {
         this.baseWeaponInfo = WeaponBuild.getWeaponsFromXML(context.getResources());
         this.meleeWeaponInfo = MeleeWeapon.getMeleeWeaponsFromXML(context.getResources());
         this.baseAttachmentInfo = Attachment.getAttachmentsFromXML(context.getResources());
+        this.overrideAttachmentInfo = Attachment.getAttachmentOverrides(context.getResources());
     }
 
     public void open() throws SQLException {
@@ -69,7 +71,7 @@ public class DataSourceBuilds {
         }
 
         DataSourceSkills dataSourceSkills = new DataSourceSkills(context);
-        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context, baseWeaponInfo, meleeWeaponInfo, baseAttachmentInfo);
+        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context);
         dataSourceSkills.open();
         dataSourceWeapons.open();
         long skillBuildID;
@@ -240,8 +242,9 @@ public class DataSourceBuilds {
         build.setWeaponsFromXML(baseWeaponInfo);
         build.setMeleeWeaponsFromXML(meleeWeaponInfo);
         build.setAttachmentsFromXML(baseAttachmentInfo);
+        build.setAttachmentsOverridesFromXML(overrideAttachmentInfo);
 
-        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context, baseWeaponInfo, meleeWeaponInfo, baseAttachmentInfo);
+        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(context);
         dataSourceWeapons.open();
         WeaponBuild weaponBuildFromDB = dataSourceWeapons.getWeaponBuild(weaponBuildID);
         dataSourceWeapons.close();

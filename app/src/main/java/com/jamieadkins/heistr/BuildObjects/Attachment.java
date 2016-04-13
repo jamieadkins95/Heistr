@@ -46,11 +46,12 @@ public class Attachment {
     private float stability = 100;
     private int concealment = 100;
     private int threat = 100;
+    private String weaponToOverride = null;
 
     //region XML
-    public static ArrayList<Attachment> getAttachmentsFromXML(Resources res) {
+    public static ArrayList<Attachment> getAttachmentsFromXML(Resources res, int attachmentResourceID) {
         ArrayList<Attachment> attachments = new ArrayList<>();
-        XmlResourceParser xmlParser = res.getXml(R.xml.attachments);
+        XmlResourceParser xmlParser = res.getXml(attachmentResourceID);
 
         try {
             int eventType = xmlParser.getEventType();
@@ -112,6 +113,9 @@ public class Attachment {
                         case "group_name":
                             attachmentGroup = text;
                             break;
+                        case "weapon":
+                            currentAttachment.setWeaponToOverride(text);
+                            break;
                         case "pd2":
                             currentAttachment.setPd2(text);
                             break;
@@ -161,6 +165,15 @@ public class Attachment {
         xmlParser.close();
         //Log.d("Result from XML", skillBuildFromXML.toString());
         return attachments;
+    }
+
+    public static ArrayList<Attachment> getAttachmentsFromXML(Resources res) {
+        ArrayList<Attachment> allAttachments = getAttachmentsFromXML(res, R.xml.attachments);
+        return allAttachments;
+    }
+
+    public static ArrayList<Attachment> getAttachmentOverrides(Resources res) {
+        return getAttachmentsFromXML(res, R.xml.overrides);
     }
 
     public static int attachmentGroupFromString(String xmlString) {
@@ -253,6 +266,14 @@ public class Attachment {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getWeaponToOverride() {
+        return weaponToOverride;
+    }
+
+    public void setWeaponToOverride(String weaponToOverride) {
+        this.weaponToOverride = weaponToOverride;
     }
 
     public void setPd2skillsID(long pd2skillsID) {
