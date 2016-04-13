@@ -113,11 +113,15 @@ public class Weapon {
     }
 
     public int getAttachmentAmmo() {
-        return 0;
+        int magSize = 0;
+        for (Attachment attachment : attachments) {
+            magSize += attachment.getTotalAmmo();
+        }
+        return magSize;
     }
 
     public int getSkillAmmo(SkillStatChangeManager skillStatChangeManager) {
-        return getTotalAmmo(skillStatChangeManager) - getBaseAmmo();
+        return getTotalAmmo(skillStatChangeManager) - getBaseAmmo() - getAttachmentAmmo();
     }
 
     public int getTotalAmmo(SkillStatChangeManager skillStatChangeManager) {

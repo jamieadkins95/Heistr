@@ -98,5 +98,11 @@ public class WeaponOverallFragment extends Fragment implements EditWeaponActivit
         } else {
             activity.listen(this);
         }
+
+        if (activity.getCurrentWeapon() != null) {
+            onWeaponReady();
+        } else {
+            activity.listen(this);
+        }
     }
 }

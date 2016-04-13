@@ -39,6 +39,7 @@ public class Attachment {
     String name = "attach";
     String subtype = "none";
     int attachmentGroup = -1;
+    private int totalAmmo = 100;
     private int magsize = 100;
     private float damage = 100;
     private float accuracy = 100;
@@ -87,7 +88,9 @@ public class Attachment {
                                 if (currentAttachment.damage == 0 &&
                                         currentAttachment.stability == 0 &&
                                         currentAttachment.accuracy == 0 &&
-                                        currentAttachment.concealment == 0 && currentAttachment.magsize == 0 &&
+                                        currentAttachment.concealment == 0 &&
+                                        currentAttachment.magsize == 0 &&
+                                        currentAttachment.totalAmmo == 0 &&
                                         !currentAttachment.getName().toLowerCase().contains("laser") &&
                                         !currentAttachment.getPd2().contains("saw")) {
                                     //Log.e("JAMIEA", currentAttachment.getName());
@@ -121,8 +124,12 @@ public class Attachment {
                         case "name":
                             currentAttachment.setName(text);
                             break;
+                        case "total_ammo":
+                            currentAttachment.setTotalAmmo(Integer.parseInt(text));
+                            break;
                         case "magsize":
                             currentAttachment.setMagsize(Integer.parseInt(text));
+                            break;
                         case "damage":
                             currentAttachment.setDamage(Float.parseFloat(text));
                             break;
@@ -312,6 +319,14 @@ public class Attachment {
         this.magsize = magsize;
     }
 
+    public int getTotalAmmo() {
+        return totalAmmo;
+    }
+
+    public void setTotalAmmo(int totalAmmo) {
+        this.totalAmmo = totalAmmo;
+    }
+
     public String getSubtype() {
         return subtype;
     }
@@ -331,6 +346,9 @@ public class Attachment {
     public String toString(Resources res) {
         String info = "";
 
+        if (totalAmmo != 0) {
+            info += res.getString(R.string.weapon_attribute_ammo) + ": " + totalAmmo + "\n";
+        }
         if (magsize != 0) {
             info += res.getString(R.string.weapon_attribute_magazine) + ": " + magsize + "\n";
         }
