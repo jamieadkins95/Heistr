@@ -8,8 +8,8 @@ android {
         applicationId "com.jamieadkins.heistr"
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 52
-        versionName "1.4.4"
+        versionCode 53
+        versionName "1.4.4.1"
     }
     buildTypes {
         release {
