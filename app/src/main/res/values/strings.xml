@@ -238,6 +238,32 @@
     <string name="pref_build_name_length">Build name character limit</string>
     <string name="pref_build_name_length_summ">Max characters of a build\'s name to display</string>
     <string name="pref_category">Small Screen Support</string>
+    <string name="big_oil_nozzles_unknown">Unknown number of nozzles</string>
+    <string name="big_oil_nozzles_1">1 x H (1 nozzle)</string>
+    <string name="big_oil_nozzles_2">2 x H (2 nozzles)</string>
+    <string name="big_oil_nozzles_3">3 x H (3 nozzles)</string>
+    <string name="big_oil_element_unknown">Element unknown</string>
+    <string name="big_oil_element_nitrogen">Nitrogen (Titanium)</string>
+    <string name="big_oil_element_deuterium">Deuterium (Palladium)</string>
+    <string name="big_oil_element_helium">Helium (Platinum)</string>
+    <string name="big_oil_pressure_unknown">Pressure Unknown</string>
+    <string name="big_oil_pressure_greater_than"><![CDATA[> 5783]]></string>
+    <string name="big_oil_pressure_less_than"><![CDATA[< 5783]]></string>
+    <string name="big_oil_doors">Doors</string>
+    <string name="big_oil_engine_12">12</string>
+    <string name="big_oil_engine_7">7</string>
+    <string name="big_oil_stairs">Stairs</string>
+    <string name="big_oil_engine_2">2</string>
+    <string name="big_oil_engine_1">1</string>
+    <string name="big_oil_engine_4">4</string>
+    <string name="big_oil_engine_3">3</string>
+    <string name="big_oil_engine_6">6</string>
+    <string name="big_oil_engine_5">5</string>
+    <string name="big_oil_engine_9">9</string>
+    <string name="big_oil_engine_8">8</string>
+    <string name="big_oil_engine_11">11</string>
+    <string name="big_oil_engine_10">10</string>
+    <string name="info">Info</string>
 
 
 </resources>

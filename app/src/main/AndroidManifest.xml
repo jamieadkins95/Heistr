@@ -49,6 +49,11 @@
             android:name=".Activities.SettingsActivity"
             android:label="@string/title_activity_settings" >
         </activity>
+        <activity
+                android:name=".Activities.BigOilActivity"
+                android:label="@string/big_oil"
+                android:parentActivityName=".Activities.BuildListActivity">
+        </activity>
     </application>
 
 </manifest>

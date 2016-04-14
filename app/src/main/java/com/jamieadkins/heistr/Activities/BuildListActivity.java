@@ -38,6 +38,10 @@ public class BuildListActivity extends AppCompatActivity {
                 Intent settingsIntent = new Intent(this, SettingsActivity.class);
                 startActivity(settingsIntent);
                 return true;
+            case R.id.action_big_oil:
+                Intent bigoilIntent = new Intent(this, BigOilActivity.class);
+                startActivity(bigoilIntent);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

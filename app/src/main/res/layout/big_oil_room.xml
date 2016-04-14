@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <TextView android:layout_height="wrap_content"
+              android:layout_width="match_parent"
+              android:text="@string/big_oil_doors"
+              android:gravity="center_horizontal"
+              android:paddingBottom="8dp"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center_horizontal"
+                  android:orientation="horizontal"
+                  android:paddingBottom="8dp">
+        <TextView android:id="@+id/engine_12"
+                  android:text="@string/big_oil_engine_12"
+                  android:layout_height="wrap_content"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:gravity="center_horizontal"/>
+        <TextView android:id="@+id/engine_7"
+                  android:text="@string/big_oil_engine_7"
+                  android:layout_height="wrap_content"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:gravity="center_horizontal"/>
+        <TextView android:layout_height="wrap_content"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:gravity="center_horizontal"/>
+        <TextView android:id="@+id/engine_2"
+                  android:text="@string/big_oil_engine_2"
+                  android:layout_height="wrap_content"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:gravity="center_horizontal"/>
+        <TextView android:id="@+id/engine_1"
+                  android:text="@string/big_oil_engine_1"
+                  android:layout_height="wrap_content"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center_horizontal"
+                  android:orientation="horizontal"
+                  android:paddingBottom="8dp">
+        <TextView android:id="@+id/engine_10"
+                  android:text="@string/big_oil_engine_10"
+                  android:textColor="@color/textHint"
+                  android:layout_height="wrap_content"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:gravity="center_horizontal"/>
+        <TextView android:id="@+id/engine_9"
+                  android:text="@string/big_oil_engine_9"
+                  android:layout_height="wrap_content"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:gravity="center_horizontal"/>
+        <TextView android:text="@string/big_oil_stairs"
+                  android:layout_height="wrap_content"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:gravity="center_horizontal"/>
+        <TextView android:id="@+id/engine_4"
+                  android:text="@string/big_oil_engine_4"
+                  android:textColor="@color/textHint"
+                  android:layout_height="wrap_content"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:gravity="center_horizontal"/>
+        <TextView android:id="@+id/engine_3"
+                  android:text="@string/big_oil_engine_3"
+                  android:textColor="@color/textHint"
+                  android:layout_height="wrap_content"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center_horizontal"
+                  android:orientation="horizontal"
+                  android:paddingBottom="8dp">
+        <TextView android:id="@+id/engine_8"
+                  android:text="@string/big_oil_engine_8"
+                  android:layout_height="wrap_content"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:gravity="center_horizontal"/>
+        <TextView android:id="@+id/engine_11"
+                  android:text="@string/big_oil_engine_11"
+                  android:layout_height="wrap_content"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:gravity="center_horizontal"/>
+        <TextView android:layout_height="wrap_content"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:gravity="center_horizontal"/>
+        <TextView android:id="@+id/engine_6"
+                  android:text="@string/big_oil_engine_6"
+                  android:layout_height="wrap_content"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:gravity="center_horizontal"/>
+        <TextView android:id="@+id/engine_5"
+                  android:text="@string/big_oil_engine_5"
+                  android:layout_height="wrap_content"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

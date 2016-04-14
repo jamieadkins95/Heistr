@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingTop="@dimen/activity_vertical_margin">
+
+    <include layout="@layout/big_oil_room"/>
+
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <RadioGroup
+                    android:id="@+id/radioGroupNozzle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+                <RadioButton
+                        android:checked="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/big_oil_nozzles_unknown"
+                        android:id="@+id/rbUnknownNozzles"/>
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/big_oil_nozzles_1"
+                        android:id="@+id/rb1Nozzles"/>
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/big_oil_nozzles_2"
+                        android:id="@+id/rb2Nozzles"/>
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/big_oil_nozzles_3"
+                        android:id="@+id/rb3Nozzles"/>
+
+            </RadioGroup>
+
+            <RadioGroup
+                    android:id="@+id/radioGroupElement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+                <RadioButton
+                        android:checked="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/big_oil_element_unknown"
+                        android:id="@+id/rbUnknownElement"/>
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/big_oil_element_nitrogen"
+                        android:id="@+id/rbNitrogen"/>
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/big_oil_element_deuterium"
+                        android:id="@+id/rbDeuterium"/>
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/big_oil_element_helium"
+                        android:id="@+id/rbHelium"/>
+
+            </RadioGroup>
+
+            <RadioGroup
+                    android:id="@+id/radioGroupPressure"
+                    android:checked="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+                <RadioButton
+                        android:checked="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/big_oil_pressure_unknown"
+                        android:id="@+id/rbUnknownPressure"/>
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/big_oil_pressure_greater_than"
+                        android:id="@+id/rbGreaterThanPressure"/>
+                <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/big_oil_pressure_less_than"
+                        android:id="@+id/rbLessThanPressure"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
