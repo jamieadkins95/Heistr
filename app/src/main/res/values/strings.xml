@@ -238,11 +238,11 @@
     <string name="pref_build_name_length">Build name character limit</string>
     <string name="pref_build_name_length_summ">Max characters of a build\'s name to display</string>
     <string name="pref_category">Small Screen Support</string>
-    <string name="big_oil_nozzles_unknown">Unknown number of nozzles</string>
+    <string name="big_oil_nozzles_unknown">Nozzles Unknown</string>
     <string name="big_oil_nozzles_1">1 x H (1 nozzle)</string>
     <string name="big_oil_nozzles_2">2 x H (2 nozzles)</string>
     <string name="big_oil_nozzles_3">3 x H (3 nozzles)</string>
-    <string name="big_oil_element_unknown">Element unknown</string>
+    <string name="big_oil_element_unknown">Element Unknown</string>
     <string name="big_oil_element_nitrogen">Nitrogen (Titanium)</string>
     <string name="big_oil_element_deuterium">Deuterium (Palladium)</string>
     <string name="big_oil_element_helium">Helium (Platinum)</string>
