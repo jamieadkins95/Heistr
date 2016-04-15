@@ -1,7 +1,5 @@
 package com.jamieadkins.heistr.Fragments;
 
-import android.app.DialogFragment;
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +7,8 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.util.SparseBooleanArray;
@@ -50,7 +50,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
     ArrayList<Build> buildList;
 
     public static final int NEW_DIALOG_FRAGMENT = 1;
-    public static final int RENAME_DIALOG_FRAGMENT = 2;
+    public static final int DIALOG_FRAGMENT = 2;
 
 
     public BuildListFragment() {
@@ -119,8 +119,8 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
                         return true;
                     case R.id.action_rename:
                         DialogFragment dialog = RenameBuildDialog.newInstance(false, lvBuilds.getCheckedItemPositions());
-                        dialog.setTargetFragment(BuildListFragment.this, RENAME_DIALOG_FRAGMENT);
-                        dialog.show(getActivity().getFragmentManager(), "RenameBuildDialogFragment");
+                        dialog.setTargetFragment(BuildListFragment.this, DIALOG_FRAGMENT);
+                        dialog.show(getActivity().getSupportFragmentManager(), "RenameBuildDialogFragment");
 
                         mode.finish();
                         return true;
@@ -190,7 +190,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
                     // Create an instance of the dialog fragment and show it
                     DialogFragment dialog = NewBuildDialog.newInstance(buildList);
                     dialog.setTargetFragment(BuildListFragment.this, NEW_DIALOG_FRAGMENT);
-                    dialog.show(getActivity().getFragmentManager(), "NewBuildDialogFragment");
+                    dialog.show(getActivity().getSupportFragmentManager(), "NewBuildDialogFragment");
                 }
 
 

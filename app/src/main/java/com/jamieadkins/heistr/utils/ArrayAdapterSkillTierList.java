@@ -1,9 +1,11 @@
 package com.jamieadkins.heistr.utils;
 
-import android.app.Activity;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
@@ -165,8 +167,8 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier> {
                 public boolean onLongClick(View v) {
                     SkillDialog dialog = SkillDialog.newInstance(tier.getSkillsInTier().get(skill));
                     try {
-                        Activity activity = (Activity) context;
-                        dialog.show(activity.getFragmentManager(), "skills");
+                        AppCompatActivity activity = (AppCompatActivity) context;
+                        dialog.show(activity.getSupportFragmentManager(), "skills");
                     } catch (Exception e) {
                         Toast.makeText(context, "Cannot show skill details :(", Toast.LENGTH_SHORT).show();
                     }

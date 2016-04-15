@@ -1,5 +1,6 @@
 package com.jamieadkins.heistr.Fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -44,8 +45,6 @@ public class WeaponOverallFragment extends Fragment implements EditWeaponActivit
     @Override
     public void onResume() {
         super.onResume();
-
-        activity = (EditWeaponActivity) getActivity();
         if (activity.getCurrentWeapon() != null) {
             onWeaponReady();
         } else {
@@ -53,6 +52,12 @@ public class WeaponOverallFragment extends Fragment implements EditWeaponActivit
         }
 
         onShow();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        activity = (EditWeaponActivity) getActivity();
     }
 
     @Override

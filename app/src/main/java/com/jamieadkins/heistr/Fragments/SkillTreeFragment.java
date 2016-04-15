@@ -1,6 +1,7 @@
 package com.jamieadkins.heistr.Fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
@@ -70,12 +71,17 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
     @Override
     public void onResume() {
         super.onResume();
-        activity = (EditBuildActivity) getActivity();
         if (activity.getCurrentBuild() == null) {
             activity.listenIn(this);
         } else {
             onBuildReady();
         }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        activity = (EditBuildActivity) getActivity();
     }
 
     @Override
@@ -106,6 +112,10 @@ public class SkillTreeFragment extends Fragment implements EditBuildActivity.Bui
 
     @Override
     public void onBuildReady() {
+        if (activity == null) {
+            return;
+        }
+
         currentSkillTree = activity.getCurrentBuild().getSkillBuild().getSkillTrees().get(skillTreeNum);
 
 

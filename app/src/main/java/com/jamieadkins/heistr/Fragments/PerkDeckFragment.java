@@ -1,9 +1,10 @@
 package com.jamieadkins.heistr.Fragments;
 
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,8 +80,8 @@ public class PerkDeckFragment extends Fragment implements EditBuildActivity.Buil
                 if (selected == activity.getCurrentBuild().getPerkDeck()) {
                     PerkDeckDialog dialog = PerkDeckDialog.newInstance(selected);
                     try {
-                        Activity activity = getActivity();
-                        dialog.show(activity.getFragmentManager(), "perkdeck");
+                        FragmentActivity activity = getActivity();
+                        dialog.show(activity.getSupportFragmentManager(), "perkdeck");
                     } catch (Exception e) {
                         Toast.makeText(activity, "Cannot show perkdeck details :(", Toast.LENGTH_SHORT).show();
                     }
@@ -97,8 +98,8 @@ public class PerkDeckFragment extends Fragment implements EditBuildActivity.Buil
                 int selected = (int) id;
                 PerkDeckDialog dialog = PerkDeckDialog.newInstance(selected);
                 try {
-                    Activity activity = getActivity();
-                    dialog.show(activity.getFragmentManager(), "perkdeck");
+                    FragmentActivity activity = getActivity();
+                    dialog.show(activity.getSupportFragmentManager(), "perkdeck");
                 } catch (Exception e) {
                     Toast.makeText(activity, "Cannot show perkdeck details :(", Toast.LENGTH_SHORT).show();
                 }

@@ -1,7 +1,6 @@
 package com.jamieadkins.heistr.Activities;
 
 import android.Manifest;
-import android.app.DialogFragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.nfc.NdefMessage;
@@ -12,6 +11,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -170,7 +170,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
                 return true;
             case R.id.action_URL:
                 DialogFragment dialog = PD2SkillsExportDialog.newInstance(URLEncoder.encodeBuild(this, currentBuild));
-                dialog.show(getFragmentManager(), "PD2SkillsExportDialogFragment");
+                dialog.show(getSupportFragmentManager(), "PD2SkillsExportDialogFragment");
                 return true;
             case R.id.action_rename:
                 showRenameBuildDialog();
@@ -289,7 +289,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
 
     private void showRenameBuildDialog() {
         DialogFragment dialog = RenameBuildDialog.newInstance(true, null);
-        dialog.show(getFragmentManager(), "RenameBuildDialogFragment");
+        dialog.show(getSupportFragmentManager(), "RenameBuildDialogFragment");
     }
 
     public void listenIn(Fragment f) {
