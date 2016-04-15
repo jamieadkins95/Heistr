@@ -123,5 +123,14 @@
     </LinearLayout>
 
 
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingTop="4dp"
+              android:text="@string/big_oil_long_guide"
+              android:textColor="@color/textHint"
+              android:textStyle="italic"
+              android:gravity="center_horizontal"/>
+
+
 
 </LinearLayout>

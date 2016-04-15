@@ -264,6 +264,7 @@
     <string name="big_oil_engine_11">11</string>
     <string name="big_oil_engine_10">10</string>
     <string name="info">Info</string>
+    <string name="big_oil_long_guide">Engines 3, 4 and 10 are never correct.</string>
 
 
 </resources>
