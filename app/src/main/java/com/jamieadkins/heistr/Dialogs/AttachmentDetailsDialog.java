@@ -87,7 +87,12 @@ public class AttachmentDetailsDialog extends DialogFragment {
                 newAttachment.setTextColor(better ? green : red);
             }
 
-            if (mNewAttachment.getTotalAmmo() == 0) {
+            boolean hide = mNewAttachment.getTotalAmmo() == 0;
+            if (mCurrentAttachment != null) {
+                hide = hide && mCurrentAttachment.getTotalAmmo() == 0;
+            }
+
+            if (hide) {
                 attribute.setVisibility(View.GONE);
                 currentWeapon.setVisibility(View.GONE);
                 currentAttachment.setVisibility(View.GONE);
@@ -116,7 +121,12 @@ public class AttachmentDetailsDialog extends DialogFragment {
                 newAttachment.setTextColor(better ? green : red);
             }
 
-            if (mNewAttachment.getMagsize() == 0) {
+            boolean hide = mNewAttachment.getMagsize() == 0;
+            if (mCurrentAttachment != null) {
+                hide = hide && mCurrentAttachment.getMagsize() == 0;
+            }
+
+            if (hide) {
                 attribute.setVisibility(View.GONE);
                 currentWeapon.setVisibility(View.GONE);
                 currentAttachment.setVisibility(View.GONE);
@@ -145,7 +155,12 @@ public class AttachmentDetailsDialog extends DialogFragment {
                 newAttachment.setTextColor(better ? green : red);
             }
 
-            if (mNewAttachment.getDamage() == 0) {
+            boolean hide = mNewAttachment.getDamage() == 0;
+            if (mCurrentAttachment != null) {
+                hide = hide && mCurrentAttachment.getDamage() == 0;
+            }
+
+            if (hide) {
                 attribute.setVisibility(View.GONE);
                 currentWeapon.setVisibility(View.GONE);
                 currentAttachment.setVisibility(View.GONE);
@@ -174,7 +189,12 @@ public class AttachmentDetailsDialog extends DialogFragment {
                 newAttachment.setTextColor(better ? green : red);
             }
 
-            if (mNewAttachment.getAccuracy() == 0) {
+            boolean hide = mNewAttachment.getAccuracy() == 0;
+            if (mCurrentAttachment != null) {
+                hide = hide && mCurrentAttachment.getAccuracy() == 0;
+            }
+
+            if (hide) {
                 attribute.setVisibility(View.GONE);
                 currentWeapon.setVisibility(View.GONE);
                 currentAttachment.setVisibility(View.GONE);
@@ -203,7 +223,12 @@ public class AttachmentDetailsDialog extends DialogFragment {
                 newAttachment.setTextColor(better ? green : red);
             }
 
-            if (mNewAttachment.getStability() == 0) {
+            boolean hide = mNewAttachment.getStability() == 0;
+            if (mCurrentAttachment != null) {
+                hide = hide && mCurrentAttachment.getStability() == 0;
+            }
+
+            if (hide) {
                 attribute.setVisibility(View.GONE);
                 currentWeapon.setVisibility(View.GONE);
                 currentAttachment.setVisibility(View.GONE);
@@ -232,7 +257,12 @@ public class AttachmentDetailsDialog extends DialogFragment {
                 newAttachment.setTextColor(better ? green : red);
             }
 
-            if (mNewAttachment.getConcealment() == 0) {
+            boolean hide = mNewAttachment.getConcealment() == 0;
+            if (mCurrentAttachment != null) {
+                hide = hide && mCurrentAttachment.getConcealment() == 0;
+            }
+
+            if (hide) {
                 attribute.setVisibility(View.GONE);
                 currentWeapon.setVisibility(View.GONE);
                 currentAttachment.setVisibility(View.GONE);
