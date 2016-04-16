@@ -12,4 +12,4 @@ You can download Heistr [here](https://play.google.com/store/apps/details?id=com
 
 # License
 
-This project (referred to as 'Heistr') is released under the **The GNU General Public License v3.0 (GPLv3)**, which can be found in the `LICENSE` file in the root of this project.
+This project (referred to as 'Heistr') is released under the **The MIT License**, which can be found in the `LICENSE` file in the root of this project.
