@@ -210,6 +210,14 @@ public class DataSourceWeapons {
         database.update(MySQLiteHelper.TABLE_WEAPONS, values, MySQLiteHelper.COLUMN_ID + " = " + id, null);
     }
 
+    public void renameWeapon(long id, String newName) {
+        ContentValues values = new ContentValues();
+        values.put(MySQLiteHelper.COLUMN_NAME, newName);
+
+        database.update(MySQLiteHelper.TABLE_WEAPONS, values, MySQLiteHelper.COLUMN_ID + " = " + id, null);
+        Log.d("DB", "Name updated for weapon " + id + " to " + newName);
+    }
+
 
     private WeaponBuild cursorToWeaponBuild(Cursor cursorWeaponBuild) {
 

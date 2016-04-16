@@ -31,7 +31,7 @@ import com.jamieadkins.heistr.BuildObjects.WeaponBuild;
 import com.jamieadkins.heistr.Consts.Trees;
 import com.jamieadkins.heistr.Database.DataSourceBuilds;
 import com.jamieadkins.heistr.Dialogs.PD2SkillsExportDialog;
-import com.jamieadkins.heistr.Dialogs.RenameBuildDialog;
+import com.jamieadkins.heistr.Dialogs.RenameDialog;
 import com.jamieadkins.heistr.Fragments.ArmourFragment;
 import com.jamieadkins.heistr.Fragments.BlankFragment;
 import com.jamieadkins.heistr.Fragments.BuildListFragment;
@@ -49,7 +49,7 @@ import java.util.ArrayList;
 import static android.nfc.NdefRecord.createMime;
 
 public class EditBuildActivity extends AppCompatActivity implements TaskFragment.TaskCallbacks,
-        RenameBuildDialog.RenameBuildDialogListener, NfcAdapter.CreateNdefMessageCallback {
+        RenameDialog.RenameDialogListener, NfcAdapter.CreateNdefMessageCallback {
 
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
@@ -288,7 +288,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     }
 
     private void showRenameBuildDialog() {
-        DialogFragment dialog = RenameBuildDialog.newInstance(true, null);
+        DialogFragment dialog = RenameDialog.newInstance(true, null);
         dialog.show(getSupportFragmentManager(), "RenameBuildDialogFragment");
     }
 

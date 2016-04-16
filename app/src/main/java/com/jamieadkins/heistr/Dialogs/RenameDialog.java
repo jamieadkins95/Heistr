@@ -1,6 +1,5 @@
 package com.jamieadkins.heistr.Dialogs;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,13 +16,13 @@ import com.jamieadkins.heistr.R;
 /**
  * Created by Jamie on 16/09/2015.
  */
-public class RenameBuildDialog extends DialogFragment {
+public class RenameDialog extends DialogFragment {
     SparseBooleanArray buildPositions;
-    RenameBuildDialogListener mListener;
+    RenameDialogListener mListener;
     boolean callingFromActivity;
 
-    public static RenameBuildDialog newInstance(boolean callingFromActivity, SparseBooleanArray buildPositions) {
-        RenameBuildDialog dialog = new RenameBuildDialog();
+    public static RenameDialog newInstance(boolean callingFromActivity, SparseBooleanArray buildPositions) {
+        RenameDialog dialog = new RenameDialog();
         dialog.buildPositions = null;
         if (buildPositions != null) {
             dialog.buildPositions = buildPositions.clone();
@@ -33,11 +32,11 @@ public class RenameBuildDialog extends DialogFragment {
         return dialog;
     }
 
-    public RenameBuildDialog() {
+    public RenameDialog() {
         super();
     }
 
-    public interface RenameBuildDialogListener {
+    public interface RenameDialogListener {
         public void onDialogRenameBuild(DialogFragment dialog, String name, SparseBooleanArray buildPositions);
     }
 
@@ -52,7 +51,7 @@ public class RenameBuildDialog extends DialogFragment {
 
         builder.setView(v);
 
-        String title = "Rename Build(s)";
+        String title = "Rename";
 
         builder.setTitle(title)
                 .setPositiveButton(R.string.action_rename, new DialogInterface.OnClickListener() {
@@ -60,7 +59,7 @@ public class RenameBuildDialog extends DialogFragment {
                     public void onClick(DialogInterface dialog, int which) {
                         //Name
                         EditText etName = (EditText) getDialog().findViewById(R.id.etNewBuildName);
-                        mListener.onDialogRenameBuild(RenameBuildDialog.this, etName.getText().toString(), buildPositions);
+                        mListener.onDialogRenameBuild(RenameDialog.this, etName.getText().toString(), buildPositions);
                     }
                 })
                 .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
@@ -79,9 +78,9 @@ public class RenameBuildDialog extends DialogFragment {
         try {
             // Instantiate the NoticeDialogListener so we can send events to the host
             if (callingFromActivity) {
-                mListener = (RenameBuildDialogListener) context;
+                mListener = (RenameDialogListener) context;
             } else {
-                mListener = (RenameBuildDialogListener) getTargetFragment();
+                mListener = (RenameDialogListener) getTargetFragment();
             }
 
         } catch (ClassCastException e) {

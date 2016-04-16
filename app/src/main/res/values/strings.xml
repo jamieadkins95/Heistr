@@ -71,6 +71,7 @@
     <string name="detectionShort">Det</string>
     <string name="got_it">Got it!</string>
     <string name="hint_huild_name">Build Name</string>
+    <string name="hint_rename">New Name</string>
     <string name="hint_url">PD2Skills URL</string>
     <string name="cb_infamies">Auto select infamies</string>
     <string name="big_oil">Big Oil</string>

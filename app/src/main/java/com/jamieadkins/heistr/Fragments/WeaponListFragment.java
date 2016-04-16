@@ -26,6 +26,7 @@ import com.jamieadkins.heistr.BuildObjects.Attachment;
 import com.jamieadkins.heistr.BuildObjects.Weapon;
 import com.jamieadkins.heistr.Database.DataSourceWeapons;
 import com.jamieadkins.heistr.Dialogs.NewWeaponDialog;
+import com.jamieadkins.heistr.Dialogs.RenameDialog;
 import com.jamieadkins.heistr.R;
 import com.jamieadkins.heistr.utils.ArrayAdapterWeaponListSmall;
 import com.melnykov.fab.FloatingActionButton;
@@ -35,7 +36,9 @@ import java.util.ArrayList;
 /**
  * Created by Jamie on 26/09/2015.
  */
-public class WeaponListFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks, EditBuildActivity.WeaponsCallbacks, NewWeaponDialog.NewWeaponDialogListener {
+public class WeaponListFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks,
+        EditBuildActivity.WeaponsCallbacks, NewWeaponDialog.NewWeaponDialogListener,
+        RenameDialog.RenameDialogListener {
 
     public final static String EXTRA_WEAPON_ID = "com.jamieadkins.heistr.WEAPONID";
 
@@ -106,7 +109,10 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
                         mode.finish();
                         return true;
                     case R.id.action_rename:
-                        Toast.makeText(getActivity(), "WIP", Toast.LENGTH_SHORT).show();
+                        DialogFragment dialog = RenameDialog.newInstance(false, lvOtherWeapons.getCheckedItemPositions());
+                        dialog.setTargetFragment(WeaponListFragment.this, BuildListFragment.DIALOG_FRAGMENT);
+                        dialog.show(getActivity().getSupportFragmentManager(), "RenameBuildDialogFragment");
+
                         mode.finish();
                         return true;
 
@@ -199,6 +205,21 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
                 Toast.makeText(getActivity(), "Changes were saved and weapon was not equipped", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    @Override
+    public void onDialogRenameBuild(DialogFragment dialog, String name, SparseBooleanArray pos) {
+        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(getActivity());
+        dataSourceWeapons.open();
+        for (int i = 0; i < lvOtherWeapons.getCount(); i++) {
+            if (pos.get(i)) {
+                Weapon weapon = (Weapon) lvOtherWeapons.getItemAtPosition(i);
+                dataSourceWeapons.renameWeapon(weapon.getId(), name);
+            }
+        }
+        dataSourceWeapons.close();
+
+        new GetWeaponsFromDBTask().execute();
     }
 
     @Override

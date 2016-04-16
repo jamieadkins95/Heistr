@@ -28,7 +28,7 @@ import com.jamieadkins.heistr.Activities.EditBuildActivity;
 import com.jamieadkins.heistr.BuildObjects.Build;
 import com.jamieadkins.heistr.Database.DataSourceBuilds;
 import com.jamieadkins.heistr.Dialogs.NewBuildDialog;
-import com.jamieadkins.heistr.Dialogs.RenameBuildDialog;
+import com.jamieadkins.heistr.Dialogs.RenameDialog;
 import com.jamieadkins.heistr.R;
 import com.jamieadkins.heistr.utils.ArrayAdapterBuildList;
 import com.melnykov.fab.FloatingActionButton;
@@ -38,7 +38,7 @@ import java.util.ArrayList;
 /**
  * A fragment containing the list of skill builds
  */
-public class BuildListFragment extends Fragment implements NewBuildDialog.NewBuildDialogListener, RenameBuildDialog.RenameBuildDialogListener {
+public class BuildListFragment extends Fragment implements NewBuildDialog.NewBuildDialogListener, RenameDialog.RenameDialogListener {
 
     public final static String EXTRA_BUILD_ID = "com.jamieadkins.heistr.BUILDID";
     public final static String EXTRA_BUILD_NAME = "com.jamieadkins.heistr.BUILDNAME";
@@ -118,7 +118,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
                         mode.finish();
                         return true;
                     case R.id.action_rename:
-                        DialogFragment dialog = RenameBuildDialog.newInstance(false, lvBuilds.getCheckedItemPositions());
+                        DialogFragment dialog = RenameDialog.newInstance(false, lvBuilds.getCheckedItemPositions());
                         dialog.setTargetFragment(BuildListFragment.this, DIALOG_FRAGMENT);
                         dialog.show(getActivity().getSupportFragmentManager(), "RenameBuildDialogFragment");
 
