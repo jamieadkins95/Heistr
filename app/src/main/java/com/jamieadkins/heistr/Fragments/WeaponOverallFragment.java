@@ -98,6 +98,10 @@ public class WeaponOverallFragment extends Fragment implements EditWeaponActivit
 
     @Override
     public void onShow() {
+        if (activity == null) {
+            return;
+        }
+
         if (activity.getCurrentBuild() != null) {
             onBuildReady();
         } else {
