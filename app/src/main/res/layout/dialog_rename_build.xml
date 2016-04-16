@@ -8,6 +8,8 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:id="@+id/etNewBuildName"
-        android:hint="@string/hint_rename"/>
+        android:hint="@string/hint_rename">
+        <requestFocus/>
+    </EditText>
 
 </LinearLayout>
