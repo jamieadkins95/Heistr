@@ -4,12 +4,6 @@
     tools:context="com.jamieadkins.heistr.Fragments.SkillTreeFragment"
     >
 
-    <!--android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"-->
-
-
     <TextView android:id="@+id/tvPointsRemaining"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,51 +62,4 @@
 
         </android.support.v7.widget.CardView>
     </RelativeLayout>
-
-
-    <!--<RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#9e9e9e">
-
-        <TextView
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvSkillDesc"
-            android:text="Info about skill goes here!"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvSkillDesc"
-            >
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/btn_ace"
-                android:text="Normal"/>
-            <Button
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:background="@drawable/btn_ace"
-                android:text="Ace"/>
-        </LinearLayout>
-
-    </RelativeLayout>-->
-
-
-
-
-
-
 </RelativeLayout>
