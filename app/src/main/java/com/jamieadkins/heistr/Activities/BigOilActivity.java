@@ -5,14 +5,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.jamieadkins.heistr.R;
-
-import java.util.ArrayList;
 
 /**
  * Created by Jamie on 14/04/2016.
@@ -107,7 +106,11 @@ public class BigOilActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_big_oil);
+        setContentView(R.layout.activity_big_oil);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mRadioGroupPressure = (RadioGroup) findViewById(R.id.radioGroupPressure);
         mRadioGroupElement = (RadioGroup) findViewById(R.id.radioGroupElement);
         mRadioGroupNozzle = (RadioGroup) findViewById(R.id.radioGroupNozzle);
@@ -217,7 +220,7 @@ public class BigOilActivity extends AppCompatActivity {
         for (int engine = 0; engine < ENGINES.length; engine ++) {
             int colourToSet = R.color.textHint;
             if (ENGINES[engine].meetsRequirments(mCurrentElement, mCurrentNuzzle, mCurrentPressure)) {
-                colourToSet = R.color.textSecondary;
+                colourToSet = R.color.textPrimary;
             }
 
             mEngineTextViews[engine].setTextColor(ContextCompat.getColor(this, colourToSet));

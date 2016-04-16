@@ -21,8 +21,7 @@
         </activity>
         <activity
             android:name=".Activities.EditBuildActivity"
-            android:label="@string/title_activity_edit_build"
-            android:theme="@style/EditBuildActivity" >
+            android:label="@string/title_activity_edit_build">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -42,8 +41,7 @@
         </activity>
         <activity
             android:name=".Activities.EditWeaponActivity"
-            android:label="@string/title_activity_edit_weapon"
-            android:theme="@style/AppThemeNoActionBar" >
+            android:label="@string/title_activity_edit_weapon">
         </activity>
         <activity
             android:name=".Activities.SettingsActivity"
