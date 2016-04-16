@@ -43,6 +43,7 @@ import com.jamieadkins.heistr.Fragments.PerkDeckFragment;
 import com.jamieadkins.heistr.Fragments.SkillTreeParentFragment;
 import com.jamieadkins.heistr.Fragments.TaskFragment;
 import com.jamieadkins.heistr.Fragments.WeaponListFragment;
+import com.jamieadkins.heistr.Fragments.WeaponListParentFragment;
 import com.jamieadkins.heistr.R;
 import com.jamieadkins.heistr.utils.URLEncoder;
 
@@ -59,6 +60,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     protected final static String BUILD_ID = "BuildID";
     private final static String FRAGMENT_INDEX = "FragmentInd";
     public final static String SKILL_TREE_INDEX = "SkillTreeInd";
+    public final static String WEAPON_LIST_INDEX = "WeaponInd";
     private final static String ACTIVITY_START = "StartAct";
     public static final int WEAPON_EDIT_REQUEST = 505;  // The request code
     private static final int NFC_PERMISSIONS = 506;  // The request code
@@ -72,6 +74,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
 
     private int currentFragment = R.id.nav_skill_trees;
     private int currentSkillTree = Trees.MASTERMIND;
+    private int currentWeaponList = WeaponBuild.PRIMARY;
 
     private NfcAdapter mNfcAdapter;
 
@@ -84,6 +87,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         if (savedInstanceState != null) {
             currentFragment = savedInstanceState.getInt(FRAGMENT_INDEX);
             currentSkillTree = savedInstanceState.getInt(SKILL_TREE_INDEX);
+            currentWeaponList = savedInstanceState.getInt(WEAPON_LIST_INDEX);
         }
 
         setContentView(R.layout.activity_edit_build2);
@@ -145,6 +149,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         savedInstanceState.putLong(BUILD_ID, currentBuild.getId());
         savedInstanceState.putInt(FRAGMENT_INDEX, currentFragment);
         savedInstanceState.putInt(SKILL_TREE_INDEX, currentSkillTree);
+        savedInstanceState.putInt(WEAPON_LIST_INDEX, currentWeaponList);
         super.onSaveInstanceState(savedInstanceState);
     }
 
@@ -334,14 +339,8 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
             case R.id.nav_armour:
                 fragment = ArmourFragment.newInstance();
                 break;
-            case R.id.nav_primary:
-                fragment = WeaponListFragment.newInstance(WeaponBuild.PRIMARY);
-                break;
-            case R.id.nav_secondary:
-                fragment = WeaponListFragment.newInstance(WeaponBuild.SECONDARY);
-                break;
-            case R.id.nav_melee:
-                fragment = MeleeWeaponFragment.newInstance();
+            case R.id.nav_weapons:
+                fragment = WeaponListParentFragment.newInstance(currentWeaponList);
                 break;
             case R.id.nav_home:
                 fragment = null;
@@ -369,6 +368,10 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
 
     public void updateCurrentSkillTree(int tree) {
         currentSkillTree = tree;
+    }
+
+    public void updateCurrentWeaponList(int weaponList) {
+        currentWeaponList = weaponList;
     }
 
 }

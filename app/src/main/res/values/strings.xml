@@ -272,6 +272,10 @@
     <string name="current_attachment">Current</string>
     <string name="new_attachment">This</string>
     <string name="current_build_id">current_build_id</string>
+    <string name="weapons">Weapons</string>
+    <string name="primary">Primary</string>
+    <string name="secondary">Secondary</string>
+    <string name="melee">Melee</string>
 
 
 </resources>

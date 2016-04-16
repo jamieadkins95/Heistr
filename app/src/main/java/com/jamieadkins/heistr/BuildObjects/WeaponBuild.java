@@ -17,6 +17,7 @@ public class WeaponBuild {
 
     public final static int PRIMARY = 0;
     public final static int SECONDARY = 1;
+    public final static int MELEE = 3;
 
     private long id = -1;
     private Weapon[] weapons = new Weapon[2];

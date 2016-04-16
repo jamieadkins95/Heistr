@@ -16,14 +16,8 @@
                 android:id="@+id/nav_armour"
                 android:title="@string/armour" />
         <item
-                android:id="@+id/nav_primary"
-                android:title="@string/primary_weapon" />
-        <item
-                android:id="@+id/nav_secondary"
-                android:title="@string/secondary_weapon" />
-        <item
-                android:id="@+id/nav_melee"
-                android:title="@string/melee_weapon" />
+                android:id="@+id/nav_weapons"
+                android:title="@string/weapons" />
     </group>
 
     <item android:title="@string/header_navigation">

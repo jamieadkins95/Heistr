@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jamieadkins.heistr.Activities.EditBuildActivity;
+import com.jamieadkins.heistr.BuildObjects.Weapon;
+import com.jamieadkins.heistr.BuildObjects.WeaponBuild;
 import com.jamieadkins.heistr.Consts.Trees;
 import com.jamieadkins.heistr.R;
 
@@ -23,15 +25,15 @@ import java.util.List;
 /**
  * Created by Jamie on 13/10/2015.
  */
-public class SkillTreeParentFragment extends Fragment {
+public class WeaponListParentFragment extends Fragment {
 
     Adapter mAdapter;
     EditBuildActivity activity;
 
-    public static SkillTreeParentFragment newInstance(int currentTree) {
-        SkillTreeParentFragment fragment = new SkillTreeParentFragment();
+    public static WeaponListParentFragment newInstance(int currentWeaponList) {
+        WeaponListParentFragment fragment = new WeaponListParentFragment();
         Bundle args = new Bundle();
-        args.putInt(EditBuildActivity.SKILL_TREE_INDEX, currentTree);
+        args.putInt(EditBuildActivity.WEAPON_LIST_INDEX, currentWeaponList);
         fragment.setArguments(args);
         return fragment;
     }
@@ -40,7 +42,7 @@ public class SkillTreeParentFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         activity = (EditBuildActivity) getActivity();
-        getActivity().setTitle(getString(R.string.skill_trees));
+        getActivity().setTitle(getString(R.string.weapons));
     }
 
     @Override
@@ -75,15 +77,17 @@ public class SkillTreeParentFragment extends Fragment {
     }
 
     private void setupViewPager(ViewPager viewPager) {
+        String title = getResources().getString(R.string.primary);
+        mAdapter.addFragment(WeaponListFragment.newInstance(WeaponBuild.PRIMARY), title);
 
+        title = getResources().getString(R.string.secondary);
+        mAdapter.addFragment(WeaponListFragment.newInstance(WeaponBuild.SECONDARY), title);
 
-        for (int i = Trees.MASTERMIND; i <= Trees.FUGITIVE; i++) {
-            String title = getResources().getStringArray(R.array.skill_trees)[i];
-            mAdapter.addFragment(SkillTreeFragment.newInstance(i), title);
-        }
+        title = getResources().getString(R.string.melee);
+        mAdapter.addFragment(MeleeWeaponFragment.newInstance(), title);
 
         viewPager.setAdapter(mAdapter);
-        viewPager.setCurrentItem(getArguments().getInt(EditBuildActivity.SKILL_TREE_INDEX));
+        viewPager.setCurrentItem(getArguments().getInt(EditBuildActivity.WEAPON_LIST_INDEX));
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -92,7 +96,7 @@ public class SkillTreeParentFragment extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-                activity.updateCurrentSkillTree(position);
+                activity.updateCurrentWeaponList(position);
             }
 
             @Override
