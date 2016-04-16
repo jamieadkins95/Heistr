@@ -225,7 +225,7 @@ public class WeaponListFragment extends Fragment implements EditBuildActivity.Bu
     @Override
     public void onPause() {
         super.onPause();
-        if (lvOtherWeapons != null) {
+        if (lvOtherWeapons != null && lvOtherWeapons.getAdapter() != null) {
             for (int i = 0; i < lvOtherWeapons.getAdapter().getCount(); i++) {
                 lvOtherWeapons.setItemChecked(i, false);
             }
