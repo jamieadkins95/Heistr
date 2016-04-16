@@ -39,6 +39,7 @@ import com.jamieadkins.heistr.Fragments.BlankFragment;
 import com.jamieadkins.heistr.Fragments.BuildListFragment;
 import com.jamieadkins.heistr.Fragments.InfamyFragment;
 import com.jamieadkins.heistr.Fragments.PerkDeckFragment;
+import com.jamieadkins.heistr.Fragments.ViewPagerFragments.NewSkillTreeParentFragment;
 import com.jamieadkins.heistr.Fragments.ViewPagerFragments.SkillTreeParentFragment;
 import com.jamieadkins.heistr.Fragments.TaskFragment;
 import com.jamieadkins.heistr.Fragments.ViewPagerFragments.WeaponListParentFragment;
@@ -58,6 +59,11 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     protected final static String BUILD_ID = "BuildID";
     private final static String FRAGMENT_INDEX = "FragmentInd";
     public final static String SKILL_TREE_INDEX = "SkillTreeInd";
+    public final static String MASTERMIND_INDEX = "MastermindInd";
+    public final static String ENFORCER_INDEX = "EnforcerInd";
+    public final static String TECHNICIAN_INDEX = "TechnicianInd";
+    public final static String GHOST_INDEX = "GhostInd";
+    public final static String FUGITIVE_INDEX = "FugitiveInd";
     public final static String WEAPON_LIST_INDEX = "WeaponInd";
     private final static String ACTIVITY_START = "StartAct";
     public static final int WEAPON_EDIT_REQUEST = 505;  // The request code
@@ -74,6 +80,8 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     private int currentSkillTree = Trees.MASTERMIND;
     private int currentWeaponList = WeaponBuild.PRIMARY;
 
+    private int[] currentSkillTreeIndex = new int[Trees.FUGITIVE + 1];
+
     private NfcAdapter mNfcAdapter;
 
     @Override
@@ -86,6 +94,12 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
             currentFragment = savedInstanceState.getInt(FRAGMENT_INDEX);
             currentSkillTree = savedInstanceState.getInt(SKILL_TREE_INDEX);
             currentWeaponList = savedInstanceState.getInt(WEAPON_LIST_INDEX);
+
+            currentSkillTreeIndex[Trees.MASTERMIND] = savedInstanceState.getInt(MASTERMIND_INDEX);
+            currentSkillTreeIndex[Trees.ENFORCER] = savedInstanceState.getInt(ENFORCER_INDEX);
+            currentSkillTreeIndex[Trees.TECHNICIAN] = savedInstanceState.getInt(TECHNICIAN_INDEX);
+            currentSkillTreeIndex[Trees.GHOST] = savedInstanceState.getInt(GHOST_INDEX);
+            currentSkillTreeIndex[Trees.FUGITIVE] = savedInstanceState.getInt(FUGITIVE_INDEX);
         }
 
         setContentView(R.layout.activity_edit_build2);
@@ -148,6 +162,12 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         savedInstanceState.putInt(FRAGMENT_INDEX, currentFragment);
         savedInstanceState.putInt(SKILL_TREE_INDEX, currentSkillTree);
         savedInstanceState.putInt(WEAPON_LIST_INDEX, currentWeaponList);
+
+        savedInstanceState.putInt(MASTERMIND_INDEX, currentSkillTreeIndex[Trees.MASTERMIND]);
+        savedInstanceState.putInt(ENFORCER_INDEX, currentSkillTreeIndex[Trees.ENFORCER]);
+        savedInstanceState.putInt(TECHNICIAN_INDEX, currentSkillTreeIndex[Trees.TECHNICIAN]);
+        savedInstanceState.putInt(GHOST_INDEX, currentSkillTreeIndex[Trees.GHOST]);
+        savedInstanceState.putInt(FUGITIVE_INDEX, currentSkillTreeIndex[Trees.FUGITIVE]);
         super.onSaveInstanceState(savedInstanceState);
     }
 
@@ -328,6 +348,21 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
             case R.id.nav_skill_trees:
                 fragment = SkillTreeParentFragment.newInstance(currentSkillTree);
                 break;
+            case R.id.nav_mastermind:
+                fragment = NewSkillTreeParentFragment.newInstance(Trees.MASTERMIND, currentSkillTreeIndex[Trees.MASTERMIND]);
+                break;
+            case R.id.nav_enforcer:
+                fragment = NewSkillTreeParentFragment.newInstance(Trees.ENFORCER, currentSkillTreeIndex[Trees.ENFORCER]);
+                break;
+            case R.id.nav_technician:
+                fragment = NewSkillTreeParentFragment.newInstance(Trees.TECHNICIAN, currentSkillTreeIndex[Trees.TECHNICIAN]);
+                break;
+            case R.id.nav_ghost:
+                fragment = NewSkillTreeParentFragment.newInstance(Trees.GHOST, currentSkillTreeIndex[Trees.GHOST]);
+                break;
+            case R.id.nav_fugitive:
+                fragment = NewSkillTreeParentFragment.newInstance(Trees.FUGITIVE, currentSkillTreeIndex[Trees.FUGITIVE]);
+                break;
             case R.id.nav_infamy:
                 fragment = InfamyFragment.newInstance();
                 break;
@@ -372,4 +407,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         currentWeaponList = weaponList;
     }
 
+    public void updateCurrentSkillTreeIndex(int tree, int index) {
+        currentSkillTreeIndex[tree] = index;
+    }
 }

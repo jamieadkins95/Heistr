@@ -105,6 +105,36 @@
         <item>Fugitive</item>
     </string-array>
 
+    <string-array name="mastermind_sub_trees">
+        <item>Medic</item>
+        <item>Controller</item>
+        <item>Sharpshooter</item>
+    </string-array>
+
+    <string-array name="enforcer_sub_trees">
+        <item>Shotgunner</item>
+        <item>Armorer</item>
+        <item>Ammunition Specialist</item>
+    </string-array>
+
+    <string-array name="technician_sub_trees">
+        <item>Engineer</item>
+        <item>Breacher</item>
+        <item>Oppressor</item>
+    </string-array>
+
+    <string-array name="ghost_sub_trees">
+        <item>Covert Ops</item>
+        <item>Commando</item>
+        <item>Silent Killer</item>
+    </string-array>
+
+    <string-array name="fugitive_sub_trees">
+        <item>Gunslinger</item>
+        <item>Relentless</item>
+        <item>Brawler</item>
+    </string-array>
+
     <string-array name="infamies">
         <item>Mastermind</item>
         <item>Enforcer</item>
@@ -276,6 +306,7 @@
     <string name="primary">Primary</string>
     <string name="secondary">Secondary</string>
     <string name="melee">Melee</string>
+    <string name="new_skill_trees">New Skill Trees</string>
 
 
 </resources>

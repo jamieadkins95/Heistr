@@ -4,6 +4,7 @@ package com.jamieadkins.heistr.Consts;
  * Created by Jamie on 15/07/2015.
  */
 public class Trees {
+    public final static int SUBTREES_PER_TREE = 3;
 
     public final static int MASTERMIND = 0;
     public final static int ENFORCER = 1;

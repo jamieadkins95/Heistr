@@ -7,6 +7,21 @@
                 android:checked="true"
                 android:title="@string/skill_trees" />
         <item
+                android:id="@+id/nav_mastermind"
+                android:title="@string/mastermind" />
+        <item
+                android:id="@+id/nav_enforcer"
+                android:title="@string/enforcer" />
+        <item
+                android:id="@+id/nav_technician"
+                android:title="@string/technician" />
+        <item
+                android:id="@+id/nav_ghost"
+                android:title="@string/ghost" />
+        <item
+                android:id="@+id/nav_fugitive"
+                android:title="@string/fugitive" />
+        <item
                 android:id="@+id/nav_infamy"
                 android:title="@string/infamy" />
         <item
