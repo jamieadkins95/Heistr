@@ -27,5 +27,10 @@
                 android:summary="@string/pref_skill_weapon_nickname_length_summ"
                 android:dialogLayout="@layout/preference_edit_text"
                 android:defaultValue="100" />
+        <CheckBoxPreference
+                android:key="pref_skill_layout"
+                android:title="@string/pref_skill_layout_title"
+                android:summary="@string/pref_skill_layout_summ"
+                android:defaultValue="false"/>
     </PreferenceCategory>
 </PreferenceScreen>

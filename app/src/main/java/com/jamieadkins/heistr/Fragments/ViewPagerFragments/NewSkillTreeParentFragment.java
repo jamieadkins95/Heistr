@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import com.jamieadkins.heistr.Activities.EditBuildActivity;
 import com.jamieadkins.heistr.Consts.Trees;
 import com.jamieadkins.heistr.Fragments.BlankFragment;
+import com.jamieadkins.heistr.Fragments.NewSkillTreeFragment;
 import com.jamieadkins.heistr.Fragments.SkillTreeFragment;
 import com.jamieadkins.heistr.R;
 
@@ -61,7 +62,7 @@ public class NewSkillTreeParentFragment extends BaseTabFragment {
         }
         for (int i = 0; i < Trees.SUBTREES_PER_TREE; i++) {
             String title = subTreeNames[i];
-            mAdapter.addFragment(BlankFragment.newInstance(title), title);
+            mAdapter.addFragment(NewSkillTreeFragment.newInstance(title), title);
         }
 
         viewPager.setAdapter(mAdapter);

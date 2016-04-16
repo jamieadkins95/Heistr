@@ -307,6 +307,13 @@
     <string name="secondary">Secondary</string>
     <string name="melee">Melee</string>
     <string name="new_skill_trees">New Skill Trees</string>
+    <string name="tier1">Tier 1</string>
+    <string name="tier2">Tier 2</string>
+    <string name="tier3">Tier 3</string>
+    <string name="tier4">Tier 4</string>
+    <string name="pref_skill_layout">pref_skill_layout</string>
+    <string name="pref_skill_layout_title">Vertical Skill Tiers</string>
+    <string name="pref_skill_layout_summ">Organise skill tiers 2 and 3 vertically</string>
 
 
 </resources>

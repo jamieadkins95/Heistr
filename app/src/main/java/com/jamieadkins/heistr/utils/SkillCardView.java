@@ -1,8 +1,10 @@
 package com.jamieadkins.heistr.utils;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jamieadkins.heistr.R;
@@ -32,6 +34,10 @@ public class SkillCardView extends CardView {
 
     private void initialiseViews() {
         inflate(getContext(), R.layout.skill_button, this);
+        this.setCardElevation(4.0f);
+        this.setClickable(true);
+
+        this.setForeground(ContextCompat.getDrawable(getContext(), R.drawable.selector_build_list));
         this.mSkillName = (TextView) findViewById(R.id.tvName);
         this.mNormalDescription = (TextView) findViewById(R.id.tvNormalDescription);
         this.mAceDescription = (TextView) findViewById(R.id.tvAceDescription);
