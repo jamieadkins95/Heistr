@@ -15,8 +15,7 @@
     <item name="backgroundCard" type="color">#424242</item>
     <item name="black" type="color">#000000</item>
     <item name="defaultButton" type="color">#66999999</item>
-    BCBCBC
-
-
+    <item name="green" type="color">#B34CAF50</item>
+    <item name="red" type="color">#B3F44336</item>
 
 </resources>

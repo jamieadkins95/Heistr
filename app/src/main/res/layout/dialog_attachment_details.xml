@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+                      android:padding="16dp">
+
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+        <LinearLayout android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="2"
+                      android:orientation="vertical"
+                      android:paddingRight="8dp"
+                      android:paddingLeft="8dp">
+
+            <TextView android:text="@string/attribute" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingBottom="8dp"/>
+            <TextView android:id="@+id/weapon_attribute_ammo" android:text="@string/weapon_attribute_ammo" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/weapon_attribute_magazine" android:text="@string/weapon_attribute_magazine" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/weapon_attribute_damage" android:text="@string/weapon_attribute_damage" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/weapon_attribute_accuracy" android:text="@string/weapon_attribute_accuracy" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/weapon_attribute_stability" android:text="@string/weapon_attribute_stability" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/weapon_attribute_concealment" android:text="@string/weapon_attribute_concealment" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:orientation="vertical"
+                      android:paddingRight="8dp"
+                      android:paddingLeft="8dp">
+
+            <TextView android:text="@string/current_weapon" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingBottom="8dp"/>
+            <TextView android:id="@+id/current_weapon_ammo" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/current_weapon_magazine" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/current_weapon_damage" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/current_weapon_accuracy" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/current_weapon_stability" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/current_weapon_concealment" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:orientation="vertical"
+                      android:paddingRight="8dp"
+                      android:paddingLeft="8dp">
+
+            <TextView android:id="@+id/current_attachment" android:text="@string/current_attachment" android:gravity="center_horizontal"  android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingBottom="8dp"/>
+            <TextView android:id="@+id/current_attachment_ammo" android:text="0" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/current_attachment_magazine" android:text="0" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/current_attachment_damage" android:text="0" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/current_attachment_accuracy" android:text="0" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/current_attachment_stability" android:text="0" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/current_attachment_concealment" android:text="0" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:orientation="vertical"
+                      android:paddingRight="8dp"
+                      android:paddingLeft="8dp">
+
+            <TextView android:text="@string/new_attachment" android:gravity="center_horizontal"  android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingBottom="8dp"/>
+            <TextView android:id="@+id/new_attachment_ammo" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/new_attachment_magazine" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/new_attachment_damage" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/new_attachment_accuracy" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/new_attachment_stability" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <TextView android:id="@+id/new_attachment_concealment" android:gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</HorizontalScrollView>

@@ -3,6 +3,7 @@ package com.jamieadkins.heistr.Fragments;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.ListView;
 import com.jamieadkins.heistr.Activities.EditBuildActivity;
 import com.jamieadkins.heistr.Activities.EditWeaponActivity;
 import com.jamieadkins.heistr.BuildObjects.Attachment;
+import com.jamieadkins.heistr.Dialogs.AttachmentDetailsDialog;
 import com.jamieadkins.heistr.R;
 
 import java.util.ArrayList;
@@ -21,11 +23,13 @@ import java.util.ArrayList;
 /**
  * Created by Jamie on 18/10/2015.
  */
-public class AttachmentListFragment extends Fragment implements EditWeaponActivity.WeaponsCallbacks, EditBuildActivity.BuildReadyCallbacks, EditWeaponActivity.ViewPagerLifecycle {
+public class AttachmentListFragment extends Fragment implements EditWeaponActivity.WeaponsCallbacks,
+        EditBuildActivity.BuildReadyCallbacks, EditWeaponActivity.ViewPagerLifecycle,
+        AttachmentDetailsDialog.AttachmentDetailsListener {
 
     private static final String ARG_ATTACHMENT_TYPE = "AttachmentType";
     ListView lvAttachments;
-    EditWeaponActivity activity;
+    EditWeaponActivity mActivity;
     int attachmentType;
     ArrayList<Attachment> possibleAttachments;
     int currentAttachmentIndex = -1;
@@ -47,7 +51,7 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        activity = (EditWeaponActivity) getActivity();
+        mActivity = (EditWeaponActivity) getActivity();
         attachmentType = getArguments().getInt(ARG_ATTACHMENT_TYPE);
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_attachment_list, container, false);
@@ -60,24 +64,24 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
     @Override
     public void onResume() {
         super.onResume();
-        activity = (EditWeaponActivity) getActivity();
-        if (activity.getCurrentWeapon() != null) {
+        mActivity = (EditWeaponActivity) getActivity();
+        if (mActivity.getCurrentWeapon() != null) {
             onWeaponReady();
         } else {
-            activity.listen(this);
+            mActivity.listen(this);
         }
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        //activity.stopListening(this);
-        activity = null;
+        //mActivity.stopListening(this);
+        mActivity = null;
     }
 
     @Override
     public void onWeaponReady() {
-        possibleAttachments = activity.getPossibleAttachments(attachmentType);
+        possibleAttachments = mActivity.getPossibleAttachments(attachmentType);
 
         ArrayList<String> attachments = new ArrayList<>();
         for (Attachment a : possibleAttachments) {
@@ -87,7 +91,7 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
         int count = 0;
         int index = -1;
         for (Attachment a : possibleAttachments) {
-            for (Attachment e : activity.getCurrentWeapon().getAttachments()) {
+            for (Attachment e : mActivity.getCurrentWeapon().getAttachments()) {
                 if (a.getPd2().equals(e.getPd2())) {
                     index = count;
                 }
@@ -99,40 +103,50 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
             currentAttachmentIndex = index;
         }
 
-        ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_single_choice, attachments);
+        final ArrayAdapter<String> mAdapter2 = new ArrayAdapter<String>(mActivity, android.R.layout.simple_list_item_single_choice, attachments);
         lvAttachments.setAdapter(mAdapter2);
         lvAttachments.setItemChecked(currentAttachmentIndex, true);
         lvAttachments.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                int oldAttachment = currentAttachmentIndex;
-                if (position != currentAttachmentIndex) {
-                    currentAttachmentIndex = lvAttachments.getCheckedItemPosition();
-                } else {
-                    currentAttachmentIndex = -1;
-                    lvAttachments.setItemChecked(position, false);
-                }
-                activity.updateCurrentWeapon(attachmentType, oldAttachment, currentAttachmentIndex);
+                equipAttachment(position);
             }
         });
         lvAttachments.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                Attachment selectedAttachment = possibleAttachments.get((int) id);
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setMessage(selectedAttachment.toString(getResources()))
-                        .setPositiveButton(R.string.got_it, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                            }
-                        })
-                        .create()
-                        .show();
-
-
+                Attachment currentAttachment = null;
+                if (currentAttachmentIndex != -1) {
+                    currentAttachment = possibleAttachments.get(currentAttachmentIndex);
+                }
+                AttachmentDetailsDialog dialog = AttachmentDetailsDialog.newInstance(mActivity.getCurrentBuild(),
+                        mActivity.getCurrentWeapon(),
+                        currentAttachment,
+                        possibleAttachments.get((int) id), (int) id);
+                FragmentManager fragmentManager = mActivity.getSupportFragmentManager();
+                dialog.setTargetFragment(AttachmentListFragment.this, BuildListFragment.DIALOG_FRAGMENT);
+                dialog.show(fragmentManager, "AttachmentDetails");
                 return true;
             }
         });
 
+    }
+
+    @Override
+    public void onEquip(int position) {
+        lvAttachments.setItemChecked(position, true);
+        equipAttachment(position);
+    }
+
+    private void equipAttachment(int position) {
+        int oldAttachment = currentAttachmentIndex;
+        if (position != currentAttachmentIndex) {
+            currentAttachmentIndex = lvAttachments.getCheckedItemPosition();
+        } else {
+            currentAttachmentIndex = -1;
+            lvAttachments.setItemChecked(position, false);
+        }
+        mActivity.updateCurrentWeapon(attachmentType, oldAttachment, currentAttachmentIndex);
     }
 
     @Override
@@ -153,4 +167,6 @@ public class AttachmentListFragment extends Fragment implements EditWeaponActivi
     public void onShow() {
 
     }
+
+
 }

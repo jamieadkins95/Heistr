@@ -318,6 +318,38 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
 
     }
 
+    public void updateCurrentWeapon(int attachmentType, int oldAttachmentIndex, Attachment newAttachment) {
+        String newAttachmentID = "-1";
+        DataSourceWeapons dataSourceWeapons = new DataSourceWeapons(this);
+        dataSourceWeapons.open();
+
+        // Remove old attachment
+        if (oldAttachmentIndex != -1) {
+            int attachmentToRemove = -1;
+            for (Attachment a : currentWeapon.getAttachments()) {
+                if (a.getAttachmentType() == attachmentType) {
+                    attachmentToRemove = currentWeapon.getAttachments().indexOf(a);
+                }
+            }
+            currentWeapon.getAttachments().remove(attachmentToRemove);
+        }
+
+        if (newAttachment != null) {
+            currentWeapon.getAttachments().add(newAttachment);
+            newAttachmentID = newAttachment.getPd2();
+        }
+
+        dataSourceWeapons.updateAttachment(currentWeapon.getId(), attachmentType, newAttachmentID);
+        dataSourceWeapons.close();
+
+        if (mBuildListeners != null) {
+            for (EditBuildActivity.BuildReadyCallbacks b : mBuildListeners) {
+                b.onBuildUpdated();
+            }
+        }
+
+    }
+
     @Override
     protected void onStop() {
         super.onStop();

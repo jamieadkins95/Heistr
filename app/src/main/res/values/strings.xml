@@ -265,6 +265,11 @@
     <string name="big_oil_engine_10">10</string>
     <string name="info">Info</string>
     <string name="big_oil_long_guide">Engines 3, 4 and 10 are never correct.</string>
+    <string name="current_weapon">Weapon</string>
+    <string name="equip">Equip</string>
+    <string name="none">None</string>
+    <string name="current_attachment">Current</string>
+    <string name="new_attachment">This</string>
 
 
 </resources>
