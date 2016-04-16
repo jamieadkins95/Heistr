@@ -38,12 +38,10 @@ import com.jamieadkins.heistr.Fragments.ArmourFragment;
 import com.jamieadkins.heistr.Fragments.BlankFragment;
 import com.jamieadkins.heistr.Fragments.BuildListFragment;
 import com.jamieadkins.heistr.Fragments.InfamyFragment;
-import com.jamieadkins.heistr.Fragments.MeleeWeaponFragment;
 import com.jamieadkins.heistr.Fragments.PerkDeckFragment;
-import com.jamieadkins.heistr.Fragments.SkillTreeParentFragment;
+import com.jamieadkins.heistr.Fragments.ViewPagerFragments.SkillTreeParentFragment;
 import com.jamieadkins.heistr.Fragments.TaskFragment;
-import com.jamieadkins.heistr.Fragments.WeaponListFragment;
-import com.jamieadkins.heistr.Fragments.WeaponListParentFragment;
+import com.jamieadkins.heistr.Fragments.ViewPagerFragments.WeaponListParentFragment;
 import com.jamieadkins.heistr.R;
 import com.jamieadkins.heistr.utils.URLEncoder;
 

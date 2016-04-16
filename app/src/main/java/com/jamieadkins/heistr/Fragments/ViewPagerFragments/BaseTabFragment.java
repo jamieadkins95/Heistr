@@ -1,5 +1,4 @@
-package com.jamieadkins.heistr.Fragments;
-
+package com.jamieadkins.heistr.Fragments.ViewPagerFragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -21,20 +20,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Jamie on 13/10/2015.
+ * Basic fragment that contains a tabbed view pager.
  */
-public class SkillTreeParentFragment extends Fragment {
+public abstract class BaseTabFragment extends Fragment {
 
-    Adapter mAdapter;
-    EditBuildActivity activity;
-
-    public static SkillTreeParentFragment newInstance(int currentTree) {
-        SkillTreeParentFragment fragment = new SkillTreeParentFragment();
-        Bundle args = new Bundle();
-        args.putInt(EditBuildActivity.SKILL_TREE_INDEX, currentTree);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    protected Adapter mAdapter;
+    protected EditBuildActivity activity;
 
     @Override
     public void onAttach(Context context) {
@@ -74,33 +65,8 @@ public class SkillTreeParentFragment extends Fragment {
         tabLayout.setupWithViewPager(mViewPager);
     }
 
-    private void setupViewPager(ViewPager viewPager) {
+    protected abstract void setupViewPager(ViewPager viewPager);
 
-
-        for (int i = Trees.MASTERMIND; i <= Trees.FUGITIVE; i++) {
-            String title = getResources().getStringArray(R.array.skill_trees)[i];
-            mAdapter.addFragment(SkillTreeFragment.newInstance(i), title);
-        }
-
-        viewPager.setAdapter(mAdapter);
-        viewPager.setCurrentItem(getArguments().getInt(EditBuildActivity.SKILL_TREE_INDEX));
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                activity.updateCurrentSkillTree(position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-    }
 
     static class Adapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragments = new ArrayList<>();
