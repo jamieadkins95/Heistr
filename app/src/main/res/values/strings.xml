@@ -271,6 +271,7 @@
     <string name="none">None</string>
     <string name="current_attachment">Current</string>
     <string name="new_attachment">This</string>
+    <string name="current_build_id">current_build_id</string>
 
 
 </resources>

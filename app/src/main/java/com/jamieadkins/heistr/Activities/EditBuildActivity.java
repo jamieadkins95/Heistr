@@ -2,6 +2,7 @@ package com.jamieadkins.heistr.Activities;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
@@ -20,6 +21,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.SparseBooleanArray;
@@ -282,7 +284,16 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
 
                 showRenameBuildDialog();
             } else {
-                currentBuildID = intent.getLongExtra(BuildListFragment.EXTRA_BUILD_ID, Build.NEW_BUILD);
+                long id = intent.getLongExtra(BuildListFragment.EXTRA_BUILD_ID, Build.NEW_BUILD);
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+                String key = getString(R.string.current_build_id);
+
+                if (id == Build.NEW_BUILD) {
+                    id = preferences.getLong(key, Build.NEW_BUILD);
+                }
+
+                currentBuildID = id;
+                preferences.edit().putLong(key, id).apply();
             }
         }
     }
