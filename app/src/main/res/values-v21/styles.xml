@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="NoActionBar">
+    <style name="AppTheme" parent="Base">
+        <item name="android:colorPrimaryDark">@color/primaryDark</item>
+        <item name="android:navigationBarColor">@color/primary</item>
+    </style>
+
+    <style name="ActionBar.SettingsTheme">
         <item name="android:colorPrimaryDark">@color/primaryDark</item>
         <item name="android:navigationBarColor">@color/primary</item>
     </style>
