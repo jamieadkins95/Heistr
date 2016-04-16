@@ -24,35 +24,32 @@
 
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/llWeaponName"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-
-            android:layout_alignParentTop="true">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/llWeaponName"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvName"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textSize="30sp"
-                android:text="Untitled Weapon"
-                android:textColor="@color/textPrimary"
-                />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvName"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:text="Untitled Weapon"
+                    android:textColor="@color/textPrimary"
+                    />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:id="@+id/tvPrimaryWeaponName"
-                android:text="Car-4"
-                android:textColor="@color/textHint"
-                android:textSize="30sp"
-                android:layout_gravity="center"
-                android:gravity="center"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvPrimaryWeaponName"
+                    android:text="Car-4"
+                    android:textColor="@color/textHint"
+                    android:textSize="20sp"
+                    android:gravity="center"/>
 
         </LinearLayout>
 
