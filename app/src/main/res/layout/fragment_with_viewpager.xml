@@ -3,6 +3,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/include_fragment_viewpager"/>
+    <include layout="@layout/include_tabbed_layout_with_viewpager"/>
 
 </LinearLayout>

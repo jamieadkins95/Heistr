@@ -4,6 +4,7 @@
     android:orientation="vertical" android:fitsSystemWindows="true"
     tools:context="com.jamieadkins.heistr.Activities.EditWeaponActivity">
 
-    <include layout="@layout/include_list_viewpager"/>
+    <include layout="@layout/include_toolbar"/>
+    <include layout="@layout/include_tabbed_layout_with_viewpager"/>
 
     </LinearLayout>
