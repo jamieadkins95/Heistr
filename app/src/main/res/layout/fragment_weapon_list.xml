@@ -13,7 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/lvOtherWeapons"
-        android:paddingTop="8dp"
         android:divider="@null"
         android:dividerHeight="10dp"/>
 
