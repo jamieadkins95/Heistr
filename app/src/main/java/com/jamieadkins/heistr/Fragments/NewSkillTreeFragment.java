@@ -132,7 +132,7 @@ public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.
     private void initialiseSkillViews() {
         for (int i = 0; i < mSkillCardViews.length; i++) {
             final Skill skill = mCurrentSubTree.getSkillsInSubTree().get(i);
-            mSkillCardViews[i].setSkillName(skill.getName() + "Test Skill lol");
+            mSkillCardViews[i].setSkillName(skill.getName());
             mSkillCardViews[i].setNormalDescription(skill.getNormalDescription());
             mSkillCardViews[i].setAceDescription(skill.getAceDescription());
             mSkillCardViews[i].setSkillStatus(skill.getTaken());
@@ -199,8 +199,9 @@ public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.
                 skill.setTaken(Skill.NO);
                 mSkillCardViews[i].setSkillStatus(skill.getTaken());
                 mSkillCardViews[i].setSkillStatus(Skill.LOCKED);
+            } else {
+                mSkillCardViews[i].setSkillStatus(Skill.UNLOCKED);
             }
-
         }
 
         mCurrentBuild.updateSubTree(mActivity, mSkillTreeIndex, mCurrentSubTree);
@@ -218,7 +219,8 @@ public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.
     }
 
     private void updatePointsRemaining() {
-        mTvPointsRemaining.setText(mActivity.getCurrentBuild().getSkillBuild().getPointsRemaining() + "/120");
+        mTvPointsRemaining.setText(mActivity.getCurrentBuild().getSkillBuild().getNewPointsRemaining() +
+                "/" + mActivity.getCurrentBuild().getSkillBuild().getNewPointsAvailable());
     }
 
 }

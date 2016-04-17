@@ -270,10 +270,8 @@ public class DataSourceSkills {
         for (int skill = 0; skill < subTree.getSkillsInSubTree().size(); skill++) {
             values.put(MySQLiteHelper.COLUMNS_NEW_SKILLS[skill], subTree.getSkillsInSubTree().get(skill).getTaken());
         }
-
-        database.update(MySQLiteHelper.TABLE_SKILL_SUB_TREES, values, MySQLiteHelper.COLUMN_SKILL_BUILD_ID + " = " + buildID +
-                " AND " + MySQLiteHelper.COLUMN_TREE + " = " + tree +
-                " AND " + MySQLiteHelper.COLUMN_SUB_TREE + " = " + subTree.getSubTree(), null);
+        
+        database.update(MySQLiteHelper.TABLE_SKILL_SUB_TREES, values, MySQLiteHelper.COLUMN_ID + " = " + subTree.getId(), null);
         Log.d("DB", "Subtree updated for build " + buildID + ", tree " + tree + ", subtree " + subTree.getSubTree());
         Log.d("DB", subTree.toString());
     }

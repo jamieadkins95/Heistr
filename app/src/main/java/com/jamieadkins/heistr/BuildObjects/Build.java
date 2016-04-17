@@ -130,6 +130,14 @@ public class Build {
         dataSourceBuilds.updateInfamy(id, getInfamyID());
         dataSourceBuilds.close();
 
+        int bonus = 0;
+        for (boolean infamyBonus : infamies) {
+            if (infamyBonus) {
+                bonus++;
+            }
+            skillBuild.setNewPointsAvailable(bonus);
+        }
+
     }
 
     public void updatePerkDeck(Context context, int selected) {

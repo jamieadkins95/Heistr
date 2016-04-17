@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skill_tree>
+    <tree_name>Fugitive</tree_name>
+    <subtree>
+        <subtreeNumber>0</subtreeNumber>
+        <skill>
+            <tier>1</tier>
+            <name>Fast Draw</name>
+            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
+            <ace>10% increased weapon accuracy with pistols</ace>
+            <point_requirement>0</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+        <skill>
+            <tier>2</tier>
+            <name>Dance Instructor</name>
+            <normal>Pistol magazine sizes increased by 15 bullets.</normal>
+            <ace>100% increase in RoF with Pistols</ace>
+            <point_requirement>4</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+        <skill>
+            <tier>2</tier>
+            <name>Expert Handling</name>
+            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
+            <ace>10% increased weapon accuracy with pistols</ace>
+            <point_requirement>4</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+        <skill>
+            <tier>3</tier>
+            <name>Gun Play</name>
+            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
+            <ace>10% increased weapon accuracy with pistols</ace>
+            <point_requirement>10</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+        <skill>
+            <tier>3</tier>
+            <name>Akimbo</name>
+            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
+            <ace>10% increased weapon accuracy with pistols</ace>
+            <point_requirement>10</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+        <skill>
+            <tier>4</tier>
+            <name>Trigger Happy</name>
+            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
+            <ace>10% increased weapon accuracy with pistols</ace>
+            <point_requirement>18</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+    </subtree>
+    <subtree>
+        <subtreeNumber>1</subtreeNumber>
+        <skill>
+            <name>Fast Draw</name>
+            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
+            <ace>10% increased weapon accuracy with pistols</ace>
+            <point_requirement>0</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+        <skill>
+            <name>Dance Instructor</name>
+            <normal>Pistol magazine sizes increased by 15 bullets.</normal>
+            <ace>100% increase in RoF with Pistols</ace>
+            <point_requirement>4</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+        <skill>
+            <name>Expert Handling</name>
+            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
+            <ace>10% increased weapon accuracy with pistols</ace>
+            <point_requirement>4</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+        <skill>
+            <name>Gun Play</name>
+            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
+            <ace>10% increased weapon accuracy with pistols</ace>
+            <point_requirement>10</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+        <skill>
+            <name>Akimbo</name>
+            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
+            <ace>10% increased weapon accuracy with pistols</ace>
+            <point_requirement>10</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+        <skill>
+            <name>Trigger Happy</name>
+            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
+            <ace>10% increased weapon accuracy with pistols</ace>
+            <point_requirement>18</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+    </subtree>
+    <subtree>
+        <subtreeNumber>2</subtreeNumber>
+        <skill>
+            <name>Fast Draw</name>
+            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
+            <ace>10% increased weapon accuracy with pistols</ace>
+            <point_requirement>0</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+        <skill>
+            <name>Dance Instructor</name>
+            <normal>Pistol magazine sizes increased by 15 bullets.</normal>
+            <ace>100% increase in RoF with Pistols</ace>
+            <point_requirement>4</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+        <skill>
+            <name>Expert Handling</name>
+            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
+            <ace>10% increased weapon accuracy with pistols</ace>
+            <point_requirement>4</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+        <skill>
+            <name>Gun Play</name>
+            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
+            <ace>10% increased weapon accuracy with pistols</ace>
+            <point_requirement>10</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+        <skill>
+            <name>Akimbo</name>
+            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
+            <ace>10% increased weapon accuracy with pistols</ace>
+            <point_requirement>10</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+        <skill>
+            <name>Trigger Happy</name>
+            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
+            <ace>10% increased weapon accuracy with pistols</ace>
+            <point_requirement>18</point_requirement>
+            <normal_cost>1</normal_cost>
+            <ace_cost>3</ace_cost>
+            <pd2skills>a</pd2skills>
+        </skill>
+    </subtree>
+</skill_tree>

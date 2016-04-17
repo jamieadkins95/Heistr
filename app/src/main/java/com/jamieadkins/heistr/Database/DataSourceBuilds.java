@@ -230,7 +230,8 @@ public class DataSourceBuilds {
 
         build.setId(buildID);
         build.setName(name);
-        build.setInfamies(DataSourceInfamies.idToInfamy(infamyID));
+        ArrayList<Boolean> infamyList = DataSourceInfamies.idToInfamy(infamyID);
+        build.setInfamies(infamyList);
         build.setPerkDeck(perkDeck);
         build.setArmour(armour);
 
@@ -238,6 +239,14 @@ public class DataSourceBuilds {
         SkillBuild skillBuildFromXML = SkillBuild.getSkillBuildFromXML(context.getResources());
         SkillBuild skillBuildFromDB = SkillBuild.getSkillBuildFromDB(skillBuildID, context);
         SkillBuild mergedSkillBuild = SkillBuild.mergeBuilds(skillBuildFromXML, skillBuildFromDB);
+
+        int bonus = 0;
+        for (boolean infamy : infamyList) {
+            if (infamy) {
+                bonus++;
+            }
+        }
+        mergedSkillBuild.setNewPointsAvailable(bonus);
 
         build.setWeaponsFromXML(baseWeaponInfo);
         build.setMeleeWeaponsFromXML(meleeWeaponInfo);
