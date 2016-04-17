@@ -152,6 +152,17 @@ public class Build {
 
     }
 
+    public void updateSubTree(Context context, int skillTree, NewSkillSubTree updatedSubTree) {
+        int subTree = updatedSubTree.getSubTree();
+        skillBuild.getNewSkillTrees().get(skillTree).getSubTrees().set(subTree, updatedSubTree);
+
+        DataSourceSkills dataSourceSkills = new DataSourceSkills(context);
+        dataSourceSkills.open();
+        dataSourceSkills.updateSubTree(id, skillTree, updatedSubTree);
+        dataSourceSkills.close();
+
+    }
+
     public void updateArmour(Context context, int selected) {
         armour = selected;
         DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(context);

@@ -21,6 +21,7 @@ public class SkillBuild {
     long id = -1;
 
     ArrayList<SkillTree> skillTrees;
+    ArrayList<NewSkillTree> newSkillTrees;
     int pointsAvailable = 120;
 
 
@@ -37,8 +38,13 @@ public class SkillBuild {
         return skillTrees;
     }
 
+    public ArrayList<NewSkillTree> getNewSkillTrees() {
+        return newSkillTrees;
+    }
+
     public SkillBuild() {
         skillTrees = new ArrayList<SkillTree>();
+        newSkillTrees = new ArrayList<NewSkillTree>();
     }
 
     public static SkillBuild newNonDBInstance() {
@@ -128,6 +134,56 @@ public class SkillBuild {
 
             mergedSkillBuild.getSkillTrees().add(newTree);
         }
+
+        for (int tree = Trees.MASTERMIND; tree <= Trees.FUGITIVE; tree++) {
+            NewSkillTree newTree = new NewSkillTree();
+            //NewSkillTree treeFromXML = skillBuildFromXML.getNewSkillTrees().get(tree);
+            NewSkillTree treeFromDB = skillBuildFromDB.getNewSkillTrees().get(tree);
+
+            newTree.setSkillBuildID(treeFromDB.getSkillBuildID());
+            //newTree.setName(treeFromXML.getName());
+
+            for (int subtree = 0; subtree < Trees.SUBTREES_PER_TREE; subtree++) {
+                NewSkillSubTree newSkillSubTree = new NewSkillSubTree();
+                //NewSkillSubTree tierFromXML = treeFromXML.getTierList().get(tier);
+                NewSkillSubTree subTreeFromDb = treeFromDB.getSubTrees().get(subtree);
+
+                newSkillSubTree.setId(subTreeFromDb.getId());
+                newSkillSubTree.setSkillBuildID(subTreeFromDb.getSkillBuildID());
+                //newSkillSubTree.setPointRequirement(tierFromXML.getPointRequirement(false));
+                newSkillSubTree.setSubTree(subTreeFromDb.getSubTree());
+                newSkillSubTree.setSkillTree(subTreeFromDb.getSkillTree());
+
+                //newSkillSubTree.setNormalCost(tierFromXML.getNormalCost());
+                //newSkillSubTree.setAceCost(tierFromXML.getAceCost());
+
+
+                for (int skill = 0; skill < subTreeFromDb.getSkillsInTier().size(); skill++) {
+                    Skill newSkill = new Skill();
+                    //Skill skillFromXML = tierFromXML.getSkillsInTier().get(skill);
+                    Skill skillFromDB = subTreeFromDb.getSkillsInTier().get(skill);
+
+                    //newSkill.setName(skillFromXML.getName());
+                    //newSkill.setAbbreviation(skillFromXML.getAbbreviation());
+                    //newSkill.setPd2SkillsSymbol(skillFromXML.getPd2SkillsSymbol());
+
+                    //newSkill.setNormalDescription(skillFromXML.getNormalDescription());
+                    //newSkill.setAceDescription(skillFromXML.getAceDescription());
+                    //newSkill.setNormalPoints(tierFromXML.getNormalCost());
+                    //newSkill.setAcePoints(tierFromXML.getAceCost());
+
+                    newSkill.setTaken(skillFromDB.getTaken());
+
+                    newSkillSubTree.getSkillsInTier().add(newSkill);
+                }
+
+                newTree.getSubTrees().add(newSkillSubTree);
+            }
+
+            mergedSkillBuild.getNewSkillTrees().add(newTree);
+        }
+
+
 
         Log.d("SkillTree Merge", "Successful merge!");
         return mergedSkillBuild;

@@ -14,7 +14,7 @@ import com.jamieadkins.heistr.BuildObjects.Attachment;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pd2skills.db";
-    private static final int DATABASE_VERSION = 29;
+    private static final int DATABASE_VERSION = 30;
 
     //region Skills
     public static final String TABLE_SKILL_BUILDS = "tbSkillBuilds";
@@ -43,6 +43,29 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + " integer," + COLUMNS_SKILLS[0]
             + " integer," + COLUMNS_SKILLS[1]
             + " integer," + COLUMNS_SKILLS[2]
+            + " integer);";
+
+    public static final String TABLE_SKILL_SUB_TREES = "tbSkillSubTrees";
+    public static final String COLUMN_SUB_TREE = "subTree";
+
+    public static final String[] COLUMNS_NEW_SKILLS = new String[]{"skill1",
+            "skill2",
+            "skill3",
+            "skill4",
+            "skill5",
+            "skill6",};
+
+    private static final String CREATE_SKILL_SUB_TREE_TABLE = "create table if not exists "
+            + TABLE_SKILL_SUB_TREES + "(" + COLUMN_ID
+            + " integer primary key autoincrement, " + COLUMN_SKILL_BUILD_ID
+            + " integer," + COLUMN_TREE
+            + " integer," + COLUMN_SUB_TREE
+            + " integer," + COLUMNS_NEW_SKILLS[0]
+            + " integer," + COLUMNS_NEW_SKILLS[1]
+            + " integer," + COLUMNS_NEW_SKILLS[2]
+            + " integer," + COLUMNS_NEW_SKILLS[3]
+            + " integer," + COLUMNS_NEW_SKILLS[4]
+            + " integer," + COLUMNS_NEW_SKILLS[5]
             + " integer);";
     //endregion
 
@@ -132,6 +155,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_SKILL_BUILD_TABLE);
         db.execSQL(CREATE_SKILL_TIER_TABLE);
+        db.execSQL(CREATE_SKILL_SUB_TREE_TABLE);
         db.execSQL(CREATE_BUILD_TABLE);
         db.execSQL(CREATE_INFAMY_TABLE);
         db.execSQL(CREATE_WEAPON_BUILD_TABLE);
@@ -149,6 +173,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_BUILDS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_BUILDS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_TIERS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SKILL_SUB_TREES);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_INFAMY);
 
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_WEAPON_BUILDS);
@@ -177,39 +202,4 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             }
         }
     }
-
-    private void AddBaseWeapons(SQLiteDatabase db) {
-        long[] weaponIDs = new long[3];
-
-        for (int weapon = 0; weapon < 3; weapon++) {
-
-            ContentValues values = new ContentValues();
-
-            for (String weaponColumn : DataSourceWeapons.getWeaponColumns()) {
-                values.put(weaponColumn, -1);
-            }
-            values.remove(MySQLiteHelper.COLUMN_ID);
-            values.put(MySQLiteHelper.COLUMN_WEAPON_TYPE, weapon);
-            switch (weapon) {
-                case 0:
-                    values.put(MySQLiteHelper.COLUMN_NAME, "example");
-                    values.put(MySQLiteHelper.COLUMN_PD2_ID, 10);
-                    break;
-                case 1:
-                    values.put(MySQLiteHelper.COLUMN_NAME, "example");
-                    values.put(MySQLiteHelper.COLUMN_PD2_ID, 25);
-                    break;
-                case 2:
-                    values.put(MySQLiteHelper.COLUMN_NAME, "example");
-                    values.put(MySQLiteHelper.COLUMN_PD2_ID, 100000);
-                    break;
-            }
-
-            weaponIDs[weapon] = db.insert(MySQLiteHelper.TABLE_WEAPONS, null, values);
-            Log.d("Weapon inserted DB", weaponIDs[weapon] + "");
-        }
-
-    }
-
-
 }

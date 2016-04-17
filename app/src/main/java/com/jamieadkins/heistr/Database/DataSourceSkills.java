@@ -7,6 +7,8 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.jamieadkins.heistr.BuildObjects.NewSkillSubTree;
+import com.jamieadkins.heistr.BuildObjects.NewSkillTree;
 import com.jamieadkins.heistr.BuildObjects.Skill;
 import com.jamieadkins.heistr.BuildObjects.SkillBuild;
 import com.jamieadkins.heistr.BuildObjects.SkillTier;
@@ -23,6 +25,7 @@ public class DataSourceSkills {
     private SQLiteDatabase database;
     private MySQLiteHelper dbHelper;
     private String[] skillBuildColumns = {MySQLiteHelper.COLUMN_ID, MySQLiteHelper.COLUMN_NAME};
+
     private String[] skillTreeColumns = {MySQLiteHelper.COLUMN_ID,
             MySQLiteHelper.COLUMN_SKILL_BUILD_ID,
             MySQLiteHelper.COLUMN_TREE,
@@ -30,6 +33,17 @@ public class DataSourceSkills {
             MySQLiteHelper.COLUMNS_SKILLS[0],
             MySQLiteHelper.COLUMNS_SKILLS[1],
             MySQLiteHelper.COLUMNS_SKILLS[2]};
+
+    private String[] newSkillTreeColumns = {MySQLiteHelper.COLUMN_ID,
+            MySQLiteHelper.COLUMN_SKILL_BUILD_ID,
+            MySQLiteHelper.COLUMN_TREE,
+            MySQLiteHelper.COLUMN_SUB_TREE,
+            MySQLiteHelper.COLUMNS_NEW_SKILLS[0],
+            MySQLiteHelper.COLUMNS_NEW_SKILLS[1],
+            MySQLiteHelper.COLUMNS_NEW_SKILLS[2],
+            MySQLiteHelper.COLUMNS_NEW_SKILLS[3],
+            MySQLiteHelper.COLUMNS_NEW_SKILLS[4],
+            MySQLiteHelper.COLUMNS_NEW_SKILLS[5]};
 
     public DataSourceSkills(Context context) {
         dbHelper = new MySQLiteHelper(context);
@@ -70,6 +84,25 @@ public class DataSourceSkills {
 
                 long id = database.insert(MySQLiteHelper.TABLE_SKILL_TIERS, null, values);
                 //Log.d("DB creation", "Tier ID = " + id + " - Added tier " + tier + " to tree " + tree);
+            }
+        }
+
+        for (int tree = Trees.MASTERMIND; tree <= Trees.FUGITIVE; tree++) {
+            for (int subtree = 0; subtree < Trees.SUBTREES_PER_TREE; subtree++) {
+                ContentValues values = new ContentValues();
+
+                values.put(MySQLiteHelper.COLUMN_SKILL_BUILD_ID, skillBuildID);
+                values.put(MySQLiteHelper.COLUMN_TREE, tree);
+                values.put(MySQLiteHelper.COLUMN_SUB_TREE, subtree);
+                values.put(MySQLiteHelper.COLUMNS_NEW_SKILLS[0], Skill.NO);
+                values.put(MySQLiteHelper.COLUMNS_NEW_SKILLS[1], Skill.NO);
+                values.put(MySQLiteHelper.COLUMNS_NEW_SKILLS[2], Skill.NO);
+                values.put(MySQLiteHelper.COLUMNS_NEW_SKILLS[3], Skill.NO);
+                values.put(MySQLiteHelper.COLUMNS_NEW_SKILLS[4], Skill.NO);
+                values.put(MySQLiteHelper.COLUMNS_NEW_SKILLS[5], Skill.NO);
+
+                long id = database.insert(MySQLiteHelper.TABLE_SKILL_SUB_TREES, null, values);
+                Log.d("DB creation", "SubTree ID = " + id + " - Added subtree " + subtree + " to tree " + tree);
             }
         }
 
@@ -231,6 +264,20 @@ public class DataSourceSkills {
         Log.d("DB", "Tier updated for build " + buildID + ", tree " + tree + ", tier " + tier.getNumber());
     }
 
+    public void updateSubTree(long buildID, int tree, NewSkillSubTree subTree) {
+
+        ContentValues values = new ContentValues();
+        for (int skill = 0; skill < subTree.getSkillsInTier().size(); skill++) {
+            values.put(MySQLiteHelper.COLUMNS_NEW_SKILLS[skill], subTree.getSkillsInTier().get(skill).getTaken());
+        }
+
+        database.update(MySQLiteHelper.TABLE_SKILL_SUB_TREES, values, MySQLiteHelper.COLUMN_SKILL_BUILD_ID + " = " + buildID +
+                " AND " + MySQLiteHelper.COLUMN_TREE + " = " + tree +
+                " AND " + MySQLiteHelper.COLUMN_SUB_TREE + " = " + subTree.getSubTree(), null);
+        Log.d("DB", "Subtree updated for build " + buildID + ", tree " + tree + ", subtree " + subTree.getSubTree());
+        Log.d("DB", subTree.toString());
+    }
+
     private SkillBuild cursorToSkillBuild(Cursor cursorSkillBuild) {
 
         SkillBuild skillBuild = new SkillBuild();
@@ -282,6 +329,54 @@ public class DataSourceSkills {
         }
 
         cursorSkillTreeTiers.close();
+
+        Cursor cursorNewSkillTrees = database.query(MySQLiteHelper.TABLE_SKILL_SUB_TREES,
+                newSkillTreeColumns, MySQLiteHelper.COLUMN_SKILL_BUILD_ID + " = " + skillBuildID, null,
+                null, null, null);
+
+        cursorNewSkillTrees.moveToFirst();
+
+        while (!cursorNewSkillTrees.isAfterLast()) {
+            int[] skillTaken = new int[Trees.SKILLS_PER_SUBTREE];
+
+            long subTreeID = cursorNewSkillTrees.getLong(0);
+            int treeNumber = cursorNewSkillTrees.getInt(2);
+            int subtreeNumber = cursorNewSkillTrees.getInt(3);
+            skillTaken[0] = cursorNewSkillTrees.getInt(4);
+            skillTaken[1] = cursorNewSkillTrees.getInt(5);
+            skillTaken[2] = cursorNewSkillTrees.getInt(6);
+            skillTaken[3] = cursorNewSkillTrees.getInt(7);
+            skillTaken[4] = cursorNewSkillTrees.getInt(8);
+            skillTaken[5] = cursorNewSkillTrees.getInt(9);
+
+            if (treeNumber > (skillBuild.getNewSkillTrees().size() - 1)) {
+                skillBuild.getNewSkillTrees().add(new NewSkillTree());
+                skillBuild.getNewSkillTrees().get(treeNumber).setSkillBuildID(skillBuildID);
+            }
+
+            //Add a new subtree if we are at a new one
+            if (subtreeNumber > (skillBuild.getNewSkillTrees().get(treeNumber).getSubTrees().size() - 1)) {
+                skillBuild.getNewSkillTrees().get(treeNumber).getSubTrees().add(new NewSkillSubTree());
+                skillBuild.getNewSkillTrees().get(treeNumber).getSubTrees().get(subtreeNumber).setSkillBuildID(skillBuildID);
+                skillBuild.getNewSkillTrees().get(treeNumber).getSubTrees().get(subtreeNumber).setId(subTreeID);
+                skillBuild.getNewSkillTrees().get(treeNumber).getSubTrees().get(subtreeNumber).setSkillTree(treeNumber);
+                skillBuild.getNewSkillTrees().get(treeNumber).getSubTrees().get(subtreeNumber).setSubTree(subtreeNumber);
+            }
+
+            //Add the correct amount of skills to the subtree
+            while (skillBuild.getNewSkillTrees().get(treeNumber).getSubTrees().get(subtreeNumber).getSkillsInTier().size() < Trees.SKILLS_PER_SUBTREE) {
+                skillBuild.getNewSkillTrees().get(treeNumber).getSubTrees().get(subtreeNumber).getSkillsInTier().add(new Skill());
+            }
+
+            //Tell the skills if they are taken or not
+            for (int i = 0; i < Trees.SKILLS_PER_SUBTREE; i++) {
+                skillBuild.getNewSkillTrees().get(treeNumber).getSubTrees().get(subtreeNumber).getSkillsInTier().get(i).setTaken(skillTaken[i]);
+            }
+
+            cursorNewSkillTrees.moveToNext();
+        }
+
+        cursorNewSkillTrees.close();
 
         //Log.d("SkillBuild retireved DB", skillBuild.toString());
         return skillBuild;
