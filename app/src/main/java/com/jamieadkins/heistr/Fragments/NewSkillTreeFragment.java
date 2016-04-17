@@ -127,6 +127,7 @@ public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.
                 .get(mSkillTreeIndex).getSubTrees().get(mSubTreeIndex);
 
         initialiseSkillViews();
+        updatePointsRemaining();
     }
 
     private void initialiseSkillViews() {
@@ -187,6 +188,7 @@ public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.
 
                     mCurrentBuild.updateSubTree(mActivity, mSkillTreeIndex, mCurrentSubTree);
                     updateOtherSkills();
+                    updatePointsRemaining();
                 }
             });
         }
