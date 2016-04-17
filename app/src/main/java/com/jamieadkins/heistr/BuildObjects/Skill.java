@@ -10,22 +10,32 @@ public class Skill {
     private String aceDescription = "";
     private String abbreviation = "";
     private String pd2SkillsSymbol = "";
-    private int normalPoints = 0;
-    private int acePoints = 0;
+    private int normalCost = 0;
+    private int aceCost = 0;
     private int taken = 0;
+
+    private int unlockRequirement = 0;
+    private int tier = 0;
+    private boolean locked = true;
 
     public final static int NO = 0;
     public final static int NORMAL = 1;
     public final static int ACE = 2;
 
+    public final static boolean UNLOCKED = true;
+    public final static boolean LOCKED = false;
+
     public Skill() {
         name = "";
         normalDescription = "";
         aceDescription = "";
-        normalPoints = 0;
-        acePoints = 0;
+        normalCost = 0;
+        aceCost = 0;
         taken = NO;
         pd2SkillsSymbol = "";
+        tier = 0;
+        unlockRequirement = 0;
+        locked = LOCKED;
     }
 
     @Override
@@ -49,20 +59,36 @@ public class Skill {
         return text;
     }
 
-    public int getNormalPoints() {
-        return normalPoints;
+    public int getTier() {
+        return tier;
     }
 
-    public void setNormalPoints(int normalPoints) {
-        this.normalPoints = normalPoints;
+    public void setTier(int tier) {
+        this.tier = tier;
     }
 
-    public int getAcePoints() {
-        return acePoints;
+    public int getUnlockRequirement() {
+        return unlockRequirement;
     }
 
-    public void setAcePoints(int acePoints) {
-        this.acePoints = acePoints;
+    public void setUnlockRequirement(int unlockRequirement) {
+        this.unlockRequirement = unlockRequirement;
+    }
+
+    public int getNormalCost() {
+        return normalCost;
+    }
+
+    public void setNormalCost(int normalCost) {
+        this.normalCost = normalCost;
+    }
+
+    public int getAceCost() {
+        return aceCost;
+    }
+
+    public void setAceCost(int aceCost) {
+        this.aceCost = aceCost;
     }
 
     public String getPd2SkillsSymbol() {

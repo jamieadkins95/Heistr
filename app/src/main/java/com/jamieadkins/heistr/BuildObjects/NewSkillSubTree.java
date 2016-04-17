@@ -10,8 +10,7 @@ import java.util.ArrayList;
 public class NewSkillSubTree {
     long id = -1;
     long skillBuildID = -1;
-    ArrayList<Skill> skillsInTier;
-    int pointRequirement;
+    ArrayList<Skill> skillsInSubTree;
     int skillTree;
     int subTree;
 
@@ -25,45 +24,29 @@ public class NewSkillSubTree {
 
     @Override
     public String toString() {
-        String text = "Tier " + subTree;
-        for (Skill s : skillsInTier) {
+        String text = "Subtree " + subTree;
+        for (Skill s : skillsInSubTree) {
             text += "\n" + s.toString();
         }
         return text;
     }
 
     public NewSkillSubTree() {
-        skillsInTier = new ArrayList<Skill>();
+        skillsInSubTree = new ArrayList<Skill>();
     }
 
     public static NewSkillSubTree newNonDBInstance(int tierNumber) {
         NewSkillSubTree subTree = new NewSkillSubTree();
         for (int i = 0; i < Trees.SKILLS_PER_SUBTREE; i++) {
-            subTree.getSkillsInTier().add(new Skill());
+            subTree.getSkillsInSubTree().add(new Skill());
         }
 
         return subTree;
     }
 
-    public void setPointRequirement(int pointRequirement) {
-        this.pointRequirement = pointRequirement;
-    }
+    public ArrayList<Skill> getSkillsInSubTree() {
 
-    public ArrayList<Skill> getSkillsInTier() {
-
-        return skillsInTier;
-    }
-
-    public int getPointRequirement(boolean infamyInThisTree) {
-        int points = pointRequirement;
-        if (infamyInThisTree) {
-            if (subTree >= 3) {
-                int deduction = points / 10;
-                points -= deduction;
-            }
-        }
-
-        return points;
+        return skillsInSubTree;
     }
 
     public long getSkillBuildID() {
@@ -91,8 +74,31 @@ public class NewSkillSubTree {
     }
 
     public void resetSkills() {
-        for (Skill skill : skillsInTier) {
+        for (Skill skill : skillsInSubTree) {
             skill.setTaken(Skill.NO);
         }
+    }
+
+    public int getPointsSpentInThisTree() {
+        return getPointsSpentInThisTree(Trees.TIERS_PER_SUBTREE);
+    }
+
+    public int getPointsSpentInThisTree(int upToTier) {
+        int total = 0;
+        for (Skill skill : skillsInSubTree) {
+            if (skill.getTier() < upToTier) {
+                switch (skill.getTaken()) {
+                    case Skill.NORMAL:
+                        total += skill.getNormalCost();
+                        break;
+                    case Skill.ACE:
+                        total += skill.getNormalCost() + skill.getAceCost();
+                        break;
+                }
+            }
+        }
+
+
+        return total;
     }
 }

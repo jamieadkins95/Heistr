@@ -267,8 +267,8 @@ public class DataSourceSkills {
     public void updateSubTree(long buildID, int tree, NewSkillSubTree subTree) {
 
         ContentValues values = new ContentValues();
-        for (int skill = 0; skill < subTree.getSkillsInTier().size(); skill++) {
-            values.put(MySQLiteHelper.COLUMNS_NEW_SKILLS[skill], subTree.getSkillsInTier().get(skill).getTaken());
+        for (int skill = 0; skill < subTree.getSkillsInSubTree().size(); skill++) {
+            values.put(MySQLiteHelper.COLUMNS_NEW_SKILLS[skill], subTree.getSkillsInSubTree().get(skill).getTaken());
         }
 
         database.update(MySQLiteHelper.TABLE_SKILL_SUB_TREES, values, MySQLiteHelper.COLUMN_SKILL_BUILD_ID + " = " + buildID +
@@ -364,13 +364,13 @@ public class DataSourceSkills {
             }
 
             //Add the correct amount of skills to the subtree
-            while (skillBuild.getNewSkillTrees().get(treeNumber).getSubTrees().get(subtreeNumber).getSkillsInTier().size() < Trees.SKILLS_PER_SUBTREE) {
-                skillBuild.getNewSkillTrees().get(treeNumber).getSubTrees().get(subtreeNumber).getSkillsInTier().add(new Skill());
+            while (skillBuild.getNewSkillTrees().get(treeNumber).getSubTrees().get(subtreeNumber).getSkillsInSubTree().size() < Trees.SKILLS_PER_SUBTREE) {
+                skillBuild.getNewSkillTrees().get(treeNumber).getSubTrees().get(subtreeNumber).getSkillsInSubTree().add(new Skill());
             }
 
             //Tell the skills if they are taken or not
             for (int i = 0; i < Trees.SKILLS_PER_SUBTREE; i++) {
-                skillBuild.getNewSkillTrees().get(treeNumber).getSubTrees().get(subtreeNumber).getSkillsInTier().get(i).setTaken(skillTaken[i]);
+                skillBuild.getNewSkillTrees().get(treeNumber).getSubTrees().get(subtreeNumber).getSkillsInSubTree().get(i).setTaken(skillTaken[i]);
             }
 
             cursorNewSkillTrees.moveToNext();

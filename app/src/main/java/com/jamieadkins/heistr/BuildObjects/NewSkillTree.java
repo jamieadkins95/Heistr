@@ -57,7 +57,7 @@ public class NewSkillTree {
     public int getSkillCount() {
         int count = 0;
         for (NewSkillSubTree tier : subTrees) {
-            for (Skill skill : tier.getSkillsInTier()) {
+            for (Skill skill : tier.getSkillsInSubTree()) {
                 count += skill.getTaken();
             }
 
@@ -73,28 +73,5 @@ public class NewSkillTree {
         }
 
         return descending;
-    }
-
-    public int getPointsSpentInThisTree() {
-        return getPointsSpentInThisTree(7);
-    }
-
-    public int getPointsSpentInThisTree(int upToTier) {
-        int total = 0;
-        for (int i = 0; i < upToTier; i++) {
-            NewSkillSubTree tier = subTrees.get(i);
-            for (Skill skill : tier.getSkillsInTier()) {
-                switch (skill.getTaken()) {
-                    case Skill.NORMAL:
-                        total += skill.getNormalPoints();
-                        break;
-                    case Skill.ACE:
-                        total += skill.getNormalPoints() + skill.getAcePoints();
-                        break;
-                }
-            }
-        }
-
-        return total;
     }
 }

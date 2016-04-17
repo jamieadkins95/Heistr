@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.jamieadkins.heistr.BuildObjects.Skill;
 import com.jamieadkins.heistr.R;
 
 /**
@@ -16,6 +17,8 @@ public class SkillCardView extends CardView {
     private TextView mSkillName;
     private TextView mNormalDescription ;
     private TextView mAceDescription;
+
+    private int mTaken = Skill.NO;
 
     public SkillCardView(Context context) {
         super(context);
@@ -41,5 +44,75 @@ public class SkillCardView extends CardView {
         this.mSkillName = (TextView) findViewById(R.id.tvName);
         this.mNormalDescription = (TextView) findViewById(R.id.tvNormalDescription);
         this.mAceDescription = (TextView) findViewById(R.id.tvAceDescription);
+    }
+
+    public void setSkillStatus(int taken) {
+        mTaken = taken;
+        int colour;
+        switch (mTaken) {
+            case Skill.NO:
+                colour = ContextCompat.getColor(getContext(), R.color.textHint);
+                break;
+            case Skill.NORMAL:
+                colour = ContextCompat.getColor(getContext(), R.color.textPrimary);
+                break;
+            case Skill.ACE:
+                colour = ContextCompat.getColor(getContext(), R.color.primary);
+                break;
+            default:
+                colour = ContextCompat.getColor(getContext(), R.color.textHint);
+                break;
+        }
+
+        mSkillName.setTextColor(colour);
+    }
+
+    public void setSkillStatus(boolean unlocked) {
+        int colour;
+        if (unlocked) {
+            colour = ContextCompat.getColor(getContext(), R.color.backgroundCard);
+        } else {
+            colour = ContextCompat.getColor(getContext(), R.color.backgroundVeryDark);
+        }
+        setBackgroundColor(colour);
+    }
+
+    public void onSkillTaken() {
+        int colour;
+        switch (mTaken) {
+            case Skill.NO:
+                //Set to normal
+                mTaken = Skill.NORMAL;
+                colour = ContextCompat.getColor(getContext(), R.color.textPrimary);
+                break;
+            case Skill.NORMAL:
+                //Set to Ace
+                mTaken = Skill.ACE;
+                colour = ContextCompat.getColor(getContext(), R.color.primary);
+                break;
+            case Skill.ACE:
+                //Set to none
+                mTaken = Skill.NO;
+                colour = ContextCompat.getColor(getContext(), R.color.textHint);
+                break;
+            default:
+                mTaken = Skill.NO;
+                colour = ContextCompat.getColor(getContext(), R.color.textHint);
+                break;
+        }
+
+        mSkillName.setTextColor(colour);
+    }
+
+    public void setSkillName(String name) {
+        mSkillName.setText(name);
+    }
+
+    public void setNormalDescription(String description) {
+        mNormalDescription.setText(description);
+    }
+
+    public void setAceDescription(String description) {
+        mAceDescription.setText(description);
     }
 }

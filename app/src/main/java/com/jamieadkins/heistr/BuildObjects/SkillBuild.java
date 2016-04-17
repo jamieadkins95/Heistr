@@ -121,8 +121,8 @@ public class SkillBuild {
 
                     newSkill.setNormalDescription(skillFromXML.getNormalDescription());
                     newSkill.setAceDescription(skillFromXML.getAceDescription());
-                    newSkill.setNormalPoints(tierFromXML.getNormalCost());
-                    newSkill.setAcePoints(tierFromXML.getAceCost());
+                    newSkill.setNormalCost(tierFromXML.getNormalCost());
+                    newSkill.setAceCost(tierFromXML.getAceCost());
 
                     newSkill.setTaken(skillFromDB.getTaken());
 
@@ -158,10 +158,10 @@ public class SkillBuild {
                 //newSkillSubTree.setAceCost(tierFromXML.getAceCost());
 
 
-                for (int skill = 0; skill < subTreeFromDb.getSkillsInTier().size(); skill++) {
+                for (int skill = 0; skill < subTreeFromDb.getSkillsInSubTree().size(); skill++) {
                     Skill newSkill = new Skill();
                     //Skill skillFromXML = tierFromXML.getSkillsInTier().get(skill);
-                    Skill skillFromDB = subTreeFromDb.getSkillsInTier().get(skill);
+                    Skill skillFromDB = subTreeFromDb.getSkillsInSubTree().get(skill);
 
                     //newSkill.setName(skillFromXML.getName());
                     //newSkill.setAbbreviation(skillFromXML.getAbbreviation());
@@ -174,7 +174,7 @@ public class SkillBuild {
 
                     newSkill.setTaken(skillFromDB.getTaken());
 
-                    newSkillSubTree.getSkillsInTier().add(newSkill);
+                    newSkillSubTree.getSkillsInSubTree().add(newSkill);
                 }
 
                 newTree.getSubTrees().add(newSkillSubTree);

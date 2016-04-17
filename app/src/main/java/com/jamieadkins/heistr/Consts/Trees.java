@@ -6,6 +6,7 @@ package com.jamieadkins.heistr.Consts;
 public class Trees {
     public final static int SUBTREES_PER_TREE = 3;
     public final static int SKILLS_PER_SUBTREE = 6;
+    public final static int TIERS_PER_SUBTREE = 4;
 
     public final static int MASTERMIND = 0;
     public final static int ENFORCER = 1;

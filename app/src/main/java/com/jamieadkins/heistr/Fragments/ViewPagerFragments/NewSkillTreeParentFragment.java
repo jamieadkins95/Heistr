@@ -60,9 +60,9 @@ public class NewSkillTreeParentFragment extends BaseTabFragment {
                 subTreeNames = getResources().getStringArray(R.array.mastermind_sub_trees);
                 break;
         }
-        for (int i = 0; i < Trees.SUBTREES_PER_TREE; i++) {
-            String title = subTreeNames[i];
-            mAdapter.addFragment(NewSkillTreeFragment.newInstance(title), title);
+        for (int subtree = 0; subtree < Trees.SUBTREES_PER_TREE; subtree++) {
+            String title = subTreeNames[subtree];
+            mAdapter.addFragment(NewSkillTreeFragment.newInstance(mTree, subtree), title);
         }
 
         viewPager.setAdapter(mAdapter);
