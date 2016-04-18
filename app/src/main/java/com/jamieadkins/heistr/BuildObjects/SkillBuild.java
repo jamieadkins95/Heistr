@@ -363,16 +363,16 @@ public class SkillBuild {
             //Get the xml for the correct tree
             switch (i) {
                 case Trees.MASTERMIND:
-                    xmlParser = res.getXml(R.xml.new_fugitive);
+                    xmlParser = res.getXml(R.xml.new_mastermind);
                     break;
                 case Trees.ENFORCER:
-                    xmlParser = res.getXml(R.xml.new_fugitive);
+                    xmlParser = res.getXml(R.xml.new_enforcer);
                     break;
                 case Trees.TECHNICIAN:
-                    xmlParser = res.getXml(R.xml.new_fugitive);
+                    xmlParser = res.getXml(R.xml.new_technician);
                     break;
                 case Trees.GHOST:
-                    xmlParser = res.getXml(R.xml.new_fugitive);
+                    xmlParser = res.getXml(R.xml.new_ghost);
                     break;
                 case Trees.FUGITIVE:
                     xmlParser = res.getXml(R.xml.new_fugitive);
