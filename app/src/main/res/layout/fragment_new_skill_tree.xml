@@ -16,6 +16,7 @@
               android:layout_height="wrap_content"
               android:layout_gravity="right"
               android:textSize="15sp"
+              android:paddingBottom="4dp"
               android:textColor="@color/textPrimary"
               android:text="120/120" />
 
@@ -27,6 +28,12 @@
                   android:layout_height="wrap_content"
                   android:text="@string/tier4"
                   android:id="@+id/tier4"
+                  android:paddingBottom="4dp"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentRight="true"
+                  android:id="@+id/tvPointsRequired4"
                   android:paddingBottom="4dp"/>
 
         <com.jamieadkins.heistr.utils.SkillCardView
@@ -46,6 +53,13 @@
                   android:text="@string/tier3"
                   android:id="@+id/tier3"
                   android:paddingBottom="4dp"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentRight="true"
+                  android:id="@+id/tvPointsRequired3"
+                  android:paddingBottom="4dp"/>
+
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,6 +94,12 @@
                   android:layout_height="wrap_content"
                   android:text="@string/tier2"
                   android:id="@+id/tier2"
+                  android:paddingBottom="4dp"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentRight="true"
+                  android:id="@+id/tvPointsRequired2"
                   android:paddingBottom="4dp"/>
 
         <LinearLayout

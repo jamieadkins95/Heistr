@@ -49,18 +49,29 @@ public class SkillCardView extends CardView {
     public void setSkillStatus(int taken) {
         mTaken = taken;
         int colour;
+        int notTaken = ContextCompat.getColor(getContext(), R.color.textHint);
+        int normal = ContextCompat.getColor(getContext(), R.color.textPrimary);
+        int ace = ContextCompat.getColor(getContext(), R.color.primary);
         switch (mTaken) {
             case Skill.NO:
-                colour = ContextCompat.getColor(getContext(), R.color.textHint);
+                colour = notTaken;
+                mNormalDescription.setTextColor(colour);
+                mAceDescription.setTextColor(colour);
                 break;
             case Skill.NORMAL:
-                colour = ContextCompat.getColor(getContext(), R.color.textPrimary);
+                colour = normal;
+                mNormalDescription.setTextColor(normal);
+                mAceDescription.setTextColor(notTaken);
                 break;
             case Skill.ACE:
-                colour = ContextCompat.getColor(getContext(), R.color.primary);
+                colour = ace;
+                mNormalDescription.setTextColor(normal);
+                mAceDescription.setTextColor(normal);
                 break;
             default:
-                colour = ContextCompat.getColor(getContext(), R.color.textHint);
+                colour = notTaken;
+                mNormalDescription.setTextColor(colour);
+                mAceDescription.setTextColor(colour);
                 break;
         }
 

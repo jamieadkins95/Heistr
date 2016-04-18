@@ -41,6 +41,7 @@ public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.
 
     TextView mTvPointsRemaining;
     SkillCardView[] mSkillCardViews;
+    TextView[] mPointsRequired;
 
     public NewSkillTreeFragment() {
         // Required empty public constructor
@@ -92,6 +93,11 @@ public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.
         mSkillCardViews[3] = (SkillCardView) rootView.findViewById(R.id.skill_tier3_skill1);
         mSkillCardViews[4] = (SkillCardView) rootView.findViewById(R.id.skill_tier3_skill2);
         mSkillCardViews[5] = (SkillCardView) rootView.findViewById(R.id.skill_tier4_skill1);
+
+        mPointsRequired = new TextView[3];
+        mPointsRequired[0] = (TextView) rootView.findViewById(R.id.tvPointsRequired2);
+        mPointsRequired[1] = (TextView) rootView.findViewById(R.id.tvPointsRequired3);
+        mPointsRequired[2] = (TextView) rootView.findViewById(R.id.tvPointsRequired4);
 
         final NewSkillSubTree tree = NewSkillSubTree.newNonDBInstance(0);
         for (Skill skill : tree.getSkillsInSubTree()) {
@@ -235,6 +241,25 @@ public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.
     private void updatePointsRemaining() {
         mTvPointsRemaining.setText(mActivity.getCurrentBuild().getSkillBuild().getNewPointsRemaining() +
                 "/" + mActivity.getCurrentBuild().getSkillBuild().getNewPointsAvailable());
+
+        int pointReq = mCurrentSubTree.getSkillsInSubTree().get(1).getUnlockRequirement() - mCurrentSubTree.getPointsSpentInThisTree(2);
+        if (pointReq < 0) {
+            pointReq = 0;
+        }
+        mPointsRequired[0].setText(pointReq + " more to unlock");
+
+        pointReq = mCurrentSubTree.getSkillsInSubTree().get(3).getUnlockRequirement() - mCurrentSubTree.getPointsSpentInThisTree(3);
+        if (pointReq < 0) {
+            pointReq = 0;
+        }
+        mPointsRequired[1].setText(pointReq + " more to unlock");
+
+        pointReq = mCurrentSubTree.getSkillsInSubTree().get(5).getUnlockRequirement() - mCurrentSubTree.getPointsSpentInThisTree(4);
+        if (pointReq < 0) {
+            pointReq = 0;
+        }
+        mPointsRequired[2].setText(pointReq + " more to unlock");
+
     }
 
     @Override
