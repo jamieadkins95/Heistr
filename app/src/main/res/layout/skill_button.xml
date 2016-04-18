@@ -26,13 +26,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvNormalDescription"
             android:text="Normal: This skill increase you damage by 100%."
-            android:textColor="@color/textHint"/>
+            android:textColor="@color/textSecondary"/>
     <TextView
             android:paddingTop="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvAceDescription"
             android:text="Ace: This skill increase you damage by 500%"
-            android:textColor="@color/textHint"/>
+            android:textColor="@color/textSecondary"/>
 
 </LinearLayout>
