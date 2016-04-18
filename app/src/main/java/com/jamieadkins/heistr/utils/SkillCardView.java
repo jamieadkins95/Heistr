@@ -109,10 +109,10 @@ public class SkillCardView extends CardView {
     }
 
     public void setNormalDescription(String description) {
-        mNormalDescription.setText(description);
+        mNormalDescription.setText(getContext().getString(R.string.normal, description));
     }
 
     public void setAceDescription(String description) {
-        mAceDescription.setText(description);
+        mAceDescription.setText(getContext().getString(R.string.ace, description));
     }
 }

@@ -80,7 +80,7 @@ public class NewSkillSubTree {
     }
 
     public int getPointsSpentInThisTree() {
-        return getPointsSpentInThisTree(Trees.TIERS_PER_SUBTREE);
+        return getPointsSpentInThisTree(Trees.TIERS_PER_SUBTREE + 1);
     }
 
     public int getPointsSpentInThisTree(int upToTier) {
@@ -97,7 +97,6 @@ public class NewSkillSubTree {
                 }
             }
         }
-
 
         return total;
     }

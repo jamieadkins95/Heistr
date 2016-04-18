@@ -9,6 +9,7 @@ import android.support.v7.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.jamieadkins.heistr.Activities.EditBuildActivity;
@@ -17,6 +18,7 @@ import com.jamieadkins.heistr.BuildObjects.NewSkillSubTree;
 import com.jamieadkins.heistr.BuildObjects.NewSkillTree;
 import com.jamieadkins.heistr.BuildObjects.Skill;
 import com.jamieadkins.heistr.Consts.Trees;
+import com.jamieadkins.heistr.Fragments.ViewPagerFragments.ViewPagerLifecycle;
 import com.jamieadkins.heistr.R;
 import com.jamieadkins.heistr.utils.SkillCardView;
 
@@ -24,7 +26,9 @@ import com.jamieadkins.heistr.utils.SkillCardView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks {
+public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks,
+        ViewPagerLifecycle {
+
     private static final String ARG_TREE = "tree";
     private static final String ARG_SUB_TREE = "subtree";
 
@@ -128,6 +132,15 @@ public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.
 
         initialiseSkillViews();
         updatePointsRemaining();
+
+        final ScrollView scrollView = (ScrollView) getView().findViewById(R.id.scrollView);
+
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.fullScroll(scrollView.FOCUS_DOWN);
+            }
+        });
     }
 
     private void initialiseSkillViews() {
@@ -157,10 +170,9 @@ public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.
                             skillCost = skill.getAceCost();
                             break;
                     }
-                    final int pointsUsed = mCurrentBuild.getSkillBuild().getPointsUsed();
 
                     if (mCurrentSubTree.getPointsSpentInThisTree(skill.getTier()) >= skill.getUnlockRequirement()) { //if tier is unlocked
-                        if (pointsUsed + skillCost <= mCurrentBuild.getSkillBuild().getPointsAvailable()) { //if there are enough points left
+                        if (skillCost <= mCurrentBuild.getSkillBuild().getNewPointsRemaining()) { //if there are enough points left
 
                             switch (taken) {
                                 case Skill.NO:
@@ -182,7 +194,7 @@ public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.
                         } else {
                             //Set to none
                             skill.setTaken(Skill.NO);
-                            //Toast.makeText(context, "Not enough skill points remaining!", Toast.LENGTH_SHORT).show();
+                            skillCardView.setSkillStatus(Skill.NO);
                         }
                     }
 
@@ -225,4 +237,17 @@ public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.
                 "/" + mActivity.getCurrentBuild().getSkillBuild().getNewPointsAvailable());
     }
 
+    @Override
+    public void onHide() {
+
+    }
+
+    @Override
+    public void onShow() {
+        if (mActivity == null) {
+            return;
+        }
+
+        updatePointsRemaining();
+    }
 }

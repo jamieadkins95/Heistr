@@ -407,4 +407,8 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     public void updateCurrentSkillTreeIndex(int tree, int index) {
         currentSkillTreeIndex[tree] = index;
     }
+
+    public int getCurrentSkillTreeIndex(int skillTree) {
+        return currentSkillTreeIndex[skillTree];
+    }
 }

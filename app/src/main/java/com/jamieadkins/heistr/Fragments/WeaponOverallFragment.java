@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.jamieadkins.heistr.Activities.EditBuildActivity;
 import com.jamieadkins.heistr.Activities.EditWeaponActivity;
 import com.jamieadkins.heistr.BuildObjects.Weapon;
+import com.jamieadkins.heistr.Fragments.ViewPagerFragments.ViewPagerLifecycle;
 import com.jamieadkins.heistr.R;
 import com.jamieadkins.heistr.utils.ArrayAdapterWeaponList;
 
@@ -19,7 +20,8 @@ import java.util.ArrayList;
 /**
  * Created by Jamie on 20/01/2016.
  */
-public class WeaponOverallFragment extends Fragment implements EditWeaponActivity.WeaponsCallbacks, EditBuildActivity.BuildReadyCallbacks, EditWeaponActivity.ViewPagerLifecycle {
+public class WeaponOverallFragment extends Fragment implements EditWeaponActivity.WeaponsCallbacks,
+        EditBuildActivity.BuildReadyCallbacks, ViewPagerLifecycle {
 
     ListView currentWeaponView;
     EditWeaponActivity activity;

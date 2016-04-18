@@ -16,6 +16,7 @@ import com.jamieadkins.heistr.Activities.EditBuildActivity;
 import com.jamieadkins.heistr.Activities.EditWeaponActivity;
 import com.jamieadkins.heistr.BuildObjects.Attachment;
 import com.jamieadkins.heistr.Dialogs.AttachmentDetailsDialog;
+import com.jamieadkins.heistr.Fragments.ViewPagerFragments.ViewPagerLifecycle;
 import com.jamieadkins.heistr.R;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ import java.util.ArrayList;
  * Created by Jamie on 18/10/2015.
  */
 public class AttachmentListFragment extends Fragment implements EditWeaponActivity.WeaponsCallbacks,
-        EditBuildActivity.BuildReadyCallbacks, EditWeaponActivity.ViewPagerLifecycle,
+        EditBuildActivity.BuildReadyCallbacks, ViewPagerLifecycle,
         AttachmentDetailsDialog.AttachmentDetailsListener {
 
     private static final String ARG_ATTACHMENT_TYPE = "AttachmentType";

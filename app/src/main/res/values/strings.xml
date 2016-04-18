@@ -314,6 +314,8 @@
     <string name="pref_skill_layout">pref_skill_layout</string>
     <string name="pref_skill_layout_title">Vertical Skill Tiers</string>
     <string name="pref_skill_layout_summ">Organise skill tiers 2 and 3 vertically</string>
+    <string name="normal">Normal: %s</string>
+    <string name="ace">Ace: %s</string>
 
 
 </resources>

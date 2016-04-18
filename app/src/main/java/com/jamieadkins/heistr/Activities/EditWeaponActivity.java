@@ -21,6 +21,7 @@ import com.jamieadkins.heistr.Database.MySQLiteHelper;
 import com.jamieadkins.heistr.Fragments.AttachmentListFragment;
 import com.jamieadkins.heistr.Fragments.BuildListFragment;
 import com.jamieadkins.heistr.Fragments.TaskFragment;
+import com.jamieadkins.heistr.Fragments.ViewPagerFragments.ViewPagerLifecycle;
 import com.jamieadkins.heistr.Fragments.WeaponListFragment;
 import com.jamieadkins.heistr.Fragments.WeaponOverallFragment;
 import com.jamieadkins.heistr.R;
@@ -134,13 +135,6 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
                 return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public interface ViewPagerLifecycle {
-
-        void onHide();
-
-        void onShow();
     }
 
     private void setupViewPager(final ViewPager viewPager) {

@@ -38,7 +38,7 @@ public class NewSkillTreeParentFragment extends BaseTabFragment {
     }
 
     @Override
-    protected void setupViewPager(ViewPager viewPager) {
+    protected void setupViewPager(final ViewPager viewPager) {
         String[] subTreeNames;
         switch (mTree) {
             case Trees.MASTERMIND:
@@ -75,6 +75,13 @@ public class NewSkillTreeParentFragment extends BaseTabFragment {
 
             @Override
             public void onPageSelected(int position) {
+                Adapter adapter = (Adapter) viewPager.getAdapter();
+                ViewPagerLifecycle fragmentToShow = (ViewPagerLifecycle) adapter.getItem(position);
+                fragmentToShow.onShow();
+
+                ViewPagerLifecycle fragmentToHide = (ViewPagerLifecycle) adapter.getItem(activity.getCurrentSkillTreeIndex(mTree));
+                fragmentToHide.onHide();
+
                 activity.updateCurrentSkillTreeIndex(mTree, position);
             }
 
