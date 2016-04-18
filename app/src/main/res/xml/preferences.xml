@@ -31,6 +31,6 @@
                 android:key="pref_skill_layout"
                 android:title="@string/pref_skill_layout_title"
                 android:summary="@string/pref_skill_layout_summ"
-                android:defaultValue="false"/>
+                android:defaultValue="true"/>
     </PreferenceCategory>
 </PreferenceScreen>
