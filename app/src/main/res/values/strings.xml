@@ -316,6 +316,7 @@
     <string name="pref_skill_layout_summ">Organise skill tiers 2 and 3 vertically</string>
     <string name="normal">Normal: %s</string>
     <string name="ace">Ace: %s</string>
+    <string name="disabled">PD2skills.com not compatible</string>
 
 
 </resources>
