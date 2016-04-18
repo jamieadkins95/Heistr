@@ -3,10 +3,6 @@
 
     <group android:checkableBehavior="single">
         <item
-                android:id="@+id/nav_skill_trees"
-                android:checked="true"
-                android:title="@string/skill_trees" />
-        <item
                 android:id="@+id/nav_mastermind"
                 android:title="@string/mastermind" />
         <item

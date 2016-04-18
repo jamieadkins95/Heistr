@@ -56,8 +56,8 @@ public class NewSkillTree {
 
     public int getSkillCount() {
         int count = 0;
-        for (NewSkillSubTree tier : subTrees) {
-            for (Skill skill : tier.getSkillsInSubTree()) {
+        for (NewSkillSubTree subtree : subTrees) {
+            for (Skill skill : subtree.getSkillsInSubTree()) {
                 count += skill.getTaken();
             }
 

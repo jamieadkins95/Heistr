@@ -107,32 +107,32 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build> {
         //Set Detection
         tvDetection.setText(getItem(position).getDetection() + "");
 
-        mastermindSkillCount.setText(getItem(position).getSkillBuild().getSkillTrees().get(Trees.MASTERMIND).getSkillCount() + "");
-        enforcerSkillCount.setText(getItem(position).getSkillBuild().getSkillTrees().get(Trees.ENFORCER).getSkillCount() + "");
-        technicianSkillCount.setText(getItem(position).getSkillBuild().getSkillTrees().get(Trees.TECHNICIAN).getSkillCount() + "");
-        ghostSkillCount.setText(getItem(position).getSkillBuild().getSkillTrees().get(Trees.GHOST).getSkillCount() + "");
-        fugitiveSkillCount.setText(getItem(position).getSkillBuild().getSkillTrees().get(Trees.FUGITIVE).getSkillCount() + "");
+        mastermindSkillCount.setText(getItem(position).getSkillBuild().getNewSkillTrees().get(Trees.MASTERMIND).getSkillCount() + "");
+        enforcerSkillCount.setText(getItem(position).getSkillBuild().getNewSkillTrees().get(Trees.ENFORCER).getSkillCount() + "");
+        technicianSkillCount.setText(getItem(position).getSkillBuild().getNewSkillTrees().get(Trees.TECHNICIAN).getSkillCount() + "");
+        ghostSkillCount.setText(getItem(position).getSkillBuild().getNewSkillTrees().get(Trees.GHOST).getSkillCount() + "");
+        fugitiveSkillCount.setText(getItem(position).getSkillBuild().getNewSkillTrees().get(Trees.FUGITIVE).getSkillCount() + "");
 
         int highlightedColour = context.getResources().getColor(R.color.textSecondary);
 
         //Set colours if skills are above 15.
-        if (getItem(position).getSkillBuild().getSkillTrees().get(Trees.MASTERMIND).getSkillCount() >= 15) {
+        if (getItem(position).getSkillBuild().getNewSkillTrees().get(Trees.MASTERMIND).getSkillCount() >= 15) {
             mastermind.setTextColor(highlightedColour);
             mastermindSkillCount.setTextColor(highlightedColour);
         }
-        if (getItem(position).getSkillBuild().getSkillTrees().get(Trees.ENFORCER).getSkillCount() >= 15) {
+        if (getItem(position).getSkillBuild().getNewSkillTrees().get(Trees.ENFORCER).getSkillCount() >= 15) {
             enforcer.setTextColor(highlightedColour);
             enforcerSkillCount.setTextColor(highlightedColour);
         }
-        if (getItem(position).getSkillBuild().getSkillTrees().get(Trees.TECHNICIAN).getSkillCount() >= 15) {
+        if (getItem(position).getSkillBuild().getNewSkillTrees().get(Trees.TECHNICIAN).getSkillCount() >= 15) {
             technician.setTextColor(highlightedColour);
             technicianSkillCount.setTextColor(highlightedColour);
         }
-        if (getItem(position).getSkillBuild().getSkillTrees().get(Trees.GHOST).getSkillCount() >= 15) {
+        if (getItem(position).getSkillBuild().getNewSkillTrees().get(Trees.GHOST).getSkillCount() >= 15) {
             ghost.setTextColor(highlightedColour);
             ghostSkillCount.setTextColor(highlightedColour);
         }
-        if (getItem(position).getSkillBuild().getSkillTrees().get(Trees.FUGITIVE).getSkillCount() >= 15) {
+        if (getItem(position).getSkillBuild().getNewSkillTrees().get(Trees.FUGITIVE).getSkillCount() >= 15) {
             fugitive.setTextColor(highlightedColour);
             fugitiveSkillCount.setTextColor(highlightedColour);
         }

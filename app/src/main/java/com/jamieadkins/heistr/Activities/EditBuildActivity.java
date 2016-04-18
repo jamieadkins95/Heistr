@@ -76,7 +76,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     private TaskFragment mTaskFragment;
     private ArrayList<BuildReadyCallbacks> mListCallbacks;
 
-    private int currentFragment = R.id.nav_skill_trees;
+    private int currentFragment = R.id.nav_mastermind;
     private int currentSkillTree = Trees.MASTERMIND;
     private int currentWeaponList = WeaponBuild.PRIMARY;
 
@@ -345,9 +345,6 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         currentFragment = id;
         Fragment fragment;
         switch (id) {
-            case R.id.nav_skill_trees:
-                fragment = SkillTreeParentFragment.newInstance(currentSkillTree);
-                break;
             case R.id.nav_mastermind:
                 fragment = NewSkillTreeParentFragment.newInstance(Trees.MASTERMIND, currentSkillTreeIndex[Trees.MASTERMIND]);
                 break;
