@@ -67,7 +67,7 @@ public class NewBuildDialog extends DialogFragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, list);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        //spTemplate.setAdapter(adapter);
+        spTemplate.setAdapter(adapter);
 
 
         // Inflate and set the layout for the dialog
@@ -93,11 +93,11 @@ public class NewBuildDialog extends DialogFragment {
                         final String url = etURL.getText().toString();
 
                         //Template
-                        //Spinner spTemplate = (Spinner) getDialog().findViewById(R.id.spTemplate);
-                        //int selected = spTemplate.getSelectedItemPosition() - 1; // -1 for templete text
+                        Spinner spTemplate = (Spinner) getDialog().findViewById(R.id.spTemplate);
+                        int selected = spTemplate.getSelectedItemPosition() - 1; // -1 for templete text
 
 
-                        mListener.onDialogNewBuild(NewBuildDialog.this, name, infamies, url, -1);
+                        mListener.onDialogNewBuild(NewBuildDialog.this, name, infamies, url, selected);
 
                     }
                 })
