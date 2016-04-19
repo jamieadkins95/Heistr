@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <skill_tree>
-    <tree_name>Fugitive</tree_name>
+    <tree_name>Mastermind</tree_name>
     <subtree>
         <subtreeNumber>0</subtreeNumber>
         <skill>

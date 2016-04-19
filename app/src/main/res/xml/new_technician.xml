@@ -5,7 +5,7 @@
         <subtreeNumber>0</subtreeNumber>
         <skill>
             <tier>1</tier>
-            <name>Fast Draw</name>
+            <name>Defence Up</name>
             <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
             <ace>You gain a 10% increased weapon accuracy with pistols.</ace>
             <point_requirement>0</point_requirement>
@@ -15,7 +15,7 @@
         </skill>
         <skill>
             <tier>2</tier>
-            <name>Dance Instructor</name>
+            <name>Sentry Targeting practice</name>
             <normal>Pistol magazine sizes increased by 15 bullets.</normal>
             <ace>You gain a 100% increase in rate of fire with pistols.</ace>
             <point_requirement>4</point_requirement>
@@ -25,7 +25,7 @@
         </skill>
         <skill>
             <tier>2</tier>
-            <name>Expert Handling</name>
+            <name>Eco Sentry</name>
             <normal>Each successful pistol hit gives you 10% increased weapon accuracy for 10 seconds and can stack up to 4 times.</normal>
             <ace>You reload pistols 50% faster.</ace>
             <point_requirement>4</point_requirement>
@@ -35,7 +35,7 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Gun Play</name>
+            <name>Engineering</name>
             <normal>You deal 5 additional damage with pistols.</normal>
             <ace>You now 10 additional damage with pistols.</ace>
             <point_requirement>10</point_requirement>
@@ -45,7 +45,7 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Akimbo</name>
+            <name>Jack of all Trades</name>
             <normal>Akimbo Weapons gain 24 weapon stability.</normal>
             <ace>Akimbo weapons gain an additional 8 weapon stability and have 50% increased total ammo capacity.</ace>
             <point_requirement>10</point_requirement>
@@ -55,7 +55,7 @@
         </skill>
         <skill>
             <tier>4</tier>
-            <name>Trigger Happy</name>
+            <name>Tower Defence</name>
             <normal>Each successful pistol hit grants 10% damage boost for 6 seconds and can stack 4 times.</normal>
             <ace>Increases damage boost duration to 20.</ace>
             <point_requirement>18</point_requirement>
@@ -68,7 +68,7 @@
         <subtreeNumber>1</subtreeNumber>
         <skill>
             <tier>1</tier>
-            <name>Nine Lives</name>
+            <name>Hardware Expert</name>
             <normal>You gain a 50% increase to bleedout health.</normal>
             <ace>+1 down before going into custody.</ace>
             <point_requirement>0</point_requirement>
@@ -78,7 +78,7 @@
         </skill>
         <skill>
             <tier>2</tier>
-            <name>Running from Death</name>
+            <name>Combat Engineering</name>
             <normal>Reload and swap weapons 80% faster after getting up for 10 seconds.</normal>
             <ace>You move 30% faster for 10 seconds after getting up.</ace>
             <point_requirement>4</point_requirement>
@@ -88,7 +88,7 @@
         </skill>
         <skill>
             <tier>2</tier>
-            <name>Up you go</name>
+            <name>Drill Sawgeant</name>
             <normal>You take 30% less damage after getting up for 10 seconds.</normal>
             <ace>Regain 15% of you max hp when getting up.</ace>
             <point_requirement>4</point_requirement>
@@ -98,7 +98,7 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Swan Song</name>
+            <name>More Firepower</name>
             <normal>When getting downed you gain the ability to keep on fighting for 3 seconds with a 60% movement penalty before going down.</normal>
             <ace>You no longer need to reload and can fight for an additional 6 seconds when Swan Song activates.</ace>
             <point_requirement>10</point_requirement>
@@ -108,7 +108,7 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Feign Death</name>
+            <name>Kick Starter</name>
             <normal>When you get downed you have a 25% chance to instantly get revived.</normal>
             <ace>Chance to get instantly revived is increased by an additional 50%.</ace>
             <point_requirement>10</point_requirement>
@@ -118,7 +118,7 @@
         </skill>
         <skill>
             <tier>4</tier>
-            <name>Messiah</name>
+            <name>Fire Trap</name>
             <normal>You are instantly revived if you kill an enemy while in bleedout. You have 1 charge.</normal>
             <ace>Messiah charge is replensihed whenever you use a doctor bag.</ace>
             <point_requirement>18</point_requirement>
@@ -131,7 +131,7 @@
         <subtreeNumber>2</subtreeNumber>
         <skill>
             <tier>1</tier>
-            <name>Martial Arts</name>
+            <name>Steady Grip</name>
             <normal>You take 50% less damage from melee attacks.</normal>
             <ace>You are 50% more likely to knock down enemies with a melee strike.</ace>
             <point_requirement>0</point_requirement>
@@ -141,7 +141,7 @@
         </skill>
         <skill>
             <tier>2</tier>
-            <name>Frenzy</name>
+            <name>Heavy Impact</name>
             <normal>You start at and cannot heal above 30% of you maximum health. You also take 40% less health damage.</normal>
             <ace>Health damage is now reduced by 60%.</ace>
             <point_requirement>4</point_requirement>
@@ -151,7 +151,7 @@
         </skill>
         <skill>
             <tier>2</tier>
-            <name>Pumping iron</name>
+            <name>Fire Control</name>
             <normal>Your melee attacks against non special enemies do 50% more damage.</normal>
             <ace>Your melee attacks against special enemies do 50% more damage.</ace>
             <point_requirement>4</point_requirement>
@@ -161,7 +161,7 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Bloodthirst</name>
+            <name>Shock and Awe</name>
             <normal>Every kill you get will increase your next melee attack by 50% up to a maximum of 200%. This effect gets reset when striking an enemy with a melee attack.</normal>
             <ace>Whenever you kill an enemy with a melee attack, you will gain a 50% increase in reload speed for X seconds</ace>
             <point_requirement>10</point_requirement>
@@ -171,7 +171,7 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Counter Strike</name>
+            <name>Fast Fire</name>
             <normal>When charging your melee weapon you will counter attack enemies that try to strike you, knocking them down. the knock down does not deal any damage.</normal>
             <ace>You gain the ability to counter attack cloakers.</ace>
             <point_requirement>10</point_requirement>
@@ -181,7 +181,7 @@
         </skill>
         <skill>
             <tier>4</tier>
-            <name>Berserker</name>
+            <name>Body Expertise</name>
             <normal>The lower your health, the more damage you do, When your health is below 50%, you will do up to 250% more melee and saw damage.</normal>
             <ace>The lower you health the more damage you do. When your health is beloew 50% you will do up to 100% more damage with ranged weapons as well.</ace>
             <point_requirement>18</point_requirement>
