@@ -35,7 +35,7 @@ public class SkillStatChangeManager {
 
     private SkillStatChangeManager(SkillBuild skillBuild) {
         modifiers = new ArrayList<>();
-        for (SkillTree tree : skillBuild.getSkillTrees()) {
+        /*for (SkillTree tree : skillBuild.getSkillTrees()) {
             for (SkillTier tier : tree.getTierList()) {
                 for (Skill skill : tier.getSkillsInTier()) {
                     switch (skill.getPd2SkillsSymbol()) {
@@ -156,7 +156,7 @@ public class SkillStatChangeManager {
                     }
                 }
             }
-        }
+        }*/
 
         modifiers.add(SkillStatModifier.getPerkDeckBonus());
     }

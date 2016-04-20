@@ -377,13 +377,16 @@
 
                 </LinearLayout>
             </LinearLayout>
-
-
-
-
-
-
         </LinearLayout>
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Skill bonuses to weapons are temporarily disabled while we wait for new skill tree info to be finalised."
+                  android:layout_below="@id/llWeapons"
+                  android:paddingTop="4dp"
+                  android:textColor="@color/textHint"
+                  android:textStyle="italic"
+                  android:gravity="center_horizontal"/>
 
 
 
