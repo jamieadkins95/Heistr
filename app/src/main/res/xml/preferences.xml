@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory
-            android:title="@string/pref_category"
+            android:title="@string/pref_screen_category"
             android:key="pref_key_length_settings">
         <EditTextPreference
                 android:key="pref_build_name_length"
@@ -32,5 +32,42 @@
                 android:title="@string/pref_skill_layout_title"
                 android:summary="@string/pref_skill_layout_summ"
                 android:defaultValue="true"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+            android:title="@string/pref_ehp_category"
+            android:key="pref_key_ehp_settings">
+
+        <CheckBoxPreference
+                android:key="pref_ehp_1"
+                android:title="@string/pref_ehp_1"
+                android:defaultValue="true"/>
+        <CheckBoxPreference
+                android:key="pref_ehp_2"
+                android:title="@string/pref_ehp_2"
+                android:defaultValue="true"/>
+        <CheckBoxPreference
+                android:key="pref_ehp_3"
+                android:title="@string/pref_ehp_3"
+                android:defaultValue="true"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+            android:title="@string/pref_attributions_category"
+            android:key="pref_key_attributions_settings">
+
+        <Preference android:title="@string/pref_fab"
+                    android:summary="@string/pref_fab_summ">
+            <intent android:action="android.intent.action.VIEW"
+                    android:data="https://github.com/makovkastar/FloatingActionButton" />
+        </Preference>
+        <Preference android:title="@string/pref_icon"
+                    android:summary="@string/pref_icon_summ">
+            <intent android:action="android.intent.action.VIEW"
+                    android:data="https://www.reddit.com/user/Offyerrocker" />
+        </Preference>
+        <Preference android:title="@string/pref_play_store"
+                    android:summary="@string/pref_play_store_summ">
+            <intent android:action="android.intent.action.VIEW"
+                    android:data="http://www.norio.be/android-feature-graphic-generator/" />
+        </Preference>
     </PreferenceCategory>
 </PreferenceScreen>
