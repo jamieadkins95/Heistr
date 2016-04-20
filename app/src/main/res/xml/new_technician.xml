@@ -6,8 +6,8 @@
         <skill>
             <tier>1</tier>
             <name>Defence Up</name>
-            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
-            <ace>You gain a 10% increased weapon accuracy with pistols.</ace>
+            <normal>Your sentry guns cost 25% less ammo to deploy.</normal>
+            <ace>Your sentry guns gain a protective shield.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -16,8 +16,8 @@
         <skill>
             <tier>2</tier>
             <name>Sentry Targeting practice</name>
-            <normal>Pistol magazine sizes increased by 15 bullets.</normal>
-            <ace>You gain a 100% increase in rate of fire with pistols.</ace>
+            <normal>Your sentry gun's accuracy is improved by 100%.</normal>
+            <ace>Your sentry gun's rotational speed is increased by 150%. Your sentry gun is loaded with 50% extra ammo.</ace>
             <point_requirement>4</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -26,8 +26,8 @@
         <skill>
             <tier>2</tier>
             <name>Eco Sentry</name>
-            <normal>Each successful pistol hit gives you 10% increased weapon accuracy for 10 seconds and can stack up to 4 times.</normal>
-            <ace>You reload pistols 50% faster.</ace>
+            <normal>Your sentry guns cost 25% less ammo to deploy.</normal>
+            <ace>Your sentry guns gain 150% increased health.</ace>
             <point_requirement>4</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -36,8 +36,8 @@
         <skill>
             <tier>3</tier>
             <name>Engineering</name>
-            <normal>You deal 5 additional damage with pistols.</normal>
-            <ace>You now 10 additional damage with pistols.</ace>
+            <normal>You can now make a less noisy version of the sentry guns, making them less likely to be targeted by enemies.</normal>
+            <ace>You can now toggle AP rounds on your sentry guns, lowering the rate of fire and ammo count, but increasing damage and allowing to pierce shields.</ace>
             <point_requirement>10</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>5</ace_cost>
@@ -46,8 +46,8 @@
         <skill>
             <tier>3</tier>
             <name>Jack of all Trades</name>
-            <normal>Akimbo Weapons gain 24 weapon stability.</normal>
-            <ace>Akimbo weapons gain an additional 8 weapon stability and have 50% increased total ammo capacity.</ace>
+            <normal>You deploy and interact with all deployables 50% faster</normal>
+            <ace>You can now equip a second deployable to bring with you. The second deployable has 50% less uses.</ace>
             <point_requirement>10</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>5</ace_cost>
@@ -56,8 +56,8 @@
         <skill>
             <tier>4</tier>
             <name>Tower Defence</name>
-            <normal>Each successful pistol hit grants 10% damage boost for 6 seconds and can stack 4 times.</normal>
-            <ace>Increases damage boost duration to 20.</ace>
+            <normal>You can now carry 2 extra sentry guns.</normal>
+            <ace>You can now carry an additional 2 sentry guns.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
             <ace_cost>6</ace_cost>
@@ -69,8 +69,8 @@
         <skill>
             <tier>1</tier>
             <name>Hardware Expert</name>
-            <normal>You gain a 50% increase to bleedout health.</normal>
-            <ace>+1 down before going into custody.</ace>
+            <normal>You fix the drill 25% faster. Drills are silent. Can toggle sensor mode on trip mines.</normal>
+            <ace>Gives your drills and saws a 10% chance to automatically restart after breaking.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -79,8 +79,8 @@
         <skill>
             <tier>2</tier>
             <name>Combat Engineering</name>
-            <normal>Reload and swap weapons 80% faster after getting up for 10 seconds.</normal>
-            <ace>You move 30% faster for 10 seconds after getting up.</ace>
+            <normal>The radius of trip mine explosions are increased by 30%.</normal>
+            <ace>Your trip mines deal 50% more damage.</ace>
             <point_requirement>4</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -89,8 +89,8 @@
         <skill>
             <tier>2</tier>
             <name>Drill Sawgeant</name>
-            <normal>You take 30% less damage after getting up for 10 seconds.</normal>
-            <ace>Regain 15% of you max hp when getting up.</ace>
+            <normal>Your drill and saw efficiency is increased by 15%.</normal>
+            <ace>Further increases your drill and saw efficiency increased by 15%.</ace>
             <point_requirement>4</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -99,8 +99,8 @@
         <skill>
             <tier>3</tier>
             <name>More Firepower</name>
-            <normal>When getting downed you gain the ability to keep on fighting for 3 seconds with a 60% movement penalty before going down.</normal>
-            <ace>You no longer need to reload and can fight for an additional 6 seconds when Swan Song activates.</ace>
+            <normal>You gain 1 more shape charge and 4 more trip mines.</normal>
+            <ace>You gain 2 more shape charges and 7 more trip mines.</ace>
             <point_requirement>10</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>5</ace_cost>
@@ -109,8 +109,8 @@
         <skill>
             <tier>3</tier>
             <name>Kick Starter</name>
-            <normal>When you get downed you have a 25% chance to instantly get revived.</normal>
-            <ace>Chance to get instantly revived is increased by an additional 50%.</ace>
+            <normal>Your drills and saws gain an additional 20% to automatically restart after breaking.</normal>
+            <ace>You gain the ability to restart a drill by hitting it with a melee attack. You get a chance for each time it breaks with a 50% success rate.</ace>
             <point_requirement>10</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>5</ace_cost>
@@ -119,8 +119,8 @@
         <skill>
             <tier>4</tier>
             <name>Fire Trap</name>
-            <normal>You are instantly revived if you kill an enemy while in bleedout. You have 1 charge.</normal>
-            <ace>Messiah charge is replensihed whenever you use a doctor bag.</ace>
+            <normal>The duration of the trip mine fire effect is increased by X and the radius of the fire effect is increased by Y.</normal>
+            <ace>Your trip mines now spread fire around the area of detonation for X seconds in a Y radius.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
             <ace_cost>6</ace_cost>
@@ -132,8 +132,8 @@
         <skill>
             <tier>1</tier>
             <name>Steady Grip</name>
-            <normal>You take 50% less damage from melee attacks.</normal>
-            <ace>You are 50% more likely to knock down enemies with a melee strike.</ace>
+            <normal>You gain 8 weapon accuracy.</normal>
+            <ace>You gain a decreased stabilty penalty when shooting while moving.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -142,8 +142,8 @@
         <skill>
             <tier>2</tier>
             <name>Heavy Impact</name>
-            <normal>You start at and cannot heal above 30% of you maximum health. You also take 40% less health damage.</normal>
-            <ace>Health damage is now reduced by 60%.</ace>
+            <normal>Your shots have a 25% chance to knock down enemies.</normal>
+            <ace>Your shots now have a 50% chance to knock down enemies.</ace>
             <point_requirement>4</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -152,8 +152,8 @@
         <skill>
             <tier>2</tier>
             <name>Fire Control</name>
-            <normal>Your melee attacks against non special enemies do 50% more damage.</normal>
-            <ace>Your melee attacks against special enemies do 50% more damage.</ace>
+            <normal>You gain 8 weapon stability.</normal>
+            <ace>You gain 12 weapon accuracy while firing from the hip.</ace>
             <point_requirement>4</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -162,8 +162,8 @@
         <skill>
             <tier>3</tier>
             <name>Shock and Awe</name>
-            <normal>Every kill you get will increase your next melee attack by 50% up to a maximum of 200%. This effect gets reset when striking an enemy with a melee attack.</normal>
-            <ace>Whenever you kill an enemy with a melee attack, you will gain a 50% increase in reload speed for X seconds</ace>
+            <normal>You can now hip-fire with your weapon while sprinting</normal>
+            <ace>Killing X enemies with SMG, LMG and rifles fired in automatic mode will reduce your next reload time by up to 60%. This bonnus is reduced by 1% for each bullet above 20 in total magazine size, down to a minimum for 20% time reduction.</ace>
             <point_requirement>10</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>5</ace_cost>
@@ -172,8 +172,8 @@
         <skill>
             <tier>3</tier>
             <name>Fast Fire</name>
-            <normal>When charging your melee weapon you will counter attack enemies that try to strike you, knocking them down. the knock down does not deal any damage.</normal>
-            <ace>You gain the ability to counter attack cloakers.</ace>
+            <normal>SMG, LMG and rifles fired in auto mode gain 15 more bullets in the magazine. Does not effect the "Shock and Awe" ace skill.</normal>
+            <ace>You gain the ability to pierce body armour.</ace>
             <point_requirement>10</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>5</ace_cost>
@@ -182,8 +182,8 @@
         <skill>
             <tier>4</tier>
             <name>Body Expertise</name>
-            <normal>The lower your health, the more damage you do, When your health is below 50%, you will do up to 250% more melee and saw damage.</normal>
-            <ace>The lower you health the more damage you do. When your health is beloew 50% you will do up to 100% more damage with ranged weapons as well.</ace>
+            <normal>15% of the enemies headshot multiplier is applied to the enemies body with smg, lmg and rifles fired in automatic mode.</normal>
+            <ace>50% of the enemies headshot multiplier is applied to the enemies body with smg, lmg and rifles fired in automatic mode.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
             <ace_cost>6</ace_cost>

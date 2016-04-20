@@ -6,8 +6,8 @@
         <skill>
             <tier>1</tier>
             <name>Defence Up</name>
-            <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
-            <ace>You gain a 10% increased weapon accuracy with pistols.</ace>
+            <normal>When you stand still for 3.5 seconds in stealth, you start highlighting people around you within a 10 meter radius.</normal>
+            <ace>You can pickup items while in casing mode. Adds 30% more value to loose items that you pick up.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -16,8 +16,8 @@
         <skill>
             <tier>2</tier>
             <name>Cleaner</name>
-            <normal>Pistol magazine sizes increased by 15 bullets.</normal>
-            <ace>You gain a 100% increase in rate of fire with pistols.</ace>
+            <normal>You gain access to all insider assets.</normal>
+            <ace>1 additional body bag is added to your inventory. and you can now carry 1 more body bag in addition to the gained body bag.</ace>
             <point_requirement>4</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -26,8 +26,8 @@
         <skill>
             <tier>2</tier>
             <name>Chameleon</name>
-            <normal>Each successful pistol hit gives you 10% increased weapon accuracy for 10 seconds and can stack up to 4 times.</normal>
-            <ace>You reload pistols 50% faster.</ace>
+            <normal>In casing mode, you can now mark guards and cameras. Your concealment is increased by 25%.</normal>
+            <ace>You gain the ability to loop one camera for 20 seconds, temporarily disabling it from detecting you and your crew.</ace>
             <point_requirement>4</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -36,8 +36,8 @@
         <skill>
             <tier>3</tier>
             <name>Undertaker</name>
-            <normal>You deal 5 additional damage with pistols.</normal>
-            <ace>You now 10 additional damage with pistols.</ace>
+            <normal>You unlock the ability to place 2 body bag case deployables.</normal>
+            <ace>You lockpick 50% faster. You gain the ability to lockpick safes.</ace>
             <point_requirement>10</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>5</ace_cost>
@@ -46,8 +46,8 @@
         <skill>
             <tier>3</tier>
             <name>ECM Overdrive</name>
-            <normal>Akimbo Weapons gain 24 weapon stability.</normal>
-            <ace>Akimbo weapons gain an additional 8 weapon stability and have 50% increased total ammo capacity.</ace>
+            <normal>Your ECM jammer and feedback duration is increased by 25%.</normal>
+            <ace>Your ECM jammer can now also be used to open certain electronic doors.</ace>
             <point_requirement>10</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>5</ace_cost>
@@ -56,8 +56,8 @@
         <skill>
             <tier>4</tier>
             <name>ECM Specialist</name>
-            <normal>Each successful pistol hit grants 10% damage boost for 6 seconds and can stack 4 times.</normal>
-            <ace>Increases damage boost duration to 20.</ace>
+            <normal>You can now place 2 ECM jammers instead of just one.</normal>
+            <ace>The ECM jammer duration is increased by 25% and the ECM feedback duration lasts 25% longer. The ECM jammer now delays the pagers.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
             <ace_cost>6</ace_cost>
@@ -68,9 +68,9 @@
         <subtreeNumber>1</subtreeNumber>
         <skill>
             <tier>1</tier>
-            <name>Dcuk and Cover</name>
-            <normal>You gain a 50% increase to bleedout health.</normal>
-            <ace>+1 down before going into custody.</ace>
+            <name>Duck and Cover</name>
+            <normal>The time before stamina regeneration starts is reduced by 25% and the regeneration of stamina is increased by 25%. You also sprint 25% faster.</normal>
+            <ace>You have a 25% increased chance of dodging enemy fire while sprinting. You gain 15% dodge when crouching or ziplining,</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -79,8 +79,8 @@
         <skill>
             <tier>2</tier>
             <name>Evasion</name>
-            <normal>Reload and swap weapons 80% faster after getting up for 10 seconds.</normal>
-            <ace>You move 30% faster for 10 seconds after getting up.</ace>
+            <normal>You gain 10% additional movement speed and 20% climbing speed.</normal>
+            <ace>You can now sprint while strafing. Your fall damage is reduced by 75% and you only take armor damage from falling from non-fatal heights.</ace>
             <point_requirement>4</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -89,8 +89,8 @@
         <skill>
             <tier>2</tier>
             <name>Thick Skin</name>
-            <normal>You take 30% less damage after getting up for 10 seconds.</normal>
-            <ace>Regain 15% of you max hp when getting up.</ace>
+            <normal>Increases melee weapon's concealment by 2.</normal>
+            <ace>Increases all of your ballistic vests' concealment by 4.</ace>
             <point_requirement>4</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -99,8 +99,8 @@
         <skill>
             <tier>3</tier>
             <name>Sneaky Bastard</name>
-            <normal>When getting downed you gain the ability to keep on fighting for 3 seconds with a 60% movement penalty before going down.</normal>
-            <ace>You no longer need to reload and can fight for an additional 6 seconds when Swan Song activates.</ace>
+            <normal>You gain a 1% dodge chance for every 3 points of concealment under 35 up to 10%.</normal>
+            <ace>You gain a 1% dodge chance for every 1 point of concealment under 35 up to 10%.</ace>
             <point_requirement>10</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>5</ace_cost>
@@ -108,9 +108,9 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Shcokproof</name>
-            <normal>When you get downed you have a 25% chance to instantly get revived.</normal>
-            <ace>Chance to get instantly revived is increased by an additional 50%.</ace>
+            <name>Shockproof</name>
+            <normal>The taser's shock attack has a 30% chance to backfire, knocking back the taser.</normal>
+            <ace>When tased you are able to free yourself by pressing [F] within 2 seconds of getting tased.</ace>
             <point_requirement>10</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>5</ace_cost>
@@ -119,8 +119,8 @@
         <skill>
             <tier>4</tier>
             <name>Low Blow</name>
-            <normal>You are instantly revived if you kill an enemy while in bleedout. You have 1 charge.</normal>
-            <ace>Messiah charge is replensihed whenever you use a doctor bag.</ace>
+            <normal>You gain a 3% critical hit chance for every 3 points of concealment under 35 up to 30%.</normal>
+            <ace>You gain a 3% critical hit chance for every 1 point of concealment under 35 up to 30%.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
             <ace_cost>6</ace_cost>
@@ -132,8 +132,8 @@
         <skill>
             <tier>1</tier>
             <name>Camouflage</name>
-            <normal>You take 50% less damage from melee attacks.</normal>
-            <ace>You are 50% more likely to knock down enemies with a melee strike.</ace>
+            <normal>You are 15% less likely to be targeted when you are close to one of your crew members.</normal>
+            <ace>You are 30% less likely to be targeted when you are close to one of your crew members.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -142,8 +142,8 @@
         <skill>
             <tier>2</tier>
             <name>Optic Illusions</name>
-            <normal>You start at and cannot heal above 30% of you maximum health. You also take 40% less health damage.</normal>
-            <ace>Health damage is now reduced by 60%.</ace>
+            <normal>You gain 1 concealment for each silenced weapon you have equipped.</normal>
+            <ace>Reduces concealment penalty of silencers by 2.</ace>
             <point_requirement>4</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -152,8 +152,8 @@
         <skill>
             <tier>2</tier>
             <name>The Professional</name>
-            <normal>Your melee attacks against non special enemies do 50% more damage.</normal>
-            <ace>Your melee attacks against special enemies do 50% more damage.</ace>
+            <normal>You gain a 50% increase to weapon stability and 100% zoom increase with silenced weapons.</normal>
+            <ace>You gain a 50% increase to weapon accuracy with silenced weapons.</ace>
             <point_requirement>4</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -162,8 +162,8 @@
         <skill>
             <tier>3</tier>
             <name>Dire Need</name>
-            <normal>Every kill you get will increase your next melee attack by 50% up to a maximum of 200%. This effect gets reset when striking an enemy with a melee attack.</normal>
-            <ace>Whenever you kill an enemy with a melee attack, you will gain a 50% increase in reload speed for X seconds</ace>
+            <normal>when your armour is depleted, the first shot on any enemies will cause those enemies to stagger. This effect ends when your armour regenerates.</normal>
+            <ace>The effect persists for 6 seconds after your armour has regenerated.</ace>
             <point_requirement>10</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>5</ace_cost>
@@ -172,8 +172,8 @@
         <skill>
             <tier>3</tier>
             <name>Subsonic Rounds</name>
-            <normal>When charging your melee weapon you will counter attack enemies that try to strike you, knocking them down. the knock down does not deal any damage.</normal>
-            <ace>You gain the ability to counter attack cloakers.</ace>
+            <normal>You deal 15% more damage with all silenced weapons.</normal>
+            <ace>You deal an additional 15% more damage with all silenced weapons.</ace>
             <point_requirement>10</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>5</ace_cost>
@@ -182,8 +182,8 @@
         <skill>
             <tier>4</tier>
             <name>Unseen Strike</name>
-            <normal>The lower your health, the more damage you do, When your health is below 50%, you will do up to 250% more melee and saw damage.</normal>
-            <ace>The lower you health the more damage you do. When your health is beloew 50% you will do up to 100% more damage with ranged weapons as well.</ace>
+            <normal>If you do not lose any armour or health for 2 seconds you gain a 35% critical hit chance for 4 seconds.</normal>
+            <ace>The critical hit chance duration is increased by 12 seconds.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
             <ace_cost>6</ace_cost>

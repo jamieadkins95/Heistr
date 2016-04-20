@@ -119,8 +119,7 @@
         <skill>
             <tier>4</tier>
             <name>Iron Man</name>
-            <normal>When you melee Shield enemies, they get knocked back by the sheer force.
-                Run and shoot – you can now shoot from the hip while sprinting.</normal>
+            <normal>When you melee or shoot shield enemies there's a chance that they get knocked back by the sheer force. The chance depends on the damage of the used weapon.</normal>
             <ace>Unlocks the ability to wear the Improved Combined Tactical Vest.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
