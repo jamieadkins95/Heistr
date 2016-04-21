@@ -462,6 +462,37 @@
         <group_name>akimbo</group_name>
         <weapon_type>primary</weapon_type>
         <weapon>
+            <pd2>wpn_fps_smg_x_mp5</pd2>
+            <pd2skills>0</pd2skills>
+            <firemode>auto</firemode>
+            <name>Akimbo Compact-5 Submachine Gun</name>
+            <rof>0</rof>
+            <total>240</total>
+            <mag>60</mag>
+            <damage>36</damage>
+            <accuracy>28</accuracy>
+            <stability>76</stability>
+            <concealment>23</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_smg_mp5_s_ring_vanilla,wpn_fps_smg_mp5_fg_m5k,wpn_fps_smg_mp5_fg_mp5a4,wpn_fps_smg_mp5_fg_mp5a5,wpn_fps_smg_mp5_fg_mp5sd,wpn_fps_smg_mp5_m_std,wpn_fps_smg_mp5_m_drum,wpn_fps_smg_mp5_m_straight,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_mp5_body_mp5,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_upg_vg_ass_smg_verticalgrip,wpn_fps_upg_vg_ass_smg_stubby,wpn_fps_upg_vg_ass_smg_afg,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
+        </weapon>
+
+        <weapon>
+            <pd2>wpn_fps_smg_x_akmsu</pd2>
+            <pd2skills>0</pd2skills>
+            <firemode>auto</firemode>
+            <name>Akimbo Krinkov Submachine Gun</name>
+            <rof>0</rof>
+            <total>120</total>
+            <mag>60</mag>
+            <damage>80</damage>
+            <accuracy>60</accuracy>
+            <stability>44</stability>
+            <concealment>21</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_smg_akmsu_fg_standard,wpn_fps_smg_akmsu_fg_rail,wpn_fps_upg_ak_fg_zenit,wpn_upg_ak_m_akm,wpn_fps_upg_ak_m_quad,wpn_fps_upg_ak_m_uspalm,wpn_upg_ak_g_standard,wpn_fps_upg_ak_g_hgrip,wpn_fps_upg_ak_g_pgrip,wpn_fps_upg_ak_g_wgrip,wpn_fps_upg_ak_g_rk3,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_akmsu_body_lowerreceiver,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_ass_akm_body_upperreceiver_vanilla,wpn_fps_smg_akmsu_b_standard,wpn_fps_upg_vg_ass_smg_verticalgrip,wpn_fps_upg_vg_ass_smg_stubby,wpn_fps_upg_vg_ass_smg_afg,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ns_ass_pbs1,wpn_fps_upg_ass_ns_battle,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
+        </weapon>
+        <weapon>
             <pd2>wpn_fps_smg_x_sr2</pd2>
             <pd2skills>0</pd2skills>
             <firemode>auto</firemode>
