@@ -85,7 +85,7 @@ public class SkillCardView extends CardView {
         } else {
             colour = ContextCompat.getColor(getContext(), R.color.backgroundVeryDark);
         }
-        setBackgroundColor(colour);
+        setCardBackgroundColor(colour);
     }
 
     public void onSkillTaken() {
