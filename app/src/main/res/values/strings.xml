@@ -253,12 +253,12 @@
     <string name="weapon_attribute_threat">Threat</string>
     <string name="equipped">Equipped</string>
     <string name="weapon_placeholder_text">WIP</string>
-    <string name="builds_deleted_42">com.jamieadkins.heistr.BUILDS_DELETED_42</string>
-    <string name="dialog_builds_deleted">Update 1.3.4.2 has deleted your builds.
+    <string name="builds_deleted_42">com.jamieadkins.heistr.BUILDS_DELETED_55</string>
+    <string name="dialog_builds_deleted">Update 1.3.6 has deleted your builds.
         This was necessary because of a change to how builds are stored internally.
-        \n\nReason: Added ability to store stat boosts attachments in database.
-        \n\nI know I keep doing this, but it is better to make these changes now than further down the line.
-        \n\nThanks for your patience.\n\nJamie</string>
+        \n\nReason: New skill trees.
+        \n\nIt was not worth the effort to get both sets of skill trees to work at the same time.
+        \n\nSorry for the inconvenience.\n\nJamie</string>
     <string name="dialog_title_builds_deleted">Latest Update</string>
     <string name="empty_attachment_list">No Attachments</string>
     <string name="pref_skill_name_length">Skill name character limit</string>
