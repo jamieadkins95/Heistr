@@ -315,6 +315,9 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
         protected void onPostExecute(ArrayList<Build> builds) {
             super.onPostExecute(builds);
 
+            if (getActivity() == null) {
+                return;
+            }
 
             buildList = builds;
             ArrayAdapterBuildList itemsAdapter =
