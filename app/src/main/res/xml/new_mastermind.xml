@@ -36,7 +36,7 @@
         <skill>
             <tier>3</tier>
             <name>Uppers</name>
-            <normal>Addes 7 more first aid kits to your inventory.</normal>
+            <normal>Adds 7 more first aid kits to your inventory.</normal>
             <ace>Adds 3 more first aid kills yo you inventory. Your delpyed first aid kits will be automatically used if a player would go down within a 15 meter radius of the first aid kit. Only 70% of the effect is triggered.</ace>
             <point_requirement>10</point_requirement>
             <normal_cost>3</normal_cost>
