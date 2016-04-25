@@ -181,8 +181,6 @@
                         android:layout_gravity="center"
                         android:id="@+id/tvConcealmentValue"
                         android:text="@string/default20"/>
-
-
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
