@@ -94,7 +94,7 @@ public class SkillBuild {
     }
 
     public int getNewPointsAvailable() {
-        return newPointsAvailable;
+        return 120;
     }
 
     public int getNewPointsRemaining() {
