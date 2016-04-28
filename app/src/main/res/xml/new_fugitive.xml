@@ -21,7 +21,7 @@
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>b</pd2skills>
         </skill>
         <skill>
             <tier>2</tier>
@@ -31,7 +31,7 @@
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>c</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
@@ -41,7 +41,7 @@
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>d</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
@@ -51,7 +51,7 @@
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>e</pd2skills>
         </skill>
         <skill>
             <tier>4</tier>
@@ -61,7 +61,7 @@
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
             <ace_cost>8</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>f</pd2skills>
         </skill>
     </subtree>
     <subtree>
@@ -74,7 +74,7 @@
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>g</pd2skills>
         </skill>
         <skill>
             <tier>2</tier>
@@ -84,7 +84,7 @@
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>h</pd2skills>
         </skill>
         <skill>
             <tier>2</tier>
@@ -94,7 +94,7 @@
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>i</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
@@ -104,7 +104,7 @@
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>j</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
@@ -114,7 +114,7 @@
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>k</pd2skills>
         </skill>
         <skill>
             <tier>4</tier>
@@ -124,7 +124,7 @@
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
             <ace_cost>8</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>l</pd2skills>
         </skill>
     </subtree>
     <subtree>
@@ -137,7 +137,7 @@
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>m</pd2skills>
         </skill>
         <skill>
             <tier>2</tier>
@@ -147,7 +147,7 @@
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>n</pd2skills>
         </skill>
         <skill>
             <tier>2</tier>
@@ -157,7 +157,7 @@
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>o</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
@@ -167,7 +167,7 @@
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>p</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
@@ -177,7 +177,7 @@
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>q</pd2skills>
         </skill>
         <skill>
             <tier>4</tier>
@@ -187,7 +187,7 @@
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
             <ace_cost>8</ace_cost>
-            <pd2skills>a</pd2skills>
+            <pd2skills>r</pd2skills>
         </skill>
     </subtree>
 </skill_tree>
