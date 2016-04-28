@@ -6,8 +6,8 @@
         <skill>
             <tier>1</tier>
             <name>Underdog</name>
-            <normal>When you are surrounded by three enemies or more, you receive a 10% damage bonus.</normal>
-            <ace>When you are surrounded by three enemies or more, you receive 10% less damage from enemies.</ace>
+            <normal>When you are surrounded by three enemies or more, you receive a 15% damage bonus.</normal>
+            <ace>When you are surrounded by three enemies or more, you receive 15% less damage from enemies.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -16,9 +16,9 @@
         <skill>
             <tier>2</tier>
             <name>Shotgun CQB</name>
-            <normal>Increases your shotgun reload speed by 25%.</normal>
-            <ace>You reload shotguns 25% faster. Increases your shotgun steel sight speed by 125%.</ace>
-            <point_requirement>4</point_requirement>
+            <normal>Increases your shotgun reload speed by 15%.</normal>
+            <ace>You reload shotguns 35% (50% total) faster. Increases your shotgun steel sight speed by 125%.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -26,9 +26,9 @@
         <skill>
             <tier>2</tier>
             <name>Shotgun Impact</name>
-            <normal>Your weapon stability with shotguns is increased by 8.</normal>
-            <ace>You deal 35% more damage with shotguns.</ace>
-            <point_requirement>4</point_requirement>
+            <normal>Your weapon stability with shotguns is increased by 8. You deal 10% more damage with Shotguns.</normal>
+            <ace>You now deal 35% more damage with shotguns.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -37,10 +37,10 @@
             <tier>3</tier>
             <name>Far Away</name>
             <normal>Your accuracy bonus while aiming down sights with shotguns is increased by 40%.</normal>
-            <ace>You gain a 35% increased effective range when aiming down sights with shotguns.</ace>
-            <point_requirement>10</point_requirement>
+            <ace>You gain a 50% increased effective range when aiming down sights with shotguns.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
@@ -48,19 +48,19 @@
             <name>Close By</name>
             <normal>You can now hip-fire with your shotguns while sprinting.</normal>
             <ace>Your rate of fire is increased by 35% while firing from the hip with single shot shotguns. Shotguns with magazines have their magazine size increased by 15 shells.</ace>
-            <point_requirement>10</point_requirement>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>4</tier>
             <name>Overkill</name>
-            <normal>When you kill an enemy using a shotgun or the OVE9000 portable saw, you receive a 75% damage bonus for 10 seconds.</normal>
-            <ace>The damage bonus now applies to all weapons. Skill must still be activated using a shotgun or the OVE9000 portable saw.</ace>
+            <normal>When you kill an enemy using a shotgun or the OVE9000 portable saw, you receive a 75% damage bonus for 30 seconds.</normal>
+            <ace>The damage bonus now applies to all weapons. Skill must still be activated using a shotgun or the OVE9000 portable saw. Your weapon swap speed is increased by 80%.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
-            <ace_cost>6</ace_cost>
+            <ace_cost>8</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
     </subtree>
@@ -69,7 +69,7 @@
         <skill>
             <tier>1</tier>
             <name>Oppressor</name>
-            <normal>Your weapons are 75% more effective at threatening enemies.</normal>
+            <normal>Your armor recovers 15% faster.</normal>
             <ace>Reduces the visual effect duration of flashbangs by 75%.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
@@ -79,9 +79,9 @@
         <skill>
             <tier>2</tier>
             <name>Die Hard</name>
-            <normal>You can use your primary weapon in bleedout.</normal>
-            <ace>Your armor recovery rate is increased by 15%.</ace>
-            <point_requirement>4</point_requirement>
+            <normal>You take 50% less damage while interacting with objects.</normal>
+            <ace>Increases the armor of all Ballistic vests by 20.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -90,8 +90,8 @@
             <tier>2</tier>
             <name>Transporter</name>
             <normal>You can throw bags 50% further.</normal>
-            <ace>You can now carry 2 bags at once.</ace>
-            <point_requirement>4</point_requirement>
+            <ace>For each 10 armor points the bag movement penalty is reduced by 1%.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -100,30 +100,30 @@
             <tier>3</tier>
             <name>Bulletproof</name>
             <normal>The armor recovery rate of you and your crew is increased by 25%.</normal>
-            <ace>Improves your armor so you can absorb 50% more damage..</ace>
-            <point_requirement>10</point_requirement>
+            <ace>When you melee or shoot shield enemies there's a chance that they get knocked over by the sheer force. The chance depends on the damage of the used weapon.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
             <name>Bullseye</name>
-            <normal>You regenerate 15 armor for each successful headshot. This can not occur more than once every 2 seconds.</normal>
-            <ace>You regenerate an additional 30 armor for each successful headshot.</ace>
-            <point_requirement>10</point_requirement>
+            <normal>You regenerate 10 armor for each successful headshot. This can not occur more than once every 2 seconds.</normal>
+            <ace>You regenerate an additional 25 (35 total) armor for each successful headshot.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>4</tier>
             <name>Iron Man</name>
-            <normal>When you melee or shoot shield enemies there's a chance that they get knocked back by the sheer force. The chance depends on the damage of the used weapon.</normal>
+            <normal>Improves your armor so you can absorb 40% more damage.</normal>
             <ace>Unlocks the ability to wear the Improved Combined Tactical Vest.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
-            <ace_cost>6</ace_cost>
+            <ace_cost>8</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
     </subtree>
@@ -132,8 +132,8 @@
         <skill>
             <tier>1</tier>
             <name>Stable Shot</name>
-            <normal>You gain a 50% increased ammo box pickup range</normal>
-            <ace>Every 10th enemy you kill will drop an extra ammo box.</ace>
+            <normal>You gain a 50% increased ammo box pickup range.</normal>
+            <ace>Every 6th enemy you kill will drop an extra ammo box.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -142,9 +142,9 @@
         <skill>
             <tier>2</tier>
             <name>Bullet Storm</name>
-            <normal>Directly after you deploy an ammo bag, you can fire your weapon for 10 seconds without depleting your ammunition.</normal>
+            <normal>Directly after you deploy an ammo bag, you can fire your weapon for 5 seconds without depleting your ammunition.</normal>
             <ace>You can fire 15 seconds longer without depleting your ammunition.</ace>
-            <point_requirement>4</point_requirement>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -153,8 +153,8 @@
             <tier>2</tier>
             <name>Portable Saw</name>
             <normal>Unlocks the OVE9000 portable saw for you to use as a secondary weapon</normal>
-            <ace>Increases your saw blade amount by 1.</ace>
-            <point_requirement>4</point_requirement>
+            <ace>Increases your saw blade amount by 1. You replace your saw blades with carbon blades, increasing your saw efficiency by 40%.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -164,19 +164,19 @@
             <name>Ammunition Specialist</name>
             <normal>You can now place 2 ammo bags instead of just one.</normal>
             <ace>Each ammo bag contains additional 200% ammo.</ace>
-            <point_requirement>10</point_requirement>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
             <name>Carbon Blade</name>
-            <normal>You replace your saw blades with carbon blades, increasing yor saw efficiency by 40% and reducing the wear down of the blades on enemies by 50%.</normal>
-            <ace>You can now saw through shield enemies. When killing an enemy with a saw, you have a X% chance to cause nearb enemies to panic. Panic will make enemies go into short bursts of uncontrollable fear.</ace>
-            <point_requirement>10</point_requirement>
+            <normal>Reducing the wear down of the blades on enemies by 50%.</normal>
+            <ace>You can now saw through shield enemies. When killing an enemy with a saw, you have a 50% chance to cause nearby enemies in a 10m radius to panic. Panic will make enemies go into short bursts of uncontrollable fear.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
@@ -186,7 +186,7 @@
             <ace>Increases the amount of ammo you gain from ammo boxes by 75%.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
-            <ace_cost>6</ace_cost>
+            <ace_cost>8</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
     </subtree>

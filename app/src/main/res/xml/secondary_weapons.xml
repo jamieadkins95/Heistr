@@ -11,7 +11,7 @@
             <rof>0</rof>
             <total>60</total>
             <mag>12</mag>
-            <damage>145</damage>
+            <damage>120</damage>
             <accuracy>68</accuracy>
             <stability>32</stability>
             <concealment>29</concealment>
@@ -251,7 +251,7 @@
             <rof>0</rof>
             <total>60</total>
             <mag>12</mag>
-            <damage>145</damage>
+            <damage>120</damage>
             <accuracy>68</accuracy>
             <stability>32</stability>
             <concealment>29</concealment>

@@ -18,7 +18,7 @@
             <name>Sentry Targeting practice</name>
             <normal>Your sentry gun's accuracy is improved by 100%.</normal>
             <ace>Your sentry gun's rotational speed is increased by 150%. Your sentry gun is loaded with 50% extra ammo.</ace>
-            <point_requirement>4</point_requirement>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -28,7 +28,7 @@
             <name>Eco Sentry</name>
             <normal>Your sentry guns cost 25% less ammo to deploy.</normal>
             <ace>Your sentry guns gain 150% increased health.</ace>
-            <point_requirement>4</point_requirement>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -37,10 +37,10 @@
             <tier>3</tier>
             <name>Engineering</name>
             <normal>You can now make a less noisy version of the sentry guns, making them less likely to be targeted by enemies.</normal>
-            <ace>You can now toggle AP rounds on your sentry guns, lowering the rate of fire and ammo count, but increasing damage and allowing to pierce shields.</ace>
-            <point_requirement>10</point_requirement>
+            <ace>You can now toggle AP rounds on your sentry guns, lowering the rate of fire by 75%, but increasing damage by 250% and allowing to pierce shields.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
@@ -48,19 +48,19 @@
             <name>Jack of all Trades</name>
             <normal>You deploy and interact with all deployables 50% faster</normal>
             <ace>You can now equip a second deployable to bring with you. The second deployable has 50% less uses.</ace>
-            <point_requirement>10</point_requirement>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>4</tier>
             <name>Tower Defence</name>
-            <normal>You can now carry 2 extra sentry guns.</normal>
-            <ace>You can now carry an additional 2 sentry guns.</ace>
+            <normal>You can now carry 1 extra sentry guns.</normal>
+            <ace>You can now carry an additional 3 sentry guns.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
-            <ace_cost>6</ace_cost>
+            <ace_cost>8</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
     </subtree>
@@ -81,7 +81,7 @@
             <name>Combat Engineering</name>
             <normal>The radius of trip mine explosions are increased by 30%.</normal>
             <ace>Your trip mines deal 50% more damage.</ace>
-            <point_requirement>4</point_requirement>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -91,7 +91,7 @@
             <name>Drill Sawgeant</name>
             <normal>Your drill and saw efficiency is increased by 15%.</normal>
             <ace>Further increases your drill and saw efficiency increased by 15%.</ace>
-            <point_requirement>4</point_requirement>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -101,9 +101,9 @@
             <name>More Firepower</name>
             <normal>You gain 1 more shape charge and 4 more trip mines.</normal>
             <ace>You gain 2 more shape charges and 7 more trip mines.</ace>
-            <point_requirement>10</point_requirement>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
@@ -111,19 +111,19 @@
             <name>Kick Starter</name>
             <normal>Your drills and saws gain an additional 20% to automatically restart after breaking.</normal>
             <ace>You gain the ability to restart a drill by hitting it with a melee attack. You get a chance for each time it breaks with a 50% success rate.</ace>
-            <point_requirement>10</point_requirement>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>4</tier>
             <name>Fire Trap</name>
-            <normal>The duration of the trip mine fire effect is increased by X and the radius of the fire effect is increased by Y.</normal>
-            <ace>Your trip mines now spread fire around the area of detonation for X seconds in a Y radius.</ace>
+            <normal>Your trip mines now spread fire around the area of detonation for X seconds in a Y radius.</normal>
+            <ace>The duration of the trip mine fire effect is increased by X and the radius of the fire effect is increased by Y.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
-            <ace_cost>6</ace_cost>
+            <ace_cost>8</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
     </subtree>
@@ -133,7 +133,7 @@
             <tier>1</tier>
             <name>Steady Grip</name>
             <normal>You gain 8 weapon accuracy.</normal>
-            <ace>You gain a decreased stabilty penalty when shooting while moving.</ace>
+            <ace>You gain 16 weapon stability.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -142,9 +142,9 @@
         <skill>
             <tier>2</tier>
             <name>Heavy Impact</name>
-            <normal>Your shots have a 25% chance to knock down enemies.</normal>
-            <ace>Your shots now have a 50% chance to knock down enemies.</ace>
-            <point_requirement>4</point_requirement>
+            <normal>Your shots have a 20% chance to knock down enemies.</normal>
+            <ace>Your shots now have a 60% chance to knock down enemies.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -152,9 +152,9 @@
         <skill>
             <tier>2</tier>
             <name>Fire Control</name>
-            <normal>You gain 8 weapon stability.</normal>
-            <ace>You gain 12 weapon accuracy while firing from the hip.</ace>
-            <point_requirement>4</point_requirement>
+            <normal>You gain 12 weapon accuracy while firing from the hip.</normal>
+            <ace>You gain a decreased accuracy penalty by 20% when shooting while moving.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -163,10 +163,10 @@
             <tier>3</tier>
             <name>Shock and Awe</name>
             <normal>You can now hip-fire with your weapon while sprinting</normal>
-            <ace>Killing X enemies with SMG, LMG and rifles fired in automatic mode will reduce your next reload time by up to 60%. This bonnus is reduced by 1% for each bullet above 20 in total magazine size, down to a minimum for 20% time reduction.</ace>
-            <point_requirement>10</point_requirement>
+            <ace>Killing 2 enemies with SMGs, LMGs or Rifles set on automatic fire mode will reduce your next reload time by up to 60%. This bonus is reduced by 1% for each bullet above 20 in the total magazine size, down to a minimum of 20% reload time reduction.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
@@ -174,19 +174,19 @@
             <name>Fast Fire</name>
             <normal>SMG, LMG and rifles fired in auto mode gain 15 more bullets in the magazine. Does not effect the "Shock and Awe" ace skill.</normal>
             <ace>You gain the ability to pierce body armour.</ace>
-            <point_requirement>10</point_requirement>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>4</tier>
             <name>Body Expertise</name>
-            <normal>15% of the enemies headshot multiplier is applied to the enemies body with smg, lmg and rifles fired in automatic mode.</normal>
-            <ace>50% of the enemies headshot multiplier is applied to the enemies body with smg, lmg and rifles fired in automatic mode.</ace>
+            <normal>18.75% of the enemies headshot multiplier is applied to the enemies body with SMGs, LMGs and rifles fired in automatic mode.</normal>
+            <ace>62.5% of the enemies headshot multiplier is applied to the enemies body with SMGs, LMGs and rifles fired in automatic mode.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
-            <ace_cost>6</ace_cost>
+            <ace_cost>8</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
     </subtree>

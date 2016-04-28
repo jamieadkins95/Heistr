@@ -5,9 +5,9 @@
         <subtreeNumber>0</subtreeNumber>
         <skill>
             <tier>1</tier>
-            <name>Fast Draw</name>
+            <name>Equilibrium</name>
             <normal>Decreases the time it takes to equip and unequip pistols by 80%.</normal>
-            <ace>You gain a 10% increased weapon accuracy with pistols.</ace>
+            <ace>You gain 8 increased weapon accuracy with pistols.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -15,52 +15,52 @@
         </skill>
         <skill>
             <tier>2</tier>
-            <name>Dance Instructor</name>
-            <normal>Pistol magazine sizes increased by 15 bullets.</normal>
+            <name>Gun Nut</name>
+            <normal>Pistol magazine sizes increased by 5 bullets.</normal>
             <ace>You gain a 100% increase in rate of fire with pistols.</ace>
-            <point_requirement>4</point_requirement>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>2</tier>
-            <name>Expert Handling</name>
-            <normal>Each successful pistol hit gives you 10% increased weapon accuracy for 10 seconds and can stack up to 4 times.</normal>
-            <ace>You reload pistols 50% faster.</ace>
-            <point_requirement>4</point_requirement>
+            <name>Akimbo</name>
+            <normal>Your Akimbo weapons' stability penalty is reduced by 8.</normal>
+            <ace>Your Akimbo weapons' stability penalty is reduced by an additional 8 and they also have a 50% increased ammo capacity.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Gun Play</name>
+            <name>Custom Ammo</name>
             <normal>You deal 5 additional damage with pistols.</normal>
-            <ace>You now 10 additional damage with pistols.</ace>
-            <point_requirement>10</point_requirement>
+            <ace>You now 15 additional damage with pistols.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Akimbo</name>
-            <normal>Akimbo Weapons gain 24 weapon stability.</normal>
-            <ace>Akimbo weapons gain an additional 8 weapon stability and have 50% increased total ammo capacity.</ace>
-            <point_requirement>10</point_requirement>
+            <name>Desperado</name>
+            <normal>Each successful pistol hit gives you a 10% increased accuracy bonus for 10 seconds and can stack 4 times.</normal>
+            <ace>You reload pistols 50% faster.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>4</tier>
             <name>Trigger Happy</name>
-            <normal>Each successful pistol hit grants 10% damage boost for 6 seconds and can stack 4 times.</normal>
-            <ace>Increases damage boost duration to 20.</ace>
+            <normal>Each successful pistol hit grants 20% damage boost for 2 seconds and can stack 4 times.</normal>
+            <ace>Increases damage boost duration to 10.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
-            <ace_cost>6</ace_cost>
+            <ace_cost>8</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
     </subtree>
@@ -70,7 +70,7 @@
             <tier>1</tier>
             <name>Nine Lives</name>
             <normal>You gain a 50% increase to bleedout health.</normal>
-            <ace>+1 down before going into custody.</ace>
+            <ace>You gain the ability to get downed 1 more time before going into custody.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -79,9 +79,9 @@
         <skill>
             <tier>2</tier>
             <name>Running from Death</name>
-            <normal>Reload and swap weapons 80% faster after getting up for 10 seconds.</normal>
+            <normal>Reload and swap weapons 100% faster for 10 seconds after getting up.</normal>
             <ace>You move 30% faster for 10 seconds after getting up.</ace>
-            <point_requirement>4</point_requirement>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -89,9 +89,9 @@
         <skill>
             <tier>2</tier>
             <name>Up you go</name>
-            <normal>You take 30% less damage after getting up for 10 seconds.</normal>
-            <ace>Regain 15% of you max hp when getting up.</ace>
-            <point_requirement>4</point_requirement>
+            <normal>You take 30% less damage for 10 seconds after getting up.</normal>
+            <ace>Regain 15% of you max health when getting up.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -101,29 +101,29 @@
             <name>Swan Song</name>
             <normal>When getting downed you gain the ability to keep on fighting for 3 seconds with a 60% movement penalty before going down.</normal>
             <ace>You no longer need to reload and can fight for an additional 6 seconds when Swan Song activates.</ace>
-            <point_requirement>10</point_requirement>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
             <name>Feign Death</name>
-            <normal>When you get downed you have a 25% chance to instantly get revived.</normal>
-            <ace>Chance to get instantly revived is increased by an additional 50%.</ace>
-            <point_requirement>10</point_requirement>
+            <normal>When you get downed you have a 15% chance to instantly get revived.</normal>
+            <ace>Chance to get instantly revived is increased by an additional 30%.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>4</tier>
             <name>Messiah</name>
             <normal>You are instantly revived if you kill an enemy while in bleedout. You have 1 charge.</normal>
-            <ace>Messiah charge is replensihed whenever you use a doctor bag.</ace>
+            <ace>Messiah charge is replenished whenever you use a doctor bag.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
-            <ace_cost>6</ace_cost>
+            <ace_cost>8</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
     </subtree>
@@ -141,10 +141,10 @@
         </skill>
         <skill>
             <tier>2</tier>
-            <name>Frenzy</name>
-            <normal>You start at and cannot heal above 30% of you maximum health. You also take 40% less health damage.</normal>
-            <ace>Health damage is now reduced by 60%.</ace>
-            <point_requirement>4</point_requirement>
+            <name>Bloodthirst</name>
+            <normal>Every kill you get will increase your next melee attack damage by 100%, up to a maximum of 300%. This effect gets reset when striking an enemy with a melee attack.</normal>
+            <ace>Whenever you kill an enemy with a melee attack, you will gain a 50% increase in reload speed for 10 seconds</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -154,19 +154,19 @@
             <name>Pumping iron</name>
             <normal>Your melee attacks against non special enemies do 50% more damage.</normal>
             <ace>Your melee attacks against special enemies do 50% more damage.</ace>
-            <point_requirement>4</point_requirement>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Bloodthirst</name>
-            <normal>Every kill you get will increase your next melee attack by 50% up to a maximum of 200%. This effect gets reset when striking an enemy with a melee attack.</normal>
-            <ace>Whenever you kill an enemy with a melee attack, you will gain a 50% increase in reload speed for X seconds</ace>
-            <point_requirement>10</point_requirement>
+            <name>Berserker</name>
+            <normal>The lower your health, the more damage you do. When your health is below 50%, you will do up to 250% more melee and saw damage.</normal>
+            <ace>The lower your health, the more damage you do. When your health is below 50%, you will do up to 100% more damage with ranged weapons as well.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
@@ -174,19 +174,19 @@
             <name>Counter Strike</name>
             <normal>When charging your melee weapon you will counter attack enemies that try to strike you, knocking them down. the knock down does not deal any damage.</normal>
             <ace>You gain the ability to counter attack cloakers.</ace>
-            <point_requirement>10</point_requirement>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>4</tier>
-            <name>Berserker</name>
-            <normal>The lower your health, the more damage you do, When your health is below 50%, you will do up to 250% more melee and saw damage.</normal>
-            <ace>The lower you health the more damage you do. When your health is beloew 50% you will do up to 100% more damage with ranged weapons as well.</ace>
+            <name>Frenzy</name>
+            <normal>You start at and cannot heal above 30% of your maximum health. You also take 30% less health damage and healing is reduce by 75%.</normal>
+            <ace>Health damage taken is now reduced by 50% and healing is reduce by 50%.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
-            <ace_cost>6</ace_cost>
+            <ace_cost>8</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
     </subtree>

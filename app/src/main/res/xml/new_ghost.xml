@@ -5,9 +5,9 @@
         <subtreeNumber>0</subtreeNumber>
         <skill>
             <tier>1</tier>
-            <name>Defence Up</name>
-            <normal>When you stand still for 3.5 seconds in stealth, you start highlighting people around you within a 10 meter radius.</normal>
-            <ace>You can pickup items while in casing mode. Adds 30% more value to loose items that you pick up.</ace>
+            <name>Sixth Sense</name>
+            <normal>Increases the time until you start getting detected while in casing mode by 25%. You can also mark enemies while in casing mode.</normal>
+            <ace>You can pick up items while in casing mode. You also gain 30% more value to items and cash that you pick up.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -16,9 +16,9 @@
         <skill>
             <tier>2</tier>
             <name>Cleaner</name>
-            <normal>You gain access to all insider assets.</normal>
-            <ace>1 additional body bag is added to your inventory. and you can now carry 1 more body bag in addition to the gained body bag.</ace>
-            <point_requirement>4</point_requirement>
+            <normal>You gain 1 additional body bag in your inventory and you gain the ability to carry 1 more body bag in addition to the gained body bag.</normal>
+            <ace>You gain the ability to place 2 body bag cases.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -26,9 +26,9 @@
         <skill>
             <tier>2</tier>
             <name>Chameleon</name>
-            <normal>In casing mode, you can now mark guards and cameras. Your concealment is increased by 25%.</normal>
-            <ace>You gain the ability to loop one camera for 20 seconds, temporarily disabling it from detecting you and your crew.</ace>
-            <point_requirement>4</point_requirement>
+            <normal>You gain the ability to automatically mark enemies within a 10 meter radius around you after standing still for 3.5 seconds while in stealth.</normal>
+            <ace>You gain access to all insider assets. Cleaning costs after killing a civilian is reduced by 75%.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -36,11 +36,11 @@
         <skill>
             <tier>3</tier>
             <name>Undertaker</name>
-            <normal>You unlock the ability to place 2 body bag case deployables.</normal>
+            <normal>You gain the ability to loop 1 camera for 25 seconds, temporarily disabling it from detecting you and your crew.</normal>
             <ace>You lockpick 50% faster. You gain the ability to lockpick safes.</ace>
-            <point_requirement>10</point_requirement>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
@@ -48,9 +48,9 @@
             <name>ECM Overdrive</name>
             <normal>Your ECM jammer and feedback duration is increased by 25%.</normal>
             <ace>Your ECM jammer can now also be used to open certain electronic doors.</ace>
-            <point_requirement>10</point_requirement>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
@@ -60,7 +60,7 @@
             <ace>The ECM jammer duration is increased by 25% and the ECM feedback duration lasts 25% longer. The ECM jammer now delays the pagers.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
-            <ace_cost>6</ace_cost>
+            <ace_cost>8</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
     </subtree>
@@ -79,9 +79,9 @@
         <skill>
             <tier>2</tier>
             <name>Evasion</name>
-            <normal>You gain 10% additional movement speed and 20% climbing speed.</normal>
+            <normal>You gain 10% additional movement speed and 20% ladder climbing speed.</normal>
             <ace>You can now sprint while strafing. Your fall damage is reduced by 75% and you only take armor damage from falling from non-fatal heights.</ace>
-            <point_requirement>4</point_requirement>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -91,39 +91,39 @@
             <name>Thick Skin</name>
             <normal>Increases melee weapon's concealment by 2.</normal>
             <ace>Increases all of your ballistic vests' concealment by 4.</ace>
-            <point_requirement>4</point_requirement>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Sneaky Bastard</name>
-            <normal>You gain a 1% dodge chance for every 3 points of concealment under 35 up to 10%.</normal>
-            <ace>You gain a 1% dodge chance for every 1 point of concealment under 35 up to 10%.</ace>
-            <point_requirement>10</point_requirement>
+            <name>Dire Need</name>
+            <normal>When your armor is depleted, the first shot on any enemies will cause those enemies to stagger. This effect ends when your armor regenerates.</normal>
+            <ace>This effect persists for 6 seconds after your armor has regenerated.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
             <name>Shockproof</name>
             <normal>The taser's shock attack has a 30% chance to backfire, knocking back the taser.</normal>
-            <ace>When tased you are able to free yourself by pressing [F] within 2 seconds of getting tased.</ace>
-            <point_requirement>10</point_requirement>
+            <ace>When tased you are able to free yourself by pressing [INTERACT] within 2 seconds of getting tased.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>4</tier>
-            <name>Low Blow</name>
-            <normal>You gain a 3% critical hit chance for every 3 points of concealment under 35 up to 30%.</normal>
-            <ace>You gain a 3% critical hit chance for every 1 point of concealment under 35 up to 30%.</ace>
+            <name>Sneaky Bastard</name>
+            <normal>You gain a 1% dodge chance for every 3 points of concealment under 35 up to a maximum of 10%.</normal>
+            <ace>You gain a 1% dodge chance for every 1 point of concealment under 35 up to a maximum of 10%.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
-            <ace_cost>6</ace_cost>
+            <ace_cost>8</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
     </subtree>
@@ -133,7 +133,7 @@
             <tier>1</tier>
             <name>Camouflage</name>
             <normal>You are 15% less likely to be targeted when you are close to one of your crew members.</normal>
-            <ace>You are 30% less likely to be targeted when you are close to one of your crew members.</ace>
+            <ace>You are now 30% less likely to be targeted when you are close to one of your crew members.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -144,7 +144,7 @@
             <name>Optic Illusions</name>
             <normal>You gain 1 concealment for each silenced weapon you have equipped.</normal>
             <ace>Reduces concealment penalty of silencers by 2.</ace>
-            <point_requirement>4</point_requirement>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -152,41 +152,41 @@
         <skill>
             <tier>2</tier>
             <name>The Professional</name>
-            <normal>You gain a 50% increase to weapon stability and 100% zoom increase with silenced weapons.</normal>
-            <ace>You gain a 50% increase to weapon accuracy with silenced weapons.</ace>
-            <point_requirement>4</point_requirement>
+            <normal>You gain 8 weapon stability and 100% snap to zoom increase with silenced weapons.</normal>
+            <ace>You gain 12 weapon accuracy with silenced weapons.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Dire Need</name>
-            <normal>when your armour is depleted, the first shot on any enemies will cause those enemies to stagger. This effect ends when your armour regenerates.</normal>
-            <ace>The effect persists for 6 seconds after your armour has regenerated.</ace>
-            <point_requirement>10</point_requirement>
+            <name>Low Blow</name>
+            <normal>You gain a 3% critical hit chance for every 3 points of concealment under 35 up to a maximum of 30%.</normal>
+            <ace>You gain a 3% critical hit chance for every 1 point of concealment under 35 up to a maximum of 30%.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
             <name>Subsonic Rounds</name>
-            <normal>You deal 15% more damage with all silenced weapons.</normal>
-            <ace>You deal an additional 15% more damage with all silenced weapons.</ace>
-            <point_requirement>10</point_requirement>
+            <normal>You deal 7.5% more damage with all silenced weapons.</normal>
+            <ace>You deal an additional 7.5% more damage with all silenced weapons.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>4</tier>
             <name>Unseen Strike</name>
-            <normal>If you do not lose any armour or health for 2 seconds you gain a 35% critical hit chance for 4 seconds.</normal>
-            <ace>The critical hit chance duration is increased by 12 seconds.</ace>
+            <normal>If you do not lose any armour or health for 4 seconds you gain a 35% critical hit chance for 6 seconds.</normal>
+            <ace>The critical hit chance duration is increased by 18 seconds.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
-            <ace_cost>6</ace_cost>
+            <ace_cost>8</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
     </subtree>

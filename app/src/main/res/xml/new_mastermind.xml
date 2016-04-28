@@ -17,8 +17,8 @@
             <tier>2</tier>
             <name>Quick Fix</name>
             <normal>Decreases your first aid kit and doctor bag deploy time by 50%.</normal>
-            <ace>Crew members that use your first aid kits or doctors bags take 20% less damage for 10 seconds.</ace>
-            <point_requirement>4</point_requirement>
+            <ace>Crew members that use your first aid kits or doctors bags take 15% less damage for 120 seconds.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -27,8 +27,8 @@
             <tier>2</tier>
             <name>Painkillers</name>
             <normal>Crew members you revive take 30% less damage for 5 seconds</normal>
-            <ace>The damage reduction is increased by an additional 20%.</ace>
-            <point_requirement>4</point_requirement>
+            <ace>The damage reduction is increased by an additional 50%.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -37,10 +37,10 @@
             <tier>3</tier>
             <name>Uppers</name>
             <normal>Adds 7 more first aid kits to your inventory.</normal>
-            <ace>Adds 3 more first aid kills yo you inventory. Your delpyed first aid kits will be automatically used if a player would go down within a 15 meter radius of the first aid kit. Only 70% of the effect is triggered.</ace>
-            <point_requirement>10</point_requirement>
+            <ace>Adds 3 more first aid kills yo you inventory. Your deployed first aid kits will be automatically used if a player would go down within a 5 meter radius of the first aid kit.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
@@ -48,9 +48,9 @@
             <name>Combat Doctor</name>
             <normal>You can now place 2 doctor bags</normal>
             <ace>Your doctor bags have 2 more charges.</ace>
-            <point_requirement>10</point_requirement>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
@@ -60,7 +60,7 @@
             <ace>There is a 75% chance that you can revive crew members at a distance by shouting at them.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
-            <ace_cost>6</ace_cost>
+            <ace_cost>8</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
     </subtree>
@@ -68,9 +68,9 @@
         <subtreeNumber>1</subtreeNumber>
         <skill>
             <tier>1</tier>
-            <name>Cable Guy</name>
-            <normal>You can cable tie hostages 75% faster.</normal>
-            <ace>Increases you supply of cable ties by 4.</ace>
+            <name>Endurance</name>
+            <normal>Increases your supply of cable ties by 4. You can cable tie hostages 75% faster.</normal>
+            <ace>Increases stamina by 150% and your crews stamina by 50%.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -78,10 +78,10 @@
         </skill>
         <skill>
             <tier>2</tier>
-            <name>Endurance</name>
-            <normal>Increases stamina by 150% and your crews stamina by 50%. Civilians are intimidated by the noise you make and remain intimidated for 50% longer.</normal>
-            <ace>You can reload your weapon while sprinting.</ace>
-            <point_requirement>4</point_requirement>
+            <name>Cable Guy</name>
+            <normal>The power and range of your intimidation is increased by 50%.</normal>
+            <ace>You can now have 2 converted enemies at the same time.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -90,8 +90,8 @@
             <tier>2</tier>
             <name>Joker</name>
             <normal>You can convert a non-special enemy to fight on your side.</normal>
-            <ace>Your converted enemy gains 55% more hp and 45% more damage. Time to convert and enemy is rediced by 65%. Power and range of your intimidation is increased by 50%.</ace>
-            <point_requirement>4</point_requirement>
+            <ace>Your converted enemy gains 55% more hp and 45% more damage. Time to convert and enemy is reduced by 65%.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -99,21 +99,21 @@
         <skill>
             <tier>3</tier>
             <name>Stockholm Syndrome</name>
-            <normal>Nearby untied civilians will revive you call on them.</normal>
-            <ace>Civilians reviving you have an X% chance of giving you ammo. Whenever you go into custody, your hostages will trade themselves in for you.</ace>
-            <point_requirement>10</point_requirement>
+            <normal>Civilians are intimidated by the noise you make and remain intimidated 50% longer.</normal>
+            <ace>Whenever you go into custody, your hostages will trade themselves in for you. This effect can occur during assaults, but only 1 time.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
             <name>Partner in Crime</name>
-            <normal>Having a converted enemy increases you movement speed y 10%. Your converted enemy takes an additional 40% less damage.</normal>
-            <ace>Having a converted enemy increases you health by 30%. Your converted enemy takes an additional 50% less damage.</ace>
-            <point_requirement>10</point_requirement>
+            <normal>Having a converted enemy increases you movement speed by 10%. Your converted enemy takes an additional 45% less damage.</normal>
+            <ace>Having a converted enemy increases you health by 30%. Your converted enemy takes an additional 45% less damage.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
@@ -123,7 +123,7 @@
             <ace>Having at least one hostage or converted enemy makes you regenerate 4.5% health every 5 seconds.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
-            <ace_cost>6</ace_cost>
+            <ace_cost>8</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
     </subtree>
@@ -133,7 +133,7 @@
             <tier>1</tier>
             <name>Stable Shot</name>
             <normal>You gain 8 weapon stability.</normal>
-            <ace>You gain 8 weapon accuracy while staning still.</ace>
+            <ace>You gain 16 weapon accuracy while staning still.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -142,9 +142,9 @@
         <skill>
             <tier>2</tier>
             <name>Rifleman</name>
-            <normal>Your snap to zoom is 100% faster with all weapons.</normal>
-            <ace>Weapon zoom is increased by 25% on all weapons.</ace>
-            <point_requirement>4</point_requirement>
+            <normal>Your snap to zoom is 100% faster with all weapons. Your movement speed is unhindered while using steel sight.</normal>
+            <ace>Weapon zoom is increased by 25% on all weapons. Your weapon accuracy while moving with Assault Rifles and Sniper Rifles is increased by 50%.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -152,9 +152,9 @@
         <skill>
             <tier>2</tier>
             <name>Marksman</name>
-            <normal>You gain 8 weapon accuracy with all SMG, sssault rifles and snipers fired in single shot.</normal>
-            <ace>You gain a 20% accuracy bonus while ADS with SMG, assault rifles and snipers fired in single shot.</ace>
-            <point_requirement>4</point_requirement>
+            <normal>You gain 8 weapon accuracy with all SMGs, Assault rifles and Snipers fired in single shot.</normal>
+            <ace>You gain a 20% accuracy bonus while ADS with SMGs, Assault rifles and Snipers fired in single shot.</ace>
+            <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
             <pd2skills>a</pd2skills>
@@ -163,30 +163,30 @@
             <tier>3</tier>
             <name>Spotter</name>
             <normal>Marked enemies take 15% more damage.</normal>
-            <ace>Enemies you mark take an additional X% damage when further than Y meters.</ace>
-            <point_requirement>10</point_requirement>
+            <ace>Enemies you mark take an additional 50% damage when further than 25 meters.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>3</tier>
             <name>Aggressive Reload</name>
-            <normal>Killing an enemy with the last bullet in the magazine will reduce your reload time by 30% for 2 seconds. Only triggered by SMGs, assault rifles and snipers fired in single shot.</normal>
-            <ace>Killing an enemy will reduce your reload time by 50% for 2 seconds. Only triggered by SMGs, assault rifles and snipers fired in single shot.</ace>
-            <point_requirement>10</point_requirement>
+            <normal>Increases your reload speed with assault rifles by 15%.</normal>
+            <ace>Any killing headshot will reduce your reload time by 40% for 2 seconds. Can only be triggered by SMG, Assault Rifle and Sniper Rifle fired in single shot.</ace>
+            <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
-            <ace_cost>5</ace_cost>
+            <ace_cost>6</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
         <skill>
             <tier>4</tier>
             <name>Ammo Efficiency</name>
-            <normal>Hitting 6 headshots in a row will refund 1 bullet to your used weapon. Only triggered by SMGs, assault rifles and snipers fired in single shot.</normal>
-            <ace>Hitting 6 headshots in a row will refund 1 bullet to your used weapon. Only triggered by SMGs, assault rifles and snipers fired in single shot.</ace>
+            <normal>Getting 3 headshots in less than 6 seconds will refund 1 bullet to your used weapon. Only triggered by SMGs, assault rifles and snipers fired in single shot.</normal>
+            <ace>Getting 2 headshots in a row will refund 1 bullet to your used weapon. Only triggered by SMGs, assault rifles and snipers fired in single shot.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
-            <ace_cost>6</ace_cost>
+            <ace_cost>8</ace_cost>
             <pd2skills>a</pd2skills>
         </skill>
     </subtree>
