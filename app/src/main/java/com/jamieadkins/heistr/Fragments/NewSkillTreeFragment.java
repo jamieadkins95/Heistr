@@ -273,6 +273,8 @@ public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.
             return;
         }
 
-        updatePointsRemaining();
+        if (mActivity.getCurrentBuild() != null) {
+            updatePointsRemaining();
+        }
     }
 }
