@@ -78,7 +78,7 @@ public class NewSkillTreeFragment extends Fragment implements EditBuildActivity.
                              Bundle savedInstanceState) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String key = getString(R.string.pref_skill_layout);
-        boolean vertical = preferences.getBoolean(key, false);
+        boolean vertical = preferences.getBoolean(key, true);
         int layout = vertical ? R.layout.fragment_new_skill_tree_vertical : R.layout.fragment_new_skill_tree;
 
         // Inflate the layout for this fragment
