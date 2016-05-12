@@ -4,6 +4,22 @@
         <group_name>assault</group_name>
         <weapon_type>primary</weapon_type>
         <weapon>
+            <pd2>wpn_fps_ass_tecci</pd2>
+            <pd2skills>0</pd2skills>
+            <firemode>auto</firemode>
+            <name>Bootleg Rifle</name>
+            <rof>0</rof>
+            <total>200</total>
+            <mag>100</mag>
+            <damage>38</damage>
+            <accuracy>24</accuracy>
+            <stability>52</stability>
+            <concealment>20</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_ass_tecci_fg_standard,wpn_fps_ass_tecci_s_standard,wpn_fps_upg_m4_s_crane,wpn_fps_upg_m4_s_mk46,wpn_fps_upg_m4_s_ubr,wpn_fps_m4_uupg_s_fold,wpn_fps_upg_m4_s_standard_vanilla,wpn_fps_upg_m4_s_pts,wpn_fps_upg_m4_s_adapter,wpn_fps_ass_tecci_dh_standard,wpn_fps_ass_tecci_m_drum,wpn_fps_ass_tecci_vg_standard,wpn_fps_ass_tecci_g_standard,wpn_fps_upg_m4_g_hgrip,wpn_fps_upg_m4_g_mgrip,wpn_fps_upg_m4_g_sniper,wpn_fps_upg_m4_g_standard_vanilla,wpn_fps_upg_m4_g_ergo,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_ass_tecci_lower_reciever,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_ass_tecci_upper_reciever,wpn_fps_ass_tecci_o_standard,wpn_fps_m4_uupg_o_flipup,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_cs,wpn_fps_upg_o_rx30,wpn_fps_upg_o_rx01,wpn_fps_upg_o_reflex,wpn_fps_upg_o_eotech_xps,wpn_fps_ass_tecci_ns_standard,wpn_fps_ass_tecci_ns_special,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ass_ns_battle,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_ass_tecci_b_standard,wpn_fps_ass_tecci_b_long,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
+        </weapon>
+
+        <weapon>
             <pd2>wpn_fps_ass_m16</pd2>
             <pd2skills>0</pd2skills>
             <firemode>auto</firemode>
@@ -336,7 +352,7 @@
             <rof>0</rof>
             <total>42</total>
             <mag>14</mag>
-            <damage>59</damage>
+            <damage>90</damage>
             <accuracy>44</accuracy>
             <stability>44</stability>
             <concealment>22</concealment>
@@ -352,7 +368,7 @@
             <rof>0</rof>
             <total>72</total>
             <mag>8</mag>
-            <damage>33</damage>
+            <damage>42</damage>
             <accuracy>28</accuracy>
             <stability>44</stability>
             <concealment>9</concealment>
@@ -368,7 +384,7 @@
             <rof>0</rof>
             <total>70</total>
             <mag>7</mag>
-            <damage>33</damage>
+            <damage>42</damage>
             <accuracy>28</accuracy>
             <stability>44</stability>
             <concealment>13</concealment>
@@ -384,7 +400,7 @@
             <rof>0</rof>
             <total>64</total>
             <mag>8</mag>
-            <damage>40</damage>
+            <damage>55</damage>
             <accuracy>28</accuracy>
             <stability>44</stability>
             <concealment>12</concealment>
@@ -400,7 +416,7 @@
             <rof>0</rof>
             <total>66</total>
             <mag>6</mag>
-            <damage>40</damage>
+            <damage>55</damage>
             <accuracy>28</accuracy>
             <stability>44</stability>
             <concealment>14</concealment>
@@ -416,7 +432,7 @@
             <rof>0</rof>
             <total>28</total>
             <mag>2</mag>
-            <damage>145</damage>
+            <damage>155</damage>
             <accuracy>60</accuracy>
             <stability>28</stability>
             <concealment>5</concealment>
@@ -432,7 +448,7 @@
             <rof>0</rof>
             <total>42</total>
             <mag>6</mag>
-            <damage>59</damage>
+            <damage>90</damage>
             <accuracy>40</accuracy>
             <stability>32</stability>
             <concealment>11</concealment>
@@ -448,7 +464,7 @@
             <rof>0</rof>
             <total>32</total>
             <mag>2</mag>
-            <damage>145</damage>
+            <damage>155</damage>
             <accuracy>60</accuracy>
             <stability>36</stability>
             <concealment>7</concealment>

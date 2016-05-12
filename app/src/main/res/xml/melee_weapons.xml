@@ -393,6 +393,16 @@
     </weapon>
 
     <weapon>
+        <pd2>wing</pd2>
+        <name>Wing Butterfly Knife</name>
+        <damage>30 (80)</damage>
+        <knockdown>30 (80)</knockdown>
+        <charge>2</charge>
+        <range>185</range>
+        <concealment>29</concealment>
+    </weapon>
+
+    <weapon>
         <pd2>barbedwire</pd2>
         <name>Lucille Baseball Bat</name>
         <damage>30 (90)</damage>

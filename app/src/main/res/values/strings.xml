@@ -165,6 +165,7 @@
         <item>Yakuza</item>
         <item>Ex&#8211;Presidents</item>
         <item>Maniac</item>
+        <item>Anarchist</item>
     </string-array>
 
     <string-array name="armour">
@@ -210,13 +211,14 @@
         <item>y</item>
         <item>e</item>
         <item>n</item>
+        <item>a</item>
     </string-array>
 
     <string-array name="perkDeckDescs" formatted="false">
         <item>+25% health (+15% crew health)\n\n+10% armour (+5% crew armour)\n\n+50% stamina (+50% crew stamina)\n\n+25% shout Distance\n\n+2% health and 4% stamina (for entire crew) for every hostage you have up to 10\n\n+8% damage Reduction for having at least one hostage</item>
         <item>+90% health\n\n3% health regen every 5 seconds\n\n+15% chance of being targeted by cops around teammates\n\n10% Chance to spread panic using LMGs, Minigun or Snipers 5% Chance to spread panic using SMGs</item>
         <item>+35% armour\n\n+20% armour regen (+10% Crew armour regen)</item>
-        <item>+25% dodge\n\n-80% weapon swap time\n\n-15% chance of being targeted by cops around teammates\n\n+25% chance to pierce tan armour</item>
+        <item>+30% dodge\n\n-80% weapon swap time\n\n-15% chance of being targeted by cops around teammates\n\n+25% chance to pierce tan armour</item>
         <item>+45% armour regen\n\n-20% armour\n\nAkimbo with +25% ammo and -50% stability</item>
         <item>\n\n+5% dodge\n\n+35% dodge (ballistic vests)\n\n+65% armour (ballistic vests)\n\n+10% armour regen</item>
         <item>+20% dodge\n\n+25% lockpicking speed (stacks multiplicatively with Lockpicking Expert)\n\n+20% body bagging speed\n\n-10% pager answering time\n\n-5% chance of being targeted when stationary</item>
@@ -234,6 +236,9 @@
             \n\nYou gain 1.5 damage absorption for every 25 stacks.
             \n\nStacks decay 60% + 40 every 8s
             \n\nTeammates benefit from your hysteria. Hysteria stacks from multiple crew members do not stack and only the highest damage absorption will have an effect.</item>
+        <item>You continuously regenerate armour when in combat.
+            \n\n50% of your health is converted into 120% of your armour.
+            \n\nDealing damage restores 10 armour (1.5 second cooldown).</item>
     </string-array>
 
     <string name="hello_world">Hello world!</string>

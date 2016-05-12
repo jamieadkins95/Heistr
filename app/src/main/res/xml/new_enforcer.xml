@@ -27,7 +27,7 @@
             <tier>2</tier>
             <name>Shotgun Impact</name>
             <normal>Your weapon stability with shotguns is increased by 8. You deal 10% more damage with Shotguns.</normal>
-            <ace>You now deal 35% more damage with shotguns.</ace>
+            <ace>You now deal 15% more damage with shotguns.</ace>
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
