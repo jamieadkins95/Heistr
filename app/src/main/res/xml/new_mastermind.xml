@@ -133,7 +133,7 @@
             <tier>1</tier>
             <name>Stable Shot</name>
             <normal>You gain 8 weapon stability.</normal>
-            <ace>You gain 16 weapon accuracy while staning still.</ace>
+            <ace>You gain 16 weapon accuracy while standing still.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>

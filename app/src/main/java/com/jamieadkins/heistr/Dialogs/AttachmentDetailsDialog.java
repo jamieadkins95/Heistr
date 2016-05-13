@@ -240,7 +240,7 @@ public class AttachmentDetailsDialog extends DialogFragment {
         {
             TextView attribute = (TextView) v.findViewById(R.id.weapon_attribute_concealment);
             TextView currentWeapon = (TextView) v.findViewById(R.id.current_weapon_concealment);
-            currentWeapon.setText(mCurrentWeapon.getConcealment() + "");
+            currentWeapon.setText(mCurrentWeapon.getConcealment(mBuild.getStatChangeManager()) + "");
 
             TextView currentAttachment= (TextView) v.findViewById(R.id.current_attachment_concealment);
             if (mCurrentAttachment != null) {

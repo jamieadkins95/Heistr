@@ -69,7 +69,7 @@ public class ArrayAdapterWeaponListSmall extends ArrayAdapter<Weapon> {
         TextView tvConcealmentTotal = (TextView) rowView.findViewById(R.id.tvConcealmentValueTotal);
         int[] concealment = new int[4];
         concealment[BASE] = getItem(position).getBaseConcealment();
-        concealment[TOTAL] = getItem(position).getConcealment();
+        concealment[TOTAL] = getItem(position).getConcealment(skillStatChangeManager);
         tvConcealmentTotal.setText(concealment[TOTAL] + "");
         //endregion
         //region rof

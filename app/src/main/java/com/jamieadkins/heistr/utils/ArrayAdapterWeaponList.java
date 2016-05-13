@@ -89,7 +89,7 @@ public class ArrayAdapterWeaponList extends ArrayAdapter<Weapon> {
         concealment[BASE] = getItem(position).getBaseConcealment();
         concealment[MOD] = getItem(position).getAttachmentConcealment();
         concealment[SKILL] = getItem(position).getSkillConcealment(skillStatChangeManager);
-        concealment[TOTAL] = getItem(position).getConcealment();
+        concealment[TOTAL] = getItem(position).getConcealment(skillStatChangeManager);
         tvConcealment.setText(concealment[BASE] + "");
         tvConcealmentMod.setText(concealment[MOD] + "");
         tvConcealmentSkill.setText(concealment[SKILL] + "");

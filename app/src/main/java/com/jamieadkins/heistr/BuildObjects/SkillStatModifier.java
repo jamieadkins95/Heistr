@@ -16,6 +16,7 @@ public class SkillStatModifier {
     private float ammoMult = 1;
     private float rofMult = 1;
     private int mag = 0;
+    private int concealment = 0;
 
 
     private ArrayList<Integer> weaponTypes = new ArrayList<>();
@@ -60,24 +61,34 @@ public class SkillStatModifier {
         return mag;
     }
 
-    public static SkillStatModifier getGunsligerAced() {
-        SkillStatModifier modifier = new SkillStatModifier();
-        modifier.damage = 15;
-        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_PISTOL);
-        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_AKIMBO);
-        return modifier;
+    public int getConcealment() {
+        return concealment;
     }
 
-    public static SkillStatModifier getShotgunImpact() {
+    public static SkillStatModifier getShotgunImpactStability() {
         SkillStatModifier modifier = new SkillStatModifier();
-        modifier.stability = 4;
+        modifier.stability = 8;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SHOTGUN);
         return modifier;
     }
 
-    public static SkillStatModifier getShotgunImpactAced() {
+    public static SkillStatModifier getShotgunImpact10() {
         SkillStatModifier modifier = new SkillStatModifier();
-        modifier.damageMult = 1.35f;
+        modifier.damageMult = 1.10f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SHOTGUN);
+        return modifier;
+    }
+
+    public static SkillStatModifier getShotgunImpact15() {
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.damageMult = 1.15f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SHOTGUN);
+        return modifier;
+    }
+
+    public static SkillStatModifier getClosebyAced() {
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.mag = 15;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SHOTGUN);
         return modifier;
     }
@@ -89,43 +100,18 @@ public class SkillStatModifier {
         return modifier;
     }
 
-    public static SkillStatModifier getSilentKiller() {
-        SkillStatModifier modifier = new SkillStatModifier();
-        modifier.damageMult = 1.15f;
-        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SILENCED);
-        return modifier;
-    }
-
-    public static SkillStatModifier getSilentKillerAced() {
-        SkillStatModifier modifier = new SkillStatModifier();
-        modifier.damageMult = 1.30f;
-        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SILENCED);
-        return modifier;
-    }
-
-    public static SkillStatModifier getLeadership() {
-        SkillStatModifier modifier = new SkillStatModifier();
-        modifier.stability = 4;
-        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_PISTOL);
-        return modifier;
-    }
-
-    public static SkillStatModifier getLeadershipAced() {
-        SkillStatModifier modifier = new SkillStatModifier();
-        modifier.stability = 8;
-        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_ALL);
-        return modifier;
-    }
-
-    public static SkillStatModifier getEquilibrium() {
-        SkillStatModifier modifier = new SkillStatModifier();
-        modifier.accuracy = 4;
-        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_PISTOL);
-        return modifier;
-    }
-
     public static SkillStatModifier getEquilibriumAced() {
-        return null;
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.accuracy = 8;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_PISTOL);
+        return modifier;
+    }
+
+    public static SkillStatModifier getGunNut() {
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.mag = 5;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_PISTOL);
+        return modifier;
     }
 
     public static SkillStatModifier getFullyLoaded() {
@@ -135,39 +121,61 @@ public class SkillStatModifier {
         return modifier;
     }
 
-    public static SkillStatModifier getSharpshooter() {
+    public static SkillStatModifier getSteadyGrip() {
         SkillStatModifier modifier = new SkillStatModifier();
-        modifier.accuracy = 4;
-        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SINGLE_SHOT);
-        return modifier;
-    }
-
-    public static SkillStatModifier getSharpshooterAced() {
-        SkillStatModifier modifier = new SkillStatModifier();
-        modifier.stability = 8;
-        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_ASSAULT);
-        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SNIPER);
-        return modifier;
-    }
-
-    public static SkillStatModifier getMagPlus() {
-        SkillStatModifier modifier = new SkillStatModifier();
-        modifier.mag = 5;
+        modifier.accuracy = 8;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_ALL);
         return modifier;
     }
 
-    public static SkillStatModifier getMagPlusAced() {
+    public static SkillStatModifier getSteadyGripAced() {
         SkillStatModifier modifier = new SkillStatModifier();
-        modifier.mag = 10;
+        modifier.stability = 16;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_ALL);
         return modifier;
     }
 
-    public static SkillStatModifier getSMGSpecialistAced() {
+    public static SkillStatModifier getFastFire() {
         SkillStatModifier modifier = new SkillStatModifier();
-        modifier.rofMult = 1.2f;
+        modifier.mag = 15;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SMG);
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_LMG);
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_ASSAULT);
+        return modifier;
+    }
+
+    public static SkillStatModifier getThickSkin() {
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.concealment = 2;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_MELEE);
+        return modifier;
+    }
+
+    public static SkillStatModifier getOpticIllusions() {
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.concealment = 1;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SILENCED);
+        return modifier;
+    }
+
+    public static SkillStatModifier getOpticIllusionsAced() {
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.concealment = 2;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SILENCED);
+        return modifier;
+    }
+
+    public static SkillStatModifier getSubSonicRounds() {
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.damageMult = 1.075f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SILENCED);
+        return modifier;
+    }
+
+    public static SkillStatModifier getSubSonicRoundsAced() {
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.damageMult = 1.075f;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SILENCED);
         return modifier;
     }
 
@@ -180,14 +188,14 @@ public class SkillStatModifier {
 
     public static SkillStatModifier getProfessionalAced() {
         SkillStatModifier modifier = new SkillStatModifier();
-        modifier.accuracy = 8;
+        modifier.accuracy = 12;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SILENCED);
         return modifier;
     }
 
     public static SkillStatModifier getAkimbo() {
         SkillStatModifier modifier = new SkillStatModifier();
-        modifier.stability = -16;
+        modifier.stability = 8;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_AKIMBO);
         return modifier;
     }
@@ -195,8 +203,35 @@ public class SkillStatModifier {
     public static SkillStatModifier getAkimboAced() {
         SkillStatModifier modifier = new SkillStatModifier();
         modifier.ammoMult = 1.5f;
-        modifier.stability = -8;
+        modifier.stability = 8;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_AKIMBO);
+        return modifier;
+    }
+
+    public static SkillStatModifier getCustomAmmo() {
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.damage = 5;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_PISTOL);
+        return modifier;
+    }
+    public static SkillStatModifier getCustomAmmoAced() {
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.damage = 15;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_PISTOL);
+        return modifier;
+    }
+
+    public static SkillStatModifier getMarksman() {
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.accuracy = 8;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SINGLE_SHOT);
+        return modifier;
+    }
+
+    public static SkillStatModifier getStableShot() {
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.stability = 8;
+        modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_ALL);
         return modifier;
     }
 }

@@ -301,16 +301,19 @@ public class Weapon {
     }
 
     public int getSkillConcealment(SkillStatChangeManager skillStatChangeManager) {
-        return 0;
-    }
-
-    public int getConcealment() {
         int con = 0;
-        con += concealment;
-        for (Attachment attachment : attachments) {
-            con += attachment.getConcealment();
+        for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
+            for (int weaponType : modifier.getWeaponTypes()) {
+                if (doWeaponTypesMatch(weaponType)) {
+                    con += modifier.getConcealment();
+                }
+            }
         }
         return con;
+    }
+
+    public int getConcealment(SkillStatChangeManager skillStatChangeManager) {
+        return concealment + getAttachmentConcealment() + getSkillConcealment(skillStatChangeManager);
     }
 
     public void setConcealment(int concealment) {

@@ -85,7 +85,7 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build> {
             tvPrimaryDamage.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getDamage(skillStatChangeManager) + "");
             tvPrimaryAccuracy.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getAccuracy(skillStatChangeManager) + "");
             tvPrimaryStability.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getStability(skillStatChangeManager) + "");
-            tvPrimaryConcealment.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getConcealment() + "");
+            tvPrimaryConcealment.setText(getItem(position).getWeaponBuild().getPrimaryWeapon().getConcealment(skillStatChangeManager) + "");
         } else {
             LinearLayout llPrimary = (LinearLayout) rowView.findViewById(R.id.llPrimary);
             llPrimary.setVisibility(View.GONE);
@@ -98,7 +98,7 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build> {
             tvSecondaryDamage.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getDamage(skillStatChangeManager) + "");
             tvSecondaryAccuracy.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getAccuracy(skillStatChangeManager) + "");
             tvSecondaryStability.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getStability(skillStatChangeManager) + "");
-            tvSecondaryConcealment.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getConcealment() + "");
+            tvSecondaryConcealment.setText(getItem(position).getWeaponBuild().getSecondaryWeapon().getConcealment(skillStatChangeManager) + "");
         } else {
             LinearLayout llSecondary = (LinearLayout) rowView.findViewById(R.id.llSecondary);
             llSecondary.setVisibility(View.GONE);

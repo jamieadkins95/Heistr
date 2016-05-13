@@ -228,13 +228,13 @@ public class Build {
         int concealment = 0;
 
         if (getWeaponBuild().getPrimaryWeapon() != null) {
-            concealment += getWeaponBuild().getPrimaryWeapon().getConcealment();
+            concealment += getWeaponBuild().getPrimaryWeapon().getConcealment(getStatChangeManager());
         } else {
             concealment += 30;
         }
 
         if (getWeaponBuild().getSecondaryWeapon() != null) {
-            concealment += getWeaponBuild().getSecondaryWeapon().getConcealment();
+            concealment += getWeaponBuild().getSecondaryWeapon().getConcealment(getStatChangeManager());
         } else {
             concealment += 30;
         }

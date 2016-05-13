@@ -197,6 +197,8 @@ public class WeaponBuild {
                 return SkillStatChangeManager.WEAPON_TYPE_PISTOL;
             case "smg":
                 return SkillStatChangeManager.WEAPON_TYPE_SMG;
+            case "lmg":
+                return SkillStatChangeManager.WEAPON_TYPE_LMG;
             default:
                 return -1;
         }
