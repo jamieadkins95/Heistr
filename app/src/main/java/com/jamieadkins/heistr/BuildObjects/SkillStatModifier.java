@@ -151,6 +151,13 @@ public class SkillStatModifier {
         return modifier;
     }
 
+    public static SkillStatModifier getThickSkinAced() {
+        SkillStatModifier modifier = new SkillStatModifier();
+        modifier.concealment = 4;
+        modifier.weaponTypes.add(SkillStatChangeManager.BALLISTIC_VESTS);
+        return modifier;
+    }
+
     public static SkillStatModifier getOpticIllusions() {
         SkillStatModifier modifier = new SkillStatModifier();
         modifier.concealment = 1;

@@ -245,7 +245,7 @@ public class Build {
             concealment += 30;
         }
 
-        concealment += getArmourConcealment();
+        concealment += getArmourConcealment(getStatChangeManager());
 
         // Blending in concealment bonus
         concealment++;
@@ -253,16 +253,25 @@ public class Build {
         return getDetectionFromConcealment(concealment);
     }
 
-    private int getArmourConcealment() {
+    private int getArmourConcealment(SkillStatChangeManager skillStatChangeManager) {
+        int con = 0;
+        for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
+            for (int weaponType : modifier.getWeaponTypes()) {
+                if (weaponType == SkillStatChangeManager.BALLISTIC_VESTS) {
+                    con += modifier.getConcealment();
+                }
+            }
+        }
+
         switch (armour) {
             case 1:
                 return 30;
             case 2:
-                return 26;
+                return 26 + con;
             case 3:
-                return 23;
+                return 23 + con;
             case 4:
-                return 21;
+                return 21 + con;
             case 5:
                 return 18;
             case 6:

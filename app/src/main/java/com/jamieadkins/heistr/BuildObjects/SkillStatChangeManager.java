@@ -22,6 +22,7 @@ public class SkillStatChangeManager {
 
     protected static int WEAPON_TYPE_LMG = 15;
     protected static int WEAPON_TYPE_MELEE = 16;
+    protected static int BALLISTIC_VESTS = 17;
 
     protected static int WEAPON_TYPE_ALL = 99;
 
@@ -111,6 +112,9 @@ public class SkillStatChangeManager {
                                     && subTree.getSubTree() == 1) {
                                 if (skill.getTaken() >= Skill.NORMAL) {
                                     modifiers.add(SkillStatModifier.getThickSkin());
+                                }
+                                if (skill.getTaken() == Skill.ACE) {
+                                    modifiers.add(SkillStatModifier.getThickSkinAced());
                                 }
                             }
                             break;
