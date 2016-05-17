@@ -240,7 +240,7 @@ public class Build {
         }
 
         if (getWeaponBuild().getMeleeWeapon() != null) {
-            concealment += getWeaponBuild().getMeleeWeapon().getConcealment();
+            concealment += getWeaponBuild().getMeleeWeapon().getConcealment(getStatChangeManager());
         } else {
             concealment += 30;
         }

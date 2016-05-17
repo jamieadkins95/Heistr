@@ -70,8 +70,22 @@ public class MeleeWeapon {
         this.range = range;
     }
 
-    public int getConcealment() {
+    public int getBaseConcealment() {
         return concealment;
+    }
+
+    public int getConcealment(SkillStatChangeManager skillStatChangeManager) {
+        int adjustedConcealment = concealment;
+        if (skillStatChangeManager != null) {
+            for (SkillStatModifier modifier : skillStatChangeManager.getModifiers()) {
+                for (int weaponType : modifier.getWeaponTypes()) {
+                    if (weaponType == SkillStatChangeManager.WEAPON_TYPE_MELEE) {
+                        adjustedConcealment += modifier.getConcealment();
+                    }
+                }
+            }
+        }
+        return adjustedConcealment;
     }
 
     public void setConcealment(int concealment) {
@@ -80,11 +94,34 @@ public class MeleeWeapon {
 
     @Override
     public String toString() {
+        return toString(null);
+    }
+
+    public String toString(SkillStatChangeManager skillStatChangeManager) {
+        boolean thickSkinEquipped = false;
+
+        if (skillStatChangeManager != null) {
+            for (SkillStatModifier statModifier : skillStatChangeManager.getModifiers()) {
+                for (int weaponType : statModifier.getWeaponTypes()) {
+                    if (weaponType == SkillStatChangeManager.WEAPON_TYPE_MELEE) {
+                        thickSkinEquipped = true;
+                    }
+                }
+            }
+        }
+
+        String thickSkin = "";
+        if (thickSkinEquipped) {
+            thickSkin = "\n\nYou have the Thick Skin skill equipped, concealment for all melee " +
+                    "weapons has been increased by 2.";
+        }
+
         return "Damage: " + damage + "\n" +
                 "Knockdown: " + knockdown + "\n" +
                 "Charge time: " + charge + "\n" +
                 "Range: " + range + "\n" +
-                "Concealment: " + concealment;
+                "Concealment: " + getConcealment(skillStatChangeManager) +
+                thickSkin;
     }
 
     public static ArrayList<MeleeWeapon> getMeleeWeaponsFromXML(Resources res) {

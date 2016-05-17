@@ -107,7 +107,8 @@ public class MeleeWeaponFragment extends Fragment implements EditBuildActivity.B
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle(selectedMeleeWeapon.getWeaponName())
-                        .setMessage(selectedMeleeWeapon.toString())
+                        .setMessage(selectedMeleeWeapon.toString(activity.getCurrentBuild()
+                                .getStatChangeManager()))
                         .setPositiveButton(R.string.got_it, null)
                         .create()
                         .show();
