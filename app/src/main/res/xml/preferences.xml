@@ -59,11 +59,11 @@
             <intent android:action="android.intent.action.VIEW"
                     android:data="https://github.com/makovkastar/FloatingActionButton" />
         </Preference>
-        <!--<Preference android:title="@string/pref_icon"
+        <Preference android:title="@string/pref_icon"
                     android:summary="@string/pref_icon_summ">
             <intent android:action="android.intent.action.VIEW"
                     android:data="https://www.reddit.com/user/Offyerrocker" />
-        </Preference>-->
+        </Preference>
         <Preference android:title="@string/pref_play_store"
                     android:summary="@string/pref_play_store_summ">
             <intent android:action="android.intent.action.VIEW"
