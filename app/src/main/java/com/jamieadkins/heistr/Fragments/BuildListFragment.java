@@ -22,6 +22,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.jamieadkins.heistr.Activities.EditBuildActivity;
@@ -49,6 +50,8 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
     ListView lvBuilds;
     ArrayList<Build> buildList;
 
+    private ProgressBar mProgressBar;
+
     public static final int NEW_DIALOG_FRAGMENT = 1;
     public static final int DIALOG_FRAGMENT = 2;
 
@@ -69,6 +72,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
         final FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fabNewBuild);
         fab.attachToListView(lvBuilds);
 
+        mProgressBar = (ProgressBar) rootView.findViewById(R.id.pbLoading);
 
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         if (sharedPref.getInt(getString(R.string.builds_deleted_42), 0) == 0) {
@@ -263,6 +267,12 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
         }
 
         @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            mProgressBar.setVisibility(View.VISIBLE);
+        }
+
+        @Override
         protected Build doInBackground(Void... params) {
             DataSourceBuilds dataSourceBuilds = new DataSourceBuilds(getActivity());
             dataSourceBuilds.open();
@@ -275,7 +285,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
         @Override
         protected void onPostExecute(Build build) {
             super.onPostExecute(build);
-
+            mProgressBar.setVisibility(View.GONE);
             MoveToEditBuildActivity(build.getId());
 
 
@@ -297,6 +307,12 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
         }
 
         @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            mProgressBar.setVisibility(View.VISIBLE);
+        }
+
+        @Override
         protected ArrayList<Build> doInBackground(Void... params) {
 
             ArrayList<Build> builds;
@@ -314,6 +330,7 @@ public class BuildListFragment extends Fragment implements NewBuildDialog.NewBui
         @Override
         protected void onPostExecute(ArrayList<Build> builds) {
             super.onPostExecute(builds);
+            mProgressBar.setVisibility(View.GONE);
 
             if (getActivity() == null) {
                 return;

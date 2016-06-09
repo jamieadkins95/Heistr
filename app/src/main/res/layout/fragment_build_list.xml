@@ -1,94 +1,74 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:fab="http://schemas.android.com/apk/res-auto"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".BuildListActivity$PlaceholderFragment">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:fab="http://schemas.android.com/apk/res-auto"
+                tools:context=".BuildListActivity$PlaceholderFragment">
 
+    <ProgressBar
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:id="@+id/pbLoading"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"/>
 
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pbLoading"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/activity_vertical_margin"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:orientation="vertical">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/lvBuilds"
-        android:divider="@null"
-        android:dividerHeight="10dp"/>
+        <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lvBuilds"
+                android:divider="@null"
+                android:dividerHeight="10dp"/>
 
-    <!--<android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabNewBuild"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_margin="16dp"
-        android:clickable="true"
-        android:elevation="4dp"
-        android:src="@drawable/ic_add_white_24dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        />-->
+        <com.melnykov.fab.FloatingActionButton
+                android:id="@+id/fabNewBuild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_add_white_24dp"
+                fab:fab_colorNormal="@color/primary"/>
 
-    <com.melnykov.fab.FloatingActionButton
-        android:id="@+id/fabNewBuild"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_add_white_24dp"
-        fab:fab_colorNormal="@color/primary"/>
-        <!--fab:fab_colorPressed="@color/primary_pressed"
-        fab:fab_colorRipple="@color/ripple"/>-->
+        <RelativeLayout
+                android:id="@+id/emptyElement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone">
 
-    <RelativeLayout
-        android:id="@+id/emptyElement"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone">
+            <TextView
+                    android:id="@+id/emptyTxt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_build_list"
+                    android:textColor="@color/textHint"
+                    android:textSize="19sp"
+                    android:layout_below="@+id/emptyTxt2" />
 
-        <TextView
-            android:id="@+id/emptyTxt1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/empty_build_list"
-            android:textColor="@color/textHint"
-            android:textSize="19sp"
-            android:layout_below="@+id/emptyTxt2"
-
-            />
-
-        <TextView
-            android:id="@+id/emptyTxt2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sad_face"
-            android:textColor="@color/textHint"
-            android:textSize="50sp"
-            android:paddingBottom="30dp"
-            android:layout_centerInParent="true"
-
-
-
-            />
-
-        <!--<ImageView
-            android:id="@+id/emptyImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/emptyTxt1"
-            android:src="@drawable/ic_dallas"
-            android:paddingBottom="30dp"/>-->
-
-
-
-    </RelativeLayout>
+            <TextView
+                    android:id="@+id/emptyTxt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sad_face"
+                    android:textColor="@color/textHint"
+                    android:textSize="50sp"
+                    android:paddingBottom="30dp"
+                    android:layout_centerInParent="true"/>
+        </RelativeLayout></RelativeLayout>
 
 
 </RelativeLayout>
