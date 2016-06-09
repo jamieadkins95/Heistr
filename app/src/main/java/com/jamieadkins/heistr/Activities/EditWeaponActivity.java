@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.jamieadkins.heistr.BuildObjects.Attachment;
 import com.jamieadkins.heistr.BuildObjects.Build;
@@ -53,6 +55,8 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
     ViewPager mViewPager;
 
     private TaskFragment mTaskFragment;
+
+    private ProgressBar mLoadingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -187,7 +191,8 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
 
     @Override
     public void onPreExecute() {
-
+        mLoadingBar = (ProgressBar) findViewById(R.id.pbLoading);
+        mLoadingBar.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -352,12 +357,16 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
     }
 
     public class GetWeaponFromDB extends AsyncTask<Void, Integer, Weapon> {
-
         private final long id;
 
         public GetWeaponFromDB(long id) {
             super();
             this.id = id;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
         }
 
         @Override
@@ -373,6 +382,10 @@ public class EditWeaponActivity extends AppCompatActivity implements TaskFragmen
         @Override
         protected void onPostExecute(Weapon weapon) {
             super.onPostExecute(weapon);
+
+            mLoadingBar.setVisibility(View.GONE);
+            mLoadingBar = null;
+
             currentWeapon = weapon;
 
             setTitle(weapon.getName());

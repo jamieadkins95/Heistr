@@ -363,4 +363,9 @@ public class Build {
 
         return infamyInThisTree;
     }
+
+
+    public float getEhp() {
+        return 0.0f;
+    }
 }

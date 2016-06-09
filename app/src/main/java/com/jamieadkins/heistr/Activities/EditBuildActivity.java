@@ -27,6 +27,8 @@ import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.jamieadkins.heistr.BuildObjects.Build;
 import com.jamieadkins.heistr.BuildObjects.WeaponBuild;
@@ -83,6 +85,8 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
     private int[] currentSkillTreeIndex = new int[Trees.FUGITIVE + 1];
 
     private NfcAdapter mNfcAdapter;
+
+    private ProgressBar mLoadingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -231,7 +235,8 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
 
     @Override
     public void onPreExecute() {
-
+        mLoadingBar = (ProgressBar) findViewById(R.id.pbLoading);
+        mLoadingBar.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -241,6 +246,8 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
 
     @Override
     public void onBuildReady(Build build) {
+        mLoadingBar.setVisibility(View.GONE);
+
         currentBuild = build;
         currentBuildID = build.getId();
         if (mListCallbacks == null) {
