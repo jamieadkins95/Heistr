@@ -72,9 +72,9 @@ public class SkillStatModifier {
         return modifier;
     }
 
-    public static SkillStatModifier getShotgunImpact10() {
+    public static SkillStatModifier getShotgunImpact5() {
         SkillStatModifier modifier = new SkillStatModifier();
-        modifier.damageMult = 1.10f;
+        modifier.damageMult = 1.05f;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SHOTGUN);
         return modifier;
     }
@@ -174,14 +174,14 @@ public class SkillStatModifier {
 
     public static SkillStatModifier getSubSonicRounds() {
         SkillStatModifier modifier = new SkillStatModifier();
-        modifier.damageMult = 1.075f;
+        modifier.damageMult = 1.15f;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SILENCED);
         return modifier;
     }
 
     public static SkillStatModifier getSubSonicRoundsAced() {
         SkillStatModifier modifier = new SkillStatModifier();
-        modifier.damageMult = 1.075f;
+        modifier.damageMult = 1.15f;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SILENCED);
         return modifier;
     }
@@ -223,7 +223,7 @@ public class SkillStatModifier {
     }
     public static SkillStatModifier getCustomAmmoAced() {
         SkillStatModifier modifier = new SkillStatModifier();
-        modifier.damage = 15;
+        modifier.damage = 10;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_PISTOL);
         return modifier;
     }

@@ -64,7 +64,7 @@ public class SkillStatChangeManager {
                                     && subTree.getSubTree() == 0) {
                                 if (skill.getTaken() == Skill.NORMAL) {
                                     modifiers.add(SkillStatModifier.getShotgunImpactStability());
-                                    modifiers.add(SkillStatModifier.getShotgunImpact10());
+                                    modifiers.add(SkillStatModifier.getShotgunImpact5());
                                 }
                                 if (skill.getTaken() == Skill.ACE) {
                                     modifiers.add(SkillStatModifier.getShotgunImpactStability());
