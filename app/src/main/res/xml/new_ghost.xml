@@ -5,7 +5,7 @@
         <subtreeNumber>0</subtreeNumber>
         <skill>
             <tier>1</tier>
-            <name>Sixth Sense</name>
+            <name>Chameleon</name>
             <normal>Increases the time until you start getting detected while in casing mode by 25%. You can also mark enemies while in casing mode.</normal>
             <ace>You can pick up items while in casing mode. You also gain 30% more value to items and cash that you pick up.</ace>
             <point_requirement>0</point_requirement>
@@ -35,7 +35,7 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Undertaker</name>
+            <name>Nimble</name>
             <normal>You gain the ability to loop 1 camera for 25 seconds, temporarily disabling it from detecting you and your crew.</normal>
             <ace>You lockpick 50% faster. You gain the ability to lockpick safes.</ace>
             <point_requirement>3</point_requirement>
@@ -70,7 +70,7 @@
             <tier>1</tier>
             <name>Duck and Cover</name>
             <normal>The time before stamina regeneration starts is reduced by 25% and the regeneration of stamina is increased by 25%. You also sprint 25% faster.</normal>
-            <ace>You have a 25% increased chance of dodging enemy fire while sprinting. You gain 15% dodge when crouching or ziplining,</ace>
+            <ace>You have a 10% increased chance of dodging enemy fire while sprinting. You gain 15% dodge while ziplining,</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -78,9 +78,9 @@
         </skill>
         <skill>
             <tier>2</tier>
-            <name>Evasion</name>
+            <name>Parkour</name>
             <normal>You gain 10% additional movement speed and 20% ladder climbing speed.</normal>
-            <ace>You can now sprint while strafing. Your fall damage is reduced by 75% and you only take armor damage from falling from non-fatal heights.</ace>
+            <ace>You can now sprint while strafing.</ace>
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -88,7 +88,7 @@
         </skill>
         <skill>
             <tier>2</tier>
-            <name>Thick Skin</name>
+            <name>Inner Pockets</name>
             <normal>Increases melee weapon's concealment by 2.</normal>
             <ace>Increases all of your ballistic vests' concealment by 4.</ace>
             <point_requirement>1</point_requirement>
@@ -131,9 +131,9 @@
         <subtreeNumber>2</subtreeNumber>
         <skill>
             <tier>1</tier>
-            <name>Camouflage</name>
-            <normal>You are 15% less likely to be targeted when you are close to one of your crew members.</normal>
-            <ace>You are now 30% less likely to be targeted when you are close to one of your crew members.</ace>
+            <name>Second Wind</name>
+            <normal>When your armor breaks your movement speed is increased by 30% for 5 seconds.</normal>
+            <ace>This effect alos applies to your crew when triggered.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -142,8 +142,8 @@
         <skill>
             <tier>2</tier>
             <name>Optic Illusions</name>
-            <normal>You gain 1 concealment for each silenced weapon you have equipped.</normal>
-            <ace>Reduces concealment penalty of silencers by 2.</ace>
+            <normal>You are 45% less likely to be targeted by enemies.</normal>
+            <ace>You gain 1 concealment for each silenced weapon you have equipped. Reduces concealment penalty of silencers by 2.</ace>
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -171,9 +171,9 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Subsonic Rounds</name>
-            <normal>You deal 7.5% more damage with all silenced weapons.</normal>
-            <ace>You deal an additional 7.5% more damage with all silenced weapons.</ace>
+            <name>Specialized Killing</name>
+            <normal>You deal 15% more damage with all silenced weapons.</normal>
+            <ace>You deal an additional 15% more damage with all silenced weapons.</ace>
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>

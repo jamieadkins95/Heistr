@@ -5,8 +5,8 @@
         <subtreeNumber>0</subtreeNumber>
         <skill>
             <tier>1</tier>
-            <name>Defence Up</name>
-            <normal>Your sentry guns cost 25% less ammo to deploy.</normal>
+            <name>Third Law</name>
+            <normal>The cost of deploying a sentry gun is reduced to 56%.</normal>
             <ace>Your sentry guns gain a protective shield.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
@@ -26,7 +26,7 @@
         <skill>
             <tier>2</tier>
             <name>Eco Sentry</name>
-            <normal>Your sentry guns cost 25% less ammo to deploy.</normal>
+            <normal>The cost of deploying a sentry gun is reduced to 40%.</normal>
             <ace>Your sentry guns gain 150% increased health.</ace>
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
@@ -57,7 +57,7 @@
             <tier>4</tier>
             <name>Tower Defence</name>
             <normal>You can now carry 1 extra sentry guns.</normal>
-            <ace>You can now carry an additional 3 sentry guns.</ace>
+            <ace>You can now carry an additional 2 sentry guns.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
             <ace_cost>8</ace_cost>
@@ -69,7 +69,7 @@
         <skill>
             <tier>1</tier>
             <name>Hardware Expert</name>
-            <normal>You fix the drill 25% faster. Drills are silent. Can toggle sensor mode on trip mines.</normal>
+            <normal>You fix the drill 25% faster. Drills are silent.</normal>
             <ace>Gives your drills and saws a 10% chance to automatically restart after breaking.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
@@ -119,8 +119,8 @@
         <skill>
             <tier>4</tier>
             <name>Fire Trap</name>
-            <normal>Your trip mines now spread fire around the area of detonation for X seconds in a Y radius.</normal>
-            <ace>The duration of the trip mine fire effect is increased by X and the radius of the fire effect is increased by Y.</ace>
+            <normal>Your trip mines now spread fire around the area of detonation for 10 seconds in a 7.5m diameter</normal>
+            <ace>The duration of the trip mine fire effect is increased by 10 seconds and the radius of the fire effect is increased by 50%.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
             <ace_cost>8</ace_cost>
@@ -142,8 +142,8 @@
         <skill>
             <tier>2</tier>
             <name>Heavy Impact</name>
-            <normal>Your shots have a 20% chance to knock down enemies.</normal>
-            <ace>Your shots now have a 60% chance to knock down enemies.</ace>
+            <normal>Your shots have a 5% chance to stagger all enemies except Bulldozers and Captain Winters.</normal>
+            <ace>Increases your stagger chance to 20%.</ace>
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -161,7 +161,7 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Shock and Awe</name>
+            <name>Lock N Load</name>
             <normal>You can now hip-fire with your weapon while sprinting</normal>
             <ace>Killing 2 enemies with SMGs, LMGs or Rifles set on automatic fire mode will reduce your next reload time by up to 60%. This bonus is reduced by 1% for each bullet above 20 in the total magazine size, down to a minimum of 20% reload time reduction.</ace>
             <point_requirement>3</point_requirement>
@@ -171,7 +171,7 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Fast Fire</name>
+            <name>Surefire</name>
             <normal>SMG, LMG and rifles fired in auto mode gain 15 more bullets in the magazine. Does not effect the "Shock and Awe" ace skill.</normal>
             <ace>You gain the ability to pierce body armour.</ace>
             <point_requirement>3</point_requirement>

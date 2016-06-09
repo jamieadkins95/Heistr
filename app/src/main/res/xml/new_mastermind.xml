@@ -6,7 +6,7 @@
         <skill>
             <tier>1</tier>
             <name>Combat Medic</name>
-            <normal>After you have revived a crew member, you receive a 25% damage bonus for 10 seconds.</normal>
+            <normal>You gain a 30% damage reduction for 5 seconds both after and during reviving another player.</normal>
             <ace>Reviving a crew member gives them 30% more health. </ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
@@ -37,7 +37,7 @@
             <tier>3</tier>
             <name>Uppers</name>
             <normal>Adds 7 more first aid kits to your inventory.</normal>
-            <ace>Adds 3 more first aid kills yo you inventory. Your deployed first aid kits will be automatically used if a player would go down within a 5 meter radius of the first aid kit.</ace>
+            <ace>Adds 3 more first aid kits to your inventory. Your deployed first aid kits will be automatically used if a player would go down within a 5 meter radius of the first aid kit.</ace>
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>
@@ -56,8 +56,8 @@
         <skill>
             <tier>4</tier>
             <name>Inspire</name>
-            <normal>You revive crew members 50% faster. Shouting at your teammates will increase their movement speed by 20% for 30 seconds.</normal>
-            <ace>There is a 75% chance that you can revive crew members at a distance by shouting at them.</ace>
+            <normal>You revive crew members 50% faster. Shouting at your teammates will increase their movement speed by 20% for 10 seconds.</normal>
+            <ace>There is a 100% chance that you can revive crew members at a distance by shouting at them. This cannot occur more than once every 20 seconds.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
             <ace_cost>8</ace_cost>
@@ -68,9 +68,9 @@
         <subtreeNumber>1</subtreeNumber>
         <skill>
             <tier>1</tier>
-            <name>Endurance</name>
+            <name>Forced Friendship</name>
             <normal>Increases your supply of cable ties by 4. You can cable tie hostages 75% faster.</normal>
-            <ace>Increases stamina by 150% and your crews stamina by 50%.</ace>
+            <ace>You and your crew gain 0.5 damage absorption for each hostage you have. This effect stacks with up to a maximum of 8 hostages.\nNote: This skill does not stack with other players Forced Friendship skill.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -143,7 +143,7 @@
             <tier>2</tier>
             <name>Rifleman</name>
             <normal>Your snap to zoom is 100% faster with all weapons. Your movement speed is unhindered while using steel sight.</normal>
-            <ace>Weapon zoom is increased by 25% on all weapons. Your weapon accuracy while moving with Assault Rifles and Sniper Rifles is increased by 50%.</ace>
+            <ace>Weapon zoom is increased by 25% on all weapons. Your weapon accuracy while moving with SMGs, Assault Rifles and Sniper Rifles is increased by 50%.</ace>
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -161,7 +161,7 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Spotter</name>
+            <name>High Value Target</name>
             <normal>Marked enemies take 15% more damage.</normal>
             <ace>Enemies you mark take an additional 50% damage when further than 25 meters.</ace>
             <point_requirement>3</point_requirement>
@@ -173,7 +173,7 @@
             <tier>3</tier>
             <name>Aggressive Reload</name>
             <normal>Increases your reload speed with assault rifles by 15%.</normal>
-            <ace>Any killing headshot will reduce your reload time by 40% for 2 seconds. Can only be triggered by SMG, Assault Rifle and Sniper Rifle fired in single shot.</ace>
+            <ace>Any killing headshot will reduce your reload time by 40% for 2 seconds. Can only be triggered by SMGs, Assault Rifle and Sniper Rifle fired in single shot.</ace>
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>
@@ -183,7 +183,7 @@
             <tier>4</tier>
             <name>Ammo Efficiency</name>
             <normal>Getting 3 headshots in less than 6 seconds will refund 1 bullet to your used weapon. Only triggered by SMGs, assault rifles and snipers fired in single shot.</normal>
-            <ace>Getting 2 headshots in a row will refund 1 bullet to your used weapon. Only triggered by SMGs, assault rifles and snipers fired in single shot.</ace>
+            <ace>The amount of headshots required is reduced to 2.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
             <ace_cost>8</ace_cost>

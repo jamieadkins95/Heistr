@@ -26,8 +26,8 @@
         <skill>
             <tier>2</tier>
             <name>Shotgun Impact</name>
-            <normal>Your weapon stability with shotguns is increased by 8. You deal 10% more damage with Shotguns.</normal>
-            <ace>You now deal 15% more damage with shotguns.</ace>
+            <normal>Your weapon stability with shotguns is increased by 8. You deal 5% more damage with Shotguns.</normal>
+            <ace>You deal an additional 10% more damage with shotguns.</ace>
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -68,7 +68,7 @@
         <subtreeNumber>1</subtreeNumber>
         <skill>
             <tier>1</tier>
-            <name>Oppressor</name>
+            <name>Resilience</name>
             <normal>Your armor recovers 15% faster.</normal>
             <ace>Reduces the visual effect duration of flashbangs by 75%.</ace>
             <point_requirement>0</point_requirement>
@@ -98,9 +98,9 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Bulletproof</name>
+            <name>Shock and Awe</name>
             <normal>The armor recovery rate of you and your crew is increased by 25%.</normal>
-            <ace>When you melee or shoot shield enemies there's a chance that they get knocked over by the sheer force. The chance depends on the damage of the used weapon.</ace>
+            <ace>Enables your weapons to have a chance to knock back Shield enemies when attacking them. Ranged weapons' knock back chance is increased the higher the total damage of the weapon is. Melee weapons' knock back chance is 100%.</ace>
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>
@@ -109,8 +109,8 @@
         <skill>
             <tier>3</tier>
             <name>Bullseye</name>
-            <normal>You regenerate 10 armor for each successful headshot. This can not occur more than once every 2 seconds.</normal>
-            <ace>You regenerate an additional 25 (35 total) armor for each successful headshot.</ace>
+            <normal>You regenerate 5 armor for each successful headshot. This can not occur more than once every 2 seconds.</normal>
+            <ace>You regenerate an additional 25 (25 total) armor for each successful headshot.</ace>
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>
@@ -119,7 +119,7 @@
         <skill>
             <tier>4</tier>
             <name>Iron Man</name>
-            <normal>Improves your armor so you can absorb 40% more damage.</normal>
+            <normal>Improves your armor so you can absorb 30% more damage.</normal>
             <ace>Unlocks the ability to wear the Improved Combined Tactical Vest.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
@@ -131,7 +131,7 @@
         <subtreeNumber>2</subtreeNumber>
         <skill>
             <tier>1</tier>
-            <name>Stable Shot</name>
+            <name>Scavenger</name>
             <normal>You gain a 50% increased ammo box pickup range.</normal>
             <ace>Every 6th enemy you kill will drop an extra ammo box.</ace>
             <point_requirement>0</point_requirement>
@@ -142,8 +142,8 @@
         <skill>
             <tier>2</tier>
             <name>Bullet Storm</name>
-            <normal>Directly after you deploy an ammo bag, you can fire your weapon for 5 seconds without depleting your ammunition.</normal>
-            <ace>You can fire 15 seconds longer without depleting your ammunition.</ace>
+            <normal>Ammo bags placed by you grant players the ability to shoot without depleting their ammunition for up to 5 seconds after interacting with it. The more ammo players replenish, the longer the duration of the effect.</normal>
+            <ace>Increases the base duration of the effect by up to 15 seconds.</ace>
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -171,7 +171,7 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Carbon Blade</name>
+            <name>Saw Massacre</name>
             <normal>Reducing the wear down of the blades on enemies by 50%.</normal>
             <ace>You can now saw through shield enemies. When killing an enemy with a saw, you have a 50% chance to cause nearby enemies in a 10m radius to panic. Panic will make enemies go into short bursts of uncontrollable fear.</ace>
             <point_requirement>3</point_requirement>

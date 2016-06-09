@@ -17,7 +17,7 @@
             <tier>2</tier>
             <name>Gun Nut</name>
             <normal>Pistol magazine sizes increased by 5 bullets.</normal>
-            <ace>You gain a 100% increase in rate of fire with pistols.</ace>
+            <ace>You gain a 50% increase in rate of fire with pistols.</ace>
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -37,7 +37,7 @@
             <tier>3</tier>
             <name>Custom Ammo</name>
             <normal>You deal 5 additional damage with pistols.</normal>
-            <ace>You now 15 additional damage with pistols.</ace>
+            <ace>You now 10 additional damage with pistols.</ace>
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>
