@@ -13,6 +13,7 @@ import com.jamieadkins.heistr.BuildObjects.MeleeWeapon;
 import com.jamieadkins.heistr.BuildObjects.SkillBuild;
 import com.jamieadkins.heistr.BuildObjects.Weapon;
 import com.jamieadkins.heistr.BuildObjects.WeaponBuild;
+import com.jamieadkins.heistr.Consts.Trees;
 import com.jamieadkins.heistr.utils.URLEncoder;
 
 import java.util.ArrayList;
@@ -240,13 +241,15 @@ public class DataSourceBuilds {
         SkillBuild skillBuildFromDB = SkillBuild.getSkillBuildFromDB(skillBuildID, context);
         SkillBuild mergedSkillBuild = SkillBuild.mergeBuilds(skillBuildFromXML, skillBuildFromDB);
 
-        int bonus = 0;
+        int count = Trees.MASTERMIND;
         for (boolean infamy : infamyList) {
+            mergedSkillBuild.setInfamyBonus(count, infamy);
+            count++;
+
             if (infamy) {
-                bonus++;
+                mergedSkillBuild.setInfamyBonus(Trees.FUGITIVE, true);
             }
         }
-        mergedSkillBuild.setNewPointsAvailable(bonus);
 
         build.setWeaponsFromXML(baseWeaponInfo);
         build.setMeleeWeaponsFromXML(meleeWeaponInfo);

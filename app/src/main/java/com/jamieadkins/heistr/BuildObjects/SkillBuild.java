@@ -85,8 +85,15 @@ public class SkillBuild {
         return total;
     }
 
-    public void setNewPointsAvailable(int infamyBonus) {
-        newPointsAvailable = 100 + infamyBonus;
+    public void setInfamyBonus(int infamyBonus, boolean gotBonus) {
+        for (NewSkillSubTree subTree : newSkillTrees.get(infamyBonus).getSubTrees()) {
+            ArrayList<Skill> skills = subTree.getSkillsInSubTree();
+            if (gotBonus) {
+                skills.get(skills.size() - 1).setUnlockRequirement(16);
+            } else {
+                skills.get(skills.size() - 1).setUnlockRequirement(18);
+            }
+        }
     }
 
     public int getPointsAvailable() {

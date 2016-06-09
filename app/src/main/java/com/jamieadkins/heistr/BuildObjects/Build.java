@@ -130,14 +130,15 @@ public class Build {
         dataSourceBuilds.updateInfamy(id, getInfamyID());
         dataSourceBuilds.close();
 
-        int bonus = 0;
+        int count = Trees.MASTERMIND;
         for (boolean infamyBonus : infamies) {
-            if (infamyBonus) {
-                bonus++;
-            }
-            skillBuild.setNewPointsAvailable(bonus);
-        }
+            skillBuild.setInfamyBonus(count, true);
+            count++;
 
+            if (infamyBonus) {
+                skillBuild.setInfamyBonus(Trees.FUGITIVE, true);
+            }
+        }
     }
 
     public void updatePerkDeck(Context context, int selected) {
