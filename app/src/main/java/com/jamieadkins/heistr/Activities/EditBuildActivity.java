@@ -246,7 +246,9 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
 
     @Override
     public void onBuildReady(Build build) {
-        mLoadingBar.setVisibility(View.GONE);
+        if (mLoadingBar != null) {
+            mLoadingBar.setVisibility(View.GONE);
+        }
 
         currentBuild = build;
         currentBuildID = build.getId();
