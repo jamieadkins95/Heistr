@@ -331,7 +331,5 @@
     <string name="pref_fab">Makovkastar</string>
     <string name="pref_fab_summ">Floating Action Button library</string>
     <string name="pref_icon">/u/Offyerrocker</string>
-    <string name="pref_icon_summ">That beautiful icon!</string>
-    <string name="pref_play_store">Norio.be</string>
-    <string name="pref_play_store_summ">Play Store graphics</string>
+    <string name="pref_icon_summ">That beautiful icon and play store graphic!</string>
 </resources>
