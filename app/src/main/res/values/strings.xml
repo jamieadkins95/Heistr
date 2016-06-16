@@ -166,6 +166,7 @@
         <item>Ex&#8211;Presidents</item>
         <item>Maniac</item>
         <item>Anarchist</item>
+        <item>Biker</item>
     </string-array>
 
     <string-array name="armour">
@@ -210,8 +211,8 @@
         <item>n</item>
         <item>y</item>
         <item>e</item>
-        <item>n</item>
-        <item>a</item>
+        <item>h</item>
+        <item>k</item>
     </string-array>
 
     <string-array name="perkDeckDescs" formatted="false">
@@ -239,6 +240,9 @@
         <item>You continuously regenerate armour when in combat.
             \n\n50% of your health is converted into 120% of your armour.
             \n\nDealing damage restores 10 armour (1.5 second cooldown).</item>
+        <item>Every time you or your crew performs a kill you will gain 5 health and 5 armor. This cannot occur more than 10 times every 25 seconds.
+            \n\nCooldown is reduced by 1 second and armor regen increases by 1 for every 10% of health missing.
+            \n\nCooldown is reduced by 1 second and health regen increases by 1 for every 10% armor missing.</item>
     </string-array>
 
     <string name="hello_world">Hello world!</string>

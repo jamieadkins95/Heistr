@@ -346,6 +346,22 @@
         <group_name>smg</group_name>
         <weapon_type>secondary</weapon_type>
         <weapon>
+            <pd2>wpn_fps_smg_hajk</pd2>
+            <pd2skills>0</pd2skills>
+            <firemode>auto</firemode>
+            <name>CR 805B Submachine Gun</name>
+            <rof>750</rof>
+            <total>90</total>
+            <mag>30</mag>
+            <damage>80</damage>
+            <accuracy>72</accuracy>
+            <stability>68</stability>
+            <concealment>18</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_smg_hajk_s_standard,wpn_fps_smg_hajk_o_standard,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_cs,wpn_fps_upg_o_rx30,wpn_fps_upg_o_rx01,wpn_fps_upg_o_reflex,wpn_fps_upg_o_eotech_xps,wpn_fps_m4_uupg_m_std_vanilla,wpn_fps_ass_l85a2_m_emag,wpn_fps_upg_m4_m_pmag,wpn_fps_upg_m4_m_l5,wpn_fps_upg_m4_m_quad,wpn_fps_upg_m4_m_straight,wpn_fps_smg_hajk_g_standard,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_smg_hajk_body_standard,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_smg_hajk_fg_standard,wpn_fps_smg_hajk_vg_moe,wpn_fps_smg_hajk_ns_standard,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ass_ns_battle,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_smg_hajk_b_standard,wpn_fps_smg_hajk_b_short,wpn_fps_smg_hajk_b_medium,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
+        </weapon>
+
+        <weapon>
             <pd2>wpn_fps_smg_mac10</pd2>
             <pd2skills>0</pd2skills>
             <firemode>auto</firemode>

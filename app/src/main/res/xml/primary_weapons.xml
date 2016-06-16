@@ -345,6 +345,22 @@
         <group_name>shotgun</group_name>
         <weapon_type>primary</weapon_type>
         <weapon>
+            <pd2>wpn_fps_sho_boot</pd2>
+            <pd2skills>0</pd2skills>
+            <firemode>single</firemode>
+            <name>Breaker 12G Shotgun</name>
+            <rof>80</rof>
+            <total>21</total>
+            <mag>7</mag>
+            <damage>155</damage>
+            <accuracy>48</accuracy>
+            <stability>28</stability>
+            <concealment>20</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_sho_boot_s_short,wpn_fps_sho_boot_s_long,wpn_fps_sho_boot_em_extra,wpn_fps_sho_boot_m_standard,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_sho_boot_b_standard,wpn_fps_sho_boot_b_short,wpn_fps_sho_boot_b_long,wpn_fps_sho_boot_fg_standard,wpn_fps_upg_a_slug,wpn_fps_upg_a_custom,wpn_fps_upg_a_custom_free,wpn_fps_upg_a_explosive,wpn_fps_upg_a_piercing,wpn_fps_upg_a_dragons_breath,wpn_fps_upg_ns_shot_thick,wpn_fps_upg_ns_shot_shark,wpn_fps_upg_shot_ns_king,wpn_fps_upg_ns_sho_salvo_large,wpn_fps_sho_boot_body_standard,wpn_fps_sho_boot_body_exotic,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,wpn_fps_upg_bonus_spread_n1,</attachments>
+        </weapon>
+
+        <weapon>
             <pd2>wpn_fps_sho_ksg</pd2>
             <pd2skills>0</pd2skills>
             <firemode>single</firemode>
