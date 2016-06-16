@@ -383,8 +383,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
                 break;
             case R.id.nav_home:
                 fragment = null;
-                Intent intent = new Intent(EditBuildActivity.this, BuildListActivity.class);
-                startActivity(intent);
+                finish();
                 break;
             case R.id.nav_settings:
                 fragment = null;
