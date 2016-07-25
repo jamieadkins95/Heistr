@@ -33,7 +33,7 @@
                 android:summary="@string/pref_skill_layout_summ"
                 android:defaultValue="true"/>
     </PreferenceCategory>
-    <PreferenceCategory
+    <!--<PreferenceCategory
             android:title="@string/pref_ehp_category"
             android:key="pref_key_ehp_settings">
 
@@ -49,7 +49,7 @@
                 android:key="pref_ehp_3"
                 android:title="@string/pref_ehp_3"
                 android:defaultValue="true"/>
-    </PreferenceCategory>
+    </PreferenceCategory>-->z`
     <PreferenceCategory
             android:title="@string/pref_attributions_category"
             android:key="pref_key_attributions_settings">
