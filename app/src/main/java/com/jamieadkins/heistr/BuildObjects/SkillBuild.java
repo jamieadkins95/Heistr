@@ -54,6 +54,7 @@ public class SkillBuild {
         skillBuild.setId(Build.PD2SKILLS);
         for (int i = Trees.MASTERMIND; i <= Trees.FUGITIVE; i++) {
             skillBuild.getSkillTrees().add(SkillTree.newNonDBInstance());
+            skillBuild.getNewSkillTrees().add(NewSkillTree.newNonDBInstance());
         }
 
         return skillBuild;

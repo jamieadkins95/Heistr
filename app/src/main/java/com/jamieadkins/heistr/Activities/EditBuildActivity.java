@@ -111,7 +111,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
         setSupportActionBar(toolbar);
 
         final ActionBar ab = getSupportActionBar();
-        ab.setHomeAsUpIndicator(R.drawable.ic_menu);
+        ab.setHomeAsUpIndicator(R.drawable.ic_menu_24dp);
         ab.setDisplayHomeAsUpEnabled(true);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -246,7 +246,9 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
 
     @Override
     public void onBuildReady(Build build) {
-        mLoadingBar.setVisibility(View.GONE);
+        if (mLoadingBar != null) {
+            mLoadingBar.setVisibility(View.GONE);
+        }
 
         currentBuild = build;
         currentBuildID = build.getId();
@@ -381,8 +383,7 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
                 break;
             case R.id.nav_home:
                 fragment = null;
-                Intent intent = new Intent(EditBuildActivity.this, BuildListActivity.class);
-                startActivity(intent);
+                finish();
                 break;
             case R.id.nav_settings:
                 fragment = null;

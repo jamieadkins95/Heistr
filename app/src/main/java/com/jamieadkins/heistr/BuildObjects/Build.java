@@ -132,7 +132,7 @@ public class Build {
 
         int count = Trees.MASTERMIND;
         for (boolean infamyBonus : infamies) {
-            skillBuild.setInfamyBonus(count, true);
+            skillBuild.setInfamyBonus(count, infamyBonus);
             count++;
 
             if (infamyBonus) {

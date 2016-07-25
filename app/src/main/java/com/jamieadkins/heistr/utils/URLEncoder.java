@@ -4,6 +4,8 @@ import android.content.Context;
 import android.util.Log;
 
 import com.jamieadkins.heistr.BuildObjects.Build;
+import com.jamieadkins.heistr.BuildObjects.NewSkillSubTree;
+import com.jamieadkins.heistr.BuildObjects.NewSkillTree;
 import com.jamieadkins.heistr.BuildObjects.Skill;
 import com.jamieadkins.heistr.BuildObjects.SkillBuild;
 import com.jamieadkins.heistr.BuildObjects.SkillTier;
@@ -32,7 +34,7 @@ public class URLEncoder {
 
         //region Skills
         int treeNumber = Trees.MASTERMIND;
-        for (SkillTree tree : skillBuild.getSkillTrees()) {
+        for (NewSkillTree tree : skillBuild.getNewSkillTrees()) {
             switch (treeNumber) {
                 case Trees.MASTERMIND:
                     url += "m";
@@ -51,11 +53,10 @@ public class URLEncoder {
                     break;
             }
 
-            ArrayList<SkillTier> tiers = tree.getTierListInDescendingOrder();
-            tiers.add(tree.getTierList().get(0));
+            ArrayList<NewSkillSubTree> subTrees = tree.getSubTrees();
 
-            for (SkillTier tier : tiers) {
-                for (Skill skill : tier.getSkillsInTier()) {
+            for (NewSkillSubTree subTree : subTrees) {
+                for (Skill skill : subTree.getSkillsInSubTree()) {
                     if (skill.getTaken() == Skill.NORMAL) {
                         url += skill.getPd2SkillsSymbol();
                     } else if (skill.getTaken() == Skill.ACE) {
@@ -64,6 +65,7 @@ public class URLEncoder {
 
                 }
             }
+
             url += ":";
             treeNumber++;
         }
@@ -128,25 +130,25 @@ public class URLEncoder {
                 int end = remaining.indexOf(":");
                 switch (remaining.charAt(0)) {
                     case 'm': //mastermind tree
-                        SkillTree treeM = getSkillTreeFromLetters(remaining);
-                        b.getSkillBuild().getSkillTrees().set(Trees.MASTERMIND, treeM);
+                        NewSkillTree treeM = getNewSkillTreeFromLetters(remaining);
+                        b.getSkillBuild().getNewSkillTrees().set(Trees.MASTERMIND, treeM);
 
                         break;
                     case 'e': //enforcer
-                        SkillTree treeE = getSkillTreeFromLetters(remaining);
-                        b.getSkillBuild().getSkillTrees().set(Trees.ENFORCER, treeE);
+                        NewSkillTree treeE = getNewSkillTreeFromLetters(remaining);
+                        b.getSkillBuild().getNewSkillTrees().set(Trees.ENFORCER, treeE);
                         break;
                     case 't': //tech
-                        SkillTree treeT = getSkillTreeFromLetters(remaining);
-                        b.getSkillBuild().getSkillTrees().set(Trees.TECHNICIAN, treeT);
+                        NewSkillTree treeT = getNewSkillTreeFromLetters(remaining);
+                        b.getSkillBuild().getNewSkillTrees().set(Trees.TECHNICIAN, treeT);
                         break;
                     case 'g': //ghost
-                        SkillTree treeG = getSkillTreeFromLetters(remaining);
-                        b.getSkillBuild().getSkillTrees().set(Trees.GHOST, treeG);
+                        NewSkillTree treeG = getNewSkillTreeFromLetters(remaining);
+                        b.getSkillBuild().getNewSkillTrees().set(Trees.GHOST, treeG);
                         break;
                     case 'f': //fugitive
-                        SkillTree treeF = getSkillTreeFromLetters(remaining);
-                        b.getSkillBuild().getSkillTrees().set(Trees.FUGITIVE, treeF);
+                        NewSkillTree treeF = getNewSkillTreeFromLetters(remaining);
+                        b.getSkillBuild().getNewSkillTrees().set(Trees.FUGITIVE, treeF);
                         break;
                     case 'i': //infamy
                         b.setInfamies(DataSourceInfamies.idToInfamy(findInfamies(remaining)));
@@ -251,6 +253,28 @@ public class URLEncoder {
         return tree;
     }
 
+    private static NewSkillTree getNewSkillTreeFromLetters(String url) {
+        int end = url.indexOf(":");
+        String treeString = url.substring(1, end);
+        NewSkillTree tree = NewSkillTree.newNonDBInstance();
+        Log.d("Tree from URL", treeString);
+
+
+        for (char character : treeString.toCharArray()) {
+            int[] pos = subtreeIndexFromLetter(Character.toLowerCase(character));
+            Skill skill = new Skill();
+            if (character == Character.toLowerCase(character)) {
+                skill.setTaken(Skill.NORMAL);
+            } else {
+                skill.setTaken(Skill.ACE);
+            }
+
+            tree.getSubTrees().get(pos[tierIndex]).getSkillsInSubTree().set(pos[skillIndex], skill);
+        }
+
+        return tree;
+    }
+
     private static int[] tierIndexFromLetter(char letter) {
         int numValue = (int) letter - 95;
 
@@ -262,6 +286,27 @@ public class URLEncoder {
         }
         Log.d("URL Letter conversion", letter + " turned into tier " + tier + ", skill " + skill);
         return new int[]{tier, skill};
+    }
+
+    private static int[] subtreeIndexFromLetter(char letter) {
+        int numValue = (int) letter - 95;
+
+        int subtree = 0;
+        int tier = 0;
+        int skill = 0;
+        if (numValue < 6) {
+            subtree = 0;
+            tier = numValue / 3;
+            skill = numValue % 3;
+        } else if (numValue < 13) {
+            subtree = 1;
+            tier = numValue / 3;
+            skill = numValue % 3;
+        } else {
+            subtree = 2;
+        }
+        Log.d("URL Letter conversion", letter + " turned into tier " + tier + ", skill " + skill + ", subtree " + subtree);
+        return new int[]{tier, skill, subtree};
     }
 
 
