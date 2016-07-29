@@ -23,7 +23,6 @@ public class ArmourFragment extends Fragment implements EditBuildActivity.BuildR
 
     ListView lvArmour;
 
-
     EditBuildActivity activity;
 
 
@@ -40,7 +39,6 @@ public class ArmourFragment extends Fragment implements EditBuildActivity.BuildR
         fragment.setArguments(args);
         return fragment;
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -83,6 +81,4 @@ public class ArmourFragment extends Fragment implements EditBuildActivity.BuildR
     public void onBuildUpdated() {
 
     }
-
-
 }
