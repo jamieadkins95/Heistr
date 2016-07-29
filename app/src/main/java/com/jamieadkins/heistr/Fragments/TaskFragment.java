@@ -53,7 +53,6 @@ public class TaskFragment extends Fragment {
 
         mCallbacks = (TaskCallbacks) context;
         Log.d(TAG, "Attached!");
-        //Toast.makeText(context, "Attached!", Toast.LENGTH_SHORT).show();
         start(currentBuildID);
     }
 
