@@ -1,6 +1,5 @@
 package com.jamieadkins.heistr.Fragments;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -26,10 +25,7 @@ import java.util.Arrays;
 public class PerkDeckFragment extends Fragment implements EditBuildActivity.BuildReadyCallbacks {
 
     ListView lvPerkDecks;
-
-
     EditBuildActivity activity;
-
 
     public PerkDeckFragment() {
         // Required empty public constructor
@@ -45,7 +41,6 @@ public class PerkDeckFragment extends Fragment implements EditBuildActivity.Buil
         return fragment;
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -54,7 +49,6 @@ public class PerkDeckFragment extends Fragment implements EditBuildActivity.Buil
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_perk_deck, container, false);
         lvPerkDecks = (ListView) rootView.findViewById(R.id.lvPerkDeck);
-
 
         if (activity.getCurrentBuild() == null) {
             activity.listenIn(this);
@@ -88,7 +82,6 @@ public class PerkDeckFragment extends Fragment implements EditBuildActivity.Buil
                 } else {
                     activity.getCurrentBuild().updatePerkDeck(activity, selected);
                 }
-
             }
         });
 
@@ -113,6 +106,4 @@ public class PerkDeckFragment extends Fragment implements EditBuildActivity.Buil
     public void onBuildUpdated() {
 
     }
-
-
 }
