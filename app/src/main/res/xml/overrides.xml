@@ -83,6 +83,28 @@
             <stability>0</stability>
             <concealment>-2</concealment>
         </attachment>
+        <attachment>
+            <weapon>wpn_fps_smg_x_akmsu</weapon>
+            <pd2>wpn_fps_upg_ak_m_quad</pd2>
+            <name>AK Quadstacked Mag</name>
+            <total_ammo>0</total_ammo>
+            <magsize>60</magsize>
+            <damage>0</damage>
+            <accuracy>-4</accuracy>
+            <stability>4</stability>
+            <concealment>-3</concealment>
+        </attachment>
+        <attachment>
+            <weapon>wpn_fps_smg_x_akmsu</weapon>
+            <pd2>wpn_fps_upg_ak_m_uspalm</pd2>
+            <name>Low Drag Magazine</name>
+            <total_ammo>0</total_ammo>
+            <magsize>8</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>4</stability>
+            <concealment>1</concealment>
+        </attachment>
     </attachment_group>
     <attachment_group>
         <group_name>grip</group_name>

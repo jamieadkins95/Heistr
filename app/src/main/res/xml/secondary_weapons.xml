@@ -279,6 +279,21 @@
         <group_name>shotgun</group_name>
         <weapon_type>secondary</weapon_type>
         <weapon>
+            <pd2>wpn_fps_sho_rota</pd2>
+            <pd2skills>0</pd2skills>
+            <firemode>single</firemode>
+            <name>Goliath 12G Shotgun</name>
+            <rof>0</rof>
+            <total>54</total>
+            <mag>6</mag>
+            <damage>42</damage>
+            <accuracy>56</accuracy>
+            <stability>44</stability>
+            <concealment>13</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_sho_rota_fg_standard,wpn_fps_sho_rota_mag_realese,wpn_fps_sho_rota_m_standard,wpn_fps_upg_a_slug,wpn_fps_upg_a_custom,wpn_fps_upg_a_custom_free,wpn_fps_upg_a_explosive,wpn_fps_upg_a_piercing,wpn_fps_upg_a_dragons_breath,wpn_fps_sho_rota_g_standard,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_sho_rota_b_long,wpn_fps_sho_rota_b_short,wpn_fps_sho_rota_b_silencer,wpn_fps_sho_rota_body_lower,wpn_fps_sho_rota_body_upper,wpn_fps_upg_ns_shot_thick,wpn_fps_upg_ns_shot_shark,wpn_fps_upg_shot_ns_king,wpn_fps_upg_ns_sho_salvo_large,wpn_fps_smg_hajk_vg_moe,wpn_fps_sho_rota_o_standard,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,wpn_fps_upg_bonus_spread_n1,</attachments>
+        </weapon>
+        <weapon>
             <pd2>wpn_fps_shot_m37</pd2>
             <pd2skills>0</pd2skills>
             <firemode>single</firemode>
