@@ -3,6 +3,7 @@ package com.jamieadkins.heistr.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,7 +65,12 @@ public class ArrayAdapterBuildList extends ArrayAdapter<Build> {
         //Set build name
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         String key = "pref_build_name_length";
-        int maxChars = Math.min(Integer.parseInt(preferences.getString(key, "100")), getItem(position).getName().length());
+        int maxChars = 100;
+        try {
+            maxChars = Math.min(Integer.parseInt(preferences.getString(key, "100")), getItem(position).getName().length());
+        } catch (NumberFormatException e) {
+            Log.e(getClass().getSimpleName(), "Invalid int", e);
+        }
         tv.setText(getItem(position).getName().substring(0, maxChars));
 
         //Set Armour

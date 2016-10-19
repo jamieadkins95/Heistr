@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,7 +88,12 @@ public class ArrayAdapterSkillTierList extends ArrayAdapter<SkillTier> {
 
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
             String key = "pref_skill_name_length";
-            int maxChars = Math.min(Integer.parseInt(preferences.getString(key, "100")), tier.getSkillsInTier().get(i).getName().length());
+            int maxChars = 100;
+            try {
+                maxChars = Math.min(Integer.parseInt(preferences.getString(key, "100")), tier.getSkillsInTier().get(i).getName().length());
+            } catch (NumberFormatException e) {
+                Log.e(getClass().getSimpleName(), "Invalid int", e);
+            }
             tvs[i].setText(tier.getSkillsInTier().get(i).getName().substring(0, maxChars));
 
             switch (tier.getSkillsInTier().get(i).getTaken()) {
