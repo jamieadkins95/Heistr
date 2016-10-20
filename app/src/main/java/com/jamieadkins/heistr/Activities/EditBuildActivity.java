@@ -402,6 +402,8 @@ public class EditBuildActivity extends AppCompatActivity implements TaskFragment
             transaction.replace(R.id.contentFragment, fragment);
             transaction.commit();
         }
+
+        mNavigationView.setCheckedItem(id);
     }
 
     public void updateCurrentSkillTree(int tree) {
