@@ -6,7 +6,7 @@
         <skill>
             <tier>1</tier>
             <name>Third Law</name>
-            <normal>The cost of deploying a sentry gun is reduced to 56%.</normal>
+            <normal>The cost of deploying a sentry gun is reduced by 5%.</normal>
             <ace>Your sentry guns gain a protective shield.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
@@ -26,7 +26,7 @@
         <skill>
             <tier>2</tier>
             <name>Eco Sentry</name>
-            <normal>The cost of deploying a sentry gun is reduced to 40%.</normal>
+            <normal>The cost of deploying a sentry gun is reduced by 5%.</normal>
             <ace>Your sentry guns gain 150% increased health.</ace>
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
@@ -46,7 +46,7 @@
         <skill>
             <tier>3</tier>
             <name>Jack of all Trades</name>
-            <normal>You deploy and interact with all deployables 50% faster</normal>
+            <normal>You deploy and interact with all deployables 100% faster</normal>
             <ace>You can now equip a second deployable to bring with you. The second deployable has 50% less uses.</ace>
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
@@ -119,7 +119,7 @@
         <skill>
             <tier>4</tier>
             <name>Fire Trap</name>
-            <normal>Your trip mines now spread fire around the area of detonation for 10 seconds in a 7.5m diameter</normal>
+            <normal>Your trip mines now spread fire around the area of detonation for 10 seconds in a 4m diameter</normal>
             <ace>The duration of the trip mine fire effect is increased by 10 seconds and the radius of the fire effect is increased by 50%.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
@@ -182,8 +182,8 @@
         <skill>
             <tier>4</tier>
             <name>Body Expertise</name>
-            <normal>18.75% of the enemies headshot multiplier is applied to the enemies body with SMGs, LMGs and rifles fired in automatic mode.</normal>
-            <ace>62.5% of the enemies headshot multiplier is applied to the enemies body with SMGs, LMGs and rifles fired in automatic mode.</ace>
+            <normal>33% from the bonus headshot damage is applied to the enemies body with SMGs, LMGs and rifles fired in automatic mode.</normal>
+            <ace>100% from the bonus headshot damage is applied to the enemies body with SMGs, LMGs and rifles fired in automatic mode.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
             <ace_cost>8</ace_cost>

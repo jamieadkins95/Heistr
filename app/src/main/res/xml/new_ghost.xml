@@ -25,7 +25,7 @@
         </skill>
         <skill>
             <tier>2</tier>
-            <name>Chameleon</name>
+            <name>Sixth Sense</name>
             <normal>You gain the ability to automatically mark enemies within a 10 meter radius around you after standing still for 3.5 seconds while in stealth.</normal>
             <ace>You gain access to all insider assets. Cleaning costs after killing a civilian is reduced by 75%.</ace>
             <point_requirement>1</point_requirement>
@@ -37,7 +37,7 @@
             <tier>3</tier>
             <name>Nimble</name>
             <normal>You gain the ability to loop 1 camera for 25 seconds, temporarily disabling it from detecting you and your crew.</normal>
-            <ace>You lockpick 50% faster. You gain the ability to lockpick safes.</ace>
+            <ace>You lockpick 100% faster. You gain the ability to lockpick safes.</ace>
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>
@@ -133,7 +133,7 @@
             <tier>1</tier>
             <name>Second Wind</name>
             <normal>When your armor breaks your movement speed is increased by 30% for 5 seconds.</normal>
-            <ace>This effect alos applies to your crew when triggered.</ace>
+            <ace>This effect also applies to your crew when triggered.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>

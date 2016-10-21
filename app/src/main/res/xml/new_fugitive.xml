@@ -36,8 +36,8 @@
         <skill>
             <tier>3</tier>
             <name>Custom Ammo</name>
-            <normal>You deal 5 additional damage with pistols.</normal>
-            <ace>You now 10 additional damage with pistols.</ace>
+            <normal>The base damage of all pistols is increased by 5.</normal>
+            <ace>The base damage of all pistols is increased by an additional 10.</ace>
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>
@@ -152,8 +152,8 @@
         <skill>
             <tier>2</tier>
             <name>Pumping iron</name>
-            <normal>Your melee attacks against non special enemies do 50% more damage.</normal>
-            <ace>Your melee attacks against special enemies do 50% more damage.</ace>
+            <normal>Your melee attacks against non special enemies do 100% more damage.</normal>
+            <ace>Your melee attacks against special enemies do 100% more damage.</ace>
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -183,7 +183,7 @@
             <tier>4</tier>
             <name>Frenzy</name>
             <normal>You start at and cannot heal above 30% of your maximum health. You also take 30% less health damage and healing is reduce by 75%.</normal>
-            <ace>Health damage taken is now reduced by 50% and healing is reduce by 50%.</ace>
+            <ace>Health damage taken is now reduced by 25% and healing is reduce by 0%.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
             <ace_cost>8</ace_cost>

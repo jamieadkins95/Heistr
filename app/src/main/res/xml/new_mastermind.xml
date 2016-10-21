@@ -56,7 +56,7 @@
         <skill>
             <tier>4</tier>
             <name>Inspire</name>
-            <normal>You revive crew members 50% faster. Shouting at your teammates will increase their movement speed by 20% for 10 seconds.</normal>
+            <normal>You revive crew members 100% faster. Shouting at your teammates will increase their movement speed by 20% for 10 seconds.</normal>
             <ace>There is a 100% chance that you can revive crew members at a distance by shouting at them. This cannot occur more than once every 20 seconds.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
@@ -90,7 +90,7 @@
             <tier>2</tier>
             <name>Joker</name>
             <normal>You can convert a non-special enemy to fight on your side.</normal>
-            <ace>Your converted enemy gains 55% more hp and 45% more damage. Time to convert and enemy is reduced by 65%.</ace>
+            <ace>Your converted enemy takes 55% less damage and deals 200% more damage. Time to convert and enemy is reduced by 0%.</ace>
             <point_requirement>1</point_requirement>
             <normal_cost>2</normal_cost>
             <ace_cost>4</ace_cost>
@@ -110,7 +110,7 @@
             <tier>3</tier>
             <name>Partner in Crime</name>
             <normal>Having a converted enemy increases you movement speed by 10%. Your converted enemy takes an additional 45% less damage.</normal>
-            <ace>Having a converted enemy increases you health by 30%. Your converted enemy takes an additional 45% less damage.</ace>
+            <ace>Having a converted enemy increases you health by 30%. Your converted enemy takes an additional 54% less damage.</ace>
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>
@@ -163,7 +163,7 @@
             <tier>3</tier>
             <name>High Value Target</name>
             <normal>Marked enemies take 15% more damage.</normal>
-            <ace>Enemies you mark take an additional 50% damage when further than 25 meters.</ace>
+            <ace>Enemies you mark take an additional 50% damage when further than 10 meters.</ace>
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>
