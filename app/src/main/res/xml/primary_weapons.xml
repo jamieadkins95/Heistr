@@ -487,12 +487,25 @@
             <threat>0</threat>
             <attachments>wpn_fps_shot_huntsman_b_long,wpn_fps_shot_huntsman_b_short,wpn_fps_shot_huntsman_s_long,wpn_fps_shot_huntsman_s_short,wpn_fps_upg_a_slug,wpn_fps_upg_a_custom,wpn_fps_upg_a_custom_free,wpn_fps_upg_a_explosive,wpn_fps_upg_a_piercing,wpn_fps_upg_a_dragons_breath,wpn_fps_shot_huntsman_body_standard,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,wpn_fps_upg_bonus_spread_n1,</attachments>
         </weapon>
-
-
     </weapon_group>
     <weapon_group>
         <group_name>akimbo</group_name>
         <weapon_type>primary</weapon_type>
+        <weapon>
+            <pd2>wpn_fps_x_packrat</pd2>
+            <pd2skills>0</pd2skills>
+            <firemode>single</firemode>
+            <name>Akimbo Contractor Pistols</name>
+            <rof>0</rof>
+            <total>90</total>
+            <mag>30</mag>
+            <damage>66</damage>
+            <accuracy>68</accuracy>
+            <stability>60</stability>
+            <concealment>27</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_pis_packrat_o_standard,wpn_fps_pis_packrat_o_expert,wpn_fps_pis_packrat_sl_standard,wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_packrat_b_standard,wpn_fps_pis_packrat_body_standard,wpn_fps_pis_packrat_m_standard,wpn_fps_pis_packrat_m_extended,wpn_fps_pis_packrat_ns_wick,wpn_fps_upg_ns_pis_large,wpn_fps_upg_ns_pis_medium,wpn_fps_upg_ns_pis_small,wpn_fps_upg_ns_pis_large_kac,wpn_fps_upg_ns_pis_medium_gem,wpn_fps_upg_ns_pis_medium_slim,wpn_fps_upg_pis_ns_flash,wpn_fps_upg_ns_pis_meatgrinder,wpn_fps_upg_ns_pis_ipsccomp,wpn_fps_upg_ns_ass_filter,wpn_fps_upg_ns_pis_jungle,wpn_fps_pis_packrat_bolt_standard,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
+        </weapon>
         <weapon>
             <pd2>wpn_fps_smg_x_mp5</pd2>
             <pd2skills>0</pd2skills>
@@ -508,7 +521,6 @@
             <threat>0</threat>
             <attachments>wpn_fps_smg_mp5_s_ring_vanilla,wpn_fps_smg_mp5_fg_m5k,wpn_fps_smg_mp5_fg_mp5a4,wpn_fps_smg_mp5_fg_mp5a5,wpn_fps_smg_mp5_fg_mp5sd,wpn_fps_smg_mp5_m_std,wpn_fps_smg_mp5_m_drum,wpn_fps_smg_mp5_m_straight,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_mp5_body_mp5,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_upg_vg_ass_smg_verticalgrip,wpn_fps_upg_vg_ass_smg_stubby,wpn_fps_upg_vg_ass_smg_afg,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
         </weapon>
-
         <weapon>
             <pd2>wpn_fps_smg_x_akmsu</pd2>
             <pd2skills>0</pd2skills>
@@ -655,6 +667,22 @@
     <weapon_group>
         <group_name>sniper</group_name>
         <weapon_type>primary</weapon_type>
+        <weapon>
+            <pd2>wpn_fps_snp_desertfox</pd2>
+            <pd2skills>0</pd2skills>
+            <firemode>single</firemode>
+            <name>Desertfox Sniper Rifle</name>
+            <rof>0</rof>
+            <total>30</total>
+            <mag>5</mag>
+            <damage>300</damage>
+            <accuracy>76</accuracy>
+            <stability>12</stability>
+            <concealment>19</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_upg_o_45iron,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_snp_desertfox_b_long,wpn_fps_snp_desertfox_b_short,wpn_fps_snp_desertfox_b_silencer,wpn_fps_snp_desertfox_body,wpn_fps_snp_desertfox_dh_standard,wpn_fps_snp_desertfox_mag,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_rx30,wpn_fps_upg_o_rx01,wpn_fps_upg_o_reflex,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_cs,wpn_fps_upg_o_shortdot,wpn_fps_upg_o_leupold,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_total_ammo_p1,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
+        </weapon>
+
         <weapon>
             <pd2>wpn_fps_snp_r93</pd2>
             <pd2skills>0</pd2skills>
