@@ -889,7 +889,7 @@
             <rof>0</rof>
             <total>35</total>
             <mag>1</mag>
-            <damage>65</damage>
+            <damage>2000</damage>
             <accuracy>96</accuracy>
             <stability>96</stability>
             <concealment>29</concealment>
@@ -905,7 +905,7 @@
             <rof>0</rof>
             <total>50</total>
             <mag>1</mag>
-            <damage>97</damage>
+            <damage>1000</damage>
             <accuracy>96</accuracy>
             <stability>96</stability>
             <concealment>30</concealment>
@@ -921,7 +921,7 @@
             <rof>0</rof>
             <total>35</total>
             <mag>1</mag>
-            <damage>53</damage>
+            <damage>2000</damage>
             <accuracy>96</accuracy>
             <stability>96</stability>
             <concealment>28</concealment>
@@ -937,7 +937,7 @@
             <rof>0</rof>
             <total>50</total>
             <mag>1</mag>
-            <damage>120</damage>
+            <damage>750</damage>
             <accuracy>96</accuracy>
             <stability>96</stability>
             <concealment>29</concealment>
