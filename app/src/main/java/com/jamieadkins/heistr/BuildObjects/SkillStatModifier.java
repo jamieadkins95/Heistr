@@ -135,7 +135,7 @@ public class SkillStatModifier {
         return modifier;
     }
 
-    public static SkillStatModifier getFastFire() {
+    public static SkillStatModifier getSureFire() {
         SkillStatModifier modifier = new SkillStatModifier();
         modifier.mag = 15;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SMG);
@@ -144,14 +144,14 @@ public class SkillStatModifier {
         return modifier;
     }
 
-    public static SkillStatModifier getThickSkin() {
+    public static SkillStatModifier getInnerPockets() {
         SkillStatModifier modifier = new SkillStatModifier();
         modifier.concealment = 2;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_MELEE);
         return modifier;
     }
 
-    public static SkillStatModifier getThickSkinAced() {
+    public static SkillStatModifier getInnerPocketsAced() {
         SkillStatModifier modifier = new SkillStatModifier();
         modifier.concealment = 4;
         modifier.weaponTypes.add(SkillStatChangeManager.BALLISTIC_VESTS);
@@ -172,14 +172,14 @@ public class SkillStatModifier {
         return modifier;
     }
 
-    public static SkillStatModifier getSubSonicRounds() {
+    public static SkillStatModifier getSpecialisedKilling() {
         SkillStatModifier modifier = new SkillStatModifier();
         modifier.damageMult = 1.15f;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SILENCED);
         return modifier;
     }
 
-    public static SkillStatModifier getSubSonicRoundsAced() {
+    public static SkillStatModifier getSpecialisedKillingAced() {
         SkillStatModifier modifier = new SkillStatModifier();
         modifier.damageMult = 1.15f;
         modifier.weaponTypes.add(SkillStatChangeManager.WEAPON_TYPE_SILENCED);

@@ -58,8 +58,26 @@ public class SkillStatChangeManager {
                                     modifiers.add(SkillStatModifier.getGunNut());
                                 }
                             }
+
+                            if (subTree.getSkillTree() == Trees.ENFORCER
+                                    && subTree.getSubTree() == 0) {
+                                if (skill.getTaken() == Skill.ACE) {
+                                    modifiers.add(SkillStatModifier.getClosebyAced());
+                                }
+                            }
                             break;
                         case "c":
+                            if (subTree.getSkillTree() == Trees.FUGITIVE
+                                    && subTree.getSubTree() == 0) {
+                                if (skill.getTaken() >= Skill.NORMAL) {
+                                    modifiers.add(SkillStatModifier.getCustomAmmo());
+                                }
+                                if (skill.getTaken() == Skill.ACE) {
+                                    modifiers.add(SkillStatModifier.getCustomAmmoAced());
+                                }
+                            }
+                            break;
+                        case "d":
                             if (subTree.getSkillTree() == Trees.ENFORCER
                                     && subTree.getSubTree() == 0) {
                                 if (skill.getTaken() == Skill.NORMAL) {
@@ -72,6 +90,7 @@ public class SkillStatChangeManager {
                                 }
                             }
 
+
                             if (subTree.getSkillTree() == Trees.FUGITIVE
                                     && subTree.getSubTree() == 0) {
                                 if (skill.getTaken() >= Skill.NORMAL) {
@@ -82,24 +101,7 @@ public class SkillStatChangeManager {
                                 }
                             }
                             break;
-                        case "d":
-                            if (subTree.getSkillTree() == Trees.FUGITIVE
-                                    && subTree.getSubTree() == 0) {
-                                if (skill.getTaken() >= Skill.NORMAL) {
-                                    modifiers.add(SkillStatModifier.getCustomAmmo());
-                                }
-                                if (skill.getTaken() == Skill.ACE) {
-                                    modifiers.add(SkillStatModifier.getCustomAmmoAced());
-                                }
-                            }
-                            break;
                         case "e":
-                            if (subTree.getSkillTree() == Trees.ENFORCER
-                                    && subTree.getSubTree() == 0) {
-                                if (skill.getTaken() == Skill.ACE) {
-                                    modifiers.add(SkillStatModifier.getClosebyAced());
-                                }
-                            }
                             break;
                         case "f":
                             break;
@@ -108,52 +110,50 @@ public class SkillStatChangeManager {
                         case "h":
                             break;
                         case "i":
+                            break;
+                        case "j":
                             if (subTree.getSkillTree() == Trees.GHOST
                                     && subTree.getSubTree() == 1) {
                                 if (skill.getTaken() >= Skill.NORMAL) {
-                                    modifiers.add(SkillStatModifier.getThickSkin());
+                                    modifiers.add(SkillStatModifier.getInnerPockets());
                                 }
                                 if (skill.getTaken() == Skill.ACE) {
-                                    modifiers.add(SkillStatModifier.getThickSkinAced());
+                                    modifiers.add(SkillStatModifier.getInnerPocketsAced());
                                 }
                             }
-                            break;
-                        case "j":
                             break;
                         case "k":
                             break;
                         case "l":
                             break;
                         case "m":
-                            if (subTree.getSkillTree() == Trees.MASTERMIND
+                            if (subTree.getSkillTree() == Trees.ENFORCER
                                     && subTree.getSubTree() == 2) {
-                                if (skill.getTaken() >= Skill.NORMAL) {
-                                    modifiers.add(SkillStatModifier.getStableShot());
-                                }
-                            }
-
-                            if (subTree.getSkillTree() == Trees.TECHNICIAN
-                                    && subTree.getSubTree() == 2) {
-                                if (skill.getTaken() >= Skill.NORMAL) {
-                                    modifiers.add(SkillStatModifier.getSteadyGrip());
-                                }
                                 if (skill.getTaken() == Skill.ACE) {
-                                    modifiers.add(SkillStatModifier.getSteadyGripAced());
+                                    modifiers.add(SkillStatModifier.getFullyLoaded());
                                 }
                             }
                             break;
                         case "n":
+                            if (subTree.getSkillTree() == Trees.TECHNICIAN
+                                    && subTree.getSubTree() == 2) {
+                                if (skill.getTaken() >= Skill.NORMAL) {
+                                    modifiers.add(SkillStatModifier.getSureFire());
+                                }
+                            }
                             if (subTree.getSkillTree() == Trees.GHOST
                                     && subTree.getSubTree() == 2) {
                                 if (skill.getTaken() >= Skill.NORMAL) {
-                                    modifiers.add(SkillStatModifier.getOpticIllusions());
+                                    modifiers.add(SkillStatModifier.getSpecialisedKilling());
                                 }
                                 if (skill.getTaken() == Skill.ACE) {
-                                    modifiers.add(SkillStatModifier.getOpticIllusionsAced());
+                                    modifiers.add(SkillStatModifier.getSpecialisedKillingAced());
                                 }
                             }
                             break;
                         case "o":
+                            break;
+                        case "p":
                             if (subTree.getSkillTree() == Trees.MASTERMIND
                                     && subTree.getSubTree() == 2) {
                                 if (skill.getTaken() >= Skill.NORMAL) {
@@ -171,31 +171,29 @@ public class SkillStatChangeManager {
                                 }
                             }
                             break;
-                        case "p":
-                            break;
                         case "q":
-                            if (subTree.getSkillTree() == Trees.TECHNICIAN
-                                    && subTree.getSubTree() == 2) {
-                                if (skill.getTaken() >= Skill.NORMAL) {
-                                    modifiers.add(SkillStatModifier.getFastFire());
-                                }
-                            }
-
                             if (subTree.getSkillTree() == Trees.GHOST
                                     && subTree.getSubTree() == 2) {
-                                if (skill.getTaken() >= Skill.NORMAL) {
-                                    modifiers.add(SkillStatModifier.getSubSonicRounds());
-                                }
                                 if (skill.getTaken() == Skill.ACE) {
-                                    modifiers.add(SkillStatModifier.getSubSonicRoundsAced());
+                                    modifiers.add(SkillStatModifier.getOpticIllusionsAced());
                                 }
                             }
                             break;
                         case "r":
-                            if (subTree.getSkillTree() == Trees.ENFORCER
+                            if (subTree.getSkillTree() == Trees.MASTERMIND
                                     && subTree.getSubTree() == 2) {
+                                if (skill.getTaken() >= Skill.NORMAL) {
+                                    modifiers.add(SkillStatModifier.getStableShot());
+                                }
+                            }
+
+                            if (subTree.getSkillTree() == Trees.TECHNICIAN
+                                    && subTree.getSubTree() == 2) {
+                                if (skill.getTaken() >= Skill.NORMAL) {
+                                    modifiers.add(SkillStatModifier.getSteadyGrip());
+                                }
                                 if (skill.getTaken() == Skill.ACE) {
-                                    modifiers.add(SkillStatModifier.getFullyLoaded());
+                                    modifiers.add(SkillStatModifier.getSteadyGripAced());
                                 }
                             }
                             break;
