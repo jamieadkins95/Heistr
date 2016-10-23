@@ -56,7 +56,7 @@
         <skill>
             <tier>4</tier>
             <name>Overkill</name>
-            <normal>When you kill an enemy using a shotgun or the OVE9000 portable saw, you receive a 75% damage bonus for 30 seconds.</normal>
+            <normal>When you kill an enemy using a shotgun or the OVE9000 portable saw, you receive a 75% damage bonus for 20 seconds.</normal>
             <ace>The damage bonus now applies to all weapons. Skill must still be activated using a shotgun or the OVE9000 portable saw. Your weapon swap speed is increased by 80%.</ace>
             <point_requirement>18</point_requirement>
             <normal_cost>4</normal_cost>
@@ -133,7 +133,7 @@
             <tier>1</tier>
             <name>Scavenger</name>
             <normal>You gain a 50% increased ammo box pickup range.</normal>
-            <ace>Every 6th enemy you kill will drop an extra ammo box.</ace>
+            <ace>Every 4th enemy you kill will drop an extra ammo box.</ace>
             <point_requirement>0</point_requirement>
             <normal_cost>1</normal_cost>
             <ace_cost>3</ace_cost>
@@ -163,7 +163,7 @@
             <tier>3</tier>
             <name>Ammunition Specialist</name>
             <normal>You can now place 2 ammo bags instead of just one.</normal>
-            <ace>Each ammo bag contains additional 200% ammo.</ace>
+            <ace>Each ammo bag contains additional 50% ammo.</ace>
             <point_requirement>3</point_requirement>
             <normal_cost>3</normal_cost>
             <ace_cost>6</ace_cost>

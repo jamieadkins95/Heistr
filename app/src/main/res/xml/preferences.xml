@@ -8,7 +8,7 @@
                 android:title="@string/pref_build_name_length"
                 android:summary="@string/pref_build_name_length_summ"
                 android:dialogLayout="@layout/preference_edit_text"
-                android:defaultValue="100" />
+                android:defaultValue="100"/>
         <EditTextPreference
                 android:key="pref_skill_name_length"
                 android:title="@string/pref_skill_name_length"

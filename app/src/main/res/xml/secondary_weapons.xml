@@ -4,6 +4,21 @@
         <group_name>pistol</group_name>
         <weapon_type>secondary</weapon_type>
         <weapon>
+            <pd2>wpn_fps_pis_packrat</pd2>
+            <pd2skills>0</pd2skills>
+            <firemode>single</firemode>
+            <name>Contractor Pistol</name>
+            <rof>0</rof>
+            <total>90</total>
+            <mag>15</mag>
+            <damage>66</damage>
+            <accuracy>68</accuracy>
+            <stability>60</stability>
+            <concealment>29</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_pis_packrat_o_standard,wpn_fps_pis_packrat_o_expert,wpn_fps_upg_o_rmr,wpn_fps_pis_packrat_sl_standard,wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_packrat_b_standard,wpn_fps_pis_packrat_body_standard,wpn_fps_pis_packrat_m_standard,wpn_fps_pis_packrat_m_extended,wpn_fps_pis_packrat_ns_wick,wpn_fps_upg_ns_pis_large,wpn_fps_upg_ns_pis_medium,wpn_fps_upg_ns_pis_small,wpn_fps_upg_ns_pis_large_kac,wpn_fps_upg_ns_pis_medium_gem,wpn_fps_upg_ns_pis_medium_slim,wpn_fps_upg_pis_ns_flash,wpn_fps_upg_ns_pis_meatgrinder,wpn_fps_upg_ns_pis_ipsccomp,wpn_fps_upg_ns_ass_filter,wpn_fps_upg_ns_pis_jungle,wpn_fps_pis_packrat_bolt_standard,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
+        </weapon>
+        <weapon>
             <pd2>wpn_fps_pis_pl14</pd2>
             <pd2skills>0</pd2skills>
             <firemode>single</firemode>
@@ -361,6 +376,21 @@
         <group_name>smg</group_name>
         <weapon_type>secondary</weapon_type>
         <weapon>
+            <pd2>wpn_fps_smg_schakal</pd2>
+            <pd2skills>0</pd2skills>
+            <firemode>auto</firemode>
+            <name>Jackal Submachine Gun</name>
+            <rof>0</rof>
+            <total>90</total>
+            <mag>30</mag>
+            <damage>80</damage>
+            <accuracy>60</accuracy>
+            <stability>52</stability>
+            <concealment>24</concealment>
+            <threat>0</threat>
+            <attachments>wpn_fps_smg_schakal_s_civil,wpn_fps_smg_schakal_s_folded,wpn_fps_smg_schakal_s_standard,wpn_fps_smg_schakal_dh_standard,wpn_fps_smg_schakal_m_long,wpn_fps_smg_schakal_m_short,wpn_fps_smg_schakal_m_standard,wpn_fps_smg_schakal_bolt_standard,wpn_fps_smg_schakal_vg_extra,wpn_fps_smg_schakal_extra_magrelease,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_smg_schakal_b_civil,wpn_fps_smg_schakal_b_standard,wpn_fps_smg_schakal_body_lower,wpn_fps_smg_schakal_body_upper,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_smg_schakal_ns_silencer,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ass_ns_battle,wpn_fps_smg_schakal_vg_surefire,wpn_fps_upg_vg_ass_smg_verticalgrip,wpn_fps_upg_vg_ass_smg_stubby,wpn_fps_upg_vg_ass_smg_afg,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
+        </weapon>
+        <weapon>
             <pd2>wpn_fps_smg_hajk</pd2>
             <pd2skills>0</pd2skills>
             <firemode>auto</firemode>
@@ -709,7 +739,7 @@
             <rof>0</rof>
             <total>25</total>
             <mag>1</mag>
-            <damage>100</damage>
+            <damage>375</damage>
             <accuracy>96</accuracy>
             <stability>96</stability>
             <concealment>26</concealment>
