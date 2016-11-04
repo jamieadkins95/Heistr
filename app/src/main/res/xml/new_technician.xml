@@ -15,7 +15,7 @@
         </skill>
         <skill>
             <tier>2</tier>
-            <name>Sentry Targeting practice</name>
+            <name>Sentry Targeting Package</name>
             <normal>Your sentry gun's accuracy is improved by 100%.</normal>
             <ace>Your sentry gun's rotational speed is increased by 150%. Your sentry gun is loaded with 50% extra ammo.</ace>
             <point_requirement>1</point_requirement>

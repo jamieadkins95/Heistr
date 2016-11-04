@@ -161,7 +161,7 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Ammunition Specialist</name>
+            <name>Extra Lead</name>
             <normal>You can now place 2 ammo bags instead of just one.</normal>
             <ace>Each ammo bag contains additional 50% ammo.</ace>
             <point_requirement>3</point_requirement>

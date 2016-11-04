@@ -35,7 +35,7 @@
         </skill>
         <skill>
             <tier>3</tier>
-            <name>Custom Ammo</name>
+            <name>One Handed Talent</name>
             <normal>The base damage of all pistols is increased by 5.</normal>
             <ace>The base damage of all pistols is increased by an additional 10.</ace>
             <point_requirement>3</point_requirement>
