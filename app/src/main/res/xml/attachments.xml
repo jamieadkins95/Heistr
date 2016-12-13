@@ -63,9 +63,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_m4_uupg_o_flipup</pd2>
+            <pd2>wpn_fps_ass_l85a2_o_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Flip-up Sights</name>
+            <name>ERROR: bm_wp_l85a2_b_medium</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -147,6 +147,18 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_gre_arbiter_o_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Spartan Stock</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_upg_o_specter</pd2>
             <pd2skills>0</pd2skills>
             <name>Milspec Scope</name>
@@ -207,6 +219,18 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_sho_aa12_body_rear_sight</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_aa12_body_rear_sight</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_rpg7_sight_adapter</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_rpg7_sight_adapter</name>
@@ -243,6 +267,30 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_ass_scar_o_flipups_up</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_scar_o_flipups_up</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_rpg7_sight</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_rpg7_sight</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_bow_hunter_o_standard</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_standard</name>
@@ -267,9 +315,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_scar_o_flipups_up</pd2>
+            <pd2>wpn_fps_ass_tecci_o_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_scar_o_flipups_up</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -291,16 +339,16 @@
             <concealment>-3</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_rpg7_sight</pd2>
+            <pd2>wpn_fps_upg_o_spot</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_rpg7_sight</name>
+            <name>Reconnaissance Sight</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
+            <stability>4</stability>
+            <concealment>-3</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_upg_o_cs</pd2>
@@ -351,30 +399,6 @@
             <concealment>-3</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_tecci_o_standard</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_sho_aa12_body_rear_sight</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_aa12_body_rear_sight</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
             <pd2>wpn_fps_smg_polymer_o_iron</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_polymer_bolt</name>
@@ -397,6 +421,30 @@
             <accuracy>0</accuracy>
             <stability>-4</stability>
             <concealment>2</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_upg_o_rx01</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Trigonom Sight</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>4</stability>
+            <concealment>-1</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_ass_s552_o_flipup</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Extended Magazine</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_upg_o_docter</pd2>
@@ -423,30 +471,6 @@
             <concealment>2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_s552_o_flipup</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Extended Magazine</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_upg_o_rx01</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Trigonom Sight</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>4</stability>
-            <concealment>-1</concealment>
-        </attachment>
-        <attachment>
             <pd2>wpn_fps_upg_o_eotech_xps</pd2>
             <pd2skills>0</pd2skills>
             <name>Compact Holosight</name>
@@ -457,6 +481,30 @@
             <accuracy>0</accuracy>
             <stability>4</stability>
             <concealment>-2</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_ass_g36_o_vintage</pd2>
+            <pd2skills>0</pd2skills>
+            <name>JP36 Original Sight</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>4</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_upg_o_box</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Box Buddy Sight</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>4</stability>
+            <concealment>-3</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_pis_c96_sight</pd2>
@@ -483,9 +531,9 @@
             <concealment>2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_l85a2_o_standard</pd2>
+            <pd2>wpn_fps_m4_uupg_o_flipup</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_l85a2_b_medium</name>
+            <name>Flip-up Sights</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -788,7 +836,7 @@
         <attachment>
             <pd2>wpn_fps_pis_g18c_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -944,7 +992,7 @@
         <attachment>
             <pd2>wpn_fps_pis_beretta_b_std</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -1211,7 +1259,7 @@
         <attachment>
             <pd2>wpn_upg_ak_g_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -1811,7 +1859,7 @@
         <attachment>
             <pd2>wpn_fps_ass_tecci_g_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -2033,7 +2081,7 @@
         <attachment>
             <pd2>wpn_fps_snp_m95_upper_reciever</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -2045,7 +2093,7 @@
         <attachment>
             <pd2>wpn_fps_ass_m14_body_upper</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -2088,19 +2136,19 @@
             <subtype>ammo_poison</subtype>
             <total_ammo>-12</total_ammo>
             <magsize>0</magsize>
-            <damage>-65</damage>
+            <damage>-25</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_bow_arblast_m_explosive</pd2>
+            <pd2>wpn_fps_bow_long_m_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Explosive Bolt</name>
-            <subtype>ammo_explosive</subtype>
+            <name>ERROR: bm_wp_long_barrel</name>
+            <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>-26</damage>
+            <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
@@ -2112,7 +2160,7 @@
             <subtype>ammo_explosive</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>15</damage>
+            <damage>-5</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
@@ -2124,7 +2172,19 @@
             <subtype>ammo_poison</subtype>
             <total_ammo>-12</total_ammo>
             <magsize>0</magsize>
-            <damage>-37</damage>
+            <damage>-17</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_upg_a_grenade_launcher_incendiary_arbiter</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Incendiary Round</name>
+            <subtype>ammo_dragons_breath</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>-67</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
@@ -2148,15 +2208,15 @@
             <subtype>ammo_explosive</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>-26</damage>
+            <damage>-6</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ammo_type</pd2>
+            <pd2>wpn_fps_bow_frankish_m_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name></name>
+            <name>ERROR: bm_wp_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -2172,7 +2232,7 @@
             <subtype>ammo_poison</subtype>
             <total_ammo>-12</total_ammo>
             <magsize>0</magsize>
-            <damage>-140</damage>
+            <damage>-90</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
@@ -2184,7 +2244,7 @@
             <subtype>ammo_explosive</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>-80</damage>
+            <damage>-30</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
@@ -2208,7 +2268,7 @@
             <subtype>ammo_poison</subtype>
             <total_ammo>-12</total_ammo>
             <magsize>0</magsize>
-            <damage>-37</damage>
+            <damage>-17</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
@@ -2220,7 +2280,7 @@
             <subtype>ammo_poison</subtype>
             <total_ammo>-12</total_ammo>
             <magsize>0</magsize>
-            <damage>-140</damage>
+            <damage>-65</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
@@ -2256,15 +2316,15 @@
             <subtype>ammo_explosive</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>-80</damage>
+            <damage>-5</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_bow_frankish_m_standard</pd2>
+            <pd2>wpn_fps_ammo_type</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_standard</name>
+            <name></name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -2286,13 +2346,13 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_bow_long_m_standard</pd2>
+            <pd2>wpn_fps_bow_arblast_m_explosive</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_long_barrel</name>
-            <subtype>none</subtype>
+            <name>Explosive Bolt</name>
+            <subtype>ammo_explosive</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>0</damage>
+            <damage>-6</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
@@ -2697,16 +2757,16 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_snp_model70_ns_suppressor</pd2>
+            <pd2>wpn_fps_lmg_mg42_n38</pd2>
             <pd2skills>0</pd2skills>
-            <name>Beak Suppressor</name>
-            <subtype>silencer</subtype>
+            <name>ERROR: bm_wp_mg42_n42</name>
+            <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>-3</damage>
+            <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>4</stability>
-            <concealment>-2</concealment>
+            <stability>0</stability>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_smg_sr2_ns_silencer</pd2>
@@ -2853,6 +2913,18 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_pis_deagle_co_short</pd2>
+            <pd2skills>0</pd2skills>
+            <name>La Femme Compensator</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>1</damage>
+            <accuracy>0</accuracy>
+            <stability>4</stability>
+            <concealment>-1</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_smg_baka_b_longsupp</pd2>
             <pd2skills>0</pd2skills>
             <name>Futomaki Suppressor</name>
@@ -2865,15 +2937,15 @@
             <concealment>-4</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_deagle_co_short</pd2>
+            <pd2>wpn_fps_pis_1911_co_2</pd2>
             <pd2skills>0</pd2skills>
-            <name>La Femme Compensator</name>
+            <name>Aggressor Compensator</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>1</damage>
+            <damage>2</damage>
             <accuracy>0</accuracy>
-            <stability>4</stability>
+            <stability>8</stability>
             <concealment>-1</concealment>
         </attachment>
         <attachment>
@@ -2901,21 +2973,21 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_1911_co_2</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Aggressor Compensator</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>2</damage>
-            <accuracy>0</accuracy>
-            <stability>8</stability>
-            <concealment>-1</concealment>
-        </attachment>
-        <attachment>
             <pd2>wpn_fps_ass_vhs_ns_vhs</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_vhs_ns_vhs</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_lmg_mg42_n34</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_mg42_n42</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -2937,30 +3009,6 @@
             <concealment>-3</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_lmg_mg42_n34</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_mg42_n42</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_upg_ns_ass_smg_firepig</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Fire Breather Nozzle</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>3</damage>
-            <accuracy>0</accuracy>
-            <stability>4</stability>
-            <concealment>-2</concealment>
-        </attachment>
-        <attachment>
             <pd2>wpn_fps_upg_ns_pis_small</pd2>
             <pd2skills>0</pd2skills>
             <name>Size Doesn't Matter Suppressor</name>
@@ -2973,6 +3021,30 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_snp_model70_ns_suppressor</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Beak Suppressor</name>
+            <subtype>silencer</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>-3</damage>
+            <accuracy>0</accuracy>
+            <stability>4</stability>
+            <concealment>-2</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_upg_ns_duck</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Donald's Horizontal Leveller</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>2</damage>
+            <accuracy>0</accuracy>
+            <stability>8</stability>
+            <concealment>-2</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_upg_ns_ass_smg_small</pd2>
             <pd2skills>0</pd2skills>
             <name>Low Profile Suppressor</name>
@@ -2980,18 +3052,6 @@
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>-5</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_lmg_mg42_n38</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_mg42_n42</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
@@ -3009,16 +3069,16 @@
             <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_mp9_b_suppressed</pd2>
+            <pd2>wpn_fps_upg_ns_ass_smg_firepig</pd2>
             <pd2skills>0</pd2skills>
-            <name>Tactical Suppressor</name>
-            <subtype>silencer</subtype>
+            <name>Fire Breather Nozzle</name>
+            <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>4</accuracy>
-            <stability>12</stability>
-            <concealment>-4</concealment>
+            <damage>3</damage>
+            <accuracy>0</accuracy>
+            <stability>4</stability>
+            <concealment>-2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_pis_beretta_co_co1</pd2>
@@ -3030,6 +3090,18 @@
             <damage>1</damage>
             <accuracy>4</accuracy>
             <stability>4</stability>
+            <concealment>-2</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_cobray_ns_barrelextension</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Slotted Barrel Extension</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>2</damage>
+            <accuracy>8</accuracy>
+            <stability>-8</stability>
             <concealment>-2</concealment>
         </attachment>
         <attachment>
@@ -3057,16 +3129,16 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_cobray_ns_barrelextension</pd2>
+            <pd2>wpn_fps_ass_tecci_ns_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Slotted Barrel Extension</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>2</damage>
-            <accuracy>8</accuracy>
-            <stability>-8</stability>
-            <concealment>-2</concealment>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_smg_baka_b_smallsupp</pd2>
@@ -3081,16 +3153,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_tecci_ns_standard</pd2>
+            <pd2>wpn_fps_smg_mp9_b_suppressed</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
-            <subtype>none</subtype>
+            <name>Tactical Suppressor</name>
+            <subtype>silencer</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
+            <accuracy>4</accuracy>
+            <stability>12</stability>
+            <concealment>-4</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_pis_c96_nozzle</pd2>
@@ -3335,7 +3407,7 @@
         <attachment>
             <pd2>wpn_fps_ass_g36_body_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -3417,9 +3489,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_lmg_rpk_body_lowerreceiver</pd2>
+            <pd2>wpn_fps_gre_arbiter_body_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_rpk_b_standard</name>
+            <name>ERROR: bm_wp_l85a2_fg_medium</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -3467,7 +3539,7 @@
         <attachment>
             <pd2>wpn_fps_smg_p90_body_p90</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -3479,7 +3551,7 @@
         <attachment>
             <pd2>wpn_fps_ass_ak_body_lowerreceiver</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -3491,7 +3563,7 @@
         <attachment>
             <pd2>wpn_fps_smg_mac10_body_mac10</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -3587,7 +3659,7 @@
         <attachment>
             <pd2>wpn_fps_pis_g18c_body_frame</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -3647,7 +3719,7 @@
         <attachment>
             <pd2>wpn_fps_ass_tecci_lower_reciever</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -3671,7 +3743,7 @@
         <attachment>
             <pd2>wpn_fps_aug_body_aug</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -3707,7 +3779,7 @@
         <attachment>
             <pd2>wpn_fps_fla_mk2_body_fierybeast</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>10</total_ammo>
             <magsize>0</magsize>
@@ -3719,7 +3791,7 @@
         <attachment>
             <pd2>wpn_fps_fla_mk2_body</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -3731,7 +3803,7 @@
         <attachment>
             <pd2>wpn_fps_saw_body_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -3777,21 +3849,33 @@
             <concealment>1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_sho_boot_body_exotic</pd2>
+            <pd2>wpn_fps_sho_ben_body_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Treated Body</name>
+            <name>ERROR: bm_wp_ben_body_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>4</accuracy>
-            <stability>4</stability>
-            <concealment>-1</concealment>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_pis_deagle_body_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_mp5_body_mp5</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -3837,21 +3921,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_mp5_body_mp5</pd2>
+            <pd2>wpn_fps_ass_g36_body_sl8</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_pis_judge_body_standard</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_judge_body_standard</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -3862,18 +3934,6 @@
         </attachment>
         <attachment>
             <pd2>wpn_fps_bow_frankish_body_standard</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_standard</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_smg_cobray_body_lower_jacket</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_standard</name>
             <subtype>none</subtype>
@@ -3897,43 +3957,7 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_lmg_mg42_reciever</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_mg42_b_long</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_ass_g36_body_sl8</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_smg_mp9_body_mp9</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_smg_polymer_body_standard</pd2>
+            <pd2>wpn_fps_smg_cobray_body_lower_jacket</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_standard</name>
             <subtype>none</subtype>
@@ -3945,9 +3969,21 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_usp_body_standard</pd2>
+            <pd2>wpn_fps_pis_judge_body_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name></name>
+            <name>ERROR: bm_wp_judge_body_standard</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_lmg_mg42_reciever</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_mg42_b_long</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -3969,9 +4005,21 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_ak5_body_ak5</pd2>
+            <pd2>wpn_fps_smg_mp9_body_mp9</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_polymer_body_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -3983,7 +4031,31 @@
         <attachment>
             <pd2>wpn_fps_shot_huntsman_body_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_pis_usp_body_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name></name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_ass_ak5_body_ak5</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -3995,7 +4067,19 @@
         <attachment>
             <pd2>wpn_fps_m4_lower_reciever</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_mac10_ris_dummy</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -4017,9 +4101,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_mac10_ris_dummy</pd2>
+            <pd2>wpn_fps_snp_winchester_body_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>ERROR: bm_wp_winchester_body_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -4029,9 +4113,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_snp_winchester_body_standard</pd2>
+            <pd2>wpn_fps_pis_hs2000_body_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_winchester_body_standard</name>
+            <name>ERROR: bm_wp_hs2000_body_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -4067,7 +4151,7 @@
         <attachment>
             <pd2>wpn_fps_smg_akmsu_body_lowerreceiver</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -4091,7 +4175,7 @@
         <attachment>
             <pd2>wpn_fps_shot_r870_body_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -4101,21 +4185,21 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_hs2000_body_standard</pd2>
+            <pd2>wpn_fps_sho_boot_body_exotic</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_hs2000_body_standard</name>
+            <name>Treated Body</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
+            <accuracy>4</accuracy>
+            <stability>4</stability>
+            <concealment>-1</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_pis_beretta_body_beretta</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -4125,9 +4209,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_sho_ben_body_standard</pd2>
+            <pd2>wpn_fps_lmg_rpk_body_lowerreceiver</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_ben_body_standard</name>
+            <name>ERROR: bm_wp_rpk_b_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -4258,18 +4342,6 @@
             <accuracy>0</accuracy>
             <stability>4</stability>
             <concealment>-2</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_smg_schakal_s_folded</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Folded Stock</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>-8</stability>
-            <concealment>2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_gre_china_s_short</pd2>
@@ -4449,6 +4521,18 @@
             <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_mp5_s_folding</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Spartan Stock</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>4</stability>
             <concealment>0</concealment>
         </attachment>
         <attachment>
@@ -4754,7 +4838,7 @@
         <attachment>
             <pd2>wpn_fps_m16_s_solid</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -4874,7 +4958,7 @@
         <attachment>
             <pd2>wpn_fps_ass_tecci_s_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -5076,16 +5160,16 @@
             <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_mp5_s_adjust</pd2>
+            <pd2>wpn_fps_shot_shorty_s_legendary</pd2>
             <pd2skills>0</pd2skills>
-            <name>Adjustable Stock</name>
+            <name>ERROR: bm_wp_shorty_s_legend</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
-            <concealment>3</concealment>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_smg_m45_s_standard</pd2>
@@ -5220,16 +5304,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_uzi_s_solid</pd2>
+            <pd2>wpn_fps_shot_m37_s_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Solid Stock</name>
+            <name>ERROR: bm_wp_m37_s_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>4</accuracy>
-            <stability>12</stability>
-            <concealment>-2</concealment>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_shot_r870_s_solid</pd2>
@@ -5244,16 +5328,28 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_shot_b682_s_ammopouch</pd2>
+            <pd2>wpn_fps_smg_mp5_s_solid</pd2>
             <pd2skills>0</pd2skills>
-            <name>Luxurious Ammo Pouch</name>
+            <name>Solid Stock</name>
             <subtype>none</subtype>
-            <total_ammo>12</total_ammo>
+            <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_shot_r870_s_solid_single</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Government Issue Railed</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>4</stability>
+            <concealment>-1</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_ass_galil_s_standard</pd2>
@@ -5290,18 +5386,6 @@
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_shot_r870_s_solid_single</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Government Issue Railed</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>4</stability>
-            <concealment>-1</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_shot_huntsman_s_long</pd2>
@@ -5388,6 +5472,18 @@
             <concealment>6</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_pis_peacemaker_s_skeletal</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Ol´ Ben's Stock</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>8</stability>
+            <concealment>-2</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_shot_m37_s_short</pd2>
             <pd2skills>0</pd2skills>
             <name>Stakeout Stock</name>
@@ -5436,16 +5532,16 @@
             <concealment>-3</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_peacemaker_s_skeletal</pd2>
+            <pd2>wpn_fps_upg_m4_s_crane</pd2>
             <pd2skills>0</pd2skills>
-            <name>Ol´ Ben's Stock</name>
+            <name>Wide Stock</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>8</stability>
-            <concealment>-2</concealment>
+            <stability>4</stability>
+            <concealment>1</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_smg_sterling_s_nostock</pd2>
@@ -5472,28 +5568,16 @@
             <concealment>-6</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_lmg_svinet_s_legend</pd2>
+            <pd2>wpn_fps_ass_m14_body_jae</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_svinet_s_legend</name>
+            <name>Jaeger Body</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_upg_m4_s_crane</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Wide Stock</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>4</stability>
-            <concealment>1</concealment>
+            <accuracy>4</accuracy>
+            <stability>12</stability>
+            <concealment>-2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_smg_scorpion_s_nostock</pd2>
@@ -5568,11 +5652,11 @@
             <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_sho_boot_s_legendary</pd2>
+            <pd2>wpn_fps_shot_b682_s_ammopouch</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_boot_s_legend</name>
+            <name>Luxurious Ammo Pouch</name>
             <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
+            <total_ammo>12</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
@@ -5583,6 +5667,18 @@
             <pd2>wpn_fps_smg_mp9_s_fold</pd2>
             <pd2skills>0</pd2skills>
             <name>Folding Stock</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_sho_boot_s_legendary</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_boot_s_legend</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -5604,6 +5700,18 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_snp_msr_body_wood</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_msr_body_wood</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_sho_ben_s_solid</pd2>
             <pd2skills>0</pd2skills>
             <name>Tactical Stock</name>
@@ -5616,9 +5724,9 @@
             <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_snp_msr_body_wood</pd2>
+            <pd2>wpn_fps_lmg_par_s_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_msr_body_wood</name>
+            <name>ERROR: bm_wp_par_s_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -5640,9 +5748,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_mp5_s_solid</pd2>
+            <pd2>wpn_fps_gre_arbiter_s_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Solid Stock</name>
+            <name>Spartan Stock</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -5724,9 +5832,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_lmg_par_s_standard</pd2>
+            <pd2>wpn_fps_lmg_svinet_s_legend</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_par_s_standard</name>
+            <name>ERROR: bm_wp_svinet_s_legend</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -5736,15 +5844,15 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_upg_m4_s_ubr</pd2>
+            <pd2>wpn_fps_ass_galil_s_wood</pd2>
             <pd2skills>0</pd2skills>
-            <name>2 Piece Stock</name>
+            <name>Wooden Stock</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>4</accuracy>
-            <stability>4</stability>
+            <accuracy>0</accuracy>
+            <stability>16</stability>
             <concealment>-2</concealment>
         </attachment>
         <attachment>
@@ -5760,16 +5868,16 @@
             <concealment>-3</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_shot_m37_s_standard</pd2>
+            <pd2>wpn_fps_smg_schakal_s_folded</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_m37_s_standard</name>
+            <name>Folded Stock</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
+            <stability>-8</stability>
+            <concealment>2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_upg_ak_s_solidstock</pd2>
@@ -5784,9 +5892,21 @@
             <concealment>-4</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_smg_uzi_s_solid</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Solid Stock</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>4</accuracy>
+            <stability>12</stability>
+            <concealment>-2</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_snp_r93_body_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -5794,18 +5914,6 @@
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_sho_s_spas12_nostock</pd2>
-            <pd2skills>0</pd2skills>
-            <name>No Stock</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>-12</stability>
-            <concealment>4</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_ass_g36_s_standard</pd2>
@@ -5820,16 +5928,28 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_shot_shorty_s_legendary</pd2>
+            <pd2>wpn_fps_smg_mp5_s_adjust</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_shorty_s_legend</name>
+            <name>Adjustable Stock</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
-            <concealment>0</concealment>
+            <concealment>3</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_sho_s_spas12_nostock</pd2>
+            <pd2skills>0</pd2skills>
+            <name>No Stock</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>-12</stability>
+            <concealment>4</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_upg_m4_s_pts</pd2>
@@ -5844,27 +5964,15 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_galil_s_wood</pd2>
+            <pd2>wpn_fps_upg_m4_s_ubr</pd2>
             <pd2skills>0</pd2skills>
-            <name>Wooden Stock</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>16</stability>
-            <concealment>-2</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_ass_m14_body_jae</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Jaeger Body</name>
+            <name>2 Piece Stock</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>4</accuracy>
-            <stability>12</stability>
+            <stability>4</stability>
             <concealment>-2</concealment>
         </attachment>
         <attachment>
@@ -5921,7 +6029,7 @@
         <attachment>
             <pd2>wpn_fps_upg_m4_s_adapter</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -5960,7 +6068,7 @@
         <attachment>
             <pd2>wpn_fps_ass_tecci_fg_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -6162,16 +6270,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_upg_ak_fg_standard_gold</pd2>
+            <pd2>wpn_fps_upg_ak_fg_tapco</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_ak_fg_standard_gold</name>
+            <name>Battleproven Handguard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>0</accuracy>
+            <accuracy>4</accuracy>
             <stability>0</stability>
-            <concealment>0</concealment>
+            <concealment>3</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_ass_ak5_fg_fnc</pd2>
@@ -6414,16 +6522,16 @@
             <concealment>4</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_g36_fg_ksk</pd2>
+            <pd2>wpn_upg_ak_fg_combo1</pd2>
             <pd2skills>0</pd2skills>
-            <name>Polizei Special Foregrip</name>
+            <name>Tactical Wood Handguard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>4</accuracy>
-            <stability>8</stability>
-            <concealment>-2</concealment>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_lmg_rpk_fg_wood</pd2>
@@ -6441,6 +6549,18 @@
             <pd2>wpn_fps_sho_boot_fg_standard</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_boot_fg_standard</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_upg_ak_fg_standard_gold</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_ak_fg_standard_gold</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -6486,16 +6606,40 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_sub2000_fg_suppressed</pd2>
+            <pd2>wpn_fps_sho_saiga_fg_holy</pd2>
             <pd2skills>0</pd2skills>
-            <name>Tooth Fairy Suppressor</name>
+            <name>Hollow Handle</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>-1</damage>
-            <accuracy>4</accuracy>
-            <stability>-8</stability>
-            <concealment>-2</concealment>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>4</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_upg_g36_fg_long</pd2>
+            <pd2skills>0</pd2skills>
+            <name>JP36 Long Foregrip</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>8</accuracy>
+            <stability>4</stability>
+            <concealment>-3</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_mp5_fg_mp5a4</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Navy Handguard</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_upg_ak_fg_trax</pd2>
@@ -6510,9 +6654,9 @@
             <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_sr2_fg_standard</pd2>
+            <pd2>wpn_fps_lmg_hk21_fg_long</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_standard</name>
+            <name>ERROR: bm_wp_hk21_body_hk21</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -6534,16 +6678,16 @@
             <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_lmg_hk21_fg_long</pd2>
+            <pd2>wpn_fps_ass_g36_fg_c</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_hk21_body_hk21</name>
+            <name>Compact Foregrip</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
+            <stability>-4</stability>
+            <concealment>2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_ass_l85a2_fg_short</pd2>
@@ -6570,15 +6714,15 @@
             <concealment>1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_mp5_fg_mp5a4</pd2>
+            <pd2>wpn_upg_ak_fg_combo2</pd2>
             <pd2skills>0</pd2skills>
-            <name>Navy Handguard</name>
+            <name>Railed Wooden Grip</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
+            <accuracy>4</accuracy>
+            <stability>4</stability>
             <concealment>0</concealment>
         </attachment>
         <attachment>
@@ -6594,27 +6738,27 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_upg_fg_jp</pd2>
+            <pd2>wpn_fps_m16_fg_railed</pd2>
             <pd2skills>0</pd2skills>
-            <name>Competition Foregrip</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>1</damage>
-            <accuracy>8</accuracy>
-            <stability>-12</stability>
-            <concealment>2</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_smg_akmsu_fg_rail</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Moscow Special Rail</name>
+            <name>Tactical Handguard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>8</stability>
+            <concealment>-2</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_mp5_fg_flash</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Enlighted Foregrip</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>4</accuracy>
+            <stability>4</stability>
             <concealment>-2</concealment>
         </attachment>
         <attachment>
@@ -6630,15 +6774,15 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_g36_fg_c</pd2>
+            <pd2>wpn_fps_m16_fg_vietnam</pd2>
             <pd2skills>0</pd2skills>
-            <name>Compact Foregrip</name>
+            <name>Blast From the Past Handguard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>-4</stability>
+            <stability>4</stability>
             <concealment>2</concealment>
         </attachment>
         <attachment>
@@ -6690,16 +6834,16 @@
             <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_scar_fg_railext</pd2>
+            <pd2>wpn_upg_ak_fg_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Rail Extension</name>
+            <name>No Modification</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>4</stability>
-            <concealment>-1</concealment>
+            <stability>0</stability>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_smg_mp5_fg_m5k</pd2>
@@ -6714,28 +6858,28 @@
             <concealment>3</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_m16_fg_railed</pd2>
+            <pd2>wpn_fps_upg_fg_jp</pd2>
             <pd2skills>0</pd2skills>
-            <name>Tactical Handguard</name>
+            <name>Competition Foregrip</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>1</damage>
+            <accuracy>8</accuracy>
+            <stability>-12</stability>
+            <concealment>2</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_upg_ass_m16_fg_stag</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Long Ergo Foregrip</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>8</stability>
-            <concealment>-2</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_m16_fg_vietnam</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Blast From the Past Handguard</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>4</stability>
-            <concealment>2</concealment>
+            <concealment>-3</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_smg_mp5_fg_mp5a5</pd2>
@@ -6762,16 +6906,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_upg_ass_m16_fg_stag</pd2>
+            <pd2>wpn_fps_ass_scar_fg_railext</pd2>
             <pd2skills>0</pd2skills>
-            <name>Long Ergo Foregrip</name>
+            <name>Rail Extension</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>8</stability>
-            <concealment>-3</concealment>
+            <stability>4</stability>
+            <concealment>-1</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_ass_sub2000_fg_gen1</pd2>
@@ -6798,9 +6942,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_upg_ak_fg_standard</pd2>
+            <pd2>wpn_fps_sho_ksg_fg_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>No Modification</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -6834,16 +6978,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_sho_ksg_fg_standard</pd2>
+            <pd2>wpn_fps_ass_sub2000_fg_railed</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part</name>
+            <name>Delabarre Foregrip</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
+            <stability>8</stability>
+            <concealment>-2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_ass_g36_fg_k</pd2>
@@ -6858,27 +7002,27 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_upg_ak_fg_combo2</pd2>
+            <pd2>wpn_fps_smg_sr2_fg_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Railed Wooden Grip</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>4</accuracy>
-            <stability>4</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_ass_sub2000_fg_railed</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Delabarre Foregrip</name>
+            <name>ERROR: bm_wp_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>8</stability>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_ass_sub2000_fg_suppressed</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Tooth Fairy Suppressor</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>-1</damage>
+            <accuracy>4</accuracy>
+            <stability>-8</stability>
             <concealment>-2</concealment>
         </attachment>
         <attachment>
@@ -6894,16 +7038,16 @@
             <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_upg_ak_fg_combo1</pd2>
+            <pd2>wpn_fps_upg_ass_m4_fg_moe</pd2>
             <pd2skills>0</pd2skills>
-            <name>Tactical Wood Handguard</name>
+            <name>E.M.O. Foregrip</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
+            <damage>1</damage>
+            <accuracy>4</accuracy>
+            <stability>8</stability>
+            <concealment>2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_smg_akmsu_fg_standard</pd2>
@@ -6918,30 +7062,6 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_upg_ak_fg_tapco</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Battleproven Handguard</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>4</accuracy>
-            <stability>0</stability>
-            <concealment>3</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_upg_ass_m4_fg_moe</pd2>
-            <pd2skills>0</pd2skills>
-            <name>E.M.O. Foregrip</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>1</damage>
-            <accuracy>4</accuracy>
-            <stability>8</stability>
-            <concealment>2</concealment>
-        </attachment>
-        <attachment>
             <pd2>wpn_fps_shot_r870_fg_railed</pd2>
             <pd2skills>0</pd2skills>
             <name>Railed Handguard</name>
@@ -6952,6 +7072,30 @@
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_ass_g36_fg_ksk</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Polizei Special Foregrip</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>4</accuracy>
+            <stability>8</stability>
+            <concealment>-2</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_akmsu_fg_rail</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Moscow Special Rail</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>8</stability>
+            <concealment>-2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_upg_ak_fg_legend</pd2>
@@ -6971,7 +7115,7 @@
         <attachment>
             <pd2>wpn_fps_ass_m14_body_lower</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -6995,7 +7139,7 @@
         <attachment>
             <pd2>wpn_fps_snp_m95_lower_reciever</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7022,7 +7166,7 @@
         <attachment>
             <pd2>wpn_fps_ass_tecci_dh_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7032,9 +7176,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_m4_uupg_draghandle_ballos</pd2>
+            <pd2>wpn_fps_gre_arbiter_charginghandle</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Spartan Stock</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7046,19 +7190,7 @@
         <attachment>
             <pd2>wpn_fps_m4_uupg_draghandle</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_sho_aa12_dh</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_aa12_dh</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7080,21 +7212,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_m4_uupg_draghandle_core</pd2>
+            <pd2>wpn_fps_sho_aa12_dh</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_smg_schakal_dh_standard</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_schakal_standard</name>
+            <name>ERROR: bm_wp_aa12_dh</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7116,9 +7236,45 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_m4_uupg_draghandle_core</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Standard Issue Part</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_schakal_dh_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_schakal_standard</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_ass_sub2000_dh_standard</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_sub2000_dh_standard</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_m4_uupg_draghandle_ballos</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7215,6 +7371,18 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_gre_arbiter_bolt</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Spartan Stock</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_smg_cobray_o_adapter</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_cobray_o_adapter</name>
@@ -7299,16 +7467,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_sho_aa12_bolt</pd2>
+            <pd2>wpn_fps_upg_o_ak_scopemount</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_aa12_bolt</name>
+            <name>Scope Mount</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
+            <stability>4</stability>
+            <concealment>-1</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_lmg_m134_body_upper_spikey</pd2>
@@ -7325,7 +7493,7 @@
         <attachment>
             <pd2>wpn_fps_pis_deagle_o_standard_front</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7397,7 +7565,19 @@
         <attachment>
             <pd2>wpn_fps_snp_mosin_rail</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_gre_arbiter_ejector</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Spartan Stock</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7445,7 +7625,7 @@
         <attachment>
             <pd2>wpn_fps_pis_deagle_fg_rail</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7529,7 +7709,7 @@
         <attachment>
             <pd2>wpn_fps_pis_1911_o_long</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7553,7 +7733,7 @@
         <attachment>
             <pd2>wpn_fps_pis_1911_o_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7625,7 +7805,7 @@
         <attachment>
             <pd2>wpn_fps_ass_ak5_body_rail</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7635,9 +7815,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_usp_fl_adapter</pd2>
+            <pd2>wpn_fps_pis_deagle_extra</pd2>
             <pd2skills>0</pd2skills>
-            <name></name>
+            <name>Deagle Scope Mount</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7647,9 +7827,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_gre_china_m_standard</pd2>
+            <pd2>wpn_fps_snp_model70_fl_rail</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_gre_china_m_standard</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7671,9 +7851,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_p226_o_long</pd2>
+            <pd2>wpn_fps_gre_china_m_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_p226_o_long</name>
+            <name>ERROR: bm_wp_gre_china_m_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7731,21 +7911,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_snp_model70_fl_rail</pd2>
+            <pd2>wpn_fps_pis_p226_o_long</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_pis_rage_lock</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Bronco Scope Mount</name>
+            <name>ERROR: bm_wp_p226_o_long</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7767,9 +7935,21 @@
             <concealment>3</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_deagle_extra</pd2>
+            <pd2>wpn_fps_pis_rage_lock</pd2>
             <pd2skills>0</pd2skills>
-            <name>Deagle Scope Mount</name>
+            <name>Bronco Scope Mount</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_pis_packrat_bolt_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_packrat_b_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7793,7 +7973,7 @@
         <attachment>
             <pd2>wpn_fps_snp_model70_o_rail</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7829,7 +8009,7 @@
         <attachment>
             <pd2>wpn_fps_pis_deagle_o_standard_rear</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7839,9 +8019,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_packrat_bolt_standard</pd2>
+            <pd2>wpn_fps_sho_aa12_bolt</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_packrat_b_standard</name>
+            <name>ERROR: bm_wp_aa12_bolt</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7863,9 +8043,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_schakal_vg_extra</pd2>
+            <pd2>wpn_fps_pis_usp_fl_adapter</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_schakal_standard</name>
+            <name></name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7923,21 +8103,21 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_upg_o_ak_scopemount</pd2>
+            <pd2>wpn_fps_smg_schakal_vg_extra</pd2>
             <pd2skills>0</pd2skills>
-            <name>Scope Mount</name>
+            <name>ERROR: bm_wp_schakal_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>4</stability>
-            <concealment>-1</concealment>
+            <stability>0</stability>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_pis_p226_o_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7949,7 +8129,7 @@
         <attachment>
             <pd2>wpn_fps_smg_mac10_body_ris_special</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard issue part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -7961,6 +8141,18 @@
     </attachment_group>
     <attachment_group>
         <group_name>gadget</group_name>
+        <attachment>
+            <pd2>wpn_fps_upg_o_45iron</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Angled Sight</name>
+            <subtype>second_sight</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
         <attachment>
             <pd2>wpn_fps_upg_fl_ass_peq15</pd2>
             <pd2skills>0</pd2skills>
@@ -7986,15 +8178,15 @@
             <concealment>1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_upg_o_45iron</pd2>
+            <pd2>wpn_fps_upg_o_45rds</pd2>
             <pd2skills>0</pd2skills>
-            <name>Angled Sight</name>
+            <name>45 degree red dot sight</name>
             <subtype>second_sight</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>0</stability>
+            <stability>4</stability>
             <concealment>0</concealment>
         </attachment>
         <attachment>
@@ -8010,18 +8202,6 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_upg_fl_pis_x400v</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Combined Module</name>
-            <subtype>laser</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>4</stability>
-            <concealment>-2</concealment>
-        </attachment>
-        <attachment>
             <pd2>wpn_fps_upg_fl_pis_tlr1</pd2>
             <pd2skills>0</pd2skills>
             <name>Tactical Pistol Light</name>
@@ -8032,6 +8212,18 @@
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>-1</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_upg_fl_ass_laser</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Compact Laser Module</name>
+            <subtype>laser</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_upg_fl_pis_m3x</pd2>
@@ -8070,16 +8262,16 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_upg_fl_ass_laser</pd2>
+            <pd2>wpn_fps_upg_fl_pis_x400v</pd2>
             <pd2skills>0</pd2skills>
-            <name>Compact Laser Module</name>
+            <name>Combined Module</name>
             <subtype>laser</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
+            <stability>4</stability>
+            <concealment>-2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_upg_fl_pis_crimson</pd2>
@@ -8241,9 +8433,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_mp9_b_dummy</pd2>
+            <pd2>wpn_fps_shot_r870_b_short</pd2>
             <pd2skills>0</pd2skills>
-            <name>No Modification</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -8253,16 +8445,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_lmg_m134_barrel_short</pd2>
+            <pd2>wpn_fps_snp_r93_b_suppressed</pd2>
             <pd2skills>0</pd2skills>
-            <name>The Stump Barrel</name>
-            <subtype>none</subtype>
+            <name>Compensated Suppressor</name>
+            <subtype>silencer</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>0</damage>
+            <damage>-4</damage>
             <accuracy>-4</accuracy>
-            <stability>12</stability>
-            <concealment>3</concealment>
+            <stability>4</stability>
+            <concealment>-1</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_ass_scar_b_long</pd2>
@@ -8315,7 +8507,7 @@
         <attachment>
             <pd2>wpn_fps_ass_akm_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -8411,7 +8603,7 @@
         <attachment>
             <pd2>wpn_fps_shot_saiga_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -8423,7 +8615,7 @@
         <attachment>
             <pd2>wpn_fps_ass_m14_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -8447,7 +8639,7 @@
         <attachment>
             <pd2>wpn_fps_shot_r870_b_long</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -8483,7 +8675,7 @@
         <attachment>
             <pd2>wpn_fps_ass_s552_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -8601,16 +8793,16 @@
             <concealment>-3</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_saw_b_normal</pd2>
+            <pd2>wpn_fps_upg_ak_b_draco</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>AK Slavic Dragon Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
+            <damage>2</damage>
+            <accuracy>-8</accuracy>
             <stability>0</stability>
-            <concealment>0</concealment>
+            <concealment>1</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_ass_fal_fg_standard</pd2>
@@ -8663,7 +8855,7 @@
         <attachment>
             <pd2>wpn_fps_snp_m95_barrel_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -8697,16 +8889,16 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_lmg_hk21_b_short</pd2>
+            <pd2>wpn_fps_sho_ksg_b_short</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_hk21_b_hk21a4</name>
+            <name>Short Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
+            <magsize>-4</magsize>
+            <damage>1</damage>
+            <accuracy>-8</accuracy>
+            <stability>-8</stability>
+            <concealment>4</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_bow_frankish_b_steel</pd2>
@@ -8733,16 +8925,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_schakal_b_standard</pd2>
+            <pd2>wpn_fps_gre_arbiter_b_comp</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_schakal_standard</name>
+            <name>Bombardier Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
+            <accuracy>-4</accuracy>
+            <stability>-4</stability>
+            <concealment>2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_smg_p90_b_long</pd2>
@@ -8781,15 +8973,15 @@
             <concealment>6</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_vhs_b_short</pd2>
+            <pd2>wpn_fps_snp_mosin_b_short</pd2>
             <pd2skills>0</pd2skills>
-            <name>CQB Barrel</name>
+            <name>Short Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>-4</accuracy>
-            <stability>4</stability>
+            <stability>0</stability>
             <concealment>3</concealment>
         </attachment>
         <attachment>
@@ -8841,9 +9033,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_shot_m37_b_standard</pd2>
+            <pd2>wpn_fps_snp_wa2000_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_m37_b_standard</name>
+            <name>ERROR: bm_wp_wa2000_b_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -9009,6 +9201,42 @@
             <concealment>2</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_smg_polymer_barrel_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_polymer_barrel</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_pis_2006m_b_short</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Piccolo Barrel</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>-8</accuracy>
+            <stability>0</stability>
+            <concealment>4</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_ass_l85a2_b_short</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Diminutive Barrel</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>3</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_ass_famas_b_sniper</pd2>
             <pd2skills>0</pd2skills>
             <name>Sniper Barrel</name>
@@ -9019,6 +9247,18 @@
             <accuracy>4</accuracy>
             <stability>-4</stability>
             <concealment>-2</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_lmg_m134_barrel_extreme</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Aerial Assault Barrel</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>4</accuracy>
+            <stability>-12</stability>
+            <concealment>-3</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_lmg_m134_barrel</pd2>
@@ -9045,6 +9285,18 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_smg_tec9_b_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Short Barrel</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>-4</accuracy>
+            <stability>4</stability>
+            <concealment>3</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_sho_aa12_barrel_long</pd2>
             <pd2skills>0</pd2skills>
             <name>Long Barrel</name>
@@ -9057,21 +9309,9 @@
             <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_2006m_b_long</pd2>
+            <pd2>wpn_fps_lmg_mg42_b_mg42</pd2>
             <pd2skills>0</pd2skills>
-            <name>Pesante Barrel</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>4</accuracy>
-            <stability>0</stability>
-            <concealment>-2</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_ass_l85a2_b_medium</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_l85a2_b_medium</name>
+            <name>ERROR: bm_wp_mg42_b_long</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -9081,16 +9321,28 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_l85a2_b_short</pd2>
+            <pd2>wpn_fps_sho_rota_b_silencer</pd2>
             <pd2skills>0</pd2skills>
-            <name>Diminutive Barrel</name>
+            <name>Silenced Barrel</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>-2</damage>
+            <accuracy>-4</accuracy>
+            <stability>4</stability>
+            <concealment>-1</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_akmsu_b_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
-            <concealment>3</concealment>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_snp_mosin_b_medium</pd2>
@@ -9105,28 +9357,28 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_lmg_m134_barrel_extreme</pd2>
+            <pd2>wpn_fps_ass_famas_b_long</pd2>
             <pd2skills>0</pd2skills>
-            <name>Aerial Assault Barrel</name>
+            <name>Long Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>4</accuracy>
-            <stability>-12</stability>
-            <concealment>-3</concealment>
+            <damage>1</damage>
+            <accuracy>0</accuracy>
+            <stability>4</stability>
+            <concealment>-1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_tec9_b_standard</pd2>
+            <pd2>wpn_fps_ass_famas_b_suppressed</pd2>
             <pd2skills>0</pd2skills>
-            <name>Short Barrel</name>
-            <subtype>none</subtype>
+            <name>Suppressed Barrel</name>
+            <subtype>silencer</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>-4</accuracy>
-            <stability>4</stability>
-            <concealment>3</concealment>
+            <accuracy>8</accuracy>
+            <stability>0</stability>
+            <concealment>-1</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_lmg_m249_b_short</pd2>
@@ -9153,16 +9405,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_lmg_mg42_b_mg42</pd2>
+            <pd2>wpn_fps_aug_b_short</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_mg42_b_long</name>
+            <name>Short Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
+            <accuracy>-4</accuracy>
+            <stability>8</stability>
+            <concealment>2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_snp_m95_barrel_long</pd2>
@@ -9201,21 +9453,21 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_galil_fg_mar</pd2>
+            <pd2>wpn_fps_sho_boot_b_long</pd2>
             <pd2skills>0</pd2skills>
-            <name>CQB Foregrip</name>
+            <name>Long Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>2</damage>
-            <accuracy>-4</accuracy>
-            <stability>-4</stability>
-            <concealment>4</concealment>
+            <damage>0</damage>
+            <accuracy>4</accuracy>
+            <stability>4</stability>
+            <concealment>-3</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_sparrow_b_941</pd2>
+            <pd2>wpn_fps_shot_m37_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_sparrow_b_941</name>
+            <name>ERROR: bm_wp_m37_b_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -9225,9 +9477,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_packrat_b_standard</pd2>
+            <pd2>wpn_fps_gre_china_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_packrat_b_standard</name>
+            <name>ERROR: bm_wp_gre_china_barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -9249,78 +9501,6 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_famas_b_suppressed</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Suppressed Barrel</name>
-            <subtype>silencer</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>8</accuracy>
-            <stability>0</stability>
-            <concealment>-1</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_aug_b_short</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Short Barrel</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>-4</accuracy>
-            <stability>8</stability>
-            <concealment>2</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_sho_ksg_b_legendary</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_ksg_b_legend</name>
-            <subtype>silencer</subtype>
-            <total_ammo>4</total_ammo>
-            <magsize>4</magsize>
-            <damage>0</damage>
-            <accuracy>-4</accuracy>
-            <stability>24</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_gre_china_b_standard</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_gre_china_barrel</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_ass_74_b_standard</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_snp_mosin_b_short</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Short Barrel</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>-4</accuracy>
-            <stability>0</stability>
-            <concealment>3</concealment>
-        </attachment>
-        <attachment>
             <pd2>wpn_fps_ass_vhs_b_silenced</pd2>
             <pd2skills>0</pd2skills>
             <name>Silenced Barrel</name>
@@ -9333,9 +9513,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_mac10_b_dummy</pd2>
+            <pd2>wpn_fps_ass_sub2000_b_std</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>ERROR: bm_wp_sub2000_b_std</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -9345,28 +9525,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_sho_striker_b_suppressed</pd2>
+            <pd2>wpn_fps_sho_ksg_b_legendary</pd2>
             <pd2skills>0</pd2skills>
-            <name>Suppressed Barrel</name>
+            <name>ERROR: bm_wp_ksg_b_legend</name>
             <subtype>silencer</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>-2</damage>
-            <accuracy>-4</accuracy>
-            <stability>8</stability>
-            <concealment>-2</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_smg_thompson_barrel_short</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Stubby barrel</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
+            <total_ammo>4</total_ammo>
+            <magsize>4</magsize>
             <damage>0</damage>
             <accuracy>-4</accuracy>
-            <stability>0</stability>
-            <concealment>3</concealment>
+            <stability>24</stability>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_upg_ak_b_ak105</pd2>
@@ -9393,6 +9561,90 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_snp_m95_barrel_suppressed</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Suppressed Barrel</name>
+            <subtype>silencer</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>-4</damage>
+            <accuracy>0</accuracy>
+            <stability>8</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_scorpion_b_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Tactical Shorty Stock</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_mac10_b_dummy</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Standard Issue Part</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_sho_striker_b_suppressed</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Suppressed Barrel</name>
+            <subtype>silencer</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>-2</damage>
+            <accuracy>-4</accuracy>
+            <stability>8</stability>
+            <concealment>-2</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_shot_huntsman_b_short</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Road Warrior Barrel</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>-16</accuracy>
+            <stability>-16</stability>
+            <concealment>10</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_snp_winchester_b_long</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Long Range Barrel</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>4</accuracy>
+            <stability>0</stability>
+            <concealment>-2</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_snp_msr_b_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Standard Issue Part</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_sho_boot_b_standard</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_boot_b_standard</name>
@@ -9405,15 +9657,15 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_ak5_b_std</pd2>
+            <pd2>wpn_fps_shot_shorty_b_legendary</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard issue part.</name>
+            <name>ERROR: bm_wp_shorty_b_legend</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
+            <magsize>4</magsize>
             <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
+            <accuracy>-4</accuracy>
+            <stability>20</stability>
             <concealment>0</concealment>
         </attachment>
         <attachment>
@@ -9453,9 +9705,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_scorpion_b_standard</pd2>
+            <pd2>wpn_fps_gre_arbiter_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Tactical Shorty Stock</name>
+            <name>ERROR: bm_wp_arbiter_b_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -9465,63 +9717,15 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_shot_huntsman_b_short</pd2>
+            <pd2>wpn_fps_ass_m14_b_legendary</pd2>
             <pd2skills>0</pd2skills>
-            <name>Road Warrior Barrel</name>
+            <name>ERROR: bm_wp_m14_b_legend</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>-16</accuracy>
-            <stability>-16</stability>
-            <concealment>10</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_snp_winchester_b_long</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Long Range Barrel</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>4</accuracy>
-            <stability>0</stability>
-            <concealment>-2</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_snp_msr_b_standard</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_shot_shorty_b_legendary</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_shorty_b_legend</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>4</magsize>
-            <damage>0</damage>
-            <accuracy>-4</accuracy>
-            <stability>20</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_shot_r870_b_legendary</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_r870_b_legend </name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>4</magsize>
-            <damage>3</damage>
-            <accuracy>0</accuracy>
-            <stability>40</stability>
+            <accuracy>20</accuracy>
+            <stability>8</stability>
             <concealment>0</concealment>
         </attachment>
         <attachment>
@@ -9537,9 +9741,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_snp_wa2000_b_standard</pd2>
+            <pd2>wpn_fps_pis_2006m_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_wa2000_b_standard</name>
+            <name>Pesante Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -9547,6 +9751,54 @@
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_mp5_b_mp5a4</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Standard Issue Part</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_gre_arbiter_b_long</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Long Barrel</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>4</accuracy>
+            <stability>4</stability>
+            <concealment>-2</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_snp_desertfox_b_short</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_desertfox_b_standard</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_thompson_barrel_long</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Long barrel</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>4</accuracy>
+            <stability>0</stability>
+            <concealment>-3</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_pis_pl14_b_standard</pd2>
@@ -9585,9 +9837,9 @@
             <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_2006m_b_standard</pd2>
+            <pd2>wpn_fps_saw_b_normal</pd2>
             <pd2skills>0</pd2skills>
-            <name>Pesante Barrel</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -9597,27 +9849,27 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_mp5_b_mp5a4</pd2>
+            <pd2>wpn_fps_ass_fal_fg_04</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Marksman Foregrip</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
+            <damage>1</damage>
+            <accuracy>4</accuracy>
+            <stability>-4</stability>
+            <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_rpg7_barrel</pd2>
+            <pd2>wpn_fps_shot_r870_b_legendary</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_rpg7_barrel</name>
+            <name>ERROR: bm_wp_r870_b_legend </name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
+            <magsize>4</magsize>
+            <damage>3</damage>
             <accuracy>0</accuracy>
-            <stability>0</stability>
+            <stability>40</stability>
             <concealment>0</concealment>
         </attachment>
         <attachment>
@@ -9633,16 +9885,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_thompson_barrel_long</pd2>
+            <pd2>wpn_fps_sho_saiga_b_short</pd2>
             <pd2skills>0</pd2skills>
-            <name>Long barrel</name>
+            <name>Short Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>4</accuracy>
-            <stability>0</stability>
-            <concealment>-3</concealment>
+            <accuracy>-4</accuracy>
+            <stability>-4</stability>
+            <concealment>4</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_snp_desertfox_b_long</pd2>
@@ -9657,16 +9909,16 @@
             <concealment>-3</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_fal_fg_04</pd2>
+            <pd2>wpn_fps_smg_thompson_barrel_short</pd2>
             <pd2skills>0</pd2skills>
-            <name>Marksman Foregrip</name>
+            <name>Stubby barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>1</damage>
-            <accuracy>4</accuracy>
-            <stability>-4</stability>
-            <concealment>-2</concealment>
+            <damage>0</damage>
+            <accuracy>-4</accuracy>
+            <stability>0</stability>
+            <concealment>3</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_ass_asval_b_proto</pd2>
@@ -9717,16 +9969,16 @@
             <concealment>1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_snp_m95_barrel_suppressed</pd2>
+            <pd2>wpn_fps_snp_winchester_b_suppressed</pd2>
             <pd2skills>0</pd2skills>
-            <name>Suppressed Barrel</name>
+            <name>Outlaw's Silenced Barrel</name>
             <subtype>silencer</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>-4</damage>
-            <accuracy>0</accuracy>
-            <stability>8</stability>
-            <concealment>0</concealment>
+            <damage>-3</damage>
+            <accuracy>-4</accuracy>
+            <stability>12</stability>
+            <concealment>-2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_smg_uzi_b_standard</pd2>
@@ -9801,33 +10053,33 @@
             <concealment>4</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_m14_b_legendary</pd2>
+            <pd2>wpn_fps_lmg_hk21_b_short</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_m14_b_legend</name>
+            <name>ERROR: bm_wp_hk21_b_hk21a4</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>20</accuracy>
-            <stability>8</stability>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_snp_winchester_b_suppressed</pd2>
+            <pd2>wpn_fps_ass_vhs_b_short</pd2>
             <pd2skills>0</pd2skills>
-            <name>Outlaw's Silenced Barrel</name>
-            <subtype>silencer</subtype>
+            <name>CQB Barrel</name>
+            <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>-3</damage>
+            <damage>0</damage>
             <accuracy>-4</accuracy>
-            <stability>12</stability>
-            <concealment>-2</concealment>
+            <stability>4</stability>
+            <concealment>3</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_sub2000_b_std</pd2>
+            <pd2>wpn_fps_ass_74_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_sub2000_b_std</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -9863,7 +10115,7 @@
         <attachment>
             <pd2>wpn_fps_smg_mp5_b_m5k</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -9873,9 +10125,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_g36_b_long</pd2>
+            <pd2>wpn_fps_smg_schakal_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Long Barrel</name>
+            <name>ERROR: bm_wp_schakal_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -9909,16 +10161,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_sho_rota_b_short</pd2>
+            <pd2>wpn_fps_rpg7_barrel</pd2>
             <pd2skills>0</pd2skills>
-            <name>Short Barrel</name>
+            <name>ERROR: bm_wp_rpg7_barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>-8</accuracy>
+            <accuracy>0</accuracy>
             <stability>0</stability>
-            <concealment>3</concealment>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_smg_baka_b_standard</pd2>
@@ -9933,21 +10185,21 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_sho_boot_b_long</pd2>
+            <pd2>wpn_fps_sho_rota_b_short</pd2>
             <pd2skills>0</pd2skills>
-            <name>Long Barrel</name>
+            <name>Short Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>4</accuracy>
-            <stability>4</stability>
-            <concealment>-3</concealment>
+            <accuracy>-8</accuracy>
+            <stability>0</stability>
+            <concealment>3</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_ass_tecci_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -9957,9 +10209,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_snp_desertfox_b_short</pd2>
+            <pd2>wpn_fps_pis_packrat_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_desertfox_b_standard</name>
+            <name>ERROR: bm_wp_packrat_b_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -10017,6 +10269,30 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_smg_mp9_b_dummy</pd2>
+            <pd2skills>0</pd2skills>
+            <name>No Modification</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_pis_2006m_b_long</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Pesante Barrel</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>4</accuracy>
+            <stability>0</stability>
+            <concealment>-2</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_ass_akm_b_standard_gold</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_akm_b_standard_gold</name>
@@ -10027,30 +10303,6 @@
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_shot_r870_b_short</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_snp_r93_b_suppressed</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Compensated Suppressor</name>
-            <subtype>silencer</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>-4</damage>
-            <accuracy>-4</accuracy>
-            <stability>4</stability>
-            <concealment>-1</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_ass_ak5_b_short</pd2>
@@ -10077,9 +10329,9 @@
             <concealment>3</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_akmsu_b_standard</pd2>
+            <pd2>wpn_fps_pis_sparrow_b_941</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>ERROR: bm_wp_sparrow_b_941</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -10089,16 +10341,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_polymer_barrel_standard</pd2>
+            <pd2>wpn_fps_lmg_m134_barrel_short</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_polymer_barrel</name>
+            <name>The Stump Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
+            <accuracy>-4</accuracy>
+            <stability>12</stability>
+            <concealment>3</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_upg_ass_ak_b_zastava</pd2>
@@ -10125,21 +10377,21 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_sho_rota_b_silencer</pd2>
+            <pd2>wpn_fps_pis_2006m_b_medium</pd2>
             <pd2skills>0</pd2skills>
-            <name>Silenced Barrel</name>
+            <name>Medio Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>-2</damage>
+            <damage>0</damage>
             <accuracy>-4</accuracy>
-            <stability>4</stability>
-            <concealment>-1</concealment>
+            <stability>0</stability>
+            <concealment>2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_sho_ksg_b_standard</pd2>
+            <pd2>wpn_fps_ass_l85a2_b_medium</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_ksg_b_standard</name>
+            <name>ERROR: bm_wp_l85a2_b_medium</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -10161,40 +10413,40 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_2006m_b_medium</pd2>
+            <pd2>wpn_fps_ass_galil_fg_mar</pd2>
             <pd2skills>0</pd2skills>
-            <name>Medio Barrel</name>
+            <name>CQB Foregrip</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>2</damage>
+            <accuracy>-4</accuracy>
+            <stability>-4</stability>
+            <concealment>4</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_sho_ksg_b_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_ksg_b_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>-4</accuracy>
+            <accuracy>0</accuracy>
             <stability>0</stability>
-            <concealment>2</concealment>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_sho_ksg_b_short</pd2>
+            <pd2>wpn_fps_ass_l85a2_b_long</pd2>
             <pd2skills>0</pd2skills>
-            <name>Short Barrel</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>-4</magsize>
-            <damage>1</damage>
-            <accuracy>-8</accuracy>
-            <stability>-8</stability>
-            <concealment>4</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_ass_famas_b_long</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Long Barrel</name>
+            <name>Prodigious Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>1</damage>
-            <accuracy>0</accuracy>
-            <stability>4</stability>
-            <concealment>-1</concealment>
+            <damage>0</damage>
+            <accuracy>4</accuracy>
+            <stability>0</stability>
+            <concealment>-3</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_snp_r93_b_short</pd2>
@@ -10221,16 +10473,16 @@
             <concealment>2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_sho_striker_b_long</pd2>
+            <pd2>wpn_fps_ass_ak5_b_std</pd2>
             <pd2skills>0</pd2skills>
-            <name>Long Barrel</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>8</accuracy>
-            <stability>4</stability>
-            <concealment>-2</concealment>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_fla_mk2_empty</pd2>
@@ -10245,16 +10497,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_l85a2_b_long</pd2>
+            <pd2>wpn_fps_lmg_par_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Prodigious Barrel</name>
+            <name>ERROR: bm_wp_par_b_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>4</accuracy>
+            <accuracy>0</accuracy>
             <stability>0</stability>
-            <concealment>-3</concealment>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_ass_galil_fg_sniper</pd2>
@@ -10269,21 +10521,21 @@
             <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_lmg_par_b_standard</pd2>
+            <pd2>wpn_fps_sho_striker_b_long</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_par_b_standard</name>
+            <name>Long Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
+            <accuracy>8</accuracy>
+            <stability>4</stability>
+            <concealment>-2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_smg_mp5_b_mp5sd</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -10341,16 +10593,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_upg_ak_b_draco</pd2>
+            <pd2>wpn_fps_ass_g36_b_long</pd2>
             <pd2skills>0</pd2skills>
-            <name>AK Slavic Dragon Barrel</name>
+            <name>Long Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
-            <damage>2</damage>
-            <accuracy>-8</accuracy>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
             <stability>0</stability>
-            <concealment>1</concealment>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_sho_ksg_b_long</pd2>
@@ -10401,16 +10653,16 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_2006m_b_short</pd2>
+            <pd2>wpn_fps_sho_b_spas12_short</pd2>
             <pd2skills>0</pd2skills>
-            <name>Piccolo Barrel</name>
+            <name>Extended Magazine</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
             <damage>0</damage>
-            <accuracy>-8</accuracy>
+            <accuracy>0</accuracy>
             <stability>0</stability>
-            <concealment>4</concealment>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_bow_arblast_b_steel</pd2>
@@ -10461,9 +10713,9 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_sho_b_spas12_short</pd2>
+            <pd2>wpn_fps_upg_g36_b_ultra</pd2>
             <pd2skills>0</pd2skills>
-            <name>Extended Magazine</name>
+            <name>ERROR: bm_wp_g36_b_ultra</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -10475,7 +10727,7 @@
         <attachment>
             <pd2>wpn_fps_smg_m45_b_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -10637,7 +10889,7 @@
         <attachment>
             <pd2>wpn_fps_smg_mp5_body_rail</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -10817,7 +11069,7 @@
         <attachment>
             <pd2>wpn_fps_pis_rage_body_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11009,7 +11261,7 @@
         <attachment>
             <pd2>wpn_fps_ass_tecci_upper_reciever</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11048,7 +11300,7 @@
         <attachment>
             <pd2>wpn_fps_ass_m16_os_frontsight</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11123,7 +11375,7 @@
         <attachment>
             <pd2>wpn_fps_upg_vg_ass_smg_verticalgrip</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11135,7 +11387,7 @@
         <attachment>
             <pd2>wpn_fps_ass_tecci_vg_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11147,6 +11399,18 @@
     </attachment_group>
     <attachment_group>
         <group_name>magazine</group_name>
+        <attachment>
+            <pd2>wpn_fps_smg_p90_m_strap</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Speed Pull Magazine</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
         <attachment>
             <pd2>wpn_fps_smg_m45_m_mag</pd2>
             <pd2skills>0</pd2skills>
@@ -11163,6 +11427,30 @@
             <pd2>wpn_fps_pis_pl14_m_standard</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_pl14_m_standard</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_m4_upg_m_quick</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Speed Pull Magazine</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_lmg_hk21_m_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_hk21_body_rail</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11196,6 +11484,42 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_upg_ak_m_akm</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Standard Issue Part</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_scorpion_m_extended</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Extended Magazine</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>20</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>8</stability>
+            <concealment>-3</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_pis_ppk_m_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Police Shorty Stock</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_lmg_rpk_m_drum</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_rpk_m_drum</name>
@@ -11206,6 +11530,30 @@
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_pis_1911_m_extended</pd2>
+            <pd2skills>0</pd2skills>
+            <name>12rnd Mag.</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>6</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>-1</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_sterling_m_long</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Extended Magazine</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>10</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>-2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_lmg_m134_m_standard</pd2>
@@ -11244,6 +11592,18 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_saw_m_blade</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Standard Issue Part</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_smg_thompson_drummag</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_m1928_b_medium</name>
@@ -11266,6 +11626,18 @@
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_pis_pl14_m_extended</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Extended Magazine</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>2</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>-1</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_smg_mp5_m_straight</pd2>
@@ -11292,9 +11664,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_lmg_hk21_m_standard</pd2>
+            <pd2>wpn_fps_ass_sub2000_m_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_hk21_body_rail</name>
+            <name>ERROR: bm_wp_sub2000_m_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11316,12 +11688,12 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_upg_ak_m_akm</pd2>
+            <pd2>wpn_fps_pis_hs2000_m_extended</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Extended Magazine</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
+            <magsize>8</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
@@ -11340,21 +11712,9 @@
             <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_scorpion_m_extended</pd2>
+            <pd2>wpn_fps_gre_m32_mag</pd2>
             <pd2skills>0</pd2skills>
-            <name>Extended Magazine</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>20</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>8</stability>
-            <concealment>-3</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_smg_mp9_m_short</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Short Mag.</name>
+            <name>ERROR: bm_wp_l85a2_fg_medium</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11364,9 +11724,21 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_sho_boot_m_standard</pd2>
+            <pd2>wpn_fps_pis_1911_m_big</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_boot_s_standard</name>
+            <name>Magazine with Ameritude!</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>12</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>8</stability>
+            <concealment>-2</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_snp_winchester_m_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11436,16 +11808,16 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_sterling_m_long</pd2>
+            <pd2>wpn_fps_upg_ak_m_quick</pd2>
             <pd2skills>0</pd2skills>
-            <name>Extended Magazine</name>
+            <name>Speed Pull Magazine</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
-            <magsize>10</magsize>
+            <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
-            <concealment>-2</concealment>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_gre_m79_grenade_whole</pd2>
@@ -11462,7 +11834,7 @@
         <attachment>
             <pd2>wpn_fps_smg_mp5_m_std</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11496,9 +11868,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_g17_m_standard</pd2>
+            <pd2>wpn_fps_ass_s552_m_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name></name>
+            <name>Extended Magazine</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11520,9 +11892,9 @@
             <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_saw_m_blade</pd2>
+            <pd2>wpn_fps_rpg7_m_grinclown</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>ERROR: bm_wp_rpg7_m_rocket</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11544,19 +11916,31 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_hs2000_m_extended</pd2>
+            <pd2>wpn_fps_sho_boot_m_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Extended Magazine</name>
+            <name>ERROR: bm_wp_boot_s_standard</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
-            <magsize>8</magsize>
+            <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_gre_m32_mag</pd2>
+            <pd2>wpn_fps_ass_asval_m_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_asval_b_pro</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_gre_arbiter_m_standard</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_l85a2_fg_medium</name>
             <subtype>none</subtype>
@@ -11568,21 +11952,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_snp_winchester_m_standard</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
             <pd2>wpn_fps_aug_m_pmag</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11594,7 +11966,7 @@
         <attachment>
             <pd2>wpn_fps_ass_g36_m_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11616,18 +11988,6 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_pl14_m_extended</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Extended Magazine</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>2</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>-1</concealment>
-        </attachment>
-        <attachment>
             <pd2>wpn_fps_pis_g26_m_standard</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_g26_body_frame</name>
@@ -11640,9 +12000,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_sub2000_m_standard</pd2>
+            <pd2>wpn_fps_rpg7_m_rocket</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_sub2000_m_standard</name>
+            <name>ERROR: bm_wp_rpg7_m_rocket</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11712,9 +12072,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_rpg7_m_grinclown</pd2>
+            <pd2>wpn_fps_pis_beretta_m_std</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_rpg7_m_rocket</name>
+            <name>No Modification</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11736,9 +12096,9 @@
             <concealment>-1</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_asval_m_standard</pd2>
+            <pd2>wpn_fps_pis_2006m_m_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_asval_b_pro</name>
+            <name>Pesante Barrel</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11760,28 +12120,28 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_1911_m_extended</pd2>
-            <pd2skills>0</pd2skills>
-            <name>12rnd Mag.</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>6</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>-1</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_pis_p226_m_extended</pd2>
+            <pd2>wpn_fps_smg_m45_m_extended</pd2>
             <pd2skills>0</pd2skills>
             <name>Extended Magazine</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
-            <magsize>8</magsize>
+            <magsize>12</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
-            <concealment>0</concealment>
+            <concealment>-2</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_mp9_m_extended</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Extended Magazine</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>12</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>-2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_upg_ak_m_quad</pd2>
@@ -11820,16 +12180,16 @@
             <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_shot_shorty_m_extended_short</pd2>
+            <pd2>wpn_fps_smg_sterling_m_short</pd2>
             <pd2skills>0</pd2skills>
-            <name>Extended Magazine</name>
+            <name>Short Mag</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
-            <magsize>2</magsize>
+            <magsize>-10</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
-            <concealment>0</concealment>
+            <concealment>2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_ass_g3_m_mag</pd2>
@@ -11928,33 +12288,33 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_upg_m4_m_l5</pd2>
+            <pd2>wpn_fps_smg_p90_m_std</pd2>
             <pd2skills>0</pd2skills>
-            <name>L5 Magazine</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
-            <magsize>4</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>4</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_smg_m45_m_extended</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Extended Magazine</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>12</magsize>
+            <magsize>0</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
-            <concealment>-2</concealment>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_pis_p226_m_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_p226_m_standard</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_ass_tecci_m_drum</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -11976,28 +12336,28 @@
             <concealment>-2</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_mp9_m_extended</pd2>
+            <pd2>wpn_fps_shot_shorty_m_extended_short</pd2>
             <pd2skills>0</pd2skills>
             <name>Extended Magazine</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>2</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_pis_usp_m_big</pd2>
+            <pd2skills>0</pd2skills>
+            <name>I want more Magazine!</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>12</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>0</stability>
+            <stability>8</stability>
             <concealment>-2</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_smg_sterling_m_short</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Short Mag</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>-10</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>2</concealment>
         </attachment>
         <attachment>
             <pd2>wpn_fps_pis_packrat_m_extended</pd2>
@@ -12014,7 +12374,7 @@
         <attachment>
             <pd2>wpn_fps_snp_m95_magazine</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -12060,57 +12420,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_p90_m_std</pd2>
+            <pd2>wpn_fps_smg_sr2_m_quick</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_pis_p226_m_standard</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_p226_m_standard</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_pis_sparrow_m_standard</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_sparrow_m_standard</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_rpg7_m_rocket</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_rpg7_m_rocket</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
-            <pd2>wpn_fps_shot_saiga_m_5rnd</pd2>
-            <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Speed Pull Magazine</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -12132,9 +12444,57 @@
             <concealment>-4</concealment>
         </attachment>
         <attachment>
+            <pd2>wpn_fps_pis_sparrow_m_standard</pd2>
+            <pd2skills>0</pd2skills>
+            <name>ERROR: bm_wp_sparrow_m_standard</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_ass_aug_m_quick</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Speed Pull Magazine</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_shot_saiga_m_5rnd</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Standard Issue Part</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
             <pd2>wpn_fps_smg_uzi_m_standard</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_uzi_m_standard</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_mp9_m_short</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Short Mag.</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -12158,7 +12518,7 @@
         <attachment>
             <pd2>wpn_fps_snp_model70_m_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -12194,7 +12554,7 @@
         <attachment>
             <pd2>wpn_fps_snp_msr_m_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -12228,18 +12588,6 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_smg_mp7_m_short</pd2>
-            <pd2skills>0</pd2skills>
-            <name>ERROR: bm_wp_mp7_m_short</name>
-            <subtype>none</subtype>
-            <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
-            <damage>0</damage>
-            <accuracy>0</accuracy>
-            <stability>0</stability>
-            <concealment>0</concealment>
-        </attachment>
-        <attachment>
             <pd2>wpn_fps_smg_polymer_m_standard</pd2>
             <pd2skills>0</pd2skills>
             <name>ERROR: bm_wp_polymer_m_mag</name>
@@ -12252,9 +12600,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_snp_r93_m_std</pd2>
+            <pd2>wpn_fps_smg_mp7_m_short</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>ERROR: bm_wp_mp7_m_short</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -12270,6 +12618,30 @@
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_snp_r93_m_std</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Standard Issue Part</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>0</magsize>
+            <damage>0</damage>
+            <accuracy>0</accuracy>
+            <stability>0</stability>
+            <concealment>0</concealment>
+        </attachment>
+        <attachment>
+            <pd2>wpn_fps_smg_mac10_m_quick</pd2>
+            <pd2skills>0</pd2skills>
+            <name>Speed Pull Magazine</name>
+            <subtype>none</subtype>
+            <total_ammo>0</total_ammo>
+            <magsize>8</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
@@ -12300,9 +12672,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_ass_s552_m_standard</pd2>
+            <pd2>wpn_fps_pis_g17_m_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Extended Magazine</name>
+            <name></name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -12326,7 +12698,7 @@
         <attachment>
             <pd2>wpn_fps_ass_74_m_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -12360,9 +12732,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_beretta_m_std</pd2>
+            <pd2>wpn_fps_snp_mosin_m_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>No Modification</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -12384,9 +12756,9 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_snp_mosin_m_standard</pd2>
+            <pd2>wpn_fps_ass_g36_m_quick</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Speed Pull Magazine</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -12408,15 +12780,15 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_2006m_m_standard</pd2>
+            <pd2>wpn_fps_upg_m4_m_l5</pd2>
             <pd2skills>0</pd2skills>
-            <name>Pesante Barrel</name>
+            <name>L5 Magazine</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
+            <magsize>4</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
-            <stability>0</stability>
+            <stability>4</stability>
             <concealment>0</concealment>
         </attachment>
         <attachment>
@@ -12456,12 +12828,12 @@
             <concealment>0</concealment>
         </attachment>
         <attachment>
-            <pd2>wpn_fps_pis_ppk_m_standard</pd2>
+            <pd2>wpn_fps_pis_p226_m_extended</pd2>
             <pd2skills>0</pd2skills>
-            <name>Police Shorty Stock</name>
+            <name>Extended Magazine</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
-            <magsize>0</magsize>
+            <magsize>8</magsize>
             <damage>0</damage>
             <accuracy>0</accuracy>
             <stability>0</stability>
@@ -12470,7 +12842,7 @@
         <attachment>
             <pd2>wpn_fps_ass_m14_m_standard</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
@@ -12509,7 +12881,7 @@
         <attachment>
             <pd2>wpn_fps_m4_uupg_fg_rail_ext</pd2>
             <pd2skills>0</pd2skills>
-            <name>Standard Issue Part.</name>
+            <name>Standard Issue Part</name>
             <subtype>none</subtype>
             <total_ammo>0</total_ammo>
             <magsize>0</magsize>
