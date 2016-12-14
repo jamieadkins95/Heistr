@@ -197,6 +197,16 @@
         <item>7</item>
     </string-array>
 
+    <string-array name="armourDetails">
+        <item>Armor: 20\nHealth: 230\nConcealment: 30\nSpeed: 36.8\nDodge: 5\nSteadiness: 11\nStamina: 51.3</item>
+        <item>Armor: 50\nHealth: 230\nConcealment: 26\nSpeed: 35.9\nDodge: -5\nSteadiness: 11.5\nStamina: 50</item>
+        <item>Armor: 60\nHealth: 230\nConcealment: 23\nSpeed: 35\nDodge: -10\nSteadiness: 12\nStamina: 47.5</item>
+        <item>Armor: 70\nHealth: 230\nConcealment: 21\nSpeed: 33.3\nDodge: -15\nSteadiness: 12.9\nStamina: 45</item>
+        <item>Armor: 90\nHealth: 230\nConcealment: 18\nSpeed: 26.3\nDodge: -20\nSteadiness: 13.8\nStamina: 42.5</item>
+        <item>Armor: 110\nHealth: 230\nConcealment: 12\nSpeed: 22.8\nDodge: -25\nSteadiness: 15.7\nStamina: 40</item>
+        <item>Armor: 170\nHealth: 230\nConcealment: 1\nSpeed: 20.1\nDodge: -55\nSteadiness: 22\nStamina: 35</item>
+    </string-array>
+
     <string-array name="perkDecksURL">
         <item>c</item>
         <item>m</item>

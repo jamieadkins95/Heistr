@@ -3,14 +3,17 @@ package com.jamieadkins.heistr.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.jamieadkins.heistr.Activities.EditBuildActivity;
+import com.jamieadkins.heistr.Dialogs.ArmourDialog;
 import com.jamieadkins.heistr.R;
 
 import java.util.ArrayList;
@@ -72,6 +75,21 @@ public class ArmourFragment extends Fragment implements EditBuildActivity.BuildR
                 int selected = lvArmour.getCheckedItemPosition();
                 activity.getCurrentBuild().updateArmour(activity, selected);
 
+            }
+        });
+
+        lvArmour.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                int selected = (int) id;
+                ArmourDialog dialog = ArmourDialog.newInstance(selected);
+                try {
+                    FragmentActivity activity = getActivity();
+                    dialog.show(activity.getSupportFragmentManager(), "armour");
+                } catch (Exception e) {
+                    Toast.makeText(activity, "Cannot show armour details :(", Toast.LENGTH_SHORT).show();
+                }
+                return true;
             }
         });
 
