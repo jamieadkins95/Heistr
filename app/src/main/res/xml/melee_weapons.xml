@@ -63,6 +63,16 @@
     </weapon>
 
     <weapon>
+        <pd2>road</pd2>
+        <name>Chain Whip</name>
+        <damage>30 (200)</damage>
+        <knockdown>30 (200)</knockdown>
+        <charge>4</charge>
+        <range>185</range>
+        <concealment>29</concealment>
+    </weapon>
+
+    <weapon>
         <pd2>gator</pd2>
         <name>Machete</name>
         <damage>30 (80)</damage>
@@ -75,8 +85,8 @@
     <weapon>
         <pd2>pitchfork</pd2>
         <name>Pitchfork</name>
-        <damage>70 (450)</damage>
-        <knockdown>70 (450)</knockdown>
+        <damage>30 (200)</damage>
+        <knockdown>30 (200)</knockdown>
         <charge>4</charge>
         <range>225</range>
         <concealment>27</concealment>
@@ -113,10 +123,20 @@
     </weapon>
 
     <weapon>
+        <pd2>cs</pd2>
+        <name>Lumber Lite L2</name>
+        <damage>30 (200)</damage>
+        <knockdown>30 (200)</knockdown>
+        <charge>4</charge>
+        <range>185</range>
+        <concealment>25</concealment>
+    </weapon>
+
+    <weapon>
         <pd2>beardy</pd2>
         <name>Bearded Axe</name>
-        <damage>70 (450)</damage>
-        <knockdown>70 (450)</knockdown>
+        <damage>30 (200)</damage>
+        <knockdown>30 (200)</knockdown>
         <charge>4</charge>
         <range>250</range>
         <concealment>26</concealment>
@@ -255,8 +275,8 @@
     <weapon>
         <pd2>nin</pd2>
         <name>Pounder</name>
-        <damage>70 (450)</damage>
-        <knockdown>70 (450)</knockdown>
+        <damage>30 (200)</damage>
+        <knockdown>30 (200)</knockdown>
         <charge>4</charge>
         <range>185</range>
         <concealment>27</concealment>
@@ -353,6 +373,26 @@
     </weapon>
 
     <weapon>
+        <pd2>catch</pd2>
+        <name>Hook</name>
+        <damage>30 (80)</damage>
+        <knockdown>30 (80)</knockdown>
+        <charge>2</charge>
+        <range>200</range>
+        <concealment>28</concealment>
+    </weapon>
+
+    <weapon>
+        <pd2>ostry</pd2>
+        <name>Kazaguruma</name>
+        <damage>30 (80)</damage>
+        <knockdown>30 (80)</knockdown>
+        <charge>2</charge>
+        <range>200</range>
+        <concealment>28</concealment>
+    </weapon>
+
+    <weapon>
         <pd2>kabar</pd2>
         <name>URSA Knife</name>
         <damage>30 (80)</damage>
@@ -383,6 +423,26 @@
     </weapon>
 
     <weapon>
+        <pd2>brick</pd2>
+        <name>Hotline 8000x</name>
+        <damage>30 (80)</damage>
+        <knockdown>30 (80)</knockdown>
+        <charge>2</charge>
+        <range>185</range>
+        <concealment>30</concealment>
+    </weapon>
+
+    <weapon>
+        <pd2>zeus</pd2>
+        <name>Electrical Brass Knuckles</name>
+        <damage>20 (20)</damage>
+        <knockdown>20 (20)</knockdown>
+        <charge>2</charge>
+        <range>200</range>
+        <concealment>30</concealment>
+    </weapon>
+
+    <weapon>
         <pd2>cutters</pd2>
         <name>Bolt Cutters</name>
         <damage>30 (90)</damage>
@@ -399,7 +459,7 @@
         <knockdown>30 (80)</knockdown>
         <charge>2</charge>
         <range>185</range>
-        <concealment>29</concealment>
+        <concealment>30</concealment>
     </weapon>
 
     <weapon>
@@ -435,8 +495,8 @@
     <weapon>
         <pd2>freedom</pd2>
         <name>The Spear of Freedom</name>
-        <damage>70 (450)</damage>
-        <knockdown>70 (450)</knockdown>
+        <damage>30 (200)</damage>
+        <knockdown>30 (200)</knockdown>
         <charge>3</charge>
         <range>275</range>
         <concealment>27</concealment>
@@ -475,8 +535,8 @@
     <weapon>
         <pd2>fireaxe</pd2>
         <name>Fire Axe</name>
-        <damage>70 (450)</damage>
-        <knockdown>70 (450)</knockdown>
+        <damage>30 (200)</damage>
+        <knockdown>30 (200)</knockdown>
         <charge>4</charge>
         <range>275</range>
         <concealment>27</concealment>
@@ -555,8 +615,8 @@
     <weapon>
         <pd2>great</pd2>
         <name>Great Sword</name>
-        <damage>70 (450)</damage>
-        <knockdown>70 (450)</knockdown>
+        <damage>30 (200)</damage>
+        <knockdown>30 (200)</knockdown>
         <charge>4</charge>
         <range>275</range>
         <concealment>27</concealment>
@@ -575,8 +635,8 @@
     <weapon>
         <pd2>sandsteel</pd2>
         <name>Shinsakuto Katana</name>
-        <damage>70 (450)</damage>
-        <knockdown>70 (450)</knockdown>
+        <damage>30 (200)</damage>
+        <knockdown>30 (200)</knockdown>
         <charge>4</charge>
         <range>275</range>
         <concealment>27</concealment>
@@ -635,8 +695,8 @@
     <weapon>
         <pd2>iceaxe</pd2>
         <name>Ice Pick</name>
-        <damage>70 (450)</damage>
-        <knockdown>70 (450)</knockdown>
+        <damage>30 (200)</damage>
+        <knockdown>30 (200)</knockdown>
         <charge>4</charge>
         <range>250</range>
         <concealment>30</concealment>
@@ -695,8 +755,8 @@
     <weapon>
         <pd2>mining_pick</pd2>
         <name>Gold Fever</name>
-        <damage>70 (450)</damage>
-        <knockdown>70 (450)</knockdown>
+        <damage>30 (200)</damage>
+        <knockdown>30 (200)</knockdown>
         <charge>4</charge>
         <range>225</range>
         <concealment>27</concealment>
@@ -739,16 +799,6 @@
         <knockdown>30 (80)</knockdown>
         <charge>2</charge>
         <range>185</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>zeus</pd2>
-        <name>Electrical Brass Knuckles</name>
-        <damage>20 (20)</damage>
-        <knockdown>20 (20)</knockdown>
-        <charge>2</charge>
-        <range>200</range>
         <concealment>30</concealment>
     </weapon>
 </melee>

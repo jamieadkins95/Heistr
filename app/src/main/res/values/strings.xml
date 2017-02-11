@@ -167,6 +167,7 @@
         <item>Maniac</item>
         <item>Anarchist</item>
         <item>Biker</item>
+        <item>Kingpin</item>
     </string-array>
 
     <string-array name="armour">
@@ -224,6 +225,7 @@
         <item>d</item>
         <item>h</item>
         <item>k</item>
+        <item>p</item>
     </string-array>
 
     <string-array name="perkDeckDescs" formatted="false">
@@ -254,6 +256,7 @@
         <item>Every time you or your crew performs a kill you will gain 5 health and 5 armor. This cannot occur more than 10 times every 25 seconds.
             \n\nCooldown is reduced by 1 second and armor regen increases by 1 for every 10% of health missing.
             \n\nCooldown is reduced by 1 second and health regen increases by 1 for every 10% armor missing.</item>
+        <item>+35% armour\n\nUnlocks and replaces your throwable with the adrenaline injector. When the adrenaline is used, you will be healed instantly for 75% of the damage you take during the next 6 seconds. After the injector is used, it takes 30 seconds to recharge before you can use the adrenaline again. But each kill you perform will speed up the recharge by 1 second.</item>
     </string-array>
 
     <string name="hello_world">Hello world!</string>
