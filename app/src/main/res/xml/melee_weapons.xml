@@ -3,802 +3,824 @@
     <group_name>melee</group_name>
     <weapon_type>melee</weapon_type>
     <weapon>
-        <pd2>tenderizer</pd2>
-        <name>Tenderizer</name>
-        <damage>20 (40)</damage>
-        <knockdown>200 (400)</knockdown>
-        <charge>3</charge>
-        <range>185</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>buck</pd2>
-        <name>Buckler Shield</name>
-        <damage>30 (55)</damage>
-        <knockdown>90 (110)</knockdown>
-        <charge>2</charge>
-        <range>175</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>fairbair</pd2>
-        <name>Trench Knife</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>175</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>stick</pd2>
-        <name>Shepherd's Cane</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>3</charge>
-        <range>225</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>bowie</pd2>
-        <name>Arkansas Toothpick</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>225</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>bayonet</pd2>
-        <name>Bayonet Knife</name>
-        <damage>20 (80)</damage>
-        <knockdown>20 (35.599998474121)</knockdown>
-        <charge>1.5</charge>
-        <range>185</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>road</pd2>
-        <name>Chain Whip</name>
-        <damage>30 (200)</damage>
-        <knockdown>30 (200)</knockdown>
-        <charge>4</charge>
-        <range>185</range>
-        <concealment>29</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>gator</pd2>
-        <name>Machete</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>225</range>
-        <concealment>29</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>pitchfork</pd2>
-        <name>Pitchfork</name>
-        <damage>30 (200)</damage>
-        <knockdown>30 (200)</knockdown>
-        <charge>4</charge>
-        <range>225</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>kampfmesser</pd2>
-        <name>Krieger Blade</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>185</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>ballistic</pd2>
-        <name>Specialist Knives</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>200</range>
-        <concealment>29</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>oldbaton</pd2>
-        <name>Classic Baton</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>3</charge>
-        <range>250</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>cs</pd2>
-        <name>Lumber Lite L2</name>
-        <damage>30 (200)</damage>
-        <knockdown>30 (200)</knockdown>
-        <charge>4</charge>
-        <range>185</range>
-        <concealment>25</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>beardy</pd2>
-        <name>Bearded Axe</name>
-        <damage>30 (200)</damage>
-        <knockdown>30 (200)</knockdown>
-        <charge>4</charge>
-        <range>250</range>
-        <concealment>26</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>rambo</pd2>
-        <name>Trautman Knife</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>200</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>fork</pd2>
-        <name>The Motherforker</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>185</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>baton</pd2>
-        <name>Telescopic Baton</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>3</charge>
-        <range>250</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>hockey</pd2>
-        <name>Hockey Stick</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>3</charge>
-        <range>250</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>detector</pd2>
-        <name>Metal Detector</name>
-        <damage>30 (55)</damage>
-        <knockdown>90 (110)</knockdown>
-        <charge>2</charge>
-        <range>225</range>
-        <concealment>29</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>pugio</pd2>
-        <name>Diving Knife</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>175</range>
-        <concealment>29</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>switchblade</pd2>
-        <name>Switchblade</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>175</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>model24</pd2>
-        <name>Potato Masher</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>3</charge>
-        <range>185</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>selfie</pd2>
-        <name>Selfie-Stick</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>3</charge>
-        <range>250</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>fists</pd2>
-        <name>Fists</name>
-        <damage>30 (55)</damage>
-        <knockdown>90 (110)</knockdown>
-        <charge>1</charge>
-        <range>150</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>swagger</pd2>
-        <name>Swagger Stick</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>3</charge>
-        <range>225</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>tomahawk</pd2>
-        <name>Survival Tomahawk</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>225</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>scoutknife</pd2>
-        <name>Scout Knife</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>150</range>
-        <concealment>29</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>nin</pd2>
-        <name>Pounder</name>
-        <damage>30 (200)</damage>
-        <knockdown>30 (200)</knockdown>
-        <charge>4</charge>
-        <range>185</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>kabartanto</pd2>
-        <name>Ursa Tanto Knife</name>
-        <damage>20 (80)</damage>
-        <knockdown>20 (80)</knockdown>
-        <charge>2</charge>
-        <range>185</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>weapon</pd2>
-        <name>Weapon Butt</name>
-        <damage>30 (30)</damage>
-        <knockdown>30 (30)</knockdown>
-        <charge>0</charge>
-        <range>150</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>croupier_rake</pd2>
-        <name>Croupier's Rake</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>3</charge>
-        <range>250</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>gerber</pd2>
-        <name>Berger Combat Knife</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>160</range>
-        <concealment>29</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>cleaver</pd2>
-        <name>Cleaver Knife</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>185</range>
-        <concealment>29</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>machete</pd2>
-        <name>Machete Knife</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>225</range>
-        <concealment>29</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>alien_maul</pd2>
-        <name>Alpha Mauler</name>
-        <damage>20 (40)</damage>
-        <knockdown>200 (400)</knockdown>
-        <charge>3</charge>
-        <range>275</range>
-        <concealment>26</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>micstand</pd2>
-        <name>Microphone Stand</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>3</charge>
-        <range>250</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>becker</pd2>
-        <name>Utility Machete</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>200</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>catch</pd2>
-        <name>Hook</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>200</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>ostry</pd2>
-        <name>Kazaguruma</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>200</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>kabar</pd2>
-        <name>URSA Knife</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>185</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>hammer</pd2>
-        <name>Carpenter's Delight</name>
-        <damage>20 (40)</damage>
-        <knockdown>200 (400)</knockdown>
-        <charge>3</charge>
-        <range>185</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>whiskey</pd2>
-        <name>Rivertown Glen Bottle</name>
-        <damage>30 (55)</damage>
-        <knockdown>90 (110)</knockdown>
-        <charge>2</charge>
-        <range>185</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>brick</pd2>
-        <name>Hotline 8000x</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>185</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>zeus</pd2>
-        <name>Electrical Brass Knuckles</name>
-        <damage>20 (20)</damage>
-        <knockdown>20 (20)</knockdown>
-        <charge>2</charge>
-        <range>200</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>cutters</pd2>
-        <name>Bolt Cutters</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>3</charge>
-        <range>275</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>wing</pd2>
-        <name>Wing Butterfly Knife</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>185</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>barbedwire</pd2>
-        <name>Lucille Baseball Bat</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>3</charge>
-        <range>275</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>shawn</pd2>
-        <name>Shawn's Shears</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>150</range>
-        <concealment>29</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>tiger</pd2>
-        <name>Talons</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>150</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>freedom</pd2>
-        <name>The Spear of Freedom</name>
-        <damage>30 (200)</damage>
-        <knockdown>30 (200)</knockdown>
-        <charge>3</charge>
-        <range>275</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>boxing_gloves</pd2>
-        <name>OVERKILL Boxing Gloves</name>
-        <damage>30 (55)</damage>
-        <knockdown>90 (110)</knockdown>
-        <charge>2</charge>
-        <range>150</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>boxcutter</pd2>
-        <name>Utility Knife</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>185</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>dingdong</pd2>
-        <name>Ding Dong Breaching Tool</name>
-        <damage>20 (40)</damage>
-        <knockdown>200 (400)</knockdown>
-        <charge>3</charge>
-        <range>275</range>
-        <concealment>26</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>fireaxe</pd2>
-        <name>Fire Axe</name>
-        <damage>30 (200)</damage>
-        <knockdown>30 (200)</knockdown>
-        <charge>4</charge>
-        <range>275</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>moneybundle</pd2>
-        <name>Money Bundle</name>
-        <damage>30 (55)</damage>
-        <knockdown>90 (110)</knockdown>
-        <charge>2</charge>
-        <range>150</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>morning</pd2>
-        <name>Morning Star</name>
-        <damage>20 (40)</damage>
-        <knockdown>200 (400)</knockdown>
-        <charge>3</charge>
-        <range>225</range>
-        <concealment>26</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>toothbrush</pd2>
-        <name>Nova's Shank</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>150</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>shillelagh</pd2>
-        <name>Clover's Shillelagh</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>3</charge>
-        <range>185</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>meat_cleaver</pd2>
-        <name>Dragan's Cleaver Knife</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>195</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>branding_iron</pd2>
-        <name>You're Mine</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>3</charge>
-        <range>225</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>poker</pd2>
-        <name>Poker</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>3</charge>
-        <range>185</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>great</pd2>
-        <name>Great Sword</name>
-        <damage>30 (200)</damage>
-        <knockdown>30 (200)</knockdown>
-        <charge>4</charge>
-        <range>275</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>brass_knuckles</pd2>
-        <name>350K Brass Knuckles</name>
-        <damage>30 (55)</damage>
-        <knockdown>90 (110)</knockdown>
-        <charge>2</charge>
-        <range>150</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>sandsteel</pd2>
-        <name>Shinsakuto Katana</name>
-        <damage>30 (200)</damage>
-        <knockdown>30 (200)</knockdown>
-        <charge>4</charge>
-        <range>275</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>twins</pd2>
-        <name>Okinawan Style Sai</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>200</range>
-        <concealment>29</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>baseballbat</pd2>
-        <name>Baseball Bat</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>3</charge>
-        <range>250</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>taser</pd2>
-        <name>Buzzer</name>
-        <damage>20 (20)</damage>
-        <knockdown>20 (20)</knockdown>
-        <charge>3.5</charge>
-        <range>200</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>shovel</pd2>
-        <name>K.L.A.S. Shovel</name>
-        <damage>20 (40)</damage>
-        <knockdown>200 (400)</knockdown>
-        <charge>3</charge>
-        <range>250</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>bullseye</pd2>
-        <name>Compact Hatchet</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>185</range>
-        <concealment>29</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>iceaxe</pd2>
-        <name>Ice Pick</name>
-        <damage>30 (200)</damage>
-        <knockdown>30 (200)</knockdown>
-        <charge>4</charge>
-        <range>250</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>fight</pd2>
-        <name>Empty Palm Kata</name>
-        <damage>30 (55)</damage>
-        <knockdown>90 (110)</knockdown>
-        <charge>2</charge>
-        <range>150</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>slot_lever</pd2>
-        <name>Jackpot</name>
-        <damage>30 (90)</damage>
-        <knockdown>150 (270)</knockdown>
-        <charge>2</charge>
-        <range>225</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>microphone</pd2>
-        <name>Microphone</name>
-        <damage>30 (55)</damage>
-        <knockdown>90 (110)</knockdown>
-        <charge>2</charge>
-        <range>150</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>scalper</pd2>
-        <name>Scalper Tomahawk</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>200</range>
-        <concealment>28</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>cqc</pd2>
-        <name>Kunai Knife</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>150</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>mining_pick</pd2>
-        <name>Gold Fever</name>
-        <damage>30 (200)</damage>
-        <knockdown>30 (200)</knockdown>
-        <charge>4</charge>
-        <range>225</range>
-        <concealment>27</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>briefcase</pd2>
-        <name>50 Blessings Briefcase</name>
-        <damage>30 (55)</damage>
-        <knockdown>90 (110)</knockdown>
-        <charge>2</charge>
-        <range>185</range>
-        <concealment>30</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>spatula</pd2>
-        <name>Spatula</name>
-        <damage>30 (55)</damage>
-        <knockdown>90 (110)</knockdown>
-        <charge>2</charge>
-        <range>185</range>
-        <concealment>29</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>chef</pd2>
-        <name>Psycho Knife</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>150</range>
-        <concealment>29</concealment>
-    </weapon>
-
-    <weapon>
-        <pd2>x46</pd2>
-        <name>X-46 Knife</name>
-        <damage>30 (80)</damage>
-        <knockdown>30 (80)</knockdown>
-        <charge>2</charge>
-        <range>185</range>
-        <concealment>30</concealment>
-    </weapon>
+		<pd2>tenderizer</pd2>
+		<name>Tenderizer</name>
+		<damage>20 (40)</damage>
+		<knockdown>200 (400)</knockdown>
+		<charge>3</charge>
+		<range>185</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>buck</pd2>
+		<name>Buckler Shield</name>
+		<damage>30 (55)</damage>
+		<knockdown>90 (110)</knockdown>
+		<charge>2</charge>
+		<range>175</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>fairbair</pd2>
+		<name>Trench Knife</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>175</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>stick</pd2>
+		<name>Shepherd's Cane</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>3</charge>
+		<range>225</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>bowie</pd2>
+		<name>Arkansas Toothpick</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>225</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>bayonet</pd2>
+		<name>Bayonet Knife</name>
+		<damage>20 (80)</damage>
+		<knockdown>20 (35.599998474121)</knockdown>
+		<charge>1.5</charge>
+		<range>185</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>road</pd2>
+		<name>Chain Whip</name>
+		<damage>70 (450)</damage>
+		<knockdown>70 (450)</knockdown>
+		<charge>4</charge>
+		<range>185</range>
+		<concealment>29</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>gator</pd2>
+		<name>Machete</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>225</range>
+		<concealment>29</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>pitchfork</pd2>
+		<name>Pitchfork</name>
+		<damage>70 (450)</damage>
+		<knockdown>70 (450)</knockdown>
+		<charge>4</charge>
+		<range>225</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>kampfmesser</pd2>
+		<name>Krieger Blade</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>185</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>ballistic</pd2>
+		<name>Specialist Knives</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>200</range>
+		<concealment>29</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>oldbaton</pd2>
+		<name>Classic Baton</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>3</charge>
+		<range>250</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>cs</pd2>
+		<name>Lumber Lite L2</name>
+		<damage>70 (450)</damage>
+		<knockdown>70 (450)</knockdown>
+		<charge>4</charge>
+		<range>185</range>
+		<concealment>25</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>beardy</pd2>
+		<name>Bearded Axe</name>
+		<damage>70 (450)</damage>
+		<knockdown>70 (450)</knockdown>
+		<charge>4</charge>
+		<range>250</range>
+		<concealment>26</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>rambo</pd2>
+		<name>Trautman Knife</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>200</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>fork</pd2>
+		<name>The Motherforker</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>185</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>baton</pd2>
+		<name>Telescopic Baton</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>3</charge>
+		<range>250</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>hockey</pd2>
+		<name>Hockey Stick</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>3</charge>
+		<range>250</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>detector</pd2>
+		<name>Metal Detector</name>
+		<damage>30 (55)</damage>
+		<knockdown>90 (110)</knockdown>
+		<charge>2</charge>
+		<range>225</range>
+		<concealment>29</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>pugio</pd2>
+		<name>Diving Knife</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>175</range>
+		<concealment>29</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>switchblade</pd2>
+		<name>Switchblade</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>175</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>model24</pd2>
+		<name>Potato Masher</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>3</charge>
+		<range>185</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>selfie</pd2>
+		<name>Selfie-Stick</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>3</charge>
+		<range>250</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>fists</pd2>
+		<name>Fists</name>
+		<damage>30 (55)</damage>
+		<knockdown>90 (110)</knockdown>
+		<charge>1</charge>
+		<range>150</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>swagger</pd2>
+		<name>Swagger Stick</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>3</charge>
+		<range>225</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>tomahawk</pd2>
+		<name>Survival Tomahawk</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>225</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>scoutknife</pd2>
+		<name>Scout Knife</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>150</range>
+		<concealment>29</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>nin</pd2>
+		<name>Pounder</name>
+		<damage>70 (450)</damage>
+		<knockdown>70 (450)</knockdown>
+		<charge>4</charge>
+		<range>185</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>kabartanto</pd2>
+		<name>Ursa Tanto Knife</name>
+		<damage>20 (80)</damage>
+		<knockdown>20 (80)</knockdown>
+		<charge>2</charge>
+		<range>185</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>weapon</pd2>
+		<name>Weapon Butt</name>
+		<damage>30 (30)</damage>
+		<knockdown>30 (30)</knockdown>
+		<charge>0</charge>
+		<range>150</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>croupier_rake</pd2>
+		<name>Croupier's Rake</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>3</charge>
+		<range>250</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>gerber</pd2>
+		<name>Berger Combat Knife</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>160</range>
+		<concealment>29</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>cleaver</pd2>
+		<name>Cleaver Knife</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>185</range>
+		<concealment>29</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>sword</pd2>
+		<name>The Pen</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>150</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>machete</pd2>
+		<name>Machete Knife</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>225</range>
+		<concealment>29</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>alien_maul</pd2>
+		<name>Alpha Mauler</name>
+		<damage>20 (40)</damage>
+		<knockdown>200 (400)</knockdown>
+		<charge>3</charge>
+		<range>275</range>
+		<concealment>26</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>oxide</pd2>
+		<name>Rezkoye</name>
+		<damage>70 (450)</damage>
+		<knockdown>70 (450)</knockdown>
+		<charge>4</charge>
+		<range>225</range>
+		<concealment>29</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>micstand</pd2>
+		<name>Microphone Stand</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>3</charge>
+		<range>250</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>becker</pd2>
+		<name>Utility Machete</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>200</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>catch</pd2>
+		<name>Hook</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>200</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>ostry</pd2>
+		<name>Kazaguruma</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>200</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>kabar</pd2>
+		<name>URSA Knife</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>185</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>hammer</pd2>
+		<name>Carpenter's Delight</name>
+		<damage>20 (40)</damage>
+		<knockdown>200 (400)</knockdown>
+		<charge>3</charge>
+		<range>185</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>whiskey</pd2>
+		<name>Rivertown Glen Bottle</name>
+		<damage>30 (55)</damage>
+		<knockdown>90 (110)</knockdown>
+		<charge>2</charge>
+		<range>185</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>brick</pd2>
+		<name>Hotline 8000x</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>185</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>zeus</pd2>
+		<name>Electrical Brass Knuckles</name>
+		<damage>20 (20)</damage>
+		<knockdown>20 (20)</knockdown>
+		<charge>2</charge>
+		<range>200</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>cutters</pd2>
+		<name>Bolt Cutters</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>3</charge>
+		<range>275</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>wing</pd2>
+		<name>Wing Butterfly Knife</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>185</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>barbedwire</pd2>
+		<name>Lucille Baseball Bat</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>3</charge>
+		<range>275</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>shawn</pd2>
+		<name>Shawn's Shears</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>150</range>
+		<concealment>29</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>tiger</pd2>
+		<name>Talons</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>150</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>freedom</pd2>
+		<name>The Spear of Freedom</name>
+		<damage>70 (450)</damage>
+		<knockdown>70 (450)</knockdown>
+		<charge>3</charge>
+		<range>275</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>boxing_gloves</pd2>
+		<name>OVERKILL Boxing Gloves</name>
+		<damage>30 (55)</damage>
+		<knockdown>90 (110)</knockdown>
+		<charge>2</charge>
+		<range>150</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>boxcutter</pd2>
+		<name>Utility Knife</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>185</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>dingdong</pd2>
+		<name>Ding Dong Breaching Tool</name>
+		<damage>20 (40)</damage>
+		<knockdown>200 (400)</knockdown>
+		<charge>3</charge>
+		<range>275</range>
+		<concealment>26</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>fireaxe</pd2>
+		<name>Fire Axe</name>
+		<damage>70 (450)</damage>
+		<knockdown>70 (450)</knockdown>
+		<charge>4</charge>
+		<range>275</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>moneybundle</pd2>
+		<name>Money Bundle</name>
+		<damage>30 (55)</damage>
+		<knockdown>90 (110)</knockdown>
+		<charge>2</charge>
+		<range>150</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>morning</pd2>
+		<name>Morning Star</name>
+		<damage>20 (40)</damage>
+		<knockdown>200 (400)</knockdown>
+		<charge>3</charge>
+		<range>225</range>
+		<concealment>26</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>toothbrush</pd2>
+		<name>Nova's Shank</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>150</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>shillelagh</pd2>
+		<name>Clover's Shillelagh</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>3</charge>
+		<range>185</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>meat_cleaver</pd2>
+		<name>Dragan's Cleaver Knife</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>195</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>branding_iron</pd2>
+		<name>You're Mine</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>3</charge>
+		<range>225</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>poker</pd2>
+		<name>Poker</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>3</charge>
+		<range>185</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>great</pd2>
+		<name>Great Sword</name>
+		<damage>70 (450)</damage>
+		<knockdown>70 (450)</knockdown>
+		<charge>4</charge>
+		<range>275</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>brass_knuckles</pd2>
+		<name>350K Brass Knuckles</name>
+		<damage>30 (55)</damage>
+		<knockdown>90 (110)</knockdown>
+		<charge>2</charge>
+		<range>150</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>sandsteel</pd2>
+		<name>Shinsakuto Katana</name>
+		<damage>70 (450)</damage>
+		<knockdown>70 (450)</knockdown>
+		<charge>4</charge>
+		<range>275</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>twins</pd2>
+		<name>Okinawan Style Sai</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>200</range>
+		<concealment>29</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>baseballbat</pd2>
+		<name>Baseball Bat</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>3</charge>
+		<range>250</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>taser</pd2>
+		<name>Buzzer</name>
+		<damage>20 (20)</damage>
+		<knockdown>20 (20)</knockdown>
+		<charge>3.5</charge>
+		<range>200</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>shovel</pd2>
+		<name>K.L.A.S. Shovel</name>
+		<damage>20 (40)</damage>
+		<knockdown>200 (400)</knockdown>
+		<charge>3</charge>
+		<range>250</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>bullseye</pd2>
+		<name>Compact Hatchet</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>185</range>
+		<concealment>29</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>iceaxe</pd2>
+		<name>Ice Pick</name>
+		<damage>70 (450)</damage>
+		<knockdown>70 (450)</knockdown>
+		<charge>4</charge>
+		<range>250</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>fight</pd2>
+		<name>Empty Palm Kata</name>
+		<damage>30 (55)</damage>
+		<knockdown>90 (110)</knockdown>
+		<charge>2</charge>
+		<range>150</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>slot_lever</pd2>
+		<name>Jackpot</name>
+		<damage>30 (90)</damage>
+		<knockdown>150 (270)</knockdown>
+		<charge>2</charge>
+		<range>225</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>microphone</pd2>
+		<name>Microphone</name>
+		<damage>30 (55)</damage>
+		<knockdown>90 (110)</knockdown>
+		<charge>2</charge>
+		<range>150</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>scalper</pd2>
+		<name>Scalper Tomahawk</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>200</range>
+		<concealment>28</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>cqc</pd2>
+		<name>Kunai Knife</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>150</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>mining_pick</pd2>
+		<name>Gold Fever</name>
+		<damage>70 (450)</damage>
+		<knockdown>70 (450)</knockdown>
+		<charge>4</charge>
+		<range>225</range>
+		<concealment>27</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>briefcase</pd2>
+		<name>50 Blessings Briefcase</name>
+		<damage>30 (55)</damage>
+		<knockdown>90 (110)</knockdown>
+		<charge>2</charge>
+		<range>185</range>
+		<concealment>30</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>spatula</pd2>
+		<name>Spatula</name>
+		<damage>30 (55)</damage>
+		<knockdown>90 (110)</knockdown>
+		<charge>2</charge>
+		<range>185</range>
+		<concealment>29</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>chef</pd2>
+		<name>Psycho Knife</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>150</range>
+		<concealment>29</concealment>
+	</weapon>
+
+	<weapon>
+		<pd2>x46</pd2>
+		<name>X-46 Knife</name>
+		<damage>30 (80)</damage>
+		<knockdown>30 (80)</knockdown>
+		<charge>2</charge>
+		<range>185</range>
+		<concealment>30</concealment>
+	</weapon>
+
+
 </melee>

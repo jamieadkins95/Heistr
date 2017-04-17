@@ -3,6 +3,21 @@
     <weapon_group>
         <group_name>assault</group_name>
         <weapon_type>primary</weapon_type>
+		<weapon>
+			<pd2>wpn_fps_ass_flint</pd2>
+			<pd2skills>0</pd2skills>
+			<firemode>auto</firemode>
+			<name>AK17 Rifle</name>
+			<rof>0</rof>
+			<total>105</total>
+			<mag>35</mag>
+			<damage>80</damage>
+			<accuracy>60</accuracy>
+			<stability>60</stability>
+			<concealment>16</concealment>
+			<threat>0</threat>
+			<attachments>wpn_fps_ass_flint_s_standard,wpn_fps_upg_m4_s_ubr,wpn_fps_upg_m4_s_crane,wpn_fps_upg_m4_s_mk46,wpn_fps_upg_m4_s_standard_vanilla,wpn_fps_upg_m4_s_pts,wpn_fps_snp_tti_s_vltor,wpn_fps_ass_flint_fg_standard,wpn_fps_ass_flint_m_standard,wpn_fps_upg_ak_m_quad,wpn_fps_upg_ak_m_uspalm,wpn_fps_upg_ak_m_quick,wpn_fps_ass_flint_dh_standard,wpn_fps_ass_flint_g_standard,wpn_fps_upg_ak_g_hgrip,wpn_fps_upg_ak_g_pgrip,wpn_fps_upg_ak_g_wgrip,wpn_fps_upg_ak_g_rk3,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_utg,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_o_45rds,wpn_fps_upg_o_xpsg33_magnifier,wpn_fps_upg_o_45rds_v2,wpn_fps_ass_flint_b_standard,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_ass_flint_body_upperreceiver,wpn_fps_ass_flint_o_standard,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_upg_o_spot,wpn_fps_ass_flint_ns_standard,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ass_ns_battle,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ns_ass_pbs1,wpn_fps_upg_ak_ns_ak105,wpn_fps_ass_flint_m_release_standard,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
+		</weapon>
         <weapon>
             <pd2>wpn_fps_ass_contraband</pd2>
             <pd2skills>0</pd2skills>
@@ -684,6 +699,21 @@
     <weapon_group>
         <group_name>sniper</group_name>
         <weapon_type>primary</weapon_type>
+		<weapon>
+			<pd2>wpn_fps_snp_siltstone</pd2>
+			<pd2skills>0</pd2skills>
+			<firemode>single</firemode>
+			<name>Grom Sniper Rifle</name>
+			<rof>0</rof>
+			<total>30</total>
+			<mag>10</mag>
+			<damage>150</damage>
+			<accuracy>72</accuracy>
+			<stability>4</stability>
+			<concealment>16</concealment>
+			<threat>0</threat>
+			<attachments>wpn_fps_snp_siltstone_s_polymer,wpn_fps_snp_siltstone_s_wood,wpn_fps_snp_siltstone_dh_standard,wpn_fps_snp_siltstone_m_standard,wpn_fps_upg_o_45iron,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_fl_ass_utg,wpn_fps_upg_o_45rds,wpn_fps_upg_o_xpsg33_magnifier,wpn_fps_upg_o_45rds_v2,wpn_fps_snp_siltstone_b_standard,wpn_fps_snp_siltstone_b_silenced,wpn_fps_snp_siltstone_ns_variation_b,wpn_fps_snp_siltstone_body_receiver,wpn_fps_snp_siltstone_fg_polymer,wpn_fps_snp_siltstone_fg_wood,wpn_fps_snp_siltstone_iron_sight,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_shortdot,wpn_fps_upg_o_leupold,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_upg_o_spot,wpn_fps_upg_o_box,wpn_fps_snp_siltstone_ejector,wpn_fps_snp_siltstone_o_scopemount,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_total_ammo_p1,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
+		</weapon>
         <weapon>
             <pd2>wpn_fps_snp_tti</pd2>
             <pd2skills>0</pd2skills>

@@ -3,6 +3,21 @@
     <weapon_group>
         <group_name>pistol</group_name>
         <weapon_type>secondary</weapon_type>
+		<weapon>
+			<pd2>wpn_fps_pis_lemming</pd2>
+			<pd2skills>0</pd2skills>
+			<firemode>single</firemode>
+			<name>5/7 AP Pistol</name>
+			<rof>0</rof>
+			<total>45</total>
+			<mag>15</mag>
+			<damage>120</damage>
+			<accuracy>64</accuracy>
+			<stability>44</stability>
+			<concealment>29</concealment>
+			<threat>0</threat>
+			<attachments>wpn_fps_pis_lemming_mag_release,wpn_fps_pis_lemming_sl_standard,wpn_fps_upg_fl_pis_laser,wpn_fps_upg_fl_pis_tlr1,wpn_fps_upg_fl_pis_crimson,wpn_fps_upg_fl_pis_x400v,wpn_fps_upg_fl_pis_m3x,wpn_fps_pis_lemming_b_standard,wpn_fps_pis_lemming_b_nitride,wpn_fps_pis_lemming_body,wpn_fps_pis_lemming_m_standard,wpn_fps_pis_lemming_m_ext,wpn_fps_upg_ns_pis_large,wpn_fps_upg_ns_pis_medium,wpn_fps_upg_ns_pis_small,wpn_fps_upg_ns_pis_large_kac,wpn_fps_upg_ns_pis_medium_gem,wpn_fps_upg_ns_pis_medium_slim,wpn_fps_upg_pis_ns_flash,wpn_fps_upg_ns_pis_meatgrinder,wpn_fps_upg_ns_pis_ipsccomp,wpn_fps_upg_ns_ass_filter,wpn_fps_upg_ns_pis_jungle,wpn_fps_upg_o_rmr,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
+		</weapon>
         <weapon>
             <pd2>wpn_fps_pis_packrat</pd2>
             <pd2skills>0</pd2skills>
@@ -376,6 +391,21 @@
     <weapon_group>
         <group_name>smg</group_name>
         <weapon_type>secondary</weapon_type>
+		<weapon>
+			<pd2>wpn_fps_smg_coal</pd2>
+			<pd2skills>0</pd2skills>
+			<firemode>auto</firemode>
+			<name>Tatonka Submachine Gun</name>
+			<rof>0</rof>
+			<total>128</total>
+			<mag>64</mag>
+			<damage>80</damage>
+			<accuracy>52</accuracy>
+			<stability>52</stability>
+			<concealment>24</concealment>
+			<threat>0</threat>
+			<attachments>wpn_fps_smg_coal_s_standard,wpn_fps_smg_coal_dh_standard,wpn_fps_smg_coal_m_standard,wpn_fps_smg_coal_fg_standard,wpn_fps_smg_coal_g_standard,wpn_fps_upg_ak_g_hgrip,wpn_fps_upg_ak_g_pgrip,wpn_fps_upg_ak_g_wgrip,wpn_fps_upg_ak_g_rk3,wpn_fps_upg_fl_ass_smg_sho_peqbox,wpn_fps_upg_fl_ass_smg_sho_surefire,wpn_fps_upg_fl_ass_utg,wpn_fps_upg_fl_ass_peq15,wpn_fps_upg_fl_ass_laser,wpn_fps_upg_o_xpsg33_magnifier,wpn_fps_smg_coal_b_standard,wpn_fps_upg_i_singlefire,wpn_fps_upg_i_autofire,wpn_fps_smg_coal_body_standard,wpn_fps_upg_o_specter,wpn_fps_upg_o_aimpoint,wpn_fps_upg_o_docter,wpn_fps_upg_o_eotech,wpn_fps_upg_o_t1micro,wpn_fps_upg_o_cmore,wpn_fps_upg_o_aimpoint_2,wpn_fps_upg_o_acog,wpn_fps_upg_o_eotech_xps,wpn_fps_upg_o_reflex,wpn_fps_upg_o_rx01,wpn_fps_upg_o_rx30,wpn_fps_upg_o_cs,wpn_fps_upg_o_spot,wpn_fps_smg_coal_ns_standard,wpn_fps_upg_ns_ass_smg_large,wpn_fps_upg_ns_ass_smg_medium,wpn_fps_upg_ns_ass_smg_small,wpn_fps_upg_ass_ns_battle,wpn_fps_upg_ass_ns_jprifles,wpn_fps_upg_ass_ns_linear,wpn_fps_upg_ass_ns_surefire,wpn_fps_upg_ns_ass_smg_firepig,wpn_fps_upg_ns_ass_smg_stubby,wpn_fps_upg_ns_ass_smg_tank,wpn_fps_upg_ns_ass_pbs1,wpn_fps_upg_ak_ns_ak105,wpn_fps_smg_coal_mr_standard,wpn_fps_smg_coal_o_scopemount_standard,wpn_fps_upg_bonus_spread_p1,wpn_fps_upg_bonus_team_exp_money_p3,wpn_fps_upg_bonus_recoil_p1,wpn_fps_upg_bonus_concealment_p1,</attachments>
+		</weapon>
         <weapon>
             <pd2>wpn_fps_smg_mac10</pd2>
             <pd2skills>0</pd2skills>
